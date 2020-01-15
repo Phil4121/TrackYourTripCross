@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="MigrationScripts\0001.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="MigrationScripts\0001.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="xcopy /E /Y /I &quot;$(ProjectDir)MigrationScripts&quot; &quot;$(SolutionDir)TrackYourTrip\TrackYourTrip.Droid\Assets&quot;&#xD;&#xA;&#xD;&#xA;xcopy /E /Y /I &quot;$(ProjectDir)MigrationScripts&quot; &quot;$(SolutionDir)TrackYourTrip\TrackYourTrip.iOS\Resources&quot;&#xD;&#xA;&#xD;&#xA;xcopy /E /Y /I &quot;$(ProjectDir)MigrationScripts&quot; &quot;$(SolutionDir)TrackYourTrip\Android.UnitTests\Assets&quot;" />
+  </Target>
+
+</Project>

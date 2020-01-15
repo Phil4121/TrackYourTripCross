@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <style name="Theme.Splash" parent="Theme.Base">
+  </style>
+  <style name="Theme" parent="Theme.Base">
+  </style>
+  <style name="Theme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="windowActionModeOverlay">true</item>
+  </style>
+</resources>

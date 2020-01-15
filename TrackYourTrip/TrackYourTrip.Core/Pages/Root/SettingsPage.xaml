@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage
+        x:TypeArguments="viewModels:SettingsViewModel"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+             xmlns:mvxBind="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+             xmlns:viewModels="clr-namespace:TrackYourTrip.Core.ViewModels.Root"
+             mc:Ignorable="d"
+             x:Class="TrackYourTrip.Core.Pages.Root.SettingsPage"
+             Title="{mvxBind:MvxBind Title}">
+    <ContentPage.Content>
+        <StackLayout>
+            <mvx:MvxListView x:Name="SettingsListView"
+                ItemsSource="{Binding  Settings}"
+                ItemClick="{mvxBind:MvxBind  SettingClickedCommand, CommandParameter={mvxBind:MvxBind SelectedSetting}}"
+                SelectedItem="{mvxBind:MvxBind  SelectedItem}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"
+                IsPullToRefreshEnabled="false">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+                                <Label Text="{Binding Setting}" d:Text="{Binding .}" LineBreakMode="NoWrap" FontSize="16" HorizontalOptions="StartAndExpand" />
+                                <Label Text=">" HorizontalOptions="End" FontSize="16" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </mvx:MvxListView>
+        </StackLayout>
+    </ContentPage.Content>
+</mvx:MvxContentPage>

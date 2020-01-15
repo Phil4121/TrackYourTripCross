@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage 
+        x:TypeArguments="viewModels:FishingAreasViewModel"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"    
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+             xmlns:mvxBind="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+             xmlns:viewModels="clr-namespace:TrackYourTrip.Core.ViewModels.Settings"
+             mc:Ignorable="d"
+             x:Class="TrackYourTrip.Core.Pages.Settings.FishingAreasPage"
+             Title="{mvxBind:MvxBind Title}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{Binding AddCommandTitle}" Command="{mvxBind:MvxBind AddCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <ScrollView>
+                <StackLayout  AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                    <mvx:MvxListView x:Name="FishingAreasListView"
+                                        ItemsSource="{Binding FishingAreas}"
+                                        VerticalOptions="FillAndExpand"
+                                        HasUnevenRows="true"
+                                        SelectedItem="{mvxBind:MvxBind SelectedFishingArea}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout Padding="10" Orientation="Horizontal">
+                                            <StackLayout HorizontalOptions="StartAndExpand">
+                                                <Label Text="{Binding FishingArea}" FontSize="18" />
+                                                <Label Text="{Binding WaterModel.Water}" FontSize="13" />
+                                            </StackLayout>
+                                            <Label Text=">" FontSize="16" HorizontalOptions="End" VerticalOptions="Center" />
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </mvx:MvxListView>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout IsVisible="{Binding IsBusy}" Padding="12"
+                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                            AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+                <ActivityIndicator IsRunning="{Binding IsBusy}" Color ="#80000000"/>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</mvx:MvxContentPage>

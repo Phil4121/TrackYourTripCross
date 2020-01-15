@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# IDE0052: Ungelesene private Member entfernen
+dotnet_diagnostic.IDE0052.severity = none
