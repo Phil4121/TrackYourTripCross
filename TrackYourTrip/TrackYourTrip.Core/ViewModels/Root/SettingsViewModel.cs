@@ -22,7 +22,9 @@ namespace TrackYourTrip.Core.ViewModels.Root
         public SettingsViewModel(IMvxNavigationService navigationService, IMvxLogProvider mvxLogProvider)
             : base(Resources.AppResources.SettingsPageTitle, mvxLogProvider, navigationService)
         {
-            SettingClickedCommand = new MvxCommand<SettingModel>(ExecuteSettingClicked);
+            SettingClickedCommand = new MvxCommand<SettingModel>(
+                (param) => NavigationTask = MvxNotifyTask.Create(NavigateToSettingAsync(param), onException: ex => LogException(ex))
+                );
         }
 
         #region Properties
@@ -46,7 +48,6 @@ namespace TrackYourTrip.Core.ViewModels.Root
 
         public SettingModel SelectedSetting { get; set; }
 
-        public MvxNotifyTask LoadSettingsTask { get; private set; }
 
         #endregion
 
@@ -56,11 +57,19 @@ namespace TrackYourTrip.Core.ViewModels.Root
 
         #endregion
 
+        #region Tasks
+
+        public MvxNotifyTask LoadSettingsTask { get; private set; }
+
+        public MvxNotifyTask NavigationTask { get; private set; }
+
+        #endregion
+
         #region Methodes
 
         public override Task Initialize()
         {
-            LoadSettingsTask = MvxNotifyTask.Create(LoadSettings);
+            LoadSettingsTask = MvxNotifyTask.Create(LoadSettings, onException: ex => LogException(ex));
 
             return base.Initialize();
         }
@@ -77,9 +86,27 @@ namespace TrackYourTrip.Core.ViewModels.Root
                 );
         }
 
-        void ExecuteSettingClicked(SettingModel setting)
+        async Task NavigateToSettingAsync(SettingModel setting)
         {
-            MvxNotifyTask.Create(NavigationService.Navigate(setting.LandingPage), onException: ex => LogException(ex));
+            try
+            {
+                IsBusy = true;
+
+                var result = await NavigationService.Navigate(setting.LandingPage);
+
+                if(!result)
+                {
+                    throw new Exception("Navigation not possible!");
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         #endregion

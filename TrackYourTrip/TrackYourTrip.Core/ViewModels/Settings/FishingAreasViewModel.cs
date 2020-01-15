@@ -22,7 +22,9 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         public FishingAreasViewModel(IMvxNavigationService navigationService, IMvxLogProvider mvxLogProvider)
             : base(Resources.AppResources.FishingAreasPageTitle, mvxLogProvider, navigationService)
         {
-            FishingAreaSelectedCommand = new MvxAsyncCommand<FishingAreaModel>(NavigateToFishingArea);
+            FishingAreaSelectedCommand = new MvxCommand<FishingAreaModel>(
+                (param) => NavigationTask = MvxNotifyTask.Create(NavigateToFishingAreaAsync(param), onException: ex => LogException(ex))
+                );
         }
 
         #region Properties
@@ -55,7 +57,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             private set
             {
                 SetProperty(ref _selectedFishingArea, value);
-                FishingAreaSelectedCommand.ExecuteAsync(value);
+                FishingAreaSelectedCommand.Execute(value);
             }
         }
 
@@ -65,13 +67,15 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
         #region Commands
 
-        public IMvxAsyncCommand<FishingAreaModel> FishingAreaSelectedCommand { get; private set; }
+        public IMvxCommand<FishingAreaModel> FishingAreaSelectedCommand { get; private set; }
 
         #endregion
 
         #region Tasks
 
         public MvxNotifyTask LoadAreasTask { get; private set; }
+
+        public MvxNotifyTask NavigationTask { get; private set; }
 
         #endregion
 
@@ -91,26 +95,35 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         public override void Add()
         {
             base.Add();
-
-            MvxNotifyTask.Create(NavigateToFishingArea(new FishingAreaModel(true)), onException: ex => LogException(ex));
+            NavigationTask = MvxNotifyTask.Create(NavigateToFishingAreaAsync(new FishingAreaModel(true)), onException: ex => LogException(ex));
         }
 
-        async Task NavigateToFishingArea(FishingAreaModel fishingArea)
+        async Task NavigateToFishingAreaAsync(FishingAreaModel fishingArea)
         {
             if (fishingArea == null)
                 return;
 
-            IsBusy = true;
-            
-            var result = await NavigationService.Navigate<FishingAreaViewModel, FishingAreaModel, OperationResult<FishingAreaModel>>(fishingArea);
-            IsBusy = false;
-
-            if (result != null)
+            try
             {
-                if (result.IsCanceld)
-                    return;
+                IsBusy = true;
 
-                LoadAreasTask = MvxNotifyTask.Create(LoadAreasAsync, onException: ex => LogException(ex));
+                var result = await NavigationService.Navigate<FishingAreaViewModel, FishingAreaModel, OperationResult<FishingAreaModel>>(fishingArea);
+
+                if (result != null)
+                {
+                    if (result.IsCanceld)
+                        return;
+
+                    LoadAreasTask = MvxNotifyTask.Create(LoadAreasAsync, onException: ex => LogException(ex));
+                }
+
+            }catch(Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                IsBusy = false;
             }
         }
 
