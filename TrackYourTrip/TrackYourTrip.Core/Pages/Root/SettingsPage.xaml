@@ -12,25 +12,34 @@
              x:Class="TrackYourTrip.Core.Pages.Root.SettingsPage"
              Title="{mvxBind:MvxBind Title}">
     <ContentPage.Content>
-        <StackLayout>
-            <mvx:MvxListView x:Name="SettingsListView"
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <ScrollView>
+                <StackLayout>
+                    <mvx:MvxListView x:Name="SettingsListView"
                 ItemsSource="{Binding  Settings}"
                 ItemClick="{mvxBind:MvxBind  SettingClickedCommand, CommandParameter={mvxBind:MvxBind SelectedSetting}}"
                 SelectedItem="{mvxBind:MvxBind  SelectedItem}"
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"
                 IsPullToRefreshEnabled="false">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Padding="10" Orientation="Horizontal">
-                                <Label Text="{Binding Setting}" d:Text="{Binding .}" LineBreakMode="NoWrap" FontSize="16" HorizontalOptions="StartAndExpand" />
-                                <Label Text=">" HorizontalOptions="End" FontSize="16" />
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </mvx:MvxListView>
-        </StackLayout>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Padding="10" Orientation="Horizontal">
+                                        <Label Text="{Binding Setting}" d:Text="{Binding .}" LineBreakMode="NoWrap" FontSize="16" HorizontalOptions="StartAndExpand" />
+                                        <Label Text=">" HorizontalOptions="End" FontSize="16" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </mvx:MvxListView>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout IsVisible="{Binding IsBusy}" Padding="12"
+                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                            AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+                <ActivityIndicator IsRunning="{Binding IsBusy}" Color ="#80000000"/>
+            </StackLayout>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </mvx:MvxContentPage>

@@ -85,14 +85,14 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             // not needed
         }
 
-        public override void Add()
+        public async override Task AddAsync()
         {
-            base.Add();
+            await base.AddAsync();
 
             var spot = new SpotModel(true);
             spot.ID_FishingArea = RootFishingArea.Id;
 
-            MvxNotifyTask.Create(NavigateToSpot(spot), onException: ex => LogException(ex));
+            await NavigateToSpot(spot);
         }
 
         async Task NavigateToSpot(SpotModel spot)
@@ -121,7 +121,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
                     RootFishingArea.Spots.Add(result.Entity);
 
                 if (!RootFishingArea.IsNew)
-                    Save();
+                    await SaveAsync();
 
                 await RaisePropertyChanged(() => RootFishingArea);
                 await RaisePropertyChanged(() => Spots);
@@ -129,13 +129,13 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             }
         }
 
-        public override void Save()
+        public async override Task SaveAsync()
         {
-            base.Save();
+            await base.SaveAsync();
 
             if (RootFishingArea.IsValid)
             {
-                Task.Run<bool>(() => DataStore.SaveItemAsync(RootFishingArea));
+                await DataStore.SaveItemAsync(RootFishingArea);
             }
         }
 

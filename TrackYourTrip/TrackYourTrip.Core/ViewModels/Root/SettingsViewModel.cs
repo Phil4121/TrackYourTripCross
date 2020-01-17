@@ -48,7 +48,6 @@ namespace TrackYourTrip.Core.ViewModels.Root
 
         public SettingModel SelectedSetting { get; set; }
 
-
         #endregion
 
         #region Commands

@@ -27,10 +27,13 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             : base(Resources.AppResources.FishingAreaPageTitle, mvxLogProvider, navigationService, userDialog, localizeService)
         {
 
+            MapClickedCommand = new MvxCommand<Position?>(
+                (param) => RefreshPinsTask = MvxNotifyTask.Create(RefreshPinAsync(param), onException: ex => LogException(ex))
+                ); 
 
-            MapClickedCommand = new MvxCommand<Position?>(ExecuteMapClicked);
-
-            SpotsClickedCommand = new MvxAsyncCommand(NavigateToSpots);
+            SpotsClickedCommand = new MvxCommand(
+                () => NavigationTask = MvxNotifyTask.Create(NavigateToSpotsAsync, onException: ex => LogException(ex))
+                );
         }
 
         #region Properties
@@ -107,13 +110,17 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
         public IMvxCommand<Position?> MapClickedCommand { get; private set; }
 
-        public MvxAsyncCommand SpotsClickedCommand { get; private set; }
+        public MvxCommand SpotsClickedCommand { get; private set; }
 
         #endregion
 
         #region Tasks
 
         public MvxNotifyTask InitWatersTask { get; private set; }
+
+        public MvxNotifyTask RefreshPinsTask { get; private set; }
+
+        public MvxNotifyTask NavigationTask { get; private set; }
 
         #endregion
 
@@ -139,9 +146,9 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             ValidationResult = result;
         }
 
-        public override void Save()
+        public async override Task SaveAsync()
         {
-            base.Save();
+            await base.SaveAsync();
 
             try
             {
@@ -149,11 +156,10 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
                 if (IsValid)
                 {
-                    var result = MvxNotifyTask.Create(DataStore.SaveItemAsync(FishingArea), onException: ex => LogException(ex));
+                    var result = DataStore.SaveItemAsync(FishingArea);
 
                     if (result.IsCompleted) {
-                        IsBusy = false;
-                        NavigationService.Close(this, new OperationResult<FishingAreaModel>(FishingArea, isSaved: result.Result));
+                        await NavigationService.Close(this, new OperationResult<FishingAreaModel>(FishingArea, isSaved: result.Result));
                     }
                 }
             }catch(Exception ex)
@@ -166,9 +172,9 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             }
         }
 
-        public async override void DeleteCancel()
+        public async override Task DeleteCancelAsync()
         {
-            base.DeleteCancel();
+            await base.DeleteCancelAsync();
 
             if (!IsNew)
             {
@@ -178,9 +184,9 @@ namespace TrackYourTrip.Core.ViewModels.Settings
                 if (!confirmation)
                     return;
 
-                var result = Task.Run<bool>(() => DataStore.DeleteItemAsync(FishingArea));
+                var result = DataStore.DeleteItemAsync(FishingArea);
 
-                if (result.Result)
+                if (result.IsCompleted)
                     await NavigationService.Close(this, new OperationResult<FishingAreaModel>(FishingArea, isDeleted: result.Result));
                 
                 return;
@@ -189,12 +195,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             await NavigationService.Close(this, new OperationResult<FishingAreaModel>(FishingArea, isCanceld: true));
         }
 
-        void ExecuteMapClicked(Position? position)
-        {
-            RefreshPin(position);
-        }
-
-        async Task NavigateToSpots()
+        async Task NavigateToSpotsAsync()
         {
             IsBusy = true;
 
@@ -208,7 +209,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             }
         }
 
-        void RefreshPin(Position? position)
+        async Task RefreshPinAsync(Position? position)
         {
             if (!position.HasValue)
                 return;
@@ -218,7 +219,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
                 FishingArea.Lat = position.Value.Latitude;
                 FishingArea.Lng = position.Value.Longitude;
 
-                RaisePropertyChanged(nameof(Pins));
+                await RaisePropertyChanged(() => Pins);
             }
             catch (Exception ex)
             {

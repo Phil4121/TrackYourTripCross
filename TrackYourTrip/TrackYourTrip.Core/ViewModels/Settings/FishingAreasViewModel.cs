@@ -42,7 +42,8 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             set { _dataStore = value; }
         }
 
-        
+        public override bool IsNew => false;
+
         private MvxObservableCollection<FishingAreaModel> _fishingAreas;
         public MvxObservableCollection<FishingAreaModel> FishingAreas
         {
@@ -60,8 +61,6 @@ namespace TrackYourTrip.Core.ViewModels.Settings
                 FishingAreaSelectedCommand.Execute(value);
             }
         }
-
-        public override bool IsNew => false;
 
         #endregion
 
@@ -92,10 +91,10 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             throw new NotImplementedException();
         }
 
-        public override void Add()
+        public async override Task AddAsync()
         {
-            base.Add();
-            NavigationTask = MvxNotifyTask.Create(NavigateToFishingAreaAsync(new FishingAreaModel(true)), onException: ex => LogException(ex));
+           await  base.AddAsync();
+           await NavigateToFishingAreaAsync(new FishingAreaModel(true));
         }
 
         async Task NavigateToFishingAreaAsync(FishingAreaModel fishingArea)
@@ -126,7 +125,6 @@ namespace TrackYourTrip.Core.ViewModels.Settings
                 IsBusy = false;
             }
         }
-
         async Task LoadAreasAsync()
         {
             FishingAreas = new MvxObservableCollection<FishingAreaModel>(

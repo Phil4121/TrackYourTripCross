@@ -27,6 +27,18 @@ namespace TrackYourTrip.Core.ViewModels
             this.Log = mvxLogProvider.GetLogFor(GetType());
 
             Title = title;
+
+            SaveCommand = new MvxCommand(
+                () => SaveTask = MvxNotifyTask.Create(SaveAsync(), onException: ex => LogException(ex))
+            );
+
+            DeleteCancelCommand = new MvxCommand(
+                () => DeleteTask = MvxNotifyTask.Create(DeleteCancelAsync, onException: ex => LogException(ex))
+            );
+
+            AddCommand = new MvxCommand(
+                () => AddTask = MvxNotifyTask.Create(AddAsync(), onException: ex => LogException(ex))
+            );
         }
 
         public BaseViewModel(string title, IMvxLogProvider mvxLogProvider, IMvxNavigationService navigationService, IUserDialogs userDialog, ILocalizeService localizeService)
@@ -42,6 +54,18 @@ namespace TrackYourTrip.Core.ViewModels
             this.LocalizeService = localizeService;
 
             Title = title;
+
+            SaveCommand = new MvxCommand(
+                () => SaveTask = MvxNotifyTask.Create(SaveAsync(), onException: ex => LogException(ex))
+            );
+
+            DeleteCancelCommand = new MvxCommand(
+                () => DeleteTask = MvxNotifyTask.Create(DeleteCancelAsync, onException: ex => LogException(ex))
+            );
+
+            AddCommand = new MvxCommand(
+                () => AddTask = MvxNotifyTask.Create(AddAsync(), onException: ex => LogException(ex))
+            );
         }
 
         #region Properties
@@ -97,19 +121,23 @@ namespace TrackYourTrip.Core.ViewModels
 
         #endregion
 
+        #region Tasks
+
+        public MvxNotifyTask AddTask { get; private set; }
+
+        public MvxNotifyTask SaveTask { get; private set; }
+
+        public MvxNotifyTask DeleteTask { get; private set; }
+
+        #endregion
+
         #region Commands
 
-        private IMvxCommand _addCommand;
-        public IMvxCommand AddCommand =>
-            _addCommand ?? (_addCommand = new MvxCommand(() => Add()));
+        public IMvxCommand AddCommand { get; private set; }
 
-        private IMvxCommand _saveCommand;
-        public IMvxCommand SaveCommand =>
-            _saveCommand ?? (_saveCommand = new MvxCommand(() => Save()));
+        public IMvxCommand SaveCommand { get; private set; }
 
-        private IMvxCommand _deleteCancelCommand;
-        public IMvxCommand DeleteCancelCommand =>
-            _deleteCancelCommand ?? (_deleteCancelCommand = new MvxCommand(() => DeleteCancel()));
+        public IMvxCommand DeleteCancelCommand { get; private set; }
 
         #endregion
 
@@ -124,7 +152,7 @@ namespace TrackYourTrip.Core.ViewModels
         }
 
 
-        public virtual void Save()
+        public async virtual Task SaveAsync()
         {
             Validate();
         }
@@ -135,7 +163,7 @@ namespace TrackYourTrip.Core.ViewModels
         }
 
 
-        public virtual void Add()
+        public async virtual Task AddAsync()
         {
 
         }
@@ -146,7 +174,7 @@ namespace TrackYourTrip.Core.ViewModels
         }
 
 
-        public virtual void DeleteCancel()
+        public async virtual Task DeleteCancelAsync()
         {
 
         }
@@ -177,7 +205,7 @@ namespace TrackYourTrip.Core.ViewModels
 
     {
         public BaseViewModel(string title, IMvxLogProvider mvxLogProvider, IMvxNavigationService navigationService)
-            : base(title,mvxLogProvider,navigationService)
+            : base(title, mvxLogProvider, navigationService)
         {
 
         }
@@ -188,7 +216,7 @@ namespace TrackYourTrip.Core.ViewModels
 
         }
 
-        public TaskCompletionSource<object> CloseCompletionSource { get;set; }
+        public TaskCompletionSource<object> CloseCompletionSource { get; set; }
 
         public virtual void Prepare(TParameter parameter)
         {

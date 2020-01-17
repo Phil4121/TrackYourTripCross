@@ -124,20 +124,20 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             ValidationResult = result;
         }
 
-        public override void Save()
+        public async override Task SaveAsync()
         {
-            base.Save();
+            await base.SaveAsync();
 
             if (IsValid)
             {
                 Spot.IsNew = false;
-                NavigationService.Close(this, new OperationResult<SpotModel>(Spot, isSaved: true));
+                await NavigationService.Close(this, new OperationResult<SpotModel>(Spot, isSaved: true));
             }
         }
 
-        public async override void DeleteCancel()
+        public async override Task DeleteCancelAsync()
         {
-            base.DeleteCancel();
+            await base.DeleteCancelAsync();
 
             if (!IsNew)
             {
