@@ -2,6 +2,9 @@
 -- ************ INITIAL BUILDING SKRIPT ************
 -- *************************************************
 -- CreationDate: 24.09.2019;
+-- DO NOT MARK FOREIGN KEYS AS 'NOT NULL' BECAUSE
+-- this causes a failiure in SQLLiteNetExtensions!
+-- https://bitbucket.org/twincoders/sqlite-net-extensions/issues/108/insertorreplacewithchildren-throws-an
 
 CREATE TABLE Fishes (
 	ID			TEXT		PRIMARY KEY,
@@ -74,7 +77,7 @@ CREATE TABLE FishingAreas (
 	FishingArea			TEXT		NOT NULL,
 	Lat					FLOAT		NOT NULL,
 	Lng					FLOAT		NOT NULL,
-	ID_WaterModel		INTEGER		NOT NULL
+	ID_WaterModel		TEXT		
 );
 
 CREATE TABLE Spots (
@@ -82,8 +85,8 @@ CREATE TABLE Spots (
 	Spot				TEXT		NOT NULL,
 	Lat					FLOAT		NOT NULL,
 	Lng					FLOAT		NOT NULL,
-	ID_FishingArea		INTEGER		NOT NULL,
-	ID_SpotType			INTEGER		NOT NULL
+	ID_FishingArea		TEXT		,
+	ID_SpotType			TEXT		
 );
 
 CREATE TABLE SpotTypes (
@@ -102,7 +105,6 @@ INSERT INTO SpotTypes (ID, SpotType) VALUES ('6b103efc-75c9-45ea-8fad-1b871cbbd3
 INSERT INTO Fishes (ID, FishName, SortOrder) VALUES ('8cd19c21-bf09-43ea-b799-dbcf30183e08','Zander', 1);
 
 INSERT INTO Settings (ID, Setting, LandingPage, SortOrder) VALUES ('21d269b9-62ee-4104-8d32-cf92534aaba3','Reviere', 'FishingAreasPage', 1);
-
 
 -- *************************************************
 -- ****************** MOCKED DATA ******************

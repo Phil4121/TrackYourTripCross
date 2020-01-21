@@ -159,4 +159,10 @@
   <data name="SpotsPageTitle" xml:space="preserve">
     <value>Angelplätze</value>
   </data>
+  <data name="SpotTypeEmptyText" xml:space="preserve">
+    <value>Bitte wählen sie zuerst den Typ des Angelplatzes aus!</value>
+  </data>
+  <data name="SpotTypeSetText" xml:space="preserve">
+    <value>Bitte markieren sie den Angelplatz indem sie auf die Karte klicken.</value>
+  </data>
 </root>

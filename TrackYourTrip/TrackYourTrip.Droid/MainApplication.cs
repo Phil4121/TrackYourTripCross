@@ -54,7 +54,7 @@ namespace SmartHome.Droid
                 Database.DatabaseMigrator.Migrate(DbHelper.GetConnection(), DbHelper.GetMigrationScriptBaseFolderPath());
 
 #if DEBUG
-                //DatabaseInitHelper.CopyDatabaseToSDCard();
+                DatabaseInitHelper.CopyDatabaseToSDCard();
 #endif
 
                 CopyCompleted = true;
@@ -64,10 +64,12 @@ namespace SmartHome.Droid
 
         public void OnActivityDestroyed(Activity activity)
         {
+
         }
 
         public void OnActivityPaused(Activity activity)
         {
+
         }
 
         public void OnActivityResumed(Activity activity)

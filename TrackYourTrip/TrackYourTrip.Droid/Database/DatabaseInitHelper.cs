@@ -36,9 +36,9 @@ namespace TrackYourTrip.Droid.Database
             var fileHelper = new FileHelper();
             var dbHelper = new DatabaseHelper();
 
-            var sdcardPath = Android.OS.Environment.ExternalStorageDirectory.Path;
+            var sdcardPath = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
 
-            fileHelper.CopyFile(dbHelper.GetDbPath(), Path.Combine(sdcardPath, dbHelper.GetDbFilename), true);
+            fileHelper.CopyFile(Path.Combine(dbHelper.GetDbPath(), dbHelper.GetDbFilename), Path.Combine(sdcardPath, dbHelper.GetDbFilename), true);
         }
     }
-}
+}                                                                                                                                   

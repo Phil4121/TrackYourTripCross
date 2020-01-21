@@ -162,4 +162,10 @@
   <data name="SpotsPageTitle" xml:space="preserve">
     <value>Spots</value>
   </data>
+  <data name="SpotTypeEmptyText" xml:space="preserve">
+    <value>Please choose a spot type first!</value>
+  </data>
+  <data name="SpotTypeSetText" xml:space="preserve">
+    <value>Please mark your spot by clicking on to the map.</value>
+  </data>
 </root>

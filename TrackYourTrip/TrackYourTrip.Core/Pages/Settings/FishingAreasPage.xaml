@@ -23,7 +23,8 @@
                                         ItemsSource="{Binding FishingAreas}"
                                         VerticalOptions="FillAndExpand"
                                         HasUnevenRows="true"
-                                        SelectedItem="{mvxBind:MvxBind SelectedFishingArea}">
+                                        SelectedItem="{mvxBind:MvxBind SelectedFishingArea}"
+                                        ItemClick="{mvxBind:MvxBind FishingAreaSelectedCommand}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>

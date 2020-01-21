@@ -194,5 +194,23 @@ namespace TrackYourTrip.Core.Resources {
                 return ResourceManager.GetString("SpotsPageTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please choose a spot type first! ähnelt.
+        /// </summary>
+        internal static string SpotTypeEmptyText {
+            get {
+                return ResourceManager.GetString("SpotTypeEmptyText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please mark your spot by clicking on to the map. ähnelt.
+        /// </summary>
+        internal static string SpotTypeSetText {
+            get {
+                return ResourceManager.GetString("SpotTypeSetText", resourceCulture);
+            }
+        }
     }
 }

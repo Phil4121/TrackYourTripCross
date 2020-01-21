@@ -21,7 +21,9 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         public SpotsViewModel(IMvxNavigationService navigationService, IMvxLogProvider mvxLogProvider)
             : base(Resources.AppResources.SpotsPageTitle, mvxLogProvider, navigationService)
         {
-            SpotSelectedCommand = new MvxAsyncCommand<SpotModel>(NavigateToSpot);
+            SpotSelectedCommand = new MvxCommand<SpotModel>(
+                (param) => NavigationTask = MvxNotifyTask.Create(NavigateToSpot(param), onException: ex => LogException(ex))
+            );
         }
 
         #region Properties
@@ -61,15 +63,19 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             private set
             {
                 SetProperty(ref _selectedSpot, value);
-                SpotSelectedCommand.ExecuteAsync(value);
             }
         }
 
         #endregion
 
+        #region Tasks
+        public MvxNotifyTask NavigationTask { get; private set; }
+
+        #endregion
+
         #region Commands
 
-        public IMvxAsyncCommand<SpotModel> SpotSelectedCommand { get; private set; }
+        public IMvxCommand<SpotModel> SpotSelectedCommand { get; private set; }
 
         #endregion
 
@@ -135,7 +141,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
             if (RootFishingArea.IsValid)
             {
-                await DataStore.SaveItemAsync(RootFishingArea);
+                DataStore.SaveItem(RootFishingArea);
             }
         }
 

@@ -64,7 +64,13 @@
                     SelectedValuePath="Id"                    
                     DisplayMemberPath="Water" 
                     SelectedValue="{Binding FishingArea.ID_WaterModel, Mode=TwoWay}"
-                    Grid.Row="1" Grid.Column="1" />
+                    Grid.Row="1" Grid.Column="1">
+                    <custom:CustomPicker.Behaviors>
+                        <b:EventToCommandBehavior 
+                                      EventName="SelectedIndexChanged"
+                                      Command="{Binding WaterChangedCommand}" />
+                    </custom:CustomPicker.Behaviors>
+                </custom:CustomPicker>
             </Grid>
 
             <Label>Markieren sie bitte das Zentrum ihres Gewässers:</Label>

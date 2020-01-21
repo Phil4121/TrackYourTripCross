@@ -26,7 +26,7 @@ namespace TrackYourTrip.Core.Services
             {
                 return _Con;
             }
-            
+
             private set
             {
                 _Con = value;
@@ -43,20 +43,41 @@ namespace TrackYourTrip.Core.Services
             return await Task.FromResult(Con.GetAllWithChildren<T>());
         }
 
-        public async Task<bool> SaveItemAsync(T item)
+        public bool SaveItem(T item)
         {
-            if (item is IModel)
+            try
             {
-                if(!((IModel)item).IsNew)
-                    return await Task.FromResult(Con.Update(item)) > 0;
-            }
+                if (item is IModel)
+                {
+                    if (!((IModel)item).IsNew)
+                    {
+                        Con.Delete(item, true);
+                    }
 
-            return await Task.FromResult(Con.Insert(item)) > 0;
+                    Con.InsertWithChildren(item, true);
+
+                    return true;
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
-        public async Task<bool> DeleteItemAsync(T item)
+        public bool DeleteItem(T item)
         {
-            return await Task.FromResult(Con.Delete(item)) > 0;
+            try
+            {
+                Con.Delete(item, true);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
     }
 }

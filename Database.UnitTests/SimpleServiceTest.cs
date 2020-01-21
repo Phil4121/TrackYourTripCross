@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using TrackYourTrip.Core.Models;
 using TrackYourTrip.Core.Services;
 using TrackYourTrip.Models;
 using Xunit;
@@ -94,6 +95,88 @@ namespace Database.UnitTests
 
             Assert.True(settingsList.Count > 0);
 
+        }
+    }
+
+    public class TestSaveFishingArea
+    {
+        const string _dbFileName = "TrackYourTrip.db";
+        const string _migrationScriptsFolderName = "MigrationScripts";
+
+        SQLiteConnection _connection = new SQLiteConnection(_dbFileName);
+
+        string _migrationSkriptFolderPath = Path.Combine(Environment.CurrentDirectory, _migrationScriptsFolderName);
+
+        public TestSaveFishingArea()
+        {
+            DatabaseMigrator.Migrate(_connection, _migrationSkriptFolderPath);
+        }
+
+        [Fact]
+        public void SaveFishingArea()
+        {
+            DataServiceFactory.Connection = _connection;
+
+            var factory = DataServiceFactory.GetFishingAreaFactory();
+
+            Assert.NotNull(factory);
+
+            var areaId = Guid.NewGuid();
+            
+            var tstFishingArea = new FishingAreaModel();
+            tstFishingArea.Id = areaId;
+            tstFishingArea.ID_WaterModel = Guid.Parse("2a3eeecf-472c-4b0f-9df0-73386cb3b3f7");
+            tstFishingArea.Lat = 48.46;
+            tstFishingArea.Lng = 13.9267;
+            tstFishingArea.FishingArea = "Donau Obermühl";
+            tstFishingArea.IsNew = true;
+
+            var success = factory.SaveItem(tstFishingArea);
+
+            Assert.True(success);
+
+            var storedFishingArea = factory.GetItemAsync(areaId).Result;
+
+            Assert.True(storedFishingArea.Id == areaId);
+
+
+            var spotId = Guid.NewGuid();
+            var newSpot = new SpotModel();
+            newSpot.FishingArea = storedFishingArea;
+            newSpot.Id = spotId;
+            newSpot.Spot = "Zanderfelsen";
+            newSpot.ID_FishingArea = storedFishingArea.Id;
+            newSpot.ID_SpotType = Guid.Parse("1fb8243b-a672-496b-955a-5930cb706250");
+            newSpot.IsNew = true;
+            newSpot.Lat = 48.46;
+            newSpot.Lng = 13.9267;
+
+            storedFishingArea.Spots.Add(newSpot);
+
+            success = factory.SaveItem(storedFishingArea);
+
+            Assert.True(success);
+        }
+
+
+        [Fact]
+        public void SaveExistingFishingArea()
+        {
+            DataServiceFactory.Connection = _connection;
+
+            var factory = DataServiceFactory.GetFishingAreaFactory();
+
+            Assert.NotNull(factory);
+
+            var areaId = Guid.Parse("0c46a2fd-9a56-4663-9ead-0d92ff39db7c");
+
+            var existingArea = factory.GetItemAsync(areaId).Result;
+
+            Assert.NotNull(existingArea);
+
+            var success = factory.SaveItem(existingArea);
+
+            Assert.True(success);
         }
     }
 }

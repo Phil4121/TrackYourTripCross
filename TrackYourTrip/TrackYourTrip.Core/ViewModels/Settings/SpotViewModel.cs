@@ -17,6 +17,7 @@ using System.Threading.Tasks;
 using TrackYourTrip.Core.ViewModelResults;
 using MvvmCross.Commands;
 using Acr.UserDialogs;
+using System.Linq;
 
 [assembly: MvxNavigation(typeof(SpotViewModel), @"Spot")]
 namespace TrackYourTrip.Core.ViewModels.Settings
@@ -27,6 +28,10 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             : base(Resources.AppResources.SpotPageTitle, mvxLogProvider, navigationService, userDialog, localizeService)
         {
             MapClickedCommand = new MvxCommand<Position?>(ExecuteMapClicked);
+
+            SpotTypeChangedCommand = new MvxCommand(
+                () => RefreshSpotTypeTask = MvxNotifyTask.Create(RefreshSpotTypeAsync, onException: ex => LogException(ex))
+            );
         }
 
         #region Properties
@@ -82,11 +87,39 @@ namespace TrackYourTrip.Core.ViewModels.Settings
                     new Pin
                     {
                         Position = new Position(Spot.Lat, Spot.Lng),
-                        Label = Spot.Spot
+                        Label = !string.IsNullOrEmpty(Spot.Spot) ? Spot.Spot : Spot.Id.ToString()
                     }
                 };
             }
         }
+
+        public bool HasSelectedSpotType
+        {
+            get
+            {
+                if (Spot == null)
+                    return false;
+
+                Guid.TryParse(Spot.ID_SpotType.ToString(), out Guid result);
+
+                RaisePropertyChanged(() => InstructionText);
+
+                return result != Guid.Empty;
+            }
+        }
+
+        public string InstructionText
+        {
+            get
+            {
+                if(Spot == null ||
+                    Spot.ID_SpotType == Guid.Empty)
+                    return Resources.AppResources.SpotTypeEmptyText;
+
+                return Resources.AppResources.SpotTypeSetText;
+            }
+        }
+
 
         #endregion
 
@@ -94,9 +127,13 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
         public IMvxCommand<Position?> MapClickedCommand { get; private set; }
 
+        public IMvxCommand SpotTypeChangedCommand { get; private set; }
+
         #endregion
 
         #region Tasks
+
+        public MvxNotifyTask RefreshSpotTypeTask { get; private set; }
 
         public MvxNotifyTask InitSpotTypeTask { get; private set; }
 
@@ -170,13 +207,24 @@ namespace TrackYourTrip.Core.ViewModels.Settings
                 Spot.Lat = position.Value.Latitude;
                 Spot.Lng = position.Value.Longitude;
 
-                RaisePropertyChanged(nameof(SpotMarker));
+                RaisePropertyChanged(() => SpotMarker);
             }
             catch (Exception ex)
             {
                 throw;
                 // handle!
             }
+        }
+
+        async Task RefreshSpotTypeAsync()
+        {
+            if (Spot == null)
+                return;
+
+            Spot.SpotType = SpotTypes.Where(s => s.Id == Spot.ID_SpotType).FirstOrDefault();
+
+            await RaisePropertyChanged(() => Spot);
+            await RaisePropertyChanged(() => HasSelectedSpotType);
         }
 
         async Task InitSpotTypes()

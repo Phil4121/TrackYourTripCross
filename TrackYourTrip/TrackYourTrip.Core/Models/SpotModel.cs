@@ -23,25 +23,25 @@ namespace TrackYourTrip.Core.Models
             this.IsNew = isNew;
         }
 
-        [SQLite.PrimaryKey]
+        [PrimaryKey]
         public Guid Id { get; set; }
 
         public string Spot { get; set; }
 
-        [ForeignKey(typeof(FishingAreaModel))]
+        [ForeignKey(typeof(FishingAreaModel)), NotNull]
         public Guid ID_FishingArea { get; set; }
 
-        [ForeignKey(typeof(SpotTypeModel))]
+        [ForeignKey(typeof(SpotTypeModel)), NotNull]
         public Guid ID_SpotType { get; set; }
 
         public double Lat { get; set; }
 
         public double Lng { get; set; }
 
-        [ManyToOne]
+        [ManyToOne(CascadeOperations = CascadeOperation.CascadeRead)]
         public FishingAreaModel FishingArea { get; set; }
 
-        [OneToOne]
+        [OneToOne(CascadeOperations = CascadeOperation.CascadeRead)]
         public SpotTypeModel SpotType { get; set; }
 
         [Ignore]

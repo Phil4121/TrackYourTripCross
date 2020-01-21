@@ -20,6 +20,7 @@
     <ContentPage.Resources>
         <StyleSheet Source="/Styles/TrackYourTrip.css" />
         <converter:IsValidToIsVisibleConverter x:Key="cnvIsValidToIsVisibleConverter"></converter:IsValidToIsVisibleConverter>
+        <converter:IndexToBooleanConverter x:Key="cnvIndexToBooleanConverter"></converter:IndexToBooleanConverter>
 
         <ResourceDictionary>
             <other:MapItemTemplateSelector x:Key="MapItemTemplateSelector">
@@ -64,16 +65,24 @@
                     SelectedValuePath="Id"                    
                     DisplayMemberPath="SpotType" 
                     SelectedValue="{Binding Spot.ID_SpotType, Mode=TwoWay}"
-                    Grid.Row="1" Grid.Column="1" />
+                    Grid.Row="1" Grid.Column="1">
+                    <custom:CustomPicker.Behaviors>
+                        <b:EventToCommandBehavior 
+                                      EventName="SelectedIndexChanged"
+                                      Command="{Binding SpotTypeChangedCommand}" />
+                    </custom:CustomPicker.Behaviors>
+                </custom:CustomPicker>
             </Grid>
 
-            <Label>Markieren sie bitte den Spot in ihrem Revier:</Label>
+            <Label Text="{Binding InstructionText}" />
+
             <maps:Map x:Name="map"
                       InitialCameraUpdate="{Binding MapCenter, Mode=TwoWay}"
                       ItemsSource="{Binding SpotMarker, Mode=TwoWay}"
                       ItemTemplateSelector="{StaticResource MapItemTemplateSelector}"
                       MapType="Hybrid"
-                      VerticalOptions="FillAndExpand">
+                      VerticalOptions="FillAndExpand"
+                      IsEnabled="{Binding HasSelectedSpotType, Mode=TwoWay}">
                 <maps:Map.Behaviors>
                     <b:EventToCommandBehavior 
                                       EventName="MapClicked"

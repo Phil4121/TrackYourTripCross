@@ -58,7 +58,6 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             private set
             {
                 SetProperty(ref _selectedFishingArea, value);
-                FishingAreaSelectedCommand.Execute(value);
             }
         }
 
