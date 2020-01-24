@@ -1,11 +1,17 @@
 ﻿using Acr.UserDialogs;
 using FluentValidation.Results;
+using MvvmCross.Base;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using TrackYourTrip.Core.Helpers;
@@ -32,8 +38,8 @@ namespace TrackYourTrip.Core.ViewModels
                 () => SaveTask = MvxNotifyTask.Create(SaveAsync(), onException: ex => LogException(ex))
             );
 
-            DeleteCancelCommand = new MvxCommand(
-                () => DeleteTask = MvxNotifyTask.Create(DeleteCancelAsync, onException: ex => LogException(ex))
+            DeleteCommand = new MvxCommand(
+                () => DeleteTask = MvxNotifyTask.Create(DeleteAsync, onException: ex => LogException(ex))
             );
 
             AddCommand = new MvxCommand(
@@ -59,8 +65,8 @@ namespace TrackYourTrip.Core.ViewModels
                 () => SaveTask = MvxNotifyTask.Create(SaveAsync(), onException: ex => LogException(ex))
             );
 
-            DeleteCancelCommand = new MvxCommand(
-                () => DeleteTask = MvxNotifyTask.Create(DeleteCancelAsync, onException: ex => LogException(ex))
+            DeleteCommand = new MvxCommand(
+                () => DeleteTask = MvxNotifyTask.Create(DeleteAsync, onException: ex => LogException(ex))
             );
 
             AddCommand = new MvxCommand(
@@ -137,7 +143,7 @@ namespace TrackYourTrip.Core.ViewModels
 
         public IMvxCommand SaveCommand { get; private set; }
 
-        public IMvxCommand DeleteCancelCommand { get; private set; }
+        public IMvxCommand DeleteCommand { get; private set; }
 
         #endregion
 
@@ -174,20 +180,14 @@ namespace TrackYourTrip.Core.ViewModels
         }
 
 
-        public async virtual Task DeleteCancelAsync()
+        public async virtual Task DeleteAsync()
         {
 
         }
 
-        public string DeleteCancelCommandTitle
+        public string DeleteCommandTitle
         {
-            get
-            {
-                if (IsNew)
-                    return Resources.AppResources.CancelCommandTitle;
-
-                return Resources.AppResources.DeleteCommandTitle;
-            }
+            get => Resources.AppResources.DeleteCommandTitle;
         }
 
 

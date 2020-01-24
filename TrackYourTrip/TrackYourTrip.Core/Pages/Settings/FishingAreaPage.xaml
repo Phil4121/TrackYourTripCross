@@ -13,20 +13,23 @@
              xmlns:converter="clr-namespace:TrackYourTrip.Core.Converters"                    
              mc:Ignorable="d"
              x:Class="TrackYourTrip.Core.Pages.Settings.FishingAreaPage"
-             Title="{Binding Title}">
+             NavigationPage.HasBackButton="{Binding IsNew}"
+             Title="{Binding Title}" >
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="{Binding DeleteCancelCommandTitle}" Order="Primary" Command="{mvxBind:MvxBind DeleteCancelCommand}"  />
+        <ToolbarItem Text="{Binding SaveCommandTitle}" Order="Primary" Command="{mvxBind:MvxBind SaveCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <StyleSheet Source="/Styles/TrackYourTrip.css" />
         <converter:IsValidToIsVisibleConverter x:Key="cnvIsValidToIsVisibleConverter"></converter:IsValidToIsVisibleConverter>
-
+        <converter:NegateBooleanConverter x:Key="cnvNegateBooleanConverter"></converter:NegateBooleanConverter>
         <ResourceDictionary>
             <other:MapItemTemplateSelector x:Key="MapItemTemplateSelector">
                 <other:MapItemTemplateSelector.DataTemplate>
                     <DataTemplate>
                         <maps:Pin Position="{Binding Position}"
-                                 Label="{Binding Label}" />
+                                  Label=""
+                                  IsDraggable="False"
+                                  Type="Place"/>
                     </DataTemplate>
                 </other:MapItemTemplateSelector.DataTemplate>
             </other:MapItemTemplateSelector>
@@ -99,10 +102,6 @@
                    IsVisible="{Binding IsValid, Converter={StaticResource cnvIsValidToIsVisibleConverter}}"
                    StyleClass="defaultErrorLabel"
                    HorizontalOptions="CenterAndExpand"/>
-
-                <Button Text="Speichern" 
-                    HorizontalOptions="CenterAndExpand" 
-                    Command="{mvxBind:MvxBind SaveCommand}" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

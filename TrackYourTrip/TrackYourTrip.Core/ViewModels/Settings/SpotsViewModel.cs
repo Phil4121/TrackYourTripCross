@@ -60,16 +60,16 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         public SpotModel SelectedSpot
         {
             get => _selectedSpot;
-            private set
-            {
-                SetProperty(ref _selectedSpot, value);
-            }
+            private set => SetProperty(ref _selectedSpot, value);
         }
 
         #endregion
 
         #region Tasks
+
         public MvxNotifyTask NavigationTask { get; private set; }
+
+        public MvxNotifyTask RefreshSpotsTask { get; private set; }
 
         #endregion
 
@@ -88,7 +88,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
         public override void Validate()
         {
-            // not needed
+            // nothing to do
         }
 
         public async override Task AddAsync()
@@ -101,47 +101,40 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             await NavigateToSpot(spot);
         }
 
+        async Task RefreshSpots()
+        {
+            RootFishingArea = await DataStore.GetItemAsync(RootFishingArea.Id);
+
+            await RaisePropertyChanged(() => RootFishingArea);
+            await RaisePropertyChanged(() => Spots);
+        }
+
         async Task NavigateToSpot(SpotModel spot)
         {
             if (spot == null)
                 return;
 
-            IsBusy = true;
-
-            var result = await NavigationService.Navigate<SpotViewModel, SpotModel, OperationResult<SpotModel>>(spot);
-
-            IsBusy = false;
-
-            if (result != null)
+            try
             {
+                IsBusy = true;
 
-                if (result.IsCanceld)
-                    return;
+                var result = await NavigationService.Navigate<SpotViewModel, SpotModel, OperationResult<SpotModel>>(spot);
 
-                var s = RootFishingArea.Spots.FirstOrDefault(a => a.Id == result.Entity.Id);
+                if (result != null)
+                {
+                    if (result.IsCanceld)
+                        return;
 
-                if (s != null)
-                    RootFishingArea.Spots.Remove(s);
+                    RefreshSpotsTask = MvxNotifyTask.Create(RefreshSpots, onException: ex => LogException(ex));
+                }
 
-                if (!result.IsDeleted)
-                    RootFishingArea.Spots.Add(result.Entity);
-
-                if (!RootFishingArea.IsNew)
-                    await SaveAsync();
-
-                await RaisePropertyChanged(() => RootFishingArea);
-                await RaisePropertyChanged(() => Spots);
-
+            }catch(Exception ex)
+            {
+                throw;
             }
-        }
-
-        public async override Task SaveAsync()
-        {
-            await base.SaveAsync();
-
-            if (RootFishingArea.IsValid)
+            finally
             {
-                DataStore.SaveItem(RootFishingArea);
+                IsBusy = false;
             }
         }
 

@@ -42,7 +42,7 @@ namespace Database.UnitTests
         public void TestSimpleDataServiceGetSingleWaterModelWithID()
         {
             var idNotExists = Guid.NewGuid();
-            var idExists = Guid.Parse("10");
+            var idExists = Guid.Parse("2a3eeecf-472c-4b0f-9df0-73386cb3b3f7");
 
             var simpleService = new SimpleDataService<TestWaterModel>(_connection, "WaterModels");
 
@@ -133,7 +133,7 @@ namespace Database.UnitTests
 
             var success = factory.SaveItem(tstFishingArea);
 
-            Assert.True(success);
+            Assert.True(success.Id != Guid.Empty);
 
             var storedFishingArea = factory.GetItemAsync(areaId).Result;
 
@@ -148,14 +148,12 @@ namespace Database.UnitTests
             newSpot.ID_FishingArea = storedFishingArea.Id;
             newSpot.ID_SpotType = Guid.Parse("1fb8243b-a672-496b-955a-5930cb706250");
             newSpot.IsNew = true;
-            newSpot.Lat = 48.46;
-            newSpot.Lng = 13.9267;
 
             storedFishingArea.Spots.Add(newSpot);
 
             success = factory.SaveItem(storedFishingArea);
 
-            Assert.True(success);
+            Assert.True(success.Id != Guid.Empty);
         }
 
 
@@ -176,7 +174,38 @@ namespace Database.UnitTests
 
             var success = factory.SaveItem(existingArea);
 
-            Assert.True(success);
+            Assert.True(success.Id != Guid.Empty);
+        }
+    }
+
+    public class TestGetSpot
+    {
+        const string _dbFileName = "TrackYourTrip.db";
+        const string _migrationScriptsFolderName = "MigrationScripts";
+
+        SQLiteConnection _connection = new SQLiteConnection(_dbFileName);
+
+        string _migrationSkriptFolderPath = Path.Combine(Environment.CurrentDirectory, _migrationScriptsFolderName);
+
+        public TestGetSpot()
+        {
+            DatabaseMigrator.Migrate(_connection, _migrationSkriptFolderPath);
+        }
+
+        [Fact]
+        public void GetSpot()
+        {
+            DataServiceFactory.Connection = _connection;
+
+            var factory = DataServiceFactory.GetSpotFactory();
+
+            Assert.NotNull(factory);
+
+            var spotId = Guid.Parse("610b3ec0-0d70-40a6-9d9f-5167a8135410");
+
+            var existingSpot = factory.GetItemAsync(spotId).Result;
+
+            Assert.True(existingSpot.SpotMarker.Count > 0);
         }
     }
 }

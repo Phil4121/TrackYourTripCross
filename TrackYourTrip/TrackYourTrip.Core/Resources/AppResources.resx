@@ -123,9 +123,6 @@
   <data name="ApplicationName" xml:space="preserve">
     <value>TrackYourTrip</value>
   </data>
-  <data name="CancelCommandTitle" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
   <data name="DeleteCommandTitle" xml:space="preserve">
     <value>Delete</value>
   </data>
@@ -151,7 +148,7 @@
     <value>Hello Xamarin!</value>
   </data>
   <data name="SaveCommandTitle" xml:space="preserve">
-    <value>Save</value>
+    <value>Finish</value>
   </data>
   <data name="SettingsPageTitle" xml:space="preserve">
     <value>Settings</value>

@@ -7,7 +7,7 @@ namespace TrackYourTrip.Core.Interfaces
 {
     public interface IDataServiceFactory<T>
     {
-        bool SaveItem(T item);
+        T SaveItem(T item);
         bool DeleteItem(T item);
         Task<T> GetItemAsync(Guid id);
         Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);

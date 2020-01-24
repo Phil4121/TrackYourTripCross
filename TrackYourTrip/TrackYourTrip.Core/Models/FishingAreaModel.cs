@@ -6,11 +6,12 @@ using Xamarin.Essentials;
 using SQLiteNetExtensions.Attributes;
 using TrackYourTrip.Core.Interfaces;
 using SQLite;
+using System.ComponentModel;
 
 namespace TrackYourTrip.Core.Models
 {
     [SQLite.Table(TableConsts.FISHINGAREA_TABLE)]
-    public class FishingAreaModel : IModel
+    public class FishingAreaModel : BaseModel
     {
         public FishingAreaModel()
         {
@@ -20,19 +21,14 @@ namespace TrackYourTrip.Core.Models
         public FishingAreaModel(bool isNew = false)
         {
             Initialize();
+            this.Id = Guid.NewGuid();
             this.IsNew = isNew;
         }
 
         private void Initialize()
         {
-            this.Id = Guid.NewGuid();
-            this.IsNew = false;
-            this.IsValid = false;
             Spots = new List<SpotModel>();
         }
-
-        [PrimaryKey]
-        public Guid Id { get; set; }
 
         public String FishingArea { get; set; }
 
@@ -54,11 +50,5 @@ namespace TrackYourTrip.Core.Models
         {
             get { return new Location(Lat, Lng); }
         }
-
-        [Ignore]
-        public bool IsNew { get; set; }
-
-        [Ignore]
-        public bool IsValid { get; set; }
     }
 }

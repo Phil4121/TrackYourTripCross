@@ -25,9 +25,13 @@ namespace TrackYourTrip.Core.Helpers
 
         public const string SPOT_TABLE = "Spots";
         public const string SPOTTYPE_TABLE = "SpotTypes";
+        public const string SPOTMARKER_TABLE = "SpotMarkers";
 
         public const string SETTINGS_TABLE = "Settings";
 
         #endregion
+
+        public const string SPOTTYPE_SPOT_ID = "1fb8243b-a672-496b-955a-5930cb706250";
+        public const string SPOTTYPE_STRETCH_ID = "6b103efc-75c9-45ea-8fad-1b871cbbd391";
     }
 }

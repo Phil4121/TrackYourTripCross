@@ -124,6 +124,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
                 IsBusy = false;
             }
         }
+
         async Task LoadAreasAsync()
         {
             FishingAreas = new MvxObservableCollection<FishingAreaModel>(

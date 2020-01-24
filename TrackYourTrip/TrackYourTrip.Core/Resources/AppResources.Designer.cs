@@ -79,15 +79,6 @@ namespace TrackYourTrip.Core.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Cancel ähnelt.
-        /// </summary>
-        internal static string CancelCommandTitle {
-            get {
-                return ResourceManager.GetString("CancelCommandTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Delete ähnelt.
         /// </summary>
         internal static string DeleteCommandTitle {
@@ -160,7 +151,7 @@ namespace TrackYourTrip.Core.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Save ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Finish ähnelt.
         /// </summary>
         internal static string SaveCommandTitle {
             get {

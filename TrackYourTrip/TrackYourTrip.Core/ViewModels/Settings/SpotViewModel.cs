@@ -29,8 +29,12 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         {
             MapClickedCommand = new MvxCommand<Position?>(ExecuteMapClicked);
 
+            RefreshSpotCommand = new MvxCommand(
+                () => RefreshSpotTask = MvxNotifyTask.Create(() => RefreshSpotAsync(), onException: ex => LogException(ex))
+            );
+
             SpotTypeChangedCommand = new MvxCommand(
-                () => RefreshSpotTypeTask = MvxNotifyTask.Create(RefreshSpotTypeAsync, onException: ex => LogException(ex))
+                () => RefreshSpotTypeTask = MvxNotifyTask.Create(() => RefreshSpotTypeAsync(), onException: ex => LogException(ex))
             );
         }
 
@@ -58,16 +62,20 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             private set => SetProperty(ref _spotTypes, value);
         }
 
-        public SpotModel Spot { get; set; }
+        private SpotModel _spot;
+        public SpotModel Spot {
+            get => _spot;
+            set => SetProperty(ref _spot, value);
+        }
 
         public CameraUpdate MapCenter
         {
             get
             {
                 if (Spot != null &&
-                    Spot.Lat != 0 &&
-                    Spot.Lng != 0)
-                    return CameraUpdateFactory.NewPositionZoom(new Position(Spot.Lat, Spot.Lng), 15d);
+                    SpotMarker != null &&
+                    SpotMarker.Count != 0)
+                    return CameraUpdateFactory.NewPositionZoom(new Position(Spot.SpotMarker[0].Lat, Spot.SpotMarker[0].Lng), 15d);
 
                 var loc = LocationHelper.GetCurrentLocation();
                 return CameraUpdateFactory.NewPositionZoom(new Position(loc.Latitude, loc.Longitude), 15d);
@@ -78,18 +86,21 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         {
             get
             {
-                if (Spot.Lat == 0 ||
-                    Spot.Lng == 0)
-                    return new MvxObservableCollection<Pin>();
+                var marker = new MvxObservableCollection<Pin>();
 
-                return new MvxObservableCollection<Pin>()
+                if (Spot.SpotMarker == null || Spot.SpotMarker.Count == 0)
+                    return marker;
+
+                foreach(SpotMarkerModel s in Spot.SpotMarker)
                 {
-                    new Pin
+                    marker.Add(new Pin
                     {
-                        Position = new Position(Spot.Lat, Spot.Lng),
-                        Label = !string.IsNullOrEmpty(Spot.Spot) ? Spot.Spot : Spot.Id.ToString()
-                    }
-                };
+                        Position = new Position(s.Lat, s.Lng),
+                        Label = !string.IsNullOrEmpty(s.SpotMarker) ? s.SpotMarker : s.Id.ToString()
+                    });
+                }
+
+                return marker;
             }
         }
 
@@ -129,6 +140,8 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
         public IMvxCommand SpotTypeChangedCommand { get; private set; }
 
+        public IMvxCommand RefreshSpotCommand { get; private set; }
+
         #endregion
 
         #region Tasks
@@ -136,6 +149,10 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         public MvxNotifyTask RefreshSpotTypeTask { get; private set; }
 
         public MvxNotifyTask InitSpotTypeTask { get; private set; }
+
+        public MvxNotifyTask LoadSpotMarkerTask { get; private set; }
+
+        public MvxNotifyTask RefreshSpotTask { get; private set; }
 
         #endregion
 
@@ -146,9 +163,17 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             Spot = parameter;
         }
 
+        public override void ViewAppearing()
+        {
+            if(!Spot.IsNew)
+                RefreshSpotTask = MvxNotifyTask.Create(() => RefreshSpotAsync(), onException: ex => LogException(ex));
+
+            base.ViewAppearing();
+        }
+
         public override Task Initialize()
         {
-            InitSpotTypeTask = MvxNotifyTask.Create(InitSpotTypes, onException: ex => LogException(ex));
+            InitSpotTypeTask = MvxNotifyTask.Create(() => InitSpotTypesAsync(), onException: ex => LogException(ex));
 
             return base.Initialize();
         }
@@ -163,49 +188,88 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
         public async override Task SaveAsync()
         {
-            await base.SaveAsync();
-
-            if (IsValid)
+            try
             {
-                Spot.IsNew = false;
-                await NavigationService.Close(this, new OperationResult<SpotModel>(Spot, isSaved: true));
+                IsBusy = true;
+
+                await base.SaveAsync();
+
+                if (IsValid)
+                {
+                    Spot = DataStore.SaveItem(Spot);
+                    await NavigationService.Close(this, new OperationResult<SpotModel>(Spot, isSaved: true));
+
+                }
+            }catch(Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                IsBusy = false;
             }
         }
 
-        public async override Task DeleteCancelAsync()
+        public async override Task DeleteAsync()
         {
-            await base.DeleteCancelAsync();
-
-            if (!IsNew)
+            try
             {
-                var confirmation = await UserDialog.ConfirmAsync(LocalizeService.Translate("DeleteItemText"),
-                    title: LocalizeService.Translate("DeleteCommandTitle"));
+                await base.DeleteAsync();
 
-                if (!confirmation)
+                if (!IsNew)
+                {
+                    var confirmation = await UserDialog.ConfirmAsync(LocalizeService.Translate("DeleteItemText"),
+                        title: LocalizeService.Translate("DeleteCommandTitle"));
+
+                    if (!confirmation)
+                        return;
+
+                    IsBusy = true;
+
+                    await NavigationService.Close(this, new OperationResult<SpotModel>(Spot, isDeleted: true));
+
                     return;
+                }
 
-                await NavigationService.Close(this, new OperationResult<SpotModel>(Spot, isDeleted: true));
-
-                return;
+                await NavigationService.Close(this, new OperationResult<SpotModel>(Spot, isCanceld: true));
+            }catch(Exception ex)
+            {
+                throw;
             }
-
-            await NavigationService.Close(this, new OperationResult<SpotModel>(Spot, isCanceld: true));
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         void ExecuteMapClicked(Position? position)
         {
-            RefreshPin(position);
+            RefreshSpotMarkers(position);
         }
 
-        void RefreshPin(Position? position)
+        void RefreshSpotMarkers(Position? position)
         {
-            if (!position.HasValue)
+            if (!position.HasValue || Spot.ID_SpotType == null)
                 return;
 
             try
             {
-                Spot.Lat = position.Value.Latitude;
-                Spot.Lng = position.Value.Longitude;
+                if(Spot.ID_SpotType == Guid.Parse(TableConsts.SPOTTYPE_SPOT_ID))
+                    Spot.SpotMarker.Clear();
+
+                if (Spot.ID_SpotType == Guid.Parse(TableConsts.SPOTTYPE_STRETCH_ID) &&
+                    Spot.SpotMarker.Count == 3)
+                    Spot.SpotMarker.Clear();
+
+
+                Spot.SpotMarker.Add(new SpotMarkerModel(true)
+                {
+                    ID_Spot = Spot.Id,
+                    Lat = position.Value.Latitude,
+                    Lng = position.Value.Longitude,
+                    SpotMarker = Spot.Id.ToString(),
+                    Spot = Spot
+                });
 
                 RaisePropertyChanged(() => SpotMarker);
             }
@@ -222,18 +286,30 @@ namespace TrackYourTrip.Core.ViewModels.Settings
                 return;
 
             Spot.SpotType = SpotTypes.Where(s => s.Id == Spot.ID_SpotType).FirstOrDefault();
+            Spot.SpotMarker.Clear();
 
             await RaisePropertyChanged(() => Spot);
+            await RaisePropertyChanged(() => SpotMarker);
             await RaisePropertyChanged(() => HasSelectedSpotType);
         }
 
-        async Task InitSpotTypes()
+        async Task InitSpotTypesAsync()
         {
             SpotTypes = new MvxObservableCollection<SpotTypeModel>(
                 await DataServiceFactory.GetSpotTypeFactory().GetItemsAsync()
             );
 
-            await RaisePropertyChanged(() => InitSpotTypeTask);
+            await RaisePropertyChanged(() => SpotTypes);
+        }
+
+        async Task RefreshSpotAsync()
+        {
+            if (Spot == null || Spot.IsNew)
+                return;
+
+            Spot = await DataStore.GetItemAsync(Spot.Id);
+
+            await RaisePropertyChanged(() => Spot);
         }
 
         #endregion

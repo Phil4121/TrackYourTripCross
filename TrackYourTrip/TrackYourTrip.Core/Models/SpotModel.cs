@@ -2,29 +2,33 @@
 using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using TrackYourTrip.Core.Helpers;
 using TrackYourTrip.Core.Interfaces;
 
 namespace TrackYourTrip.Core.Models
 {
-    [SQLite.Table(TableConsts.SPOT_TABLE)]
-    public class SpotModel : IModel
+    [Table(TableConsts.SPOT_TABLE)]
+    public class SpotModel : BaseModel
     {
         public SpotModel()
         {
-            this.Id = Guid.NewGuid();
-            this.IsNew = false;
+            Initialize();
         }
 
         public SpotModel(bool isNew = false)
         {
+            Initialize();
             this.Id = Guid.NewGuid();
             this.IsNew = isNew;
         }
 
-        [PrimaryKey]
-        public Guid Id { get; set; }
+        private void Initialize()
+        {
+            SpotMarker = new List<SpotMarkerModel>();
+        }
+
 
         public string Spot { get; set; }
 
@@ -34,20 +38,13 @@ namespace TrackYourTrip.Core.Models
         [ForeignKey(typeof(SpotTypeModel)), NotNull]
         public Guid ID_SpotType { get; set; }
 
-        public double Lat { get; set; }
-
-        public double Lng { get; set; }
-
-        [ManyToOne(CascadeOperations = CascadeOperation.CascadeRead)]
-        public FishingAreaModel FishingArea { get; set; }
-
         [OneToOne(CascadeOperations = CascadeOperation.CascadeRead)]
         public SpotTypeModel SpotType { get; set; }
 
-        [Ignore]
-        public bool IsNew { get; set; }
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        public List<SpotMarkerModel> SpotMarker { get; set; }
 
         [Ignore]
-        public bool IsValid { get; set; }
+        public FishingAreaModel FishingArea { get; set; }
     }
 }

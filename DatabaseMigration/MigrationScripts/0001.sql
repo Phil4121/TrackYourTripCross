@@ -83,8 +83,6 @@ CREATE TABLE FishingAreas (
 CREATE TABLE Spots (
 	ID					TEXT		PRIMARY KEY,
 	Spot				TEXT		NOT NULL,
-	Lat					FLOAT		NOT NULL,
-	Lng					FLOAT		NOT NULL,
 	ID_FishingArea		TEXT		,
 	ID_SpotType			TEXT		
 );
@@ -92,6 +90,14 @@ CREATE TABLE Spots (
 CREATE TABLE SpotTypes (
 	ID			TEXT		PRIMARY KEY,
 	SpotType	TEXT		NOT NULL
+);
+
+CREATE TABLE SpotMarkers (
+	ID			TEXT		PRIMARY KEY,
+	SpotMarker	TEXT		NOT NULL,
+	Lat			FLOAT		NOT NULL,
+	Lng			FLOAT		NOT NULL,
+	ID_Spot		TEXT
 );
 
 INSERT INTO WaterModels (ID, Water) VALUES ('2a3eeecf-472c-4b0f-9df0-73386cb3b3f7', 'River');
@@ -111,4 +117,5 @@ INSERT INTO Settings (ID, Setting, LandingPage, SortOrder) VALUES ('21d269b9-62e
 -- *************************************************
 
 INSERT INTO FishingAreas (ID, FishingArea, Lat, Lng, ID_WaterModel) VALUES ('0c46a2fd-9a56-4663-9ead-0d92ff39db7c', 'Donau Obermühl', 48.45, 13.9167, '2a3eeecf-472c-4b0f-9df0-73386cb3b3f7');
-INSERT INTO Spots (ID, Spot, Lat, Lng, ID_FishingArea, ID_SpotType) VALUES ('610b3ec0-0d70-40a6-9d9f-5167a8135410', 'Zanderfelsen', 48.46, 13.9267, '0c46a2fd-9a56-4663-9ead-0d92ff39db7c', '1fb8243b-a672-496b-955a-5930cb706250');
+INSERT INTO Spots (ID, Spot, ID_FishingArea, ID_SpotType) VALUES ('610b3ec0-0d70-40a6-9d9f-5167a8135410', 'Zanderfelsen', '0c46a2fd-9a56-4663-9ead-0d92ff39db7c', '1fb8243b-a672-496b-955a-5930cb706250');
+INSERT INTO SpotMarkers (ID, SpotMarker, Lat, Lng, ID_Spot) VALUES ('6cd22c21-bf09-43ea-b799-dbcf30114e09', '6cd22c21-bf09-43ea-b799-dbcf30114e09',  48.46, 13.9267, '610b3ec0-0d70-40a6-9d9f-5167a8135410');

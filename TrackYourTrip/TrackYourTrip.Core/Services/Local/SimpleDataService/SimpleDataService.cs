@@ -35,7 +35,7 @@ namespace TrackYourTrip.Core.Services
 
         public async Task<T> GetItemAsync(Guid id)
         {
-            return await Task.FromResult(Con.GetWithChildren<T>(id));
+            return await Task.FromResult(Con.GetWithChildren<T>(id,true));
         }
 
         public async Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false)
@@ -43,23 +43,21 @@ namespace TrackYourTrip.Core.Services
             return await Task.FromResult(Con.GetAllWithChildren<T>());
         }
 
-        public bool SaveItem(T item)
+        public T SaveItem(T item)
         {
             try
             {
                 if (item is IModel)
                 {
                     if (!((IModel)item).IsNew)
-                    {
                         Con.Delete(item, true);
-                    }
 
                     Con.InsertWithChildren(item, true);
 
-                    return true;
+                    return Con.GetWithChildren<T>(((IModel)item).Id);
                 }
 
-                return false;
+                throw new Exception("Item does not implement IModel");
             }
             catch (Exception ex)
             {
