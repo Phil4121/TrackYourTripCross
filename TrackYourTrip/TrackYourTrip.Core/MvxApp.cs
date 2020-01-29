@@ -30,7 +30,6 @@ namespace TrackYourTrip.Core
             Resources.AppResources.Culture = Mvx.IoCProvider.Resolve<ILocalizeService>().GetCurrentCultureInfo();
 
             RegisterAppStart<ViewModels.MainViewModel>();
-            //RegisterAppStart<ViewModels.RootViewModel>();
         }
     }
 }

@@ -135,6 +135,9 @@
   <data name="FishingAreasPageTitle" xml:space="preserve">
     <value>Revierübersicht</value>
   </data>
+  <data name="MainMenuPageTitle" xml:space="preserve">
+    <value>Hauptmenü</value>
+  </data>
   <data name="MainPageButton" xml:space="preserve">
     <value>Drück mich</value>
   </data>

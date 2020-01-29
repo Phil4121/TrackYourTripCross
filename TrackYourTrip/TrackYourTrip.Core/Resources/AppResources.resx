@@ -138,6 +138,9 @@
   <data name="GoToSecondPageText" xml:space="preserve">
     <value>To Second Page</value>
   </data>
+  <data name="MainMenuPageTitle" xml:space="preserve">
+    <value>Mainmenu</value>
+  </data>
   <data name="MainPageButton" xml:space="preserve">
     <value>Press me</value>
   </data>

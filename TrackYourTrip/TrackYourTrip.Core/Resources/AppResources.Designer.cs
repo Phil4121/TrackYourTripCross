@@ -124,6 +124,15 @@ namespace TrackYourTrip.Core.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Mainmenu ähnelt.
+        /// </summary>
+        internal static string MainMenuPageTitle {
+            get {
+                return ResourceManager.GetString("MainMenuPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Press me ähnelt.
         /// </summary>
         internal static string MainPageButton {

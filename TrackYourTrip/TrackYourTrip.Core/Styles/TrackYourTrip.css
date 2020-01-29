@@ -6,3 +6,13 @@
 .defaultErrorLabel {
     color: red;
 }
+
+.defaultDeleteButton {
+    background-color: transparent;
+    color: red;
+}
+
+.defaultButton {
+    background-color: transparent;
+    color: royalblue;
+}

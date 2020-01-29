@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage
+        x:TypeArguments="viewModels:MainMenuViewModel"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"    
+             xmlns:mvxBind="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+             xmlns:viewModels="clr-namespace:TrackYourTrip.Core.ViewModels.Root"
+             xmlns:ccontrols="clr-namespace:TrackYourTrip.Core.CustomControls"
+             mc:Ignorable="d"
+             x:Class="TrackYourTrip.Core.Pages.Root.MainMenuPage"
+             Title="{mvxBind:MvxBind Title}">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+            <Grid RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+
+                <!--  row background colors  -->
+                <BoxView Grid.Row="0" Color="#F1F2F2" />
+                <BoxView Grid.Row="1" Color="#3A444D" />
+
+                <!--  inner grid for button layouts  -->
+                <Grid Grid.Row="0" ColumnSpacing="30" HorizontalOptions="Center"
+              RowSpacing="30" VerticalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <ccontrols:CustomMenuButton Grid.Row="0" Grid.Column="0" Icon="Settings.png" Label="Settings">
+                        <ccontrols:CustomMenuButton.Behaviors>
+                            <b:EventToCommandBehavior 
+                                      EventName="ButtonClicked"
+                                      Command="{Binding SettingTappedCommand}" CommandParameter="Setting" />
+                        </ccontrols:CustomMenuButton.Behaviors>
+                    </ccontrols:CustomMenuButton>
+                </Grid>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</mvx:MvxContentPage>

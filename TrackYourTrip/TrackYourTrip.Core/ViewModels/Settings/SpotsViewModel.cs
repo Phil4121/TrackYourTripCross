@@ -52,7 +52,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
         public MvxObservableCollection<SpotModel> Spots
         {
-            get => new MvxObservableCollection<SpotModel>(RootFishingArea.Spots);
+            get => new MvxObservableCollection<SpotModel>(RootFishingArea.Spots.OrderBy(s => s.Spot));
         }
 
 

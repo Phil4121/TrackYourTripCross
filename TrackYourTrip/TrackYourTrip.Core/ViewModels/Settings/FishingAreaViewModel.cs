@@ -29,19 +29,19 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         {
 
             MapClickedCommand = new MvxCommand<Position?>(
-                (param) => RefreshPinsTask = MvxNotifyTask.Create(RefreshPinAsync(param), onException: ex => LogException(ex))
+                (param) => RefreshPinsTask = MvxNotifyTask.Create(() => RefreshPinAsync(param), onException: ex => LogException(ex))
                 );
 
             WaterChangedCommand = new MvxCommand(
-                () => RefreshWaterTask = MvxNotifyTask.Create(RefreshWaterAsync, onException: ex => LogException(ex))
+                () => RefreshWaterTask = MvxNotifyTask.Create(() => RefreshWaterAsync(), onException: ex => LogException(ex))
                 );
 
             SpotsClickedCommand = new MvxCommand(
-                () => NavigationTask = MvxNotifyTask.Create(NavigateToSpotsAsync, onException: ex => LogException(ex))
+                () => NavigationTask = MvxNotifyTask.Create(() => NavigateToSpotsAsync(), onException: ex => LogException(ex))
                 );
 
             RefreshFishingAreaCommand = new MvxCommand(
-                () => RefreshFishingAreaTask = MvxNotifyTask.Create(RefreshFishingAreaAsync, onException: ex => LogException(ex))
+                () => RefreshFishingAreaTask = MvxNotifyTask.Create(() => RefreshFishingAreaAsync(), onException: ex => LogException(ex))
                 );
         }
 
@@ -156,14 +156,14 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         public override void ViewAppearing()
         {
             if(!FishingArea.IsNew)
-                RefreshFishingAreaTask = MvxNotifyTask.Create(RefreshFishingAreaAsync, onException: ex => LogException(ex));
+                RefreshFishingAreaTask = MvxNotifyTask.Create(() => RefreshFishingAreaAsync(), onException: ex => LogException(ex));
 
             base.ViewAppearing();
         }
 
         public override Task Initialize()
         {
-            InitWatersTask = MvxNotifyTask.Create(InitWatersAsync, onException: ex => LogException(ex));
+            InitWatersTask = MvxNotifyTask.Create(() => InitWatersAsync(), onException: ex => LogException(ex));
 
             return base.Initialize();
         }
@@ -178,15 +178,15 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
         public async override Task SaveAsync()
         {
-            await base.SaveAsync();
-
             try
             {
                 IsBusy = true;
 
+                await base.SaveAsync();
+
                 if (IsValid)
                 {
-                    FishingArea = DataStore.SaveItem(FishingArea);
+                    FishingArea = await DataStore.SaveItemAsync(FishingArea);
 
                     await NavigationService.Close(this, new OperationResult<FishingAreaModel>(FishingArea, isSaved: true));
                 }
@@ -202,25 +202,35 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
         public async override Task DeleteAsync()
         {
-            await base.DeleteAsync();
-
-            if (!IsNew)
+            try
             {
-                var confirmation = await UserDialog.ConfirmAsync(LocalizeService.Translate("DeleteItemText"), 
-                    title: LocalizeService.Translate("DeleteCommandTitle"));
+                await base.DeleteAsync();
 
-                if (!confirmation)
+                if (!IsNew)
+                {
+                    var confirmation = await UserDialog.ConfirmAsync(LocalizeService.Translate("DeleteItemText"),
+                        title: LocalizeService.Translate("DeleteCommandTitle"));
+
+                    if (!confirmation)
+                        return;
+
+                    var result = await DataStore.DeleteItemAsync(FishingArea);
+
+                    if (result)
+                        await NavigationService.Close(this, new OperationResult<FishingAreaModel>(FishingArea, isDeleted: result));
+
                     return;
+                }
 
-                var result = DataStore.DeleteItem(FishingArea);
-
-                if (result)
-                    await NavigationService.Close(this, new OperationResult<FishingAreaModel>(FishingArea, isDeleted: result));
-                
-                return;
+                await NavigationService.Close(this, new OperationResult<FishingAreaModel>(FishingArea, isCanceld: true));
+            }catch(Exception ex)
+            {
+                throw;
             }
-
-            await NavigationService.Close(this, new OperationResult<FishingAreaModel>(FishingArea, isCanceld: true));
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         async Task NavigateToSpotsAsync()
@@ -229,11 +239,11 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
             try
             {
+                IsBusy = true;
+
                 if (IsValid)
                 {
-                    IsBusy = true;
-
-                    FishingArea = DataStore.SaveItem(FishingArea);
+                    FishingArea = await DataStore.SaveItemAsync(FishingArea);
 
                     await NavigationService.Navigate<SpotsViewModel, FishingAreaModel, OperationResult<FishingAreaModel>>(FishingArea);
                 }
@@ -282,7 +292,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
                 await DataServiceFactory.GetWaterFactory().GetItemsAsync()
             );
 
-            await RaisePropertyChanged(() => InitWatersTask);
+            await RaisePropertyChanged(() => Waters);
         }
 
         async Task RefreshFishingAreaAsync()
@@ -293,7 +303,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
             FishingArea = await DataStore.GetItemAsync(FishingArea.Id);
 
-            await RaisePropertyChanged(() => RefreshFishingAreaTask);
+            await RaisePropertyChanged(() => FishingArea);
         }
 
         #endregion

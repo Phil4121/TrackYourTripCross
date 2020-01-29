@@ -196,7 +196,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
                 if (IsValid)
                 {
-                    Spot = DataStore.SaveItem(Spot);
+                    Spot = await DataStore.SaveItemAsync(Spot);
                     await NavigationService.Close(this, new OperationResult<SpotModel>(Spot, isSaved: true));
 
                 }

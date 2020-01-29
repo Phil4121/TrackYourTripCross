@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView x:Class="TrackYourTrip.Core.CustomControls.CustomMenuButton" 
+             xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <StackLayout Orientation="Vertical">
+        <Image x:Name="ButtonIcon" HorizontalOptions="Center" Source="{Binding Icon}" />
+        <Label x:Name="ButtonLabel" HorizontalOptions="Center"
+               Text="{Binding Label}"
+               TextColor="#3A444D" />
+        <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+        </StackLayout.GestureRecognizers>
+    </StackLayout>
+</ContentView>

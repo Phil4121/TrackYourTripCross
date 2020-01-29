@@ -47,7 +47,14 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         private MvxObservableCollection<FishingAreaModel> _fishingAreas;
         public MvxObservableCollection<FishingAreaModel> FishingAreas
         {
-            get => _fishingAreas;
+            get {
+
+                if (_fishingAreas == null)
+                    return new MvxObservableCollection<FishingAreaModel>();
+
+                return new MvxObservableCollection<FishingAreaModel>(_fishingAreas.OrderBy(fa => fa.FishingArea));
+            }
+
             private set => SetProperty(ref _fishingAreas, value);
         }
 
@@ -81,7 +88,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
         public override Task Initialize()
         {
-            LoadAreasTask = MvxNotifyTask.Create(LoadAreasAsync(), onException: ex => LogException(ex));
+            LoadAreasTask = MvxNotifyTask.Create(() => LoadAreasAsync(), onException: ex => LogException(ex));
             return base.Initialize();
         }
 

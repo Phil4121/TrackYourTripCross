@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<mvx:MvxTabbedPage
+<mvx:MvxNavigationPage
              x:TypeArguments="viewModels:MainViewModel"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -7,6 +7,6 @@
              xmlns:res="clr-namespace:TrackYourTrip.Core.Resources;assembly=TrackYourTrip.Core"
              xmlns:viewModels="clr-namespace:TrackYourTrip.Core.ViewModels"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-             xmlns:pages="clr-namespace:TrackYourTrip.Core.Pages"
-             Title="{res:Translate ApplicationName}">
-</mvx:MvxTabbedPage>
+             Title="{res:Translate ApplicationName}"
+                NavigationPage.HasNavigationBar="False">
+</mvx:MvxNavigationPage>

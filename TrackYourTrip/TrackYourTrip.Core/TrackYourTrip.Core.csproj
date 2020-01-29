@@ -67,6 +67,9 @@
 
     </ItemGroup>
     <ItemGroup>
+        <Compile Update="CustomControls\CustomMenuButton.xaml.cs">
+          <DependentUpon>CustomMenuButton.xaml</DependentUpon>
+        </Compile>
         <Compile Update="Pages\DemoView.xaml.cs">
           <DependentUpon>DemoView.xaml</DependentUpon>
         </Compile>
@@ -92,6 +95,9 @@
         </Compile>
     </ItemGroup>
     <ItemGroup>
+        <EmbeddedResource Update="CustomControls\CustomMenuButton.xaml">
+          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+        </EmbeddedResource>
         <EmbeddedResource Update="Pages\DemoView.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
@@ -100,6 +106,9 @@
         </EmbeddedResource>
         <EmbeddedResource Update="Pages\RootView.xaml">
           <Generator>MSBuild:Compile</Generator>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Pages\Root\MainMenuPage.xaml">
+          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
         <EmbeddedResource Update="Pages\Root\SettingsPage.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

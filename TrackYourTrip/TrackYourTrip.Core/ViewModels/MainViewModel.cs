@@ -18,33 +18,19 @@ namespace TrackYourTrip.Core.ViewModels
 {
     public class MainViewModel : MvxNavigationViewModel
     {
-        public IMvxAsyncCommand ShowInitialViewModelsCommand { get; private set; }
-        public IMvxAsyncCommand ShowTabsRootBCommand { get; private set; }
+        private readonly IMvxNavigationService _navigationService;
 
-        private int _itemIndex;
-        public int ItemIndex
-        {
-            get { return _itemIndex; }
-            set
-            {
-                if (_itemIndex == value) return;
-                _itemIndex = value;
-                RaisePropertyChanged(() => ItemIndex);
-            }
-        }
+        public IMvxAsyncCommand ShowMainMenuViewModelCommand { get; private set; }
 
-        public MainViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) 
+        public MainViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService)
             : base(logProvider, navigationService)
         {
-            ShowInitialViewModelsCommand = new MvxAsyncCommand(ShowInitialViewModels);
+            ShowMainMenuViewModelCommand = new MvxAsyncCommand(ShowMainMenuViewModel);
         }
 
-        private async Task ShowInitialViewModels()
+        private async Task ShowMainMenuViewModel()
         {
-            var tasks = new List<Task>();
-            tasks.Add(NavigationService.Navigate<SettingsViewModel>());
-            tasks.Add(NavigationService.Navigate<DemoViewModel>());
-            await Task.WhenAll(tasks);
+            await NavigationService.Navigate<MainMenuViewModel>();
         }
     }
 }

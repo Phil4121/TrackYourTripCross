@@ -11,19 +11,11 @@ using Xamarin.Forms.Xaml;
 
 namespace TrackYourTrip.Core.Pages.Root
 {
-    public partial class SettingsPage : MvxContentPage<SettingsViewModel>
+    public partial class MainMenuPage : MvxContentPage<MainMenuViewModel>
     {
-        public SettingsPage()
+        public MainMenuPage()
         {
             InitializeComponent();
-        }
-
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-
-            if (SettingsListView.SelectedItem != null)
-                SettingsListView.SelectedItem = null;
         }
     }
 }

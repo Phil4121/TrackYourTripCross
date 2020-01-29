@@ -93,10 +93,29 @@
 
 
             <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" >
+                <Grid Padding="0" ColumnSpacing="0" RowSpacing="0" BackgroundColor="Transparent" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
 
-                <Button Text="{Binding SpotTitle}"
+                    <Button Text="{Binding SpotTitle}"
+                                Grid.Column="0" Grid.Row="0"
                                 Command="{Binding SpotsClickedCommand}"
-                                HorizontalOptions="CenterAndExpand"></Button>
+                                HorizontalOptions="CenterAndExpand"
+                                StyleClass="defaultButton" />
+
+                    <Button Text="{Binding DeleteCommandTitle}" 
+                            Command="{mvxBind:MvxBind DeleteCommand}"
+                            Grid.Column="0" Grid.Row="2"
+                            StyleClass="defaultDeleteButton"
+                            HorizontalOptions="CenterAndExpand"/>
+                </Grid>
+
                 <Label 
                    Text="{Binding Errors}" 
                    IsVisible="{Binding IsValid, Converter={StaticResource cnvIsValidToIsVisibleConverter}}"

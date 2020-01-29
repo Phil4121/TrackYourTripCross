@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using TrackYourTrip.Core.Interfaces;
 
@@ -19,63 +20,82 @@ namespace TrackYourTrip.Core.Services
             this.TableName = tableName;
         }
 
-        private SQLiteConnection _Con;
-        public SQLiteConnection Con
-        {
-            get
-            {
-                return _Con;
-            }
+        public SQLiteConnection Con { get; private set; }
 
-            private set
+        public Task<T> GetItemAsync(Guid id)
+        {
+            Task<T> getItemTask = default;
+            getItemTask = Task.Run(() =>
             {
-                _Con = value;
-            }
+                return Con.GetWithChildren<T>(id, true);
+            });
+
+            return getItemTask;
         }
 
-        public async Task<T> GetItemAsync(Guid id)
+        public Task<IEnumerable<T>> GetItemsAsync()
         {
-            return await Task.FromResult(Con.GetWithChildren<T>(id,true));
-        }
-
-        public async Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false)
-        {
-            return await Task.FromResult(Con.GetAllWithChildren<T>());
-        }
-
-        public T SaveItem(T item)
-        {
-            try
+            Task<IEnumerable<T>> getItemsTask = default;
+            getItemsTask = Task.Run(() =>
             {
-                if (item is IModel)
+                return Con.GetAllWithChildren<T>().AsEnumerable();
+            });
+
+            return getItemsTask;
+        }
+
+        public Task<T> SaveItemAsync(T item, CancellationToken cancellationToken = default)
+        {
+            Task<T> workerTask = default;
+            workerTask = Task.Run(() =>
+            {
+                try
                 {
-                    if (!((IModel)item).IsNew)
-                        Con.Delete(item, true);
+                    if (item is IModel)
+                    {
+                        cancellationToken.ThrowIfCancellationRequested();
 
-                    Con.InsertWithChildren(item, true);
+                        if (!((IModel)item).IsNew)
+                            Con.Delete(item, true);
 
-                    return Con.GetWithChildren<T>(((IModel)item).Id);
+                        Con.InsertWithChildren(item, true);
+
+                        return Con.GetWithChildren<T>(((IModel)item).Id);
+                    }
+
+                    throw new Exception("Item does not implement IModel");
                 }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            },cancellationToken: cancellationToken);
 
-                throw new Exception("Item does not implement IModel");
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
+            return workerTask;
+
+
+
+
+            
         }
 
-        public bool DeleteItem(T item)
+        public Task<bool> DeleteItemAsync(T item)
         {
-            try
+            Task<bool> deleteItemTask = default;
+            deleteItemTask = Task.Run(() =>
             {
-                Con.Delete(item, true);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
+                try
+                {
+                    Con.Delete(item, true);
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            });
+
+            return deleteItemTask;
         }
     }
 }

@@ -131,7 +131,7 @@ namespace Database.UnitTests
             tstFishingArea.FishingArea = "Donau Obermühl";
             tstFishingArea.IsNew = true;
 
-            var success = factory.SaveItem(tstFishingArea);
+            var success = factory.SaveItemAsync(tstFishingArea).Result;
 
             Assert.True(success.Id != Guid.Empty);
 
@@ -151,7 +151,7 @@ namespace Database.UnitTests
 
             storedFishingArea.Spots.Add(newSpot);
 
-            success = factory.SaveItem(storedFishingArea);
+            success = factory.SaveItemAsync(storedFishingArea).Result;
 
             Assert.True(success.Id != Guid.Empty);
         }
@@ -172,7 +172,7 @@ namespace Database.UnitTests
 
             Assert.NotNull(existingArea);
 
-            var success = factory.SaveItem(existingArea);
+            var success = factory.SaveItemAsync(existingArea).Result;
 
             Assert.True(success.Id != Guid.Empty);
         }

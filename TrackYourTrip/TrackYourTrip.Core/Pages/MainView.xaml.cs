@@ -9,8 +9,7 @@ using TrackYourTrip.Core.ViewModels;
 
 namespace TrackYourTrip.Core.Pages
 {
-    [MvxTabbedPagePresentation(TabbedPosition.Root, WrapInNavigationPage = true, NoHistory = false)]
-    public partial class MainView : MvxTabbedPage<MainViewModel>
+    public partial class MainView : MvxNavigationPage<MainViewModel>
     {
         private bool _firstTime = true;
 
@@ -21,12 +20,14 @@ namespace TrackYourTrip.Core.Pages
 
         protected override void OnAppearing()
         {
-            base.OnAppearing();
             if (_firstTime)
             {
-                ViewModel.ShowInitialViewModelsCommand.ExecuteAsync(null);
+                ViewModel.ShowMainMenuViewModelCommand.Execute(null);
+
                 _firstTime = false;
             }
+
+            base.OnAppearing();
         }
     }
 }
