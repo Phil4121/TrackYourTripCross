@@ -1,6 +1,5 @@
 ﻿using SQLite;
 using System;
-using System.Data;
 using System.IO;
 using System.Linq;
 
@@ -12,12 +11,14 @@ namespace Database
         {
             int version = connection.ExecuteScalar<int>("PRAGMA user_version");
 
-            var files = Directory.GetFiles(Path.Combine(MigrationScriptBaseFolderPath), "*.sql");
+            string[] files = Directory.GetFiles(Path.Combine(MigrationScriptBaseFolderPath), "*.sql");
 
             if (files.Length == 0)
+            {
                 return false;
+            }
 
-            foreach (var migrationFile in files)
+            foreach (string migrationFile in files)
             {
                 try
                 {
@@ -32,23 +33,29 @@ namespace Database
                         continue;
                     }
 
-                    var migrationScript = File.ReadAllText(migrationFile);
+                    string migrationScript = File.ReadAllText(migrationFile);
 
                     if (string.IsNullOrEmpty(migrationScript))
+                    {
                         return false;
+                    }
 
                     try
                     {
 
                         connection.BeginTransaction();
 
-                        foreach (var statement in migrationScript.Split(';'))
+                        foreach (string statement in migrationScript.Split(';'))
                         {
                             if (string.IsNullOrEmpty(statement))
+                            {
                                 continue;
+                            }
 
                             if (statement.StartsWith("--"))
+                            {
                                 continue;
+                            }
 
                             connection.Execute(statement);
                         }
@@ -66,7 +73,7 @@ namespace Database
                         return false;
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
 

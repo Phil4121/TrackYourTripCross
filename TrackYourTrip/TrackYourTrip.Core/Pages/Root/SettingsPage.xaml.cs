@@ -1,13 +1,5 @@
-﻿using MvvmCross.Forms.Presenters.Attributes;
-using MvvmCross.Forms.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MvvmCross.Forms.Views;
 using TrackYourTrip.Core.ViewModels.Root;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace TrackYourTrip.Core.Pages.Root
 {
@@ -23,7 +15,9 @@ namespace TrackYourTrip.Core.Pages.Root
             base.OnDisappearing();
 
             if (SettingsListView.SelectedItem != null)
+            {
                 SettingsListView.SelectedItem = null;
+            }
         }
     }
 }

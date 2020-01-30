@@ -1,12 +1,9 @@
-﻿using System;
+﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
+using System;
 using System.Collections.Generic;
-using System.Text;
 using TrackYourTrip.Core.Helpers;
 using Xamarin.Essentials;
-using SQLiteNetExtensions.Attributes;
-using TrackYourTrip.Core.Interfaces;
-using SQLite;
-using System.ComponentModel;
 
 namespace TrackYourTrip.Core.Models
 {
@@ -21,8 +18,8 @@ namespace TrackYourTrip.Core.Models
         public FishingAreaModel(bool isNew = false)
         {
             Initialize();
-            this.Id = Guid.NewGuid();
-            this.IsNew = isNew;
+            Id = Guid.NewGuid();
+            IsNew = isNew;
         }
 
         private void Initialize()
@@ -46,9 +43,6 @@ namespace TrackYourTrip.Core.Models
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<SpotModel> Spots { get; set; }
 
-        public Location AreaLocation
-        {
-            get { return new Location(Lat, Lng); }
-        }
+        public Location AreaLocation => new Location(Lat, Lng);
     }
 }

@@ -1,12 +1,12 @@
 ﻿
 
-using System.Collections.Specialized;
-using System.Windows.Input;
 using Android.App;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.IoC;
+using System.Collections.Specialized;
+using System.Windows.Input;
 
 namespace SmartHome.Droid
 {
@@ -78,12 +78,12 @@ namespace SmartHome.Droid
 
         public void Include(INotifyCollectionChanged changed)
         {
-            changed.CollectionChanged += (s, e) => { var test = $"{e.Action}{e.NewItems}{e.NewStartingIndex}{e.OldItems}{e.OldStartingIndex}"; };
+            changed.CollectionChanged += (s, e) => { string test = $"{e.Action}{e.NewItems}{e.NewStartingIndex}{e.OldItems}{e.OldStartingIndex}"; };
         }
 
         public void Include(ICommand command)
         {
-            command.CanExecuteChanged += (s, e) => { if (command.CanExecute(null)) command.Execute(null); };
+            command.CanExecuteChanged += (s, e) => { if (command.CanExecute(null)) { command.Execute(null); } };
         }
 
         public void Include(MvxPropertyInjector injector)
@@ -95,14 +95,14 @@ namespace SmartHome.Droid
         {
             changed.PropertyChanged += (sender, e) =>
             {
-                var test = e.PropertyName;
+                string test = e.PropertyName;
             };
         }
 
         public void Include(MvxTaskBasedBindingContext context)
         {
             context.Dispose();
-            var context2 = new MvxTaskBasedBindingContext();
+            MvxTaskBasedBindingContext context2 = new MvxTaskBasedBindingContext();
             context2.Dispose();
         }
     }

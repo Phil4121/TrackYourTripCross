@@ -1,23 +1,19 @@
-﻿using MvvmCross.Logging;
+﻿using Acr.UserDialogs;
+using MvvmCross.Commands;
+using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
+using TrackYourTrip.Core.CustomValidators;
 using TrackYourTrip.Core.Helpers;
+using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Models;
 using TrackYourTrip.Core.Services;
-using TrackYourTrip.Core.ViewModels.Settings;
-using TrackYourTrip.Core.CustomValidators;
-using Xamarin.Forms;
-using Xamarin.Forms.GoogleMaps;
-using TrackYourTrip.Core.Interfaces;
-using System.Threading.Tasks;
 using TrackYourTrip.Core.ViewModelResults;
-using MvvmCross.Commands;
-using Acr.UserDialogs;
-using System.Linq;
+using TrackYourTrip.Core.ViewModels.Settings;
+using Xamarin.Forms.GoogleMaps;
 
 [assembly: MvxNavigation(typeof(SpotViewModel), @"Spot")]
 namespace TrackYourTrip.Core.ViewModels.Settings
@@ -46,11 +42,13 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             get
             {
                 if (_dataStore == null)
+                {
                     _dataStore = DataServiceFactory.GetSpotFactory();
+                }
 
                 return _dataStore;
             }
-            set { _dataStore = value; }
+            set => _dataStore = value;
         }
 
         public override bool IsNew => Spot.IsNew;
@@ -63,7 +61,8 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         }
 
         private SpotModel _spot;
-        public SpotModel Spot {
+        public SpotModel Spot
+        {
             get => _spot;
             set => SetProperty(ref _spot, value);
         }
@@ -75,9 +74,11 @@ namespace TrackYourTrip.Core.ViewModels.Settings
                 if (Spot != null &&
                     SpotMarker != null &&
                     SpotMarker.Count != 0)
+                {
                     return CameraUpdateFactory.NewPositionZoom(new Position(Spot.SpotMarker[0].Lat, Spot.SpotMarker[0].Lng), 15d);
+                }
 
-                var loc = LocationHelper.GetCurrentLocation();
+                Xamarin.Essentials.Location loc = LocationHelper.GetCurrentLocation();
                 return CameraUpdateFactory.NewPositionZoom(new Position(loc.Latitude, loc.Longitude), 15d);
             }
         }
@@ -86,12 +87,14 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         {
             get
             {
-                var marker = new MvxObservableCollection<Pin>();
+                MvxObservableCollection<Pin> marker = new MvxObservableCollection<Pin>();
 
                 if (Spot.SpotMarker == null || Spot.SpotMarker.Count == 0)
+                {
                     return marker;
+                }
 
-                foreach(SpotMarkerModel s in Spot.SpotMarker)
+                foreach (SpotMarkerModel s in Spot.SpotMarker)
                 {
                     marker.Add(new Pin
                     {
@@ -109,7 +112,9 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             get
             {
                 if (Spot == null)
+                {
                     return false;
+                }
 
                 Guid.TryParse(Spot.ID_SpotType.ToString(), out Guid result);
 
@@ -123,9 +128,11 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         {
             get
             {
-                if(Spot == null ||
+                if (Spot == null ||
                     Spot.ID_SpotType == Guid.Empty)
+                {
                     return Resources.AppResources.SpotTypeEmptyText;
+                }
 
                 return Resources.AppResources.SpotTypeSetText;
             }
@@ -165,8 +172,10 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
         public override void ViewAppearing()
         {
-            if(!Spot.IsNew)
+            if (!Spot.IsNew)
+            {
                 RefreshSpotTask = MvxNotifyTask.Create(() => RefreshSpotAsync(), onException: ex => LogException(ex));
+            }
 
             base.ViewAppearing();
         }
@@ -181,12 +190,12 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         public override void Validate()
         {
             SpotModelValidator validator = new SpotModelValidator();
-            var result = validator.Validate(Spot);
+            FluentValidation.Results.ValidationResult result = validator.Validate(Spot);
             Spot.IsValid = result.IsValid;
             ValidationResult = result;
         }
 
-        public async override Task SaveAsync()
+        public override async Task SaveAsync()
         {
             try
             {
@@ -200,7 +209,8 @@ namespace TrackYourTrip.Core.ViewModels.Settings
                     await NavigationService.Close(this, new OperationResult<SpotModel>(Spot, isSaved: true));
 
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw;
             }
@@ -210,7 +220,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             }
         }
 
-        public async override Task DeleteAsync()
+        public override async Task DeleteAsync()
         {
             try
             {
@@ -218,11 +228,13 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
                 if (!IsNew)
                 {
-                    var confirmation = await UserDialog.ConfirmAsync(LocalizeService.Translate("DeleteItemText"),
+                    bool confirmation = await UserDialog.ConfirmAsync(LocalizeService.Translate("DeleteItemText"),
                         title: LocalizeService.Translate("DeleteCommandTitle"));
 
                     if (!confirmation)
+                    {
                         return;
+                    }
 
                     IsBusy = true;
 
@@ -232,7 +244,8 @@ namespace TrackYourTrip.Core.ViewModels.Settings
                 }
 
                 await NavigationService.Close(this, new OperationResult<SpotModel>(Spot, isCanceld: true));
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw;
             }
@@ -250,17 +263,22 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         void RefreshSpotMarkers(Position? position)
         {
             if (!position.HasValue || Spot.ID_SpotType == null)
+            {
                 return;
+            }
 
             try
             {
-                if(Spot.ID_SpotType == Guid.Parse(TableConsts.SPOTTYPE_SPOT_ID))
+                if (Spot.ID_SpotType == Guid.Parse(TableConsts.SPOTTYPE_SPOT_ID))
+                {
                     Spot.SpotMarker.Clear();
+                }
 
                 if (Spot.ID_SpotType == Guid.Parse(TableConsts.SPOTTYPE_STRETCH_ID) &&
                     Spot.SpotMarker.Count == 3)
+                {
                     Spot.SpotMarker.Clear();
-
+                }
 
                 Spot.SpotMarker.Add(new SpotMarkerModel(true)
                 {
@@ -283,7 +301,9 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         async Task RefreshSpotTypeAsync()
         {
             if (Spot == null)
+            {
                 return;
+            }
 
             Spot.SpotType = SpotTypes.Where(s => s.Id == Spot.ID_SpotType).FirstOrDefault();
             Spot.SpotMarker.Clear();
@@ -305,7 +325,9 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         async Task RefreshSpotAsync()
         {
             if (Spot == null || Spot.IsNew)
+            {
                 return;
+            }
 
             Spot = await DataStore.GetItemAsync(Spot.Id);
 

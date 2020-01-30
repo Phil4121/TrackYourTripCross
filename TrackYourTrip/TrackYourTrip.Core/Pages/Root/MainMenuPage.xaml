@@ -14,20 +14,17 @@
              x:Class="TrackYourTrip.Core.Pages.Root.MainMenuPage"
              Title="{mvxBind:MvxBind Title}">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-            <Grid RowSpacing="0">
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="20,20,20,20">
+            <Grid RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
-                    <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
 
                 <!--  row background colors  -->
                 <BoxView Grid.Row="0" Color="#F1F2F2" />
-                <BoxView Grid.Row="1" Color="#3A444D" />
 
                 <!--  inner grid for button layouts  -->
-                <Grid Grid.Row="0" ColumnSpacing="30" HorizontalOptions="Center"
-              RowSpacing="30" VerticalOptions="Center">
+                <Grid Grid.Row="0" ColumnSpacing="30" HorizontalOptions="CenterAndExpand" RowSpacing="30" VerticalOptions="CenterAndExpand">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
@@ -37,7 +34,17 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <ccontrols:CustomMenuButton Grid.Row="0" Grid.Column="0" Icon="Settings.png" Label="Settings">
+                    <ccontrols:CustomMenuButton Grid.Row="0" Grid.Column="0" HeightRequest="100" WidthRequest="100"
+                                                Icon="NewTrip.png" ButtonText="{Binding NewTripString}" HorizontalOptions="Start" VerticalOptions="Start">
+                        <ccontrols:CustomMenuButton.Behaviors>
+                            <b:EventToCommandBehavior 
+                                      EventName="ButtonClicked"
+                                      Command="{Binding SettingTappedCommand}" CommandParameter="StartNewTrip" />
+                        </ccontrols:CustomMenuButton.Behaviors>
+                    </ccontrols:CustomMenuButton>
+
+                    <ccontrols:CustomMenuButton Grid.Row="0" Grid.Column="1" HeightRequest="100" WidthRequest="100"
+                                                Icon="Settings.png" ButtonText="{Binding SettingString}" HorizontalOptions="Start" VerticalOptions="Start">
                         <ccontrols:CustomMenuButton.Behaviors>
                             <b:EventToCommandBehavior 
                                       EventName="ButtonClicked"

@@ -7,8 +7,8 @@ namespace TrackYourTrip.Droid.Services
     {
         public CultureInfo GetCurrentCultureInfo()
         {
-            var androidLocale = Java.Util.Locale.Default;
-            var netLanguage = androidLocale.ToString().Replace("_", "-"); // turns pt_BR into pt-BR
+            Java.Util.Locale androidLocale = Java.Util.Locale.Default;
+            string netLanguage = androidLocale.ToString().Replace("_", "-"); // turns pt_BR into pt-BR
             try
             {
                 return new CultureInfo(netLanguage);

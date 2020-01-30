@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using TrackYourTrip.Core.Interfaces;
 
 namespace TrackYourTrip.Core.Services
@@ -11,7 +10,7 @@ namespace TrackYourTrip.Core.Services
 
         public void Register<T>(object impl)
         {
-            this.registeredServices[typeof(T)] = impl;
+            registeredServices[typeof(T)] = impl;
         }
 
         public T Get<T>() where T : class

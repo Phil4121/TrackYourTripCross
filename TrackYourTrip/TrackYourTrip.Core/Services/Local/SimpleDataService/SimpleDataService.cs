@@ -16,8 +16,8 @@ namespace TrackYourTrip.Core.Services
 
         public SimpleDataService(SQLiteConnection con, string tableName)
         {
-            this.Con = con;
-            this.TableName = tableName;
+            Con = con;
+            TableName = tableName;
         }
 
         public SQLiteConnection Con { get; private set; }
@@ -56,7 +56,9 @@ namespace TrackYourTrip.Core.Services
                         cancellationToken.ThrowIfCancellationRequested();
 
                         if (!((IModel)item).IsNew)
+                        {
                             Con.Delete(item, true);
+                        }
 
                         Con.InsertWithChildren(item, true);
 
@@ -69,14 +71,14 @@ namespace TrackYourTrip.Core.Services
                 {
                     throw;
                 }
-            },cancellationToken: cancellationToken);
+            }, cancellationToken: cancellationToken);
 
             return workerTask;
 
 
 
 
-            
+
         }
 
         public Task<bool> DeleteItemAsync(T item)

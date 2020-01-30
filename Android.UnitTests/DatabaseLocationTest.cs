@@ -1,7 +1,5 @@
 ﻿using Android.App;
-using Android.Content;
 using Android.UnitTest.Database;
-using Database;
 using System.IO;
 using TrackYourTrip.Core.Helpers;
 using TrackYourTrip.Core.Interfaces;
@@ -13,7 +11,7 @@ namespace Android.UnitTests
     public class DatabaseLocationTest
     {
         DependencyServiceStub _dependencyService;
-        
+
         public DatabaseLocationTest()
         {
             _dependencyService = new DependencyServiceStub();
@@ -23,8 +21,8 @@ namespace Android.UnitTests
         [Fact]
         public void TestCopyDatabase()
         {
-            var dbHelper = new DatabaseHelper(_dependencyService);
-            var fileHelper = new FileHelper();
+            DatabaseHelper dbHelper = new DatabaseHelper(_dependencyService);
+            FileHelper fileHelper = new FileHelper();
 
             fileHelper.CopyFile(Application.Context.Assets.Open(dbHelper.GetDbFilename), dbHelper.GetFullDbPath(), true);
 

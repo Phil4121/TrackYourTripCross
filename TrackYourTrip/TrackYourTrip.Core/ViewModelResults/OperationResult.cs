@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TrackYourTrip.Core.ViewModelResults
+﻿namespace TrackYourTrip.Core.ViewModelResults
 {
     public class OperationResult<TEntity>
     {
 
         public OperationResult(TEntity entity, bool isSaved = false, bool isDeleted = false, bool isCanceld = false)
         {
-            this.Entity = entity;
-            this.IsSaved = isSaved;
-            this.IsDeleted = isDeleted;
-            this.IsCanceld = isCanceld;
+            Entity = entity;
+            IsSaved = isSaved;
+            IsDeleted = isDeleted;
+            IsCanceld = isCanceld;
         }
         public TEntity Entity { get; set; }
         public bool IsSaved { get; set; }

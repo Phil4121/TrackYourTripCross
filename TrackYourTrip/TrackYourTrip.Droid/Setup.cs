@@ -16,7 +16,10 @@ namespace SmartHome.Droid
             Mvx.IoCProvider.RegisterSingleton<TrackYourTrip.Core.Interfaces.ILocalizeService>(() => new TrackYourTrip.Droid.Services.LocalizeService());
         }
 
-        public override MvxLogProviderType GetDefaultLogProviderType() => MvxLogProviderType.Serilog;
+        public override MvxLogProviderType GetDefaultLogProviderType()
+        {
+            return MvxLogProviderType.Serilog;
+        }
 
         protected override IMvxLogProvider CreateLogProvider()
         {

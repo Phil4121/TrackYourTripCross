@@ -3,9 +3,6 @@ using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Models;
@@ -17,21 +14,42 @@ namespace TrackYourTrip.Core.ViewModels.Root
     public class MainMenuViewModel : BaseViewModel<MenuItemModel>
     {
         public MainMenuViewModel(IMvxNavigationService navigationService, IMvxLogProvider mvxLogProvider)
-            : base(Resources.AppResources.MainMenuPageTitle, mvxLogProvider, navigationService)
+            : base(Resources.AppResources.ApplicationName, mvxLogProvider, navigationService)
         {
             SettingTappedCommand = new MvxCommand<string>(
                 (param) => NavigationTask = MvxNotifyTask.Create(NavigateAsync(param), onException: ex => LogException(ex))
             );
         }
 
-        public MvxNotifyTask NavigationTask { get; private set; }
+        #region Properties
 
-        public override IDataServiceFactory<MenuItemModel> DataStore { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override IDataServiceFactory<MenuItemModel> DataStore
+        {
+            get => throw new NotImplementedException();
+            set => throw new NotImplementedException();
+        }
 
         public override bool IsNew => throw new NotImplementedException();
 
+        public string SettingString => Resources.AppResources.SettingsPageTitle;
+
+        public string NewTripString => Resources.AppResources.NewTripPageTitle;
+
+        #endregion
+
+        #region Tasks
+
+        public MvxNotifyTask NavigationTask { get; private set; }
+
+        #endregion
+
+        #region Commands
+
         public IMvxCommand<string> SettingTappedCommand { get; private set; }
 
+        #endregion
+
+        #region Methods
         public override void Validate()
         {
             throw new NotImplementedException();
@@ -43,7 +61,7 @@ namespace TrackYourTrip.Core.ViewModels.Root
             {
                 IsBusy = true;
 
-                var result = await NavigationService.Navigate(MapStringToViewModel(selectedMenu));
+                bool result = await NavigationService.Navigate(MapStringToViewModel(selectedMenu));
 
                 if (!result)
                 {
@@ -60,16 +78,21 @@ namespace TrackYourTrip.Core.ViewModels.Root
             }
         }
 
-        private string MapStringToViewModel(string selectedMenu)
+        string MapStringToViewModel(string selectedMenu)
         {
             switch (selectedMenu.ToLower())
             {
                 case "setting":
                     return "SettingsPage";
 
+                case "startnewtrip":
+                    return "StartNewTripPage";
+
                 default:
                     throw new Exception("SelectedMenu string not found!");
             }
         }
+
+        #endregion
     }
 }

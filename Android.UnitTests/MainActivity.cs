@@ -1,14 +1,8 @@
-﻿using System;
-using System.Reflection;
-using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+﻿using Android.App;
 using Android.OS;
-
-using Xunit.Sdk;
+using System.Reflection;
 using Xunit.Runners.UI;
+using Xunit.Sdk;
 
 namespace Android.UnitTests
 {

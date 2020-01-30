@@ -7,12 +7,9 @@ using Android.OS;
 using MvvmCross;
 using MvvmCross.Forms.Platforms.Android.Views;
 using MvvmCross.Platforms.Android;
-using Xamarin.Forms;
-using System.Threading.Tasks;
-using Microsoft.AppCenter;
-using Microsoft.AppCenter.Analytics;
-using Microsoft.AppCenter.Crashes;
 using SmartHome.Droid;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace TrackYourTrip.Droid
 {

@@ -150,6 +150,9 @@
   <data name="MainPageTitle" xml:space="preserve">
     <value>Hello Xamarin!</value>
   </data>
+  <data name="NewTripPageTitle" xml:space="preserve">
+    <value>New Trip</value>
+  </data>
   <data name="SaveCommandTitle" xml:space="preserve">
     <value>Finish</value>
   </data>

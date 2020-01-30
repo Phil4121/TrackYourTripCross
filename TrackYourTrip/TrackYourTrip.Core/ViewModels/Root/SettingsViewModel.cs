@@ -1,17 +1,12 @@
-﻿using Acr.UserDialogs;
-using MvvmCross.Commands;
+﻿using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
 using System.Threading.Tasks;
 using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Services;
 using TrackYourTrip.Core.ViewModels.Root;
-using TrackYourTrip.Core.ViewModels.Settings;
 using TrackYourTrip.Models;
 
 [assembly: MvxNavigation(typeof(SettingsViewModel), @"SettingsPage")]
@@ -35,11 +30,13 @@ namespace TrackYourTrip.Core.ViewModels.Root
             get
             {
                 if (_dataStore == null)
+                {
                     _dataStore = DataServiceFactory.GetSettingFactory();
+                }
 
                 return _dataStore;
             }
-            set { _dataStore = value; }
+            set => _dataStore = value;
         }
 
         public override bool IsNew => false;
@@ -91,9 +88,9 @@ namespace TrackYourTrip.Core.ViewModels.Root
             {
                 IsBusy = true;
 
-                var result = await NavigationService.Navigate(setting.LandingPage);
+                bool result = await NavigationService.Navigate(setting.LandingPage);
 
-                if(!result)
+                if (!result)
                 {
                     throw new Exception("Navigation not possible!");
                 }

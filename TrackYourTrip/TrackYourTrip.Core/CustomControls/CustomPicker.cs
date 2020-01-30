@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Reflection;
-using System.Text;
 using Xamarin.Forms;
 
 namespace TrackYourTrip.Core.CustomControls
@@ -15,11 +13,8 @@ namespace TrackYourTrip.Core.CustomControls
 
         public bool IsValid
         {
-            get { return (bool)GetValue(IsValidProperty); }
-            set
-            {
-                SetValue(IsValidProperty, value);
-            }
+            get => (bool)GetValue(IsValidProperty);
+            set => SetValue(IsValidProperty, value);
         }
 
         Boolean _disableNestedCalls;
@@ -40,16 +35,16 @@ namespace TrackYourTrip.Core.CustomControls
 
         public new IEnumerable ItemsSource
         {
-            get { return (IEnumerable)GetValue(ItemsSourceProperty); }
-            set { SetValue(ItemsSourceProperty, value); }
+            get => (IEnumerable)GetValue(ItemsSourceProperty);
+            set => SetValue(ItemsSourceProperty, value);
         }
 
         public new Object SelectedItem
         {
-            get { return GetValue(SelectedItemProperty); }
+            get => GetValue(SelectedItemProperty);
             set
             {
-                if (this.SelectedItem != value)
+                if (SelectedItem != value)
                 {
                     SetValue(SelectedItemProperty, value);
                     InternalSelectedItemChanged();
@@ -59,7 +54,7 @@ namespace TrackYourTrip.Core.CustomControls
 
         public Object SelectedValue
         {
-            get { return GetValue(SelectedValueProperty); }
+            get => GetValue(SelectedValueProperty);
             set
             {
                 SetValue(SelectedValueProperty, value);
@@ -71,7 +66,7 @@ namespace TrackYourTrip.Core.CustomControls
 
         public CustomPicker()
         {
-            this.SelectedIndexChanged += OnSelectedIndexChanged;
+            SelectedIndexChanged += OnSelectedIndexChanged;
         }
 
         public event EventHandler<SelectedItemChangedEventArgs> ItemSelected;
@@ -79,15 +74,15 @@ namespace TrackYourTrip.Core.CustomControls
         void InstanceOnItemsSourceChanged(Object oldValue, Object newValue)
         {
             _disableNestedCalls = true;
-            this.Items.Clear();
+            Items.Clear();
 
-            var oldCollectionINotifyCollectionChanged = oldValue as INotifyCollectionChanged;
+            INotifyCollectionChanged oldCollectionINotifyCollectionChanged = oldValue as INotifyCollectionChanged;
             if (oldCollectionINotifyCollectionChanged != null)
             {
                 oldCollectionINotifyCollectionChanged.CollectionChanged -= ItemsSource_CollectionChanged;
             }
 
-            var newCollectionINotifyCollectionChanged = newValue as INotifyCollectionChanged;
+            INotifyCollectionChanged newCollectionINotifyCollectionChanged = newValue as INotifyCollectionChanged;
             if (newCollectionINotifyCollectionChanged != null)
             {
                 newCollectionINotifyCollectionChanged.CollectionChanged += ItemsSource_CollectionChanged;
@@ -95,40 +90,40 @@ namespace TrackYourTrip.Core.CustomControls
 
             if (!Equals(newValue, null))
             {
-                var hasDisplayMemberPath = !String.IsNullOrWhiteSpace(this.DisplayMemberPath);
+                bool hasDisplayMemberPath = !String.IsNullOrWhiteSpace(DisplayMemberPath);
 
-                foreach (var item in (IEnumerable)newValue)
+                foreach (object item in (IEnumerable)newValue)
                 {
                     if (hasDisplayMemberPath)
                     {
-                        var type = item.GetType();
-                        var prop = type.GetRuntimeProperty(this.DisplayMemberPath);
-                        this.Items.Add(prop.GetValue(item).ToString());
+                        Type type = item.GetType();
+                        PropertyInfo prop = type.GetRuntimeProperty(DisplayMemberPath);
+                        Items.Add(prop.GetValue(item).ToString());
                     }
                     else
                     {
-                        this.Items.Add(item.ToString());
+                        Items.Add(item.ToString());
                     }
                 }
 
-                this.SelectedIndex = -1;
-                this._disableNestedCalls = false;
+                SelectedIndex = -1;
+                _disableNestedCalls = false;
 
-                if (this.SelectedItem != null)
+                if (SelectedItem != null)
                 {
-                    this.InternalSelectedItemChanged();
+                    InternalSelectedItemChanged();
                 }
-                else if (hasDisplayMemberPath && this.SelectedValue != null)
+                else if (hasDisplayMemberPath && SelectedValue != null)
                 {
-                    this.InternalSelectedValueChanged();
+                    InternalSelectedValueChanged();
                 }
             }
             else
             {
                 _disableNestedCalls = true;
-                this.SelectedIndex = -1;
-                this.SelectedItem = null;
-                this.SelectedValue = null;
+                SelectedIndex = -1;
+                SelectedItem = null;
+                SelectedValue = null;
                 _disableNestedCalls = false;
             }
         }
@@ -140,21 +135,21 @@ namespace TrackYourTrip.Core.CustomControls
                 return;
             }
 
-            var selectedIndex = -1;
+            int selectedIndex = -1;
             Object selectedValue = null;
-            if (this.ItemsSource != null)
+            if (ItemsSource != null)
             {
-                var index = 0;
-                var hasSelectedValuePath = !String.IsNullOrWhiteSpace(this.SelectedValuePath);
-                foreach (var item in this.ItemsSource)
+                int index = 0;
+                bool hasSelectedValuePath = !String.IsNullOrWhiteSpace(SelectedValuePath);
+                foreach (object item in ItemsSource)
                 {
-                    if (item != null && item.Equals(this.SelectedItem))
+                    if (item != null && item.Equals(SelectedItem))
                     {
                         selectedIndex = index;
                         if (hasSelectedValuePath)
                         {
-                            var type = item.GetType();
-                            var prop = type.GetRuntimeProperty(this.SelectedValuePath);
+                            Type type = item.GetType();
+                            PropertyInfo prop = type.GetRuntimeProperty(SelectedValuePath);
                             selectedValue = prop.GetValue(item);
                         }
                         break;
@@ -163,8 +158,8 @@ namespace TrackYourTrip.Core.CustomControls
                 }
             }
             _disableNestedCalls = true;
-            this.SelectedValue = selectedValue;
-            this.SelectedIndex = selectedIndex;
+            SelectedValue = selectedValue;
+            SelectedIndex = selectedIndex;
             _disableNestedCalls = false;
         }
 
@@ -175,27 +170,27 @@ namespace TrackYourTrip.Core.CustomControls
                 return;
             }
 
-            if (String.IsNullOrWhiteSpace(this.SelectedValuePath))
+            if (String.IsNullOrWhiteSpace(SelectedValuePath))
             {
                 IsValid = false;
                 return;
             }
 
-            var selectedIndex = -1;
+            int selectedIndex = -1;
             IsValid = false;
 
             Object selectedItem = null;
-            var hasSelectedValuePath = !String.IsNullOrWhiteSpace(this.SelectedValuePath);
-            if (this.ItemsSource != null && hasSelectedValuePath)
+            bool hasSelectedValuePath = !String.IsNullOrWhiteSpace(SelectedValuePath);
+            if (ItemsSource != null && hasSelectedValuePath)
             {
-                var index = 0;
-                foreach (var item in this.ItemsSource)
+                int index = 0;
+                foreach (object item in ItemsSource)
                 {
                     if (item != null)
                     {
-                        var type = item.GetType();
-                        var prop = type.GetRuntimeProperty(this.SelectedValuePath);
-                        if (Object.Equals(prop.GetValue(item), this.SelectedValue))
+                        Type type = item.GetType();
+                        PropertyInfo prop = type.GetRuntimeProperty(SelectedValuePath);
+                        if (Object.Equals(prop.GetValue(item), SelectedValue))
                         {
                             selectedIndex = index;
                             selectedItem = item;
@@ -208,85 +203,85 @@ namespace TrackYourTrip.Core.CustomControls
                 }
             }
             _disableNestedCalls = true;
-            this.SelectedItem = selectedItem;
-            this.SelectedIndex = selectedIndex;
+            SelectedItem = selectedItem;
+            SelectedIndex = selectedIndex;
             _disableNestedCalls = false;
         }
 
         void ItemsSource_CollectionChanged(Object sender, NotifyCollectionChangedEventArgs e)
         {
-            var hasDisplayMemberPath = !String.IsNullOrWhiteSpace(this.DisplayMemberPath);
+            bool hasDisplayMemberPath = !String.IsNullOrWhiteSpace(DisplayMemberPath);
             if (e.Action == NotifyCollectionChangedAction.Add)
             {
-                foreach (var item in e.NewItems)
+                foreach (object item in e.NewItems)
                 {
                     if (hasDisplayMemberPath)
                     {
-                        var type = item.GetType();
-                        var prop = type.GetRuntimeProperty(this.DisplayMemberPath);
-                        this.Items.Add(prop.GetValue(item).ToString());
+                        Type type = item.GetType();
+                        PropertyInfo prop = type.GetRuntimeProperty(DisplayMemberPath);
+                        Items.Add(prop.GetValue(item).ToString());
                     }
                     else
                     {
-                        this.Items.Add(item.ToString());
+                        Items.Add(item.ToString());
                     }
                 }
             }
             else if (e.Action == NotifyCollectionChangedAction.Remove)
             {
-                foreach (var item in e.NewItems)
+                foreach (object item in e.NewItems)
                 {
                     if (hasDisplayMemberPath)
                     {
-                        var type = item.GetType();
-                        var prop = type.GetRuntimeProperty(this.DisplayMemberPath);
-                        this.Items.Remove(prop.GetValue(item).ToString());
+                        Type type = item.GetType();
+                        PropertyInfo prop = type.GetRuntimeProperty(DisplayMemberPath);
+                        Items.Remove(prop.GetValue(item).ToString());
                     }
                     else
                     {
-                        this.Items.Remove(item.ToString());
+                        Items.Remove(item.ToString());
                     }
                 }
             }
             else if (e.Action == NotifyCollectionChangedAction.Replace)
             {
-                foreach (var item in e.NewItems)
+                foreach (object item in e.NewItems)
                 {
                     if (hasDisplayMemberPath)
                     {
-                        var type = item.GetType();
-                        var prop = type.GetRuntimeProperty(this.DisplayMemberPath);
-                        this.Items.Remove(prop.GetValue(item).ToString());
+                        Type type = item.GetType();
+                        PropertyInfo prop = type.GetRuntimeProperty(DisplayMemberPath);
+                        Items.Remove(prop.GetValue(item).ToString());
                     }
                     else
                     {
-                        var index = this.Items.IndexOf(item.ToString());
+                        int index = Items.IndexOf(item.ToString());
                         if (index > -1)
                         {
-                            this.Items[index] = item.ToString();
+                            Items[index] = item.ToString();
                         }
                     }
                 }
             }
             else if (e.Action == NotifyCollectionChangedAction.Reset)
             {
-                this.Items.Clear();
+                Items.Clear();
                 if (e.NewItems != null)
                 {
-                    foreach (var item in e.NewItems)
+                    foreach (object item in e.NewItems)
                     {
                         if (hasDisplayMemberPath)
                         {
-                            var type = item.GetType();
-                            var prop = type.GetRuntimeProperty(this.DisplayMemberPath);
-                            this.Items.Remove(prop.GetValue(item).ToString());
+                            Type type = item.GetType();
+                            PropertyInfo prop = type.GetRuntimeProperty(DisplayMemberPath);
+                            Items.Remove(prop.GetValue(item).ToString());
                         }
                         else
                         {
-                            var index = this.Items.IndexOf(item.ToString());
+                            int index = Items.IndexOf(item.ToString());
                             if (index > -1)
                             {
-                                this.Items[index] = item.ToString();
+                                Items[index] = item.ToString();
                             }
                         }
                     }
@@ -294,9 +289,9 @@ namespace TrackYourTrip.Core.CustomControls
                 else
                 {
                     _disableNestedCalls = true;
-                    this.SelectedItem = null;
-                    this.SelectedIndex = -1;
-                    this.SelectedValue = null;
+                    SelectedItem = null;
+                    SelectedIndex = -1;
+                    SelectedValue = null;
                     _disableNestedCalls = false;
                 }
             }
@@ -309,7 +304,7 @@ namespace TrackYourTrip.Core.CustomControls
                 return;
             }
 
-            var picker = (CustomPicker)bindable;
+            CustomPicker picker = (CustomPicker)bindable;
             picker.InstanceOnItemsSourceChanged(oldValue, newValue);
         }
 
@@ -320,33 +315,33 @@ namespace TrackYourTrip.Core.CustomControls
                 return;
             }
 
-            if (this.SelectedIndex < 0 || this.ItemsSource == null || !this.ItemsSource.GetEnumerator().MoveNext())
+            if (SelectedIndex < 0 || ItemsSource == null || !ItemsSource.GetEnumerator().MoveNext())
             {
                 _disableNestedCalls = true;
-                if (this.SelectedIndex != -1)
+                if (SelectedIndex != -1)
                 {
-                    this.SelectedIndex = -1;
+                    SelectedIndex = -1;
                 }
-                this.SelectedItem = null;
-                this.SelectedValue = null;
+                SelectedItem = null;
+                SelectedValue = null;
                 _disableNestedCalls = false;
                 return;
             }
 
             _disableNestedCalls = true;
 
-            var index = 0;
-            var hasSelectedValuePath = !String.IsNullOrWhiteSpace(this.SelectedValuePath);
-            foreach (var item in this.ItemsSource)
+            int index = 0;
+            bool hasSelectedValuePath = !String.IsNullOrWhiteSpace(SelectedValuePath);
+            foreach (object item in ItemsSource)
             {
-                if (index == this.SelectedIndex)
+                if (index == SelectedIndex)
                 {
-                    this.SelectedItem = item;
+                    SelectedItem = item;
                     if (hasSelectedValuePath)
                     {
-                        var type = item.GetType();
-                        var prop = type.GetRuntimeProperty(this.SelectedValuePath);
-                        this.SelectedValue = prop.GetValue(item);
+                        Type type = item.GetType();
+                        PropertyInfo prop = type.GetRuntimeProperty(SelectedValuePath);
+                        SelectedValue = prop.GetValue(item);
                     }
 
                     break;
@@ -359,14 +354,14 @@ namespace TrackYourTrip.Core.CustomControls
 
         static void OnSelectedItemChanged(BindableObject bindable, Object oldValue, Object newValue)
         {
-            var boundPicker = (CustomPicker)bindable;
+            CustomPicker boundPicker = (CustomPicker)bindable;
             boundPicker.ItemSelected?.Invoke(boundPicker, new SelectedItemChangedEventArgs(newValue));
             boundPicker.InternalSelectedItemChanged();
         }
 
         static void OnSelectedValueChanged(BindableObject bindable, Object oldValue, Object newValue)
         {
-            var boundPicker = (CustomPicker)bindable;
+            CustomPicker boundPicker = (CustomPicker)bindable;
             boundPicker.InternalSelectedValueChanged();
         }
     }

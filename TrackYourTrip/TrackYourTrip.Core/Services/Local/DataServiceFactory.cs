@@ -1,7 +1,5 @@
 ﻿using SQLite;
-using System.Collections.ObjectModel;
 using TrackYourTrip.Core.Helpers;
-using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Models;
 using TrackYourTrip.Models;
 
@@ -11,22 +9,20 @@ namespace TrackYourTrip.Core.Services
     {
         private static SQLiteConnection _connection;
 
-        public static SQLiteConnection Connection {
+        public static SQLiteConnection Connection
+        {
             get
             {
                 if (_connection == null)
                 {
-                    var dbHelper = new DatabaseHelper();
+                    DatabaseHelper dbHelper = new DatabaseHelper();
                     _connection = dbHelper.GetConnection();
                 }
 
                 return _connection;
             }
 
-            set
-            {
-                _connection = value;
-            }
+            set => _connection = value;
         }
 
         public static SimpleDataService<SettingModel> GetSettingFactory()

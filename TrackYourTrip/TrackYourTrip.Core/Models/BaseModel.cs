@@ -1,8 +1,5 @@
 ﻿using SQLite;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
 using TrackYourTrip.Core.Interfaces;
 
 namespace TrackYourTrip.Core.Models
@@ -11,8 +8,8 @@ namespace TrackYourTrip.Core.Models
     {
         public BaseModel()
         {
-            this.IsNew = false;
-            this.IsValid = false;
+            IsNew = false;
+            IsValid = false;
         }
 
         [PrimaryKey]

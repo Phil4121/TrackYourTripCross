@@ -46,7 +46,7 @@ namespace SmartHome.Droid
 
             if (!CopyCompleted)
             {
-                var DbHelper = new DatabaseHelper();
+                DatabaseHelper DbHelper = new DatabaseHelper();
 
                 DatabaseInitHelper.CopyDatabase(DbHelper.GetFullDbPath());
                 DatabaseInitHelper.CopyDatabaseMigrationFiles(DbHelper.GetMigrationScriptBaseFolderPath());
@@ -58,7 +58,7 @@ namespace SmartHome.Droid
 #endif
 
                 CopyCompleted = true;
-            
+
             }
         }
 

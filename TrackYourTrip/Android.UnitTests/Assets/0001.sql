@@ -100,6 +100,11 @@ CREATE TABLE SpotMarkers (
 	ID_Spot		TEXT
 );
 
+CREATE TABLE Trips (
+	ID				TEXT		PRIMARY KEY,
+	ID_FishingArea	TEXT
+);
+
 INSERT INTO WaterModels (ID, Water) VALUES ('2a3eeecf-472c-4b0f-9df0-73386cb3b3f7', 'River');
 INSERT INTO WaterModels (ID, Water) VALUES ('2f2f88a6-69ef-4096-8f8c-108aa8f628d5', 'Lake');
 INSERT INTO WaterModels (ID, Water) VALUES ('8978b6c9-af19-403f-b6d3-dba4eb1be135', 'Barrier lake');

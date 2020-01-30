@@ -2,9 +2,6 @@
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
-using Microsoft.AppCenter;
-using Microsoft.AppCenter.Analytics;
-using Microsoft.AppCenter.Crashes;
 using MvvmCross.Forms.Platforms.Android.Views;
 
 namespace TrackYourTrip.Droid

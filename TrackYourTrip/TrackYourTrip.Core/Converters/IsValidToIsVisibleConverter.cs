@@ -1,8 +1,5 @@
-﻿using MvvmCross.Converters;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Globalization;
-using System.Text;
 using Xamarin.Forms;
 
 namespace TrackYourTrip.Core.Converters
@@ -12,14 +9,18 @@ namespace TrackYourTrip.Core.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value == null)
+            {
                 return false;
+            }
 
             bool isValid = false;
 
             Boolean.TryParse(value.ToString(), out isValid);
 
             if (isValid == false)
+            {
                 return true;
+            }
 
             return false;
         }

@@ -8,7 +8,7 @@ namespace TrackYourTrip.Core.CustomValidators
     {
         public static ValidationResult Validate<T>(this IValidator validator, T instance, params string[] properties)
         {
-            var context = new ValidationContext<T>(instance, new PropertyChain(), ValidatorOptions.ValidatorSelectors.MemberNameValidatorSelectorFactory(properties));
+            ValidationContext<T> context = new ValidationContext<T>(instance, new PropertyChain(), ValidatorOptions.ValidatorSelectors.MemberNameValidatorSelectorFactory(properties));
             return validator.Validate(context);
         }
     }

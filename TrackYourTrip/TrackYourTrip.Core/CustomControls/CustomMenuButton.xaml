@@ -4,7 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <StackLayout Orientation="Vertical">
-        <Image x:Name="ButtonIcon" HorizontalOptions="Center" Source="{Binding Icon}" />
+        <Image x:Name="ButtonIcon" HorizontalOptions="Center" Source="{Binding Icon}" Aspect="AspectFit" />
         <Label x:Name="ButtonLabel" HorizontalOptions="Center"
                Text="{Binding Label}"
                TextColor="#3A444D" />

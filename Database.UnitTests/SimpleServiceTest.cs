@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using TrackYourTrip.Core.Models;
 using TrackYourTrip.Core.Services;
 using TrackYourTrip.Models;
@@ -27,13 +26,13 @@ namespace Database.UnitTests
         [Fact]
         public void TestSimpleDataServiceGetItemsFromWaterModels()
         {
-            var simpleService = new SimpleDataService<TestWaterModel>(_connection, "WaterModels");
+            SimpleDataService<TestWaterModel> simpleService = new SimpleDataService<TestWaterModel>(_connection, "WaterModels");
 
-            var result = simpleService.GetItemsAsync().Result;
+            IEnumerable<TestWaterModel> result = simpleService.GetItemsAsync().Result;
 
             Assert.NotNull(result);
 
-            var waterModels = (List<TestWaterModel>) result;
+            List<TestWaterModel> waterModels = (List<TestWaterModel>)result;
 
             Assert.True(waterModels.Count > 0);
         }
@@ -41,12 +40,12 @@ namespace Database.UnitTests
         [Fact]
         public void TestSimpleDataServiceGetSingleWaterModelWithID()
         {
-            var idNotExists = Guid.NewGuid();
-            var idExists = Guid.Parse("2a3eeecf-472c-4b0f-9df0-73386cb3b3f7");
+            Guid idNotExists = Guid.NewGuid();
+            Guid idExists = Guid.Parse("2a3eeecf-472c-4b0f-9df0-73386cb3b3f7");
 
-            var simpleService = new SimpleDataService<TestWaterModel>(_connection, "WaterModels");
+            SimpleDataService<TestWaterModel> simpleService = new SimpleDataService<TestWaterModel>(_connection, "WaterModels");
 
-            var result = simpleService.GetItemAsync(idNotExists).Result;
+            TestWaterModel result = simpleService.GetItemAsync(idNotExists).Result;
 
             Assert.Null(result);
 
@@ -83,15 +82,15 @@ namespace Database.UnitTests
         {
             DataServiceFactory.Connection = _connection;
 
-            var factory = DataServiceFactory.GetSettingFactory();
+            SimpleDataService<SettingModel> factory = DataServiceFactory.GetSettingFactory();
 
             Assert.NotNull(factory);
 
-            var settings = await factory.GetItemsAsync();
+            IEnumerable<SettingModel> settings = await factory.GetItemsAsync();
 
             Assert.NotNull(settings);
 
-            var settingsList = (List<SettingModel>)settings;
+            List<SettingModel> settingsList = (List<SettingModel>)settings;
 
             Assert.True(settingsList.Count > 0);
 
@@ -117,13 +116,13 @@ namespace Database.UnitTests
         {
             DataServiceFactory.Connection = _connection;
 
-            var factory = DataServiceFactory.GetFishingAreaFactory();
+            SimpleDataService<FishingAreaModel> factory = DataServiceFactory.GetFishingAreaFactory();
 
             Assert.NotNull(factory);
 
-            var areaId = Guid.NewGuid();
-            
-            var tstFishingArea = new FishingAreaModel();
+            Guid areaId = Guid.NewGuid();
+
+            FishingAreaModel tstFishingArea = new FishingAreaModel();
             tstFishingArea.Id = areaId;
             tstFishingArea.ID_WaterModel = Guid.Parse("2a3eeecf-472c-4b0f-9df0-73386cb3b3f7");
             tstFishingArea.Lat = 48.46;
@@ -131,17 +130,17 @@ namespace Database.UnitTests
             tstFishingArea.FishingArea = "Donau Obermühl";
             tstFishingArea.IsNew = true;
 
-            var success = factory.SaveItemAsync(tstFishingArea).Result;
+            FishingAreaModel success = factory.SaveItemAsync(tstFishingArea).Result;
 
             Assert.True(success.Id != Guid.Empty);
 
-            var storedFishingArea = factory.GetItemAsync(areaId).Result;
+            FishingAreaModel storedFishingArea = factory.GetItemAsync(areaId).Result;
 
             Assert.True(storedFishingArea.Id == areaId);
 
 
-            var spotId = Guid.NewGuid();
-            var newSpot = new SpotModel();
+            Guid spotId = Guid.NewGuid();
+            SpotModel newSpot = new SpotModel();
             newSpot.FishingArea = storedFishingArea;
             newSpot.Id = spotId;
             newSpot.Spot = "Zanderfelsen";
@@ -162,17 +161,17 @@ namespace Database.UnitTests
         {
             DataServiceFactory.Connection = _connection;
 
-            var factory = DataServiceFactory.GetFishingAreaFactory();
+            SimpleDataService<FishingAreaModel> factory = DataServiceFactory.GetFishingAreaFactory();
 
             Assert.NotNull(factory);
 
-            var areaId = Guid.Parse("0c46a2fd-9a56-4663-9ead-0d92ff39db7c");
+            Guid areaId = Guid.Parse("0c46a2fd-9a56-4663-9ead-0d92ff39db7c");
 
-            var existingArea = factory.GetItemAsync(areaId).Result;
+            FishingAreaModel existingArea = factory.GetItemAsync(areaId).Result;
 
             Assert.NotNull(existingArea);
 
-            var success = factory.SaveItemAsync(existingArea).Result;
+            FishingAreaModel success = factory.SaveItemAsync(existingArea).Result;
 
             Assert.True(success.Id != Guid.Empty);
         }
@@ -197,13 +196,13 @@ namespace Database.UnitTests
         {
             DataServiceFactory.Connection = _connection;
 
-            var factory = DataServiceFactory.GetSpotFactory();
+            SimpleDataService<SpotModel> factory = DataServiceFactory.GetSpotFactory();
 
             Assert.NotNull(factory);
 
-            var spotId = Guid.Parse("610b3ec0-0d70-40a6-9d9f-5167a8135410");
+            Guid spotId = Guid.Parse("610b3ec0-0d70-40a6-9d9f-5167a8135410");
 
-            var existingSpot = factory.GetItemAsync(spotId).Result;
+            SpotModel existingSpot = factory.GetItemAsync(spotId).Result;
 
             Assert.True(existingSpot.SpotMarker.Count > 0);
         }

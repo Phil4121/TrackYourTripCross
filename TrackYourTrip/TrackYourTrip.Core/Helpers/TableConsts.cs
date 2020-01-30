@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TrackYourTrip.Core.Helpers
+﻿namespace TrackYourTrip.Core.Helpers
 {
     public static class TableConsts
     {
@@ -20,6 +16,8 @@ namespace TrackYourTrip.Core.Helpers
         public const string WINDDIRECTION_TABLE = "WindDirections";
         //public const string WEATHERSITUATION_TABLE = "WeatherSituations";
         public const string WATERMODEL_TABLE = "WaterModels";
+
+        public const string TRIP_TABLE = "Trips";
 
         public const string FISHINGAREA_TABLE = "FishingAreas";
 

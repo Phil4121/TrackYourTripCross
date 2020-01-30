@@ -1,7 +1,6 @@
 ﻿using SQLite;
 using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Services;
-using Xamarin.Forms;
 
 namespace TrackYourTrip.Core.Helpers
 {
@@ -11,17 +10,12 @@ namespace TrackYourTrip.Core.Helpers
 
         const string _DbFileName = "TrackYourTrip.db";
 
-        public string GetDbFilename
-        {
-            get
-            {
-                return _DbFileName;
-            }
-        }
+        public string GetDbFilename => _DbFileName;
 
         private SQLiteConnection _Connection;
 
-        public DatabaseHelper() : this(new DependencyServiceWrapper()){
+        public DatabaseHelper() : this(new DependencyServiceWrapper())
+        {
 
         }
 
@@ -47,7 +41,7 @@ namespace TrackYourTrip.Core.Helpers
 
         public SQLiteConnection GetConnection()
         {
-            if(_Connection == null)
+            if (_Connection == null)
             {
                 _Connection = _dependencyService.Get<IDatabase>().GetConnection();
             }

@@ -1,6 +1,6 @@
-﻿using System.IO;
-using Android.UnitTest.Database;
+﻿using Android.UnitTest.Database;
 using SQLite;
+using System.IO;
 using TrackYourTrip.Core.Helpers;
 using TrackYourTrip.Core.Interfaces;
 
@@ -22,7 +22,7 @@ namespace Android.UnitTest.Database
 
         public string GetFullDbPath()
         {
-            var dbHelper = new DatabaseHelper();
+            DatabaseHelper dbHelper = new DatabaseHelper();
 
             return Path.Combine(GetDbPath(), dbHelper.GetDbFilename);
         }

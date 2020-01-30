@@ -1,22 +1,12 @@
 ﻿using Acr.UserDialogs;
 using FluentValidation.Results;
-using MvvmCross.Base;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
-using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
-using System.Text;
 using System.Threading.Tasks;
-using TrackYourTrip.Core.Helpers;
 using TrackYourTrip.Core.Interfaces;
-using TrackYourTrip.Core.Services;
 
 namespace TrackYourTrip.Core.ViewModels
 {
@@ -26,11 +16,11 @@ namespace TrackYourTrip.Core.ViewModels
     {
         public BaseViewModel(string title, IMvxLogProvider mvxLogProvider, IMvxNavigationService navigationService)
         {
-            this.NavigationService = navigationService;
+            NavigationService = navigationService;
 
-            this.MvxLogProvider = mvxLogProvider;
+            MvxLogProvider = mvxLogProvider;
 
-            this.Log = mvxLogProvider.GetLogFor(GetType());
+            Log = mvxLogProvider.GetLogFor(GetType());
 
             Title = title;
 
@@ -49,15 +39,15 @@ namespace TrackYourTrip.Core.ViewModels
 
         public BaseViewModel(string title, IMvxLogProvider mvxLogProvider, IMvxNavigationService navigationService, IUserDialogs userDialog, ILocalizeService localizeService)
         {
-            this.NavigationService = navigationService;
+            NavigationService = navigationService;
 
-            this.MvxLogProvider = mvxLogProvider;
+            MvxLogProvider = mvxLogProvider;
 
-            this.Log = mvxLogProvider.GetLogFor(GetType());
+            Log = mvxLogProvider.GetLogFor(GetType());
 
-            this.UserDialog = userDialog;
+            UserDialog = userDialog;
 
-            this.LocalizeService = localizeService;
+            LocalizeService = localizeService;
 
             Title = title;
 
@@ -93,8 +83,8 @@ namespace TrackYourTrip.Core.ViewModels
         bool _isBusy = false;
         public bool IsBusy
         {
-            get { return _isBusy; }
-            set { SetProperty(ref _isBusy, value); }
+            get => _isBusy;
+            set => SetProperty(ref _isBusy, value);
         }
 
         public abstract bool IsNew { get; }
@@ -102,21 +92,21 @@ namespace TrackYourTrip.Core.ViewModels
         private bool _isValid;
         public bool IsValid
         {
-            get { return _isValid; }
-            private set { SetProperty(ref _isValid, value); }
+            get => _isValid;
+            private set => SetProperty(ref _isValid, value);
         }
 
         private string _errors;
         public string Errors
         {
-            get { return _errors; }
-            private set { SetProperty(ref _errors, value); }
+            get => _errors;
+            private set => SetProperty(ref _errors, value);
         }
 
         private ValidationResult _validationResult;
         public ValidationResult ValidationResult
         {
-            get { return _validationResult; }
+            get => _validationResult;
             set
             {
                 SetProperty(ref _validationResult, value);
@@ -158,37 +148,28 @@ namespace TrackYourTrip.Core.ViewModels
         }
 
 
-        public async virtual Task SaveAsync()
+        public virtual async Task SaveAsync()
         {
             Validate();
         }
 
-        public string SaveCommandTitle
-        {
-            get => Resources.AppResources.SaveCommandTitle;
-        }
+        public string SaveCommandTitle => Resources.AppResources.SaveCommandTitle;
 
 
-        public async virtual Task AddAsync()
+        public virtual async Task AddAsync()
         {
 
         }
 
-        public string AddCommandTitle
-        {
-            get => Resources.AppResources.AddCommandTitle;
-        }
+        public string AddCommandTitle => Resources.AppResources.AddCommandTitle;
 
 
-        public async virtual Task DeleteAsync()
+        public virtual async Task DeleteAsync()
         {
 
         }
 
-        public string DeleteCommandTitle
-        {
-            get => Resources.AppResources.DeleteCommandTitle;
-        }
+        public string DeleteCommandTitle => Resources.AppResources.DeleteCommandTitle;
 
 
         public void LogException(Exception ex)

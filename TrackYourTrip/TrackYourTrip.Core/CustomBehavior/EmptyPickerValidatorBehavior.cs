@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using TrackYourTrip.Core.CustomControls;
 using Xamarin.Forms;
 
@@ -28,7 +26,9 @@ namespace TrackYourTrip.Core.CustomBehavior
         private void Bindable_Focused(object sender, FocusEventArgs e)
         {
             if (!e.IsFocused)
+            {
                 EntryIsValid();
+            }
         }
 
         protected override void OnDetachingFrom(CustomPicker bindable)
@@ -37,7 +37,7 @@ namespace TrackYourTrip.Core.CustomBehavior
             bindable.SelectedIndexChanged -= Bindable_SelectedIndexChanged;
         }
 
-        
+
         protected bool EntryIsValid()
         {
             if (string.IsNullOrEmpty(control.SelectedValue.ToString()))

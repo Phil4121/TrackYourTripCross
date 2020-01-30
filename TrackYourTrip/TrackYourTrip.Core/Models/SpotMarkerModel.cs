@@ -1,11 +1,7 @@
 ﻿using SQLite;
 using SQLiteNetExtensions.Attributes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
 using TrackYourTrip.Core.Helpers;
-using TrackYourTrip.Core.Interfaces;
 
 namespace TrackYourTrip.Core.Models
 {
@@ -18,8 +14,8 @@ namespace TrackYourTrip.Core.Models
 
         public SpotMarkerModel(bool isNew = false)
         {
-            this.Id = Guid.NewGuid();
-            this.IsNew = isNew;
+            Id = Guid.NewGuid();
+            IsNew = isNew;
         }
 
         public string SpotMarker { get; set; }

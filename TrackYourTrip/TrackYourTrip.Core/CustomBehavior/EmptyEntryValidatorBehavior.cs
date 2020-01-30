@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TrackYourTrip.Core.CustomControls;
+﻿using TrackYourTrip.Core.CustomControls;
 using Xamarin.Forms;
 
 namespace TrackYourTrip.Core.CustomBehavior
@@ -24,7 +21,9 @@ namespace TrackYourTrip.Core.CustomBehavior
         private void Bindable_Focused(object sender, FocusEventArgs e)
         {
             if (!e.IsFocused)
+            {
                 FormatEntry();
+            }
         }
 
         private void Bindable_TextChanged(object sender, TextChangedEventArgs e)
@@ -38,7 +37,7 @@ namespace TrackYourTrip.Core.CustomBehavior
             bindable.TextChanged -= Bindable_TextChanged;
         }
 
-        
+
         protected bool EntryIsValid()
         {
             if (string.IsNullOrEmpty(control.Text))

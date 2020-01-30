@@ -1,10 +1,4 @@
-﻿using SQLite;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-using TrackYourTrip.Core.Helpers;
-using TrackYourTrip.Core.Interfaces;
+﻿using TrackYourTrip.Core.Helpers;
 using TrackYourTrip.Core.Models;
 
 namespace TrackYourTrip.Models
@@ -15,6 +9,6 @@ namespace TrackYourTrip.Models
         public string Setting { get; set; }
         public string LandingPage { get; set; }
         public int SortOrder { get; set; }
-        
+
     }
 }

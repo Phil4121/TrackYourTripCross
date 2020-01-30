@@ -1,23 +1,19 @@
-﻿using MvvmCross.Logging;
+﻿using Acr.UserDialogs;
+using MvvmCross.Commands;
+using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
+using TrackYourTrip.Core.CustomValidators;
 using TrackYourTrip.Core.Helpers;
+using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Models;
 using TrackYourTrip.Core.Services;
-using TrackYourTrip.Core.ViewModels.Settings;
-using TrackYourTrip.Core.CustomValidators;
-using Xamarin.Forms;
-using Xamarin.Forms.GoogleMaps;
-using TrackYourTrip.Core.Interfaces;
-using System.Threading.Tasks;
 using TrackYourTrip.Core.ViewModelResults;
-using MvvmCross.Commands;
-using Acr.UserDialogs;
-using System.Linq;
+using TrackYourTrip.Core.ViewModels.Settings;
+using Xamarin.Forms.GoogleMaps;
 
 [assembly: MvxNavigation(typeof(FishingAreaViewModel), @"FishingAreaPage")]
 namespace TrackYourTrip.Core.ViewModels.Settings
@@ -53,11 +49,13 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             get
             {
                 if (_dataStore == null)
+                {
                     _dataStore = DataServiceFactory.GetFishingAreaFactory();
+                }
 
                 return _dataStore;
             }
-            set { _dataStore = value; }
+            set => _dataStore = value;
         }
 
 
@@ -72,7 +70,8 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
         private FishingAreaModel _fishingArea;
 
-        public FishingAreaModel FishingArea {
+        public FishingAreaModel FishingArea
+        {
             get => _fishingArea;
             set => SetProperty(ref _fishingArea, value);
         }
@@ -84,9 +83,11 @@ namespace TrackYourTrip.Core.ViewModels.Settings
                 if (FishingArea != null &&
                     FishingArea.Lat != 0 &&
                     FishingArea.Lng != 0)
+                {
                     return CameraUpdateFactory.NewPositionZoom(new Position(FishingArea.Lat, FishingArea.Lng), 15d);
+                }
 
-                var loc = LocationHelper.GetCurrentLocation();
+                Xamarin.Essentials.Location loc = LocationHelper.GetCurrentLocation();
                 return CameraUpdateFactory.NewPositionZoom(new Position(loc.Latitude, loc.Longitude), 15d);
             }
         }
@@ -97,7 +98,9 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             {
                 if (FishingArea.Lat == 0 ||
                     FishingArea.Lng == 0)
+                {
                     return new MvxObservableCollection<Pin>();
+                }
 
                 return new MvxObservableCollection<Pin>()
                 {
@@ -110,13 +113,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             }
         }
 
-        public string SpotTitle
-        {
-            get
-            {
-                return Resources.AppResources.SpotsPageTitle;
-            }
-        }
+        public string SpotTitle => Resources.AppResources.SpotsPageTitle;
 
         #endregion
 
@@ -155,8 +152,10 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
         public override void ViewAppearing()
         {
-            if(!FishingArea.IsNew)
+            if (!FishingArea.IsNew)
+            {
                 RefreshFishingAreaTask = MvxNotifyTask.Create(() => RefreshFishingAreaAsync(), onException: ex => LogException(ex));
+            }
 
             base.ViewAppearing();
         }
@@ -171,12 +170,12 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         public override void Validate()
         {
             FishingAreaModelValidator validator = new FishingAreaModelValidator();
-            var result = validator.Validate(FishingArea);
+            FluentValidation.Results.ValidationResult result = validator.Validate(FishingArea);
             FishingArea.IsValid = result.IsValid;
             ValidationResult = result;
         }
 
-        public async override Task SaveAsync()
+        public override async Task SaveAsync()
         {
             try
             {
@@ -190,7 +189,8 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
                     await NavigationService.Close(this, new OperationResult<FishingAreaModel>(FishingArea, isSaved: true));
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -200,7 +200,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             }
         }
 
-        public async override Task DeleteAsync()
+        public override async Task DeleteAsync()
         {
             try
             {
@@ -208,22 +208,27 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
                 if (!IsNew)
                 {
-                    var confirmation = await UserDialog.ConfirmAsync(LocalizeService.Translate("DeleteItemText"),
+                    bool confirmation = await UserDialog.ConfirmAsync(LocalizeService.Translate("DeleteItemText"),
                         title: LocalizeService.Translate("DeleteCommandTitle"));
 
                     if (!confirmation)
+                    {
                         return;
+                    }
 
-                    var result = await DataStore.DeleteItemAsync(FishingArea);
+                    bool result = await DataStore.DeleteItemAsync(FishingArea);
 
                     if (result)
+                    {
                         await NavigationService.Close(this, new OperationResult<FishingAreaModel>(FishingArea, isDeleted: result));
+                    }
 
                     return;
                 }
 
                 await NavigationService.Close(this, new OperationResult<FishingAreaModel>(FishingArea, isCanceld: true));
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw;
             }
@@ -247,7 +252,8 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
                     await NavigationService.Navigate<SpotsViewModel, FishingAreaModel, OperationResult<FishingAreaModel>>(FishingArea);
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw;
             }
@@ -260,7 +266,9 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         async Task RefreshPinAsync(Position? position)
         {
             if (!position.HasValue)
+            {
                 return;
+            }
 
             try
             {
@@ -279,7 +287,9 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         async Task RefreshWaterAsync()
         {
             if (FishingArea == null)
+            {
                 return;
+            }
 
             FishingArea.WaterModel = Waters.Where(w => w.Id == FishingArea.ID_WaterModel).FirstOrDefault();
 
@@ -297,9 +307,11 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
         async Task RefreshFishingAreaAsync()
         {
-            if (FishingArea == null || 
+            if (FishingArea == null ||
                 FishingArea.IsNew)
+            {
                 return;
+            }
 
             FishingArea = await DataStore.GetItemAsync(FishingArea.Id);
 

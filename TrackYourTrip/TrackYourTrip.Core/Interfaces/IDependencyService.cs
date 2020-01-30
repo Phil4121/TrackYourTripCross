@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TrackYourTrip.Core.Interfaces
+﻿namespace TrackYourTrip.Core.Interfaces
 {
     public interface IDependencyService
     {

@@ -3,8 +3,8 @@
 // <url>https://www.linkedin.com/in/pauldatsyuk/</url>
 // ---------------------------------------------------------------
 
-using Xamarin.Essentials;
 using TrackYourTrip.Core.Interfaces;
+using Xamarin.Essentials;
 
 namespace TrackYourTrip.Core.Services
 {
@@ -15,8 +15,8 @@ namespace TrackYourTrip.Core.Services
 
         public int SuperNumber
         {
-            get { return Preferences.Get(SuperNumberKey, SuperNumberDefaultValue); }
-            set { Preferences.Set(SuperNumberKey, value); }
+            get => Preferences.Get(SuperNumberKey, SuperNumberDefaultValue);
+            set => Preferences.Set(SuperNumberKey, value);
         }
     }
 }

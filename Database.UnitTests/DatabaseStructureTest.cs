@@ -33,11 +33,11 @@ namespace Database.UnitTests
         {
             bool allTablesExists = true;
 
-            var tables = Helper.GetTableNameConstants();
+            System.Collections.Generic.List<string> tables = Helper.GetTableNameConstants();
 
-            foreach(string table in tables)
+            foreach (string table in tables)
             {
-                var exists = _connection.ExecuteScalar<string>(string.Format("SELECT name FROM sqlite_master WHERE type = 'table' AND name = '{0}'", table));
+                string exists = _connection.ExecuteScalar<string>(string.Format("SELECT name FROM sqlite_master WHERE type = 'table' AND name = '{0}'", table));
 
                 if (string.IsNullOrEmpty(exists))
                 {

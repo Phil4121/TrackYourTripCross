@@ -3,9 +3,7 @@ using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Models;
@@ -34,11 +32,13 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             get
             {
                 if (_dataStore == null)
+                {
                     _dataStore = DataServiceFactory.GetFishingAreaFactory();
+                }
 
                 return _dataStore;
             }
-            set { _dataStore = value; }
+            set => _dataStore = value;
         }
 
         public override bool IsNew => false;
@@ -50,10 +50,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             private set => SetProperty(ref _rootFishingArea, value);
         }
 
-        public MvxObservableCollection<SpotModel> Spots
-        {
-            get => new MvxObservableCollection<SpotModel>(RootFishingArea.Spots.OrderBy(s => s.Spot));
-        }
+        public MvxObservableCollection<SpotModel> Spots => new MvxObservableCollection<SpotModel>(RootFishingArea.Spots.OrderBy(s => s.Spot));
 
 
         private SpotModel _selectedSpot;
@@ -91,11 +88,11 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             // nothing to do
         }
 
-        public async override Task AddAsync()
+        public override async Task AddAsync()
         {
             await base.AddAsync();
 
-            var spot = new SpotModel(true);
+            SpotModel spot = new SpotModel(true);
             spot.ID_FishingArea = RootFishingArea.Id;
 
             await NavigateToSpot(spot);
@@ -112,23 +109,28 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         async Task NavigateToSpot(SpotModel spot)
         {
             if (spot == null)
+            {
                 return;
+            }
 
             try
             {
                 IsBusy = true;
 
-                var result = await NavigationService.Navigate<SpotViewModel, SpotModel, OperationResult<SpotModel>>(spot);
+                OperationResult<SpotModel> result = await NavigationService.Navigate<SpotViewModel, SpotModel, OperationResult<SpotModel>>(spot);
 
                 if (result != null)
                 {
                     if (result.IsCanceld)
+                    {
                         return;
+                    }
 
                     RefreshSpotsTask = MvxNotifyTask.Create(RefreshSpots, onException: ex => LogException(ex));
                 }
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw;
             }

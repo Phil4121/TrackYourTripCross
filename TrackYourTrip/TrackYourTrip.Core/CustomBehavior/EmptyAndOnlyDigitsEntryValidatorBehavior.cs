@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TrackYourTrip.Core.CustomControls;
+﻿using TrackYourTrip.Core.CustomControls;
 using Xamarin.Forms;
 
 namespace TrackYourTrip.Core.CustomBehavior
@@ -25,13 +22,17 @@ namespace TrackYourTrip.Core.CustomBehavior
         private void Bindable_Unfocused(object sender, FocusEventArgs e)
         {
             if (!e.IsFocused)
+            {
                 FormatEntry();
+            }
         }
 
         private void Bindable_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if(!_internalChange)
+            if (!_internalChange)
+            {
                 FormatEntry();
+            }
         }
 
         protected override void OnDetachingFrom(CustomEntry bindable)
@@ -46,13 +47,13 @@ namespace TrackYourTrip.Core.CustomBehavior
 
             _internalChange = true;
 
-            if(ControlIsNullOrEmpty())
+            if (ControlIsNullOrEmpty())
             {
                 control.IsValid = false;
                 return false;
             }
-            
-            if(ControlContainsInvalidInput())
+
+            if (ControlContainsInvalidInput())
             {
                 control.IsValid = false;
                 return false;
@@ -68,15 +69,19 @@ namespace TrackYourTrip.Core.CustomBehavior
         private bool ControlIsNullOrEmpty()
         {
             if (string.IsNullOrEmpty(control.Text))
+            {
                 return true;
-      
+            }
+
             return false;
         }
 
         private bool ControlContainsInvalidInput()
         {
             if (!double.TryParse(control.Text, out double i))
+            {
                 return true;
+            }
 
             return false;
         }
@@ -98,7 +103,7 @@ namespace TrackYourTrip.Core.CustomBehavior
                     if (!string.IsNullOrEmpty(control.Text) &&
                         ControlContainsInvalidInput())
                     {
-                        control.Text = string.Format("{0}",control.Text);
+                        control.Text = string.Format("{0}", control.Text);
                         control.PlaceholderColor = Color.Red;
                         control.HorizontalTextAlignment = TextAlignment.Start;
                     }

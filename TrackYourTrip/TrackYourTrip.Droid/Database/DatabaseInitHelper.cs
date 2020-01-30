@@ -1,6 +1,6 @@
-﻿using System.IO;
-using Android.App;
+﻿using Android.App;
 using Android.Content.Res;
+using System.IO;
 using TrackYourTrip.Core.Helpers;
 
 namespace TrackYourTrip.Droid.Database
@@ -9,18 +9,18 @@ namespace TrackYourTrip.Droid.Database
     {
         public static void CopyDatabase(string dbFilePath)
         {
-            var fileHelper = new FileHelper();
-            var dbHelper = new DatabaseHelper();
+            FileHelper fileHelper = new FileHelper();
+            DatabaseHelper dbHelper = new DatabaseHelper();
 
             fileHelper.CopyFile(Application.Context.Assets.Open(dbHelper.GetDbFilename), dbFilePath, true);
         }
 
         public static void CopyDatabaseMigrationFiles(string migrationFilesFolderPath)
         {
-            var fileHelper = new FileHelper();
+            FileHelper fileHelper = new FileHelper();
 
             AssetManager mng = Application.Context.Assets;
-            var i = mng.List("");
+            string[] i = mng.List("");
 
             foreach (string s in i)
             {
@@ -33,12 +33,12 @@ namespace TrackYourTrip.Droid.Database
 
         public static void CopyDatabaseToSDCard()
         {
-            var fileHelper = new FileHelper();
-            var dbHelper = new DatabaseHelper();
+            FileHelper fileHelper = new FileHelper();
+            DatabaseHelper dbHelper = new DatabaseHelper();
 
-            var sdcardPath = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
+            string sdcardPath = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
 
             fileHelper.CopyFile(Path.Combine(dbHelper.GetDbPath(), dbHelper.GetDbFilename), Path.Combine(sdcardPath, dbHelper.GetDbFilename), true);
         }
     }
-}                                                                                                                                   
+}

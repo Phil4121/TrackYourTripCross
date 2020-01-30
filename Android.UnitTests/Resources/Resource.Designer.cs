@@ -21253,1342 +21253,6 @@ namespace Android.UnitTests
 			global::XF.Material.Resource.Styleable.View_paddingStart = global::Android.UnitTests.Resource.Styleable.View_paddingStart;
 			global::XF.Material.Resource.Styleable.View_theme = global::Android.UnitTests.Resource.Styleable.View_theme;
 			global::XF.Material.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::Android.UnitTests.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
-			global::XLabs.Forms.Resource.Animation.abc_fade_in = global::Android.UnitTests.Resource.Animation.abc_fade_in;
-			global::XLabs.Forms.Resource.Animation.abc_fade_out = global::Android.UnitTests.Resource.Animation.abc_fade_out;
-			global::XLabs.Forms.Resource.Animation.abc_grow_fade_in_from_bottom = global::Android.UnitTests.Resource.Animation.abc_grow_fade_in_from_bottom;
-			global::XLabs.Forms.Resource.Animation.abc_popup_enter = global::Android.UnitTests.Resource.Animation.abc_popup_enter;
-			global::XLabs.Forms.Resource.Animation.abc_popup_exit = global::Android.UnitTests.Resource.Animation.abc_popup_exit;
-			global::XLabs.Forms.Resource.Animation.abc_shrink_fade_out_from_bottom = global::Android.UnitTests.Resource.Animation.abc_shrink_fade_out_from_bottom;
-			global::XLabs.Forms.Resource.Animation.abc_slide_in_bottom = global::Android.UnitTests.Resource.Animation.abc_slide_in_bottom;
-			global::XLabs.Forms.Resource.Animation.abc_slide_in_top = global::Android.UnitTests.Resource.Animation.abc_slide_in_top;
-			global::XLabs.Forms.Resource.Animation.abc_slide_out_bottom = global::Android.UnitTests.Resource.Animation.abc_slide_out_bottom;
-			global::XLabs.Forms.Resource.Animation.abc_slide_out_top = global::Android.UnitTests.Resource.Animation.abc_slide_out_top;
-			global::XLabs.Forms.Resource.Animation.design_snackbar_in = global::Android.UnitTests.Resource.Animation.design_snackbar_in;
-			global::XLabs.Forms.Resource.Animation.design_snackbar_out = global::Android.UnitTests.Resource.Animation.design_snackbar_out;
-			global::XLabs.Forms.Resource.Attribute.actionBarDivider = global::Android.UnitTests.Resource.Attribute.actionBarDivider;
-			global::XLabs.Forms.Resource.Attribute.actionBarItemBackground = global::Android.UnitTests.Resource.Attribute.actionBarItemBackground;
-			global::XLabs.Forms.Resource.Attribute.actionBarPopupTheme = global::Android.UnitTests.Resource.Attribute.actionBarPopupTheme;
-			global::XLabs.Forms.Resource.Attribute.actionBarSize = global::Android.UnitTests.Resource.Attribute.actionBarSize;
-			global::XLabs.Forms.Resource.Attribute.actionBarSplitStyle = global::Android.UnitTests.Resource.Attribute.actionBarSplitStyle;
-			global::XLabs.Forms.Resource.Attribute.actionBarStyle = global::Android.UnitTests.Resource.Attribute.actionBarStyle;
-			global::XLabs.Forms.Resource.Attribute.actionBarTabBarStyle = global::Android.UnitTests.Resource.Attribute.actionBarTabBarStyle;
-			global::XLabs.Forms.Resource.Attribute.actionBarTabStyle = global::Android.UnitTests.Resource.Attribute.actionBarTabStyle;
-			global::XLabs.Forms.Resource.Attribute.actionBarTabTextStyle = global::Android.UnitTests.Resource.Attribute.actionBarTabTextStyle;
-			global::XLabs.Forms.Resource.Attribute.actionBarTheme = global::Android.UnitTests.Resource.Attribute.actionBarTheme;
-			global::XLabs.Forms.Resource.Attribute.actionBarWidgetTheme = global::Android.UnitTests.Resource.Attribute.actionBarWidgetTheme;
-			global::XLabs.Forms.Resource.Attribute.actionButtonStyle = global::Android.UnitTests.Resource.Attribute.actionButtonStyle;
-			global::XLabs.Forms.Resource.Attribute.actionDropDownStyle = global::Android.UnitTests.Resource.Attribute.actionDropDownStyle;
-			global::XLabs.Forms.Resource.Attribute.actionLayout = global::Android.UnitTests.Resource.Attribute.actionLayout;
-			global::XLabs.Forms.Resource.Attribute.actionMenuTextAppearance = global::Android.UnitTests.Resource.Attribute.actionMenuTextAppearance;
-			global::XLabs.Forms.Resource.Attribute.actionMenuTextColor = global::Android.UnitTests.Resource.Attribute.actionMenuTextColor;
-			global::XLabs.Forms.Resource.Attribute.actionModeBackground = global::Android.UnitTests.Resource.Attribute.actionModeBackground;
-			global::XLabs.Forms.Resource.Attribute.actionModeCloseButtonStyle = global::Android.UnitTests.Resource.Attribute.actionModeCloseButtonStyle;
-			global::XLabs.Forms.Resource.Attribute.actionModeCloseDrawable = global::Android.UnitTests.Resource.Attribute.actionModeCloseDrawable;
-			global::XLabs.Forms.Resource.Attribute.actionModeCopyDrawable = global::Android.UnitTests.Resource.Attribute.actionModeCopyDrawable;
-			global::XLabs.Forms.Resource.Attribute.actionModeCutDrawable = global::Android.UnitTests.Resource.Attribute.actionModeCutDrawable;
-			global::XLabs.Forms.Resource.Attribute.actionModeFindDrawable = global::Android.UnitTests.Resource.Attribute.actionModeFindDrawable;
-			global::XLabs.Forms.Resource.Attribute.actionModePasteDrawable = global::Android.UnitTests.Resource.Attribute.actionModePasteDrawable;
-			global::XLabs.Forms.Resource.Attribute.actionModePopupWindowStyle = global::Android.UnitTests.Resource.Attribute.actionModePopupWindowStyle;
-			global::XLabs.Forms.Resource.Attribute.actionModeSelectAllDrawable = global::Android.UnitTests.Resource.Attribute.actionModeSelectAllDrawable;
-			global::XLabs.Forms.Resource.Attribute.actionModeShareDrawable = global::Android.UnitTests.Resource.Attribute.actionModeShareDrawable;
-			global::XLabs.Forms.Resource.Attribute.actionModeSplitBackground = global::Android.UnitTests.Resource.Attribute.actionModeSplitBackground;
-			global::XLabs.Forms.Resource.Attribute.actionModeStyle = global::Android.UnitTests.Resource.Attribute.actionModeStyle;
-			global::XLabs.Forms.Resource.Attribute.actionModeWebSearchDrawable = global::Android.UnitTests.Resource.Attribute.actionModeWebSearchDrawable;
-			global::XLabs.Forms.Resource.Attribute.actionOverflowButtonStyle = global::Android.UnitTests.Resource.Attribute.actionOverflowButtonStyle;
-			global::XLabs.Forms.Resource.Attribute.actionOverflowMenuStyle = global::Android.UnitTests.Resource.Attribute.actionOverflowMenuStyle;
-			global::XLabs.Forms.Resource.Attribute.actionProviderClass = global::Android.UnitTests.Resource.Attribute.actionProviderClass;
-			global::XLabs.Forms.Resource.Attribute.actionViewClass = global::Android.UnitTests.Resource.Attribute.actionViewClass;
-			global::XLabs.Forms.Resource.Attribute.activityChooserViewStyle = global::Android.UnitTests.Resource.Attribute.activityChooserViewStyle;
-			global::XLabs.Forms.Resource.Attribute.alertDialogButtonGroupStyle = global::Android.UnitTests.Resource.Attribute.alertDialogButtonGroupStyle;
-			global::XLabs.Forms.Resource.Attribute.alertDialogCenterButtons = global::Android.UnitTests.Resource.Attribute.alertDialogCenterButtons;
-			global::XLabs.Forms.Resource.Attribute.alertDialogStyle = global::Android.UnitTests.Resource.Attribute.alertDialogStyle;
-			global::XLabs.Forms.Resource.Attribute.alertDialogTheme = global::Android.UnitTests.Resource.Attribute.alertDialogTheme;
-			global::XLabs.Forms.Resource.Attribute.arrowHeadLength = global::Android.UnitTests.Resource.Attribute.arrowHeadLength;
-			global::XLabs.Forms.Resource.Attribute.arrowShaftLength = global::Android.UnitTests.Resource.Attribute.arrowShaftLength;
-			global::XLabs.Forms.Resource.Attribute.autoCompleteTextViewStyle = global::Android.UnitTests.Resource.Attribute.autoCompleteTextViewStyle;
-			global::XLabs.Forms.Resource.Attribute.background = global::Android.UnitTests.Resource.Attribute.background;
-			global::XLabs.Forms.Resource.Attribute.backgroundSplit = global::Android.UnitTests.Resource.Attribute.backgroundSplit;
-			global::XLabs.Forms.Resource.Attribute.backgroundStacked = global::Android.UnitTests.Resource.Attribute.backgroundStacked;
-			global::XLabs.Forms.Resource.Attribute.backgroundTint = global::Android.UnitTests.Resource.Attribute.backgroundTint;
-			global::XLabs.Forms.Resource.Attribute.backgroundTintMode = global::Android.UnitTests.Resource.Attribute.backgroundTintMode;
-			global::XLabs.Forms.Resource.Attribute.barLength = global::Android.UnitTests.Resource.Attribute.barLength;
-			global::XLabs.Forms.Resource.Attribute.behavior_overlapTop = global::Android.UnitTests.Resource.Attribute.behavior_overlapTop;
-			global::XLabs.Forms.Resource.Attribute.borderWidth = global::Android.UnitTests.Resource.Attribute.borderWidth;
-			global::XLabs.Forms.Resource.Attribute.borderlessButtonStyle = global::Android.UnitTests.Resource.Attribute.borderlessButtonStyle;
-			global::XLabs.Forms.Resource.Attribute.buttonBarButtonStyle = global::Android.UnitTests.Resource.Attribute.buttonBarButtonStyle;
-			global::XLabs.Forms.Resource.Attribute.buttonBarNegativeButtonStyle = global::Android.UnitTests.Resource.Attribute.buttonBarNegativeButtonStyle;
-			global::XLabs.Forms.Resource.Attribute.buttonBarNeutralButtonStyle = global::Android.UnitTests.Resource.Attribute.buttonBarNeutralButtonStyle;
-			global::XLabs.Forms.Resource.Attribute.buttonBarPositiveButtonStyle = global::Android.UnitTests.Resource.Attribute.buttonBarPositiveButtonStyle;
-			global::XLabs.Forms.Resource.Attribute.buttonBarStyle = global::Android.UnitTests.Resource.Attribute.buttonBarStyle;
-			global::XLabs.Forms.Resource.Attribute.buttonPanelSideLayout = global::Android.UnitTests.Resource.Attribute.buttonPanelSideLayout;
-			global::XLabs.Forms.Resource.Attribute.buttonStyle = global::Android.UnitTests.Resource.Attribute.buttonStyle;
-			global::XLabs.Forms.Resource.Attribute.buttonStyleSmall = global::Android.UnitTests.Resource.Attribute.buttonStyleSmall;
-			global::XLabs.Forms.Resource.Attribute.buttonTint = global::Android.UnitTests.Resource.Attribute.buttonTint;
-			global::XLabs.Forms.Resource.Attribute.buttonTintMode = global::Android.UnitTests.Resource.Attribute.buttonTintMode;
-			global::XLabs.Forms.Resource.Attribute.cardBackgroundColor = global::Android.UnitTests.Resource.Attribute.cardBackgroundColor;
-			global::XLabs.Forms.Resource.Attribute.cardCornerRadius = global::Android.UnitTests.Resource.Attribute.cardCornerRadius;
-			global::XLabs.Forms.Resource.Attribute.cardElevation = global::Android.UnitTests.Resource.Attribute.cardElevation;
-			global::XLabs.Forms.Resource.Attribute.cardMaxElevation = global::Android.UnitTests.Resource.Attribute.cardMaxElevation;
-			global::XLabs.Forms.Resource.Attribute.cardPreventCornerOverlap = global::Android.UnitTests.Resource.Attribute.cardPreventCornerOverlap;
-			global::XLabs.Forms.Resource.Attribute.cardUseCompatPadding = global::Android.UnitTests.Resource.Attribute.cardUseCompatPadding;
-			global::XLabs.Forms.Resource.Attribute.checkboxStyle = global::Android.UnitTests.Resource.Attribute.checkboxStyle;
-			global::XLabs.Forms.Resource.Attribute.checkedTextViewStyle = global::Android.UnitTests.Resource.Attribute.checkedTextViewStyle;
-			global::XLabs.Forms.Resource.Attribute.closeIcon = global::Android.UnitTests.Resource.Attribute.closeIcon;
-			global::XLabs.Forms.Resource.Attribute.closeItemLayout = global::Android.UnitTests.Resource.Attribute.closeItemLayout;
-			global::XLabs.Forms.Resource.Attribute.collapseContentDescription = global::Android.UnitTests.Resource.Attribute.collapseContentDescription;
-			global::XLabs.Forms.Resource.Attribute.collapseIcon = global::Android.UnitTests.Resource.Attribute.collapseIcon;
-			global::XLabs.Forms.Resource.Attribute.collapsedTitleGravity = global::Android.UnitTests.Resource.Attribute.collapsedTitleGravity;
-			global::XLabs.Forms.Resource.Attribute.collapsedTitleTextAppearance = global::Android.UnitTests.Resource.Attribute.collapsedTitleTextAppearance;
-			global::XLabs.Forms.Resource.Attribute.color = global::Android.UnitTests.Resource.Attribute.color;
-			global::XLabs.Forms.Resource.Attribute.colorAccent = global::Android.UnitTests.Resource.Attribute.colorAccent;
-			global::XLabs.Forms.Resource.Attribute.colorButtonNormal = global::Android.UnitTests.Resource.Attribute.colorButtonNormal;
-			global::XLabs.Forms.Resource.Attribute.colorControlActivated = global::Android.UnitTests.Resource.Attribute.colorControlActivated;
-			global::XLabs.Forms.Resource.Attribute.colorControlHighlight = global::Android.UnitTests.Resource.Attribute.colorControlHighlight;
-			global::XLabs.Forms.Resource.Attribute.colorControlNormal = global::Android.UnitTests.Resource.Attribute.colorControlNormal;
-			global::XLabs.Forms.Resource.Attribute.colorPrimary = global::Android.UnitTests.Resource.Attribute.colorPrimary;
-			global::XLabs.Forms.Resource.Attribute.colorPrimaryDark = global::Android.UnitTests.Resource.Attribute.colorPrimaryDark;
-			global::XLabs.Forms.Resource.Attribute.colorSwitchThumbNormal = global::Android.UnitTests.Resource.Attribute.colorSwitchThumbNormal;
-			global::XLabs.Forms.Resource.Attribute.commitIcon = global::Android.UnitTests.Resource.Attribute.commitIcon;
-			global::XLabs.Forms.Resource.Attribute.contentInsetEnd = global::Android.UnitTests.Resource.Attribute.contentInsetEnd;
-			global::XLabs.Forms.Resource.Attribute.contentInsetLeft = global::Android.UnitTests.Resource.Attribute.contentInsetLeft;
-			global::XLabs.Forms.Resource.Attribute.contentInsetRight = global::Android.UnitTests.Resource.Attribute.contentInsetRight;
-			global::XLabs.Forms.Resource.Attribute.contentInsetStart = global::Android.UnitTests.Resource.Attribute.contentInsetStart;
-			global::XLabs.Forms.Resource.Attribute.contentPadding = global::Android.UnitTests.Resource.Attribute.contentPadding;
-			global::XLabs.Forms.Resource.Attribute.contentPaddingBottom = global::Android.UnitTests.Resource.Attribute.contentPaddingBottom;
-			global::XLabs.Forms.Resource.Attribute.contentPaddingLeft = global::Android.UnitTests.Resource.Attribute.contentPaddingLeft;
-			global::XLabs.Forms.Resource.Attribute.contentPaddingRight = global::Android.UnitTests.Resource.Attribute.contentPaddingRight;
-			global::XLabs.Forms.Resource.Attribute.contentPaddingTop = global::Android.UnitTests.Resource.Attribute.contentPaddingTop;
-			global::XLabs.Forms.Resource.Attribute.contentScrim = global::Android.UnitTests.Resource.Attribute.contentScrim;
-			global::XLabs.Forms.Resource.Attribute.controlBackground = global::Android.UnitTests.Resource.Attribute.controlBackground;
-			global::XLabs.Forms.Resource.Attribute.customNavigationLayout = global::Android.UnitTests.Resource.Attribute.customNavigationLayout;
-			global::XLabs.Forms.Resource.Attribute.defaultQueryHint = global::Android.UnitTests.Resource.Attribute.defaultQueryHint;
-			global::XLabs.Forms.Resource.Attribute.dialogPreferredPadding = global::Android.UnitTests.Resource.Attribute.dialogPreferredPadding;
-			global::XLabs.Forms.Resource.Attribute.dialogTheme = global::Android.UnitTests.Resource.Attribute.dialogTheme;
-			global::XLabs.Forms.Resource.Attribute.displayOptions = global::Android.UnitTests.Resource.Attribute.displayOptions;
-			global::XLabs.Forms.Resource.Attribute.divider = global::Android.UnitTests.Resource.Attribute.divider;
-			global::XLabs.Forms.Resource.Attribute.dividerHorizontal = global::Android.UnitTests.Resource.Attribute.dividerHorizontal;
-			global::XLabs.Forms.Resource.Attribute.dividerPadding = global::Android.UnitTests.Resource.Attribute.dividerPadding;
-			global::XLabs.Forms.Resource.Attribute.dividerVertical = global::Android.UnitTests.Resource.Attribute.dividerVertical;
-			global::XLabs.Forms.Resource.Attribute.drawableSize = global::Android.UnitTests.Resource.Attribute.drawableSize;
-			global::XLabs.Forms.Resource.Attribute.drawerArrowStyle = global::Android.UnitTests.Resource.Attribute.drawerArrowStyle;
-			global::XLabs.Forms.Resource.Attribute.dropDownListViewStyle = global::Android.UnitTests.Resource.Attribute.dropDownListViewStyle;
-			global::XLabs.Forms.Resource.Attribute.dropdownListPreferredItemHeight = global::Android.UnitTests.Resource.Attribute.dropdownListPreferredItemHeight;
-			global::XLabs.Forms.Resource.Attribute.editTextBackground = global::Android.UnitTests.Resource.Attribute.editTextBackground;
-			global::XLabs.Forms.Resource.Attribute.editTextColor = global::Android.UnitTests.Resource.Attribute.editTextColor;
-			global::XLabs.Forms.Resource.Attribute.editTextStyle = global::Android.UnitTests.Resource.Attribute.editTextStyle;
-			global::XLabs.Forms.Resource.Attribute.elevation = global::Android.UnitTests.Resource.Attribute.elevation;
-			global::XLabs.Forms.Resource.Attribute.errorEnabled = global::Android.UnitTests.Resource.Attribute.errorEnabled;
-			global::XLabs.Forms.Resource.Attribute.errorTextAppearance = global::Android.UnitTests.Resource.Attribute.errorTextAppearance;
-			global::XLabs.Forms.Resource.Attribute.expandActivityOverflowButtonDrawable = global::Android.UnitTests.Resource.Attribute.expandActivityOverflowButtonDrawable;
-			global::XLabs.Forms.Resource.Attribute.expanded = global::Android.UnitTests.Resource.Attribute.expanded;
-			global::XLabs.Forms.Resource.Attribute.expandedTitleGravity = global::Android.UnitTests.Resource.Attribute.expandedTitleGravity;
-			global::XLabs.Forms.Resource.Attribute.expandedTitleMargin = global::Android.UnitTests.Resource.Attribute.expandedTitleMargin;
-			global::XLabs.Forms.Resource.Attribute.expandedTitleMarginBottom = global::Android.UnitTests.Resource.Attribute.expandedTitleMarginBottom;
-			global::XLabs.Forms.Resource.Attribute.expandedTitleMarginEnd = global::Android.UnitTests.Resource.Attribute.expandedTitleMarginEnd;
-			global::XLabs.Forms.Resource.Attribute.expandedTitleMarginStart = global::Android.UnitTests.Resource.Attribute.expandedTitleMarginStart;
-			global::XLabs.Forms.Resource.Attribute.expandedTitleMarginTop = global::Android.UnitTests.Resource.Attribute.expandedTitleMarginTop;
-			global::XLabs.Forms.Resource.Attribute.expandedTitleTextAppearance = global::Android.UnitTests.Resource.Attribute.expandedTitleTextAppearance;
-			global::XLabs.Forms.Resource.Attribute.externalRouteEnabledDrawable = global::Android.UnitTests.Resource.Attribute.externalRouteEnabledDrawable;
-			global::XLabs.Forms.Resource.Attribute.fabSize = global::Android.UnitTests.Resource.Attribute.fabSize;
-			global::XLabs.Forms.Resource.Attribute.gapBetweenBars = global::Android.UnitTests.Resource.Attribute.gapBetweenBars;
-			global::XLabs.Forms.Resource.Attribute.goIcon = global::Android.UnitTests.Resource.Attribute.goIcon;
-			global::XLabs.Forms.Resource.Attribute.headerLayout = global::Android.UnitTests.Resource.Attribute.headerLayout;
-			global::XLabs.Forms.Resource.Attribute.height = global::Android.UnitTests.Resource.Attribute.height;
-			global::XLabs.Forms.Resource.Attribute.hideOnContentScroll = global::Android.UnitTests.Resource.Attribute.hideOnContentScroll;
-			global::XLabs.Forms.Resource.Attribute.hintAnimationEnabled = global::Android.UnitTests.Resource.Attribute.hintAnimationEnabled;
-			global::XLabs.Forms.Resource.Attribute.hintTextAppearance = global::Android.UnitTests.Resource.Attribute.hintTextAppearance;
-			global::XLabs.Forms.Resource.Attribute.homeAsUpIndicator = global::Android.UnitTests.Resource.Attribute.homeAsUpIndicator;
-			global::XLabs.Forms.Resource.Attribute.homeLayout = global::Android.UnitTests.Resource.Attribute.homeLayout;
-			global::XLabs.Forms.Resource.Attribute.icon = global::Android.UnitTests.Resource.Attribute.icon;
-			global::XLabs.Forms.Resource.Attribute.iconifiedByDefault = global::Android.UnitTests.Resource.Attribute.iconifiedByDefault;
-			global::XLabs.Forms.Resource.Attribute.indeterminateProgressStyle = global::Android.UnitTests.Resource.Attribute.indeterminateProgressStyle;
-			global::XLabs.Forms.Resource.Attribute.initialActivityCount = global::Android.UnitTests.Resource.Attribute.initialActivityCount;
-			global::XLabs.Forms.Resource.Attribute.insetForeground = global::Android.UnitTests.Resource.Attribute.insetForeground;
-			global::XLabs.Forms.Resource.Attribute.isLightTheme = global::Android.UnitTests.Resource.Attribute.isLightTheme;
-			global::XLabs.Forms.Resource.Attribute.itemBackground = global::Android.UnitTests.Resource.Attribute.itemBackground;
-			global::XLabs.Forms.Resource.Attribute.itemIconTint = global::Android.UnitTests.Resource.Attribute.itemIconTint;
-			global::XLabs.Forms.Resource.Attribute.itemPadding = global::Android.UnitTests.Resource.Attribute.itemPadding;
-			global::XLabs.Forms.Resource.Attribute.itemTextAppearance = global::Android.UnitTests.Resource.Attribute.itemTextAppearance;
-			global::XLabs.Forms.Resource.Attribute.itemTextColor = global::Android.UnitTests.Resource.Attribute.itemTextColor;
-			global::XLabs.Forms.Resource.Attribute.keylines = global::Android.UnitTests.Resource.Attribute.keylines;
-			global::XLabs.Forms.Resource.Attribute.layout = global::Android.UnitTests.Resource.Attribute.layout;
-			global::XLabs.Forms.Resource.Attribute.layout_anchor = global::Android.UnitTests.Resource.Attribute.layout_anchor;
-			global::XLabs.Forms.Resource.Attribute.layout_anchorGravity = global::Android.UnitTests.Resource.Attribute.layout_anchorGravity;
-			global::XLabs.Forms.Resource.Attribute.layout_behavior = global::Android.UnitTests.Resource.Attribute.layout_behavior;
-			global::XLabs.Forms.Resource.Attribute.layout_collapseMode = global::Android.UnitTests.Resource.Attribute.layout_collapseMode;
-			global::XLabs.Forms.Resource.Attribute.layout_collapseParallaxMultiplier = global::Android.UnitTests.Resource.Attribute.layout_collapseParallaxMultiplier;
-			global::XLabs.Forms.Resource.Attribute.layout_keyline = global::Android.UnitTests.Resource.Attribute.layout_keyline;
-			global::XLabs.Forms.Resource.Attribute.layout_scrollFlags = global::Android.UnitTests.Resource.Attribute.layout_scrollFlags;
-			global::XLabs.Forms.Resource.Attribute.layout_scrollInterpolator = global::Android.UnitTests.Resource.Attribute.layout_scrollInterpolator;
-			global::XLabs.Forms.Resource.Attribute.listChoiceBackgroundIndicator = global::Android.UnitTests.Resource.Attribute.listChoiceBackgroundIndicator;
-			global::XLabs.Forms.Resource.Attribute.listDividerAlertDialog = global::Android.UnitTests.Resource.Attribute.listDividerAlertDialog;
-			global::XLabs.Forms.Resource.Attribute.listItemLayout = global::Android.UnitTests.Resource.Attribute.listItemLayout;
-			global::XLabs.Forms.Resource.Attribute.listLayout = global::Android.UnitTests.Resource.Attribute.listLayout;
-			global::XLabs.Forms.Resource.Attribute.listPopupWindowStyle = global::Android.UnitTests.Resource.Attribute.listPopupWindowStyle;
-			global::XLabs.Forms.Resource.Attribute.listPreferredItemHeight = global::Android.UnitTests.Resource.Attribute.listPreferredItemHeight;
-			global::XLabs.Forms.Resource.Attribute.listPreferredItemHeightLarge = global::Android.UnitTests.Resource.Attribute.listPreferredItemHeightLarge;
-			global::XLabs.Forms.Resource.Attribute.listPreferredItemHeightSmall = global::Android.UnitTests.Resource.Attribute.listPreferredItemHeightSmall;
-			global::XLabs.Forms.Resource.Attribute.listPreferredItemPaddingLeft = global::Android.UnitTests.Resource.Attribute.listPreferredItemPaddingLeft;
-			global::XLabs.Forms.Resource.Attribute.listPreferredItemPaddingRight = global::Android.UnitTests.Resource.Attribute.listPreferredItemPaddingRight;
-			global::XLabs.Forms.Resource.Attribute.logo = global::Android.UnitTests.Resource.Attribute.logo;
-			global::XLabs.Forms.Resource.Attribute.logoDescription = global::Android.UnitTests.Resource.Attribute.logoDescription;
-			global::XLabs.Forms.Resource.Attribute.maxActionInlineWidth = global::Android.UnitTests.Resource.Attribute.maxActionInlineWidth;
-			global::XLabs.Forms.Resource.Attribute.maxButtonHeight = global::Android.UnitTests.Resource.Attribute.maxButtonHeight;
-			global::XLabs.Forms.Resource.Attribute.measureWithLargestChild = global::Android.UnitTests.Resource.Attribute.measureWithLargestChild;
-			global::XLabs.Forms.Resource.Attribute.mediaRouteButtonStyle = global::Android.UnitTests.Resource.Attribute.mediaRouteButtonStyle;
-			global::XLabs.Forms.Resource.Attribute.mediaRoutePauseDrawable = global::Android.UnitTests.Resource.Attribute.mediaRoutePauseDrawable;
-			global::XLabs.Forms.Resource.Attribute.mediaRoutePlayDrawable = global::Android.UnitTests.Resource.Attribute.mediaRoutePlayDrawable;
-			global::XLabs.Forms.Resource.Attribute.menu = global::Android.UnitTests.Resource.Attribute.menu;
-			global::XLabs.Forms.Resource.Attribute.multiChoiceItemLayout = global::Android.UnitTests.Resource.Attribute.multiChoiceItemLayout;
-			global::XLabs.Forms.Resource.Attribute.navigationContentDescription = global::Android.UnitTests.Resource.Attribute.navigationContentDescription;
-			global::XLabs.Forms.Resource.Attribute.navigationIcon = global::Android.UnitTests.Resource.Attribute.navigationIcon;
-			global::XLabs.Forms.Resource.Attribute.navigationMode = global::Android.UnitTests.Resource.Attribute.navigationMode;
-			global::XLabs.Forms.Resource.Attribute.overlapAnchor = global::Android.UnitTests.Resource.Attribute.overlapAnchor;
-			global::XLabs.Forms.Resource.Attribute.paddingEnd = global::Android.UnitTests.Resource.Attribute.paddingEnd;
-			global::XLabs.Forms.Resource.Attribute.paddingStart = global::Android.UnitTests.Resource.Attribute.paddingStart;
-			global::XLabs.Forms.Resource.Attribute.panelBackground = global::Android.UnitTests.Resource.Attribute.panelBackground;
-			global::XLabs.Forms.Resource.Attribute.panelMenuListTheme = global::Android.UnitTests.Resource.Attribute.panelMenuListTheme;
-			global::XLabs.Forms.Resource.Attribute.panelMenuListWidth = global::Android.UnitTests.Resource.Attribute.panelMenuListWidth;
-			global::XLabs.Forms.Resource.Attribute.popupMenuStyle = global::Android.UnitTests.Resource.Attribute.popupMenuStyle;
-			global::XLabs.Forms.Resource.Attribute.popupTheme = global::Android.UnitTests.Resource.Attribute.popupTheme;
-			global::XLabs.Forms.Resource.Attribute.popupWindowStyle = global::Android.UnitTests.Resource.Attribute.popupWindowStyle;
-			global::XLabs.Forms.Resource.Attribute.preserveIconSpacing = global::Android.UnitTests.Resource.Attribute.preserveIconSpacing;
-			global::XLabs.Forms.Resource.Attribute.pressedTranslationZ = global::Android.UnitTests.Resource.Attribute.pressedTranslationZ;
-			global::XLabs.Forms.Resource.Attribute.progressBarPadding = global::Android.UnitTests.Resource.Attribute.progressBarPadding;
-			global::XLabs.Forms.Resource.Attribute.progressBarStyle = global::Android.UnitTests.Resource.Attribute.progressBarStyle;
-			global::XLabs.Forms.Resource.Attribute.queryBackground = global::Android.UnitTests.Resource.Attribute.queryBackground;
-			global::XLabs.Forms.Resource.Attribute.queryHint = global::Android.UnitTests.Resource.Attribute.queryHint;
-			global::XLabs.Forms.Resource.Attribute.radioButtonStyle = global::Android.UnitTests.Resource.Attribute.radioButtonStyle;
-			global::XLabs.Forms.Resource.Attribute.ratingBarStyle = global::Android.UnitTests.Resource.Attribute.ratingBarStyle;
-			global::XLabs.Forms.Resource.Attribute.rippleColor = global::Android.UnitTests.Resource.Attribute.rippleColor;
-			global::XLabs.Forms.Resource.Attribute.searchHintIcon = global::Android.UnitTests.Resource.Attribute.searchHintIcon;
-			global::XLabs.Forms.Resource.Attribute.searchIcon = global::Android.UnitTests.Resource.Attribute.searchIcon;
-			global::XLabs.Forms.Resource.Attribute.searchViewStyle = global::Android.UnitTests.Resource.Attribute.searchViewStyle;
-			global::XLabs.Forms.Resource.Attribute.selectableItemBackground = global::Android.UnitTests.Resource.Attribute.selectableItemBackground;
-			global::XLabs.Forms.Resource.Attribute.selectableItemBackgroundBorderless = global::Android.UnitTests.Resource.Attribute.selectableItemBackgroundBorderless;
-			global::XLabs.Forms.Resource.Attribute.showAsAction = global::Android.UnitTests.Resource.Attribute.showAsAction;
-			global::XLabs.Forms.Resource.Attribute.showDividers = global::Android.UnitTests.Resource.Attribute.showDividers;
-			global::XLabs.Forms.Resource.Attribute.showText = global::Android.UnitTests.Resource.Attribute.showText;
-			global::XLabs.Forms.Resource.Attribute.singleChoiceItemLayout = global::Android.UnitTests.Resource.Attribute.singleChoiceItemLayout;
-			global::XLabs.Forms.Resource.Attribute.spinBars = global::Android.UnitTests.Resource.Attribute.spinBars;
-			global::XLabs.Forms.Resource.Attribute.spinnerDropDownItemStyle = global::Android.UnitTests.Resource.Attribute.spinnerDropDownItemStyle;
-			global::XLabs.Forms.Resource.Attribute.spinnerStyle = global::Android.UnitTests.Resource.Attribute.spinnerStyle;
-			global::XLabs.Forms.Resource.Attribute.splitTrack = global::Android.UnitTests.Resource.Attribute.splitTrack;
-			global::XLabs.Forms.Resource.Attribute.state_above_anchor = global::Android.UnitTests.Resource.Attribute.state_above_anchor;
-			global::XLabs.Forms.Resource.Attribute.statusBarBackground = global::Android.UnitTests.Resource.Attribute.statusBarBackground;
-			global::XLabs.Forms.Resource.Attribute.statusBarScrim = global::Android.UnitTests.Resource.Attribute.statusBarScrim;
-			global::XLabs.Forms.Resource.Attribute.submitBackground = global::Android.UnitTests.Resource.Attribute.submitBackground;
-			global::XLabs.Forms.Resource.Attribute.subtitle = global::Android.UnitTests.Resource.Attribute.subtitle;
-			global::XLabs.Forms.Resource.Attribute.subtitleTextAppearance = global::Android.UnitTests.Resource.Attribute.subtitleTextAppearance;
-			global::XLabs.Forms.Resource.Attribute.subtitleTextColor = global::Android.UnitTests.Resource.Attribute.subtitleTextColor;
-			global::XLabs.Forms.Resource.Attribute.subtitleTextStyle = global::Android.UnitTests.Resource.Attribute.subtitleTextStyle;
-			global::XLabs.Forms.Resource.Attribute.suggestionRowLayout = global::Android.UnitTests.Resource.Attribute.suggestionRowLayout;
-			global::XLabs.Forms.Resource.Attribute.switchMinWidth = global::Android.UnitTests.Resource.Attribute.switchMinWidth;
-			global::XLabs.Forms.Resource.Attribute.switchPadding = global::Android.UnitTests.Resource.Attribute.switchPadding;
-			global::XLabs.Forms.Resource.Attribute.switchStyle = global::Android.UnitTests.Resource.Attribute.switchStyle;
-			global::XLabs.Forms.Resource.Attribute.switchTextAppearance = global::Android.UnitTests.Resource.Attribute.switchTextAppearance;
-			global::XLabs.Forms.Resource.Attribute.tabBackground = global::Android.UnitTests.Resource.Attribute.tabBackground;
-			global::XLabs.Forms.Resource.Attribute.tabContentStart = global::Android.UnitTests.Resource.Attribute.tabContentStart;
-			global::XLabs.Forms.Resource.Attribute.tabGravity = global::Android.UnitTests.Resource.Attribute.tabGravity;
-			global::XLabs.Forms.Resource.Attribute.tabIndicatorColor = global::Android.UnitTests.Resource.Attribute.tabIndicatorColor;
-			global::XLabs.Forms.Resource.Attribute.tabIndicatorHeight = global::Android.UnitTests.Resource.Attribute.tabIndicatorHeight;
-			global::XLabs.Forms.Resource.Attribute.tabMaxWidth = global::Android.UnitTests.Resource.Attribute.tabMaxWidth;
-			global::XLabs.Forms.Resource.Attribute.tabMinWidth = global::Android.UnitTests.Resource.Attribute.tabMinWidth;
-			global::XLabs.Forms.Resource.Attribute.tabMode = global::Android.UnitTests.Resource.Attribute.tabMode;
-			global::XLabs.Forms.Resource.Attribute.tabPadding = global::Android.UnitTests.Resource.Attribute.tabPadding;
-			global::XLabs.Forms.Resource.Attribute.tabPaddingBottom = global::Android.UnitTests.Resource.Attribute.tabPaddingBottom;
-			global::XLabs.Forms.Resource.Attribute.tabPaddingEnd = global::Android.UnitTests.Resource.Attribute.tabPaddingEnd;
-			global::XLabs.Forms.Resource.Attribute.tabPaddingStart = global::Android.UnitTests.Resource.Attribute.tabPaddingStart;
-			global::XLabs.Forms.Resource.Attribute.tabPaddingTop = global::Android.UnitTests.Resource.Attribute.tabPaddingTop;
-			global::XLabs.Forms.Resource.Attribute.tabSelectedTextColor = global::Android.UnitTests.Resource.Attribute.tabSelectedTextColor;
-			global::XLabs.Forms.Resource.Attribute.tabTextAppearance = global::Android.UnitTests.Resource.Attribute.tabTextAppearance;
-			global::XLabs.Forms.Resource.Attribute.tabTextColor = global::Android.UnitTests.Resource.Attribute.tabTextColor;
-			global::XLabs.Forms.Resource.Attribute.textAllCaps = global::Android.UnitTests.Resource.Attribute.textAllCaps;
-			global::XLabs.Forms.Resource.Attribute.textAppearanceLargePopupMenu = global::Android.UnitTests.Resource.Attribute.textAppearanceLargePopupMenu;
-			global::XLabs.Forms.Resource.Attribute.textAppearanceListItem = global::Android.UnitTests.Resource.Attribute.textAppearanceListItem;
-			global::XLabs.Forms.Resource.Attribute.textAppearanceListItemSmall = global::Android.UnitTests.Resource.Attribute.textAppearanceListItemSmall;
-			global::XLabs.Forms.Resource.Attribute.textAppearanceSearchResultSubtitle = global::Android.UnitTests.Resource.Attribute.textAppearanceSearchResultSubtitle;
-			global::XLabs.Forms.Resource.Attribute.textAppearanceSearchResultTitle = global::Android.UnitTests.Resource.Attribute.textAppearanceSearchResultTitle;
-			global::XLabs.Forms.Resource.Attribute.textAppearanceSmallPopupMenu = global::Android.UnitTests.Resource.Attribute.textAppearanceSmallPopupMenu;
-			global::XLabs.Forms.Resource.Attribute.textColorAlertDialogListItem = global::Android.UnitTests.Resource.Attribute.textColorAlertDialogListItem;
-			global::XLabs.Forms.Resource.Attribute.textColorSearchUrl = global::Android.UnitTests.Resource.Attribute.textColorSearchUrl;
-			global::XLabs.Forms.Resource.Attribute.theme = global::Android.UnitTests.Resource.Attribute.theme;
-			global::XLabs.Forms.Resource.Attribute.thickness = global::Android.UnitTests.Resource.Attribute.thickness;
-			global::XLabs.Forms.Resource.Attribute.thumbTextPadding = global::Android.UnitTests.Resource.Attribute.thumbTextPadding;
-			global::XLabs.Forms.Resource.Attribute.title = global::Android.UnitTests.Resource.Attribute.title;
-			global::XLabs.Forms.Resource.Attribute.titleEnabled = global::Android.UnitTests.Resource.Attribute.titleEnabled;
-			global::XLabs.Forms.Resource.Attribute.titleMarginBottom = global::Android.UnitTests.Resource.Attribute.titleMarginBottom;
-			global::XLabs.Forms.Resource.Attribute.titleMarginEnd = global::Android.UnitTests.Resource.Attribute.titleMarginEnd;
-			global::XLabs.Forms.Resource.Attribute.titleMarginStart = global::Android.UnitTests.Resource.Attribute.titleMarginStart;
-			global::XLabs.Forms.Resource.Attribute.titleMarginTop = global::Android.UnitTests.Resource.Attribute.titleMarginTop;
-			global::XLabs.Forms.Resource.Attribute.titleMargins = global::Android.UnitTests.Resource.Attribute.titleMargins;
-			global::XLabs.Forms.Resource.Attribute.titleTextAppearance = global::Android.UnitTests.Resource.Attribute.titleTextAppearance;
-			global::XLabs.Forms.Resource.Attribute.titleTextColor = global::Android.UnitTests.Resource.Attribute.titleTextColor;
-			global::XLabs.Forms.Resource.Attribute.titleTextStyle = global::Android.UnitTests.Resource.Attribute.titleTextStyle;
-			global::XLabs.Forms.Resource.Attribute.toolbarId = global::Android.UnitTests.Resource.Attribute.toolbarId;
-			global::XLabs.Forms.Resource.Attribute.toolbarNavigationButtonStyle = global::Android.UnitTests.Resource.Attribute.toolbarNavigationButtonStyle;
-			global::XLabs.Forms.Resource.Attribute.toolbarStyle = global::Android.UnitTests.Resource.Attribute.toolbarStyle;
-			global::XLabs.Forms.Resource.Attribute.track = global::Android.UnitTests.Resource.Attribute.track;
-			global::XLabs.Forms.Resource.Attribute.voiceIcon = global::Android.UnitTests.Resource.Attribute.voiceIcon;
-			global::XLabs.Forms.Resource.Attribute.windowActionBar = global::Android.UnitTests.Resource.Attribute.windowActionBar;
-			global::XLabs.Forms.Resource.Attribute.windowActionBarOverlay = global::Android.UnitTests.Resource.Attribute.windowActionBarOverlay;
-			global::XLabs.Forms.Resource.Attribute.windowActionModeOverlay = global::Android.UnitTests.Resource.Attribute.windowActionModeOverlay;
-			global::XLabs.Forms.Resource.Attribute.windowFixedHeightMajor = global::Android.UnitTests.Resource.Attribute.windowFixedHeightMajor;
-			global::XLabs.Forms.Resource.Attribute.windowFixedHeightMinor = global::Android.UnitTests.Resource.Attribute.windowFixedHeightMinor;
-			global::XLabs.Forms.Resource.Attribute.windowFixedWidthMajor = global::Android.UnitTests.Resource.Attribute.windowFixedWidthMajor;
-			global::XLabs.Forms.Resource.Attribute.windowFixedWidthMinor = global::Android.UnitTests.Resource.Attribute.windowFixedWidthMinor;
-			global::XLabs.Forms.Resource.Attribute.windowMinWidthMajor = global::Android.UnitTests.Resource.Attribute.windowMinWidthMajor;
-			global::XLabs.Forms.Resource.Attribute.windowMinWidthMinor = global::Android.UnitTests.Resource.Attribute.windowMinWidthMinor;
-			global::XLabs.Forms.Resource.Attribute.windowNoTitle = global::Android.UnitTests.Resource.Attribute.windowNoTitle;
-			global::XLabs.Forms.Resource.Boolean.abc_action_bar_embed_tabs = global::Android.UnitTests.Resource.Boolean.abc_action_bar_embed_tabs;
-			global::XLabs.Forms.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::Android.UnitTests.Resource.Boolean.abc_config_actionMenuItemAllCaps;
-			global::XLabs.Forms.Resource.Color.abc_background_cache_hint_selector_material_dark = global::Android.UnitTests.Resource.Color.abc_background_cache_hint_selector_material_dark;
-			global::XLabs.Forms.Resource.Color.abc_background_cache_hint_selector_material_light = global::Android.UnitTests.Resource.Color.abc_background_cache_hint_selector_material_light;
-			global::XLabs.Forms.Resource.Color.abc_color_highlight_material = global::Android.UnitTests.Resource.Color.abc_color_highlight_material;
-			global::XLabs.Forms.Resource.Color.abc_input_method_navigation_guard = global::Android.UnitTests.Resource.Color.abc_input_method_navigation_guard;
-			global::XLabs.Forms.Resource.Color.abc_primary_text_disable_only_material_dark = global::Android.UnitTests.Resource.Color.abc_primary_text_disable_only_material_dark;
-			global::XLabs.Forms.Resource.Color.abc_primary_text_disable_only_material_light = global::Android.UnitTests.Resource.Color.abc_primary_text_disable_only_material_light;
-			global::XLabs.Forms.Resource.Color.abc_primary_text_material_dark = global::Android.UnitTests.Resource.Color.abc_primary_text_material_dark;
-			global::XLabs.Forms.Resource.Color.abc_primary_text_material_light = global::Android.UnitTests.Resource.Color.abc_primary_text_material_light;
-			global::XLabs.Forms.Resource.Color.abc_search_url_text = global::Android.UnitTests.Resource.Color.abc_search_url_text;
-			global::XLabs.Forms.Resource.Color.abc_search_url_text_normal = global::Android.UnitTests.Resource.Color.abc_search_url_text_normal;
-			global::XLabs.Forms.Resource.Color.abc_search_url_text_pressed = global::Android.UnitTests.Resource.Color.abc_search_url_text_pressed;
-			global::XLabs.Forms.Resource.Color.abc_search_url_text_selected = global::Android.UnitTests.Resource.Color.abc_search_url_text_selected;
-			global::XLabs.Forms.Resource.Color.abc_secondary_text_material_dark = global::Android.UnitTests.Resource.Color.abc_secondary_text_material_dark;
-			global::XLabs.Forms.Resource.Color.abc_secondary_text_material_light = global::Android.UnitTests.Resource.Color.abc_secondary_text_material_light;
-			global::XLabs.Forms.Resource.Color.accent_material_dark = global::Android.UnitTests.Resource.Color.accent_material_dark;
-			global::XLabs.Forms.Resource.Color.accent_material_light = global::Android.UnitTests.Resource.Color.accent_material_light;
-			global::XLabs.Forms.Resource.Color.background_floating_material_dark = global::Android.UnitTests.Resource.Color.background_floating_material_dark;
-			global::XLabs.Forms.Resource.Color.background_floating_material_light = global::Android.UnitTests.Resource.Color.background_floating_material_light;
-			global::XLabs.Forms.Resource.Color.background_material_dark = global::Android.UnitTests.Resource.Color.background_material_dark;
-			global::XLabs.Forms.Resource.Color.background_material_light = global::Android.UnitTests.Resource.Color.background_material_light;
-			global::XLabs.Forms.Resource.Color.bright_foreground_disabled_material_dark = global::Android.UnitTests.Resource.Color.bright_foreground_disabled_material_dark;
-			global::XLabs.Forms.Resource.Color.bright_foreground_disabled_material_light = global::Android.UnitTests.Resource.Color.bright_foreground_disabled_material_light;
-			global::XLabs.Forms.Resource.Color.bright_foreground_inverse_material_dark = global::Android.UnitTests.Resource.Color.bright_foreground_inverse_material_dark;
-			global::XLabs.Forms.Resource.Color.bright_foreground_inverse_material_light = global::Android.UnitTests.Resource.Color.bright_foreground_inverse_material_light;
-			global::XLabs.Forms.Resource.Color.bright_foreground_material_dark = global::Android.UnitTests.Resource.Color.bright_foreground_material_dark;
-			global::XLabs.Forms.Resource.Color.bright_foreground_material_light = global::Android.UnitTests.Resource.Color.bright_foreground_material_light;
-			global::XLabs.Forms.Resource.Color.button_material_dark = global::Android.UnitTests.Resource.Color.button_material_dark;
-			global::XLabs.Forms.Resource.Color.button_material_light = global::Android.UnitTests.Resource.Color.button_material_light;
-			global::XLabs.Forms.Resource.Color.calendar_active_month_bg = global::Android.UnitTests.Resource.Color.calendar_active_month_bg;
-			global::XLabs.Forms.Resource.Color.calendar_bg = global::Android.UnitTests.Resource.Color.calendar_bg;
-			global::XLabs.Forms.Resource.Color.calendar_divider = global::Android.UnitTests.Resource.Color.calendar_divider;
-			global::XLabs.Forms.Resource.Color.calendar_highlighted_day_bg = global::Android.UnitTests.Resource.Color.calendar_highlighted_day_bg;
-			global::XLabs.Forms.Resource.Color.calendar_inactive_month_bg = global::Android.UnitTests.Resource.Color.calendar_inactive_month_bg;
-			global::XLabs.Forms.Resource.Color.calendar_selected_day_bg = global::Android.UnitTests.Resource.Color.calendar_selected_day_bg;
-			global::XLabs.Forms.Resource.Color.calendar_selected_range_bg = global::Android.UnitTests.Resource.Color.calendar_selected_range_bg;
-			global::XLabs.Forms.Resource.Color.calendar_text_active = global::Android.UnitTests.Resource.Color.calendar_text_active;
-			global::XLabs.Forms.Resource.Color.calendar_text_inactive = global::Android.UnitTests.Resource.Color.calendar_text_inactive;
-			global::XLabs.Forms.Resource.Color.calendar_text_selected = global::Android.UnitTests.Resource.Color.calendar_text_selected;
-			global::XLabs.Forms.Resource.Color.calendar_text_selector = global::Android.UnitTests.Resource.Color.calendar_text_selector;
-			global::XLabs.Forms.Resource.Color.calendar_text_unselectable = global::Android.UnitTests.Resource.Color.calendar_text_unselectable;
-			global::XLabs.Forms.Resource.Color.cardview_dark_background = global::Android.UnitTests.Resource.Color.cardview_dark_background;
-			global::XLabs.Forms.Resource.Color.cardview_light_background = global::Android.UnitTests.Resource.Color.cardview_light_background;
-			global::XLabs.Forms.Resource.Color.cardview_shadow_end_color = global::Android.UnitTests.Resource.Color.cardview_shadow_end_color;
-			global::XLabs.Forms.Resource.Color.cardview_shadow_start_color = global::Android.UnitTests.Resource.Color.cardview_shadow_start_color;
-			global::XLabs.Forms.Resource.Color.design_fab_shadow_end_color = global::Android.UnitTests.Resource.Color.design_fab_shadow_end_color;
-			global::XLabs.Forms.Resource.Color.design_fab_shadow_mid_color = global::Android.UnitTests.Resource.Color.design_fab_shadow_mid_color;
-			global::XLabs.Forms.Resource.Color.design_fab_shadow_start_color = global::Android.UnitTests.Resource.Color.design_fab_shadow_start_color;
-			global::XLabs.Forms.Resource.Color.design_fab_stroke_end_inner_color = global::Android.UnitTests.Resource.Color.design_fab_stroke_end_inner_color;
-			global::XLabs.Forms.Resource.Color.design_fab_stroke_end_outer_color = global::Android.UnitTests.Resource.Color.design_fab_stroke_end_outer_color;
-			global::XLabs.Forms.Resource.Color.design_fab_stroke_top_inner_color = global::Android.UnitTests.Resource.Color.design_fab_stroke_top_inner_color;
-			global::XLabs.Forms.Resource.Color.design_fab_stroke_top_outer_color = global::Android.UnitTests.Resource.Color.design_fab_stroke_top_outer_color;
-			global::XLabs.Forms.Resource.Color.design_snackbar_background_color = global::Android.UnitTests.Resource.Color.design_snackbar_background_color;
-			global::XLabs.Forms.Resource.Color.dim_foreground_disabled_material_dark = global::Android.UnitTests.Resource.Color.dim_foreground_disabled_material_dark;
-			global::XLabs.Forms.Resource.Color.dim_foreground_disabled_material_light = global::Android.UnitTests.Resource.Color.dim_foreground_disabled_material_light;
-			global::XLabs.Forms.Resource.Color.dim_foreground_material_dark = global::Android.UnitTests.Resource.Color.dim_foreground_material_dark;
-			global::XLabs.Forms.Resource.Color.dim_foreground_material_light = global::Android.UnitTests.Resource.Color.dim_foreground_material_light;
-			global::XLabs.Forms.Resource.Color.foreground_material_dark = global::Android.UnitTests.Resource.Color.foreground_material_dark;
-			global::XLabs.Forms.Resource.Color.foreground_material_light = global::Android.UnitTests.Resource.Color.foreground_material_light;
-			global::XLabs.Forms.Resource.Color.highlighted_text_material_dark = global::Android.UnitTests.Resource.Color.highlighted_text_material_dark;
-			global::XLabs.Forms.Resource.Color.highlighted_text_material_light = global::Android.UnitTests.Resource.Color.highlighted_text_material_light;
-			global::XLabs.Forms.Resource.Color.material_blue_grey_800 = global::Android.UnitTests.Resource.Color.material_blue_grey_800;
-			global::XLabs.Forms.Resource.Color.material_blue_grey_900 = global::Android.UnitTests.Resource.Color.material_blue_grey_900;
-			global::XLabs.Forms.Resource.Color.material_blue_grey_950 = global::Android.UnitTests.Resource.Color.material_blue_grey_950;
-			global::XLabs.Forms.Resource.Color.material_deep_teal_200 = global::Android.UnitTests.Resource.Color.material_deep_teal_200;
-			global::XLabs.Forms.Resource.Color.material_deep_teal_500 = global::Android.UnitTests.Resource.Color.material_deep_teal_500;
-			global::XLabs.Forms.Resource.Color.material_grey_100 = global::Android.UnitTests.Resource.Color.material_grey_100;
-			global::XLabs.Forms.Resource.Color.material_grey_300 = global::Android.UnitTests.Resource.Color.material_grey_300;
-			global::XLabs.Forms.Resource.Color.material_grey_50 = global::Android.UnitTests.Resource.Color.material_grey_50;
-			global::XLabs.Forms.Resource.Color.material_grey_600 = global::Android.UnitTests.Resource.Color.material_grey_600;
-			global::XLabs.Forms.Resource.Color.material_grey_800 = global::Android.UnitTests.Resource.Color.material_grey_800;
-			global::XLabs.Forms.Resource.Color.material_grey_850 = global::Android.UnitTests.Resource.Color.material_grey_850;
-			global::XLabs.Forms.Resource.Color.material_grey_900 = global::Android.UnitTests.Resource.Color.material_grey_900;
-			global::XLabs.Forms.Resource.Color.primary_dark_material_dark = global::Android.UnitTests.Resource.Color.primary_dark_material_dark;
-			global::XLabs.Forms.Resource.Color.primary_dark_material_light = global::Android.UnitTests.Resource.Color.primary_dark_material_light;
-			global::XLabs.Forms.Resource.Color.primary_material_dark = global::Android.UnitTests.Resource.Color.primary_material_dark;
-			global::XLabs.Forms.Resource.Color.primary_material_light = global::Android.UnitTests.Resource.Color.primary_material_light;
-			global::XLabs.Forms.Resource.Color.primary_text_default_material_dark = global::Android.UnitTests.Resource.Color.primary_text_default_material_dark;
-			global::XLabs.Forms.Resource.Color.primary_text_default_material_light = global::Android.UnitTests.Resource.Color.primary_text_default_material_light;
-			global::XLabs.Forms.Resource.Color.primary_text_disabled_material_dark = global::Android.UnitTests.Resource.Color.primary_text_disabled_material_dark;
-			global::XLabs.Forms.Resource.Color.primary_text_disabled_material_light = global::Android.UnitTests.Resource.Color.primary_text_disabled_material_light;
-			global::XLabs.Forms.Resource.Color.ripple_material_dark = global::Android.UnitTests.Resource.Color.ripple_material_dark;
-			global::XLabs.Forms.Resource.Color.ripple_material_light = global::Android.UnitTests.Resource.Color.ripple_material_light;
-			global::XLabs.Forms.Resource.Color.secondary_text_default_material_dark = global::Android.UnitTests.Resource.Color.secondary_text_default_material_dark;
-			global::XLabs.Forms.Resource.Color.secondary_text_default_material_light = global::Android.UnitTests.Resource.Color.secondary_text_default_material_light;
-			global::XLabs.Forms.Resource.Color.secondary_text_disabled_material_dark = global::Android.UnitTests.Resource.Color.secondary_text_disabled_material_dark;
-			global::XLabs.Forms.Resource.Color.secondary_text_disabled_material_light = global::Android.UnitTests.Resource.Color.secondary_text_disabled_material_light;
-			global::XLabs.Forms.Resource.Color.switch_thumb_disabled_material_dark = global::Android.UnitTests.Resource.Color.switch_thumb_disabled_material_dark;
-			global::XLabs.Forms.Resource.Color.switch_thumb_disabled_material_light = global::Android.UnitTests.Resource.Color.switch_thumb_disabled_material_light;
-			global::XLabs.Forms.Resource.Color.switch_thumb_material_dark = global::Android.UnitTests.Resource.Color.switch_thumb_material_dark;
-			global::XLabs.Forms.Resource.Color.switch_thumb_material_light = global::Android.UnitTests.Resource.Color.switch_thumb_material_light;
-			global::XLabs.Forms.Resource.Color.switch_thumb_normal_material_dark = global::Android.UnitTests.Resource.Color.switch_thumb_normal_material_dark;
-			global::XLabs.Forms.Resource.Color.switch_thumb_normal_material_light = global::Android.UnitTests.Resource.Color.switch_thumb_normal_material_light;
-			global::XLabs.Forms.Resource.Dimension.abc_action_bar_content_inset_material = global::Android.UnitTests.Resource.Dimension.abc_action_bar_content_inset_material;
-			global::XLabs.Forms.Resource.Dimension.abc_action_bar_default_height_material = global::Android.UnitTests.Resource.Dimension.abc_action_bar_default_height_material;
-			global::XLabs.Forms.Resource.Dimension.abc_action_bar_default_padding_end_material = global::Android.UnitTests.Resource.Dimension.abc_action_bar_default_padding_end_material;
-			global::XLabs.Forms.Resource.Dimension.abc_action_bar_default_padding_start_material = global::Android.UnitTests.Resource.Dimension.abc_action_bar_default_padding_start_material;
-			global::XLabs.Forms.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::Android.UnitTests.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
-			global::XLabs.Forms.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::Android.UnitTests.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
-			global::XLabs.Forms.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::Android.UnitTests.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
-			global::XLabs.Forms.Resource.Dimension.abc_action_bar_stacked_max_height = global::Android.UnitTests.Resource.Dimension.abc_action_bar_stacked_max_height;
-			global::XLabs.Forms.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::Android.UnitTests.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
-			global::XLabs.Forms.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::Android.UnitTests.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
-			global::XLabs.Forms.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::Android.UnitTests.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
-			global::XLabs.Forms.Resource.Dimension.abc_action_button_min_height_material = global::Android.UnitTests.Resource.Dimension.abc_action_button_min_height_material;
-			global::XLabs.Forms.Resource.Dimension.abc_action_button_min_width_material = global::Android.UnitTests.Resource.Dimension.abc_action_button_min_width_material;
-			global::XLabs.Forms.Resource.Dimension.abc_action_button_min_width_overflow_material = global::Android.UnitTests.Resource.Dimension.abc_action_button_min_width_overflow_material;
-			global::XLabs.Forms.Resource.Dimension.abc_alert_dialog_button_bar_height = global::Android.UnitTests.Resource.Dimension.abc_alert_dialog_button_bar_height;
-			global::XLabs.Forms.Resource.Dimension.abc_button_inset_horizontal_material = global::Android.UnitTests.Resource.Dimension.abc_button_inset_horizontal_material;
-			global::XLabs.Forms.Resource.Dimension.abc_button_inset_vertical_material = global::Android.UnitTests.Resource.Dimension.abc_button_inset_vertical_material;
-			global::XLabs.Forms.Resource.Dimension.abc_button_padding_horizontal_material = global::Android.UnitTests.Resource.Dimension.abc_button_padding_horizontal_material;
-			global::XLabs.Forms.Resource.Dimension.abc_button_padding_vertical_material = global::Android.UnitTests.Resource.Dimension.abc_button_padding_vertical_material;
-			global::XLabs.Forms.Resource.Dimension.abc_config_prefDialogWidth = global::Android.UnitTests.Resource.Dimension.abc_config_prefDialogWidth;
-			global::XLabs.Forms.Resource.Dimension.abc_control_corner_material = global::Android.UnitTests.Resource.Dimension.abc_control_corner_material;
-			global::XLabs.Forms.Resource.Dimension.abc_control_inset_material = global::Android.UnitTests.Resource.Dimension.abc_control_inset_material;
-			global::XLabs.Forms.Resource.Dimension.abc_control_padding_material = global::Android.UnitTests.Resource.Dimension.abc_control_padding_material;
-			global::XLabs.Forms.Resource.Dimension.abc_dialog_min_width_major = global::Android.UnitTests.Resource.Dimension.abc_dialog_min_width_major;
-			global::XLabs.Forms.Resource.Dimension.abc_dialog_min_width_minor = global::Android.UnitTests.Resource.Dimension.abc_dialog_min_width_minor;
-			global::XLabs.Forms.Resource.Dimension.abc_dialog_padding_material = global::Android.UnitTests.Resource.Dimension.abc_dialog_padding_material;
-			global::XLabs.Forms.Resource.Dimension.abc_dialog_padding_top_material = global::Android.UnitTests.Resource.Dimension.abc_dialog_padding_top_material;
-			global::XLabs.Forms.Resource.Dimension.abc_disabled_alpha_material_dark = global::Android.UnitTests.Resource.Dimension.abc_disabled_alpha_material_dark;
-			global::XLabs.Forms.Resource.Dimension.abc_disabled_alpha_material_light = global::Android.UnitTests.Resource.Dimension.abc_disabled_alpha_material_light;
-			global::XLabs.Forms.Resource.Dimension.abc_dropdownitem_icon_width = global::Android.UnitTests.Resource.Dimension.abc_dropdownitem_icon_width;
-			global::XLabs.Forms.Resource.Dimension.abc_dropdownitem_text_padding_left = global::Android.UnitTests.Resource.Dimension.abc_dropdownitem_text_padding_left;
-			global::XLabs.Forms.Resource.Dimension.abc_dropdownitem_text_padding_right = global::Android.UnitTests.Resource.Dimension.abc_dropdownitem_text_padding_right;
-			global::XLabs.Forms.Resource.Dimension.abc_edit_text_inset_bottom_material = global::Android.UnitTests.Resource.Dimension.abc_edit_text_inset_bottom_material;
-			global::XLabs.Forms.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::Android.UnitTests.Resource.Dimension.abc_edit_text_inset_horizontal_material;
-			global::XLabs.Forms.Resource.Dimension.abc_edit_text_inset_top_material = global::Android.UnitTests.Resource.Dimension.abc_edit_text_inset_top_material;
-			global::XLabs.Forms.Resource.Dimension.abc_floating_window_z = global::Android.UnitTests.Resource.Dimension.abc_floating_window_z;
-			global::XLabs.Forms.Resource.Dimension.abc_list_item_padding_horizontal_material = global::Android.UnitTests.Resource.Dimension.abc_list_item_padding_horizontal_material;
-			global::XLabs.Forms.Resource.Dimension.abc_panel_menu_list_width = global::Android.UnitTests.Resource.Dimension.abc_panel_menu_list_width;
-			global::XLabs.Forms.Resource.Dimension.abc_search_view_preferred_width = global::Android.UnitTests.Resource.Dimension.abc_search_view_preferred_width;
-			global::XLabs.Forms.Resource.Dimension.abc_switch_padding = global::Android.UnitTests.Resource.Dimension.abc_switch_padding;
-			global::XLabs.Forms.Resource.Dimension.abc_text_size_body_1_material = global::Android.UnitTests.Resource.Dimension.abc_text_size_body_1_material;
-			global::XLabs.Forms.Resource.Dimension.abc_text_size_body_2_material = global::Android.UnitTests.Resource.Dimension.abc_text_size_body_2_material;
-			global::XLabs.Forms.Resource.Dimension.abc_text_size_button_material = global::Android.UnitTests.Resource.Dimension.abc_text_size_button_material;
-			global::XLabs.Forms.Resource.Dimension.abc_text_size_caption_material = global::Android.UnitTests.Resource.Dimension.abc_text_size_caption_material;
-			global::XLabs.Forms.Resource.Dimension.abc_text_size_display_1_material = global::Android.UnitTests.Resource.Dimension.abc_text_size_display_1_material;
-			global::XLabs.Forms.Resource.Dimension.abc_text_size_display_2_material = global::Android.UnitTests.Resource.Dimension.abc_text_size_display_2_material;
-			global::XLabs.Forms.Resource.Dimension.abc_text_size_display_3_material = global::Android.UnitTests.Resource.Dimension.abc_text_size_display_3_material;
-			global::XLabs.Forms.Resource.Dimension.abc_text_size_display_4_material = global::Android.UnitTests.Resource.Dimension.abc_text_size_display_4_material;
-			global::XLabs.Forms.Resource.Dimension.abc_text_size_headline_material = global::Android.UnitTests.Resource.Dimension.abc_text_size_headline_material;
-			global::XLabs.Forms.Resource.Dimension.abc_text_size_large_material = global::Android.UnitTests.Resource.Dimension.abc_text_size_large_material;
-			global::XLabs.Forms.Resource.Dimension.abc_text_size_medium_material = global::Android.UnitTests.Resource.Dimension.abc_text_size_medium_material;
-			global::XLabs.Forms.Resource.Dimension.abc_text_size_menu_material = global::Android.UnitTests.Resource.Dimension.abc_text_size_menu_material;
-			global::XLabs.Forms.Resource.Dimension.abc_text_size_small_material = global::Android.UnitTests.Resource.Dimension.abc_text_size_small_material;
-			global::XLabs.Forms.Resource.Dimension.abc_text_size_subhead_material = global::Android.UnitTests.Resource.Dimension.abc_text_size_subhead_material;
-			global::XLabs.Forms.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::Android.UnitTests.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
-			global::XLabs.Forms.Resource.Dimension.abc_text_size_title_material = global::Android.UnitTests.Resource.Dimension.abc_text_size_title_material;
-			global::XLabs.Forms.Resource.Dimension.abc_text_size_title_material_toolbar = global::Android.UnitTests.Resource.Dimension.abc_text_size_title_material_toolbar;
-			global::XLabs.Forms.Resource.Dimension.calendar_day_headers_paddingbottom = global::Android.UnitTests.Resource.Dimension.calendar_day_headers_paddingbottom;
-			global::XLabs.Forms.Resource.Dimension.calendar_month_title_bottommargin = global::Android.UnitTests.Resource.Dimension.calendar_month_title_bottommargin;
-			global::XLabs.Forms.Resource.Dimension.calendar_month_topmargin = global::Android.UnitTests.Resource.Dimension.calendar_month_topmargin;
-			global::XLabs.Forms.Resource.Dimension.calendar_text_medium = global::Android.UnitTests.Resource.Dimension.calendar_text_medium;
-			global::XLabs.Forms.Resource.Dimension.calendar_text_small = global::Android.UnitTests.Resource.Dimension.calendar_text_small;
-			global::XLabs.Forms.Resource.Dimension.cardview_compat_inset_shadow = global::Android.UnitTests.Resource.Dimension.cardview_compat_inset_shadow;
-			global::XLabs.Forms.Resource.Dimension.cardview_default_elevation = global::Android.UnitTests.Resource.Dimension.cardview_default_elevation;
-			global::XLabs.Forms.Resource.Dimension.cardview_default_radius = global::Android.UnitTests.Resource.Dimension.cardview_default_radius;
-			global::XLabs.Forms.Resource.Dimension.design_appbar_elevation = global::Android.UnitTests.Resource.Dimension.design_appbar_elevation;
-			global::XLabs.Forms.Resource.Dimension.design_fab_border_width = global::Android.UnitTests.Resource.Dimension.design_fab_border_width;
-			global::XLabs.Forms.Resource.Dimension.design_fab_elevation = global::Android.UnitTests.Resource.Dimension.design_fab_elevation;
-			global::XLabs.Forms.Resource.Dimension.design_fab_size_mini = global::Android.UnitTests.Resource.Dimension.design_fab_size_mini;
-			global::XLabs.Forms.Resource.Dimension.design_fab_size_normal = global::Android.UnitTests.Resource.Dimension.design_fab_size_normal;
-			global::XLabs.Forms.Resource.Dimension.design_fab_translation_z_pressed = global::Android.UnitTests.Resource.Dimension.design_fab_translation_z_pressed;
-			global::XLabs.Forms.Resource.Dimension.design_navigation_elevation = global::Android.UnitTests.Resource.Dimension.design_navigation_elevation;
-			global::XLabs.Forms.Resource.Dimension.design_navigation_icon_padding = global::Android.UnitTests.Resource.Dimension.design_navigation_icon_padding;
-			global::XLabs.Forms.Resource.Dimension.design_navigation_icon_size = global::Android.UnitTests.Resource.Dimension.design_navigation_icon_size;
-			global::XLabs.Forms.Resource.Dimension.design_navigation_max_width = global::Android.UnitTests.Resource.Dimension.design_navigation_max_width;
-			global::XLabs.Forms.Resource.Dimension.design_navigation_padding_bottom = global::Android.UnitTests.Resource.Dimension.design_navigation_padding_bottom;
-			global::XLabs.Forms.Resource.Dimension.design_navigation_separator_vertical_padding = global::Android.UnitTests.Resource.Dimension.design_navigation_separator_vertical_padding;
-			global::XLabs.Forms.Resource.Dimension.design_snackbar_action_inline_max_width = global::Android.UnitTests.Resource.Dimension.design_snackbar_action_inline_max_width;
-			global::XLabs.Forms.Resource.Dimension.design_snackbar_background_corner_radius = global::Android.UnitTests.Resource.Dimension.design_snackbar_background_corner_radius;
-			global::XLabs.Forms.Resource.Dimension.design_snackbar_elevation = global::Android.UnitTests.Resource.Dimension.design_snackbar_elevation;
-			global::XLabs.Forms.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::Android.UnitTests.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
-			global::XLabs.Forms.Resource.Dimension.design_snackbar_max_width = global::Android.UnitTests.Resource.Dimension.design_snackbar_max_width;
-			global::XLabs.Forms.Resource.Dimension.design_snackbar_min_width = global::Android.UnitTests.Resource.Dimension.design_snackbar_min_width;
-			global::XLabs.Forms.Resource.Dimension.design_snackbar_padding_horizontal = global::Android.UnitTests.Resource.Dimension.design_snackbar_padding_horizontal;
-			global::XLabs.Forms.Resource.Dimension.design_snackbar_padding_vertical = global::Android.UnitTests.Resource.Dimension.design_snackbar_padding_vertical;
-			global::XLabs.Forms.Resource.Dimension.design_snackbar_padding_vertical_2lines = global::Android.UnitTests.Resource.Dimension.design_snackbar_padding_vertical_2lines;
-			global::XLabs.Forms.Resource.Dimension.design_snackbar_text_size = global::Android.UnitTests.Resource.Dimension.design_snackbar_text_size;
-			global::XLabs.Forms.Resource.Dimension.design_tab_max_width = global::Android.UnitTests.Resource.Dimension.design_tab_max_width;
-			global::XLabs.Forms.Resource.Dimension.disabled_alpha_material_dark = global::Android.UnitTests.Resource.Dimension.disabled_alpha_material_dark;
-			global::XLabs.Forms.Resource.Dimension.disabled_alpha_material_light = global::Android.UnitTests.Resource.Dimension.disabled_alpha_material_light;
-			global::XLabs.Forms.Resource.Dimension.highlight_alpha_material_colored = global::Android.UnitTests.Resource.Dimension.highlight_alpha_material_colored;
-			global::XLabs.Forms.Resource.Dimension.highlight_alpha_material_dark = global::Android.UnitTests.Resource.Dimension.highlight_alpha_material_dark;
-			global::XLabs.Forms.Resource.Dimension.highlight_alpha_material_light = global::Android.UnitTests.Resource.Dimension.highlight_alpha_material_light;
-			global::XLabs.Forms.Resource.Dimension.notification_large_icon_height = global::Android.UnitTests.Resource.Dimension.notification_large_icon_height;
-			global::XLabs.Forms.Resource.Dimension.notification_large_icon_width = global::Android.UnitTests.Resource.Dimension.notification_large_icon_width;
-			global::XLabs.Forms.Resource.Dimension.notification_subtext_size = global::Android.UnitTests.Resource.Dimension.notification_subtext_size;
-			global::XLabs.Forms.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::Android.UnitTests.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
-			global::XLabs.Forms.Resource.Drawable.abc_action_bar_item_background_material = global::Android.UnitTests.Resource.Drawable.abc_action_bar_item_background_material;
-			global::XLabs.Forms.Resource.Drawable.abc_btn_borderless_material = global::Android.UnitTests.Resource.Drawable.abc_btn_borderless_material;
-			global::XLabs.Forms.Resource.Drawable.abc_btn_check_material = global::Android.UnitTests.Resource.Drawable.abc_btn_check_material;
-			global::XLabs.Forms.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::Android.UnitTests.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
-			global::XLabs.Forms.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::Android.UnitTests.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
-			global::XLabs.Forms.Resource.Drawable.abc_btn_colored_material = global::Android.UnitTests.Resource.Drawable.abc_btn_colored_material;
-			global::XLabs.Forms.Resource.Drawable.abc_btn_default_mtrl_shape = global::Android.UnitTests.Resource.Drawable.abc_btn_default_mtrl_shape;
-			global::XLabs.Forms.Resource.Drawable.abc_btn_radio_material = global::Android.UnitTests.Resource.Drawable.abc_btn_radio_material;
-			global::XLabs.Forms.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::Android.UnitTests.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
-			global::XLabs.Forms.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::Android.UnitTests.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
-			global::XLabs.Forms.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::Android.UnitTests.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
-			global::XLabs.Forms.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::Android.UnitTests.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
-			global::XLabs.Forms.Resource.Drawable.abc_cab_background_internal_bg = global::Android.UnitTests.Resource.Drawable.abc_cab_background_internal_bg;
-			global::XLabs.Forms.Resource.Drawable.abc_cab_background_top_material = global::Android.UnitTests.Resource.Drawable.abc_cab_background_top_material;
-			global::XLabs.Forms.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::Android.UnitTests.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
-			global::XLabs.Forms.Resource.Drawable.abc_control_background_material = global::Android.UnitTests.Resource.Drawable.abc_control_background_material;
-			global::XLabs.Forms.Resource.Drawable.abc_edit_text_material = global::Android.UnitTests.Resource.Drawable.abc_edit_text_material;
-			global::XLabs.Forms.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::Android.UnitTests.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
-			global::XLabs.Forms.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::Android.UnitTests.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
-			global::XLabs.Forms.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::Android.UnitTests.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
-			global::XLabs.Forms.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::Android.UnitTests.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
-			global::XLabs.Forms.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::Android.UnitTests.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
-			global::XLabs.Forms.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::Android.UnitTests.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
-			global::XLabs.Forms.Resource.Drawable.abc_item_background_holo_dark = global::Android.UnitTests.Resource.Drawable.abc_item_background_holo_dark;
-			global::XLabs.Forms.Resource.Drawable.abc_item_background_holo_light = global::Android.UnitTests.Resource.Drawable.abc_item_background_holo_light;
-			global::XLabs.Forms.Resource.Drawable.abc_list_divider_mtrl_alpha = global::Android.UnitTests.Resource.Drawable.abc_list_divider_mtrl_alpha;
-			global::XLabs.Forms.Resource.Drawable.abc_list_focused_holo = global::Android.UnitTests.Resource.Drawable.abc_list_focused_holo;
-			global::XLabs.Forms.Resource.Drawable.abc_list_longpressed_holo = global::Android.UnitTests.Resource.Drawable.abc_list_longpressed_holo;
-			global::XLabs.Forms.Resource.Drawable.abc_list_pressed_holo_dark = global::Android.UnitTests.Resource.Drawable.abc_list_pressed_holo_dark;
-			global::XLabs.Forms.Resource.Drawable.abc_list_pressed_holo_light = global::Android.UnitTests.Resource.Drawable.abc_list_pressed_holo_light;
-			global::XLabs.Forms.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::Android.UnitTests.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
-			global::XLabs.Forms.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::Android.UnitTests.Resource.Drawable.abc_list_selector_background_transition_holo_light;
-			global::XLabs.Forms.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::Android.UnitTests.Resource.Drawable.abc_list_selector_disabled_holo_dark;
-			global::XLabs.Forms.Resource.Drawable.abc_list_selector_disabled_holo_light = global::Android.UnitTests.Resource.Drawable.abc_list_selector_disabled_holo_light;
-			global::XLabs.Forms.Resource.Drawable.abc_list_selector_holo_dark = global::Android.UnitTests.Resource.Drawable.abc_list_selector_holo_dark;
-			global::XLabs.Forms.Resource.Drawable.abc_list_selector_holo_light = global::Android.UnitTests.Resource.Drawable.abc_list_selector_holo_light;
-			global::XLabs.Forms.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::Android.UnitTests.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
-			global::XLabs.Forms.Resource.Drawable.abc_popup_background_mtrl_mult = global::Android.UnitTests.Resource.Drawable.abc_popup_background_mtrl_mult;
-			global::XLabs.Forms.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::Android.UnitTests.Resource.Drawable.abc_spinner_mtrl_am_alpha;
-			global::XLabs.Forms.Resource.Drawable.abc_spinner_textfield_background_material = global::Android.UnitTests.Resource.Drawable.abc_spinner_textfield_background_material;
-			global::XLabs.Forms.Resource.Drawable.abc_switch_thumb_material = global::Android.UnitTests.Resource.Drawable.abc_switch_thumb_material;
-			global::XLabs.Forms.Resource.Drawable.abc_switch_track_mtrl_alpha = global::Android.UnitTests.Resource.Drawable.abc_switch_track_mtrl_alpha;
-			global::XLabs.Forms.Resource.Drawable.abc_tab_indicator_material = global::Android.UnitTests.Resource.Drawable.abc_tab_indicator_material;
-			global::XLabs.Forms.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::Android.UnitTests.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
-			global::XLabs.Forms.Resource.Drawable.abc_text_cursor_material = global::Android.UnitTests.Resource.Drawable.abc_text_cursor_material;
-			global::XLabs.Forms.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::Android.UnitTests.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
-			global::XLabs.Forms.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::Android.UnitTests.Resource.Drawable.abc_textfield_default_mtrl_alpha;
-			global::XLabs.Forms.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::Android.UnitTests.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
-			global::XLabs.Forms.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::Android.UnitTests.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
-			global::XLabs.Forms.Resource.Drawable.abc_textfield_search_material = global::Android.UnitTests.Resource.Drawable.abc_textfield_search_material;
-			global::XLabs.Forms.Resource.Drawable.ad16 = global::Android.UnitTests.Resource.Drawable.ad16;
-			global::XLabs.Forms.Resource.Drawable.calendar_bg_selector = global::Android.UnitTests.Resource.Drawable.calendar_bg_selector;
-			global::XLabs.Forms.Resource.Drawable.design_fab_background = global::Android.UnitTests.Resource.Drawable.design_fab_background;
-			global::XLabs.Forms.Resource.Drawable.design_snackbar_background = global::Android.UnitTests.Resource.Drawable.design_snackbar_background;
-			global::XLabs.Forms.Resource.Drawable.notification_template_icon_bg = global::Android.UnitTests.Resource.Drawable.notification_template_icon_bg;
-			global::XLabs.Forms.Resource.Id.action0 = global::Android.UnitTests.Resource.Id.action0;
-			global::XLabs.Forms.Resource.Id.action_bar = global::Android.UnitTests.Resource.Id.action_bar;
-			global::XLabs.Forms.Resource.Id.action_bar_activity_content = global::Android.UnitTests.Resource.Id.action_bar_activity_content;
-			global::XLabs.Forms.Resource.Id.action_bar_container = global::Android.UnitTests.Resource.Id.action_bar_container;
-			global::XLabs.Forms.Resource.Id.action_bar_root = global::Android.UnitTests.Resource.Id.action_bar_root;
-			global::XLabs.Forms.Resource.Id.action_bar_spinner = global::Android.UnitTests.Resource.Id.action_bar_spinner;
-			global::XLabs.Forms.Resource.Id.action_bar_subtitle = global::Android.UnitTests.Resource.Id.action_bar_subtitle;
-			global::XLabs.Forms.Resource.Id.action_bar_title = global::Android.UnitTests.Resource.Id.action_bar_title;
-			global::XLabs.Forms.Resource.Id.action_context_bar = global::Android.UnitTests.Resource.Id.action_context_bar;
-			global::XLabs.Forms.Resource.Id.action_divider = global::Android.UnitTests.Resource.Id.action_divider;
-			global::XLabs.Forms.Resource.Id.action_menu_divider = global::Android.UnitTests.Resource.Id.action_menu_divider;
-			global::XLabs.Forms.Resource.Id.action_menu_presenter = global::Android.UnitTests.Resource.Id.action_menu_presenter;
-			global::XLabs.Forms.Resource.Id.action_mode_bar = global::Android.UnitTests.Resource.Id.action_mode_bar;
-			global::XLabs.Forms.Resource.Id.action_mode_bar_stub = global::Android.UnitTests.Resource.Id.action_mode_bar_stub;
-			global::XLabs.Forms.Resource.Id.action_mode_close_button = global::Android.UnitTests.Resource.Id.action_mode_close_button;
-			global::XLabs.Forms.Resource.Id.activity_chooser_view_content = global::Android.UnitTests.Resource.Id.activity_chooser_view_content;
-			global::XLabs.Forms.Resource.Id.alertTitle = global::Android.UnitTests.Resource.Id.alertTitle;
-			global::XLabs.Forms.Resource.Id.always = global::Android.UnitTests.Resource.Id.always;
-			global::XLabs.Forms.Resource.Id.beginning = global::Android.UnitTests.Resource.Id.beginning;
-			global::XLabs.Forms.Resource.Id.bottom = global::Android.UnitTests.Resource.Id.bottom;
-			global::XLabs.Forms.Resource.Id.buttonPanel = global::Android.UnitTests.Resource.Id.buttonPanel;
-			global::XLabs.Forms.Resource.Id.calendar_grid = global::Android.UnitTests.Resource.Id.calendar_grid;
-			global::XLabs.Forms.Resource.Id.calendar_view = global::Android.UnitTests.Resource.Id.calendar_view;
-			global::XLabs.Forms.Resource.Id.cancel_action = global::Android.UnitTests.Resource.Id.cancel_action;
-			global::XLabs.Forms.Resource.Id.center = global::Android.UnitTests.Resource.Id.center;
-			global::XLabs.Forms.Resource.Id.center_horizontal = global::Android.UnitTests.Resource.Id.center_horizontal;
-			global::XLabs.Forms.Resource.Id.center_vertical = global::Android.UnitTests.Resource.Id.center_vertical;
-			global::XLabs.Forms.Resource.Id.checkbox = global::Android.UnitTests.Resource.Id.checkbox;
-			global::XLabs.Forms.Resource.Id.chronometer = global::Android.UnitTests.Resource.Id.chronometer;
-			global::XLabs.Forms.Resource.Id.clip_horizontal = global::Android.UnitTests.Resource.Id.clip_horizontal;
-			global::XLabs.Forms.Resource.Id.clip_vertical = global::Android.UnitTests.Resource.Id.clip_vertical;
-			global::XLabs.Forms.Resource.Id.collapseActionView = global::Android.UnitTests.Resource.Id.collapseActionView;
-			global::XLabs.Forms.Resource.Id.contentPanel = global::Android.UnitTests.Resource.Id.contentPanel;
-			global::XLabs.Forms.Resource.Id.custom = global::Android.UnitTests.Resource.Id.custom;
-			global::XLabs.Forms.Resource.Id.customPanel = global::Android.UnitTests.Resource.Id.customPanel;
-			global::XLabs.Forms.Resource.Id.decor_content_parent = global::Android.UnitTests.Resource.Id.decor_content_parent;
-			global::XLabs.Forms.Resource.Id.default_activity_button = global::Android.UnitTests.Resource.Id.default_activity_button;
-			global::XLabs.Forms.Resource.Id.disableHome = global::Android.UnitTests.Resource.Id.disableHome;
-			global::XLabs.Forms.Resource.Id.edit_query = global::Android.UnitTests.Resource.Id.edit_query;
-			global::XLabs.Forms.Resource.Id.end = global::Android.UnitTests.Resource.Id.end;
-			global::XLabs.Forms.Resource.Id.end_padder = global::Android.UnitTests.Resource.Id.end_padder;
-			global::XLabs.Forms.Resource.Id.enterAlways = global::Android.UnitTests.Resource.Id.enterAlways;
-			global::XLabs.Forms.Resource.Id.enterAlwaysCollapsed = global::Android.UnitTests.Resource.Id.enterAlwaysCollapsed;
-			global::XLabs.Forms.Resource.Id.exitUntilCollapsed = global::Android.UnitTests.Resource.Id.exitUntilCollapsed;
-			global::XLabs.Forms.Resource.Id.expand_activities_button = global::Android.UnitTests.Resource.Id.expand_activities_button;
-			global::XLabs.Forms.Resource.Id.expanded_menu = global::Android.UnitTests.Resource.Id.expanded_menu;
-			global::XLabs.Forms.Resource.Id.fill = global::Android.UnitTests.Resource.Id.fill;
-			global::XLabs.Forms.Resource.Id.fill_horizontal = global::Android.UnitTests.Resource.Id.fill_horizontal;
-			global::XLabs.Forms.Resource.Id.fill_vertical = global::Android.UnitTests.Resource.Id.fill_vertical;
-			global::XLabs.Forms.Resource.Id.@fixed = global::Android.UnitTests.Resource.Id.@fixed;
-			global::XLabs.Forms.Resource.Id.home = global::Android.UnitTests.Resource.Id.home;
-			global::XLabs.Forms.Resource.Id.homeAsUp = global::Android.UnitTests.Resource.Id.homeAsUp;
-			global::XLabs.Forms.Resource.Id.icon = global::Android.UnitTests.Resource.Id.icon;
-			global::XLabs.Forms.Resource.Id.ifRoom = global::Android.UnitTests.Resource.Id.ifRoom;
-			global::XLabs.Forms.Resource.Id.image = global::Android.UnitTests.Resource.Id.image;
-			global::XLabs.Forms.Resource.Id.info = global::Android.UnitTests.Resource.Id.info;
-			global::XLabs.Forms.Resource.Id.left = global::Android.UnitTests.Resource.Id.left;
-			global::XLabs.Forms.Resource.Id.left_arrow = global::Android.UnitTests.Resource.Id.left_arrow;
-			global::XLabs.Forms.Resource.Id.line1 = global::Android.UnitTests.Resource.Id.line1;
-			global::XLabs.Forms.Resource.Id.line3 = global::Android.UnitTests.Resource.Id.line3;
-			global::XLabs.Forms.Resource.Id.listMode = global::Android.UnitTests.Resource.Id.listMode;
-			global::XLabs.Forms.Resource.Id.list_item = global::Android.UnitTests.Resource.Id.list_item;
-			global::XLabs.Forms.Resource.Id.media_actions = global::Android.UnitTests.Resource.Id.media_actions;
-			global::XLabs.Forms.Resource.Id.middle = global::Android.UnitTests.Resource.Id.middle;
-			global::XLabs.Forms.Resource.Id.mini = global::Android.UnitTests.Resource.Id.mini;
-			global::XLabs.Forms.Resource.Id.multiply = global::Android.UnitTests.Resource.Id.multiply;
-			global::XLabs.Forms.Resource.Id.never = global::Android.UnitTests.Resource.Id.never;
-			global::XLabs.Forms.Resource.Id.none = global::Android.UnitTests.Resource.Id.none;
-			global::XLabs.Forms.Resource.Id.normal = global::Android.UnitTests.Resource.Id.normal;
-			global::XLabs.Forms.Resource.Id.parallax = global::Android.UnitTests.Resource.Id.parallax;
-			global::XLabs.Forms.Resource.Id.parentPanel = global::Android.UnitTests.Resource.Id.parentPanel;
-			global::XLabs.Forms.Resource.Id.pin = global::Android.UnitTests.Resource.Id.pin;
-			global::XLabs.Forms.Resource.Id.progress_circular = global::Android.UnitTests.Resource.Id.progress_circular;
-			global::XLabs.Forms.Resource.Id.progress_horizontal = global::Android.UnitTests.Resource.Id.progress_horizontal;
-			global::XLabs.Forms.Resource.Id.radio = global::Android.UnitTests.Resource.Id.radio;
-			global::XLabs.Forms.Resource.Id.right = global::Android.UnitTests.Resource.Id.right;
-			global::XLabs.Forms.Resource.Id.right_arrow = global::Android.UnitTests.Resource.Id.right_arrow;
-			global::XLabs.Forms.Resource.Id.screen = global::Android.UnitTests.Resource.Id.screen;
-			global::XLabs.Forms.Resource.Id.scroll = global::Android.UnitTests.Resource.Id.scroll;
-			global::XLabs.Forms.Resource.Id.scrollView = global::Android.UnitTests.Resource.Id.scrollView;
-			global::XLabs.Forms.Resource.Id.scrollable = global::Android.UnitTests.Resource.Id.scrollable;
-			global::XLabs.Forms.Resource.Id.search_badge = global::Android.UnitTests.Resource.Id.search_badge;
-			global::XLabs.Forms.Resource.Id.search_bar = global::Android.UnitTests.Resource.Id.search_bar;
-			global::XLabs.Forms.Resource.Id.search_button = global::Android.UnitTests.Resource.Id.search_button;
-			global::XLabs.Forms.Resource.Id.search_close_btn = global::Android.UnitTests.Resource.Id.search_close_btn;
-			global::XLabs.Forms.Resource.Id.search_edit_frame = global::Android.UnitTests.Resource.Id.search_edit_frame;
-			global::XLabs.Forms.Resource.Id.search_go_btn = global::Android.UnitTests.Resource.Id.search_go_btn;
-			global::XLabs.Forms.Resource.Id.search_mag_icon = global::Android.UnitTests.Resource.Id.search_mag_icon;
-			global::XLabs.Forms.Resource.Id.search_plate = global::Android.UnitTests.Resource.Id.search_plate;
-			global::XLabs.Forms.Resource.Id.search_src_text = global::Android.UnitTests.Resource.Id.search_src_text;
-			global::XLabs.Forms.Resource.Id.search_voice_btn = global::Android.UnitTests.Resource.Id.search_voice_btn;
-			global::XLabs.Forms.Resource.Id.select_dialog_listview = global::Android.UnitTests.Resource.Id.select_dialog_listview;
-			global::XLabs.Forms.Resource.Id.shortcut = global::Android.UnitTests.Resource.Id.shortcut;
-			global::XLabs.Forms.Resource.Id.showCustom = global::Android.UnitTests.Resource.Id.showCustom;
-			global::XLabs.Forms.Resource.Id.showHome = global::Android.UnitTests.Resource.Id.showHome;
-			global::XLabs.Forms.Resource.Id.showTitle = global::Android.UnitTests.Resource.Id.showTitle;
-			global::XLabs.Forms.Resource.Id.snackbar_action = global::Android.UnitTests.Resource.Id.snackbar_action;
-			global::XLabs.Forms.Resource.Id.snackbar_text = global::Android.UnitTests.Resource.Id.snackbar_text;
-			global::XLabs.Forms.Resource.Id.split_action_bar = global::Android.UnitTests.Resource.Id.split_action_bar;
-			global::XLabs.Forms.Resource.Id.src_atop = global::Android.UnitTests.Resource.Id.src_atop;
-			global::XLabs.Forms.Resource.Id.src_in = global::Android.UnitTests.Resource.Id.src_in;
-			global::XLabs.Forms.Resource.Id.src_over = global::Android.UnitTests.Resource.Id.src_over;
-			global::XLabs.Forms.Resource.Id.start = global::Android.UnitTests.Resource.Id.start;
-			global::XLabs.Forms.Resource.Id.status_bar_latest_event_content = global::Android.UnitTests.Resource.Id.status_bar_latest_event_content;
-			global::XLabs.Forms.Resource.Id.submit_area = global::Android.UnitTests.Resource.Id.submit_area;
-			global::XLabs.Forms.Resource.Id.tabMode = global::Android.UnitTests.Resource.Id.tabMode;
-			global::XLabs.Forms.Resource.Id.text = global::Android.UnitTests.Resource.Id.text;
-			global::XLabs.Forms.Resource.Id.text2 = global::Android.UnitTests.Resource.Id.text2;
-			global::XLabs.Forms.Resource.Id.textSpacerNoButtons = global::Android.UnitTests.Resource.Id.textSpacerNoButtons;
-			global::XLabs.Forms.Resource.Id.time = global::Android.UnitTests.Resource.Id.time;
-			global::XLabs.Forms.Resource.Id.title = global::Android.UnitTests.Resource.Id.title;
-			global::XLabs.Forms.Resource.Id.title_template = global::Android.UnitTests.Resource.Id.title_template;
-			global::XLabs.Forms.Resource.Id.top = global::Android.UnitTests.Resource.Id.top;
-			global::XLabs.Forms.Resource.Id.topPanel = global::Android.UnitTests.Resource.Id.topPanel;
-			global::XLabs.Forms.Resource.Id.up = global::Android.UnitTests.Resource.Id.up;
-			global::XLabs.Forms.Resource.Id.useLogo = global::Android.UnitTests.Resource.Id.useLogo;
-			global::XLabs.Forms.Resource.Id.view_offset_helper = global::Android.UnitTests.Resource.Id.view_offset_helper;
-			global::XLabs.Forms.Resource.Id.withText = global::Android.UnitTests.Resource.Id.withText;
-			global::XLabs.Forms.Resource.Id.wrap_content = global::Android.UnitTests.Resource.Id.wrap_content;
-			global::XLabs.Forms.Resource.Integer.abc_config_activityDefaultDur = global::Android.UnitTests.Resource.Integer.abc_config_activityDefaultDur;
-			global::XLabs.Forms.Resource.Integer.abc_config_activityShortDur = global::Android.UnitTests.Resource.Integer.abc_config_activityShortDur;
-			global::XLabs.Forms.Resource.Integer.cancel_button_image_alpha = global::Android.UnitTests.Resource.Integer.cancel_button_image_alpha;
-			global::XLabs.Forms.Resource.Integer.design_snackbar_text_max_lines = global::Android.UnitTests.Resource.Integer.design_snackbar_text_max_lines;
-			global::XLabs.Forms.Resource.Integer.status_bar_notification_info_maxnum = global::Android.UnitTests.Resource.Integer.status_bar_notification_info_maxnum;
-			global::XLabs.Forms.Resource.Layout.abc_action_bar_title_item = global::Android.UnitTests.Resource.Layout.abc_action_bar_title_item;
-			global::XLabs.Forms.Resource.Layout.abc_action_bar_up_container = global::Android.UnitTests.Resource.Layout.abc_action_bar_up_container;
-			global::XLabs.Forms.Resource.Layout.abc_action_menu_item_layout = global::Android.UnitTests.Resource.Layout.abc_action_menu_item_layout;
-			global::XLabs.Forms.Resource.Layout.abc_action_menu_layout = global::Android.UnitTests.Resource.Layout.abc_action_menu_layout;
-			global::XLabs.Forms.Resource.Layout.abc_action_mode_bar = global::Android.UnitTests.Resource.Layout.abc_action_mode_bar;
-			global::XLabs.Forms.Resource.Layout.abc_action_mode_close_item_material = global::Android.UnitTests.Resource.Layout.abc_action_mode_close_item_material;
-			global::XLabs.Forms.Resource.Layout.abc_activity_chooser_view = global::Android.UnitTests.Resource.Layout.abc_activity_chooser_view;
-			global::XLabs.Forms.Resource.Layout.abc_activity_chooser_view_list_item = global::Android.UnitTests.Resource.Layout.abc_activity_chooser_view_list_item;
-			global::XLabs.Forms.Resource.Layout.abc_alert_dialog_material = global::Android.UnitTests.Resource.Layout.abc_alert_dialog_material;
-			global::XLabs.Forms.Resource.Layout.abc_dialog_title_material = global::Android.UnitTests.Resource.Layout.abc_dialog_title_material;
-			global::XLabs.Forms.Resource.Layout.abc_expanded_menu_layout = global::Android.UnitTests.Resource.Layout.abc_expanded_menu_layout;
-			global::XLabs.Forms.Resource.Layout.abc_list_menu_item_checkbox = global::Android.UnitTests.Resource.Layout.abc_list_menu_item_checkbox;
-			global::XLabs.Forms.Resource.Layout.abc_list_menu_item_icon = global::Android.UnitTests.Resource.Layout.abc_list_menu_item_icon;
-			global::XLabs.Forms.Resource.Layout.abc_list_menu_item_layout = global::Android.UnitTests.Resource.Layout.abc_list_menu_item_layout;
-			global::XLabs.Forms.Resource.Layout.abc_list_menu_item_radio = global::Android.UnitTests.Resource.Layout.abc_list_menu_item_radio;
-			global::XLabs.Forms.Resource.Layout.abc_popup_menu_item_layout = global::Android.UnitTests.Resource.Layout.abc_popup_menu_item_layout;
-			global::XLabs.Forms.Resource.Layout.abc_screen_content_include = global::Android.UnitTests.Resource.Layout.abc_screen_content_include;
-			global::XLabs.Forms.Resource.Layout.abc_screen_simple = global::Android.UnitTests.Resource.Layout.abc_screen_simple;
-			global::XLabs.Forms.Resource.Layout.abc_screen_simple_overlay_action_mode = global::Android.UnitTests.Resource.Layout.abc_screen_simple_overlay_action_mode;
-			global::XLabs.Forms.Resource.Layout.abc_screen_toolbar = global::Android.UnitTests.Resource.Layout.abc_screen_toolbar;
-			global::XLabs.Forms.Resource.Layout.abc_search_dropdown_item_icons_2line = global::Android.UnitTests.Resource.Layout.abc_search_dropdown_item_icons_2line;
-			global::XLabs.Forms.Resource.Layout.abc_search_view = global::Android.UnitTests.Resource.Layout.abc_search_view;
-			global::XLabs.Forms.Resource.Layout.abc_select_dialog_material = global::Android.UnitTests.Resource.Layout.abc_select_dialog_material;
-			global::XLabs.Forms.Resource.Layout.calendar_pager_layout = global::Android.UnitTests.Resource.Layout.calendar_pager_layout;
-			global::XLabs.Forms.Resource.Layout.calendar_picker = global::Android.UnitTests.Resource.Layout.calendar_picker;
-			global::XLabs.Forms.Resource.Layout.design_layout_snackbar = global::Android.UnitTests.Resource.Layout.design_layout_snackbar;
-			global::XLabs.Forms.Resource.Layout.design_layout_snackbar_include = global::Android.UnitTests.Resource.Layout.design_layout_snackbar_include;
-			global::XLabs.Forms.Resource.Layout.design_layout_tab_icon = global::Android.UnitTests.Resource.Layout.design_layout_tab_icon;
-			global::XLabs.Forms.Resource.Layout.design_layout_tab_text = global::Android.UnitTests.Resource.Layout.design_layout_tab_text;
-			global::XLabs.Forms.Resource.Layout.design_navigation_item = global::Android.UnitTests.Resource.Layout.design_navigation_item;
-			global::XLabs.Forms.Resource.Layout.design_navigation_item_header = global::Android.UnitTests.Resource.Layout.design_navigation_item_header;
-			global::XLabs.Forms.Resource.Layout.design_navigation_item_separator = global::Android.UnitTests.Resource.Layout.design_navigation_item_separator;
-			global::XLabs.Forms.Resource.Layout.design_navigation_item_subheader = global::Android.UnitTests.Resource.Layout.design_navigation_item_subheader;
-			global::XLabs.Forms.Resource.Layout.design_navigation_menu = global::Android.UnitTests.Resource.Layout.design_navigation_menu;
-			global::XLabs.Forms.Resource.Layout.dialog = global::Android.UnitTests.Resource.Layout.dialog;
-			global::XLabs.Forms.Resource.Layout.month = global::Android.UnitTests.Resource.Layout.month;
-			global::XLabs.Forms.Resource.Layout.notification_media_action = global::Android.UnitTests.Resource.Layout.notification_media_action;
-			global::XLabs.Forms.Resource.Layout.notification_media_cancel_action = global::Android.UnitTests.Resource.Layout.notification_media_cancel_action;
-			global::XLabs.Forms.Resource.Layout.notification_template_big_media = global::Android.UnitTests.Resource.Layout.notification_template_big_media;
-			global::XLabs.Forms.Resource.Layout.notification_template_big_media_narrow = global::Android.UnitTests.Resource.Layout.notification_template_big_media_narrow;
-			global::XLabs.Forms.Resource.Layout.notification_template_media = global::Android.UnitTests.Resource.Layout.notification_template_media;
-			global::XLabs.Forms.Resource.Layout.notification_template_part_chronometer = global::Android.UnitTests.Resource.Layout.notification_template_part_chronometer;
-			global::XLabs.Forms.Resource.Layout.notification_template_part_time = global::Android.UnitTests.Resource.Layout.notification_template_part_time;
-			global::XLabs.Forms.Resource.Layout.select_dialog_item_material = global::Android.UnitTests.Resource.Layout.select_dialog_item_material;
-			global::XLabs.Forms.Resource.Layout.select_dialog_multichoice_material = global::Android.UnitTests.Resource.Layout.select_dialog_multichoice_material;
-			global::XLabs.Forms.Resource.Layout.select_dialog_singlechoice_material = global::Android.UnitTests.Resource.Layout.select_dialog_singlechoice_material;
-			global::XLabs.Forms.Resource.Layout.support_simple_spinner_dropdown_item = global::Android.UnitTests.Resource.Layout.support_simple_spinner_dropdown_item;
-			global::XLabs.Forms.Resource.Layout.week = global::Android.UnitTests.Resource.Layout.week;
-			global::XLabs.Forms.Resource.String.ApplicationName = global::Android.UnitTests.Resource.String.ApplicationName;
-			global::XLabs.Forms.Resource.String.Hello = global::Android.UnitTests.Resource.String.Hello;
-			global::XLabs.Forms.Resource.String.abc_action_bar_home_description = global::Android.UnitTests.Resource.String.abc_action_bar_home_description;
-			global::XLabs.Forms.Resource.String.abc_action_bar_up_description = global::Android.UnitTests.Resource.String.abc_action_bar_up_description;
-			global::XLabs.Forms.Resource.String.abc_action_menu_overflow_description = global::Android.UnitTests.Resource.String.abc_action_menu_overflow_description;
-			global::XLabs.Forms.Resource.String.abc_action_mode_done = global::Android.UnitTests.Resource.String.abc_action_mode_done;
-			global::XLabs.Forms.Resource.String.abc_activity_chooser_view_see_all = global::Android.UnitTests.Resource.String.abc_activity_chooser_view_see_all;
-			global::XLabs.Forms.Resource.String.abc_activitychooserview_choose_application = global::Android.UnitTests.Resource.String.abc_activitychooserview_choose_application;
-			global::XLabs.Forms.Resource.String.abc_search_hint = global::Android.UnitTests.Resource.String.abc_search_hint;
-			global::XLabs.Forms.Resource.String.abc_searchview_description_clear = global::Android.UnitTests.Resource.String.abc_searchview_description_clear;
-			global::XLabs.Forms.Resource.String.abc_searchview_description_query = global::Android.UnitTests.Resource.String.abc_searchview_description_query;
-			global::XLabs.Forms.Resource.String.abc_searchview_description_search = global::Android.UnitTests.Resource.String.abc_searchview_description_search;
-			global::XLabs.Forms.Resource.String.abc_searchview_description_submit = global::Android.UnitTests.Resource.String.abc_searchview_description_submit;
-			global::XLabs.Forms.Resource.String.abc_searchview_description_voice = global::Android.UnitTests.Resource.String.abc_searchview_description_voice;
-			global::XLabs.Forms.Resource.String.abc_shareactionprovider_share_with = global::Android.UnitTests.Resource.String.abc_shareactionprovider_share_with;
-			global::XLabs.Forms.Resource.String.abc_shareactionprovider_share_with_application = global::Android.UnitTests.Resource.String.abc_shareactionprovider_share_with_application;
-			global::XLabs.Forms.Resource.String.abc_toolbar_collapse_description = global::Android.UnitTests.Resource.String.abc_toolbar_collapse_description;
-			global::XLabs.Forms.Resource.String.appbar_scrolling_view_behavior = global::Android.UnitTests.Resource.String.appbar_scrolling_view_behavior;
-			global::XLabs.Forms.Resource.String.day_name_format = global::Android.UnitTests.Resource.String.day_name_format;
-			global::XLabs.Forms.Resource.String.full_date_format = global::Android.UnitTests.Resource.String.full_date_format;
-			global::XLabs.Forms.Resource.String.invalid_date = global::Android.UnitTests.Resource.String.invalid_date;
-			global::XLabs.Forms.Resource.String.library_name = global::Android.UnitTests.Resource.String.library_name;
-			global::XLabs.Forms.Resource.String.month_name_format = global::Android.UnitTests.Resource.String.month_name_format;
-			global::XLabs.Forms.Resource.String.mr_system_route_name = global::Android.UnitTests.Resource.String.mr_system_route_name;
-			global::XLabs.Forms.Resource.String.mr_user_route_category_name = global::Android.UnitTests.Resource.String.mr_user_route_category_name;
-			global::XLabs.Forms.Resource.String.status_bar_notification_info_overflow = global::Android.UnitTests.Resource.String.status_bar_notification_info_overflow;
-			global::XLabs.Forms.Resource.Style.AlertDialog_AppCompat = global::Android.UnitTests.Resource.Style.AlertDialog_AppCompat;
-			global::XLabs.Forms.Resource.Style.AlertDialog_AppCompat_Light = global::Android.UnitTests.Resource.Style.AlertDialog_AppCompat_Light;
-			global::XLabs.Forms.Resource.Style.Animation_AppCompat_Dialog = global::Android.UnitTests.Resource.Style.Animation_AppCompat_Dialog;
-			global::XLabs.Forms.Resource.Style.Animation_AppCompat_DropDownUp = global::Android.UnitTests.Resource.Style.Animation_AppCompat_DropDownUp;
-			global::XLabs.Forms.Resource.Style.Base_AlertDialog_AppCompat = global::Android.UnitTests.Resource.Style.Base_AlertDialog_AppCompat;
-			global::XLabs.Forms.Resource.Style.Base_AlertDialog_AppCompat_Light = global::Android.UnitTests.Resource.Style.Base_AlertDialog_AppCompat_Light;
-			global::XLabs.Forms.Resource.Style.Base_Animation_AppCompat_Dialog = global::Android.UnitTests.Resource.Style.Base_Animation_AppCompat_Dialog;
-			global::XLabs.Forms.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::Android.UnitTests.Resource.Style.Base_Animation_AppCompat_DropDownUp;
-			global::XLabs.Forms.Resource.Style.Base_DialogWindowTitle_AppCompat = global::Android.UnitTests.Resource.Style.Base_DialogWindowTitle_AppCompat;
-			global::XLabs.Forms.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::Android.UnitTests.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Body1;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Body2;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Button = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Button;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Caption;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Display1;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Display2;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Display3;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Display4;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Headline;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Large = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Large;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Medium;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Menu;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Small = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Small;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Title = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Title;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::Android.UnitTests.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::Android.UnitTests.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::Android.UnitTests.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
-			global::XLabs.Forms.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::Android.UnitTests.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
-			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat = global::Android.UnitTests.Resource.Style.Base_Theme_AppCompat;
-			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::Android.UnitTests.Resource.Style.Base_Theme_AppCompat_CompactMenu;
-			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Dialog = global::Android.UnitTests.Resource.Style.Base_Theme_AppCompat_Dialog;
-			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::Android.UnitTests.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
-			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::Android.UnitTests.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
-			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::Android.UnitTests.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
-			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::Android.UnitTests.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
-			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Light = global::Android.UnitTests.Resource.Style.Base_Theme_AppCompat_Light;
-			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::Android.UnitTests.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
-			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::Android.UnitTests.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
-			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::Android.UnitTests.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
-			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::Android.UnitTests.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
-			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::Android.UnitTests.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
-			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::Android.UnitTests.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
-			global::XLabs.Forms.Resource.Style.Base_ThemeOverlay_AppCompat = global::Android.UnitTests.Resource.Style.Base_ThemeOverlay_AppCompat;
-			global::XLabs.Forms.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::Android.UnitTests.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
-			global::XLabs.Forms.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::Android.UnitTests.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
-			global::XLabs.Forms.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::Android.UnitTests.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
-			global::XLabs.Forms.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::Android.UnitTests.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
-			global::XLabs.Forms.Resource.Style.Base_V21_Theme_AppCompat = global::Android.UnitTests.Resource.Style.Base_V21_Theme_AppCompat;
-			global::XLabs.Forms.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::Android.UnitTests.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
-			global::XLabs.Forms.Resource.Style.Base_V21_Theme_AppCompat_Light = global::Android.UnitTests.Resource.Style.Base_V21_Theme_AppCompat_Light;
-			global::XLabs.Forms.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::Android.UnitTests.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
-			global::XLabs.Forms.Resource.Style.Base_V22_Theme_AppCompat = global::Android.UnitTests.Resource.Style.Base_V22_Theme_AppCompat;
-			global::XLabs.Forms.Resource.Style.Base_V22_Theme_AppCompat_Light = global::Android.UnitTests.Resource.Style.Base_V22_Theme_AppCompat_Light;
-			global::XLabs.Forms.Resource.Style.Base_V23_Theme_AppCompat = global::Android.UnitTests.Resource.Style.Base_V23_Theme_AppCompat;
-			global::XLabs.Forms.Resource.Style.Base_V23_Theme_AppCompat_Light = global::Android.UnitTests.Resource.Style.Base_V23_Theme_AppCompat_Light;
-			global::XLabs.Forms.Resource.Style.Base_V7_Theme_AppCompat = global::Android.UnitTests.Resource.Style.Base_V7_Theme_AppCompat;
-			global::XLabs.Forms.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::Android.UnitTests.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
-			global::XLabs.Forms.Resource.Style.Base_V7_Theme_AppCompat_Light = global::Android.UnitTests.Resource.Style.Base_V7_Theme_AppCompat_Light;
-			global::XLabs.Forms.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::Android.UnitTests.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
-			global::XLabs.Forms.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::Android.UnitTests.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
-			global::XLabs.Forms.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::Android.UnitTests.Resource.Style.Base_V7_Widget_AppCompat_EditText;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActionBar = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_ActionBar;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActionButton = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_ActionButton;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActionMode = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_ActionMode;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Button = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_Button;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_Button_Colored;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Button_Small = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_Button_Small;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_ButtonBar;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_EditText = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_EditText;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ListView = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_ListView;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_PopupMenu;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_PopupWindow;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_ProgressBar;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_RatingBar = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_RatingBar;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_SearchView = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_SearchView;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Spinner = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_Spinner;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Toolbar = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_Toolbar;
-			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::Android.UnitTests.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
-			global::XLabs.Forms.Resource.Style.Base_Widget_Design_TabLayout = global::Android.UnitTests.Resource.Style.Base_Widget_Design_TabLayout;
-			global::XLabs.Forms.Resource.Style.CalendarCell = global::Android.UnitTests.Resource.Style.CalendarCell;
-			global::XLabs.Forms.Resource.Style.CalendarCell_CalendarDate = global::Android.UnitTests.Resource.Style.CalendarCell_CalendarDate;
-			global::XLabs.Forms.Resource.Style.CalendarCell_DayHeader = global::Android.UnitTests.Resource.Style.CalendarCell_DayHeader;
-			global::XLabs.Forms.Resource.Style.CalendarTitle = global::Android.UnitTests.Resource.Style.CalendarTitle;
-			global::XLabs.Forms.Resource.Style.CardView = global::Android.UnitTests.Resource.Style.CardView;
-			global::XLabs.Forms.Resource.Style.CardView_Dark = global::Android.UnitTests.Resource.Style.CardView_Dark;
-			global::XLabs.Forms.Resource.Style.CardView_Light = global::Android.UnitTests.Resource.Style.CardView_Light;
-			global::XLabs.Forms.Resource.Style.Platform_AppCompat = global::Android.UnitTests.Resource.Style.Platform_AppCompat;
-			global::XLabs.Forms.Resource.Style.Platform_AppCompat_Light = global::Android.UnitTests.Resource.Style.Platform_AppCompat_Light;
-			global::XLabs.Forms.Resource.Style.Platform_ThemeOverlay_AppCompat = global::Android.UnitTests.Resource.Style.Platform_ThemeOverlay_AppCompat;
-			global::XLabs.Forms.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::Android.UnitTests.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
-			global::XLabs.Forms.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::Android.UnitTests.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
-			global::XLabs.Forms.Resource.Style.Platform_Widget_AppCompat_Spinner = global::Android.UnitTests.Resource.Style.Platform_Widget_AppCompat_Spinner;
-			global::XLabs.Forms.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::Android.UnitTests.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
-			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::Android.UnitTests.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
-			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::Android.UnitTests.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
-			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::Android.UnitTests.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
-			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::Android.UnitTests.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
-			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::Android.UnitTests.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
-			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::Android.UnitTests.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
-			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::Android.UnitTests.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
-			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::Android.UnitTests.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
-			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::Android.UnitTests.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
-			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::Android.UnitTests.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
-			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::Android.UnitTests.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Body1 = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Body1;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Body2 = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Body2;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Button = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Button;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Caption = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Caption;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Display1 = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Display1;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Display2 = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Display2;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Display3 = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Display3;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Display4 = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Display4;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Headline = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Headline;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Inverse = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Inverse;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Large = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Large;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Medium = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Medium;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Menu = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Menu;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Small = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Small;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Subhead = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Subhead;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Title = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Title;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Widget_Button;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
-			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::Android.UnitTests.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
-			global::XLabs.Forms.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded = global::Android.UnitTests.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded;
-			global::XLabs.Forms.Resource.Style.TextAppearance_Design_Error = global::Android.UnitTests.Resource.Style.TextAppearance_Design_Error;
-			global::XLabs.Forms.Resource.Style.TextAppearance_Design_Hint = global::Android.UnitTests.Resource.Style.TextAppearance_Design_Hint;
-			global::XLabs.Forms.Resource.Style.TextAppearance_Design_Snackbar_Message = global::Android.UnitTests.Resource.Style.TextAppearance_Design_Snackbar_Message;
-			global::XLabs.Forms.Resource.Style.TextAppearance_Design_Tab = global::Android.UnitTests.Resource.Style.TextAppearance_Design_Tab;
-			global::XLabs.Forms.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::Android.UnitTests.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
-			global::XLabs.Forms.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::Android.UnitTests.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
-			global::XLabs.Forms.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::Android.UnitTests.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
-			global::XLabs.Forms.Resource.Style.Theme_AppCompat = global::Android.UnitTests.Resource.Style.Theme_AppCompat;
-			global::XLabs.Forms.Resource.Style.Theme_AppCompat_CompactMenu = global::Android.UnitTests.Resource.Style.Theme_AppCompat_CompactMenu;
-			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Dialog = global::Android.UnitTests.Resource.Style.Theme_AppCompat_Dialog;
-			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Dialog_Alert = global::Android.UnitTests.Resource.Style.Theme_AppCompat_Dialog_Alert;
-			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::Android.UnitTests.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
-			global::XLabs.Forms.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::Android.UnitTests.Resource.Style.Theme_AppCompat_DialogWhenLarge;
-			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Light = global::Android.UnitTests.Resource.Style.Theme_AppCompat_Light;
-			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::Android.UnitTests.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
-			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Light_Dialog = global::Android.UnitTests.Resource.Style.Theme_AppCompat_Light_Dialog;
-			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::Android.UnitTests.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
-			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::Android.UnitTests.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
-			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::Android.UnitTests.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
-			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::Android.UnitTests.Resource.Style.Theme_AppCompat_Light_NoActionBar;
-			global::XLabs.Forms.Resource.Style.Theme_AppCompat_NoActionBar = global::Android.UnitTests.Resource.Style.Theme_AppCompat_NoActionBar;
-			global::XLabs.Forms.Resource.Style.Theme_MediaRouter = global::Android.UnitTests.Resource.Style.Theme_MediaRouter;
-			global::XLabs.Forms.Resource.Style.Theme_MediaRouter_Light = global::Android.UnitTests.Resource.Style.Theme_MediaRouter_Light;
-			global::XLabs.Forms.Resource.Style.ThemeOverlay_AppCompat = global::Android.UnitTests.Resource.Style.ThemeOverlay_AppCompat;
-			global::XLabs.Forms.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::Android.UnitTests.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
-			global::XLabs.Forms.Resource.Style.ThemeOverlay_AppCompat_Dark = global::Android.UnitTests.Resource.Style.ThemeOverlay_AppCompat_Dark;
-			global::XLabs.Forms.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::Android.UnitTests.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
-			global::XLabs.Forms.Resource.Style.ThemeOverlay_AppCompat_Light = global::Android.UnitTests.Resource.Style.ThemeOverlay_AppCompat_Light;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActionBar = global::Android.UnitTests.Resource.Style.Widget_AppCompat_ActionBar;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::Android.UnitTests.Resource.Style.Widget_AppCompat_ActionBar_Solid;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::Android.UnitTests.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::Android.UnitTests.Resource.Style.Widget_AppCompat_ActionBar_TabText;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::Android.UnitTests.Resource.Style.Widget_AppCompat_ActionBar_TabView;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActionButton = global::Android.UnitTests.Resource.Style.Widget_AppCompat_ActionButton;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::Android.UnitTests.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::Android.UnitTests.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActionMode = global::Android.UnitTests.Resource.Style.Widget_AppCompat_ActionMode;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActivityChooserView = global::Android.UnitTests.Resource.Style.Widget_AppCompat_ActivityChooserView;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::Android.UnitTests.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Button = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Button;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Button_Borderless = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Button_Borderless;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Button_Colored = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Button_Colored;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Button_Small = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Button_Small;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ButtonBar = global::Android.UnitTests.Resource.Style.Widget_AppCompat_ButtonBar;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::Android.UnitTests.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::Android.UnitTests.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::Android.UnitTests.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::Android.UnitTests.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::Android.UnitTests.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::Android.UnitTests.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_EditText = global::Android.UnitTests.Resource.Style.Widget_AppCompat_EditText;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionBar = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_ActionBar;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionButton = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_ActionButton;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_PopupMenu;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_SearchView = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_SearchView;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ListPopupWindow = global::Android.UnitTests.Resource.Style.Widget_AppCompat_ListPopupWindow;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ListView = global::Android.UnitTests.Resource.Style.Widget_AppCompat_ListView;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ListView_DropDown = global::Android.UnitTests.Resource.Style.Widget_AppCompat_ListView_DropDown;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ListView_Menu = global::Android.UnitTests.Resource.Style.Widget_AppCompat_ListView_Menu;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_PopupMenu = global::Android.UnitTests.Resource.Style.Widget_AppCompat_PopupMenu;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::Android.UnitTests.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_PopupWindow = global::Android.UnitTests.Resource.Style.Widget_AppCompat_PopupWindow;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ProgressBar = global::Android.UnitTests.Resource.Style.Widget_AppCompat_ProgressBar;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::Android.UnitTests.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_RatingBar = global::Android.UnitTests.Resource.Style.Widget_AppCompat_RatingBar;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_SearchView = global::Android.UnitTests.Resource.Style.Widget_AppCompat_SearchView;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::Android.UnitTests.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Spinner = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Spinner;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Spinner_DropDown;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Spinner_Underlined;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::Android.UnitTests.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Toolbar = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Toolbar;
-			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::Android.UnitTests.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
-			global::XLabs.Forms.Resource.Style.Widget_Design_AppBarLayout = global::Android.UnitTests.Resource.Style.Widget_Design_AppBarLayout;
-			global::XLabs.Forms.Resource.Style.Widget_Design_CollapsingToolbar = global::Android.UnitTests.Resource.Style.Widget_Design_CollapsingToolbar;
-			global::XLabs.Forms.Resource.Style.Widget_Design_FloatingActionButton = global::Android.UnitTests.Resource.Style.Widget_Design_FloatingActionButton;
-			global::XLabs.Forms.Resource.Style.Widget_Design_NavigationView = global::Android.UnitTests.Resource.Style.Widget_Design_NavigationView;
-			global::XLabs.Forms.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::Android.UnitTests.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
-			global::XLabs.Forms.Resource.Style.Widget_Design_Snackbar = global::Android.UnitTests.Resource.Style.Widget_Design_Snackbar;
-			global::XLabs.Forms.Resource.Style.Widget_Design_TabLayout = global::Android.UnitTests.Resource.Style.Widget_Design_TabLayout;
-			global::XLabs.Forms.Resource.Style.Widget_Design_TextInputLayout = global::Android.UnitTests.Resource.Style.Widget_Design_TextInputLayout;
-			global::XLabs.Forms.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton = global::Android.UnitTests.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton;
-			global::XLabs.Forms.Resource.Style.Widget_MediaRouter_MediaRouteButton = global::Android.UnitTests.Resource.Style.Widget_MediaRouter_MediaRouteButton;
-			global::XLabs.Forms.Resource.Styleable.ActionBar = global::Android.UnitTests.Resource.Styleable.ActionBar;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_background = global::Android.UnitTests.Resource.Styleable.ActionBar_background;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_backgroundSplit = global::Android.UnitTests.Resource.Styleable.ActionBar_backgroundSplit;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_backgroundStacked = global::Android.UnitTests.Resource.Styleable.ActionBar_backgroundStacked;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_contentInsetEnd = global::Android.UnitTests.Resource.Styleable.ActionBar_contentInsetEnd;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_contentInsetLeft = global::Android.UnitTests.Resource.Styleable.ActionBar_contentInsetLeft;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_contentInsetRight = global::Android.UnitTests.Resource.Styleable.ActionBar_contentInsetRight;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_contentInsetStart = global::Android.UnitTests.Resource.Styleable.ActionBar_contentInsetStart;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_customNavigationLayout = global::Android.UnitTests.Resource.Styleable.ActionBar_customNavigationLayout;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_displayOptions = global::Android.UnitTests.Resource.Styleable.ActionBar_displayOptions;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_divider = global::Android.UnitTests.Resource.Styleable.ActionBar_divider;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_elevation = global::Android.UnitTests.Resource.Styleable.ActionBar_elevation;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_height = global::Android.UnitTests.Resource.Styleable.ActionBar_height;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_hideOnContentScroll = global::Android.UnitTests.Resource.Styleable.ActionBar_hideOnContentScroll;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_homeAsUpIndicator = global::Android.UnitTests.Resource.Styleable.ActionBar_homeAsUpIndicator;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_homeLayout = global::Android.UnitTests.Resource.Styleable.ActionBar_homeLayout;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_icon = global::Android.UnitTests.Resource.Styleable.ActionBar_icon;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::Android.UnitTests.Resource.Styleable.ActionBar_indeterminateProgressStyle;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_itemPadding = global::Android.UnitTests.Resource.Styleable.ActionBar_itemPadding;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_logo = global::Android.UnitTests.Resource.Styleable.ActionBar_logo;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_navigationMode = global::Android.UnitTests.Resource.Styleable.ActionBar_navigationMode;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_popupTheme = global::Android.UnitTests.Resource.Styleable.ActionBar_popupTheme;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_progressBarPadding = global::Android.UnitTests.Resource.Styleable.ActionBar_progressBarPadding;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_progressBarStyle = global::Android.UnitTests.Resource.Styleable.ActionBar_progressBarStyle;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_subtitle = global::Android.UnitTests.Resource.Styleable.ActionBar_subtitle;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_subtitleTextStyle = global::Android.UnitTests.Resource.Styleable.ActionBar_subtitleTextStyle;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_title = global::Android.UnitTests.Resource.Styleable.ActionBar_title;
-			global::XLabs.Forms.Resource.Styleable.ActionBar_titleTextStyle = global::Android.UnitTests.Resource.Styleable.ActionBar_titleTextStyle;
-			global::XLabs.Forms.Resource.Styleable.ActionBarLayout = global::Android.UnitTests.Resource.Styleable.ActionBarLayout;
-			global::XLabs.Forms.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::Android.UnitTests.Resource.Styleable.ActionBarLayout_android_layout_gravity;
-			global::XLabs.Forms.Resource.Styleable.ActionMenuItemView = global::Android.UnitTests.Resource.Styleable.ActionMenuItemView;
-			global::XLabs.Forms.Resource.Styleable.ActionMenuItemView_android_minWidth = global::Android.UnitTests.Resource.Styleable.ActionMenuItemView_android_minWidth;
-			global::XLabs.Forms.Resource.Styleable.ActionMenuView = global::Android.UnitTests.Resource.Styleable.ActionMenuView;
-			global::XLabs.Forms.Resource.Styleable.ActionMode = global::Android.UnitTests.Resource.Styleable.ActionMode;
-			global::XLabs.Forms.Resource.Styleable.ActionMode_background = global::Android.UnitTests.Resource.Styleable.ActionMode_background;
-			global::XLabs.Forms.Resource.Styleable.ActionMode_backgroundSplit = global::Android.UnitTests.Resource.Styleable.ActionMode_backgroundSplit;
-			global::XLabs.Forms.Resource.Styleable.ActionMode_closeItemLayout = global::Android.UnitTests.Resource.Styleable.ActionMode_closeItemLayout;
-			global::XLabs.Forms.Resource.Styleable.ActionMode_height = global::Android.UnitTests.Resource.Styleable.ActionMode_height;
-			global::XLabs.Forms.Resource.Styleable.ActionMode_subtitleTextStyle = global::Android.UnitTests.Resource.Styleable.ActionMode_subtitleTextStyle;
-			global::XLabs.Forms.Resource.Styleable.ActionMode_titleTextStyle = global::Android.UnitTests.Resource.Styleable.ActionMode_titleTextStyle;
-			global::XLabs.Forms.Resource.Styleable.ActivityChooserView = global::Android.UnitTests.Resource.Styleable.ActivityChooserView;
-			global::XLabs.Forms.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::Android.UnitTests.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
-			global::XLabs.Forms.Resource.Styleable.ActivityChooserView_initialActivityCount = global::Android.UnitTests.Resource.Styleable.ActivityChooserView_initialActivityCount;
-			global::XLabs.Forms.Resource.Styleable.AlertDialog = global::Android.UnitTests.Resource.Styleable.AlertDialog;
-			global::XLabs.Forms.Resource.Styleable.AlertDialog_android_layout = global::Android.UnitTests.Resource.Styleable.AlertDialog_android_layout;
-			global::XLabs.Forms.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::Android.UnitTests.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
-			global::XLabs.Forms.Resource.Styleable.AlertDialog_listItemLayout = global::Android.UnitTests.Resource.Styleable.AlertDialog_listItemLayout;
-			global::XLabs.Forms.Resource.Styleable.AlertDialog_listLayout = global::Android.UnitTests.Resource.Styleable.AlertDialog_listLayout;
-			global::XLabs.Forms.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::Android.UnitTests.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
-			global::XLabs.Forms.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::Android.UnitTests.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
-			global::XLabs.Forms.Resource.Styleable.AppBarLayout = global::Android.UnitTests.Resource.Styleable.AppBarLayout;
-			global::XLabs.Forms.Resource.Styleable.AppBarLayout_android_background = global::Android.UnitTests.Resource.Styleable.AppBarLayout_android_background;
-			global::XLabs.Forms.Resource.Styleable.AppBarLayout_elevation = global::Android.UnitTests.Resource.Styleable.AppBarLayout_elevation;
-			global::XLabs.Forms.Resource.Styleable.AppBarLayout_expanded = global::Android.UnitTests.Resource.Styleable.AppBarLayout_expanded;
-			global::XLabs.Forms.Resource.Styleable.AppCompatTextView = global::Android.UnitTests.Resource.Styleable.AppCompatTextView;
-			global::XLabs.Forms.Resource.Styleable.AppCompatTextView_android_textAppearance = global::Android.UnitTests.Resource.Styleable.AppCompatTextView_android_textAppearance;
-			global::XLabs.Forms.Resource.Styleable.AppCompatTextView_textAllCaps = global::Android.UnitTests.Resource.Styleable.AppCompatTextView_textAllCaps;
-			global::XLabs.Forms.Resource.Styleable.CardView = global::Android.UnitTests.Resource.Styleable.CardView;
-			global::XLabs.Forms.Resource.Styleable.CardView_cardBackgroundColor = global::Android.UnitTests.Resource.Styleable.CardView_cardBackgroundColor;
-			global::XLabs.Forms.Resource.Styleable.CardView_cardCornerRadius = global::Android.UnitTests.Resource.Styleable.CardView_cardCornerRadius;
-			global::XLabs.Forms.Resource.Styleable.CardView_cardElevation = global::Android.UnitTests.Resource.Styleable.CardView_cardElevation;
-			global::XLabs.Forms.Resource.Styleable.CardView_cardMaxElevation = global::Android.UnitTests.Resource.Styleable.CardView_cardMaxElevation;
-			global::XLabs.Forms.Resource.Styleable.CardView_cardPreventCornerOverlap = global::Android.UnitTests.Resource.Styleable.CardView_cardPreventCornerOverlap;
-			global::XLabs.Forms.Resource.Styleable.CardView_cardUseCompatPadding = global::Android.UnitTests.Resource.Styleable.CardView_cardUseCompatPadding;
-			global::XLabs.Forms.Resource.Styleable.CardView_contentPadding = global::Android.UnitTests.Resource.Styleable.CardView_contentPadding;
-			global::XLabs.Forms.Resource.Styleable.CardView_contentPaddingBottom = global::Android.UnitTests.Resource.Styleable.CardView_contentPaddingBottom;
-			global::XLabs.Forms.Resource.Styleable.CardView_contentPaddingLeft = global::Android.UnitTests.Resource.Styleable.CardView_contentPaddingLeft;
-			global::XLabs.Forms.Resource.Styleable.CardView_contentPaddingRight = global::Android.UnitTests.Resource.Styleable.CardView_contentPaddingRight;
-			global::XLabs.Forms.Resource.Styleable.CardView_contentPaddingTop = global::Android.UnitTests.Resource.Styleable.CardView_contentPaddingTop;
-			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout = global::Android.UnitTests.Resource.Styleable.CollapsingToolbarLayout;
-			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::Android.UnitTests.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
-			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::Android.UnitTests.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
-			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_contentScrim = global::Android.UnitTests.Resource.Styleable.CollapsingToolbarLayout_contentScrim;
-			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity = global::Android.UnitTests.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity;
-			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin = global::Android.UnitTests.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin;
-			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom = global::Android.UnitTests.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom;
-			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd = global::Android.UnitTests.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd;
-			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::Android.UnitTests.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
-			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::Android.UnitTests.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
-			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::Android.UnitTests.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
-			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::Android.UnitTests.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
-			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_title = global::Android.UnitTests.Resource.Styleable.CollapsingToolbarLayout_title;
-			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::Android.UnitTests.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
-			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::Android.UnitTests.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
-			global::XLabs.Forms.Resource.Styleable.CompoundButton = global::Android.UnitTests.Resource.Styleable.CompoundButton;
-			global::XLabs.Forms.Resource.Styleable.CompoundButton_android_button = global::Android.UnitTests.Resource.Styleable.CompoundButton_android_button;
-			global::XLabs.Forms.Resource.Styleable.CompoundButton_buttonTint = global::Android.UnitTests.Resource.Styleable.CompoundButton_buttonTint;
-			global::XLabs.Forms.Resource.Styleable.CompoundButton_buttonTintMode = global::Android.UnitTests.Resource.Styleable.CompoundButton_buttonTintMode;
-			global::XLabs.Forms.Resource.Styleable.CoordinatorLayout = global::Android.UnitTests.Resource.Styleable.CoordinatorLayout;
-			global::XLabs.Forms.Resource.Styleable.CoordinatorLayout_keylines = global::Android.UnitTests.Resource.Styleable.CoordinatorLayout_keylines;
-			global::XLabs.Forms.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::Android.UnitTests.Resource.Styleable.CoordinatorLayout_statusBarBackground;
-			global::XLabs.Forms.Resource.Styleable.DrawerArrowToggle = global::Android.UnitTests.Resource.Styleable.DrawerArrowToggle;
-			global::XLabs.Forms.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::Android.UnitTests.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
-			global::XLabs.Forms.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::Android.UnitTests.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
-			global::XLabs.Forms.Resource.Styleable.DrawerArrowToggle_barLength = global::Android.UnitTests.Resource.Styleable.DrawerArrowToggle_barLength;
-			global::XLabs.Forms.Resource.Styleable.DrawerArrowToggle_color = global::Android.UnitTests.Resource.Styleable.DrawerArrowToggle_color;
-			global::XLabs.Forms.Resource.Styleable.DrawerArrowToggle_drawableSize = global::Android.UnitTests.Resource.Styleable.DrawerArrowToggle_drawableSize;
-			global::XLabs.Forms.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::Android.UnitTests.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
-			global::XLabs.Forms.Resource.Styleable.DrawerArrowToggle_spinBars = global::Android.UnitTests.Resource.Styleable.DrawerArrowToggle_spinBars;
-			global::XLabs.Forms.Resource.Styleable.DrawerArrowToggle_thickness = global::Android.UnitTests.Resource.Styleable.DrawerArrowToggle_thickness;
-			global::XLabs.Forms.Resource.Styleable.FloatingActionButton = global::Android.UnitTests.Resource.Styleable.FloatingActionButton;
-			global::XLabs.Forms.Resource.Styleable.FloatingActionButton_backgroundTint = global::Android.UnitTests.Resource.Styleable.FloatingActionButton_backgroundTint;
-			global::XLabs.Forms.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::Android.UnitTests.Resource.Styleable.FloatingActionButton_backgroundTintMode;
-			global::XLabs.Forms.Resource.Styleable.FloatingActionButton_borderWidth = global::Android.UnitTests.Resource.Styleable.FloatingActionButton_borderWidth;
-			global::XLabs.Forms.Resource.Styleable.FloatingActionButton_elevation = global::Android.UnitTests.Resource.Styleable.FloatingActionButton_elevation;
-			global::XLabs.Forms.Resource.Styleable.FloatingActionButton_fabSize = global::Android.UnitTests.Resource.Styleable.FloatingActionButton_fabSize;
-			global::XLabs.Forms.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::Android.UnitTests.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
-			global::XLabs.Forms.Resource.Styleable.FloatingActionButton_rippleColor = global::Android.UnitTests.Resource.Styleable.FloatingActionButton_rippleColor;
-			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat = global::Android.UnitTests.Resource.Styleable.LinearLayoutCompat;
-			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::Android.UnitTests.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
-			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::Android.UnitTests.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
-			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_android_gravity = global::Android.UnitTests.Resource.Styleable.LinearLayoutCompat_android_gravity;
-			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_android_orientation = global::Android.UnitTests.Resource.Styleable.LinearLayoutCompat_android_orientation;
-			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::Android.UnitTests.Resource.Styleable.LinearLayoutCompat_android_weightSum;
-			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_divider = global::Android.UnitTests.Resource.Styleable.LinearLayoutCompat_divider;
-			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::Android.UnitTests.Resource.Styleable.LinearLayoutCompat_dividerPadding;
-			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::Android.UnitTests.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
-			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_showDividers = global::Android.UnitTests.Resource.Styleable.LinearLayoutCompat_showDividers;
-			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_Layout = global::Android.UnitTests.Resource.Styleable.LinearLayoutCompat_Layout;
-			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::Android.UnitTests.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
-			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::Android.UnitTests.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
-			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::Android.UnitTests.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
-			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::Android.UnitTests.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
-			global::XLabs.Forms.Resource.Styleable.ListPopupWindow = global::Android.UnitTests.Resource.Styleable.ListPopupWindow;
-			global::XLabs.Forms.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::Android.UnitTests.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
-			global::XLabs.Forms.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::Android.UnitTests.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
-			global::XLabs.Forms.Resource.Styleable.MediaRouteButton = global::Android.UnitTests.Resource.Styleable.MediaRouteButton;
-			global::XLabs.Forms.Resource.Styleable.MediaRouteButton_android_minHeight = global::Android.UnitTests.Resource.Styleable.MediaRouteButton_android_minHeight;
-			global::XLabs.Forms.Resource.Styleable.MediaRouteButton_android_minWidth = global::Android.UnitTests.Resource.Styleable.MediaRouteButton_android_minWidth;
-			global::XLabs.Forms.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable = global::Android.UnitTests.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable;
-			global::XLabs.Forms.Resource.Styleable.MenuGroup = global::Android.UnitTests.Resource.Styleable.MenuGroup;
-			global::XLabs.Forms.Resource.Styleable.MenuGroup_android_checkableBehavior = global::Android.UnitTests.Resource.Styleable.MenuGroup_android_checkableBehavior;
-			global::XLabs.Forms.Resource.Styleable.MenuGroup_android_enabled = global::Android.UnitTests.Resource.Styleable.MenuGroup_android_enabled;
-			global::XLabs.Forms.Resource.Styleable.MenuGroup_android_id = global::Android.UnitTests.Resource.Styleable.MenuGroup_android_id;
-			global::XLabs.Forms.Resource.Styleable.MenuGroup_android_menuCategory = global::Android.UnitTests.Resource.Styleable.MenuGroup_android_menuCategory;
-			global::XLabs.Forms.Resource.Styleable.MenuGroup_android_orderInCategory = global::Android.UnitTests.Resource.Styleable.MenuGroup_android_orderInCategory;
-			global::XLabs.Forms.Resource.Styleable.MenuGroup_android_visible = global::Android.UnitTests.Resource.Styleable.MenuGroup_android_visible;
-			global::XLabs.Forms.Resource.Styleable.MenuItem = global::Android.UnitTests.Resource.Styleable.MenuItem;
-			global::XLabs.Forms.Resource.Styleable.MenuItem_actionLayout = global::Android.UnitTests.Resource.Styleable.MenuItem_actionLayout;
-			global::XLabs.Forms.Resource.Styleable.MenuItem_actionProviderClass = global::Android.UnitTests.Resource.Styleable.MenuItem_actionProviderClass;
-			global::XLabs.Forms.Resource.Styleable.MenuItem_actionViewClass = global::Android.UnitTests.Resource.Styleable.MenuItem_actionViewClass;
-			global::XLabs.Forms.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::Android.UnitTests.Resource.Styleable.MenuItem_android_alphabeticShortcut;
-			global::XLabs.Forms.Resource.Styleable.MenuItem_android_checkable = global::Android.UnitTests.Resource.Styleable.MenuItem_android_checkable;
-			global::XLabs.Forms.Resource.Styleable.MenuItem_android_checked = global::Android.UnitTests.Resource.Styleable.MenuItem_android_checked;
-			global::XLabs.Forms.Resource.Styleable.MenuItem_android_enabled = global::Android.UnitTests.Resource.Styleable.MenuItem_android_enabled;
-			global::XLabs.Forms.Resource.Styleable.MenuItem_android_icon = global::Android.UnitTests.Resource.Styleable.MenuItem_android_icon;
-			global::XLabs.Forms.Resource.Styleable.MenuItem_android_id = global::Android.UnitTests.Resource.Styleable.MenuItem_android_id;
-			global::XLabs.Forms.Resource.Styleable.MenuItem_android_menuCategory = global::Android.UnitTests.Resource.Styleable.MenuItem_android_menuCategory;
-			global::XLabs.Forms.Resource.Styleable.MenuItem_android_numericShortcut = global::Android.UnitTests.Resource.Styleable.MenuItem_android_numericShortcut;
-			global::XLabs.Forms.Resource.Styleable.MenuItem_android_onClick = global::Android.UnitTests.Resource.Styleable.MenuItem_android_onClick;
-			global::XLabs.Forms.Resource.Styleable.MenuItem_android_orderInCategory = global::Android.UnitTests.Resource.Styleable.MenuItem_android_orderInCategory;
-			global::XLabs.Forms.Resource.Styleable.MenuItem_android_title = global::Android.UnitTests.Resource.Styleable.MenuItem_android_title;
-			global::XLabs.Forms.Resource.Styleable.MenuItem_android_titleCondensed = global::Android.UnitTests.Resource.Styleable.MenuItem_android_titleCondensed;
-			global::XLabs.Forms.Resource.Styleable.MenuItem_android_visible = global::Android.UnitTests.Resource.Styleable.MenuItem_android_visible;
-			global::XLabs.Forms.Resource.Styleable.MenuItem_showAsAction = global::Android.UnitTests.Resource.Styleable.MenuItem_showAsAction;
-			global::XLabs.Forms.Resource.Styleable.MenuView = global::Android.UnitTests.Resource.Styleable.MenuView;
-			global::XLabs.Forms.Resource.Styleable.MenuView_android_headerBackground = global::Android.UnitTests.Resource.Styleable.MenuView_android_headerBackground;
-			global::XLabs.Forms.Resource.Styleable.MenuView_android_horizontalDivider = global::Android.UnitTests.Resource.Styleable.MenuView_android_horizontalDivider;
-			global::XLabs.Forms.Resource.Styleable.MenuView_android_itemBackground = global::Android.UnitTests.Resource.Styleable.MenuView_android_itemBackground;
-			global::XLabs.Forms.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::Android.UnitTests.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
-			global::XLabs.Forms.Resource.Styleable.MenuView_android_itemTextAppearance = global::Android.UnitTests.Resource.Styleable.MenuView_android_itemTextAppearance;
-			global::XLabs.Forms.Resource.Styleable.MenuView_android_verticalDivider = global::Android.UnitTests.Resource.Styleable.MenuView_android_verticalDivider;
-			global::XLabs.Forms.Resource.Styleable.MenuView_android_windowAnimationStyle = global::Android.UnitTests.Resource.Styleable.MenuView_android_windowAnimationStyle;
-			global::XLabs.Forms.Resource.Styleable.MenuView_preserveIconSpacing = global::Android.UnitTests.Resource.Styleable.MenuView_preserveIconSpacing;
-			global::XLabs.Forms.Resource.Styleable.NavigationView = global::Android.UnitTests.Resource.Styleable.NavigationView;
-			global::XLabs.Forms.Resource.Styleable.NavigationView_android_background = global::Android.UnitTests.Resource.Styleable.NavigationView_android_background;
-			global::XLabs.Forms.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::Android.UnitTests.Resource.Styleable.NavigationView_android_fitsSystemWindows;
-			global::XLabs.Forms.Resource.Styleable.NavigationView_android_maxWidth = global::Android.UnitTests.Resource.Styleable.NavigationView_android_maxWidth;
-			global::XLabs.Forms.Resource.Styleable.NavigationView_elevation = global::Android.UnitTests.Resource.Styleable.NavigationView_elevation;
-			global::XLabs.Forms.Resource.Styleable.NavigationView_headerLayout = global::Android.UnitTests.Resource.Styleable.NavigationView_headerLayout;
-			global::XLabs.Forms.Resource.Styleable.NavigationView_itemBackground = global::Android.UnitTests.Resource.Styleable.NavigationView_itemBackground;
-			global::XLabs.Forms.Resource.Styleable.NavigationView_itemIconTint = global::Android.UnitTests.Resource.Styleable.NavigationView_itemIconTint;
-			global::XLabs.Forms.Resource.Styleable.NavigationView_itemTextAppearance = global::Android.UnitTests.Resource.Styleable.NavigationView_itemTextAppearance;
-			global::XLabs.Forms.Resource.Styleable.NavigationView_itemTextColor = global::Android.UnitTests.Resource.Styleable.NavigationView_itemTextColor;
-			global::XLabs.Forms.Resource.Styleable.NavigationView_menu = global::Android.UnitTests.Resource.Styleable.NavigationView_menu;
-			global::XLabs.Forms.Resource.Styleable.PopupWindow = global::Android.UnitTests.Resource.Styleable.PopupWindow;
-			global::XLabs.Forms.Resource.Styleable.PopupWindow_android_popupBackground = global::Android.UnitTests.Resource.Styleable.PopupWindow_android_popupBackground;
-			global::XLabs.Forms.Resource.Styleable.PopupWindow_overlapAnchor = global::Android.UnitTests.Resource.Styleable.PopupWindow_overlapAnchor;
-			global::XLabs.Forms.Resource.Styleable.PopupWindowBackgroundState = global::Android.UnitTests.Resource.Styleable.PopupWindowBackgroundState;
-			global::XLabs.Forms.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::Android.UnitTests.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
-			global::XLabs.Forms.Resource.Styleable.ScrimInsetsFrameLayout = global::Android.UnitTests.Resource.Styleable.ScrimInsetsFrameLayout;
-			global::XLabs.Forms.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::Android.UnitTests.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
-			global::XLabs.Forms.Resource.Styleable.SearchView = global::Android.UnitTests.Resource.Styleable.SearchView;
-			global::XLabs.Forms.Resource.Styleable.SearchView_android_focusable = global::Android.UnitTests.Resource.Styleable.SearchView_android_focusable;
-			global::XLabs.Forms.Resource.Styleable.SearchView_android_imeOptions = global::Android.UnitTests.Resource.Styleable.SearchView_android_imeOptions;
-			global::XLabs.Forms.Resource.Styleable.SearchView_android_inputType = global::Android.UnitTests.Resource.Styleable.SearchView_android_inputType;
-			global::XLabs.Forms.Resource.Styleable.SearchView_android_maxWidth = global::Android.UnitTests.Resource.Styleable.SearchView_android_maxWidth;
-			global::XLabs.Forms.Resource.Styleable.SearchView_closeIcon = global::Android.UnitTests.Resource.Styleable.SearchView_closeIcon;
-			global::XLabs.Forms.Resource.Styleable.SearchView_commitIcon = global::Android.UnitTests.Resource.Styleable.SearchView_commitIcon;
-			global::XLabs.Forms.Resource.Styleable.SearchView_defaultQueryHint = global::Android.UnitTests.Resource.Styleable.SearchView_defaultQueryHint;
-			global::XLabs.Forms.Resource.Styleable.SearchView_goIcon = global::Android.UnitTests.Resource.Styleable.SearchView_goIcon;
-			global::XLabs.Forms.Resource.Styleable.SearchView_iconifiedByDefault = global::Android.UnitTests.Resource.Styleable.SearchView_iconifiedByDefault;
-			global::XLabs.Forms.Resource.Styleable.SearchView_layout = global::Android.UnitTests.Resource.Styleable.SearchView_layout;
-			global::XLabs.Forms.Resource.Styleable.SearchView_queryBackground = global::Android.UnitTests.Resource.Styleable.SearchView_queryBackground;
-			global::XLabs.Forms.Resource.Styleable.SearchView_queryHint = global::Android.UnitTests.Resource.Styleable.SearchView_queryHint;
-			global::XLabs.Forms.Resource.Styleable.SearchView_searchHintIcon = global::Android.UnitTests.Resource.Styleable.SearchView_searchHintIcon;
-			global::XLabs.Forms.Resource.Styleable.SearchView_searchIcon = global::Android.UnitTests.Resource.Styleable.SearchView_searchIcon;
-			global::XLabs.Forms.Resource.Styleable.SearchView_submitBackground = global::Android.UnitTests.Resource.Styleable.SearchView_submitBackground;
-			global::XLabs.Forms.Resource.Styleable.SearchView_suggestionRowLayout = global::Android.UnitTests.Resource.Styleable.SearchView_suggestionRowLayout;
-			global::XLabs.Forms.Resource.Styleable.SearchView_voiceIcon = global::Android.UnitTests.Resource.Styleable.SearchView_voiceIcon;
-			global::XLabs.Forms.Resource.Styleable.SnackbarLayout = global::Android.UnitTests.Resource.Styleable.SnackbarLayout;
-			global::XLabs.Forms.Resource.Styleable.SnackbarLayout_android_maxWidth = global::Android.UnitTests.Resource.Styleable.SnackbarLayout_android_maxWidth;
-			global::XLabs.Forms.Resource.Styleable.SnackbarLayout_elevation = global::Android.UnitTests.Resource.Styleable.SnackbarLayout_elevation;
-			global::XLabs.Forms.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::Android.UnitTests.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
-			global::XLabs.Forms.Resource.Styleable.Spinner = global::Android.UnitTests.Resource.Styleable.Spinner;
-			global::XLabs.Forms.Resource.Styleable.Spinner_android_dropDownWidth = global::Android.UnitTests.Resource.Styleable.Spinner_android_dropDownWidth;
-			global::XLabs.Forms.Resource.Styleable.Spinner_android_popupBackground = global::Android.UnitTests.Resource.Styleable.Spinner_android_popupBackground;
-			global::XLabs.Forms.Resource.Styleable.Spinner_android_prompt = global::Android.UnitTests.Resource.Styleable.Spinner_android_prompt;
-			global::XLabs.Forms.Resource.Styleable.Spinner_popupTheme = global::Android.UnitTests.Resource.Styleable.Spinner_popupTheme;
-			global::XLabs.Forms.Resource.Styleable.SwitchCompat = global::Android.UnitTests.Resource.Styleable.SwitchCompat;
-			global::XLabs.Forms.Resource.Styleable.SwitchCompat_android_textOff = global::Android.UnitTests.Resource.Styleable.SwitchCompat_android_textOff;
-			global::XLabs.Forms.Resource.Styleable.SwitchCompat_android_textOn = global::Android.UnitTests.Resource.Styleable.SwitchCompat_android_textOn;
-			global::XLabs.Forms.Resource.Styleable.SwitchCompat_android_thumb = global::Android.UnitTests.Resource.Styleable.SwitchCompat_android_thumb;
-			global::XLabs.Forms.Resource.Styleable.SwitchCompat_showText = global::Android.UnitTests.Resource.Styleable.SwitchCompat_showText;
-			global::XLabs.Forms.Resource.Styleable.SwitchCompat_splitTrack = global::Android.UnitTests.Resource.Styleable.SwitchCompat_splitTrack;
-			global::XLabs.Forms.Resource.Styleable.SwitchCompat_switchMinWidth = global::Android.UnitTests.Resource.Styleable.SwitchCompat_switchMinWidth;
-			global::XLabs.Forms.Resource.Styleable.SwitchCompat_switchPadding = global::Android.UnitTests.Resource.Styleable.SwitchCompat_switchPadding;
-			global::XLabs.Forms.Resource.Styleable.SwitchCompat_switchTextAppearance = global::Android.UnitTests.Resource.Styleable.SwitchCompat_switchTextAppearance;
-			global::XLabs.Forms.Resource.Styleable.SwitchCompat_thumbTextPadding = global::Android.UnitTests.Resource.Styleable.SwitchCompat_thumbTextPadding;
-			global::XLabs.Forms.Resource.Styleable.SwitchCompat_track = global::Android.UnitTests.Resource.Styleable.SwitchCompat_track;
-			global::XLabs.Forms.Resource.Styleable.TabLayout = global::Android.UnitTests.Resource.Styleable.TabLayout;
-			global::XLabs.Forms.Resource.Styleable.TabLayout_tabBackground = global::Android.UnitTests.Resource.Styleable.TabLayout_tabBackground;
-			global::XLabs.Forms.Resource.Styleable.TabLayout_tabContentStart = global::Android.UnitTests.Resource.Styleable.TabLayout_tabContentStart;
-			global::XLabs.Forms.Resource.Styleable.TabLayout_tabGravity = global::Android.UnitTests.Resource.Styleable.TabLayout_tabGravity;
-			global::XLabs.Forms.Resource.Styleable.TabLayout_tabIndicatorColor = global::Android.UnitTests.Resource.Styleable.TabLayout_tabIndicatorColor;
-			global::XLabs.Forms.Resource.Styleable.TabLayout_tabIndicatorHeight = global::Android.UnitTests.Resource.Styleable.TabLayout_tabIndicatorHeight;
-			global::XLabs.Forms.Resource.Styleable.TabLayout_tabMaxWidth = global::Android.UnitTests.Resource.Styleable.TabLayout_tabMaxWidth;
-			global::XLabs.Forms.Resource.Styleable.TabLayout_tabMinWidth = global::Android.UnitTests.Resource.Styleable.TabLayout_tabMinWidth;
-			global::XLabs.Forms.Resource.Styleable.TabLayout_tabMode = global::Android.UnitTests.Resource.Styleable.TabLayout_tabMode;
-			global::XLabs.Forms.Resource.Styleable.TabLayout_tabPadding = global::Android.UnitTests.Resource.Styleable.TabLayout_tabPadding;
-			global::XLabs.Forms.Resource.Styleable.TabLayout_tabPaddingBottom = global::Android.UnitTests.Resource.Styleable.TabLayout_tabPaddingBottom;
-			global::XLabs.Forms.Resource.Styleable.TabLayout_tabPaddingEnd = global::Android.UnitTests.Resource.Styleable.TabLayout_tabPaddingEnd;
-			global::XLabs.Forms.Resource.Styleable.TabLayout_tabPaddingStart = global::Android.UnitTests.Resource.Styleable.TabLayout_tabPaddingStart;
-			global::XLabs.Forms.Resource.Styleable.TabLayout_tabPaddingTop = global::Android.UnitTests.Resource.Styleable.TabLayout_tabPaddingTop;
-			global::XLabs.Forms.Resource.Styleable.TabLayout_tabSelectedTextColor = global::Android.UnitTests.Resource.Styleable.TabLayout_tabSelectedTextColor;
-			global::XLabs.Forms.Resource.Styleable.TabLayout_tabTextAppearance = global::Android.UnitTests.Resource.Styleable.TabLayout_tabTextAppearance;
-			global::XLabs.Forms.Resource.Styleable.TabLayout_tabTextColor = global::Android.UnitTests.Resource.Styleable.TabLayout_tabTextColor;
-			global::XLabs.Forms.Resource.Styleable.TextAppearance = global::Android.UnitTests.Resource.Styleable.TextAppearance;
-			global::XLabs.Forms.Resource.Styleable.TextAppearance_android_textColor = global::Android.UnitTests.Resource.Styleable.TextAppearance_android_textColor;
-			global::XLabs.Forms.Resource.Styleable.TextAppearance_android_textSize = global::Android.UnitTests.Resource.Styleable.TextAppearance_android_textSize;
-			global::XLabs.Forms.Resource.Styleable.TextAppearance_android_textStyle = global::Android.UnitTests.Resource.Styleable.TextAppearance_android_textStyle;
-			global::XLabs.Forms.Resource.Styleable.TextAppearance_android_typeface = global::Android.UnitTests.Resource.Styleable.TextAppearance_android_typeface;
-			global::XLabs.Forms.Resource.Styleable.TextAppearance_textAllCaps = global::Android.UnitTests.Resource.Styleable.TextAppearance_textAllCaps;
-			global::XLabs.Forms.Resource.Styleable.TextInputLayout = global::Android.UnitTests.Resource.Styleable.TextInputLayout;
-			global::XLabs.Forms.Resource.Styleable.TextInputLayout_android_hint = global::Android.UnitTests.Resource.Styleable.TextInputLayout_android_hint;
-			global::XLabs.Forms.Resource.Styleable.TextInputLayout_android_textColorHint = global::Android.UnitTests.Resource.Styleable.TextInputLayout_android_textColorHint;
-			global::XLabs.Forms.Resource.Styleable.TextInputLayout_errorEnabled = global::Android.UnitTests.Resource.Styleable.TextInputLayout_errorEnabled;
-			global::XLabs.Forms.Resource.Styleable.TextInputLayout_errorTextAppearance = global::Android.UnitTests.Resource.Styleable.TextInputLayout_errorTextAppearance;
-			global::XLabs.Forms.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::Android.UnitTests.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
-			global::XLabs.Forms.Resource.Styleable.TextInputLayout_hintTextAppearance = global::Android.UnitTests.Resource.Styleable.TextInputLayout_hintTextAppearance;
-			global::XLabs.Forms.Resource.Styleable.Toolbar = global::Android.UnitTests.Resource.Styleable.Toolbar;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_android_gravity = global::Android.UnitTests.Resource.Styleable.Toolbar_android_gravity;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_android_minHeight = global::Android.UnitTests.Resource.Styleable.Toolbar_android_minHeight;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_collapseContentDescription = global::Android.UnitTests.Resource.Styleable.Toolbar_collapseContentDescription;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_collapseIcon = global::Android.UnitTests.Resource.Styleable.Toolbar_collapseIcon;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_contentInsetEnd = global::Android.UnitTests.Resource.Styleable.Toolbar_contentInsetEnd;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_contentInsetLeft = global::Android.UnitTests.Resource.Styleable.Toolbar_contentInsetLeft;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_contentInsetRight = global::Android.UnitTests.Resource.Styleable.Toolbar_contentInsetRight;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_contentInsetStart = global::Android.UnitTests.Resource.Styleable.Toolbar_contentInsetStart;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_logo = global::Android.UnitTests.Resource.Styleable.Toolbar_logo;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_logoDescription = global::Android.UnitTests.Resource.Styleable.Toolbar_logoDescription;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_maxButtonHeight = global::Android.UnitTests.Resource.Styleable.Toolbar_maxButtonHeight;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_navigationContentDescription = global::Android.UnitTests.Resource.Styleable.Toolbar_navigationContentDescription;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_navigationIcon = global::Android.UnitTests.Resource.Styleable.Toolbar_navigationIcon;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_popupTheme = global::Android.UnitTests.Resource.Styleable.Toolbar_popupTheme;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_subtitle = global::Android.UnitTests.Resource.Styleable.Toolbar_subtitle;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_subtitleTextAppearance = global::Android.UnitTests.Resource.Styleable.Toolbar_subtitleTextAppearance;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_subtitleTextColor = global::Android.UnitTests.Resource.Styleable.Toolbar_subtitleTextColor;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_title = global::Android.UnitTests.Resource.Styleable.Toolbar_title;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_titleMarginBottom = global::Android.UnitTests.Resource.Styleable.Toolbar_titleMarginBottom;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_titleMarginEnd = global::Android.UnitTests.Resource.Styleable.Toolbar_titleMarginEnd;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_titleMarginStart = global::Android.UnitTests.Resource.Styleable.Toolbar_titleMarginStart;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_titleMarginTop = global::Android.UnitTests.Resource.Styleable.Toolbar_titleMarginTop;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_titleMargins = global::Android.UnitTests.Resource.Styleable.Toolbar_titleMargins;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_titleTextAppearance = global::Android.UnitTests.Resource.Styleable.Toolbar_titleTextAppearance;
-			global::XLabs.Forms.Resource.Styleable.Toolbar_titleTextColor = global::Android.UnitTests.Resource.Styleable.Toolbar_titleTextColor;
-			global::XLabs.Forms.Resource.Styleable.View = global::Android.UnitTests.Resource.Styleable.View;
-			global::XLabs.Forms.Resource.Styleable.View_android_focusable = global::Android.UnitTests.Resource.Styleable.View_android_focusable;
-			global::XLabs.Forms.Resource.Styleable.View_android_theme = global::Android.UnitTests.Resource.Styleable.View_android_theme;
-			global::XLabs.Forms.Resource.Styleable.View_paddingEnd = global::Android.UnitTests.Resource.Styleable.View_paddingEnd;
-			global::XLabs.Forms.Resource.Styleable.View_paddingStart = global::Android.UnitTests.Resource.Styleable.View_paddingStart;
-			global::XLabs.Forms.Resource.Styleable.View_theme = global::Android.UnitTests.Resource.Styleable.View_theme;
-			global::XLabs.Forms.Resource.Styleable.ViewBackgroundHelper = global::Android.UnitTests.Resource.Styleable.ViewBackgroundHelper;
-			global::XLabs.Forms.Resource.Styleable.ViewBackgroundHelper_android_background = global::Android.UnitTests.Resource.Styleable.ViewBackgroundHelper_android_background;
-			global::XLabs.Forms.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::Android.UnitTests.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
-			global::XLabs.Forms.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::Android.UnitTests.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
-			global::XLabs.Forms.Resource.Styleable.ViewStubCompat = global::Android.UnitTests.Resource.Styleable.ViewStubCompat;
-			global::XLabs.Forms.Resource.Styleable.ViewStubCompat_android_id = global::Android.UnitTests.Resource.Styleable.ViewStubCompat_android_id;
-			global::XLabs.Forms.Resource.Styleable.ViewStubCompat_android_inflatedId = global::Android.UnitTests.Resource.Styleable.ViewStubCompat_android_inflatedId;
-			global::XLabs.Forms.Resource.Styleable.ViewStubCompat_android_layout = global::Android.UnitTests.Resource.Styleable.ViewStubCompat_android_layout;
-			global::XLabs.Platform.Resource.String.ApplicationName = global::Android.UnitTests.Resource.String.ApplicationName;
-			global::XLabs.Platform.Resource.String.Hello = global::Android.UnitTests.Resource.String.Hello;
 		}
 		
 		public partial class Animation
@@ -24534,343 +23198,307 @@ namespace Android.UnitTests
 			public const int button_material_light = 2131034153;
 			
 			// aapt resource value: 0x7F05002A
-			public const int calendar_active_month_bg = 2131034154;
+			public const int cardview_dark_background = 2131034154;
 			
 			// aapt resource value: 0x7F05002B
-			public const int calendar_bg = 2131034155;
+			public const int cardview_light_background = 2131034155;
 			
 			// aapt resource value: 0x7F05002C
-			public const int calendar_divider = 2131034156;
+			public const int cardview_shadow_end_color = 2131034156;
 			
 			// aapt resource value: 0x7F05002D
-			public const int calendar_highlighted_day_bg = 2131034157;
+			public const int cardview_shadow_start_color = 2131034157;
 			
 			// aapt resource value: 0x7F05002E
-			public const int calendar_inactive_month_bg = 2131034158;
+			public const int common_google_signin_btn_text_dark = 2131034158;
 			
 			// aapt resource value: 0x7F05002F
-			public const int calendar_selected_day_bg = 2131034159;
+			public const int common_google_signin_btn_text_dark_default = 2131034159;
 			
 			// aapt resource value: 0x7F050030
-			public const int calendar_selected_range_bg = 2131034160;
+			public const int common_google_signin_btn_text_dark_disabled = 2131034160;
 			
 			// aapt resource value: 0x7F050031
-			public const int calendar_text_active = 2131034161;
+			public const int common_google_signin_btn_text_dark_focused = 2131034161;
 			
 			// aapt resource value: 0x7F050032
-			public const int calendar_text_inactive = 2131034162;
+			public const int common_google_signin_btn_text_dark_pressed = 2131034162;
 			
 			// aapt resource value: 0x7F050033
-			public const int calendar_text_selected = 2131034163;
+			public const int common_google_signin_btn_text_light = 2131034163;
 			
 			// aapt resource value: 0x7F050034
-			public const int calendar_text_selector = 2131034164;
+			public const int common_google_signin_btn_text_light_default = 2131034164;
 			
 			// aapt resource value: 0x7F050035
-			public const int calendar_text_unselectable = 2131034165;
+			public const int common_google_signin_btn_text_light_disabled = 2131034165;
 			
 			// aapt resource value: 0x7F050036
-			public const int cardview_dark_background = 2131034166;
+			public const int common_google_signin_btn_text_light_focused = 2131034166;
 			
 			// aapt resource value: 0x7F050037
-			public const int cardview_light_background = 2131034167;
+			public const int common_google_signin_btn_text_light_pressed = 2131034167;
 			
 			// aapt resource value: 0x7F050038
-			public const int cardview_shadow_end_color = 2131034168;
+			public const int common_google_signin_btn_tint = 2131034168;
 			
 			// aapt resource value: 0x7F050039
-			public const int cardview_shadow_start_color = 2131034169;
+			public const int design_bottom_navigation_shadow_color = 2131034169;
 			
 			// aapt resource value: 0x7F05003A
-			public const int common_google_signin_btn_text_dark = 2131034170;
+			public const int design_default_color_primary = 2131034170;
 			
 			// aapt resource value: 0x7F05003B
-			public const int common_google_signin_btn_text_dark_default = 2131034171;
+			public const int design_default_color_primary_dark = 2131034171;
 			
 			// aapt resource value: 0x7F05003C
-			public const int common_google_signin_btn_text_dark_disabled = 2131034172;
+			public const int design_error = 2131034172;
 			
 			// aapt resource value: 0x7F05003D
-			public const int common_google_signin_btn_text_dark_focused = 2131034173;
+			public const int design_fab_shadow_end_color = 2131034173;
 			
 			// aapt resource value: 0x7F05003E
-			public const int common_google_signin_btn_text_dark_pressed = 2131034174;
+			public const int design_fab_shadow_mid_color = 2131034174;
 			
 			// aapt resource value: 0x7F05003F
-			public const int common_google_signin_btn_text_light = 2131034175;
+			public const int design_fab_shadow_start_color = 2131034175;
 			
 			// aapt resource value: 0x7F050040
-			public const int common_google_signin_btn_text_light_default = 2131034176;
+			public const int design_fab_stroke_end_inner_color = 2131034176;
 			
 			// aapt resource value: 0x7F050041
-			public const int common_google_signin_btn_text_light_disabled = 2131034177;
+			public const int design_fab_stroke_end_outer_color = 2131034177;
 			
 			// aapt resource value: 0x7F050042
-			public const int common_google_signin_btn_text_light_focused = 2131034178;
+			public const int design_fab_stroke_top_inner_color = 2131034178;
 			
 			// aapt resource value: 0x7F050043
-			public const int common_google_signin_btn_text_light_pressed = 2131034179;
+			public const int design_fab_stroke_top_outer_color = 2131034179;
 			
 			// aapt resource value: 0x7F050044
-			public const int common_google_signin_btn_tint = 2131034180;
+			public const int design_snackbar_background_color = 2131034180;
 			
 			// aapt resource value: 0x7F050045
-			public const int design_bottom_navigation_shadow_color = 2131034181;
+			public const int design_tint_password_toggle = 2131034181;
 			
 			// aapt resource value: 0x7F050046
-			public const int design_default_color_primary = 2131034182;
+			public const int dim_foreground_disabled_material_dark = 2131034182;
 			
 			// aapt resource value: 0x7F050047
-			public const int design_default_color_primary_dark = 2131034183;
+			public const int dim_foreground_disabled_material_light = 2131034183;
 			
 			// aapt resource value: 0x7F050048
-			public const int design_error = 2131034184;
+			public const int dim_foreground_material_dark = 2131034184;
 			
 			// aapt resource value: 0x7F050049
-			public const int design_fab_shadow_end_color = 2131034185;
+			public const int dim_foreground_material_light = 2131034185;
 			
 			// aapt resource value: 0x7F05004A
-			public const int design_fab_shadow_mid_color = 2131034186;
+			public const int error_color_material_dark = 2131034186;
 			
 			// aapt resource value: 0x7F05004B
-			public const int design_fab_shadow_start_color = 2131034187;
+			public const int error_color_material_light = 2131034187;
 			
 			// aapt resource value: 0x7F05004C
-			public const int design_fab_stroke_end_inner_color = 2131034188;
+			public const int foreground_material_dark = 2131034188;
 			
 			// aapt resource value: 0x7F05004D
-			public const int design_fab_stroke_end_outer_color = 2131034189;
+			public const int foreground_material_light = 2131034189;
 			
 			// aapt resource value: 0x7F05004E
-			public const int design_fab_stroke_top_inner_color = 2131034190;
+			public const int highlighted_text_material_dark = 2131034190;
 			
 			// aapt resource value: 0x7F05004F
-			public const int design_fab_stroke_top_outer_color = 2131034191;
+			public const int highlighted_text_material_light = 2131034191;
 			
 			// aapt resource value: 0x7F050050
-			public const int design_snackbar_background_color = 2131034192;
+			public const int material_blue_grey_800 = 2131034192;
 			
 			// aapt resource value: 0x7F050051
-			public const int design_tint_password_toggle = 2131034193;
+			public const int material_blue_grey_900 = 2131034193;
 			
 			// aapt resource value: 0x7F050052
-			public const int dim_foreground_disabled_material_dark = 2131034194;
+			public const int material_blue_grey_950 = 2131034194;
 			
 			// aapt resource value: 0x7F050053
-			public const int dim_foreground_disabled_material_light = 2131034195;
+			public const int material_deep_teal_200 = 2131034195;
 			
 			// aapt resource value: 0x7F050054
-			public const int dim_foreground_material_dark = 2131034196;
+			public const int material_deep_teal_500 = 2131034196;
 			
 			// aapt resource value: 0x7F050055
-			public const int dim_foreground_material_light = 2131034197;
+			public const int material_grey_100 = 2131034197;
 			
 			// aapt resource value: 0x7F050056
-			public const int error_color_material_dark = 2131034198;
+			public const int material_grey_300 = 2131034198;
 			
 			// aapt resource value: 0x7F050057
-			public const int error_color_material_light = 2131034199;
+			public const int material_grey_50 = 2131034199;
 			
 			// aapt resource value: 0x7F050058
-			public const int foreground_material_dark = 2131034200;
+			public const int material_grey_600 = 2131034200;
 			
 			// aapt resource value: 0x7F050059
-			public const int foreground_material_light = 2131034201;
+			public const int material_grey_800 = 2131034201;
 			
 			// aapt resource value: 0x7F05005A
-			public const int highlighted_text_material_dark = 2131034202;
+			public const int material_grey_850 = 2131034202;
 			
 			// aapt resource value: 0x7F05005B
-			public const int highlighted_text_material_light = 2131034203;
+			public const int material_grey_900 = 2131034203;
 			
 			// aapt resource value: 0x7F05005C
-			public const int material_blue_grey_800 = 2131034204;
+			public const int mtrl_bottom_nav_colored_item_tint = 2131034204;
 			
 			// aapt resource value: 0x7F05005D
-			public const int material_blue_grey_900 = 2131034205;
+			public const int mtrl_bottom_nav_item_tint = 2131034205;
 			
 			// aapt resource value: 0x7F05005E
-			public const int material_blue_grey_950 = 2131034206;
+			public const int mtrl_btn_bg_color_disabled = 2131034206;
 			
 			// aapt resource value: 0x7F05005F
-			public const int material_deep_teal_200 = 2131034207;
+			public const int mtrl_btn_bg_color_selector = 2131034207;
 			
 			// aapt resource value: 0x7F050060
-			public const int material_deep_teal_500 = 2131034208;
+			public const int mtrl_btn_ripple_color = 2131034208;
 			
 			// aapt resource value: 0x7F050061
-			public const int material_grey_100 = 2131034209;
+			public const int mtrl_btn_stroke_color_selector = 2131034209;
 			
 			// aapt resource value: 0x7F050062
-			public const int material_grey_300 = 2131034210;
+			public const int mtrl_btn_text_btn_ripple_color = 2131034210;
 			
 			// aapt resource value: 0x7F050063
-			public const int material_grey_50 = 2131034211;
+			public const int mtrl_btn_text_color_disabled = 2131034211;
 			
 			// aapt resource value: 0x7F050064
-			public const int material_grey_600 = 2131034212;
+			public const int mtrl_btn_text_color_selector = 2131034212;
 			
 			// aapt resource value: 0x7F050065
-			public const int material_grey_800 = 2131034213;
+			public const int mtrl_btn_transparent_bg_color = 2131034213;
 			
 			// aapt resource value: 0x7F050066
-			public const int material_grey_850 = 2131034214;
+			public const int mtrl_chip_background_color = 2131034214;
 			
 			// aapt resource value: 0x7F050067
-			public const int material_grey_900 = 2131034215;
+			public const int mtrl_chip_close_icon_tint = 2131034215;
 			
 			// aapt resource value: 0x7F050068
-			public const int mtrl_bottom_nav_colored_item_tint = 2131034216;
+			public const int mtrl_chip_ripple_color = 2131034216;
 			
 			// aapt resource value: 0x7F050069
-			public const int mtrl_bottom_nav_item_tint = 2131034217;
+			public const int mtrl_chip_text_color = 2131034217;
 			
 			// aapt resource value: 0x7F05006A
-			public const int mtrl_btn_bg_color_disabled = 2131034218;
+			public const int mtrl_fab_ripple_color = 2131034218;
 			
 			// aapt resource value: 0x7F05006B
-			public const int mtrl_btn_bg_color_selector = 2131034219;
+			public const int mtrl_scrim_color = 2131034219;
 			
 			// aapt resource value: 0x7F05006C
-			public const int mtrl_btn_ripple_color = 2131034220;
+			public const int mtrl_tabs_colored_ripple_color = 2131034220;
 			
 			// aapt resource value: 0x7F05006D
-			public const int mtrl_btn_stroke_color_selector = 2131034221;
+			public const int mtrl_tabs_icon_color_selector = 2131034221;
 			
 			// aapt resource value: 0x7F05006E
-			public const int mtrl_btn_text_btn_ripple_color = 2131034222;
+			public const int mtrl_tabs_icon_color_selector_colored = 2131034222;
 			
 			// aapt resource value: 0x7F05006F
-			public const int mtrl_btn_text_color_disabled = 2131034223;
+			public const int mtrl_tabs_legacy_text_color_selector = 2131034223;
 			
 			// aapt resource value: 0x7F050070
-			public const int mtrl_btn_text_color_selector = 2131034224;
-			
-			// aapt resource value: 0x7F050071
-			public const int mtrl_btn_transparent_bg_color = 2131034225;
+			public const int mtrl_tabs_ripple_color = 2131034224;
 			
 			// aapt resource value: 0x7F050072
-			public const int mtrl_chip_background_color = 2131034226;
+			public const int mtrl_textinput_default_box_stroke_color = 2131034226;
 			
 			// aapt resource value: 0x7F050073
-			public const int mtrl_chip_close_icon_tint = 2131034227;
+			public const int mtrl_textinput_disabled_color = 2131034227;
 			
 			// aapt resource value: 0x7F050074
-			public const int mtrl_chip_ripple_color = 2131034228;
+			public const int mtrl_textinput_filled_box_default_background_color = 2131034228;
 			
 			// aapt resource value: 0x7F050075
-			public const int mtrl_chip_text_color = 2131034229;
+			public const int mtrl_textinput_hovered_box_stroke_color = 2131034229;
+			
+			// aapt resource value: 0x7F050071
+			public const int mtrl_text_btn_text_color_selector = 2131034225;
 			
 			// aapt resource value: 0x7F050076
-			public const int mtrl_fab_ripple_color = 2131034230;
+			public const int notification_action_color_filter = 2131034230;
 			
 			// aapt resource value: 0x7F050077
-			public const int mtrl_scrim_color = 2131034231;
+			public const int notification_icon_bg_color = 2131034231;
 			
 			// aapt resource value: 0x7F050078
-			public const int mtrl_tabs_colored_ripple_color = 2131034232;
+			public const int notification_material_background_media_default_color = 2131034232;
 			
 			// aapt resource value: 0x7F050079
-			public const int mtrl_tabs_icon_color_selector = 2131034233;
+			public const int primary_dark_material_dark = 2131034233;
 			
 			// aapt resource value: 0x7F05007A
-			public const int mtrl_tabs_icon_color_selector_colored = 2131034234;
+			public const int primary_dark_material_light = 2131034234;
 			
 			// aapt resource value: 0x7F05007B
-			public const int mtrl_tabs_legacy_text_color_selector = 2131034235;
+			public const int primary_material_dark = 2131034235;
 			
 			// aapt resource value: 0x7F05007C
-			public const int mtrl_tabs_ripple_color = 2131034236;
-			
-			// aapt resource value: 0x7F05007E
-			public const int mtrl_textinput_default_box_stroke_color = 2131034238;
-			
-			// aapt resource value: 0x7F05007F
-			public const int mtrl_textinput_disabled_color = 2131034239;
-			
-			// aapt resource value: 0x7F050080
-			public const int mtrl_textinput_filled_box_default_background_color = 2131034240;
-			
-			// aapt resource value: 0x7F050081
-			public const int mtrl_textinput_hovered_box_stroke_color = 2131034241;
+			public const int primary_material_light = 2131034236;
 			
 			// aapt resource value: 0x7F05007D
-			public const int mtrl_text_btn_text_color_selector = 2131034237;
+			public const int primary_text_default_material_dark = 2131034237;
+			
+			// aapt resource value: 0x7F05007E
+			public const int primary_text_default_material_light = 2131034238;
+			
+			// aapt resource value: 0x7F05007F
+			public const int primary_text_disabled_material_dark = 2131034239;
+			
+			// aapt resource value: 0x7F050080
+			public const int primary_text_disabled_material_light = 2131034240;
+			
+			// aapt resource value: 0x7F050081
+			public const int ripple_material_dark = 2131034241;
 			
 			// aapt resource value: 0x7F050082
-			public const int notification_action_color_filter = 2131034242;
+			public const int ripple_material_light = 2131034242;
 			
 			// aapt resource value: 0x7F050083
-			public const int notification_icon_bg_color = 2131034243;
+			public const int secondary_text_default_material_dark = 2131034243;
 			
 			// aapt resource value: 0x7F050084
-			public const int notification_material_background_media_default_color = 2131034244;
+			public const int secondary_text_default_material_light = 2131034244;
 			
 			// aapt resource value: 0x7F050085
-			public const int primary_dark_material_dark = 2131034245;
+			public const int secondary_text_disabled_material_dark = 2131034245;
 			
 			// aapt resource value: 0x7F050086
-			public const int primary_dark_material_light = 2131034246;
+			public const int secondary_text_disabled_material_light = 2131034246;
 			
 			// aapt resource value: 0x7F050087
-			public const int primary_material_dark = 2131034247;
+			public const int switch_thumb_disabled_material_dark = 2131034247;
 			
 			// aapt resource value: 0x7F050088
-			public const int primary_material_light = 2131034248;
+			public const int switch_thumb_disabled_material_light = 2131034248;
 			
 			// aapt resource value: 0x7F050089
-			public const int primary_text_default_material_dark = 2131034249;
+			public const int switch_thumb_material_dark = 2131034249;
 			
 			// aapt resource value: 0x7F05008A
-			public const int primary_text_default_material_light = 2131034250;
+			public const int switch_thumb_material_light = 2131034250;
 			
 			// aapt resource value: 0x7F05008B
-			public const int primary_text_disabled_material_dark = 2131034251;
+			public const int switch_thumb_normal_material_dark = 2131034251;
 			
 			// aapt resource value: 0x7F05008C
-			public const int primary_text_disabled_material_light = 2131034252;
+			public const int switch_thumb_normal_material_light = 2131034252;
 			
 			// aapt resource value: 0x7F05008D
-			public const int ripple_material_dark = 2131034253;
+			public const int tooltip_background_dark = 2131034253;
 			
 			// aapt resource value: 0x7F05008E
-			public const int ripple_material_light = 2131034254;
-			
-			// aapt resource value: 0x7F05008F
-			public const int secondary_text_default_material_dark = 2131034255;
-			
-			// aapt resource value: 0x7F050090
-			public const int secondary_text_default_material_light = 2131034256;
-			
-			// aapt resource value: 0x7F050091
-			public const int secondary_text_disabled_material_dark = 2131034257;
-			
-			// aapt resource value: 0x7F050092
-			public const int secondary_text_disabled_material_light = 2131034258;
-			
-			// aapt resource value: 0x7F050093
-			public const int switch_thumb_disabled_material_dark = 2131034259;
-			
-			// aapt resource value: 0x7F050094
-			public const int switch_thumb_disabled_material_light = 2131034260;
-			
-			// aapt resource value: 0x7F050095
-			public const int switch_thumb_material_dark = 2131034261;
-			
-			// aapt resource value: 0x7F050096
-			public const int switch_thumb_material_light = 2131034262;
-			
-			// aapt resource value: 0x7F050097
-			public const int switch_thumb_normal_material_dark = 2131034263;
-			
-			// aapt resource value: 0x7F050098
-			public const int switch_thumb_normal_material_light = 2131034264;
-			
-			// aapt resource value: 0x7F050099
-			public const int tooltip_background_dark = 2131034265;
-			
-			// aapt resource value: 0x7F05009A
-			public const int tooltip_background_light = 2131034266;
+			public const int tooltip_background_light = 2131034254;
 			
 			static Color()
 			{
@@ -25117,484 +23745,469 @@ namespace Android.UnitTests
 			public const int browser_actions_context_menu_min_padding = 2131099724;
 			
 			// aapt resource value: 0x7F06004D
-			public const int calendar_day_headers_paddingbottom = 2131099725;
+			public const int cardview_compat_inset_shadow = 2131099725;
 			
 			// aapt resource value: 0x7F06004E
-			public const int calendar_month_title_bottommargin = 2131099726;
+			public const int cardview_default_elevation = 2131099726;
 			
 			// aapt resource value: 0x7F06004F
-			public const int calendar_month_topmargin = 2131099727;
+			public const int cardview_default_radius = 2131099727;
 			
 			// aapt resource value: 0x7F060050
-			public const int calendar_text_medium = 2131099728;
+			public const int compat_button_inset_horizontal_material = 2131099728;
 			
 			// aapt resource value: 0x7F060051
-			public const int calendar_text_small = 2131099729;
+			public const int compat_button_inset_vertical_material = 2131099729;
 			
 			// aapt resource value: 0x7F060052
-			public const int cardview_compat_inset_shadow = 2131099730;
+			public const int compat_button_padding_horizontal_material = 2131099730;
 			
 			// aapt resource value: 0x7F060053
-			public const int cardview_default_elevation = 2131099731;
+			public const int compat_button_padding_vertical_material = 2131099731;
 			
 			// aapt resource value: 0x7F060054
-			public const int cardview_default_radius = 2131099732;
+			public const int compat_control_corner_material = 2131099732;
 			
 			// aapt resource value: 0x7F060055
-			public const int compat_button_inset_horizontal_material = 2131099733;
+			public const int compat_notification_large_icon_max_height = 2131099733;
 			
 			// aapt resource value: 0x7F060056
-			public const int compat_button_inset_vertical_material = 2131099734;
+			public const int compat_notification_large_icon_max_width = 2131099734;
 			
 			// aapt resource value: 0x7F060057
-			public const int compat_button_padding_horizontal_material = 2131099735;
+			public const int design_appbar_elevation = 2131099735;
 			
 			// aapt resource value: 0x7F060058
-			public const int compat_button_padding_vertical_material = 2131099736;
+			public const int design_bottom_navigation_active_item_max_width = 2131099736;
 			
 			// aapt resource value: 0x7F060059
-			public const int compat_control_corner_material = 2131099737;
+			public const int design_bottom_navigation_active_item_min_width = 2131099737;
 			
 			// aapt resource value: 0x7F06005A
-			public const int compat_notification_large_icon_max_height = 2131099738;
+			public const int design_bottom_navigation_active_text_size = 2131099738;
 			
 			// aapt resource value: 0x7F06005B
-			public const int compat_notification_large_icon_max_width = 2131099739;
+			public const int design_bottom_navigation_elevation = 2131099739;
 			
 			// aapt resource value: 0x7F06005C
-			public const int design_appbar_elevation = 2131099740;
+			public const int design_bottom_navigation_height = 2131099740;
 			
 			// aapt resource value: 0x7F06005D
-			public const int design_bottom_navigation_active_item_max_width = 2131099741;
+			public const int design_bottom_navigation_icon_size = 2131099741;
 			
 			// aapt resource value: 0x7F06005E
-			public const int design_bottom_navigation_active_item_min_width = 2131099742;
+			public const int design_bottom_navigation_item_max_width = 2131099742;
 			
 			// aapt resource value: 0x7F06005F
-			public const int design_bottom_navigation_active_text_size = 2131099743;
+			public const int design_bottom_navigation_item_min_width = 2131099743;
 			
 			// aapt resource value: 0x7F060060
-			public const int design_bottom_navigation_elevation = 2131099744;
+			public const int design_bottom_navigation_margin = 2131099744;
 			
 			// aapt resource value: 0x7F060061
-			public const int design_bottom_navigation_height = 2131099745;
+			public const int design_bottom_navigation_shadow_height = 2131099745;
 			
 			// aapt resource value: 0x7F060062
-			public const int design_bottom_navigation_icon_size = 2131099746;
+			public const int design_bottom_navigation_text_size = 2131099746;
 			
 			// aapt resource value: 0x7F060063
-			public const int design_bottom_navigation_item_max_width = 2131099747;
+			public const int design_bottom_sheet_modal_elevation = 2131099747;
 			
 			// aapt resource value: 0x7F060064
-			public const int design_bottom_navigation_item_min_width = 2131099748;
+			public const int design_bottom_sheet_peek_height_min = 2131099748;
 			
 			// aapt resource value: 0x7F060065
-			public const int design_bottom_navigation_margin = 2131099749;
+			public const int design_fab_border_width = 2131099749;
 			
 			// aapt resource value: 0x7F060066
-			public const int design_bottom_navigation_shadow_height = 2131099750;
+			public const int design_fab_elevation = 2131099750;
 			
 			// aapt resource value: 0x7F060067
-			public const int design_bottom_navigation_text_size = 2131099751;
+			public const int design_fab_image_size = 2131099751;
 			
 			// aapt resource value: 0x7F060068
-			public const int design_bottom_sheet_modal_elevation = 2131099752;
+			public const int design_fab_size_mini = 2131099752;
 			
 			// aapt resource value: 0x7F060069
-			public const int design_bottom_sheet_peek_height_min = 2131099753;
+			public const int design_fab_size_normal = 2131099753;
 			
 			// aapt resource value: 0x7F06006A
-			public const int design_fab_border_width = 2131099754;
+			public const int design_fab_translation_z_hovered_focused = 2131099754;
 			
 			// aapt resource value: 0x7F06006B
-			public const int design_fab_elevation = 2131099755;
+			public const int design_fab_translation_z_pressed = 2131099755;
 			
 			// aapt resource value: 0x7F06006C
-			public const int design_fab_image_size = 2131099756;
+			public const int design_navigation_elevation = 2131099756;
 			
 			// aapt resource value: 0x7F06006D
-			public const int design_fab_size_mini = 2131099757;
+			public const int design_navigation_icon_padding = 2131099757;
 			
 			// aapt resource value: 0x7F06006E
-			public const int design_fab_size_normal = 2131099758;
+			public const int design_navigation_icon_size = 2131099758;
 			
 			// aapt resource value: 0x7F06006F
-			public const int design_fab_translation_z_hovered_focused = 2131099759;
+			public const int design_navigation_item_horizontal_padding = 2131099759;
 			
 			// aapt resource value: 0x7F060070
-			public const int design_fab_translation_z_pressed = 2131099760;
+			public const int design_navigation_item_icon_padding = 2131099760;
 			
 			// aapt resource value: 0x7F060071
-			public const int design_navigation_elevation = 2131099761;
+			public const int design_navigation_max_width = 2131099761;
 			
 			// aapt resource value: 0x7F060072
-			public const int design_navigation_icon_padding = 2131099762;
+			public const int design_navigation_padding_bottom = 2131099762;
 			
 			// aapt resource value: 0x7F060073
-			public const int design_navigation_icon_size = 2131099763;
+			public const int design_navigation_separator_vertical_padding = 2131099763;
 			
 			// aapt resource value: 0x7F060074
-			public const int design_navigation_item_horizontal_padding = 2131099764;
+			public const int design_snackbar_action_inline_max_width = 2131099764;
 			
 			// aapt resource value: 0x7F060075
-			public const int design_navigation_item_icon_padding = 2131099765;
+			public const int design_snackbar_background_corner_radius = 2131099765;
 			
 			// aapt resource value: 0x7F060076
-			public const int design_navigation_max_width = 2131099766;
+			public const int design_snackbar_elevation = 2131099766;
 			
 			// aapt resource value: 0x7F060077
-			public const int design_navigation_padding_bottom = 2131099767;
+			public const int design_snackbar_extra_spacing_horizontal = 2131099767;
 			
 			// aapt resource value: 0x7F060078
-			public const int design_navigation_separator_vertical_padding = 2131099768;
+			public const int design_snackbar_max_width = 2131099768;
 			
 			// aapt resource value: 0x7F060079
-			public const int design_snackbar_action_inline_max_width = 2131099769;
+			public const int design_snackbar_min_width = 2131099769;
 			
 			// aapt resource value: 0x7F06007A
-			public const int design_snackbar_background_corner_radius = 2131099770;
+			public const int design_snackbar_padding_horizontal = 2131099770;
 			
 			// aapt resource value: 0x7F06007B
-			public const int design_snackbar_elevation = 2131099771;
+			public const int design_snackbar_padding_vertical = 2131099771;
 			
 			// aapt resource value: 0x7F06007C
-			public const int design_snackbar_extra_spacing_horizontal = 2131099772;
+			public const int design_snackbar_padding_vertical_2lines = 2131099772;
 			
 			// aapt resource value: 0x7F06007D
-			public const int design_snackbar_max_width = 2131099773;
+			public const int design_snackbar_text_size = 2131099773;
 			
 			// aapt resource value: 0x7F06007E
-			public const int design_snackbar_min_width = 2131099774;
+			public const int design_tab_max_width = 2131099774;
 			
 			// aapt resource value: 0x7F06007F
-			public const int design_snackbar_padding_horizontal = 2131099775;
+			public const int design_tab_scrollable_min_width = 2131099775;
 			
 			// aapt resource value: 0x7F060080
-			public const int design_snackbar_padding_vertical = 2131099776;
+			public const int design_tab_text_size = 2131099776;
 			
 			// aapt resource value: 0x7F060081
-			public const int design_snackbar_padding_vertical_2lines = 2131099777;
+			public const int design_tab_text_size_2line = 2131099777;
 			
 			// aapt resource value: 0x7F060082
-			public const int design_snackbar_text_size = 2131099778;
+			public const int design_textinput_caption_translate_y = 2131099778;
 			
 			// aapt resource value: 0x7F060083
-			public const int design_tab_max_width = 2131099779;
+			public const int disabled_alpha_material_dark = 2131099779;
 			
 			// aapt resource value: 0x7F060084
-			public const int design_tab_scrollable_min_width = 2131099780;
+			public const int disabled_alpha_material_light = 2131099780;
 			
 			// aapt resource value: 0x7F060085
-			public const int design_tab_text_size = 2131099781;
+			public const int fastscroll_default_thickness = 2131099781;
 			
 			// aapt resource value: 0x7F060086
-			public const int design_tab_text_size_2line = 2131099782;
+			public const int fastscroll_margin = 2131099782;
 			
 			// aapt resource value: 0x7F060087
-			public const int design_textinput_caption_translate_y = 2131099783;
+			public const int fastscroll_minimum_range = 2131099783;
 			
 			// aapt resource value: 0x7F060088
-			public const int disabled_alpha_material_dark = 2131099784;
+			public const int highlight_alpha_material_colored = 2131099784;
 			
 			// aapt resource value: 0x7F060089
-			public const int disabled_alpha_material_light = 2131099785;
+			public const int highlight_alpha_material_dark = 2131099785;
 			
 			// aapt resource value: 0x7F06008A
-			public const int fastscroll_default_thickness = 2131099786;
+			public const int highlight_alpha_material_light = 2131099786;
 			
 			// aapt resource value: 0x7F06008B
-			public const int fastscroll_margin = 2131099787;
+			public const int hint_alpha_material_dark = 2131099787;
 			
 			// aapt resource value: 0x7F06008C
-			public const int fastscroll_minimum_range = 2131099788;
+			public const int hint_alpha_material_light = 2131099788;
 			
 			// aapt resource value: 0x7F06008D
-			public const int highlight_alpha_material_colored = 2131099789;
+			public const int hint_pressed_alpha_material_dark = 2131099789;
 			
 			// aapt resource value: 0x7F06008E
-			public const int highlight_alpha_material_dark = 2131099790;
+			public const int hint_pressed_alpha_material_light = 2131099790;
 			
 			// aapt resource value: 0x7F06008F
-			public const int highlight_alpha_material_light = 2131099791;
+			public const int item_touch_helper_max_drag_scroll_per_frame = 2131099791;
 			
 			// aapt resource value: 0x7F060090
-			public const int hint_alpha_material_dark = 2131099792;
+			public const int item_touch_helper_swipe_escape_max_velocity = 2131099792;
 			
 			// aapt resource value: 0x7F060091
-			public const int hint_alpha_material_light = 2131099793;
+			public const int item_touch_helper_swipe_escape_velocity = 2131099793;
 			
 			// aapt resource value: 0x7F060092
-			public const int hint_pressed_alpha_material_dark = 2131099794;
+			public const int mr_controller_volume_group_list_item_height = 2131099794;
 			
 			// aapt resource value: 0x7F060093
-			public const int hint_pressed_alpha_material_light = 2131099795;
+			public const int mr_controller_volume_group_list_item_icon_size = 2131099795;
 			
 			// aapt resource value: 0x7F060094
-			public const int item_touch_helper_max_drag_scroll_per_frame = 2131099796;
+			public const int mr_controller_volume_group_list_max_height = 2131099796;
 			
 			// aapt resource value: 0x7F060095
-			public const int item_touch_helper_swipe_escape_max_velocity = 2131099797;
+			public const int mr_controller_volume_group_list_padding_top = 2131099797;
 			
 			// aapt resource value: 0x7F060096
-			public const int item_touch_helper_swipe_escape_velocity = 2131099798;
+			public const int mr_dialog_fixed_width_major = 2131099798;
 			
 			// aapt resource value: 0x7F060097
-			public const int mr_controller_volume_group_list_item_height = 2131099799;
+			public const int mr_dialog_fixed_width_minor = 2131099799;
 			
 			// aapt resource value: 0x7F060098
-			public const int mr_controller_volume_group_list_item_icon_size = 2131099800;
+			public const int mtrl_bottomappbar_fabOffsetEndMode = 2131099800;
 			
 			// aapt resource value: 0x7F060099
-			public const int mr_controller_volume_group_list_max_height = 2131099801;
+			public const int mtrl_bottomappbar_fab_cradle_margin = 2131099801;
 			
 			// aapt resource value: 0x7F06009A
-			public const int mr_controller_volume_group_list_padding_top = 2131099802;
+			public const int mtrl_bottomappbar_fab_cradle_rounded_corner_radius = 2131099802;
 			
 			// aapt resource value: 0x7F06009B
-			public const int mr_dialog_fixed_width_major = 2131099803;
+			public const int mtrl_bottomappbar_fab_cradle_vertical_offset = 2131099803;
 			
 			// aapt resource value: 0x7F06009C
-			public const int mr_dialog_fixed_width_minor = 2131099804;
+			public const int mtrl_bottomappbar_height = 2131099804;
 			
 			// aapt resource value: 0x7F06009D
-			public const int mtrl_bottomappbar_fabOffsetEndMode = 2131099805;
+			public const int mtrl_btn_additional_padding_end_for_icon = 2131099805;
 			
 			// aapt resource value: 0x7F06009E
-			public const int mtrl_bottomappbar_fab_cradle_margin = 2131099806;
+			public const int mtrl_btn_additional_padding_start_for_icon = 2131099806;
 			
 			// aapt resource value: 0x7F06009F
-			public const int mtrl_bottomappbar_fab_cradle_rounded_corner_radius = 2131099807;
+			public const int mtrl_btn_corner_radius = 2131099807;
 			
 			// aapt resource value: 0x7F0600A0
-			public const int mtrl_bottomappbar_fab_cradle_vertical_offset = 2131099808;
+			public const int mtrl_btn_dialog_btn_min_width = 2131099808;
 			
 			// aapt resource value: 0x7F0600A1
-			public const int mtrl_bottomappbar_height = 2131099809;
+			public const int mtrl_btn_disabled_elevation = 2131099809;
 			
 			// aapt resource value: 0x7F0600A2
-			public const int mtrl_btn_additional_padding_end_for_icon = 2131099810;
+			public const int mtrl_btn_disabled_z = 2131099810;
 			
 			// aapt resource value: 0x7F0600A3
-			public const int mtrl_btn_additional_padding_start_for_icon = 2131099811;
+			public const int mtrl_btn_elevation = 2131099811;
 			
 			// aapt resource value: 0x7F0600A4
-			public const int mtrl_btn_corner_radius = 2131099812;
+			public const int mtrl_btn_focused_z = 2131099812;
 			
 			// aapt resource value: 0x7F0600A5
-			public const int mtrl_btn_dialog_btn_min_width = 2131099813;
+			public const int mtrl_btn_hovered_z = 2131099813;
 			
 			// aapt resource value: 0x7F0600A6
-			public const int mtrl_btn_disabled_elevation = 2131099814;
+			public const int mtrl_btn_icon_btn_padding_left = 2131099814;
 			
 			// aapt resource value: 0x7F0600A7
-			public const int mtrl_btn_disabled_z = 2131099815;
+			public const int mtrl_btn_icon_padding = 2131099815;
 			
 			// aapt resource value: 0x7F0600A8
-			public const int mtrl_btn_elevation = 2131099816;
+			public const int mtrl_btn_inset = 2131099816;
 			
 			// aapt resource value: 0x7F0600A9
-			public const int mtrl_btn_focused_z = 2131099817;
+			public const int mtrl_btn_letter_spacing = 2131099817;
 			
 			// aapt resource value: 0x7F0600AA
-			public const int mtrl_btn_hovered_z = 2131099818;
+			public const int mtrl_btn_padding_bottom = 2131099818;
 			
 			// aapt resource value: 0x7F0600AB
-			public const int mtrl_btn_icon_btn_padding_left = 2131099819;
+			public const int mtrl_btn_padding_left = 2131099819;
 			
 			// aapt resource value: 0x7F0600AC
-			public const int mtrl_btn_icon_padding = 2131099820;
+			public const int mtrl_btn_padding_left_with_icon = 2131099820;
 			
 			// aapt resource value: 0x7F0600AD
-			public const int mtrl_btn_inset = 2131099821;
+			public const int mtrl_btn_padding_right = 2131099821;
 			
 			// aapt resource value: 0x7F0600AE
-			public const int mtrl_btn_letter_spacing = 2131099822;
+			public const int mtrl_btn_padding_top = 2131099822;
 			
 			// aapt resource value: 0x7F0600AF
-			public const int mtrl_btn_padding_bottom = 2131099823;
+			public const int mtrl_btn_pressed_z = 2131099823;
 			
 			// aapt resource value: 0x7F0600B0
-			public const int mtrl_btn_padding_left = 2131099824;
+			public const int mtrl_btn_stroke_size = 2131099824;
 			
 			// aapt resource value: 0x7F0600B1
-			public const int mtrl_btn_padding_left_with_icon = 2131099825;
+			public const int mtrl_btn_text_btn_icon_padding = 2131099825;
 			
 			// aapt resource value: 0x7F0600B2
-			public const int mtrl_btn_padding_right = 2131099826;
+			public const int mtrl_btn_text_btn_padding_left = 2131099826;
 			
 			// aapt resource value: 0x7F0600B3
-			public const int mtrl_btn_padding_top = 2131099827;
+			public const int mtrl_btn_text_btn_padding_right = 2131099827;
 			
 			// aapt resource value: 0x7F0600B4
-			public const int mtrl_btn_pressed_z = 2131099828;
+			public const int mtrl_btn_text_padding_left = 2131099828;
 			
 			// aapt resource value: 0x7F0600B5
-			public const int mtrl_btn_stroke_size = 2131099829;
+			public const int mtrl_btn_text_padding_right = 2131099829;
 			
 			// aapt resource value: 0x7F0600B6
-			public const int mtrl_btn_text_btn_icon_padding = 2131099830;
+			public const int mtrl_btn_text_size = 2131099830;
 			
 			// aapt resource value: 0x7F0600B7
-			public const int mtrl_btn_text_btn_padding_left = 2131099831;
+			public const int mtrl_btn_z = 2131099831;
 			
 			// aapt resource value: 0x7F0600B8
-			public const int mtrl_btn_text_btn_padding_right = 2131099832;
+			public const int mtrl_card_elevation = 2131099832;
 			
 			// aapt resource value: 0x7F0600B9
-			public const int mtrl_btn_text_padding_left = 2131099833;
+			public const int mtrl_card_spacing = 2131099833;
 			
 			// aapt resource value: 0x7F0600BA
-			public const int mtrl_btn_text_padding_right = 2131099834;
+			public const int mtrl_chip_pressed_translation_z = 2131099834;
 			
 			// aapt resource value: 0x7F0600BB
-			public const int mtrl_btn_text_size = 2131099835;
+			public const int mtrl_chip_text_size = 2131099835;
 			
 			// aapt resource value: 0x7F0600BC
-			public const int mtrl_btn_z = 2131099836;
+			public const int mtrl_fab_elevation = 2131099836;
 			
 			// aapt resource value: 0x7F0600BD
-			public const int mtrl_card_elevation = 2131099837;
+			public const int mtrl_fab_translation_z_hovered_focused = 2131099837;
 			
 			// aapt resource value: 0x7F0600BE
-			public const int mtrl_card_spacing = 2131099838;
+			public const int mtrl_fab_translation_z_pressed = 2131099838;
 			
 			// aapt resource value: 0x7F0600BF
-			public const int mtrl_chip_pressed_translation_z = 2131099839;
+			public const int mtrl_navigation_elevation = 2131099839;
 			
 			// aapt resource value: 0x7F0600C0
-			public const int mtrl_chip_text_size = 2131099840;
+			public const int mtrl_navigation_item_horizontal_padding = 2131099840;
 			
 			// aapt resource value: 0x7F0600C1
-			public const int mtrl_fab_elevation = 2131099841;
+			public const int mtrl_navigation_item_icon_padding = 2131099841;
 			
 			// aapt resource value: 0x7F0600C2
-			public const int mtrl_fab_translation_z_hovered_focused = 2131099842;
+			public const int mtrl_snackbar_background_corner_radius = 2131099842;
 			
 			// aapt resource value: 0x7F0600C3
-			public const int mtrl_fab_translation_z_pressed = 2131099843;
+			public const int mtrl_snackbar_margin = 2131099843;
 			
 			// aapt resource value: 0x7F0600C4
-			public const int mtrl_navigation_elevation = 2131099844;
+			public const int mtrl_textinput_box_bottom_offset = 2131099844;
 			
 			// aapt resource value: 0x7F0600C5
-			public const int mtrl_navigation_item_horizontal_padding = 2131099845;
+			public const int mtrl_textinput_box_corner_radius_medium = 2131099845;
 			
 			// aapt resource value: 0x7F0600C6
-			public const int mtrl_navigation_item_icon_padding = 2131099846;
+			public const int mtrl_textinput_box_corner_radius_small = 2131099846;
 			
 			// aapt resource value: 0x7F0600C7
-			public const int mtrl_snackbar_background_corner_radius = 2131099847;
+			public const int mtrl_textinput_box_label_cutout_padding = 2131099847;
 			
 			// aapt resource value: 0x7F0600C8
-			public const int mtrl_snackbar_margin = 2131099848;
+			public const int mtrl_textinput_box_padding_end = 2131099848;
 			
 			// aapt resource value: 0x7F0600C9
-			public const int mtrl_textinput_box_bottom_offset = 2131099849;
+			public const int mtrl_textinput_box_stroke_width_default = 2131099849;
 			
 			// aapt resource value: 0x7F0600CA
-			public const int mtrl_textinput_box_corner_radius_medium = 2131099850;
+			public const int mtrl_textinput_box_stroke_width_focused = 2131099850;
 			
 			// aapt resource value: 0x7F0600CB
-			public const int mtrl_textinput_box_corner_radius_small = 2131099851;
+			public const int mtrl_textinput_outline_box_expanded_padding = 2131099851;
 			
 			// aapt resource value: 0x7F0600CC
-			public const int mtrl_textinput_box_label_cutout_padding = 2131099852;
+			public const int mtrl_toolbar_default_height = 2131099852;
 			
 			// aapt resource value: 0x7F0600CD
-			public const int mtrl_textinput_box_padding_end = 2131099853;
+			public const int notification_action_icon_size = 2131099853;
 			
 			// aapt resource value: 0x7F0600CE
-			public const int mtrl_textinput_box_stroke_width_default = 2131099854;
+			public const int notification_action_text_size = 2131099854;
 			
 			// aapt resource value: 0x7F0600CF
-			public const int mtrl_textinput_box_stroke_width_focused = 2131099855;
+			public const int notification_big_circle_margin = 2131099855;
 			
 			// aapt resource value: 0x7F0600D0
-			public const int mtrl_textinput_outline_box_expanded_padding = 2131099856;
+			public const int notification_content_margin_start = 2131099856;
 			
 			// aapt resource value: 0x7F0600D1
-			public const int mtrl_toolbar_default_height = 2131099857;
+			public const int notification_large_icon_height = 2131099857;
 			
 			// aapt resource value: 0x7F0600D2
-			public const int notification_action_icon_size = 2131099858;
+			public const int notification_large_icon_width = 2131099858;
 			
 			// aapt resource value: 0x7F0600D3
-			public const int notification_action_text_size = 2131099859;
+			public const int notification_main_column_padding_top = 2131099859;
 			
 			// aapt resource value: 0x7F0600D4
-			public const int notification_big_circle_margin = 2131099860;
+			public const int notification_media_narrow_margin = 2131099860;
 			
 			// aapt resource value: 0x7F0600D5
-			public const int notification_content_margin_start = 2131099861;
+			public const int notification_right_icon_size = 2131099861;
 			
 			// aapt resource value: 0x7F0600D6
-			public const int notification_large_icon_height = 2131099862;
+			public const int notification_right_side_padding_top = 2131099862;
 			
 			// aapt resource value: 0x7F0600D7
-			public const int notification_large_icon_width = 2131099863;
+			public const int notification_small_icon_background_padding = 2131099863;
 			
 			// aapt resource value: 0x7F0600D8
-			public const int notification_main_column_padding_top = 2131099864;
+			public const int notification_small_icon_size_as_large = 2131099864;
 			
 			// aapt resource value: 0x7F0600D9
-			public const int notification_media_narrow_margin = 2131099865;
+			public const int notification_subtext_size = 2131099865;
 			
 			// aapt resource value: 0x7F0600DA
-			public const int notification_right_icon_size = 2131099866;
+			public const int notification_top_pad = 2131099866;
 			
 			// aapt resource value: 0x7F0600DB
-			public const int notification_right_side_padding_top = 2131099867;
+			public const int notification_top_pad_large_text = 2131099867;
 			
 			// aapt resource value: 0x7F0600DC
-			public const int notification_small_icon_background_padding = 2131099868;
+			public const int subtitle_corner_radius = 2131099868;
 			
 			// aapt resource value: 0x7F0600DD
-			public const int notification_small_icon_size_as_large = 2131099869;
+			public const int subtitle_outline_width = 2131099869;
 			
 			// aapt resource value: 0x7F0600DE
-			public const int notification_subtext_size = 2131099870;
+			public const int subtitle_shadow_offset = 2131099870;
 			
 			// aapt resource value: 0x7F0600DF
-			public const int notification_top_pad = 2131099871;
+			public const int subtitle_shadow_radius = 2131099871;
 			
 			// aapt resource value: 0x7F0600E0
-			public const int notification_top_pad_large_text = 2131099872;
+			public const int tooltip_corner_radius = 2131099872;
 			
 			// aapt resource value: 0x7F0600E1
-			public const int subtitle_corner_radius = 2131099873;
+			public const int tooltip_horizontal_padding = 2131099873;
 			
 			// aapt resource value: 0x7F0600E2
-			public const int subtitle_outline_width = 2131099874;
+			public const int tooltip_margin = 2131099874;
 			
 			// aapt resource value: 0x7F0600E3
-			public const int subtitle_shadow_offset = 2131099875;
+			public const int tooltip_precise_anchor_extra_offset = 2131099875;
 			
 			// aapt resource value: 0x7F0600E4
-			public const int subtitle_shadow_radius = 2131099876;
+			public const int tooltip_precise_anchor_threshold = 2131099876;
 			
 			// aapt resource value: 0x7F0600E5
-			public const int tooltip_corner_radius = 2131099877;
+			public const int tooltip_vertical_padding = 2131099877;
 			
 			// aapt resource value: 0x7F0600E6
-			public const int tooltip_horizontal_padding = 2131099878;
+			public const int tooltip_y_offset_non_touch = 2131099878;
 			
 			// aapt resource value: 0x7F0600E7
-			public const int tooltip_margin = 2131099879;
-			
-			// aapt resource value: 0x7F0600E8
-			public const int tooltip_precise_anchor_extra_offset = 2131099880;
-			
-			// aapt resource value: 0x7F0600E9
-			public const int tooltip_precise_anchor_threshold = 2131099881;
-			
-			// aapt resource value: 0x7F0600EA
-			public const int tooltip_vertical_padding = 2131099882;
-			
-			// aapt resource value: 0x7F0600EB
-			public const int tooltip_y_offset_non_touch = 2131099883;
-			
-			// aapt resource value: 0x7F0600EC
-			public const int tooltip_y_offset_touch = 2131099884;
+			public const int tooltip_y_offset_touch = 2131099879;
 			
 			static Dimension()
 			{
@@ -25862,817 +24475,811 @@ namespace Android.UnitTests
 			public const int abc_vector_test = 2131165273;
 			
 			// aapt resource value: 0x7F07005A
-			public const int ad16 = 2131165274;
+			public const int avd_hide_password = 2131165274;
 			
 			// aapt resource value: 0x7F07005B
-			public const int avd_hide_password = 2131165275;
+			public const int avd_show_password = 2131165275;
 			
 			// aapt resource value: 0x7F07005C
-			public const int avd_show_password = 2131165276;
+			public const int common_full_open_on_phone = 2131165276;
 			
 			// aapt resource value: 0x7F07005D
-			public const int calendar_bg_selector = 2131165277;
+			public const int common_google_signin_btn_icon_dark = 2131165277;
 			
 			// aapt resource value: 0x7F07005E
-			public const int common_full_open_on_phone = 2131165278;
+			public const int common_google_signin_btn_icon_dark_focused = 2131165278;
 			
 			// aapt resource value: 0x7F07005F
-			public const int common_google_signin_btn_icon_dark = 2131165279;
+			public const int common_google_signin_btn_icon_dark_normal = 2131165279;
 			
 			// aapt resource value: 0x7F070060
-			public const int common_google_signin_btn_icon_dark_focused = 2131165280;
+			public const int common_google_signin_btn_icon_dark_normal_background = 2131165280;
 			
 			// aapt resource value: 0x7F070061
-			public const int common_google_signin_btn_icon_dark_normal = 2131165281;
+			public const int common_google_signin_btn_icon_disabled = 2131165281;
 			
 			// aapt resource value: 0x7F070062
-			public const int common_google_signin_btn_icon_dark_normal_background = 2131165282;
+			public const int common_google_signin_btn_icon_light = 2131165282;
 			
 			// aapt resource value: 0x7F070063
-			public const int common_google_signin_btn_icon_disabled = 2131165283;
+			public const int common_google_signin_btn_icon_light_focused = 2131165283;
 			
 			// aapt resource value: 0x7F070064
-			public const int common_google_signin_btn_icon_light = 2131165284;
+			public const int common_google_signin_btn_icon_light_normal = 2131165284;
 			
 			// aapt resource value: 0x7F070065
-			public const int common_google_signin_btn_icon_light_focused = 2131165285;
+			public const int common_google_signin_btn_icon_light_normal_background = 2131165285;
 			
 			// aapt resource value: 0x7F070066
-			public const int common_google_signin_btn_icon_light_normal = 2131165286;
+			public const int common_google_signin_btn_text_dark = 2131165286;
 			
 			// aapt resource value: 0x7F070067
-			public const int common_google_signin_btn_icon_light_normal_background = 2131165287;
+			public const int common_google_signin_btn_text_dark_focused = 2131165287;
 			
 			// aapt resource value: 0x7F070068
-			public const int common_google_signin_btn_text_dark = 2131165288;
+			public const int common_google_signin_btn_text_dark_normal = 2131165288;
 			
 			// aapt resource value: 0x7F070069
-			public const int common_google_signin_btn_text_dark_focused = 2131165289;
+			public const int common_google_signin_btn_text_dark_normal_background = 2131165289;
 			
 			// aapt resource value: 0x7F07006A
-			public const int common_google_signin_btn_text_dark_normal = 2131165290;
+			public const int common_google_signin_btn_text_disabled = 2131165290;
 			
 			// aapt resource value: 0x7F07006B
-			public const int common_google_signin_btn_text_dark_normal_background = 2131165291;
+			public const int common_google_signin_btn_text_light = 2131165291;
 			
 			// aapt resource value: 0x7F07006C
-			public const int common_google_signin_btn_text_disabled = 2131165292;
+			public const int common_google_signin_btn_text_light_focused = 2131165292;
 			
 			// aapt resource value: 0x7F07006D
-			public const int common_google_signin_btn_text_light = 2131165293;
+			public const int common_google_signin_btn_text_light_normal = 2131165293;
 			
 			// aapt resource value: 0x7F07006E
-			public const int common_google_signin_btn_text_light_focused = 2131165294;
+			public const int common_google_signin_btn_text_light_normal_background = 2131165294;
 			
 			// aapt resource value: 0x7F07006F
-			public const int common_google_signin_btn_text_light_normal = 2131165295;
+			public const int design_bottom_navigation_item_background = 2131165295;
 			
 			// aapt resource value: 0x7F070070
-			public const int common_google_signin_btn_text_light_normal_background = 2131165296;
+			public const int design_fab_background = 2131165296;
 			
 			// aapt resource value: 0x7F070071
-			public const int design_bottom_navigation_item_background = 2131165297;
+			public const int design_ic_visibility = 2131165297;
 			
 			// aapt resource value: 0x7F070072
-			public const int design_fab_background = 2131165298;
+			public const int design_ic_visibility_off = 2131165298;
 			
 			// aapt resource value: 0x7F070073
-			public const int design_ic_visibility = 2131165299;
+			public const int design_password_eye = 2131165299;
 			
 			// aapt resource value: 0x7F070074
-			public const int design_ic_visibility_off = 2131165300;
+			public const int design_snackbar_background = 2131165300;
 			
 			// aapt resource value: 0x7F070075
-			public const int design_password_eye = 2131165301;
+			public const int drawable_ripple = 2131165301;
 			
 			// aapt resource value: 0x7F070076
-			public const int design_snackbar_background = 2131165302;
+			public const int drawable_ripple_image = 2131165302;
 			
 			// aapt resource value: 0x7F070077
-			public const int drawable_ripple = 2131165303;
+			public const int drawable_ripple_outlined = 2131165303;
 			
 			// aapt resource value: 0x7F070078
-			public const int drawable_ripple_image = 2131165304;
+			public const int drawable_ripple_outlined_with_icon = 2131165304;
 			
 			// aapt resource value: 0x7F070079
-			public const int drawable_ripple_outlined = 2131165305;
+			public const int drawable_ripple_text = 2131165305;
 			
 			// aapt resource value: 0x7F07007A
-			public const int drawable_ripple_outlined_with_icon = 2131165306;
+			public const int drawable_ripple_with_icon = 2131165306;
 			
 			// aapt resource value: 0x7F07007B
-			public const int drawable_ripple_text = 2131165307;
+			public const int drawable_selector = 2131165307;
 			
 			// aapt resource value: 0x7F07007C
-			public const int drawable_ripple_with_icon = 2131165308;
+			public const int drawable_shape = 2131165308;
 			
 			// aapt resource value: 0x7F07007D
-			public const int drawable_selector = 2131165309;
+			public const int drawable_shape_text = 2131165309;
 			
 			// aapt resource value: 0x7F07007E
-			public const int drawable_shape = 2131165310;
+			public const int drawable_shape_with_icon = 2131165310;
 			
 			// aapt resource value: 0x7F07007F
-			public const int drawable_shape_text = 2131165311;
+			public const int googleg_disabled_color_18 = 2131165311;
 			
 			// aapt resource value: 0x7F070080
-			public const int drawable_shape_with_icon = 2131165312;
-			
-			// aapt resource value: 0x7F070081
-			public const int googleg_disabled_color_18 = 2131165313;
-			
-			// aapt resource value: 0x7F070082
-			public const int googleg_standard_color_18 = 2131165314;
-			
-			// aapt resource value: 0x7F070139
-			public const int Icon = 2131165497;
-			
-			// aapt resource value: 0x7F070083
-			public const int ic_audiotrack_dark = 2131165315;
-			
-			// aapt resource value: 0x7F070084
-			public const int ic_audiotrack_light = 2131165316;
-			
-			// aapt resource value: 0x7F070085
-			public const int ic_dialog_close_dark = 2131165317;
-			
-			// aapt resource value: 0x7F070086
-			public const int ic_dialog_close_light = 2131165318;
-			
-			// aapt resource value: 0x7F070087
-			public const int ic_errorstatus = 2131165319;
-			
-			// aapt resource value: 0x7F070088
-			public const int ic_group_collapse_00 = 2131165320;
-			
-			// aapt resource value: 0x7F070089
-			public const int ic_group_collapse_01 = 2131165321;
-			
-			// aapt resource value: 0x7F07008A
-			public const int ic_group_collapse_02 = 2131165322;
-			
-			// aapt resource value: 0x7F07008B
-			public const int ic_group_collapse_03 = 2131165323;
-			
-			// aapt resource value: 0x7F07008C
-			public const int ic_group_collapse_04 = 2131165324;
-			
-			// aapt resource value: 0x7F07008D
-			public const int ic_group_collapse_05 = 2131165325;
-			
-			// aapt resource value: 0x7F07008E
-			public const int ic_group_collapse_06 = 2131165326;
-			
-			// aapt resource value: 0x7F07008F
-			public const int ic_group_collapse_07 = 2131165327;
-			
-			// aapt resource value: 0x7F070090
-			public const int ic_group_collapse_08 = 2131165328;
-			
-			// aapt resource value: 0x7F070091
-			public const int ic_group_collapse_09 = 2131165329;
-			
-			// aapt resource value: 0x7F070092
-			public const int ic_group_collapse_10 = 2131165330;
-			
-			// aapt resource value: 0x7F070093
-			public const int ic_group_collapse_11 = 2131165331;
-			
-			// aapt resource value: 0x7F070094
-			public const int ic_group_collapse_12 = 2131165332;
-			
-			// aapt resource value: 0x7F070095
-			public const int ic_group_collapse_13 = 2131165333;
-			
-			// aapt resource value: 0x7F070096
-			public const int ic_group_collapse_14 = 2131165334;
-			
-			// aapt resource value: 0x7F070097
-			public const int ic_group_collapse_15 = 2131165335;
-			
-			// aapt resource value: 0x7F070098
-			public const int ic_group_expand_00 = 2131165336;
-			
-			// aapt resource value: 0x7F070099
-			public const int ic_group_expand_01 = 2131165337;
-			
-			// aapt resource value: 0x7F07009A
-			public const int ic_group_expand_02 = 2131165338;
-			
-			// aapt resource value: 0x7F07009B
-			public const int ic_group_expand_03 = 2131165339;
-			
-			// aapt resource value: 0x7F07009C
-			public const int ic_group_expand_04 = 2131165340;
-			
-			// aapt resource value: 0x7F07009D
-			public const int ic_group_expand_05 = 2131165341;
-			
-			// aapt resource value: 0x7F07009E
-			public const int ic_group_expand_06 = 2131165342;
-			
-			// aapt resource value: 0x7F07009F
-			public const int ic_group_expand_07 = 2131165343;
-			
-			// aapt resource value: 0x7F0700A0
-			public const int ic_group_expand_08 = 2131165344;
-			
-			// aapt resource value: 0x7F0700A1
-			public const int ic_group_expand_09 = 2131165345;
-			
-			// aapt resource value: 0x7F0700A2
-			public const int ic_group_expand_10 = 2131165346;
-			
-			// aapt resource value: 0x7F0700A3
-			public const int ic_group_expand_11 = 2131165347;
-			
-			// aapt resource value: 0x7F0700A4
-			public const int ic_group_expand_12 = 2131165348;
-			
-			// aapt resource value: 0x7F0700A5
-			public const int ic_group_expand_13 = 2131165349;
-			
-			// aapt resource value: 0x7F0700A6
-			public const int ic_group_expand_14 = 2131165350;
-			
-			// aapt resource value: 0x7F0700A7
-			public const int ic_group_expand_15 = 2131165351;
-			
-			// aapt resource value: 0x7F0700A8
-			public const int ic_media_pause_dark = 2131165352;
-			
-			// aapt resource value: 0x7F0700A9
-			public const int ic_media_pause_light = 2131165353;
-			
-			// aapt resource value: 0x7F0700AA
-			public const int ic_media_play_dark = 2131165354;
-			
-			// aapt resource value: 0x7F0700AB
-			public const int ic_media_play_light = 2131165355;
-			
-			// aapt resource value: 0x7F0700AC
-			public const int ic_media_stop_dark = 2131165356;
-			
-			// aapt resource value: 0x7F0700AD
-			public const int ic_media_stop_light = 2131165357;
-			
-			// aapt resource value: 0x7F0700AE
-			public const int ic_mr_button_connected_00_dark = 2131165358;
-			
-			// aapt resource value: 0x7F0700AF
-			public const int ic_mr_button_connected_00_light = 2131165359;
-			
-			// aapt resource value: 0x7F0700B0
-			public const int ic_mr_button_connected_01_dark = 2131165360;
-			
-			// aapt resource value: 0x7F0700B1
-			public const int ic_mr_button_connected_01_light = 2131165361;
-			
-			// aapt resource value: 0x7F0700B2
-			public const int ic_mr_button_connected_02_dark = 2131165362;
-			
-			// aapt resource value: 0x7F0700B3
-			public const int ic_mr_button_connected_02_light = 2131165363;
-			
-			// aapt resource value: 0x7F0700B4
-			public const int ic_mr_button_connected_03_dark = 2131165364;
-			
-			// aapt resource value: 0x7F0700B5
-			public const int ic_mr_button_connected_03_light = 2131165365;
-			
-			// aapt resource value: 0x7F0700B6
-			public const int ic_mr_button_connected_04_dark = 2131165366;
-			
-			// aapt resource value: 0x7F0700B7
-			public const int ic_mr_button_connected_04_light = 2131165367;
-			
-			// aapt resource value: 0x7F0700B8
-			public const int ic_mr_button_connected_05_dark = 2131165368;
-			
-			// aapt resource value: 0x7F0700B9
-			public const int ic_mr_button_connected_05_light = 2131165369;
-			
-			// aapt resource value: 0x7F0700BA
-			public const int ic_mr_button_connected_06_dark = 2131165370;
-			
-			// aapt resource value: 0x7F0700BB
-			public const int ic_mr_button_connected_06_light = 2131165371;
-			
-			// aapt resource value: 0x7F0700BC
-			public const int ic_mr_button_connected_07_dark = 2131165372;
-			
-			// aapt resource value: 0x7F0700BD
-			public const int ic_mr_button_connected_07_light = 2131165373;
-			
-			// aapt resource value: 0x7F0700BE
-			public const int ic_mr_button_connected_08_dark = 2131165374;
-			
-			// aapt resource value: 0x7F0700BF
-			public const int ic_mr_button_connected_08_light = 2131165375;
-			
-			// aapt resource value: 0x7F0700C0
-			public const int ic_mr_button_connected_09_dark = 2131165376;
-			
-			// aapt resource value: 0x7F0700C1
-			public const int ic_mr_button_connected_09_light = 2131165377;
-			
-			// aapt resource value: 0x7F0700C2
-			public const int ic_mr_button_connected_10_dark = 2131165378;
-			
-			// aapt resource value: 0x7F0700C3
-			public const int ic_mr_button_connected_10_light = 2131165379;
-			
-			// aapt resource value: 0x7F0700C4
-			public const int ic_mr_button_connected_11_dark = 2131165380;
-			
-			// aapt resource value: 0x7F0700C5
-			public const int ic_mr_button_connected_11_light = 2131165381;
-			
-			// aapt resource value: 0x7F0700C6
-			public const int ic_mr_button_connected_12_dark = 2131165382;
-			
-			// aapt resource value: 0x7F0700C7
-			public const int ic_mr_button_connected_12_light = 2131165383;
-			
-			// aapt resource value: 0x7F0700C8
-			public const int ic_mr_button_connected_13_dark = 2131165384;
-			
-			// aapt resource value: 0x7F0700C9
-			public const int ic_mr_button_connected_13_light = 2131165385;
-			
-			// aapt resource value: 0x7F0700CA
-			public const int ic_mr_button_connected_14_dark = 2131165386;
-			
-			// aapt resource value: 0x7F0700CB
-			public const int ic_mr_button_connected_14_light = 2131165387;
-			
-			// aapt resource value: 0x7F0700CC
-			public const int ic_mr_button_connected_15_dark = 2131165388;
-			
-			// aapt resource value: 0x7F0700CD
-			public const int ic_mr_button_connected_15_light = 2131165389;
-			
-			// aapt resource value: 0x7F0700CE
-			public const int ic_mr_button_connected_16_dark = 2131165390;
-			
-			// aapt resource value: 0x7F0700CF
-			public const int ic_mr_button_connected_16_light = 2131165391;
-			
-			// aapt resource value: 0x7F0700D0
-			public const int ic_mr_button_connected_17_dark = 2131165392;
-			
-			// aapt resource value: 0x7F0700D1
-			public const int ic_mr_button_connected_17_light = 2131165393;
-			
-			// aapt resource value: 0x7F0700D2
-			public const int ic_mr_button_connected_18_dark = 2131165394;
-			
-			// aapt resource value: 0x7F0700D3
-			public const int ic_mr_button_connected_18_light = 2131165395;
-			
-			// aapt resource value: 0x7F0700D4
-			public const int ic_mr_button_connected_19_dark = 2131165396;
-			
-			// aapt resource value: 0x7F0700D5
-			public const int ic_mr_button_connected_19_light = 2131165397;
-			
-			// aapt resource value: 0x7F0700D6
-			public const int ic_mr_button_connected_20_dark = 2131165398;
-			
-			// aapt resource value: 0x7F0700D7
-			public const int ic_mr_button_connected_20_light = 2131165399;
-			
-			// aapt resource value: 0x7F0700D8
-			public const int ic_mr_button_connected_21_dark = 2131165400;
-			
-			// aapt resource value: 0x7F0700D9
-			public const int ic_mr_button_connected_21_light = 2131165401;
-			
-			// aapt resource value: 0x7F0700DA
-			public const int ic_mr_button_connected_22_dark = 2131165402;
-			
-			// aapt resource value: 0x7F0700DB
-			public const int ic_mr_button_connected_22_light = 2131165403;
-			
-			// aapt resource value: 0x7F0700DC
-			public const int ic_mr_button_connected_23_dark = 2131165404;
-			
-			// aapt resource value: 0x7F0700DD
-			public const int ic_mr_button_connected_23_light = 2131165405;
-			
-			// aapt resource value: 0x7F0700DE
-			public const int ic_mr_button_connected_24_dark = 2131165406;
-			
-			// aapt resource value: 0x7F0700DF
-			public const int ic_mr_button_connected_24_light = 2131165407;
-			
-			// aapt resource value: 0x7F0700E0
-			public const int ic_mr_button_connected_25_dark = 2131165408;
-			
-			// aapt resource value: 0x7F0700E1
-			public const int ic_mr_button_connected_25_light = 2131165409;
-			
-			// aapt resource value: 0x7F0700E2
-			public const int ic_mr_button_connected_26_dark = 2131165410;
-			
-			// aapt resource value: 0x7F0700E3
-			public const int ic_mr_button_connected_26_light = 2131165411;
-			
-			// aapt resource value: 0x7F0700E4
-			public const int ic_mr_button_connected_27_dark = 2131165412;
-			
-			// aapt resource value: 0x7F0700E5
-			public const int ic_mr_button_connected_27_light = 2131165413;
-			
-			// aapt resource value: 0x7F0700E6
-			public const int ic_mr_button_connected_28_dark = 2131165414;
-			
-			// aapt resource value: 0x7F0700E7
-			public const int ic_mr_button_connected_28_light = 2131165415;
-			
-			// aapt resource value: 0x7F0700E8
-			public const int ic_mr_button_connected_29_dark = 2131165416;
-			
-			// aapt resource value: 0x7F0700E9
-			public const int ic_mr_button_connected_29_light = 2131165417;
-			
-			// aapt resource value: 0x7F0700EA
-			public const int ic_mr_button_connected_30_dark = 2131165418;
-			
-			// aapt resource value: 0x7F0700EB
-			public const int ic_mr_button_connected_30_light = 2131165419;
-			
-			// aapt resource value: 0x7F0700EC
-			public const int ic_mr_button_connecting_00_dark = 2131165420;
-			
-			// aapt resource value: 0x7F0700ED
-			public const int ic_mr_button_connecting_00_light = 2131165421;
-			
-			// aapt resource value: 0x7F0700EE
-			public const int ic_mr_button_connecting_01_dark = 2131165422;
-			
-			// aapt resource value: 0x7F0700EF
-			public const int ic_mr_button_connecting_01_light = 2131165423;
-			
-			// aapt resource value: 0x7F0700F0
-			public const int ic_mr_button_connecting_02_dark = 2131165424;
-			
-			// aapt resource value: 0x7F0700F1
-			public const int ic_mr_button_connecting_02_light = 2131165425;
-			
-			// aapt resource value: 0x7F0700F2
-			public const int ic_mr_button_connecting_03_dark = 2131165426;
-			
-			// aapt resource value: 0x7F0700F3
-			public const int ic_mr_button_connecting_03_light = 2131165427;
-			
-			// aapt resource value: 0x7F0700F4
-			public const int ic_mr_button_connecting_04_dark = 2131165428;
-			
-			// aapt resource value: 0x7F0700F5
-			public const int ic_mr_button_connecting_04_light = 2131165429;
-			
-			// aapt resource value: 0x7F0700F6
-			public const int ic_mr_button_connecting_05_dark = 2131165430;
-			
-			// aapt resource value: 0x7F0700F7
-			public const int ic_mr_button_connecting_05_light = 2131165431;
-			
-			// aapt resource value: 0x7F0700F8
-			public const int ic_mr_button_connecting_06_dark = 2131165432;
-			
-			// aapt resource value: 0x7F0700F9
-			public const int ic_mr_button_connecting_06_light = 2131165433;
-			
-			// aapt resource value: 0x7F0700FA
-			public const int ic_mr_button_connecting_07_dark = 2131165434;
-			
-			// aapt resource value: 0x7F0700FB
-			public const int ic_mr_button_connecting_07_light = 2131165435;
-			
-			// aapt resource value: 0x7F0700FC
-			public const int ic_mr_button_connecting_08_dark = 2131165436;
-			
-			// aapt resource value: 0x7F0700FD
-			public const int ic_mr_button_connecting_08_light = 2131165437;
-			
-			// aapt resource value: 0x7F0700FE
-			public const int ic_mr_button_connecting_09_dark = 2131165438;
-			
-			// aapt resource value: 0x7F0700FF
-			public const int ic_mr_button_connecting_09_light = 2131165439;
-			
-			// aapt resource value: 0x7F070100
-			public const int ic_mr_button_connecting_10_dark = 2131165440;
-			
-			// aapt resource value: 0x7F070101
-			public const int ic_mr_button_connecting_10_light = 2131165441;
-			
-			// aapt resource value: 0x7F070102
-			public const int ic_mr_button_connecting_11_dark = 2131165442;
-			
-			// aapt resource value: 0x7F070103
-			public const int ic_mr_button_connecting_11_light = 2131165443;
-			
-			// aapt resource value: 0x7F070104
-			public const int ic_mr_button_connecting_12_dark = 2131165444;
-			
-			// aapt resource value: 0x7F070105
-			public const int ic_mr_button_connecting_12_light = 2131165445;
-			
-			// aapt resource value: 0x7F070106
-			public const int ic_mr_button_connecting_13_dark = 2131165446;
-			
-			// aapt resource value: 0x7F070107
-			public const int ic_mr_button_connecting_13_light = 2131165447;
-			
-			// aapt resource value: 0x7F070108
-			public const int ic_mr_button_connecting_14_dark = 2131165448;
-			
-			// aapt resource value: 0x7F070109
-			public const int ic_mr_button_connecting_14_light = 2131165449;
-			
-			// aapt resource value: 0x7F07010A
-			public const int ic_mr_button_connecting_15_dark = 2131165450;
-			
-			// aapt resource value: 0x7F07010B
-			public const int ic_mr_button_connecting_15_light = 2131165451;
-			
-			// aapt resource value: 0x7F07010C
-			public const int ic_mr_button_connecting_16_dark = 2131165452;
-			
-			// aapt resource value: 0x7F07010D
-			public const int ic_mr_button_connecting_16_light = 2131165453;
-			
-			// aapt resource value: 0x7F07010E
-			public const int ic_mr_button_connecting_17_dark = 2131165454;
-			
-			// aapt resource value: 0x7F07010F
-			public const int ic_mr_button_connecting_17_light = 2131165455;
-			
-			// aapt resource value: 0x7F070110
-			public const int ic_mr_button_connecting_18_dark = 2131165456;
-			
-			// aapt resource value: 0x7F070111
-			public const int ic_mr_button_connecting_18_light = 2131165457;
-			
-			// aapt resource value: 0x7F070112
-			public const int ic_mr_button_connecting_19_dark = 2131165458;
-			
-			// aapt resource value: 0x7F070113
-			public const int ic_mr_button_connecting_19_light = 2131165459;
-			
-			// aapt resource value: 0x7F070114
-			public const int ic_mr_button_connecting_20_dark = 2131165460;
-			
-			// aapt resource value: 0x7F070115
-			public const int ic_mr_button_connecting_20_light = 2131165461;
-			
-			// aapt resource value: 0x7F070116
-			public const int ic_mr_button_connecting_21_dark = 2131165462;
-			
-			// aapt resource value: 0x7F070117
-			public const int ic_mr_button_connecting_21_light = 2131165463;
-			
-			// aapt resource value: 0x7F070118
-			public const int ic_mr_button_connecting_22_dark = 2131165464;
-			
-			// aapt resource value: 0x7F070119
-			public const int ic_mr_button_connecting_22_light = 2131165465;
-			
-			// aapt resource value: 0x7F07011A
-			public const int ic_mr_button_connecting_23_dark = 2131165466;
-			
-			// aapt resource value: 0x7F07011B
-			public const int ic_mr_button_connecting_23_light = 2131165467;
-			
-			// aapt resource value: 0x7F07011C
-			public const int ic_mr_button_connecting_24_dark = 2131165468;
-			
-			// aapt resource value: 0x7F07011D
-			public const int ic_mr_button_connecting_24_light = 2131165469;
-			
-			// aapt resource value: 0x7F07011E
-			public const int ic_mr_button_connecting_25_dark = 2131165470;
-			
-			// aapt resource value: 0x7F07011F
-			public const int ic_mr_button_connecting_25_light = 2131165471;
-			
-			// aapt resource value: 0x7F070120
-			public const int ic_mr_button_connecting_26_dark = 2131165472;
-			
-			// aapt resource value: 0x7F070121
-			public const int ic_mr_button_connecting_26_light = 2131165473;
-			
-			// aapt resource value: 0x7F070122
-			public const int ic_mr_button_connecting_27_dark = 2131165474;
-			
-			// aapt resource value: 0x7F070123
-			public const int ic_mr_button_connecting_27_light = 2131165475;
-			
-			// aapt resource value: 0x7F070124
-			public const int ic_mr_button_connecting_28_dark = 2131165476;
-			
-			// aapt resource value: 0x7F070125
-			public const int ic_mr_button_connecting_28_light = 2131165477;
-			
-			// aapt resource value: 0x7F070126
-			public const int ic_mr_button_connecting_29_dark = 2131165478;
-			
-			// aapt resource value: 0x7F070127
-			public const int ic_mr_button_connecting_29_light = 2131165479;
-			
-			// aapt resource value: 0x7F070128
-			public const int ic_mr_button_connecting_30_dark = 2131165480;
-			
-			// aapt resource value: 0x7F070129
-			public const int ic_mr_button_connecting_30_light = 2131165481;
-			
-			// aapt resource value: 0x7F07012A
-			public const int ic_mr_button_disabled_dark = 2131165482;
-			
-			// aapt resource value: 0x7F07012B
-			public const int ic_mr_button_disabled_light = 2131165483;
-			
-			// aapt resource value: 0x7F07012C
-			public const int ic_mr_button_disconnected_dark = 2131165484;
-			
-			// aapt resource value: 0x7F07012D
-			public const int ic_mr_button_disconnected_light = 2131165485;
-			
-			// aapt resource value: 0x7F07012E
-			public const int ic_mr_button_grey = 2131165486;
-			
-			// aapt resource value: 0x7F07012F
-			public const int ic_mtrl_chip_checked_black = 2131165487;
-			
-			// aapt resource value: 0x7F070130
-			public const int ic_mtrl_chip_checked_circle = 2131165488;
-			
-			// aapt resource value: 0x7F070131
-			public const int ic_mtrl_chip_close_circle = 2131165489;
-			
-			// aapt resource value: 0x7F070132
-			public const int ic_successstatus = 2131165490;
-			
-			// aapt resource value: 0x7F070133
-			public const int ic_vol_type_speaker_dark = 2131165491;
-			
-			// aapt resource value: 0x7F070134
-			public const int ic_vol_type_speaker_group_dark = 2131165492;
-			
-			// aapt resource value: 0x7F070135
-			public const int ic_vol_type_speaker_group_light = 2131165493;
-			
-			// aapt resource value: 0x7F070136
-			public const int ic_vol_type_speaker_light = 2131165494;
+			public const int googleg_standard_color_18 = 2131165312;
 			
 			// aapt resource value: 0x7F070137
-			public const int ic_vol_type_tv_dark = 2131165495;
+			public const int Icon = 2131165495;
+			
+			// aapt resource value: 0x7F070081
+			public const int ic_audiotrack_dark = 2131165313;
+			
+			// aapt resource value: 0x7F070082
+			public const int ic_audiotrack_light = 2131165314;
+			
+			// aapt resource value: 0x7F070083
+			public const int ic_dialog_close_dark = 2131165315;
+			
+			// aapt resource value: 0x7F070084
+			public const int ic_dialog_close_light = 2131165316;
+			
+			// aapt resource value: 0x7F070085
+			public const int ic_errorstatus = 2131165317;
+			
+			// aapt resource value: 0x7F070086
+			public const int ic_group_collapse_00 = 2131165318;
+			
+			// aapt resource value: 0x7F070087
+			public const int ic_group_collapse_01 = 2131165319;
+			
+			// aapt resource value: 0x7F070088
+			public const int ic_group_collapse_02 = 2131165320;
+			
+			// aapt resource value: 0x7F070089
+			public const int ic_group_collapse_03 = 2131165321;
+			
+			// aapt resource value: 0x7F07008A
+			public const int ic_group_collapse_04 = 2131165322;
+			
+			// aapt resource value: 0x7F07008B
+			public const int ic_group_collapse_05 = 2131165323;
+			
+			// aapt resource value: 0x7F07008C
+			public const int ic_group_collapse_06 = 2131165324;
+			
+			// aapt resource value: 0x7F07008D
+			public const int ic_group_collapse_07 = 2131165325;
+			
+			// aapt resource value: 0x7F07008E
+			public const int ic_group_collapse_08 = 2131165326;
+			
+			// aapt resource value: 0x7F07008F
+			public const int ic_group_collapse_09 = 2131165327;
+			
+			// aapt resource value: 0x7F070090
+			public const int ic_group_collapse_10 = 2131165328;
+			
+			// aapt resource value: 0x7F070091
+			public const int ic_group_collapse_11 = 2131165329;
+			
+			// aapt resource value: 0x7F070092
+			public const int ic_group_collapse_12 = 2131165330;
+			
+			// aapt resource value: 0x7F070093
+			public const int ic_group_collapse_13 = 2131165331;
+			
+			// aapt resource value: 0x7F070094
+			public const int ic_group_collapse_14 = 2131165332;
+			
+			// aapt resource value: 0x7F070095
+			public const int ic_group_collapse_15 = 2131165333;
+			
+			// aapt resource value: 0x7F070096
+			public const int ic_group_expand_00 = 2131165334;
+			
+			// aapt resource value: 0x7F070097
+			public const int ic_group_expand_01 = 2131165335;
+			
+			// aapt resource value: 0x7F070098
+			public const int ic_group_expand_02 = 2131165336;
+			
+			// aapt resource value: 0x7F070099
+			public const int ic_group_expand_03 = 2131165337;
+			
+			// aapt resource value: 0x7F07009A
+			public const int ic_group_expand_04 = 2131165338;
+			
+			// aapt resource value: 0x7F07009B
+			public const int ic_group_expand_05 = 2131165339;
+			
+			// aapt resource value: 0x7F07009C
+			public const int ic_group_expand_06 = 2131165340;
+			
+			// aapt resource value: 0x7F07009D
+			public const int ic_group_expand_07 = 2131165341;
+			
+			// aapt resource value: 0x7F07009E
+			public const int ic_group_expand_08 = 2131165342;
+			
+			// aapt resource value: 0x7F07009F
+			public const int ic_group_expand_09 = 2131165343;
+			
+			// aapt resource value: 0x7F0700A0
+			public const int ic_group_expand_10 = 2131165344;
+			
+			// aapt resource value: 0x7F0700A1
+			public const int ic_group_expand_11 = 2131165345;
+			
+			// aapt resource value: 0x7F0700A2
+			public const int ic_group_expand_12 = 2131165346;
+			
+			// aapt resource value: 0x7F0700A3
+			public const int ic_group_expand_13 = 2131165347;
+			
+			// aapt resource value: 0x7F0700A4
+			public const int ic_group_expand_14 = 2131165348;
+			
+			// aapt resource value: 0x7F0700A5
+			public const int ic_group_expand_15 = 2131165349;
+			
+			// aapt resource value: 0x7F0700A6
+			public const int ic_media_pause_dark = 2131165350;
+			
+			// aapt resource value: 0x7F0700A7
+			public const int ic_media_pause_light = 2131165351;
+			
+			// aapt resource value: 0x7F0700A8
+			public const int ic_media_play_dark = 2131165352;
+			
+			// aapt resource value: 0x7F0700A9
+			public const int ic_media_play_light = 2131165353;
+			
+			// aapt resource value: 0x7F0700AA
+			public const int ic_media_stop_dark = 2131165354;
+			
+			// aapt resource value: 0x7F0700AB
+			public const int ic_media_stop_light = 2131165355;
+			
+			// aapt resource value: 0x7F0700AC
+			public const int ic_mr_button_connected_00_dark = 2131165356;
+			
+			// aapt resource value: 0x7F0700AD
+			public const int ic_mr_button_connected_00_light = 2131165357;
+			
+			// aapt resource value: 0x7F0700AE
+			public const int ic_mr_button_connected_01_dark = 2131165358;
+			
+			// aapt resource value: 0x7F0700AF
+			public const int ic_mr_button_connected_01_light = 2131165359;
+			
+			// aapt resource value: 0x7F0700B0
+			public const int ic_mr_button_connected_02_dark = 2131165360;
+			
+			// aapt resource value: 0x7F0700B1
+			public const int ic_mr_button_connected_02_light = 2131165361;
+			
+			// aapt resource value: 0x7F0700B2
+			public const int ic_mr_button_connected_03_dark = 2131165362;
+			
+			// aapt resource value: 0x7F0700B3
+			public const int ic_mr_button_connected_03_light = 2131165363;
+			
+			// aapt resource value: 0x7F0700B4
+			public const int ic_mr_button_connected_04_dark = 2131165364;
+			
+			// aapt resource value: 0x7F0700B5
+			public const int ic_mr_button_connected_04_light = 2131165365;
+			
+			// aapt resource value: 0x7F0700B6
+			public const int ic_mr_button_connected_05_dark = 2131165366;
+			
+			// aapt resource value: 0x7F0700B7
+			public const int ic_mr_button_connected_05_light = 2131165367;
+			
+			// aapt resource value: 0x7F0700B8
+			public const int ic_mr_button_connected_06_dark = 2131165368;
+			
+			// aapt resource value: 0x7F0700B9
+			public const int ic_mr_button_connected_06_light = 2131165369;
+			
+			// aapt resource value: 0x7F0700BA
+			public const int ic_mr_button_connected_07_dark = 2131165370;
+			
+			// aapt resource value: 0x7F0700BB
+			public const int ic_mr_button_connected_07_light = 2131165371;
+			
+			// aapt resource value: 0x7F0700BC
+			public const int ic_mr_button_connected_08_dark = 2131165372;
+			
+			// aapt resource value: 0x7F0700BD
+			public const int ic_mr_button_connected_08_light = 2131165373;
+			
+			// aapt resource value: 0x7F0700BE
+			public const int ic_mr_button_connected_09_dark = 2131165374;
+			
+			// aapt resource value: 0x7F0700BF
+			public const int ic_mr_button_connected_09_light = 2131165375;
+			
+			// aapt resource value: 0x7F0700C0
+			public const int ic_mr_button_connected_10_dark = 2131165376;
+			
+			// aapt resource value: 0x7F0700C1
+			public const int ic_mr_button_connected_10_light = 2131165377;
+			
+			// aapt resource value: 0x7F0700C2
+			public const int ic_mr_button_connected_11_dark = 2131165378;
+			
+			// aapt resource value: 0x7F0700C3
+			public const int ic_mr_button_connected_11_light = 2131165379;
+			
+			// aapt resource value: 0x7F0700C4
+			public const int ic_mr_button_connected_12_dark = 2131165380;
+			
+			// aapt resource value: 0x7F0700C5
+			public const int ic_mr_button_connected_12_light = 2131165381;
+			
+			// aapt resource value: 0x7F0700C6
+			public const int ic_mr_button_connected_13_dark = 2131165382;
+			
+			// aapt resource value: 0x7F0700C7
+			public const int ic_mr_button_connected_13_light = 2131165383;
+			
+			// aapt resource value: 0x7F0700C8
+			public const int ic_mr_button_connected_14_dark = 2131165384;
+			
+			// aapt resource value: 0x7F0700C9
+			public const int ic_mr_button_connected_14_light = 2131165385;
+			
+			// aapt resource value: 0x7F0700CA
+			public const int ic_mr_button_connected_15_dark = 2131165386;
+			
+			// aapt resource value: 0x7F0700CB
+			public const int ic_mr_button_connected_15_light = 2131165387;
+			
+			// aapt resource value: 0x7F0700CC
+			public const int ic_mr_button_connected_16_dark = 2131165388;
+			
+			// aapt resource value: 0x7F0700CD
+			public const int ic_mr_button_connected_16_light = 2131165389;
+			
+			// aapt resource value: 0x7F0700CE
+			public const int ic_mr_button_connected_17_dark = 2131165390;
+			
+			// aapt resource value: 0x7F0700CF
+			public const int ic_mr_button_connected_17_light = 2131165391;
+			
+			// aapt resource value: 0x7F0700D0
+			public const int ic_mr_button_connected_18_dark = 2131165392;
+			
+			// aapt resource value: 0x7F0700D1
+			public const int ic_mr_button_connected_18_light = 2131165393;
+			
+			// aapt resource value: 0x7F0700D2
+			public const int ic_mr_button_connected_19_dark = 2131165394;
+			
+			// aapt resource value: 0x7F0700D3
+			public const int ic_mr_button_connected_19_light = 2131165395;
+			
+			// aapt resource value: 0x7F0700D4
+			public const int ic_mr_button_connected_20_dark = 2131165396;
+			
+			// aapt resource value: 0x7F0700D5
+			public const int ic_mr_button_connected_20_light = 2131165397;
+			
+			// aapt resource value: 0x7F0700D6
+			public const int ic_mr_button_connected_21_dark = 2131165398;
+			
+			// aapt resource value: 0x7F0700D7
+			public const int ic_mr_button_connected_21_light = 2131165399;
+			
+			// aapt resource value: 0x7F0700D8
+			public const int ic_mr_button_connected_22_dark = 2131165400;
+			
+			// aapt resource value: 0x7F0700D9
+			public const int ic_mr_button_connected_22_light = 2131165401;
+			
+			// aapt resource value: 0x7F0700DA
+			public const int ic_mr_button_connected_23_dark = 2131165402;
+			
+			// aapt resource value: 0x7F0700DB
+			public const int ic_mr_button_connected_23_light = 2131165403;
+			
+			// aapt resource value: 0x7F0700DC
+			public const int ic_mr_button_connected_24_dark = 2131165404;
+			
+			// aapt resource value: 0x7F0700DD
+			public const int ic_mr_button_connected_24_light = 2131165405;
+			
+			// aapt resource value: 0x7F0700DE
+			public const int ic_mr_button_connected_25_dark = 2131165406;
+			
+			// aapt resource value: 0x7F0700DF
+			public const int ic_mr_button_connected_25_light = 2131165407;
+			
+			// aapt resource value: 0x7F0700E0
+			public const int ic_mr_button_connected_26_dark = 2131165408;
+			
+			// aapt resource value: 0x7F0700E1
+			public const int ic_mr_button_connected_26_light = 2131165409;
+			
+			// aapt resource value: 0x7F0700E2
+			public const int ic_mr_button_connected_27_dark = 2131165410;
+			
+			// aapt resource value: 0x7F0700E3
+			public const int ic_mr_button_connected_27_light = 2131165411;
+			
+			// aapt resource value: 0x7F0700E4
+			public const int ic_mr_button_connected_28_dark = 2131165412;
+			
+			// aapt resource value: 0x7F0700E5
+			public const int ic_mr_button_connected_28_light = 2131165413;
+			
+			// aapt resource value: 0x7F0700E6
+			public const int ic_mr_button_connected_29_dark = 2131165414;
+			
+			// aapt resource value: 0x7F0700E7
+			public const int ic_mr_button_connected_29_light = 2131165415;
+			
+			// aapt resource value: 0x7F0700E8
+			public const int ic_mr_button_connected_30_dark = 2131165416;
+			
+			// aapt resource value: 0x7F0700E9
+			public const int ic_mr_button_connected_30_light = 2131165417;
+			
+			// aapt resource value: 0x7F0700EA
+			public const int ic_mr_button_connecting_00_dark = 2131165418;
+			
+			// aapt resource value: 0x7F0700EB
+			public const int ic_mr_button_connecting_00_light = 2131165419;
+			
+			// aapt resource value: 0x7F0700EC
+			public const int ic_mr_button_connecting_01_dark = 2131165420;
+			
+			// aapt resource value: 0x7F0700ED
+			public const int ic_mr_button_connecting_01_light = 2131165421;
+			
+			// aapt resource value: 0x7F0700EE
+			public const int ic_mr_button_connecting_02_dark = 2131165422;
+			
+			// aapt resource value: 0x7F0700EF
+			public const int ic_mr_button_connecting_02_light = 2131165423;
+			
+			// aapt resource value: 0x7F0700F0
+			public const int ic_mr_button_connecting_03_dark = 2131165424;
+			
+			// aapt resource value: 0x7F0700F1
+			public const int ic_mr_button_connecting_03_light = 2131165425;
+			
+			// aapt resource value: 0x7F0700F2
+			public const int ic_mr_button_connecting_04_dark = 2131165426;
+			
+			// aapt resource value: 0x7F0700F3
+			public const int ic_mr_button_connecting_04_light = 2131165427;
+			
+			// aapt resource value: 0x7F0700F4
+			public const int ic_mr_button_connecting_05_dark = 2131165428;
+			
+			// aapt resource value: 0x7F0700F5
+			public const int ic_mr_button_connecting_05_light = 2131165429;
+			
+			// aapt resource value: 0x7F0700F6
+			public const int ic_mr_button_connecting_06_dark = 2131165430;
+			
+			// aapt resource value: 0x7F0700F7
+			public const int ic_mr_button_connecting_06_light = 2131165431;
+			
+			// aapt resource value: 0x7F0700F8
+			public const int ic_mr_button_connecting_07_dark = 2131165432;
+			
+			// aapt resource value: 0x7F0700F9
+			public const int ic_mr_button_connecting_07_light = 2131165433;
+			
+			// aapt resource value: 0x7F0700FA
+			public const int ic_mr_button_connecting_08_dark = 2131165434;
+			
+			// aapt resource value: 0x7F0700FB
+			public const int ic_mr_button_connecting_08_light = 2131165435;
+			
+			// aapt resource value: 0x7F0700FC
+			public const int ic_mr_button_connecting_09_dark = 2131165436;
+			
+			// aapt resource value: 0x7F0700FD
+			public const int ic_mr_button_connecting_09_light = 2131165437;
+			
+			// aapt resource value: 0x7F0700FE
+			public const int ic_mr_button_connecting_10_dark = 2131165438;
+			
+			// aapt resource value: 0x7F0700FF
+			public const int ic_mr_button_connecting_10_light = 2131165439;
+			
+			// aapt resource value: 0x7F070100
+			public const int ic_mr_button_connecting_11_dark = 2131165440;
+			
+			// aapt resource value: 0x7F070101
+			public const int ic_mr_button_connecting_11_light = 2131165441;
+			
+			// aapt resource value: 0x7F070102
+			public const int ic_mr_button_connecting_12_dark = 2131165442;
+			
+			// aapt resource value: 0x7F070103
+			public const int ic_mr_button_connecting_12_light = 2131165443;
+			
+			// aapt resource value: 0x7F070104
+			public const int ic_mr_button_connecting_13_dark = 2131165444;
+			
+			// aapt resource value: 0x7F070105
+			public const int ic_mr_button_connecting_13_light = 2131165445;
+			
+			// aapt resource value: 0x7F070106
+			public const int ic_mr_button_connecting_14_dark = 2131165446;
+			
+			// aapt resource value: 0x7F070107
+			public const int ic_mr_button_connecting_14_light = 2131165447;
+			
+			// aapt resource value: 0x7F070108
+			public const int ic_mr_button_connecting_15_dark = 2131165448;
+			
+			// aapt resource value: 0x7F070109
+			public const int ic_mr_button_connecting_15_light = 2131165449;
+			
+			// aapt resource value: 0x7F07010A
+			public const int ic_mr_button_connecting_16_dark = 2131165450;
+			
+			// aapt resource value: 0x7F07010B
+			public const int ic_mr_button_connecting_16_light = 2131165451;
+			
+			// aapt resource value: 0x7F07010C
+			public const int ic_mr_button_connecting_17_dark = 2131165452;
+			
+			// aapt resource value: 0x7F07010D
+			public const int ic_mr_button_connecting_17_light = 2131165453;
+			
+			// aapt resource value: 0x7F07010E
+			public const int ic_mr_button_connecting_18_dark = 2131165454;
+			
+			// aapt resource value: 0x7F07010F
+			public const int ic_mr_button_connecting_18_light = 2131165455;
+			
+			// aapt resource value: 0x7F070110
+			public const int ic_mr_button_connecting_19_dark = 2131165456;
+			
+			// aapt resource value: 0x7F070111
+			public const int ic_mr_button_connecting_19_light = 2131165457;
+			
+			// aapt resource value: 0x7F070112
+			public const int ic_mr_button_connecting_20_dark = 2131165458;
+			
+			// aapt resource value: 0x7F070113
+			public const int ic_mr_button_connecting_20_light = 2131165459;
+			
+			// aapt resource value: 0x7F070114
+			public const int ic_mr_button_connecting_21_dark = 2131165460;
+			
+			// aapt resource value: 0x7F070115
+			public const int ic_mr_button_connecting_21_light = 2131165461;
+			
+			// aapt resource value: 0x7F070116
+			public const int ic_mr_button_connecting_22_dark = 2131165462;
+			
+			// aapt resource value: 0x7F070117
+			public const int ic_mr_button_connecting_22_light = 2131165463;
+			
+			// aapt resource value: 0x7F070118
+			public const int ic_mr_button_connecting_23_dark = 2131165464;
+			
+			// aapt resource value: 0x7F070119
+			public const int ic_mr_button_connecting_23_light = 2131165465;
+			
+			// aapt resource value: 0x7F07011A
+			public const int ic_mr_button_connecting_24_dark = 2131165466;
+			
+			// aapt resource value: 0x7F07011B
+			public const int ic_mr_button_connecting_24_light = 2131165467;
+			
+			// aapt resource value: 0x7F07011C
+			public const int ic_mr_button_connecting_25_dark = 2131165468;
+			
+			// aapt resource value: 0x7F07011D
+			public const int ic_mr_button_connecting_25_light = 2131165469;
+			
+			// aapt resource value: 0x7F07011E
+			public const int ic_mr_button_connecting_26_dark = 2131165470;
+			
+			// aapt resource value: 0x7F07011F
+			public const int ic_mr_button_connecting_26_light = 2131165471;
+			
+			// aapt resource value: 0x7F070120
+			public const int ic_mr_button_connecting_27_dark = 2131165472;
+			
+			// aapt resource value: 0x7F070121
+			public const int ic_mr_button_connecting_27_light = 2131165473;
+			
+			// aapt resource value: 0x7F070122
+			public const int ic_mr_button_connecting_28_dark = 2131165474;
+			
+			// aapt resource value: 0x7F070123
+			public const int ic_mr_button_connecting_28_light = 2131165475;
+			
+			// aapt resource value: 0x7F070124
+			public const int ic_mr_button_connecting_29_dark = 2131165476;
+			
+			// aapt resource value: 0x7F070125
+			public const int ic_mr_button_connecting_29_light = 2131165477;
+			
+			// aapt resource value: 0x7F070126
+			public const int ic_mr_button_connecting_30_dark = 2131165478;
+			
+			// aapt resource value: 0x7F070127
+			public const int ic_mr_button_connecting_30_light = 2131165479;
+			
+			// aapt resource value: 0x7F070128
+			public const int ic_mr_button_disabled_dark = 2131165480;
+			
+			// aapt resource value: 0x7F070129
+			public const int ic_mr_button_disabled_light = 2131165481;
+			
+			// aapt resource value: 0x7F07012A
+			public const int ic_mr_button_disconnected_dark = 2131165482;
+			
+			// aapt resource value: 0x7F07012B
+			public const int ic_mr_button_disconnected_light = 2131165483;
+			
+			// aapt resource value: 0x7F07012C
+			public const int ic_mr_button_grey = 2131165484;
+			
+			// aapt resource value: 0x7F07012D
+			public const int ic_mtrl_chip_checked_black = 2131165485;
+			
+			// aapt resource value: 0x7F07012E
+			public const int ic_mtrl_chip_checked_circle = 2131165486;
+			
+			// aapt resource value: 0x7F07012F
+			public const int ic_mtrl_chip_close_circle = 2131165487;
+			
+			// aapt resource value: 0x7F070130
+			public const int ic_successstatus = 2131165488;
+			
+			// aapt resource value: 0x7F070131
+			public const int ic_vol_type_speaker_dark = 2131165489;
+			
+			// aapt resource value: 0x7F070132
+			public const int ic_vol_type_speaker_group_dark = 2131165490;
+			
+			// aapt resource value: 0x7F070133
+			public const int ic_vol_type_speaker_group_light = 2131165491;
+			
+			// aapt resource value: 0x7F070134
+			public const int ic_vol_type_speaker_light = 2131165492;
+			
+			// aapt resource value: 0x7F070135
+			public const int ic_vol_type_tv_dark = 2131165493;
+			
+			// aapt resource value: 0x7F070136
+			public const int ic_vol_type_tv_light = 2131165494;
 			
 			// aapt resource value: 0x7F070138
-			public const int ic_vol_type_tv_light = 2131165496;
+			public const int mr_button_connected_dark = 2131165496;
+			
+			// aapt resource value: 0x7F070139
+			public const int mr_button_connected_light = 2131165497;
 			
 			// aapt resource value: 0x7F07013A
-			public const int mr_button_connected_dark = 2131165498;
+			public const int mr_button_connecting_dark = 2131165498;
 			
 			// aapt resource value: 0x7F07013B
-			public const int mr_button_connected_light = 2131165499;
+			public const int mr_button_connecting_light = 2131165499;
 			
 			// aapt resource value: 0x7F07013C
-			public const int mr_button_connecting_dark = 2131165500;
+			public const int mr_button_dark = 2131165500;
 			
 			// aapt resource value: 0x7F07013D
-			public const int mr_button_connecting_light = 2131165501;
+			public const int mr_button_light = 2131165501;
 			
 			// aapt resource value: 0x7F07013E
-			public const int mr_button_dark = 2131165502;
+			public const int mr_dialog_close_dark = 2131165502;
 			
 			// aapt resource value: 0x7F07013F
-			public const int mr_button_light = 2131165503;
+			public const int mr_dialog_close_light = 2131165503;
 			
 			// aapt resource value: 0x7F070140
-			public const int mr_dialog_close_dark = 2131165504;
+			public const int mr_dialog_material_background_dark = 2131165504;
 			
 			// aapt resource value: 0x7F070141
-			public const int mr_dialog_close_light = 2131165505;
+			public const int mr_dialog_material_background_light = 2131165505;
 			
 			// aapt resource value: 0x7F070142
-			public const int mr_dialog_material_background_dark = 2131165506;
+			public const int mr_group_collapse = 2131165506;
 			
 			// aapt resource value: 0x7F070143
-			public const int mr_dialog_material_background_light = 2131165507;
+			public const int mr_group_expand = 2131165507;
 			
 			// aapt resource value: 0x7F070144
-			public const int mr_group_collapse = 2131165508;
+			public const int mr_media_pause_dark = 2131165508;
 			
 			// aapt resource value: 0x7F070145
-			public const int mr_group_expand = 2131165509;
+			public const int mr_media_pause_light = 2131165509;
 			
 			// aapt resource value: 0x7F070146
-			public const int mr_media_pause_dark = 2131165510;
+			public const int mr_media_play_dark = 2131165510;
 			
 			// aapt resource value: 0x7F070147
-			public const int mr_media_pause_light = 2131165511;
+			public const int mr_media_play_light = 2131165511;
 			
 			// aapt resource value: 0x7F070148
-			public const int mr_media_play_dark = 2131165512;
+			public const int mr_media_stop_dark = 2131165512;
 			
 			// aapt resource value: 0x7F070149
-			public const int mr_media_play_light = 2131165513;
+			public const int mr_media_stop_light = 2131165513;
 			
 			// aapt resource value: 0x7F07014A
-			public const int mr_media_stop_dark = 2131165514;
+			public const int mr_vol_type_audiotrack_dark = 2131165514;
 			
 			// aapt resource value: 0x7F07014B
-			public const int mr_media_stop_light = 2131165515;
+			public const int mr_vol_type_audiotrack_light = 2131165515;
 			
 			// aapt resource value: 0x7F07014C
-			public const int mr_vol_type_audiotrack_dark = 2131165516;
+			public const int mtrl_snackbar_background = 2131165516;
 			
 			// aapt resource value: 0x7F07014D
-			public const int mr_vol_type_audiotrack_light = 2131165517;
+			public const int mtrl_tabs_default_indicator = 2131165517;
 			
 			// aapt resource value: 0x7F07014E
-			public const int mtrl_snackbar_background = 2131165518;
+			public const int navigation_empty_icon = 2131165518;
 			
 			// aapt resource value: 0x7F07014F
-			public const int mtrl_tabs_default_indicator = 2131165519;
+			public const int notification_action_background = 2131165519;
 			
 			// aapt resource value: 0x7F070150
-			public const int navigation_empty_icon = 2131165520;
+			public const int notification_bg = 2131165520;
 			
 			// aapt resource value: 0x7F070151
-			public const int notification_action_background = 2131165521;
+			public const int notification_bg_low = 2131165521;
 			
 			// aapt resource value: 0x7F070152
-			public const int notification_bg = 2131165522;
+			public const int notification_bg_low_normal = 2131165522;
 			
 			// aapt resource value: 0x7F070153
-			public const int notification_bg_low = 2131165523;
+			public const int notification_bg_low_pressed = 2131165523;
 			
 			// aapt resource value: 0x7F070154
-			public const int notification_bg_low_normal = 2131165524;
+			public const int notification_bg_normal = 2131165524;
 			
 			// aapt resource value: 0x7F070155
-			public const int notification_bg_low_pressed = 2131165525;
+			public const int notification_bg_normal_pressed = 2131165525;
 			
 			// aapt resource value: 0x7F070156
-			public const int notification_bg_normal = 2131165526;
+			public const int notification_icon_background = 2131165526;
 			
 			// aapt resource value: 0x7F070157
-			public const int notification_bg_normal_pressed = 2131165527;
+			public const int notification_template_icon_bg = 2131165527;
 			
 			// aapt resource value: 0x7F070158
-			public const int notification_icon_background = 2131165528;
+			public const int notification_template_icon_low_bg = 2131165528;
 			
 			// aapt resource value: 0x7F070159
-			public const int notification_template_icon_bg = 2131165529;
+			public const int notification_tile_bg = 2131165529;
 			
 			// aapt resource value: 0x7F07015A
-			public const int notification_template_icon_low_bg = 2131165530;
+			public const int notify_panel_notification_icon_bg = 2131165530;
 			
 			// aapt resource value: 0x7F07015B
-			public const int notification_tile_bg = 2131165531;
+			public const int roundedbg = 2131165531;
 			
 			// aapt resource value: 0x7F07015C
-			public const int notify_panel_notification_icon_bg = 2131165532;
+			public const int roundedbgdark = 2131165532;
 			
 			// aapt resource value: 0x7F07015D
-			public const int roundedbg = 2131165533;
+			public const int tooltip_frame_dark = 2131165533;
 			
 			// aapt resource value: 0x7F07015E
-			public const int roundedbgdark = 2131165534;
+			public const int tooltip_frame_light = 2131165534;
 			
 			// aapt resource value: 0x7F07015F
-			public const int tooltip_frame_dark = 2131165535;
+			public const int xf_arrow_dropdown = 2131165535;
 			
 			// aapt resource value: 0x7F070160
-			public const int tooltip_frame_light = 2131165536;
+			public const int xf_check = 2131165536;
 			
 			// aapt resource value: 0x7F070161
-			public const int xf_arrow_dropdown = 2131165537;
+			public const int xf_checkbox_selected = 2131165537;
 			
 			// aapt resource value: 0x7F070162
-			public const int xf_check = 2131165538;
+			public const int xf_checkbox_unselected = 2131165538;
 			
 			// aapt resource value: 0x7F070163
-			public const int xf_checkbox_selected = 2131165539;
+			public const int xf_clear = 2131165539;
 			
 			// aapt resource value: 0x7F070164
-			public const int xf_checkbox_unselected = 2131165540;
+			public const int xf_error = 2131165540;
 			
 			// aapt resource value: 0x7F070165
-			public const int xf_clear = 2131165541;
+			public const int xf_radio_button_selected = 2131165541;
 			
 			// aapt resource value: 0x7F070166
-			public const int xf_error = 2131165542;
-			
-			// aapt resource value: 0x7F070167
-			public const int xf_radio_button_selected = 2131165543;
-			
-			// aapt resource value: 0x7F070168
-			public const int xf_radio_button_unselected = 2131165544;
+			public const int xf_radio_button_unselected = 2131165542;
 			
 			static Drawable()
 			{
@@ -26811,397 +25418,388 @@ namespace Android.UnitTests
 			public const int buttonPanel = 2131230768;
 			
 			// aapt resource value: 0x7F080031
-			public const int calendar_grid = 2131230769;
+			public const int cancel_action = 2131230769;
 			
 			// aapt resource value: 0x7F080032
-			public const int calendar_view = 2131230770;
+			public const int center = 2131230770;
 			
 			// aapt resource value: 0x7F080033
-			public const int cancel_action = 2131230771;
+			public const int center_horizontal = 2131230771;
 			
 			// aapt resource value: 0x7F080034
-			public const int center = 2131230772;
+			public const int center_vertical = 2131230772;
 			
 			// aapt resource value: 0x7F080035
-			public const int center_horizontal = 2131230773;
+			public const int checkbox = 2131230773;
 			
 			// aapt resource value: 0x7F080036
-			public const int center_vertical = 2131230774;
+			public const int chronometer = 2131230774;
 			
 			// aapt resource value: 0x7F080037
-			public const int checkbox = 2131230775;
+			public const int clip_horizontal = 2131230775;
 			
 			// aapt resource value: 0x7F080038
-			public const int chronometer = 2131230776;
+			public const int clip_vertical = 2131230776;
 			
 			// aapt resource value: 0x7F080039
-			public const int clip_horizontal = 2131230777;
+			public const int collapseActionView = 2131230777;
 			
 			// aapt resource value: 0x7F08003A
-			public const int clip_vertical = 2131230778;
+			public const int container = 2131230778;
 			
 			// aapt resource value: 0x7F08003B
-			public const int collapseActionView = 2131230779;
+			public const int content = 2131230779;
 			
 			// aapt resource value: 0x7F08003C
-			public const int container = 2131230780;
+			public const int contentPanel = 2131230780;
 			
 			// aapt resource value: 0x7F08003D
-			public const int content = 2131230781;
-			
-			// aapt resource value: 0x7F08003E
-			public const int contentPanel = 2131230782;
-			
-			// aapt resource value: 0x7F08003F
-			public const int coordinator = 2131230783;
+			public const int coordinator = 2131230781;
 			
 			// aapt resource value: 0x7F080001
 			public const int CTRL = 2131230721;
 			
+			// aapt resource value: 0x7F08003E
+			public const int custom = 2131230782;
+			
+			// aapt resource value: 0x7F08003F
+			public const int customPanel = 2131230783;
+			
 			// aapt resource value: 0x7F080040
-			public const int custom = 2131230784;
+			public const int dark = 2131230784;
 			
 			// aapt resource value: 0x7F080041
-			public const int customPanel = 2131230785;
+			public const int decor_content_parent = 2131230785;
 			
 			// aapt resource value: 0x7F080042
-			public const int dark = 2131230786;
+			public const int default_activity_button = 2131230786;
 			
 			// aapt resource value: 0x7F080043
-			public const int decor_content_parent = 2131230787;
+			public const int design_bottom_sheet = 2131230787;
 			
 			// aapt resource value: 0x7F080044
-			public const int default_activity_button = 2131230788;
+			public const int design_menu_item_action_area = 2131230788;
 			
 			// aapt resource value: 0x7F080045
-			public const int design_bottom_sheet = 2131230789;
+			public const int design_menu_item_action_area_stub = 2131230789;
 			
 			// aapt resource value: 0x7F080046
-			public const int design_menu_item_action_area = 2131230790;
+			public const int design_menu_item_text = 2131230790;
 			
 			// aapt resource value: 0x7F080047
-			public const int design_menu_item_action_area_stub = 2131230791;
+			public const int design_navigation_view = 2131230791;
 			
 			// aapt resource value: 0x7F080048
-			public const int design_menu_item_text = 2131230792;
+			public const int disableHome = 2131230792;
 			
 			// aapt resource value: 0x7F080049
-			public const int design_navigation_view = 2131230793;
+			public const int edit_query = 2131230793;
 			
 			// aapt resource value: 0x7F08004A
-			public const int disableHome = 2131230794;
+			public const int end = 2131230794;
 			
 			// aapt resource value: 0x7F08004B
-			public const int edit_query = 2131230795;
+			public const int end_padder = 2131230795;
 			
 			// aapt resource value: 0x7F08004C
-			public const int end = 2131230796;
+			public const int enterAlways = 2131230796;
 			
 			// aapt resource value: 0x7F08004D
-			public const int end_padder = 2131230797;
+			public const int enterAlwaysCollapsed = 2131230797;
 			
 			// aapt resource value: 0x7F08004E
-			public const int enterAlways = 2131230798;
-			
-			// aapt resource value: 0x7F08004F
-			public const int enterAlwaysCollapsed = 2131230799;
+			public const int exitUntilCollapsed = 2131230798;
 			
 			// aapt resource value: 0x7F080050
-			public const int exitUntilCollapsed = 2131230800;
+			public const int expanded_menu = 2131230800;
 			
-			// aapt resource value: 0x7F080052
-			public const int expanded_menu = 2131230802;
+			// aapt resource value: 0x7F08004F
+			public const int expand_activities_button = 2131230799;
 			
 			// aapt resource value: 0x7F080051
-			public const int expand_activities_button = 2131230801;
-			
-			// aapt resource value: 0x7F080053
-			public const int fill = 2131230803;
-			
-			// aapt resource value: 0x7F080056
-			public const int filled = 2131230806;
+			public const int fill = 2131230801;
 			
 			// aapt resource value: 0x7F080054
-			public const int fill_horizontal = 2131230804;
+			public const int filled = 2131230804;
+			
+			// aapt resource value: 0x7F080052
+			public const int fill_horizontal = 2131230802;
+			
+			// aapt resource value: 0x7F080053
+			public const int fill_vertical = 2131230803;
 			
 			// aapt resource value: 0x7F080055
-			public const int fill_vertical = 2131230805;
+			public const int @fixed = 2131230805;
+			
+			// aapt resource value: 0x7F080056
+			public const int flyoutcontent_appbar = 2131230806;
 			
 			// aapt resource value: 0x7F080057
-			public const int @fixed = 2131230807;
+			public const int flyoutcontent_recycler = 2131230807;
 			
 			// aapt resource value: 0x7F080058
-			public const int flyoutcontent_appbar = 2131230808;
-			
-			// aapt resource value: 0x7F080059
-			public const int flyoutcontent_recycler = 2131230809;
-			
-			// aapt resource value: 0x7F08005A
-			public const int forever = 2131230810;
+			public const int forever = 2131230808;
 			
 			// aapt resource value: 0x7F080002
 			public const int FUNCTION = 2131230722;
 			
+			// aapt resource value: 0x7F080059
+			public const int ghost_view = 2131230809;
+			
+			// aapt resource value: 0x7F08005A
+			public const int group_divider = 2131230810;
+			
 			// aapt resource value: 0x7F08005B
-			public const int ghost_view = 2131230811;
+			public const int hardware = 2131230811;
 			
 			// aapt resource value: 0x7F08005C
-			public const int group_divider = 2131230812;
+			public const int home = 2131230812;
 			
 			// aapt resource value: 0x7F08005D
-			public const int hardware = 2131230813;
+			public const int homeAsUp = 2131230813;
 			
 			// aapt resource value: 0x7F08005E
-			public const int home = 2131230814;
+			public const int hybrid = 2131230814;
 			
 			// aapt resource value: 0x7F08005F
-			public const int homeAsUp = 2131230815;
+			public const int icon = 2131230815;
 			
 			// aapt resource value: 0x7F080060
-			public const int hybrid = 2131230816;
+			public const int icon_group = 2131230816;
 			
 			// aapt resource value: 0x7F080061
-			public const int icon = 2131230817;
+			public const int icon_only = 2131230817;
 			
 			// aapt resource value: 0x7F080062
-			public const int icon_group = 2131230818;
+			public const int ifRoom = 2131230818;
 			
 			// aapt resource value: 0x7F080063
-			public const int icon_only = 2131230819;
+			public const int image = 2131230819;
 			
 			// aapt resource value: 0x7F080064
-			public const int ifRoom = 2131230820;
+			public const int info = 2131230820;
 			
 			// aapt resource value: 0x7F080065
-			public const int image = 2131230821;
+			public const int inset_drawable = 2131230821;
 			
 			// aapt resource value: 0x7F080066
-			public const int info = 2131230822;
+			public const int italic = 2131230822;
 			
 			// aapt resource value: 0x7F080067
-			public const int inset_drawable = 2131230823;
+			public const int item_touch_helper_previous_elevation = 2131230823;
 			
 			// aapt resource value: 0x7F080068
-			public const int italic = 2131230824;
+			public const int labeled = 2131230824;
 			
 			// aapt resource value: 0x7F080069
-			public const int item_touch_helper_previous_elevation = 2131230825;
+			public const int largeLabel = 2131230825;
 			
 			// aapt resource value: 0x7F08006A
-			public const int labeled = 2131230826;
+			public const int left = 2131230826;
 			
 			// aapt resource value: 0x7F08006B
-			public const int largeLabel = 2131230827;
+			public const int light = 2131230827;
 			
 			// aapt resource value: 0x7F08006C
-			public const int left = 2131230828;
+			public const int line1 = 2131230828;
 			
 			// aapt resource value: 0x7F08006D
-			public const int left_arrow = 2131230829;
+			public const int line3 = 2131230829;
 			
 			// aapt resource value: 0x7F08006E
-			public const int light = 2131230830;
+			public const int listMode = 2131230830;
 			
 			// aapt resource value: 0x7F08006F
-			public const int line1 = 2131230831;
+			public const int list_item = 2131230831;
 			
 			// aapt resource value: 0x7F080070
-			public const int line3 = 2131230832;
+			public const int loadingImage = 2131230832;
 			
 			// aapt resource value: 0x7F080071
-			public const int listMode = 2131230833;
+			public const int loadingProgressBar = 2131230833;
 			
 			// aapt resource value: 0x7F080072
-			public const int list_item = 2131230834;
+			public const int loadingProgressWheel = 2131230834;
 			
 			// aapt resource value: 0x7F080073
-			public const int loadingImage = 2131230835;
+			public const int lottie_layer_name = 2131230835;
 			
 			// aapt resource value: 0x7F080074
-			public const int loadingProgressBar = 2131230836;
+			public const int main_appbar = 2131230836;
 			
 			// aapt resource value: 0x7F080075
-			public const int loadingProgressWheel = 2131230837;
+			public const int main_tablayout = 2131230837;
 			
 			// aapt resource value: 0x7F080076
-			public const int lottie_layer_name = 2131230838;
+			public const int main_toolbar = 2131230838;
 			
 			// aapt resource value: 0x7F080077
-			public const int main_appbar = 2131230839;
+			public const int main_viewpager = 2131230839;
 			
 			// aapt resource value: 0x7F080078
-			public const int main_tablayout = 2131230840;
+			public const int masked = 2131230840;
 			
 			// aapt resource value: 0x7F080079
-			public const int main_toolbar = 2131230841;
+			public const int media_actions = 2131230841;
 			
 			// aapt resource value: 0x7F08007A
-			public const int main_viewpager = 2131230842;
-			
-			// aapt resource value: 0x7F08007B
-			public const int masked = 2131230843;
-			
-			// aapt resource value: 0x7F08007C
-			public const int media_actions = 2131230844;
-			
-			// aapt resource value: 0x7F08007D
-			public const int message = 2131230845;
+			public const int message = 2131230842;
 			
 			// aapt resource value: 0x7F080003
 			public const int META = 2131230723;
 			
+			// aapt resource value: 0x7F08007B
+			public const int middle = 2131230843;
+			
+			// aapt resource value: 0x7F08007C
+			public const int mini = 2131230844;
+			
+			// aapt resource value: 0x7F08007D
+			public const int mr_art = 2131230845;
+			
 			// aapt resource value: 0x7F08007E
-			public const int middle = 2131230846;
+			public const int mr_cast_checkbox = 2131230846;
 			
 			// aapt resource value: 0x7F08007F
-			public const int mini = 2131230847;
+			public const int mr_cast_close_button = 2131230847;
 			
 			// aapt resource value: 0x7F080080
-			public const int mr_art = 2131230848;
+			public const int mr_cast_group_icon = 2131230848;
 			
 			// aapt resource value: 0x7F080081
-			public const int mr_cast_checkbox = 2131230849;
+			public const int mr_cast_group_name = 2131230849;
 			
 			// aapt resource value: 0x7F080082
-			public const int mr_cast_close_button = 2131230850;
+			public const int mr_cast_list = 2131230850;
 			
 			// aapt resource value: 0x7F080083
-			public const int mr_cast_group_icon = 2131230851;
+			public const int mr_cast_meta = 2131230851;
 			
 			// aapt resource value: 0x7F080084
-			public const int mr_cast_group_name = 2131230852;
+			public const int mr_cast_meta_art = 2131230852;
 			
 			// aapt resource value: 0x7F080085
-			public const int mr_cast_list = 2131230853;
+			public const int mr_cast_meta_subtitle = 2131230853;
 			
 			// aapt resource value: 0x7F080086
-			public const int mr_cast_meta = 2131230854;
+			public const int mr_cast_meta_title = 2131230854;
 			
 			// aapt resource value: 0x7F080087
-			public const int mr_cast_meta_art = 2131230855;
+			public const int mr_cast_route_icon = 2131230855;
 			
 			// aapt resource value: 0x7F080088
-			public const int mr_cast_meta_subtitle = 2131230856;
+			public const int mr_cast_route_name = 2131230856;
 			
 			// aapt resource value: 0x7F080089
-			public const int mr_cast_meta_title = 2131230857;
+			public const int mr_cast_stop_button = 2131230857;
 			
 			// aapt resource value: 0x7F08008A
-			public const int mr_cast_route_icon = 2131230858;
+			public const int mr_cast_volume_layout = 2131230858;
 			
 			// aapt resource value: 0x7F08008B
-			public const int mr_cast_route_name = 2131230859;
+			public const int mr_cast_volume_slider = 2131230859;
 			
 			// aapt resource value: 0x7F08008C
-			public const int mr_cast_stop_button = 2131230860;
+			public const int mr_chooser_list = 2131230860;
 			
 			// aapt resource value: 0x7F08008D
-			public const int mr_cast_volume_layout = 2131230861;
+			public const int mr_chooser_route_desc = 2131230861;
 			
 			// aapt resource value: 0x7F08008E
-			public const int mr_cast_volume_slider = 2131230862;
+			public const int mr_chooser_route_icon = 2131230862;
 			
 			// aapt resource value: 0x7F08008F
-			public const int mr_chooser_list = 2131230863;
+			public const int mr_chooser_route_name = 2131230863;
 			
 			// aapt resource value: 0x7F080090
-			public const int mr_chooser_route_desc = 2131230864;
+			public const int mr_chooser_title = 2131230864;
 			
 			// aapt resource value: 0x7F080091
-			public const int mr_chooser_route_icon = 2131230865;
+			public const int mr_close = 2131230865;
 			
 			// aapt resource value: 0x7F080092
-			public const int mr_chooser_route_name = 2131230866;
+			public const int mr_control_divider = 2131230866;
 			
 			// aapt resource value: 0x7F080093
-			public const int mr_chooser_title = 2131230867;
+			public const int mr_control_playback_ctrl = 2131230867;
 			
 			// aapt resource value: 0x7F080094
-			public const int mr_close = 2131230868;
+			public const int mr_control_subtitle = 2131230868;
 			
 			// aapt resource value: 0x7F080095
-			public const int mr_control_divider = 2131230869;
+			public const int mr_control_title = 2131230869;
 			
 			// aapt resource value: 0x7F080096
-			public const int mr_control_playback_ctrl = 2131230870;
+			public const int mr_control_title_container = 2131230870;
 			
 			// aapt resource value: 0x7F080097
-			public const int mr_control_subtitle = 2131230871;
+			public const int mr_custom_control = 2131230871;
 			
 			// aapt resource value: 0x7F080098
-			public const int mr_control_title = 2131230872;
+			public const int mr_default_control = 2131230872;
 			
 			// aapt resource value: 0x7F080099
-			public const int mr_control_title_container = 2131230873;
+			public const int mr_dialog_area = 2131230873;
 			
 			// aapt resource value: 0x7F08009A
-			public const int mr_custom_control = 2131230874;
+			public const int mr_dialog_header_name = 2131230874;
 			
 			// aapt resource value: 0x7F08009B
-			public const int mr_default_control = 2131230875;
+			public const int mr_expandable_area = 2131230875;
 			
 			// aapt resource value: 0x7F08009C
-			public const int mr_dialog_area = 2131230876;
+			public const int mr_group_expand_collapse = 2131230876;
 			
 			// aapt resource value: 0x7F08009D
-			public const int mr_dialog_header_name = 2131230877;
+			public const int mr_group_volume_route_name = 2131230877;
 			
 			// aapt resource value: 0x7F08009E
-			public const int mr_expandable_area = 2131230878;
+			public const int mr_group_volume_slider = 2131230878;
 			
 			// aapt resource value: 0x7F08009F
-			public const int mr_group_expand_collapse = 2131230879;
+			public const int mr_media_main_control = 2131230879;
 			
 			// aapt resource value: 0x7F0800A0
-			public const int mr_group_volume_route_name = 2131230880;
+			public const int mr_name = 2131230880;
 			
 			// aapt resource value: 0x7F0800A1
-			public const int mr_group_volume_slider = 2131230881;
+			public const int mr_picker_close_button = 2131230881;
 			
 			// aapt resource value: 0x7F0800A2
-			public const int mr_media_main_control = 2131230882;
+			public const int mr_picker_list = 2131230882;
 			
 			// aapt resource value: 0x7F0800A3
-			public const int mr_name = 2131230883;
+			public const int mr_picker_route_icon = 2131230883;
 			
 			// aapt resource value: 0x7F0800A4
-			public const int mr_picker_close_button = 2131230884;
+			public const int mr_picker_route_name = 2131230884;
 			
 			// aapt resource value: 0x7F0800A5
-			public const int mr_picker_list = 2131230885;
+			public const int mr_playback_control = 2131230885;
 			
 			// aapt resource value: 0x7F0800A6
-			public const int mr_picker_route_icon = 2131230886;
+			public const int mr_title_bar = 2131230886;
 			
 			// aapt resource value: 0x7F0800A7
-			public const int mr_picker_route_name = 2131230887;
+			public const int mr_volume_control = 2131230887;
 			
 			// aapt resource value: 0x7F0800A8
-			public const int mr_playback_control = 2131230888;
+			public const int mr_volume_group_list = 2131230888;
 			
 			// aapt resource value: 0x7F0800A9
-			public const int mr_title_bar = 2131230889;
+			public const int mr_volume_item_icon = 2131230889;
 			
 			// aapt resource value: 0x7F0800AA
-			public const int mr_volume_control = 2131230890;
+			public const int mr_volume_slider = 2131230890;
 			
 			// aapt resource value: 0x7F0800AB
-			public const int mr_volume_group_list = 2131230891;
+			public const int mtrl_child_content_container = 2131230891;
 			
 			// aapt resource value: 0x7F0800AC
-			public const int mr_volume_item_icon = 2131230892;
+			public const int mtrl_internal_children_alpha_tag = 2131230892;
 			
 			// aapt resource value: 0x7F0800AD
-			public const int mr_volume_slider = 2131230893;
-			
-			// aapt resource value: 0x7F0800AE
-			public const int mtrl_child_content_container = 2131230894;
-			
-			// aapt resource value: 0x7F0800AF
-			public const int mtrl_internal_children_alpha_tag = 2131230895;
-			
-			// aapt resource value: 0x7F0800B0
-			public const int multiply = 2131230896;
+			public const int multiply = 2131230893;
 			
 			// aapt resource value: 0x7F080004
 			public const int MvvmCrossTagId = 2131230724;
@@ -27212,320 +25810,317 @@ namespace Android.UnitTests
 			// aapt resource value: 0x7F080006
 			public const int MyButton = 2131230726;
 			
+			// aapt resource value: 0x7F0800AE
+			public const int navigation_header_container = 2131230894;
+			
+			// aapt resource value: 0x7F0800AF
+			public const int never = 2131230895;
+			
+			// aapt resource value: 0x7F0800B0
+			public const int none = 2131230896;
+			
 			// aapt resource value: 0x7F0800B1
-			public const int navigation_header_container = 2131230897;
+			public const int normal = 2131230897;
 			
 			// aapt resource value: 0x7F0800B2
-			public const int never = 2131230898;
+			public const int notification_background = 2131230898;
 			
 			// aapt resource value: 0x7F0800B3
-			public const int none = 2131230899;
+			public const int notification_main_column = 2131230899;
 			
 			// aapt resource value: 0x7F0800B4
-			public const int normal = 2131230900;
+			public const int notification_main_column_container = 2131230900;
 			
 			// aapt resource value: 0x7F0800B5
-			public const int notification_background = 2131230901;
+			public const int outline = 2131230901;
 			
 			// aapt resource value: 0x7F0800B6
-			public const int notification_main_column = 2131230902;
+			public const int parallax = 2131230902;
 			
 			// aapt resource value: 0x7F0800B7
-			public const int notification_main_column_container = 2131230903;
+			public const int parentPanel = 2131230903;
 			
 			// aapt resource value: 0x7F0800B8
-			public const int outline = 2131230904;
+			public const int parent_matrix = 2131230904;
 			
 			// aapt resource value: 0x7F0800B9
-			public const int parallax = 2131230905;
+			public const int pin = 2131230905;
 			
 			// aapt resource value: 0x7F0800BA
-			public const int parentPanel = 2131230906;
+			public const int progress_circular = 2131230906;
 			
 			// aapt resource value: 0x7F0800BB
-			public const int parent_matrix = 2131230907;
+			public const int progress_horizontal = 2131230907;
 			
 			// aapt resource value: 0x7F0800BC
-			public const int pin = 2131230908;
+			public const int radio = 2131230908;
 			
 			// aapt resource value: 0x7F0800BD
-			public const int progress_circular = 2131230909;
+			public const int restart = 2131230909;
 			
 			// aapt resource value: 0x7F0800BE
-			public const int progress_horizontal = 2131230910;
+			public const int reverse = 2131230910;
 			
 			// aapt resource value: 0x7F0800BF
-			public const int radio = 2131230911;
+			public const int right = 2131230911;
 			
 			// aapt resource value: 0x7F0800C0
-			public const int restart = 2131230912;
+			public const int right_icon = 2131230912;
 			
 			// aapt resource value: 0x7F0800C1
-			public const int reverse = 2131230913;
+			public const int right_side = 2131230913;
 			
 			// aapt resource value: 0x7F0800C2
-			public const int right = 2131230914;
+			public const int satellite = 2131230914;
 			
 			// aapt resource value: 0x7F0800C3
-			public const int right_arrow = 2131230915;
+			public const int save_image_matrix = 2131230915;
 			
 			// aapt resource value: 0x7F0800C4
-			public const int right_icon = 2131230916;
+			public const int save_non_transition_alpha = 2131230916;
 			
 			// aapt resource value: 0x7F0800C5
-			public const int right_side = 2131230917;
+			public const int save_scale_type = 2131230917;
 			
 			// aapt resource value: 0x7F0800C6
-			public const int satellite = 2131230918;
+			public const int screen = 2131230918;
 			
 			// aapt resource value: 0x7F0800C7
-			public const int save_image_matrix = 2131230919;
-			
-			// aapt resource value: 0x7F0800C8
-			public const int save_non_transition_alpha = 2131230920;
-			
-			// aapt resource value: 0x7F0800C9
-			public const int save_scale_type = 2131230921;
-			
-			// aapt resource value: 0x7F0800CA
-			public const int screen = 2131230922;
+			public const int scroll = 2131230919;
 			
 			// aapt resource value: 0x7F0800CB
-			public const int scroll = 2131230923;
+			public const int scrollable = 2131230923;
 			
-			// aapt resource value: 0x7F0800CF
-			public const int scrollable = 2131230927;
+			// aapt resource value: 0x7F0800C8
+			public const int scrollIndicatorDown = 2131230920;
+			
+			// aapt resource value: 0x7F0800C9
+			public const int scrollIndicatorUp = 2131230921;
+			
+			// aapt resource value: 0x7F0800CA
+			public const int scrollView = 2131230922;
 			
 			// aapt resource value: 0x7F0800CC
-			public const int scrollIndicatorDown = 2131230924;
+			public const int search_badge = 2131230924;
 			
 			// aapt resource value: 0x7F0800CD
-			public const int scrollIndicatorUp = 2131230925;
+			public const int search_bar = 2131230925;
 			
 			// aapt resource value: 0x7F0800CE
-			public const int scrollView = 2131230926;
+			public const int search_button = 2131230926;
+			
+			// aapt resource value: 0x7F0800CF
+			public const int search_close_btn = 2131230927;
 			
 			// aapt resource value: 0x7F0800D0
-			public const int search_badge = 2131230928;
+			public const int search_edit_frame = 2131230928;
 			
 			// aapt resource value: 0x7F0800D1
-			public const int search_bar = 2131230929;
+			public const int search_go_btn = 2131230929;
 			
 			// aapt resource value: 0x7F0800D2
-			public const int search_button = 2131230930;
+			public const int search_mag_icon = 2131230930;
 			
 			// aapt resource value: 0x7F0800D3
-			public const int search_close_btn = 2131230931;
+			public const int search_plate = 2131230931;
 			
 			// aapt resource value: 0x7F0800D4
-			public const int search_edit_frame = 2131230932;
+			public const int search_src_text = 2131230932;
 			
 			// aapt resource value: 0x7F0800D5
-			public const int search_go_btn = 2131230933;
-			
-			// aapt resource value: 0x7F0800D6
-			public const int search_mag_icon = 2131230934;
+			public const int search_voice_btn = 2131230933;
 			
 			// aapt resource value: 0x7F0800D7
-			public const int search_plate = 2131230935;
+			public const int selected = 2131230935;
+			
+			// aapt resource value: 0x7F0800D6
+			public const int select_dialog_listview = 2131230934;
 			
 			// aapt resource value: 0x7F0800D8
-			public const int search_src_text = 2131230936;
+			public const int shellcontent_appbar = 2131230936;
 			
 			// aapt resource value: 0x7F0800D9
-			public const int search_voice_btn = 2131230937;
-			
-			// aapt resource value: 0x7F0800DB
-			public const int selected = 2131230939;
-			
-			// aapt resource value: 0x7F0800DA
-			public const int select_dialog_listview = 2131230938;
-			
-			// aapt resource value: 0x7F0800DC
-			public const int shellcontent_appbar = 2131230940;
-			
-			// aapt resource value: 0x7F0800DD
-			public const int shellcontent_toolbar = 2131230941;
+			public const int shellcontent_toolbar = 2131230937;
 			
 			// aapt resource value: 0x7F080007
 			public const int SHIFT = 2131230727;
 			
+			// aapt resource value: 0x7F0800DA
+			public const int shortcut = 2131230938;
+			
+			// aapt resource value: 0x7F0800DB
+			public const int showCustom = 2131230939;
+			
+			// aapt resource value: 0x7F0800DC
+			public const int showHome = 2131230940;
+			
+			// aapt resource value: 0x7F0800DD
+			public const int showTitle = 2131230941;
+			
 			// aapt resource value: 0x7F0800DE
-			public const int shortcut = 2131230942;
+			public const int smallLabel = 2131230942;
 			
 			// aapt resource value: 0x7F0800DF
-			public const int showCustom = 2131230943;
+			public const int snackbar_action = 2131230943;
 			
 			// aapt resource value: 0x7F0800E0
-			public const int showHome = 2131230944;
+			public const int snackbar_text = 2131230944;
 			
 			// aapt resource value: 0x7F0800E1
-			public const int showTitle = 2131230945;
+			public const int snap = 2131230945;
 			
 			// aapt resource value: 0x7F0800E2
-			public const int smallLabel = 2131230946;
+			public const int snapMargins = 2131230946;
 			
 			// aapt resource value: 0x7F0800E3
-			public const int snackbar_action = 2131230947;
+			public const int software = 2131230947;
 			
 			// aapt resource value: 0x7F0800E4
-			public const int snackbar_text = 2131230948;
+			public const int spacer = 2131230948;
 			
 			// aapt resource value: 0x7F0800E5
-			public const int snap = 2131230949;
+			public const int split_action_bar = 2131230949;
 			
 			// aapt resource value: 0x7F0800E6
-			public const int snapMargins = 2131230950;
+			public const int src_atop = 2131230950;
 			
 			// aapt resource value: 0x7F0800E7
-			public const int software = 2131230951;
+			public const int src_in = 2131230951;
 			
 			// aapt resource value: 0x7F0800E8
-			public const int spacer = 2131230952;
+			public const int src_over = 2131230952;
 			
 			// aapt resource value: 0x7F0800E9
-			public const int split_action_bar = 2131230953;
+			public const int standard = 2131230953;
 			
 			// aapt resource value: 0x7F0800EA
-			public const int src_atop = 2131230954;
+			public const int start = 2131230954;
 			
 			// aapt resource value: 0x7F0800EB
-			public const int src_in = 2131230955;
+			public const int status_bar_latest_event_content = 2131230955;
 			
 			// aapt resource value: 0x7F0800EC
-			public const int src_over = 2131230956;
+			public const int stretch = 2131230956;
 			
 			// aapt resource value: 0x7F0800ED
-			public const int standard = 2131230957;
+			public const int submenuarrow = 2131230957;
 			
 			// aapt resource value: 0x7F0800EE
-			public const int start = 2131230958;
-			
-			// aapt resource value: 0x7F0800EF
-			public const int status_bar_latest_event_content = 2131230959;
-			
-			// aapt resource value: 0x7F0800F0
-			public const int stretch = 2131230960;
-			
-			// aapt resource value: 0x7F0800F1
-			public const int submenuarrow = 2131230961;
-			
-			// aapt resource value: 0x7F0800F2
-			public const int submit_area = 2131230962;
+			public const int submit_area = 2131230958;
 			
 			// aapt resource value: 0x7F080008
 			public const int SYM = 2131230728;
 			
+			// aapt resource value: 0x7F0800EF
+			public const int tabMode = 2131230959;
+			
+			// aapt resource value: 0x7F0800F0
+			public const int tag_transition_group = 2131230960;
+			
+			// aapt resource value: 0x7F0800F1
+			public const int tag_unhandled_key_event_manager = 2131230961;
+			
+			// aapt resource value: 0x7F0800F2
+			public const int tag_unhandled_key_listeners = 2131230962;
+			
 			// aapt resource value: 0x7F0800F3
-			public const int tabMode = 2131230963;
+			public const int terrain = 2131230963;
 			
 			// aapt resource value: 0x7F0800F4
-			public const int tag_transition_group = 2131230964;
+			public const int text = 2131230964;
 			
 			// aapt resource value: 0x7F0800F5
-			public const int tag_unhandled_key_event_manager = 2131230965;
-			
-			// aapt resource value: 0x7F0800F6
-			public const int tag_unhandled_key_listeners = 2131230966;
-			
-			// aapt resource value: 0x7F0800F7
-			public const int terrain = 2131230967;
-			
-			// aapt resource value: 0x7F0800F8
-			public const int text = 2131230968;
-			
-			// aapt resource value: 0x7F0800F9
-			public const int text2 = 2131230969;
-			
-			// aapt resource value: 0x7F0800FF
-			public const int textinput_counter = 2131230975;
-			
-			// aapt resource value: 0x7F080100
-			public const int textinput_error = 2131230976;
-			
-			// aapt resource value: 0x7F080101
-			public const int textinput_helper_text = 2131230977;
-			
-			// aapt resource value: 0x7F0800FA
-			public const int textSpacerNoButtons = 2131230970;
+			public const int text2 = 2131230965;
 			
 			// aapt resource value: 0x7F0800FB
-			public const int textSpacerNoTitle = 2131230971;
+			public const int textinput_counter = 2131230971;
 			
 			// aapt resource value: 0x7F0800FC
-			public const int textStart = 2131230972;
+			public const int textinput_error = 2131230972;
 			
 			// aapt resource value: 0x7F0800FD
-			public const int textViewStatus = 2131230973;
+			public const int textinput_helper_text = 2131230973;
+			
+			// aapt resource value: 0x7F0800F6
+			public const int textSpacerNoButtons = 2131230966;
+			
+			// aapt resource value: 0x7F0800F7
+			public const int textSpacerNoTitle = 2131230967;
+			
+			// aapt resource value: 0x7F0800F8
+			public const int textStart = 2131230968;
+			
+			// aapt resource value: 0x7F0800F9
+			public const int textViewStatus = 2131230969;
+			
+			// aapt resource value: 0x7F0800FA
+			public const int text_input_password_toggle = 2131230970;
 			
 			// aapt resource value: 0x7F0800FE
-			public const int text_input_password_toggle = 2131230974;
+			public const int time = 2131230974;
+			
+			// aapt resource value: 0x7F0800FF
+			public const int title = 2131230975;
+			
+			// aapt resource value: 0x7F080100
+			public const int titleDividerNoCustom = 2131230976;
+			
+			// aapt resource value: 0x7F080101
+			public const int title_template = 2131230977;
 			
 			// aapt resource value: 0x7F080102
-			public const int time = 2131230978;
+			public const int top = 2131230978;
 			
 			// aapt resource value: 0x7F080103
-			public const int title = 2131230979;
+			public const int topPanel = 2131230979;
 			
 			// aapt resource value: 0x7F080104
-			public const int titleDividerNoCustom = 2131230980;
+			public const int touch_outside = 2131230980;
 			
 			// aapt resource value: 0x7F080105
-			public const int title_template = 2131230981;
+			public const int transition_current_scene = 2131230981;
 			
 			// aapt resource value: 0x7F080106
-			public const int top = 2131230982;
+			public const int transition_layout_save = 2131230982;
 			
 			// aapt resource value: 0x7F080107
-			public const int topPanel = 2131230983;
+			public const int transition_position = 2131230983;
 			
 			// aapt resource value: 0x7F080108
-			public const int touch_outside = 2131230984;
+			public const int transition_scene_layoutid_cache = 2131230984;
 			
 			// aapt resource value: 0x7F080109
-			public const int transition_current_scene = 2131230985;
+			public const int transition_transform = 2131230985;
 			
 			// aapt resource value: 0x7F08010A
-			public const int transition_layout_save = 2131230986;
+			public const int uniform = 2131230986;
 			
 			// aapt resource value: 0x7F08010B
-			public const int transition_position = 2131230987;
+			public const int unlabeled = 2131230987;
 			
 			// aapt resource value: 0x7F08010C
-			public const int transition_scene_layoutid_cache = 2131230988;
+			public const int up = 2131230988;
 			
 			// aapt resource value: 0x7F08010D
-			public const int transition_transform = 2131230989;
+			public const int useLogo = 2131230989;
 			
 			// aapt resource value: 0x7F08010E
-			public const int uniform = 2131230990;
+			public const int view_offset_helper = 2131230990;
 			
 			// aapt resource value: 0x7F08010F
-			public const int unlabeled = 2131230991;
+			public const int visible = 2131230991;
 			
 			// aapt resource value: 0x7F080110
-			public const int up = 2131230992;
+			public const int volume_item_container = 2131230992;
 			
 			// aapt resource value: 0x7F080111
-			public const int useLogo = 2131230993;
+			public const int wide = 2131230993;
 			
 			// aapt resource value: 0x7F080112
-			public const int view_offset_helper = 2131230994;
+			public const int withText = 2131230994;
 			
 			// aapt resource value: 0x7F080113
-			public const int visible = 2131230995;
-			
-			// aapt resource value: 0x7F080114
-			public const int volume_item_container = 2131230996;
-			
-			// aapt resource value: 0x7F080115
-			public const int wide = 2131230997;
-			
-			// aapt resource value: 0x7F080116
-			public const int withText = 2131230998;
-			
-			// aapt resource value: 0x7F080117
-			public const int wrap_content = 2131230999;
+			public const int wrap_content = 2131230995;
 			
 			static Id()
 			{
@@ -27738,187 +26333,172 @@ namespace Android.UnitTests
 			public const int browser_actions_context_menu_row = 2131427358;
 			
 			// aapt resource value: 0x7F0B001F
-			public const int calendar_pager_layout = 2131427359;
+			public const int design_bottom_navigation_item = 2131427359;
 			
 			// aapt resource value: 0x7F0B0020
-			public const int calendar_picker = 2131427360;
+			public const int design_bottom_sheet_dialog = 2131427360;
 			
 			// aapt resource value: 0x7F0B0021
-			public const int design_bottom_navigation_item = 2131427361;
+			public const int design_layout_snackbar = 2131427361;
 			
 			// aapt resource value: 0x7F0B0022
-			public const int design_bottom_sheet_dialog = 2131427362;
+			public const int design_layout_snackbar_include = 2131427362;
 			
 			// aapt resource value: 0x7F0B0023
-			public const int design_layout_snackbar = 2131427363;
+			public const int design_layout_tab_icon = 2131427363;
 			
 			// aapt resource value: 0x7F0B0024
-			public const int design_layout_snackbar_include = 2131427364;
+			public const int design_layout_tab_text = 2131427364;
 			
 			// aapt resource value: 0x7F0B0025
-			public const int design_layout_tab_icon = 2131427365;
+			public const int design_menu_item_action_area = 2131427365;
 			
 			// aapt resource value: 0x7F0B0026
-			public const int design_layout_tab_text = 2131427366;
+			public const int design_navigation_item = 2131427366;
 			
 			// aapt resource value: 0x7F0B0027
-			public const int design_menu_item_action_area = 2131427367;
+			public const int design_navigation_item_header = 2131427367;
 			
 			// aapt resource value: 0x7F0B0028
-			public const int design_navigation_item = 2131427368;
+			public const int design_navigation_item_separator = 2131427368;
 			
 			// aapt resource value: 0x7F0B0029
-			public const int design_navigation_item_header = 2131427369;
+			public const int design_navigation_item_subheader = 2131427369;
 			
 			// aapt resource value: 0x7F0B002A
-			public const int design_navigation_item_separator = 2131427370;
+			public const int design_navigation_menu = 2131427370;
 			
 			// aapt resource value: 0x7F0B002B
-			public const int design_navigation_item_subheader = 2131427371;
+			public const int design_navigation_menu_item = 2131427371;
 			
 			// aapt resource value: 0x7F0B002C
-			public const int design_navigation_menu = 2131427372;
+			public const int design_text_input_password_icon = 2131427372;
 			
 			// aapt resource value: 0x7F0B002D
-			public const int design_navigation_menu_item = 2131427373;
+			public const int FlyoutContent = 2131427373;
 			
 			// aapt resource value: 0x7F0B002E
-			public const int design_text_input_password_icon = 2131427374;
+			public const int loading = 2131427374;
 			
 			// aapt resource value: 0x7F0B002F
-			public const int dialog = 2131427375;
+			public const int loadingimage = 2131427375;
 			
 			// aapt resource value: 0x7F0B0030
-			public const int FlyoutContent = 2131427376;
+			public const int loadingprogress = 2131427376;
 			
 			// aapt resource value: 0x7F0B0031
-			public const int loading = 2131427377;
+			public const int Main = 2131427377;
 			
 			// aapt resource value: 0x7F0B0032
-			public const int loadingimage = 2131427378;
+			public const int mr_cast_dialog = 2131427378;
 			
 			// aapt resource value: 0x7F0B0033
-			public const int loadingprogress = 2131427379;
+			public const int mr_cast_group_item = 2131427379;
 			
 			// aapt resource value: 0x7F0B0034
-			public const int Main = 2131427380;
+			public const int mr_cast_group_volume_item = 2131427380;
 			
 			// aapt resource value: 0x7F0B0035
-			public const int month = 2131427381;
+			public const int mr_cast_media_metadata = 2131427381;
 			
 			// aapt resource value: 0x7F0B0036
-			public const int mr_cast_dialog = 2131427382;
+			public const int mr_cast_route_item = 2131427382;
 			
 			// aapt resource value: 0x7F0B0037
-			public const int mr_cast_group_item = 2131427383;
+			public const int mr_chooser_dialog = 2131427383;
 			
 			// aapt resource value: 0x7F0B0038
-			public const int mr_cast_group_volume_item = 2131427384;
+			public const int mr_chooser_list_item = 2131427384;
 			
 			// aapt resource value: 0x7F0B0039
-			public const int mr_cast_media_metadata = 2131427385;
+			public const int mr_controller_material_dialog_b = 2131427385;
 			
 			// aapt resource value: 0x7F0B003A
-			public const int mr_cast_route_item = 2131427386;
+			public const int mr_controller_volume_item = 2131427386;
 			
 			// aapt resource value: 0x7F0B003B
-			public const int mr_chooser_dialog = 2131427387;
+			public const int mr_dialog_header_item = 2131427387;
 			
 			// aapt resource value: 0x7F0B003C
-			public const int mr_chooser_list_item = 2131427388;
+			public const int mr_picker_dialog = 2131427388;
 			
 			// aapt resource value: 0x7F0B003D
-			public const int mr_controller_material_dialog_b = 2131427389;
+			public const int mr_picker_route_item = 2131427389;
 			
 			// aapt resource value: 0x7F0B003E
-			public const int mr_controller_volume_item = 2131427390;
+			public const int mr_playback_control = 2131427390;
 			
 			// aapt resource value: 0x7F0B003F
-			public const int mr_dialog_header_item = 2131427391;
+			public const int mr_volume_control = 2131427391;
 			
 			// aapt resource value: 0x7F0B0040
-			public const int mr_picker_dialog = 2131427392;
+			public const int mtrl_layout_snackbar = 2131427392;
 			
 			// aapt resource value: 0x7F0B0041
-			public const int mr_picker_route_item = 2131427393;
+			public const int mtrl_layout_snackbar_include = 2131427393;
 			
 			// aapt resource value: 0x7F0B0042
-			public const int mr_playback_control = 2131427394;
+			public const int notification_action = 2131427394;
 			
 			// aapt resource value: 0x7F0B0043
-			public const int mr_volume_control = 2131427395;
+			public const int notification_action_tombstone = 2131427395;
 			
 			// aapt resource value: 0x7F0B0044
-			public const int mtrl_layout_snackbar = 2131427396;
+			public const int notification_media_action = 2131427396;
 			
 			// aapt resource value: 0x7F0B0045
-			public const int mtrl_layout_snackbar_include = 2131427397;
+			public const int notification_media_cancel_action = 2131427397;
 			
 			// aapt resource value: 0x7F0B0046
-			public const int notification_action = 2131427398;
+			public const int notification_template_big_media = 2131427398;
 			
 			// aapt resource value: 0x7F0B0047
-			public const int notification_action_tombstone = 2131427399;
+			public const int notification_template_big_media_custom = 2131427399;
 			
 			// aapt resource value: 0x7F0B0048
-			public const int notification_media_action = 2131427400;
+			public const int notification_template_big_media_narrow = 2131427400;
 			
 			// aapt resource value: 0x7F0B0049
-			public const int notification_media_cancel_action = 2131427401;
+			public const int notification_template_big_media_narrow_custom = 2131427401;
 			
 			// aapt resource value: 0x7F0B004A
-			public const int notification_template_big_media = 2131427402;
+			public const int notification_template_custom_big = 2131427402;
 			
 			// aapt resource value: 0x7F0B004B
-			public const int notification_template_big_media_custom = 2131427403;
+			public const int notification_template_icon_group = 2131427403;
 			
 			// aapt resource value: 0x7F0B004C
-			public const int notification_template_big_media_narrow = 2131427404;
+			public const int notification_template_lines_media = 2131427404;
 			
 			// aapt resource value: 0x7F0B004D
-			public const int notification_template_big_media_narrow_custom = 2131427405;
+			public const int notification_template_media = 2131427405;
 			
 			// aapt resource value: 0x7F0B004E
-			public const int notification_template_custom_big = 2131427406;
+			public const int notification_template_media_custom = 2131427406;
 			
 			// aapt resource value: 0x7F0B004F
-			public const int notification_template_icon_group = 2131427407;
+			public const int notification_template_part_chronometer = 2131427407;
 			
 			// aapt resource value: 0x7F0B0050
-			public const int notification_template_lines_media = 2131427408;
+			public const int notification_template_part_time = 2131427408;
 			
 			// aapt resource value: 0x7F0B0051
-			public const int notification_template_media = 2131427409;
+			public const int RootLayout = 2131427409;
 			
 			// aapt resource value: 0x7F0B0052
-			public const int notification_template_media_custom = 2131427410;
+			public const int select_dialog_item_material = 2131427410;
 			
 			// aapt resource value: 0x7F0B0053
-			public const int notification_template_part_chronometer = 2131427411;
+			public const int select_dialog_multichoice_material = 2131427411;
 			
 			// aapt resource value: 0x7F0B0054
-			public const int notification_template_part_time = 2131427412;
+			public const int select_dialog_singlechoice_material = 2131427412;
 			
 			// aapt resource value: 0x7F0B0055
-			public const int RootLayout = 2131427413;
+			public const int ShellContent = 2131427413;
 			
 			// aapt resource value: 0x7F0B0056
-			public const int select_dialog_item_material = 2131427414;
-			
-			// aapt resource value: 0x7F0B0057
-			public const int select_dialog_multichoice_material = 2131427415;
-			
-			// aapt resource value: 0x7F0B0058
-			public const int select_dialog_singlechoice_material = 2131427416;
-			
-			// aapt resource value: 0x7F0B0059
-			public const int ShellContent = 2131427417;
-			
-			// aapt resource value: 0x7F0B005A
-			public const int support_simple_spinner_dropdown_item = 2131427418;
-			
-			// aapt resource value: 0x7F0B005B
-			public const int week = 2131427419;
+			public const int support_simple_spinner_dropdown_item = 2131427414;
 			
 			static Layout()
 			{
@@ -28136,136 +26716,124 @@ namespace Android.UnitTests
 			public const int common_signin_button_text_long = 2131558462;
 			
 			// aapt resource value: 0x7F0D003F
-			public const int day_name_format = 2131558463;
+			public const int fab_scroll_shrink_grow_autohide_behavior = 2131558463;
 			
 			// aapt resource value: 0x7F0D0040
-			public const int fab_scroll_shrink_grow_autohide_behavior = 2131558464;
+			public const int fab_transformation_scrim_behavior = 2131558464;
 			
 			// aapt resource value: 0x7F0D0041
-			public const int fab_transformation_scrim_behavior = 2131558465;
+			public const int fab_transformation_sheet_behavior = 2131558465;
 			
 			// aapt resource value: 0x7F0D0042
-			public const int fab_transformation_sheet_behavior = 2131558466;
-			
-			// aapt resource value: 0x7F0D0043
-			public const int full_date_format = 2131558467;
-			
-			// aapt resource value: 0x7F0D0044
-			public const int hello = 2131558468;
+			public const int hello = 2131558466;
 			
 			// aapt resource value: 0x7F0D0001
 			public const int Hello = 2131558401;
 			
+			// aapt resource value: 0x7F0D0043
+			public const int hide_bottom_view_on_scroll_behavior = 2131558467;
+			
+			// aapt resource value: 0x7F0D0044
+			public const int library_name = 2131558468;
+			
 			// aapt resource value: 0x7F0D0045
-			public const int hide_bottom_view_on_scroll_behavior = 2131558469;
+			public const int mr_button_content_description = 2131558469;
 			
 			// aapt resource value: 0x7F0D0046
-			public const int invalid_date = 2131558470;
+			public const int mr_cast_button_connected = 2131558470;
 			
 			// aapt resource value: 0x7F0D0047
-			public const int library_name = 2131558471;
+			public const int mr_cast_button_connecting = 2131558471;
 			
 			// aapt resource value: 0x7F0D0048
-			public const int month_name_format = 2131558472;
+			public const int mr_cast_button_disconnected = 2131558472;
 			
 			// aapt resource value: 0x7F0D0049
-			public const int mr_button_content_description = 2131558473;
+			public const int mr_cast_dialog_title_view_placeholder = 2131558473;
 			
 			// aapt resource value: 0x7F0D004A
-			public const int mr_cast_button_connected = 2131558474;
+			public const int mr_chooser_searching = 2131558474;
 			
 			// aapt resource value: 0x7F0D004B
-			public const int mr_cast_button_connecting = 2131558475;
+			public const int mr_chooser_title = 2131558475;
 			
 			// aapt resource value: 0x7F0D004C
-			public const int mr_cast_button_disconnected = 2131558476;
+			public const int mr_controller_album_art = 2131558476;
 			
 			// aapt resource value: 0x7F0D004D
-			public const int mr_cast_dialog_title_view_placeholder = 2131558477;
+			public const int mr_controller_casting_screen = 2131558477;
 			
 			// aapt resource value: 0x7F0D004E
-			public const int mr_chooser_searching = 2131558478;
+			public const int mr_controller_close_description = 2131558478;
 			
 			// aapt resource value: 0x7F0D004F
-			public const int mr_chooser_title = 2131558479;
+			public const int mr_controller_collapse_group = 2131558479;
 			
 			// aapt resource value: 0x7F0D0050
-			public const int mr_controller_album_art = 2131558480;
+			public const int mr_controller_disconnect = 2131558480;
 			
 			// aapt resource value: 0x7F0D0051
-			public const int mr_controller_casting_screen = 2131558481;
+			public const int mr_controller_expand_group = 2131558481;
 			
 			// aapt resource value: 0x7F0D0052
-			public const int mr_controller_close_description = 2131558482;
+			public const int mr_controller_no_info_available = 2131558482;
 			
 			// aapt resource value: 0x7F0D0053
-			public const int mr_controller_collapse_group = 2131558483;
+			public const int mr_controller_no_media_selected = 2131558483;
 			
 			// aapt resource value: 0x7F0D0054
-			public const int mr_controller_disconnect = 2131558484;
+			public const int mr_controller_pause = 2131558484;
 			
 			// aapt resource value: 0x7F0D0055
-			public const int mr_controller_expand_group = 2131558485;
+			public const int mr_controller_play = 2131558485;
 			
 			// aapt resource value: 0x7F0D0056
-			public const int mr_controller_no_info_available = 2131558486;
+			public const int mr_controller_stop = 2131558486;
 			
 			// aapt resource value: 0x7F0D0057
-			public const int mr_controller_no_media_selected = 2131558487;
+			public const int mr_controller_stop_casting = 2131558487;
 			
 			// aapt resource value: 0x7F0D0058
-			public const int mr_controller_pause = 2131558488;
+			public const int mr_controller_volume_slider = 2131558488;
 			
 			// aapt resource value: 0x7F0D0059
-			public const int mr_controller_play = 2131558489;
+			public const int mr_dialog_device_header = 2131558489;
 			
 			// aapt resource value: 0x7F0D005A
-			public const int mr_controller_stop = 2131558490;
+			public const int mr_dialog_route_header = 2131558490;
 			
 			// aapt resource value: 0x7F0D005B
-			public const int mr_controller_stop_casting = 2131558491;
+			public const int mr_system_route_name = 2131558491;
 			
 			// aapt resource value: 0x7F0D005C
-			public const int mr_controller_volume_slider = 2131558492;
+			public const int mr_user_route_category_name = 2131558492;
 			
 			// aapt resource value: 0x7F0D005D
-			public const int mr_dialog_device_header = 2131558493;
+			public const int mtrl_chip_close_icon_content_description = 2131558493;
 			
 			// aapt resource value: 0x7F0D005E
-			public const int mr_dialog_route_header = 2131558494;
+			public const int password_toggle_content_description = 2131558494;
 			
 			// aapt resource value: 0x7F0D005F
-			public const int mr_system_route_name = 2131558495;
+			public const int path_password_eye = 2131558495;
 			
 			// aapt resource value: 0x7F0D0060
-			public const int mr_user_route_category_name = 2131558496;
+			public const int path_password_eye_mask_strike_through = 2131558496;
 			
 			// aapt resource value: 0x7F0D0061
-			public const int mtrl_chip_close_icon_content_description = 2131558497;
+			public const int path_password_eye_mask_visible = 2131558497;
 			
 			// aapt resource value: 0x7F0D0062
-			public const int password_toggle_content_description = 2131558498;
+			public const int path_password_strike_through = 2131558498;
 			
 			// aapt resource value: 0x7F0D0063
-			public const int path_password_eye = 2131558499;
+			public const int search_menu_title = 2131558499;
 			
 			// aapt resource value: 0x7F0D0064
-			public const int path_password_eye_mask_strike_through = 2131558500;
+			public const int status_bar_notification_info_overflow = 2131558500;
 			
 			// aapt resource value: 0x7F0D0065
-			public const int path_password_eye_mask_visible = 2131558501;
-			
-			// aapt resource value: 0x7F0D0066
-			public const int path_password_strike_through = 2131558502;
-			
-			// aapt resource value: 0x7F0D0067
-			public const int search_menu_title = 2131558503;
-			
-			// aapt resource value: 0x7F0D0068
-			public const int status_bar_notification_info_overflow = 2131558504;
-			
-			// aapt resource value: 0x7F0D0069
-			public const int view_scroll_translation_autohide_behavior = 2131558505;
+			public const int view_scroll_translation_autohide_behavior = 2131558501;
 			
 			static String()
 			{
@@ -28863,979 +27431,967 @@ namespace Android.UnitTests
 			public const int Base_Widget_MaterialComponents_TextInputLayout = 2131624129;
 			
 			// aapt resource value: 0x7F0E00C2
-			public const int CalendarCell = 2131624130;
+			public const int CardView = 2131624130;
 			
 			// aapt resource value: 0x7F0E00C3
-			public const int CalendarCell_CalendarDate = 2131624131;
+			public const int CardView_Dark = 2131624131;
 			
 			// aapt resource value: 0x7F0E00C4
-			public const int CalendarCell_DayHeader = 2131624132;
-			
-			// aapt resource value: 0x7F0E00C5
-			public const int CalendarTitle = 2131624133;
-			
-			// aapt resource value: 0x7F0E00C6
-			public const int CardView = 2131624134;
-			
-			// aapt resource value: 0x7F0E00C7
-			public const int CardView_Dark = 2131624135;
-			
-			// aapt resource value: 0x7F0E00C8
-			public const int CardView_Light = 2131624136;
-			
-			// aapt resource value: 0x7F0E0206
-			public const int collectionViewStyle = 2131624454;
-			
-			// aapt resource value: 0x7F0E00C9
-			public const int Platform_AppCompat = 2131624137;
-			
-			// aapt resource value: 0x7F0E00CA
-			public const int Platform_AppCompat_Light = 2131624138;
-			
-			// aapt resource value: 0x7F0E00CB
-			public const int Platform_MaterialComponents = 2131624139;
-			
-			// aapt resource value: 0x7F0E00CC
-			public const int Platform_MaterialComponents_Dialog = 2131624140;
-			
-			// aapt resource value: 0x7F0E00CD
-			public const int Platform_MaterialComponents_Light = 2131624141;
-			
-			// aapt resource value: 0x7F0E00CE
-			public const int Platform_MaterialComponents_Light_Dialog = 2131624142;
-			
-			// aapt resource value: 0x7F0E00CF
-			public const int Platform_ThemeOverlay_AppCompat = 2131624143;
-			
-			// aapt resource value: 0x7F0E00D0
-			public const int Platform_ThemeOverlay_AppCompat_Dark = 2131624144;
-			
-			// aapt resource value: 0x7F0E00D1
-			public const int Platform_ThemeOverlay_AppCompat_Light = 2131624145;
-			
-			// aapt resource value: 0x7F0E00D2
-			public const int Platform_V21_AppCompat = 2131624146;
-			
-			// aapt resource value: 0x7F0E00D3
-			public const int Platform_V21_AppCompat_Light = 2131624147;
-			
-			// aapt resource value: 0x7F0E00D4
-			public const int Platform_V25_AppCompat = 2131624148;
-			
-			// aapt resource value: 0x7F0E00D5
-			public const int Platform_V25_AppCompat_Light = 2131624149;
-			
-			// aapt resource value: 0x7F0E00D6
-			public const int Platform_Widget_AppCompat_Spinner = 2131624150;
-			
-			// aapt resource value: 0x7F0E00D7
-			public const int RtlOverlay_DialogWindowTitle_AppCompat = 2131624151;
-			
-			// aapt resource value: 0x7F0E00D8
-			public const int RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = 2131624152;
-			
-			// aapt resource value: 0x7F0E00D9
-			public const int RtlOverlay_Widget_AppCompat_DialogTitle_Icon = 2131624153;
-			
-			// aapt resource value: 0x7F0E00DA
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem = 2131624154;
-			
-			// aapt resource value: 0x7F0E00DB
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = 2131624155;
-			
-			// aapt resource value: 0x7F0E00DC
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut = 2131624156;
-			
-			// aapt resource value: 0x7F0E00DD
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow = 2131624157;
-			
-			// aapt resource value: 0x7F0E00DE
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = 2131624158;
-			
-			// aapt resource value: 0x7F0E00DF
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Title = 2131624159;
-			
-			// aapt resource value: 0x7F0E00E5
-			public const int RtlOverlay_Widget_AppCompat_SearchView_MagIcon = 2131624165;
-			
-			// aapt resource value: 0x7F0E00E0
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown = 2131624160;
-			
-			// aapt resource value: 0x7F0E00E1
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = 2131624161;
-			
-			// aapt resource value: 0x7F0E00E2
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = 2131624162;
-			
-			// aapt resource value: 0x7F0E00E3
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Query = 2131624163;
-			
-			// aapt resource value: 0x7F0E00E4
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Text = 2131624164;
-			
-			// aapt resource value: 0x7F0E00E6
-			public const int RtlUnderlay_Widget_AppCompat_ActionButton = 2131624166;
-			
-			// aapt resource value: 0x7F0E00E7
-			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131624167;
-			
-			// aapt resource value: 0x7F0E00E8
-			public const int TextAppearance_AppCompat = 2131624168;
-			
-			// aapt resource value: 0x7F0E00E9
-			public const int TextAppearance_AppCompat_Body1 = 2131624169;
-			
-			// aapt resource value: 0x7F0E00EA
-			public const int TextAppearance_AppCompat_Body2 = 2131624170;
-			
-			// aapt resource value: 0x7F0E00EB
-			public const int TextAppearance_AppCompat_Button = 2131624171;
-			
-			// aapt resource value: 0x7F0E00EC
-			public const int TextAppearance_AppCompat_Caption = 2131624172;
-			
-			// aapt resource value: 0x7F0E00ED
-			public const int TextAppearance_AppCompat_Display1 = 2131624173;
-			
-			// aapt resource value: 0x7F0E00EE
-			public const int TextAppearance_AppCompat_Display2 = 2131624174;
-			
-			// aapt resource value: 0x7F0E00EF
-			public const int TextAppearance_AppCompat_Display3 = 2131624175;
-			
-			// aapt resource value: 0x7F0E00F0
-			public const int TextAppearance_AppCompat_Display4 = 2131624176;
-			
-			// aapt resource value: 0x7F0E00F1
-			public const int TextAppearance_AppCompat_Headline = 2131624177;
-			
-			// aapt resource value: 0x7F0E00F2
-			public const int TextAppearance_AppCompat_Inverse = 2131624178;
-			
-			// aapt resource value: 0x7F0E00F3
-			public const int TextAppearance_AppCompat_Large = 2131624179;
-			
-			// aapt resource value: 0x7F0E00F4
-			public const int TextAppearance_AppCompat_Large_Inverse = 2131624180;
-			
-			// aapt resource value: 0x7F0E00F5
-			public const int TextAppearance_AppCompat_Light_SearchResult_Subtitle = 2131624181;
-			
-			// aapt resource value: 0x7F0E00F6
-			public const int TextAppearance_AppCompat_Light_SearchResult_Title = 2131624182;
-			
-			// aapt resource value: 0x7F0E00F7
-			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131624183;
-			
-			// aapt resource value: 0x7F0E00F8
-			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131624184;
-			
-			// aapt resource value: 0x7F0E00F9
-			public const int TextAppearance_AppCompat_Medium = 2131624185;
-			
-			// aapt resource value: 0x7F0E00FA
-			public const int TextAppearance_AppCompat_Medium_Inverse = 2131624186;
-			
-			// aapt resource value: 0x7F0E00FB
-			public const int TextAppearance_AppCompat_Menu = 2131624187;
-			
-			// aapt resource value: 0x7F0E00FC
-			public const int TextAppearance_AppCompat_SearchResult_Subtitle = 2131624188;
-			
-			// aapt resource value: 0x7F0E00FD
-			public const int TextAppearance_AppCompat_SearchResult_Title = 2131624189;
-			
-			// aapt resource value: 0x7F0E00FE
-			public const int TextAppearance_AppCompat_Small = 2131624190;
-			
-			// aapt resource value: 0x7F0E00FF
-			public const int TextAppearance_AppCompat_Small_Inverse = 2131624191;
-			
-			// aapt resource value: 0x7F0E0100
-			public const int TextAppearance_AppCompat_Subhead = 2131624192;
-			
-			// aapt resource value: 0x7F0E0101
-			public const int TextAppearance_AppCompat_Subhead_Inverse = 2131624193;
-			
-			// aapt resource value: 0x7F0E0102
-			public const int TextAppearance_AppCompat_Title = 2131624194;
-			
-			// aapt resource value: 0x7F0E0103
-			public const int TextAppearance_AppCompat_Title_Inverse = 2131624195;
-			
-			// aapt resource value: 0x7F0E0104
-			public const int TextAppearance_AppCompat_Tooltip = 2131624196;
-			
-			// aapt resource value: 0x7F0E0105
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131624197;
-			
-			// aapt resource value: 0x7F0E0106
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131624198;
-			
-			// aapt resource value: 0x7F0E0107
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131624199;
-			
-			// aapt resource value: 0x7F0E0108
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Title = 2131624200;
-			
-			// aapt resource value: 0x7F0E0109
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131624201;
-			
-			// aapt resource value: 0x7F0E010A
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131624202;
-			
-			// aapt resource value: 0x7F0E010B
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = 2131624203;
-			
-			// aapt resource value: 0x7F0E010C
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Title = 2131624204;
-			
-			// aapt resource value: 0x7F0E010D
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = 2131624205;
-			
-			// aapt resource value: 0x7F0E010E
-			public const int TextAppearance_AppCompat_Widget_Button = 2131624206;
-			
-			// aapt resource value: 0x7F0E010F
-			public const int TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131624207;
-			
-			// aapt resource value: 0x7F0E0110
-			public const int TextAppearance_AppCompat_Widget_Button_Colored = 2131624208;
-			
-			// aapt resource value: 0x7F0E0111
-			public const int TextAppearance_AppCompat_Widget_Button_Inverse = 2131624209;
-			
-			// aapt resource value: 0x7F0E0112
-			public const int TextAppearance_AppCompat_Widget_DropDownItem = 2131624210;
-			
-			// aapt resource value: 0x7F0E0113
-			public const int TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131624211;
-			
-			// aapt resource value: 0x7F0E0114
-			public const int TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131624212;
-			
-			// aapt resource value: 0x7F0E0115
-			public const int TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131624213;
-			
-			// aapt resource value: 0x7F0E0116
-			public const int TextAppearance_AppCompat_Widget_Switch = 2131624214;
-			
-			// aapt resource value: 0x7F0E0117
-			public const int TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131624215;
-			
-			// aapt resource value: 0x7F0E0118
-			public const int TextAppearance_Compat_Notification = 2131624216;
-			
-			// aapt resource value: 0x7F0E0119
-			public const int TextAppearance_Compat_Notification_Info = 2131624217;
-			
-			// aapt resource value: 0x7F0E011A
-			public const int TextAppearance_Compat_Notification_Info_Media = 2131624218;
-			
-			// aapt resource value: 0x7F0E011B
-			public const int TextAppearance_Compat_Notification_Line2 = 2131624219;
-			
-			// aapt resource value: 0x7F0E011C
-			public const int TextAppearance_Compat_Notification_Line2_Media = 2131624220;
-			
-			// aapt resource value: 0x7F0E011D
-			public const int TextAppearance_Compat_Notification_Media = 2131624221;
-			
-			// aapt resource value: 0x7F0E011E
-			public const int TextAppearance_Compat_Notification_Time = 2131624222;
-			
-			// aapt resource value: 0x7F0E011F
-			public const int TextAppearance_Compat_Notification_Time_Media = 2131624223;
-			
-			// aapt resource value: 0x7F0E0120
-			public const int TextAppearance_Compat_Notification_Title = 2131624224;
-			
-			// aapt resource value: 0x7F0E0121
-			public const int TextAppearance_Compat_Notification_Title_Media = 2131624225;
-			
-			// aapt resource value: 0x7F0E0122
-			public const int TextAppearance_Design_CollapsingToolbar_Expanded = 2131624226;
-			
-			// aapt resource value: 0x7F0E0123
-			public const int TextAppearance_Design_Counter = 2131624227;
-			
-			// aapt resource value: 0x7F0E0124
-			public const int TextAppearance_Design_Counter_Overflow = 2131624228;
-			
-			// aapt resource value: 0x7F0E0125
-			public const int TextAppearance_Design_Error = 2131624229;
-			
-			// aapt resource value: 0x7F0E0126
-			public const int TextAppearance_Design_HelperText = 2131624230;
-			
-			// aapt resource value: 0x7F0E0127
-			public const int TextAppearance_Design_Hint = 2131624231;
-			
-			// aapt resource value: 0x7F0E0128
-			public const int TextAppearance_Design_Snackbar_Message = 2131624232;
-			
-			// aapt resource value: 0x7F0E0129
-			public const int TextAppearance_Design_Tab = 2131624233;
-			
-			// aapt resource value: 0x7F0E012A
-			public const int TextAppearance_MaterialComponents_Body1 = 2131624234;
-			
-			// aapt resource value: 0x7F0E012B
-			public const int TextAppearance_MaterialComponents_Body2 = 2131624235;
-			
-			// aapt resource value: 0x7F0E012C
-			public const int TextAppearance_MaterialComponents_Button = 2131624236;
-			
-			// aapt resource value: 0x7F0E012D
-			public const int TextAppearance_MaterialComponents_Caption = 2131624237;
-			
-			// aapt resource value: 0x7F0E012E
-			public const int TextAppearance_MaterialComponents_Chip = 2131624238;
-			
-			// aapt resource value: 0x7F0E012F
-			public const int TextAppearance_MaterialComponents_Headline1 = 2131624239;
-			
-			// aapt resource value: 0x7F0E0130
-			public const int TextAppearance_MaterialComponents_Headline2 = 2131624240;
-			
-			// aapt resource value: 0x7F0E0131
-			public const int TextAppearance_MaterialComponents_Headline3 = 2131624241;
-			
-			// aapt resource value: 0x7F0E0132
-			public const int TextAppearance_MaterialComponents_Headline4 = 2131624242;
-			
-			// aapt resource value: 0x7F0E0133
-			public const int TextAppearance_MaterialComponents_Headline5 = 2131624243;
-			
-			// aapt resource value: 0x7F0E0134
-			public const int TextAppearance_MaterialComponents_Headline6 = 2131624244;
-			
-			// aapt resource value: 0x7F0E0135
-			public const int TextAppearance_MaterialComponents_Overline = 2131624245;
-			
-			// aapt resource value: 0x7F0E0136
-			public const int TextAppearance_MaterialComponents_Subtitle1 = 2131624246;
-			
-			// aapt resource value: 0x7F0E0137
-			public const int TextAppearance_MaterialComponents_Subtitle2 = 2131624247;
-			
-			// aapt resource value: 0x7F0E0138
-			public const int TextAppearance_MaterialComponents_Tab = 2131624248;
-			
-			// aapt resource value: 0x7F0E0139
-			public const int TextAppearance_MediaRouter_PrimaryText = 2131624249;
-			
-			// aapt resource value: 0x7F0E013A
-			public const int TextAppearance_MediaRouter_SecondaryText = 2131624250;
-			
-			// aapt resource value: 0x7F0E013B
-			public const int TextAppearance_MediaRouter_Title = 2131624251;
-			
-			// aapt resource value: 0x7F0E013C
-			public const int TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131624252;
-			
-			// aapt resource value: 0x7F0E013D
-			public const int TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131624253;
-			
-			// aapt resource value: 0x7F0E013E
-			public const int TextAppearance_Widget_AppCompat_Toolbar_Title = 2131624254;
-			
-			// aapt resource value: 0x7F0E013F
-			public const int Theme = 2131624255;
-			
-			// aapt resource value: 0x7F0E0176
-			public const int ThemeOverlay_AppCompat = 2131624310;
-			
-			// aapt resource value: 0x7F0E0177
-			public const int ThemeOverlay_AppCompat_ActionBar = 2131624311;
-			
-			// aapt resource value: 0x7F0E0178
-			public const int ThemeOverlay_AppCompat_Dark = 2131624312;
-			
-			// aapt resource value: 0x7F0E0179
-			public const int ThemeOverlay_AppCompat_Dark_ActionBar = 2131624313;
-			
-			// aapt resource value: 0x7F0E017A
-			public const int ThemeOverlay_AppCompat_Dialog = 2131624314;
-			
-			// aapt resource value: 0x7F0E017B
-			public const int ThemeOverlay_AppCompat_Dialog_Alert = 2131624315;
-			
-			// aapt resource value: 0x7F0E017C
-			public const int ThemeOverlay_AppCompat_Light = 2131624316;
-			
-			// aapt resource value: 0x7F0E017D
-			public const int ThemeOverlay_MaterialComponents = 2131624317;
-			
-			// aapt resource value: 0x7F0E017E
-			public const int ThemeOverlay_MaterialComponents_ActionBar = 2131624318;
-			
-			// aapt resource value: 0x7F0E017F
-			public const int ThemeOverlay_MaterialComponents_Dark = 2131624319;
-			
-			// aapt resource value: 0x7F0E0180
-			public const int ThemeOverlay_MaterialComponents_Dark_ActionBar = 2131624320;
-			
-			// aapt resource value: 0x7F0E0181
-			public const int ThemeOverlay_MaterialComponents_Dialog = 2131624321;
-			
-			// aapt resource value: 0x7F0E0182
-			public const int ThemeOverlay_MaterialComponents_Dialog_Alert = 2131624322;
-			
-			// aapt resource value: 0x7F0E0183
-			public const int ThemeOverlay_MaterialComponents_Light = 2131624323;
-			
-			// aapt resource value: 0x7F0E0184
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText = 2131624324;
-			
-			// aapt resource value: 0x7F0E0185
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = 2131624325;
-			
-			// aapt resource value: 0x7F0E0186
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131624326;
-			
-			// aapt resource value: 0x7F0E0187
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = 2131624327;
-			
-			// aapt resource value: 0x7F0E0188
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131624328;
-			
-			// aapt resource value: 0x7F0E0189
-			public const int ThemeOverlay_MediaRouter_Dark = 2131624329;
-			
-			// aapt resource value: 0x7F0E018A
-			public const int ThemeOverlay_MediaRouter_Light = 2131624330;
-			
-			// aapt resource value: 0x7F0E0140
-			public const int Theme_AppCompat = 2131624256;
-			
-			// aapt resource value: 0x7F0E0141
-			public const int Theme_AppCompat_CompactMenu = 2131624257;
-			
-			// aapt resource value: 0x7F0E0142
-			public const int Theme_AppCompat_DayNight = 2131624258;
-			
-			// aapt resource value: 0x7F0E0143
-			public const int Theme_AppCompat_DayNight_DarkActionBar = 2131624259;
-			
-			// aapt resource value: 0x7F0E0144
-			public const int Theme_AppCompat_DayNight_Dialog = 2131624260;
-			
-			// aapt resource value: 0x7F0E0147
-			public const int Theme_AppCompat_DayNight_DialogWhenLarge = 2131624263;
-			
-			// aapt resource value: 0x7F0E0145
-			public const int Theme_AppCompat_DayNight_Dialog_Alert = 2131624261;
-			
-			// aapt resource value: 0x7F0E0146
-			public const int Theme_AppCompat_DayNight_Dialog_MinWidth = 2131624262;
-			
-			// aapt resource value: 0x7F0E0148
-			public const int Theme_AppCompat_DayNight_NoActionBar = 2131624264;
-			
-			// aapt resource value: 0x7F0E0149
-			public const int Theme_AppCompat_Dialog = 2131624265;
-			
-			// aapt resource value: 0x7F0E014C
-			public const int Theme_AppCompat_DialogWhenLarge = 2131624268;
-			
-			// aapt resource value: 0x7F0E014A
-			public const int Theme_AppCompat_Dialog_Alert = 2131624266;
-			
-			// aapt resource value: 0x7F0E014B
-			public const int Theme_AppCompat_Dialog_MinWidth = 2131624267;
-			
-			// aapt resource value: 0x7F0E014D
-			public const int Theme_AppCompat_Light = 2131624269;
-			
-			// aapt resource value: 0x7F0E014E
-			public const int Theme_AppCompat_Light_DarkActionBar = 2131624270;
-			
-			// aapt resource value: 0x7F0E014F
-			public const int Theme_AppCompat_Light_Dialog = 2131624271;
-			
-			// aapt resource value: 0x7F0E0152
-			public const int Theme_AppCompat_Light_DialogWhenLarge = 2131624274;
-			
-			// aapt resource value: 0x7F0E0150
-			public const int Theme_AppCompat_Light_Dialog_Alert = 2131624272;
-			
-			// aapt resource value: 0x7F0E0151
-			public const int Theme_AppCompat_Light_Dialog_MinWidth = 2131624273;
-			
-			// aapt resource value: 0x7F0E0153
-			public const int Theme_AppCompat_Light_NoActionBar = 2131624275;
-			
-			// aapt resource value: 0x7F0E0154
-			public const int Theme_AppCompat_NoActionBar = 2131624276;
-			
-			// aapt resource value: 0x7F0E0155
-			public const int Theme_Base = 2131624277;
-			
-			// aapt resource value: 0x7F0E0156
-			public const int Theme_Design = 2131624278;
-			
-			// aapt resource value: 0x7F0E0157
-			public const int Theme_Design_BottomSheetDialog = 2131624279;
-			
-			// aapt resource value: 0x7F0E0158
-			public const int Theme_Design_Light = 2131624280;
-			
-			// aapt resource value: 0x7F0E0159
-			public const int Theme_Design_Light_BottomSheetDialog = 2131624281;
-			
-			// aapt resource value: 0x7F0E015A
-			public const int Theme_Design_Light_NoActionBar = 2131624282;
-			
-			// aapt resource value: 0x7F0E015B
-			public const int Theme_Design_NoActionBar = 2131624283;
-			
-			// aapt resource value: 0x7F0E015C
-			public const int Theme_MaterialComponents = 2131624284;
-			
-			// aapt resource value: 0x7F0E015D
-			public const int Theme_MaterialComponents_BottomSheetDialog = 2131624285;
-			
-			// aapt resource value: 0x7F0E015E
-			public const int Theme_MaterialComponents_Bridge = 2131624286;
-			
-			// aapt resource value: 0x7F0E015F
-			public const int Theme_MaterialComponents_CompactMenu = 2131624287;
-			
-			// aapt resource value: 0x7F0E0160
-			public const int Theme_MaterialComponents_Dialog = 2131624288;
-			
-			// aapt resource value: 0x7F0E0163
-			public const int Theme_MaterialComponents_DialogWhenLarge = 2131624291;
-			
-			// aapt resource value: 0x7F0E0161
-			public const int Theme_MaterialComponents_Dialog_Alert = 2131624289;
-			
-			// aapt resource value: 0x7F0E0162
-			public const int Theme_MaterialComponents_Dialog_MinWidth = 2131624290;
-			
-			// aapt resource value: 0x7F0E0164
-			public const int Theme_MaterialComponents_Light = 2131624292;
-			
-			// aapt resource value: 0x7F0E0165
-			public const int Theme_MaterialComponents_Light_BottomSheetDialog = 2131624293;
-			
-			// aapt resource value: 0x7F0E0166
-			public const int Theme_MaterialComponents_Light_Bridge = 2131624294;
-			
-			// aapt resource value: 0x7F0E0167
-			public const int Theme_MaterialComponents_Light_DarkActionBar = 2131624295;
-			
-			// aapt resource value: 0x7F0E0168
-			public const int Theme_MaterialComponents_Light_DarkActionBar_Bridge = 2131624296;
-			
-			// aapt resource value: 0x7F0E0169
-			public const int Theme_MaterialComponents_Light_Dialog = 2131624297;
-			
-			// aapt resource value: 0x7F0E016C
-			public const int Theme_MaterialComponents_Light_DialogWhenLarge = 2131624300;
-			
-			// aapt resource value: 0x7F0E016A
-			public const int Theme_MaterialComponents_Light_Dialog_Alert = 2131624298;
-			
-			// aapt resource value: 0x7F0E016B
-			public const int Theme_MaterialComponents_Light_Dialog_MinWidth = 2131624299;
-			
-			// aapt resource value: 0x7F0E016D
-			public const int Theme_MaterialComponents_Light_NoActionBar = 2131624301;
-			
-			// aapt resource value: 0x7F0E016E
-			public const int Theme_MaterialComponents_Light_NoActionBar_Bridge = 2131624302;
-			
-			// aapt resource value: 0x7F0E016F
-			public const int Theme_MaterialComponents_NoActionBar = 2131624303;
-			
-			// aapt resource value: 0x7F0E0170
-			public const int Theme_MaterialComponents_NoActionBar_Bridge = 2131624304;
-			
-			// aapt resource value: 0x7F0E0171
-			public const int Theme_MediaRouter = 2131624305;
-			
-			// aapt resource value: 0x7F0E0172
-			public const int Theme_MediaRouter_Light = 2131624306;
-			
-			// aapt resource value: 0x7F0E0174
-			public const int Theme_MediaRouter_LightControlPanel = 2131624308;
-			
-			// aapt resource value: 0x7F0E0173
-			public const int Theme_MediaRouter_Light_DarkControlPanel = 2131624307;
-			
-			// aapt resource value: 0x7F0E0175
-			public const int Theme_Splash = 2131624309;
-			
-			// aapt resource value: 0x7F0E018B
-			public const int Widget_AppCompat_ActionBar = 2131624331;
-			
-			// aapt resource value: 0x7F0E018C
-			public const int Widget_AppCompat_ActionBar_Solid = 2131624332;
-			
-			// aapt resource value: 0x7F0E018D
-			public const int Widget_AppCompat_ActionBar_TabBar = 2131624333;
-			
-			// aapt resource value: 0x7F0E018E
-			public const int Widget_AppCompat_ActionBar_TabText = 2131624334;
-			
-			// aapt resource value: 0x7F0E018F
-			public const int Widget_AppCompat_ActionBar_TabView = 2131624335;
-			
-			// aapt resource value: 0x7F0E0190
-			public const int Widget_AppCompat_ActionButton = 2131624336;
-			
-			// aapt resource value: 0x7F0E0191
-			public const int Widget_AppCompat_ActionButton_CloseMode = 2131624337;
-			
-			// aapt resource value: 0x7F0E0192
-			public const int Widget_AppCompat_ActionButton_Overflow = 2131624338;
-			
-			// aapt resource value: 0x7F0E0193
-			public const int Widget_AppCompat_ActionMode = 2131624339;
-			
-			// aapt resource value: 0x7F0E0194
-			public const int Widget_AppCompat_ActivityChooserView = 2131624340;
-			
-			// aapt resource value: 0x7F0E0195
-			public const int Widget_AppCompat_AutoCompleteTextView = 2131624341;
-			
-			// aapt resource value: 0x7F0E0196
-			public const int Widget_AppCompat_Button = 2131624342;
-			
-			// aapt resource value: 0x7F0E019C
-			public const int Widget_AppCompat_ButtonBar = 2131624348;
-			
-			// aapt resource value: 0x7F0E019D
-			public const int Widget_AppCompat_ButtonBar_AlertDialog = 2131624349;
-			
-			// aapt resource value: 0x7F0E0197
-			public const int Widget_AppCompat_Button_Borderless = 2131624343;
-			
-			// aapt resource value: 0x7F0E0198
-			public const int Widget_AppCompat_Button_Borderless_Colored = 2131624344;
-			
-			// aapt resource value: 0x7F0E0199
-			public const int Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131624345;
-			
-			// aapt resource value: 0x7F0E019A
-			public const int Widget_AppCompat_Button_Colored = 2131624346;
-			
-			// aapt resource value: 0x7F0E019B
-			public const int Widget_AppCompat_Button_Small = 2131624347;
-			
-			// aapt resource value: 0x7F0E019E
-			public const int Widget_AppCompat_CompoundButton_CheckBox = 2131624350;
-			
-			// aapt resource value: 0x7F0E019F
-			public const int Widget_AppCompat_CompoundButton_RadioButton = 2131624351;
-			
-			// aapt resource value: 0x7F0E01A0
-			public const int Widget_AppCompat_CompoundButton_Switch = 2131624352;
-			
-			// aapt resource value: 0x7F0E01A1
-			public const int Widget_AppCompat_DrawerArrowToggle = 2131624353;
-			
-			// aapt resource value: 0x7F0E01A2
-			public const int Widget_AppCompat_DropDownItem_Spinner = 2131624354;
-			
-			// aapt resource value: 0x7F0E01A3
-			public const int Widget_AppCompat_EditText = 2131624355;
-			
-			// aapt resource value: 0x7F0E01A4
-			public const int Widget_AppCompat_ImageButton = 2131624356;
-			
-			// aapt resource value: 0x7F0E01A5
-			public const int Widget_AppCompat_Light_ActionBar = 2131624357;
-			
-			// aapt resource value: 0x7F0E01A6
-			public const int Widget_AppCompat_Light_ActionBar_Solid = 2131624358;
-			
-			// aapt resource value: 0x7F0E01A7
-			public const int Widget_AppCompat_Light_ActionBar_Solid_Inverse = 2131624359;
-			
-			// aapt resource value: 0x7F0E01A8
-			public const int Widget_AppCompat_Light_ActionBar_TabBar = 2131624360;
-			
-			// aapt resource value: 0x7F0E01A9
-			public const int Widget_AppCompat_Light_ActionBar_TabBar_Inverse = 2131624361;
-			
-			// aapt resource value: 0x7F0E01AA
-			public const int Widget_AppCompat_Light_ActionBar_TabText = 2131624362;
-			
-			// aapt resource value: 0x7F0E01AB
-			public const int Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131624363;
-			
-			// aapt resource value: 0x7F0E01AC
-			public const int Widget_AppCompat_Light_ActionBar_TabView = 2131624364;
-			
-			// aapt resource value: 0x7F0E01AD
-			public const int Widget_AppCompat_Light_ActionBar_TabView_Inverse = 2131624365;
-			
-			// aapt resource value: 0x7F0E01AE
-			public const int Widget_AppCompat_Light_ActionButton = 2131624366;
-			
-			// aapt resource value: 0x7F0E01AF
-			public const int Widget_AppCompat_Light_ActionButton_CloseMode = 2131624367;
-			
-			// aapt resource value: 0x7F0E01B0
-			public const int Widget_AppCompat_Light_ActionButton_Overflow = 2131624368;
-			
-			// aapt resource value: 0x7F0E01B1
-			public const int Widget_AppCompat_Light_ActionMode_Inverse = 2131624369;
-			
-			// aapt resource value: 0x7F0E01B2
-			public const int Widget_AppCompat_Light_ActivityChooserView = 2131624370;
-			
-			// aapt resource value: 0x7F0E01B3
-			public const int Widget_AppCompat_Light_AutoCompleteTextView = 2131624371;
-			
-			// aapt resource value: 0x7F0E01B4
-			public const int Widget_AppCompat_Light_DropDownItem_Spinner = 2131624372;
-			
-			// aapt resource value: 0x7F0E01B5
-			public const int Widget_AppCompat_Light_ListPopupWindow = 2131624373;
-			
-			// aapt resource value: 0x7F0E01B6
-			public const int Widget_AppCompat_Light_ListView_DropDown = 2131624374;
-			
-			// aapt resource value: 0x7F0E01B7
-			public const int Widget_AppCompat_Light_PopupMenu = 2131624375;
-			
-			// aapt resource value: 0x7F0E01B8
-			public const int Widget_AppCompat_Light_PopupMenu_Overflow = 2131624376;
-			
-			// aapt resource value: 0x7F0E01B9
-			public const int Widget_AppCompat_Light_SearchView = 2131624377;
-			
-			// aapt resource value: 0x7F0E01BA
-			public const int Widget_AppCompat_Light_Spinner_DropDown_ActionBar = 2131624378;
-			
-			// aapt resource value: 0x7F0E01BB
-			public const int Widget_AppCompat_ListMenuView = 2131624379;
-			
-			// aapt resource value: 0x7F0E01BC
-			public const int Widget_AppCompat_ListPopupWindow = 2131624380;
-			
-			// aapt resource value: 0x7F0E01BD
-			public const int Widget_AppCompat_ListView = 2131624381;
-			
-			// aapt resource value: 0x7F0E01BE
-			public const int Widget_AppCompat_ListView_DropDown = 2131624382;
-			
-			// aapt resource value: 0x7F0E01BF
-			public const int Widget_AppCompat_ListView_Menu = 2131624383;
-			
-			// aapt resource value: 0x7F0E01C0
-			public const int Widget_AppCompat_PopupMenu = 2131624384;
-			
-			// aapt resource value: 0x7F0E01C1
-			public const int Widget_AppCompat_PopupMenu_Overflow = 2131624385;
-			
-			// aapt resource value: 0x7F0E01C2
-			public const int Widget_AppCompat_PopupWindow = 2131624386;
-			
-			// aapt resource value: 0x7F0E01C3
-			public const int Widget_AppCompat_ProgressBar = 2131624387;
-			
-			// aapt resource value: 0x7F0E01C4
-			public const int Widget_AppCompat_ProgressBar_Horizontal = 2131624388;
-			
-			// aapt resource value: 0x7F0E01C5
-			public const int Widget_AppCompat_RatingBar = 2131624389;
-			
-			// aapt resource value: 0x7F0E01C6
-			public const int Widget_AppCompat_RatingBar_Indicator = 2131624390;
-			
-			// aapt resource value: 0x7F0E01C7
-			public const int Widget_AppCompat_RatingBar_Small = 2131624391;
-			
-			// aapt resource value: 0x7F0E01C8
-			public const int Widget_AppCompat_SearchView = 2131624392;
-			
-			// aapt resource value: 0x7F0E01C9
-			public const int Widget_AppCompat_SearchView_ActionBar = 2131624393;
-			
-			// aapt resource value: 0x7F0E01CA
-			public const int Widget_AppCompat_SeekBar = 2131624394;
-			
-			// aapt resource value: 0x7F0E01CB
-			public const int Widget_AppCompat_SeekBar_Discrete = 2131624395;
-			
-			// aapt resource value: 0x7F0E01CC
-			public const int Widget_AppCompat_Spinner = 2131624396;
-			
-			// aapt resource value: 0x7F0E01CD
-			public const int Widget_AppCompat_Spinner_DropDown = 2131624397;
-			
-			// aapt resource value: 0x7F0E01CE
-			public const int Widget_AppCompat_Spinner_DropDown_ActionBar = 2131624398;
-			
-			// aapt resource value: 0x7F0E01CF
-			public const int Widget_AppCompat_Spinner_Underlined = 2131624399;
-			
-			// aapt resource value: 0x7F0E01D0
-			public const int Widget_AppCompat_TextView_SpinnerItem = 2131624400;
-			
-			// aapt resource value: 0x7F0E01D1
-			public const int Widget_AppCompat_Toolbar = 2131624401;
-			
-			// aapt resource value: 0x7F0E01D2
-			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2131624402;
-			
-			// aapt resource value: 0x7F0E01D3
-			public const int Widget_Compat_NotificationActionContainer = 2131624403;
-			
-			// aapt resource value: 0x7F0E01D4
-			public const int Widget_Compat_NotificationActionText = 2131624404;
-			
-			// aapt resource value: 0x7F0E01D5
-			public const int Widget_Design_AppBarLayout = 2131624405;
-			
-			// aapt resource value: 0x7F0E01D6
-			public const int Widget_Design_BottomNavigationView = 2131624406;
-			
-			// aapt resource value: 0x7F0E01D7
-			public const int Widget_Design_BottomSheet_Modal = 2131624407;
-			
-			// aapt resource value: 0x7F0E01D8
-			public const int Widget_Design_CollapsingToolbar = 2131624408;
-			
-			// aapt resource value: 0x7F0E01D9
-			public const int Widget_Design_FloatingActionButton = 2131624409;
-			
-			// aapt resource value: 0x7F0E01DA
-			public const int Widget_Design_NavigationView = 2131624410;
-			
-			// aapt resource value: 0x7F0E01DB
-			public const int Widget_Design_ScrimInsetsFrameLayout = 2131624411;
-			
-			// aapt resource value: 0x7F0E01DC
-			public const int Widget_Design_Snackbar = 2131624412;
-			
-			// aapt resource value: 0x7F0E01DD
-			public const int Widget_Design_TabLayout = 2131624413;
-			
-			// aapt resource value: 0x7F0E01DE
-			public const int Widget_Design_TextInputLayout = 2131624414;
-			
-			// aapt resource value: 0x7F0E01DF
-			public const int Widget_MaterialComponents_BottomAppBar = 2131624415;
-			
-			// aapt resource value: 0x7F0E01E0
-			public const int Widget_MaterialComponents_BottomAppBar_Colored = 2131624416;
-			
-			// aapt resource value: 0x7F0E01E1
-			public const int Widget_MaterialComponents_BottomNavigationView = 2131624417;
-			
-			// aapt resource value: 0x7F0E01E2
-			public const int Widget_MaterialComponents_BottomNavigationView_Colored = 2131624418;
-			
-			// aapt resource value: 0x7F0E01E3
-			public const int Widget_MaterialComponents_BottomSheet_Modal = 2131624419;
-			
-			// aapt resource value: 0x7F0E01E4
-			public const int Widget_MaterialComponents_Button = 2131624420;
-			
-			// aapt resource value: 0x7F0E01E5
-			public const int Widget_MaterialComponents_Button_Icon = 2131624421;
-			
-			// aapt resource value: 0x7F0E01E6
-			public const int Widget_MaterialComponents_Button_OutlinedButton = 2131624422;
-			
-			// aapt resource value: 0x7F0E01E7
-			public const int Widget_MaterialComponents_Button_OutlinedButton_Icon = 2131624423;
-			
-			// aapt resource value: 0x7F0E01E8
-			public const int Widget_MaterialComponents_Button_TextButton = 2131624424;
-			
-			// aapt resource value: 0x7F0E01E9
-			public const int Widget_MaterialComponents_Button_TextButton_Dialog = 2131624425;
-			
-			// aapt resource value: 0x7F0E01EA
-			public const int Widget_MaterialComponents_Button_TextButton_Dialog_Icon = 2131624426;
-			
-			// aapt resource value: 0x7F0E01EB
-			public const int Widget_MaterialComponents_Button_TextButton_Icon = 2131624427;
-			
-			// aapt resource value: 0x7F0E01EC
-			public const int Widget_MaterialComponents_Button_UnelevatedButton = 2131624428;
-			
-			// aapt resource value: 0x7F0E01ED
-			public const int Widget_MaterialComponents_Button_UnelevatedButton_Icon = 2131624429;
-			
-			// aapt resource value: 0x7F0E01EE
-			public const int Widget_MaterialComponents_CardView = 2131624430;
-			
-			// aapt resource value: 0x7F0E01F3
-			public const int Widget_MaterialComponents_ChipGroup = 2131624435;
-			
-			// aapt resource value: 0x7F0E01EF
-			public const int Widget_MaterialComponents_Chip_Action = 2131624431;
-			
-			// aapt resource value: 0x7F0E01F0
-			public const int Widget_MaterialComponents_Chip_Choice = 2131624432;
-			
-			// aapt resource value: 0x7F0E01F1
-			public const int Widget_MaterialComponents_Chip_Entry = 2131624433;
-			
-			// aapt resource value: 0x7F0E01F2
-			public const int Widget_MaterialComponents_Chip_Filter = 2131624434;
-			
-			// aapt resource value: 0x7F0E01F4
-			public const int Widget_MaterialComponents_FloatingActionButton = 2131624436;
-			
-			// aapt resource value: 0x7F0E01F5
-			public const int Widget_MaterialComponents_NavigationView = 2131624437;
-			
-			// aapt resource value: 0x7F0E01F6
-			public const int Widget_MaterialComponents_Snackbar = 2131624438;
-			
-			// aapt resource value: 0x7F0E01F7
-			public const int Widget_MaterialComponents_Snackbar_FullWidth = 2131624439;
-			
-			// aapt resource value: 0x7F0E01F8
-			public const int Widget_MaterialComponents_TabLayout = 2131624440;
-			
-			// aapt resource value: 0x7F0E01F9
-			public const int Widget_MaterialComponents_TabLayout_Colored = 2131624441;
-			
-			// aapt resource value: 0x7F0E01FA
-			public const int Widget_MaterialComponents_TextInputEditText_FilledBox = 2131624442;
-			
-			// aapt resource value: 0x7F0E01FB
-			public const int Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131624443;
-			
-			// aapt resource value: 0x7F0E01FC
-			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox = 2131624444;
-			
-			// aapt resource value: 0x7F0E01FD
-			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131624445;
-			
-			// aapt resource value: 0x7F0E01FE
-			public const int Widget_MaterialComponents_TextInputLayout_FilledBox = 2131624446;
-			
-			// aapt resource value: 0x7F0E01FF
-			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = 2131624447;
-			
-			// aapt resource value: 0x7F0E0200
-			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox = 2131624448;
-			
-			// aapt resource value: 0x7F0E0201
-			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = 2131624449;
+			public const int CardView_Light = 2131624132;
 			
 			// aapt resource value: 0x7F0E0202
-			public const int Widget_MaterialComponents_Toolbar = 2131624450;
+			public const int collectionViewStyle = 2131624450;
 			
-			// aapt resource value: 0x7F0E0203
-			public const int Widget_MediaRouter_Light_MediaRouteButton = 2131624451;
+			// aapt resource value: 0x7F0E00C5
+			public const int Platform_AppCompat = 2131624133;
 			
-			// aapt resource value: 0x7F0E0204
-			public const int Widget_MediaRouter_MediaRouteButton = 2131624452;
+			// aapt resource value: 0x7F0E00C6
+			public const int Platform_AppCompat_Light = 2131624134;
 			
-			// aapt resource value: 0x7F0E0205
-			public const int Widget_Support_CoordinatorLayout = 2131624453;
+			// aapt resource value: 0x7F0E00C7
+			public const int Platform_MaterialComponents = 2131624135;
+			
+			// aapt resource value: 0x7F0E00C8
+			public const int Platform_MaterialComponents_Dialog = 2131624136;
+			
+			// aapt resource value: 0x7F0E00C9
+			public const int Platform_MaterialComponents_Light = 2131624137;
+			
+			// aapt resource value: 0x7F0E00CA
+			public const int Platform_MaterialComponents_Light_Dialog = 2131624138;
+			
+			// aapt resource value: 0x7F0E00CB
+			public const int Platform_ThemeOverlay_AppCompat = 2131624139;
+			
+			// aapt resource value: 0x7F0E00CC
+			public const int Platform_ThemeOverlay_AppCompat_Dark = 2131624140;
+			
+			// aapt resource value: 0x7F0E00CD
+			public const int Platform_ThemeOverlay_AppCompat_Light = 2131624141;
+			
+			// aapt resource value: 0x7F0E00CE
+			public const int Platform_V21_AppCompat = 2131624142;
+			
+			// aapt resource value: 0x7F0E00CF
+			public const int Platform_V21_AppCompat_Light = 2131624143;
+			
+			// aapt resource value: 0x7F0E00D0
+			public const int Platform_V25_AppCompat = 2131624144;
+			
+			// aapt resource value: 0x7F0E00D1
+			public const int Platform_V25_AppCompat_Light = 2131624145;
+			
+			// aapt resource value: 0x7F0E00D2
+			public const int Platform_Widget_AppCompat_Spinner = 2131624146;
+			
+			// aapt resource value: 0x7F0E00D3
+			public const int RtlOverlay_DialogWindowTitle_AppCompat = 2131624147;
+			
+			// aapt resource value: 0x7F0E00D4
+			public const int RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = 2131624148;
+			
+			// aapt resource value: 0x7F0E00D5
+			public const int RtlOverlay_Widget_AppCompat_DialogTitle_Icon = 2131624149;
+			
+			// aapt resource value: 0x7F0E00D6
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem = 2131624150;
+			
+			// aapt resource value: 0x7F0E00D7
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = 2131624151;
+			
+			// aapt resource value: 0x7F0E00D8
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut = 2131624152;
+			
+			// aapt resource value: 0x7F0E00D9
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow = 2131624153;
+			
+			// aapt resource value: 0x7F0E00DA
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = 2131624154;
+			
+			// aapt resource value: 0x7F0E00DB
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Title = 2131624155;
+			
+			// aapt resource value: 0x7F0E00E1
+			public const int RtlOverlay_Widget_AppCompat_SearchView_MagIcon = 2131624161;
+			
+			// aapt resource value: 0x7F0E00DC
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown = 2131624156;
+			
+			// aapt resource value: 0x7F0E00DD
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = 2131624157;
+			
+			// aapt resource value: 0x7F0E00DE
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = 2131624158;
+			
+			// aapt resource value: 0x7F0E00DF
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Query = 2131624159;
+			
+			// aapt resource value: 0x7F0E00E0
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Text = 2131624160;
+			
+			// aapt resource value: 0x7F0E00E2
+			public const int RtlUnderlay_Widget_AppCompat_ActionButton = 2131624162;
+			
+			// aapt resource value: 0x7F0E00E3
+			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131624163;
+			
+			// aapt resource value: 0x7F0E00E4
+			public const int TextAppearance_AppCompat = 2131624164;
+			
+			// aapt resource value: 0x7F0E00E5
+			public const int TextAppearance_AppCompat_Body1 = 2131624165;
+			
+			// aapt resource value: 0x7F0E00E6
+			public const int TextAppearance_AppCompat_Body2 = 2131624166;
+			
+			// aapt resource value: 0x7F0E00E7
+			public const int TextAppearance_AppCompat_Button = 2131624167;
+			
+			// aapt resource value: 0x7F0E00E8
+			public const int TextAppearance_AppCompat_Caption = 2131624168;
+			
+			// aapt resource value: 0x7F0E00E9
+			public const int TextAppearance_AppCompat_Display1 = 2131624169;
+			
+			// aapt resource value: 0x7F0E00EA
+			public const int TextAppearance_AppCompat_Display2 = 2131624170;
+			
+			// aapt resource value: 0x7F0E00EB
+			public const int TextAppearance_AppCompat_Display3 = 2131624171;
+			
+			// aapt resource value: 0x7F0E00EC
+			public const int TextAppearance_AppCompat_Display4 = 2131624172;
+			
+			// aapt resource value: 0x7F0E00ED
+			public const int TextAppearance_AppCompat_Headline = 2131624173;
+			
+			// aapt resource value: 0x7F0E00EE
+			public const int TextAppearance_AppCompat_Inverse = 2131624174;
+			
+			// aapt resource value: 0x7F0E00EF
+			public const int TextAppearance_AppCompat_Large = 2131624175;
+			
+			// aapt resource value: 0x7F0E00F0
+			public const int TextAppearance_AppCompat_Large_Inverse = 2131624176;
+			
+			// aapt resource value: 0x7F0E00F1
+			public const int TextAppearance_AppCompat_Light_SearchResult_Subtitle = 2131624177;
+			
+			// aapt resource value: 0x7F0E00F2
+			public const int TextAppearance_AppCompat_Light_SearchResult_Title = 2131624178;
+			
+			// aapt resource value: 0x7F0E00F3
+			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131624179;
+			
+			// aapt resource value: 0x7F0E00F4
+			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131624180;
+			
+			// aapt resource value: 0x7F0E00F5
+			public const int TextAppearance_AppCompat_Medium = 2131624181;
+			
+			// aapt resource value: 0x7F0E00F6
+			public const int TextAppearance_AppCompat_Medium_Inverse = 2131624182;
+			
+			// aapt resource value: 0x7F0E00F7
+			public const int TextAppearance_AppCompat_Menu = 2131624183;
+			
+			// aapt resource value: 0x7F0E00F8
+			public const int TextAppearance_AppCompat_SearchResult_Subtitle = 2131624184;
+			
+			// aapt resource value: 0x7F0E00F9
+			public const int TextAppearance_AppCompat_SearchResult_Title = 2131624185;
+			
+			// aapt resource value: 0x7F0E00FA
+			public const int TextAppearance_AppCompat_Small = 2131624186;
+			
+			// aapt resource value: 0x7F0E00FB
+			public const int TextAppearance_AppCompat_Small_Inverse = 2131624187;
+			
+			// aapt resource value: 0x7F0E00FC
+			public const int TextAppearance_AppCompat_Subhead = 2131624188;
+			
+			// aapt resource value: 0x7F0E00FD
+			public const int TextAppearance_AppCompat_Subhead_Inverse = 2131624189;
+			
+			// aapt resource value: 0x7F0E00FE
+			public const int TextAppearance_AppCompat_Title = 2131624190;
+			
+			// aapt resource value: 0x7F0E00FF
+			public const int TextAppearance_AppCompat_Title_Inverse = 2131624191;
+			
+			// aapt resource value: 0x7F0E0100
+			public const int TextAppearance_AppCompat_Tooltip = 2131624192;
+			
+			// aapt resource value: 0x7F0E0101
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131624193;
+			
+			// aapt resource value: 0x7F0E0102
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131624194;
+			
+			// aapt resource value: 0x7F0E0103
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131624195;
+			
+			// aapt resource value: 0x7F0E0104
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Title = 2131624196;
+			
+			// aapt resource value: 0x7F0E0105
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131624197;
+			
+			// aapt resource value: 0x7F0E0106
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131624198;
+			
+			// aapt resource value: 0x7F0E0107
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = 2131624199;
+			
+			// aapt resource value: 0x7F0E0108
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Title = 2131624200;
+			
+			// aapt resource value: 0x7F0E0109
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = 2131624201;
+			
+			// aapt resource value: 0x7F0E010A
+			public const int TextAppearance_AppCompat_Widget_Button = 2131624202;
+			
+			// aapt resource value: 0x7F0E010B
+			public const int TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131624203;
+			
+			// aapt resource value: 0x7F0E010C
+			public const int TextAppearance_AppCompat_Widget_Button_Colored = 2131624204;
+			
+			// aapt resource value: 0x7F0E010D
+			public const int TextAppearance_AppCompat_Widget_Button_Inverse = 2131624205;
+			
+			// aapt resource value: 0x7F0E010E
+			public const int TextAppearance_AppCompat_Widget_DropDownItem = 2131624206;
+			
+			// aapt resource value: 0x7F0E010F
+			public const int TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131624207;
+			
+			// aapt resource value: 0x7F0E0110
+			public const int TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131624208;
+			
+			// aapt resource value: 0x7F0E0111
+			public const int TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131624209;
+			
+			// aapt resource value: 0x7F0E0112
+			public const int TextAppearance_AppCompat_Widget_Switch = 2131624210;
+			
+			// aapt resource value: 0x7F0E0113
+			public const int TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131624211;
+			
+			// aapt resource value: 0x7F0E0114
+			public const int TextAppearance_Compat_Notification = 2131624212;
+			
+			// aapt resource value: 0x7F0E0115
+			public const int TextAppearance_Compat_Notification_Info = 2131624213;
+			
+			// aapt resource value: 0x7F0E0116
+			public const int TextAppearance_Compat_Notification_Info_Media = 2131624214;
+			
+			// aapt resource value: 0x7F0E0117
+			public const int TextAppearance_Compat_Notification_Line2 = 2131624215;
+			
+			// aapt resource value: 0x7F0E0118
+			public const int TextAppearance_Compat_Notification_Line2_Media = 2131624216;
+			
+			// aapt resource value: 0x7F0E0119
+			public const int TextAppearance_Compat_Notification_Media = 2131624217;
+			
+			// aapt resource value: 0x7F0E011A
+			public const int TextAppearance_Compat_Notification_Time = 2131624218;
+			
+			// aapt resource value: 0x7F0E011B
+			public const int TextAppearance_Compat_Notification_Time_Media = 2131624219;
+			
+			// aapt resource value: 0x7F0E011C
+			public const int TextAppearance_Compat_Notification_Title = 2131624220;
+			
+			// aapt resource value: 0x7F0E011D
+			public const int TextAppearance_Compat_Notification_Title_Media = 2131624221;
+			
+			// aapt resource value: 0x7F0E011E
+			public const int TextAppearance_Design_CollapsingToolbar_Expanded = 2131624222;
+			
+			// aapt resource value: 0x7F0E011F
+			public const int TextAppearance_Design_Counter = 2131624223;
+			
+			// aapt resource value: 0x7F0E0120
+			public const int TextAppearance_Design_Counter_Overflow = 2131624224;
+			
+			// aapt resource value: 0x7F0E0121
+			public const int TextAppearance_Design_Error = 2131624225;
+			
+			// aapt resource value: 0x7F0E0122
+			public const int TextAppearance_Design_HelperText = 2131624226;
+			
+			// aapt resource value: 0x7F0E0123
+			public const int TextAppearance_Design_Hint = 2131624227;
+			
+			// aapt resource value: 0x7F0E0124
+			public const int TextAppearance_Design_Snackbar_Message = 2131624228;
+			
+			// aapt resource value: 0x7F0E0125
+			public const int TextAppearance_Design_Tab = 2131624229;
+			
+			// aapt resource value: 0x7F0E0126
+			public const int TextAppearance_MaterialComponents_Body1 = 2131624230;
+			
+			// aapt resource value: 0x7F0E0127
+			public const int TextAppearance_MaterialComponents_Body2 = 2131624231;
+			
+			// aapt resource value: 0x7F0E0128
+			public const int TextAppearance_MaterialComponents_Button = 2131624232;
+			
+			// aapt resource value: 0x7F0E0129
+			public const int TextAppearance_MaterialComponents_Caption = 2131624233;
+			
+			// aapt resource value: 0x7F0E012A
+			public const int TextAppearance_MaterialComponents_Chip = 2131624234;
+			
+			// aapt resource value: 0x7F0E012B
+			public const int TextAppearance_MaterialComponents_Headline1 = 2131624235;
+			
+			// aapt resource value: 0x7F0E012C
+			public const int TextAppearance_MaterialComponents_Headline2 = 2131624236;
+			
+			// aapt resource value: 0x7F0E012D
+			public const int TextAppearance_MaterialComponents_Headline3 = 2131624237;
+			
+			// aapt resource value: 0x7F0E012E
+			public const int TextAppearance_MaterialComponents_Headline4 = 2131624238;
+			
+			// aapt resource value: 0x7F0E012F
+			public const int TextAppearance_MaterialComponents_Headline5 = 2131624239;
+			
+			// aapt resource value: 0x7F0E0130
+			public const int TextAppearance_MaterialComponents_Headline6 = 2131624240;
+			
+			// aapt resource value: 0x7F0E0131
+			public const int TextAppearance_MaterialComponents_Overline = 2131624241;
+			
+			// aapt resource value: 0x7F0E0132
+			public const int TextAppearance_MaterialComponents_Subtitle1 = 2131624242;
+			
+			// aapt resource value: 0x7F0E0133
+			public const int TextAppearance_MaterialComponents_Subtitle2 = 2131624243;
+			
+			// aapt resource value: 0x7F0E0134
+			public const int TextAppearance_MaterialComponents_Tab = 2131624244;
+			
+			// aapt resource value: 0x7F0E0135
+			public const int TextAppearance_MediaRouter_PrimaryText = 2131624245;
+			
+			// aapt resource value: 0x7F0E0136
+			public const int TextAppearance_MediaRouter_SecondaryText = 2131624246;
+			
+			// aapt resource value: 0x7F0E0137
+			public const int TextAppearance_MediaRouter_Title = 2131624247;
+			
+			// aapt resource value: 0x7F0E0138
+			public const int TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131624248;
+			
+			// aapt resource value: 0x7F0E0139
+			public const int TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131624249;
+			
+			// aapt resource value: 0x7F0E013A
+			public const int TextAppearance_Widget_AppCompat_Toolbar_Title = 2131624250;
+			
+			// aapt resource value: 0x7F0E013B
+			public const int Theme = 2131624251;
+			
+			// aapt resource value: 0x7F0E0172
+			public const int ThemeOverlay_AppCompat = 2131624306;
+			
+			// aapt resource value: 0x7F0E0173
+			public const int ThemeOverlay_AppCompat_ActionBar = 2131624307;
+			
+			// aapt resource value: 0x7F0E0174
+			public const int ThemeOverlay_AppCompat_Dark = 2131624308;
+			
+			// aapt resource value: 0x7F0E0175
+			public const int ThemeOverlay_AppCompat_Dark_ActionBar = 2131624309;
+			
+			// aapt resource value: 0x7F0E0176
+			public const int ThemeOverlay_AppCompat_Dialog = 2131624310;
+			
+			// aapt resource value: 0x7F0E0177
+			public const int ThemeOverlay_AppCompat_Dialog_Alert = 2131624311;
+			
+			// aapt resource value: 0x7F0E0178
+			public const int ThemeOverlay_AppCompat_Light = 2131624312;
+			
+			// aapt resource value: 0x7F0E0179
+			public const int ThemeOverlay_MaterialComponents = 2131624313;
+			
+			// aapt resource value: 0x7F0E017A
+			public const int ThemeOverlay_MaterialComponents_ActionBar = 2131624314;
+			
+			// aapt resource value: 0x7F0E017B
+			public const int ThemeOverlay_MaterialComponents_Dark = 2131624315;
+			
+			// aapt resource value: 0x7F0E017C
+			public const int ThemeOverlay_MaterialComponents_Dark_ActionBar = 2131624316;
+			
+			// aapt resource value: 0x7F0E017D
+			public const int ThemeOverlay_MaterialComponents_Dialog = 2131624317;
+			
+			// aapt resource value: 0x7F0E017E
+			public const int ThemeOverlay_MaterialComponents_Dialog_Alert = 2131624318;
+			
+			// aapt resource value: 0x7F0E017F
+			public const int ThemeOverlay_MaterialComponents_Light = 2131624319;
+			
+			// aapt resource value: 0x7F0E0180
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText = 2131624320;
+			
+			// aapt resource value: 0x7F0E0181
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = 2131624321;
+			
+			// aapt resource value: 0x7F0E0182
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131624322;
+			
+			// aapt resource value: 0x7F0E0183
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = 2131624323;
+			
+			// aapt resource value: 0x7F0E0184
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131624324;
+			
+			// aapt resource value: 0x7F0E0185
+			public const int ThemeOverlay_MediaRouter_Dark = 2131624325;
+			
+			// aapt resource value: 0x7F0E0186
+			public const int ThemeOverlay_MediaRouter_Light = 2131624326;
+			
+			// aapt resource value: 0x7F0E013C
+			public const int Theme_AppCompat = 2131624252;
+			
+			// aapt resource value: 0x7F0E013D
+			public const int Theme_AppCompat_CompactMenu = 2131624253;
+			
+			// aapt resource value: 0x7F0E013E
+			public const int Theme_AppCompat_DayNight = 2131624254;
+			
+			// aapt resource value: 0x7F0E013F
+			public const int Theme_AppCompat_DayNight_DarkActionBar = 2131624255;
+			
+			// aapt resource value: 0x7F0E0140
+			public const int Theme_AppCompat_DayNight_Dialog = 2131624256;
+			
+			// aapt resource value: 0x7F0E0143
+			public const int Theme_AppCompat_DayNight_DialogWhenLarge = 2131624259;
+			
+			// aapt resource value: 0x7F0E0141
+			public const int Theme_AppCompat_DayNight_Dialog_Alert = 2131624257;
+			
+			// aapt resource value: 0x7F0E0142
+			public const int Theme_AppCompat_DayNight_Dialog_MinWidth = 2131624258;
+			
+			// aapt resource value: 0x7F0E0144
+			public const int Theme_AppCompat_DayNight_NoActionBar = 2131624260;
+			
+			// aapt resource value: 0x7F0E0145
+			public const int Theme_AppCompat_Dialog = 2131624261;
+			
+			// aapt resource value: 0x7F0E0148
+			public const int Theme_AppCompat_DialogWhenLarge = 2131624264;
+			
+			// aapt resource value: 0x7F0E0146
+			public const int Theme_AppCompat_Dialog_Alert = 2131624262;
+			
+			// aapt resource value: 0x7F0E0147
+			public const int Theme_AppCompat_Dialog_MinWidth = 2131624263;
+			
+			// aapt resource value: 0x7F0E0149
+			public const int Theme_AppCompat_Light = 2131624265;
+			
+			// aapt resource value: 0x7F0E014A
+			public const int Theme_AppCompat_Light_DarkActionBar = 2131624266;
+			
+			// aapt resource value: 0x7F0E014B
+			public const int Theme_AppCompat_Light_Dialog = 2131624267;
+			
+			// aapt resource value: 0x7F0E014E
+			public const int Theme_AppCompat_Light_DialogWhenLarge = 2131624270;
+			
+			// aapt resource value: 0x7F0E014C
+			public const int Theme_AppCompat_Light_Dialog_Alert = 2131624268;
+			
+			// aapt resource value: 0x7F0E014D
+			public const int Theme_AppCompat_Light_Dialog_MinWidth = 2131624269;
+			
+			// aapt resource value: 0x7F0E014F
+			public const int Theme_AppCompat_Light_NoActionBar = 2131624271;
+			
+			// aapt resource value: 0x7F0E0150
+			public const int Theme_AppCompat_NoActionBar = 2131624272;
+			
+			// aapt resource value: 0x7F0E0151
+			public const int Theme_Base = 2131624273;
+			
+			// aapt resource value: 0x7F0E0152
+			public const int Theme_Design = 2131624274;
+			
+			// aapt resource value: 0x7F0E0153
+			public const int Theme_Design_BottomSheetDialog = 2131624275;
+			
+			// aapt resource value: 0x7F0E0154
+			public const int Theme_Design_Light = 2131624276;
+			
+			// aapt resource value: 0x7F0E0155
+			public const int Theme_Design_Light_BottomSheetDialog = 2131624277;
+			
+			// aapt resource value: 0x7F0E0156
+			public const int Theme_Design_Light_NoActionBar = 2131624278;
+			
+			// aapt resource value: 0x7F0E0157
+			public const int Theme_Design_NoActionBar = 2131624279;
+			
+			// aapt resource value: 0x7F0E0158
+			public const int Theme_MaterialComponents = 2131624280;
+			
+			// aapt resource value: 0x7F0E0159
+			public const int Theme_MaterialComponents_BottomSheetDialog = 2131624281;
+			
+			// aapt resource value: 0x7F0E015A
+			public const int Theme_MaterialComponents_Bridge = 2131624282;
+			
+			// aapt resource value: 0x7F0E015B
+			public const int Theme_MaterialComponents_CompactMenu = 2131624283;
+			
+			// aapt resource value: 0x7F0E015C
+			public const int Theme_MaterialComponents_Dialog = 2131624284;
+			
+			// aapt resource value: 0x7F0E015F
+			public const int Theme_MaterialComponents_DialogWhenLarge = 2131624287;
+			
+			// aapt resource value: 0x7F0E015D
+			public const int Theme_MaterialComponents_Dialog_Alert = 2131624285;
+			
+			// aapt resource value: 0x7F0E015E
+			public const int Theme_MaterialComponents_Dialog_MinWidth = 2131624286;
+			
+			// aapt resource value: 0x7F0E0160
+			public const int Theme_MaterialComponents_Light = 2131624288;
+			
+			// aapt resource value: 0x7F0E0161
+			public const int Theme_MaterialComponents_Light_BottomSheetDialog = 2131624289;
+			
+			// aapt resource value: 0x7F0E0162
+			public const int Theme_MaterialComponents_Light_Bridge = 2131624290;
+			
+			// aapt resource value: 0x7F0E0163
+			public const int Theme_MaterialComponents_Light_DarkActionBar = 2131624291;
+			
+			// aapt resource value: 0x7F0E0164
+			public const int Theme_MaterialComponents_Light_DarkActionBar_Bridge = 2131624292;
+			
+			// aapt resource value: 0x7F0E0165
+			public const int Theme_MaterialComponents_Light_Dialog = 2131624293;
+			
+			// aapt resource value: 0x7F0E0168
+			public const int Theme_MaterialComponents_Light_DialogWhenLarge = 2131624296;
+			
+			// aapt resource value: 0x7F0E0166
+			public const int Theme_MaterialComponents_Light_Dialog_Alert = 2131624294;
+			
+			// aapt resource value: 0x7F0E0167
+			public const int Theme_MaterialComponents_Light_Dialog_MinWidth = 2131624295;
+			
+			// aapt resource value: 0x7F0E0169
+			public const int Theme_MaterialComponents_Light_NoActionBar = 2131624297;
+			
+			// aapt resource value: 0x7F0E016A
+			public const int Theme_MaterialComponents_Light_NoActionBar_Bridge = 2131624298;
+			
+			// aapt resource value: 0x7F0E016B
+			public const int Theme_MaterialComponents_NoActionBar = 2131624299;
+			
+			// aapt resource value: 0x7F0E016C
+			public const int Theme_MaterialComponents_NoActionBar_Bridge = 2131624300;
+			
+			// aapt resource value: 0x7F0E016D
+			public const int Theme_MediaRouter = 2131624301;
+			
+			// aapt resource value: 0x7F0E016E
+			public const int Theme_MediaRouter_Light = 2131624302;
+			
+			// aapt resource value: 0x7F0E0170
+			public const int Theme_MediaRouter_LightControlPanel = 2131624304;
+			
+			// aapt resource value: 0x7F0E016F
+			public const int Theme_MediaRouter_Light_DarkControlPanel = 2131624303;
+			
+			// aapt resource value: 0x7F0E0171
+			public const int Theme_Splash = 2131624305;
+			
+			// aapt resource value: 0x7F0E0187
+			public const int Widget_AppCompat_ActionBar = 2131624327;
+			
+			// aapt resource value: 0x7F0E0188
+			public const int Widget_AppCompat_ActionBar_Solid = 2131624328;
+			
+			// aapt resource value: 0x7F0E0189
+			public const int Widget_AppCompat_ActionBar_TabBar = 2131624329;
+			
+			// aapt resource value: 0x7F0E018A
+			public const int Widget_AppCompat_ActionBar_TabText = 2131624330;
+			
+			// aapt resource value: 0x7F0E018B
+			public const int Widget_AppCompat_ActionBar_TabView = 2131624331;
+			
+			// aapt resource value: 0x7F0E018C
+			public const int Widget_AppCompat_ActionButton = 2131624332;
+			
+			// aapt resource value: 0x7F0E018D
+			public const int Widget_AppCompat_ActionButton_CloseMode = 2131624333;
+			
+			// aapt resource value: 0x7F0E018E
+			public const int Widget_AppCompat_ActionButton_Overflow = 2131624334;
+			
+			// aapt resource value: 0x7F0E018F
+			public const int Widget_AppCompat_ActionMode = 2131624335;
+			
+			// aapt resource value: 0x7F0E0190
+			public const int Widget_AppCompat_ActivityChooserView = 2131624336;
+			
+			// aapt resource value: 0x7F0E0191
+			public const int Widget_AppCompat_AutoCompleteTextView = 2131624337;
+			
+			// aapt resource value: 0x7F0E0192
+			public const int Widget_AppCompat_Button = 2131624338;
+			
+			// aapt resource value: 0x7F0E0198
+			public const int Widget_AppCompat_ButtonBar = 2131624344;
+			
+			// aapt resource value: 0x7F0E0199
+			public const int Widget_AppCompat_ButtonBar_AlertDialog = 2131624345;
+			
+			// aapt resource value: 0x7F0E0193
+			public const int Widget_AppCompat_Button_Borderless = 2131624339;
+			
+			// aapt resource value: 0x7F0E0194
+			public const int Widget_AppCompat_Button_Borderless_Colored = 2131624340;
+			
+			// aapt resource value: 0x7F0E0195
+			public const int Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131624341;
+			
+			// aapt resource value: 0x7F0E0196
+			public const int Widget_AppCompat_Button_Colored = 2131624342;
+			
+			// aapt resource value: 0x7F0E0197
+			public const int Widget_AppCompat_Button_Small = 2131624343;
+			
+			// aapt resource value: 0x7F0E019A
+			public const int Widget_AppCompat_CompoundButton_CheckBox = 2131624346;
+			
+			// aapt resource value: 0x7F0E019B
+			public const int Widget_AppCompat_CompoundButton_RadioButton = 2131624347;
+			
+			// aapt resource value: 0x7F0E019C
+			public const int Widget_AppCompat_CompoundButton_Switch = 2131624348;
+			
+			// aapt resource value: 0x7F0E019D
+			public const int Widget_AppCompat_DrawerArrowToggle = 2131624349;
+			
+			// aapt resource value: 0x7F0E019E
+			public const int Widget_AppCompat_DropDownItem_Spinner = 2131624350;
+			
+			// aapt resource value: 0x7F0E019F
+			public const int Widget_AppCompat_EditText = 2131624351;
+			
+			// aapt resource value: 0x7F0E01A0
+			public const int Widget_AppCompat_ImageButton = 2131624352;
+			
+			// aapt resource value: 0x7F0E01A1
+			public const int Widget_AppCompat_Light_ActionBar = 2131624353;
+			
+			// aapt resource value: 0x7F0E01A2
+			public const int Widget_AppCompat_Light_ActionBar_Solid = 2131624354;
+			
+			// aapt resource value: 0x7F0E01A3
+			public const int Widget_AppCompat_Light_ActionBar_Solid_Inverse = 2131624355;
+			
+			// aapt resource value: 0x7F0E01A4
+			public const int Widget_AppCompat_Light_ActionBar_TabBar = 2131624356;
+			
+			// aapt resource value: 0x7F0E01A5
+			public const int Widget_AppCompat_Light_ActionBar_TabBar_Inverse = 2131624357;
+			
+			// aapt resource value: 0x7F0E01A6
+			public const int Widget_AppCompat_Light_ActionBar_TabText = 2131624358;
+			
+			// aapt resource value: 0x7F0E01A7
+			public const int Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131624359;
+			
+			// aapt resource value: 0x7F0E01A8
+			public const int Widget_AppCompat_Light_ActionBar_TabView = 2131624360;
+			
+			// aapt resource value: 0x7F0E01A9
+			public const int Widget_AppCompat_Light_ActionBar_TabView_Inverse = 2131624361;
+			
+			// aapt resource value: 0x7F0E01AA
+			public const int Widget_AppCompat_Light_ActionButton = 2131624362;
+			
+			// aapt resource value: 0x7F0E01AB
+			public const int Widget_AppCompat_Light_ActionButton_CloseMode = 2131624363;
+			
+			// aapt resource value: 0x7F0E01AC
+			public const int Widget_AppCompat_Light_ActionButton_Overflow = 2131624364;
+			
+			// aapt resource value: 0x7F0E01AD
+			public const int Widget_AppCompat_Light_ActionMode_Inverse = 2131624365;
+			
+			// aapt resource value: 0x7F0E01AE
+			public const int Widget_AppCompat_Light_ActivityChooserView = 2131624366;
+			
+			// aapt resource value: 0x7F0E01AF
+			public const int Widget_AppCompat_Light_AutoCompleteTextView = 2131624367;
+			
+			// aapt resource value: 0x7F0E01B0
+			public const int Widget_AppCompat_Light_DropDownItem_Spinner = 2131624368;
+			
+			// aapt resource value: 0x7F0E01B1
+			public const int Widget_AppCompat_Light_ListPopupWindow = 2131624369;
+			
+			// aapt resource value: 0x7F0E01B2
+			public const int Widget_AppCompat_Light_ListView_DropDown = 2131624370;
+			
+			// aapt resource value: 0x7F0E01B3
+			public const int Widget_AppCompat_Light_PopupMenu = 2131624371;
+			
+			// aapt resource value: 0x7F0E01B4
+			public const int Widget_AppCompat_Light_PopupMenu_Overflow = 2131624372;
+			
+			// aapt resource value: 0x7F0E01B5
+			public const int Widget_AppCompat_Light_SearchView = 2131624373;
+			
+			// aapt resource value: 0x7F0E01B6
+			public const int Widget_AppCompat_Light_Spinner_DropDown_ActionBar = 2131624374;
+			
+			// aapt resource value: 0x7F0E01B7
+			public const int Widget_AppCompat_ListMenuView = 2131624375;
+			
+			// aapt resource value: 0x7F0E01B8
+			public const int Widget_AppCompat_ListPopupWindow = 2131624376;
+			
+			// aapt resource value: 0x7F0E01B9
+			public const int Widget_AppCompat_ListView = 2131624377;
+			
+			// aapt resource value: 0x7F0E01BA
+			public const int Widget_AppCompat_ListView_DropDown = 2131624378;
+			
+			// aapt resource value: 0x7F0E01BB
+			public const int Widget_AppCompat_ListView_Menu = 2131624379;
+			
+			// aapt resource value: 0x7F0E01BC
+			public const int Widget_AppCompat_PopupMenu = 2131624380;
+			
+			// aapt resource value: 0x7F0E01BD
+			public const int Widget_AppCompat_PopupMenu_Overflow = 2131624381;
+			
+			// aapt resource value: 0x7F0E01BE
+			public const int Widget_AppCompat_PopupWindow = 2131624382;
+			
+			// aapt resource value: 0x7F0E01BF
+			public const int Widget_AppCompat_ProgressBar = 2131624383;
+			
+			// aapt resource value: 0x7F0E01C0
+			public const int Widget_AppCompat_ProgressBar_Horizontal = 2131624384;
+			
+			// aapt resource value: 0x7F0E01C1
+			public const int Widget_AppCompat_RatingBar = 2131624385;
+			
+			// aapt resource value: 0x7F0E01C2
+			public const int Widget_AppCompat_RatingBar_Indicator = 2131624386;
+			
+			// aapt resource value: 0x7F0E01C3
+			public const int Widget_AppCompat_RatingBar_Small = 2131624387;
+			
+			// aapt resource value: 0x7F0E01C4
+			public const int Widget_AppCompat_SearchView = 2131624388;
+			
+			// aapt resource value: 0x7F0E01C5
+			public const int Widget_AppCompat_SearchView_ActionBar = 2131624389;
+			
+			// aapt resource value: 0x7F0E01C6
+			public const int Widget_AppCompat_SeekBar = 2131624390;
+			
+			// aapt resource value: 0x7F0E01C7
+			public const int Widget_AppCompat_SeekBar_Discrete = 2131624391;
+			
+			// aapt resource value: 0x7F0E01C8
+			public const int Widget_AppCompat_Spinner = 2131624392;
+			
+			// aapt resource value: 0x7F0E01C9
+			public const int Widget_AppCompat_Spinner_DropDown = 2131624393;
+			
+			// aapt resource value: 0x7F0E01CA
+			public const int Widget_AppCompat_Spinner_DropDown_ActionBar = 2131624394;
+			
+			// aapt resource value: 0x7F0E01CB
+			public const int Widget_AppCompat_Spinner_Underlined = 2131624395;
+			
+			// aapt resource value: 0x7F0E01CC
+			public const int Widget_AppCompat_TextView_SpinnerItem = 2131624396;
+			
+			// aapt resource value: 0x7F0E01CD
+			public const int Widget_AppCompat_Toolbar = 2131624397;
+			
+			// aapt resource value: 0x7F0E01CE
+			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2131624398;
+			
+			// aapt resource value: 0x7F0E01CF
+			public const int Widget_Compat_NotificationActionContainer = 2131624399;
+			
+			// aapt resource value: 0x7F0E01D0
+			public const int Widget_Compat_NotificationActionText = 2131624400;
+			
+			// aapt resource value: 0x7F0E01D1
+			public const int Widget_Design_AppBarLayout = 2131624401;
+			
+			// aapt resource value: 0x7F0E01D2
+			public const int Widget_Design_BottomNavigationView = 2131624402;
+			
+			// aapt resource value: 0x7F0E01D3
+			public const int Widget_Design_BottomSheet_Modal = 2131624403;
+			
+			// aapt resource value: 0x7F0E01D4
+			public const int Widget_Design_CollapsingToolbar = 2131624404;
+			
+			// aapt resource value: 0x7F0E01D5
+			public const int Widget_Design_FloatingActionButton = 2131624405;
+			
+			// aapt resource value: 0x7F0E01D6
+			public const int Widget_Design_NavigationView = 2131624406;
+			
+			// aapt resource value: 0x7F0E01D7
+			public const int Widget_Design_ScrimInsetsFrameLayout = 2131624407;
+			
+			// aapt resource value: 0x7F0E01D8
+			public const int Widget_Design_Snackbar = 2131624408;
+			
+			// aapt resource value: 0x7F0E01D9
+			public const int Widget_Design_TabLayout = 2131624409;
+			
+			// aapt resource value: 0x7F0E01DA
+			public const int Widget_Design_TextInputLayout = 2131624410;
+			
+			// aapt resource value: 0x7F0E01DB
+			public const int Widget_MaterialComponents_BottomAppBar = 2131624411;
+			
+			// aapt resource value: 0x7F0E01DC
+			public const int Widget_MaterialComponents_BottomAppBar_Colored = 2131624412;
+			
+			// aapt resource value: 0x7F0E01DD
+			public const int Widget_MaterialComponents_BottomNavigationView = 2131624413;
+			
+			// aapt resource value: 0x7F0E01DE
+			public const int Widget_MaterialComponents_BottomNavigationView_Colored = 2131624414;
+			
+			// aapt resource value: 0x7F0E01DF
+			public const int Widget_MaterialComponents_BottomSheet_Modal = 2131624415;
+			
+			// aapt resource value: 0x7F0E01E0
+			public const int Widget_MaterialComponents_Button = 2131624416;
+			
+			// aapt resource value: 0x7F0E01E1
+			public const int Widget_MaterialComponents_Button_Icon = 2131624417;
+			
+			// aapt resource value: 0x7F0E01E2
+			public const int Widget_MaterialComponents_Button_OutlinedButton = 2131624418;
+			
+			// aapt resource value: 0x7F0E01E3
+			public const int Widget_MaterialComponents_Button_OutlinedButton_Icon = 2131624419;
+			
+			// aapt resource value: 0x7F0E01E4
+			public const int Widget_MaterialComponents_Button_TextButton = 2131624420;
+			
+			// aapt resource value: 0x7F0E01E5
+			public const int Widget_MaterialComponents_Button_TextButton_Dialog = 2131624421;
+			
+			// aapt resource value: 0x7F0E01E6
+			public const int Widget_MaterialComponents_Button_TextButton_Dialog_Icon = 2131624422;
+			
+			// aapt resource value: 0x7F0E01E7
+			public const int Widget_MaterialComponents_Button_TextButton_Icon = 2131624423;
+			
+			// aapt resource value: 0x7F0E01E8
+			public const int Widget_MaterialComponents_Button_UnelevatedButton = 2131624424;
+			
+			// aapt resource value: 0x7F0E01E9
+			public const int Widget_MaterialComponents_Button_UnelevatedButton_Icon = 2131624425;
+			
+			// aapt resource value: 0x7F0E01EA
+			public const int Widget_MaterialComponents_CardView = 2131624426;
+			
+			// aapt resource value: 0x7F0E01EF
+			public const int Widget_MaterialComponents_ChipGroup = 2131624431;
+			
+			// aapt resource value: 0x7F0E01EB
+			public const int Widget_MaterialComponents_Chip_Action = 2131624427;
+			
+			// aapt resource value: 0x7F0E01EC
+			public const int Widget_MaterialComponents_Chip_Choice = 2131624428;
+			
+			// aapt resource value: 0x7F0E01ED
+			public const int Widget_MaterialComponents_Chip_Entry = 2131624429;
+			
+			// aapt resource value: 0x7F0E01EE
+			public const int Widget_MaterialComponents_Chip_Filter = 2131624430;
+			
+			// aapt resource value: 0x7F0E01F0
+			public const int Widget_MaterialComponents_FloatingActionButton = 2131624432;
+			
+			// aapt resource value: 0x7F0E01F1
+			public const int Widget_MaterialComponents_NavigationView = 2131624433;
+			
+			// aapt resource value: 0x7F0E01F2
+			public const int Widget_MaterialComponents_Snackbar = 2131624434;
+			
+			// aapt resource value: 0x7F0E01F3
+			public const int Widget_MaterialComponents_Snackbar_FullWidth = 2131624435;
+			
+			// aapt resource value: 0x7F0E01F4
+			public const int Widget_MaterialComponents_TabLayout = 2131624436;
+			
+			// aapt resource value: 0x7F0E01F5
+			public const int Widget_MaterialComponents_TabLayout_Colored = 2131624437;
+			
+			// aapt resource value: 0x7F0E01F6
+			public const int Widget_MaterialComponents_TextInputEditText_FilledBox = 2131624438;
+			
+			// aapt resource value: 0x7F0E01F7
+			public const int Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131624439;
+			
+			// aapt resource value: 0x7F0E01F8
+			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox = 2131624440;
+			
+			// aapt resource value: 0x7F0E01F9
+			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131624441;
+			
+			// aapt resource value: 0x7F0E01FA
+			public const int Widget_MaterialComponents_TextInputLayout_FilledBox = 2131624442;
+			
+			// aapt resource value: 0x7F0E01FB
+			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = 2131624443;
+			
+			// aapt resource value: 0x7F0E01FC
+			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox = 2131624444;
+			
+			// aapt resource value: 0x7F0E01FD
+			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = 2131624445;
+			
+			// aapt resource value: 0x7F0E01FE
+			public const int Widget_MaterialComponents_Toolbar = 2131624446;
+			
+			// aapt resource value: 0x7F0E01FF
+			public const int Widget_MediaRouter_Light_MediaRouteButton = 2131624447;
+			
+			// aapt resource value: 0x7F0E0200
+			public const int Widget_MediaRouter_MediaRouteButton = 2131624448;
+			
+			// aapt resource value: 0x7F0E0201
+			public const int Widget_Support_CoordinatorLayout = 2131624449;
 			
 			static Style()
 			{

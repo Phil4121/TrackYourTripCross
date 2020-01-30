@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace TrackYourTrip.Core.Helpers
 {
@@ -12,13 +10,15 @@ namespace TrackYourTrip.Core.Helpers
             try
             {
                 if (File.Exists(destinationFilePath) && overwriteIfExists)
+                {
                     File.Delete(destinationFilePath);
+                }
 
                 if (!File.Exists(destinationFilePath))
                 {
-                    using (var br = new BinaryReader(File.Open(sourceFilePath, FileMode.Open, FileAccess.Read)))
+                    using (BinaryReader br = new BinaryReader(File.Open(sourceFilePath, FileMode.Open, FileAccess.Read)))
                     {
-                        using (var bw = new BinaryWriter(new FileStream(destinationFilePath, FileMode.Create)))
+                        using (BinaryWriter bw = new BinaryWriter(new FileStream(destinationFilePath, FileMode.Create)))
                         {
                             byte[] buffer = new byte[2048];
                             int length = 0;
@@ -45,13 +45,15 @@ namespace TrackYourTrip.Core.Helpers
             try
             {
                 if (File.Exists(destinationFilePath) && overwriteIfExists)
+                {
                     File.Delete(destinationFilePath);
+                }
 
                 if (!File.Exists(destinationFilePath))
                 {
-                    using (var br = new BinaryReader(stream))
+                    using (BinaryReader br = new BinaryReader(stream))
                     {
-                        using (var bw = new BinaryWriter(new FileStream(destinationFilePath, FileMode.Create)))
+                        using (BinaryWriter bw = new BinaryWriter(new FileStream(destinationFilePath, FileMode.Create)))
                         {
                             byte[] buffer = new byte[2048];
                             int length = 0;

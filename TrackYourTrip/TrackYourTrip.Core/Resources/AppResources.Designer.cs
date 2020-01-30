@@ -160,6 +160,15 @@ namespace TrackYourTrip.Core.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die New Trip ähnelt.
+        /// </summary>
+        internal static string NewTripPageTitle {
+            get {
+                return ResourceManager.GetString("NewTripPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Finish ähnelt.
         /// </summary>
         internal static string SaveCommandTitle {

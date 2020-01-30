@@ -7,9 +7,9 @@ using Acr.UserDialogs;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using System.Collections.Generic;
 using TrackYourTrip.Core.Helpers;
 using TrackYourTrip.Core.Interfaces;
-using System.Collections.Generic;
 
 namespace TrackYourTrip.Core.ViewModels
 {
@@ -36,7 +36,7 @@ namespace TrackYourTrip.Core.ViewModels
 
         public IMvxAsyncCommand BackCommand => new MvxAsyncCommand(async () =>
         {
-            var localizedText = localizeService.Translate("SecondPage_ByeBye_Localization");
+            string localizedText = localizeService.Translate("SecondPage_ByeBye_Localization");
 
             await userDialogs.AlertAsync(localizedText);
             await navigationService.Close(this);
@@ -47,13 +47,15 @@ namespace TrackYourTrip.Core.ViewModels
             _parameter = parameter;
 
             if (_parameter != null && _parameter.ContainsKey("ButtonText"))
+            {
                 MainPageButtonText = "ButtonText";
+            }
         }
 
         public int SuperNumber
         {
-            get { return settings.SuperNumber; }
-            set { settings.SuperNumber = value; }
+            get => settings.SuperNumber;
+            set => settings.SuperNumber = value;
         }
     }
 }

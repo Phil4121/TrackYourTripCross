@@ -6,9 +6,9 @@
 using MvvmCross;
 using System;
 using System.Globalization;
+using TrackYourTrip.Core.Interfaces;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using TrackYourTrip.Core.Interfaces;
 
 namespace TrackYourTrip.Core.Resources
 {
@@ -31,7 +31,7 @@ namespace TrackYourTrip.Core.Resources
                 return null;
             }
 
-            var translation = AppResources.ResourceManager.GetString(Text, _cultureInfo);
+            string translation = AppResources.ResourceManager.GetString(Text, _cultureInfo);
 
 #if DEBUG
             if (translation == null)

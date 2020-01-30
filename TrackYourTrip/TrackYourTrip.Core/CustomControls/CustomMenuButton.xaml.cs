@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,15 +12,25 @@ namespace TrackYourTrip.Core.CustomControls
 
         public ImageSource Icon
         {
-            get { return ButtonIcon.Source; }
-            set { ButtonIcon.Source = value; }
+            get => ButtonIcon.Source;
+            set => ButtonIcon.Source = value;
         }
 
-        public string Label
+        public static readonly BindableProperty ButtonTextProperty = BindableProperty.Create(
+                                                         propertyName: "ButtonText",
+                                                         returnType: typeof(string),
+                                                         declaringType: typeof(CustomMenuButton),
+                                                         defaultValue: "",
+                                                         defaultBindingMode: BindingMode.TwoWay,
+                                                         propertyChanged: ButtonTextPropertyChanged);
+
+        private static void ButtonTextPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            get { return ButtonLabel.Text; }
-            set { ButtonLabel.Text = value; }
+            CustomMenuButton control = (CustomMenuButton)bindable;
+            control.ButtonLabel.Text = newValue.ToString();
         }
+
+        public string ButtonText { get; set; }
 
         public CustomMenuButton()
         {

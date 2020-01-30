@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
+﻿using SQLite;
 using System.IO;
-using System.Linq;
-using System.Text;
-using SQLite;
 using TrackYourTrip.Core.Helpers;
 using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Droid.Database;
@@ -28,7 +23,7 @@ namespace TrackYourTrip.Droid.Database
 
         public string GetFullDbPath()
         {
-            var dbHelper = new DatabaseHelper();
+            DatabaseHelper dbHelper = new DatabaseHelper();
 
             return Path.Combine(GetDbPath(), dbHelper.GetDbFilename);
         }

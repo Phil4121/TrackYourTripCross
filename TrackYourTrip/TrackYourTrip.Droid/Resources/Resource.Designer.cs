@@ -25225,82 +25225,85 @@ namespace TrackYourTrip.Droid
 			public const int navigation_empty_icon = 2131165518;
 			
 			// aapt resource value: 0x7F07014F
-			public const int notification_action_background = 2131165519;
+			public const int NewTrip = 2131165519;
 			
 			// aapt resource value: 0x7F070150
-			public const int notification_bg = 2131165520;
+			public const int notification_action_background = 2131165520;
 			
 			// aapt resource value: 0x7F070151
-			public const int notification_bg_low = 2131165521;
+			public const int notification_bg = 2131165521;
 			
 			// aapt resource value: 0x7F070152
-			public const int notification_bg_low_normal = 2131165522;
+			public const int notification_bg_low = 2131165522;
 			
 			// aapt resource value: 0x7F070153
-			public const int notification_bg_low_pressed = 2131165523;
+			public const int notification_bg_low_normal = 2131165523;
 			
 			// aapt resource value: 0x7F070154
-			public const int notification_bg_normal = 2131165524;
+			public const int notification_bg_low_pressed = 2131165524;
 			
 			// aapt resource value: 0x7F070155
-			public const int notification_bg_normal_pressed = 2131165525;
+			public const int notification_bg_normal = 2131165525;
 			
 			// aapt resource value: 0x7F070156
-			public const int notification_icon_background = 2131165526;
+			public const int notification_bg_normal_pressed = 2131165526;
 			
 			// aapt resource value: 0x7F070157
-			public const int notification_template_icon_bg = 2131165527;
+			public const int notification_icon_background = 2131165527;
 			
 			// aapt resource value: 0x7F070158
-			public const int notification_template_icon_low_bg = 2131165528;
+			public const int notification_template_icon_bg = 2131165528;
 			
 			// aapt resource value: 0x7F070159
-			public const int notification_tile_bg = 2131165529;
+			public const int notification_template_icon_low_bg = 2131165529;
 			
 			// aapt resource value: 0x7F07015A
-			public const int notify_panel_notification_icon_bg = 2131165530;
+			public const int notification_tile_bg = 2131165530;
 			
 			// aapt resource value: 0x7F07015B
-			public const int roundedbg = 2131165531;
+			public const int notify_panel_notification_icon_bg = 2131165531;
 			
 			// aapt resource value: 0x7F07015C
-			public const int roundedbgdark = 2131165532;
+			public const int roundedbg = 2131165532;
 			
 			// aapt resource value: 0x7F07015D
-			public const int Settings = 2131165533;
+			public const int roundedbgdark = 2131165533;
 			
 			// aapt resource value: 0x7F07015E
-			public const int splash = 2131165534;
+			public const int Settings = 2131165534;
 			
 			// aapt resource value: 0x7F07015F
-			public const int tooltip_frame_dark = 2131165535;
+			public const int splash = 2131165535;
 			
 			// aapt resource value: 0x7F070160
-			public const int tooltip_frame_light = 2131165536;
+			public const int tooltip_frame_dark = 2131165536;
 			
 			// aapt resource value: 0x7F070161
-			public const int xf_arrow_dropdown = 2131165537;
+			public const int tooltip_frame_light = 2131165537;
 			
 			// aapt resource value: 0x7F070162
-			public const int xf_check = 2131165538;
+			public const int xf_arrow_dropdown = 2131165538;
 			
 			// aapt resource value: 0x7F070163
-			public const int xf_checkbox_selected = 2131165539;
+			public const int xf_check = 2131165539;
 			
 			// aapt resource value: 0x7F070164
-			public const int xf_checkbox_unselected = 2131165540;
+			public const int xf_checkbox_selected = 2131165540;
 			
 			// aapt resource value: 0x7F070165
-			public const int xf_clear = 2131165541;
+			public const int xf_checkbox_unselected = 2131165541;
 			
 			// aapt resource value: 0x7F070166
-			public const int xf_error = 2131165542;
+			public const int xf_clear = 2131165542;
 			
 			// aapt resource value: 0x7F070167
-			public const int xf_radio_button_selected = 2131165543;
+			public const int xf_error = 2131165543;
 			
 			// aapt resource value: 0x7F070168
-			public const int xf_radio_button_unselected = 2131165544;
+			public const int xf_radio_button_selected = 2131165544;
+			
+			// aapt resource value: 0x7F070169
+			public const int xf_radio_button_unselected = 2131165545;
 			
 			static Drawable()
 			{

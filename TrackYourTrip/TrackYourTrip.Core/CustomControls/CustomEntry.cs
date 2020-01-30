@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace TrackYourTrip.Core.CustomControls
 {
@@ -12,11 +9,8 @@ namespace TrackYourTrip.Core.CustomControls
 
         public bool IsValid
         {
-            get { return (bool)GetValue(IsValidProperty); }
-            set
-            {
-                SetValue(IsValidProperty, value);
-            }
+            get => (bool)GetValue(IsValidProperty);
+            set => SetValue(IsValidProperty, value);
         }
 
         public static readonly BindableProperty BorderErrorColorProperty =
@@ -24,11 +18,8 @@ namespace TrackYourTrip.Core.CustomControls
 
         public Xamarin.Forms.Color BorderErrorColor
         {
-            get { return (Xamarin.Forms.Color)GetValue(BorderErrorColorProperty); }
-            set
-            {
-                SetValue(BorderErrorColorProperty, value);
-            }
+            get => (Xamarin.Forms.Color)GetValue(BorderErrorColorProperty);
+            set => SetValue(BorderErrorColorProperty, value);
         }
 
         public static readonly BindableProperty ErrorTextProperty =
@@ -36,11 +27,8 @@ namespace TrackYourTrip.Core.CustomControls
 
         public string ErrorText
         {
-            get { return (string)GetValue(ErrorTextProperty); }
-            set
-            {
-                SetValue(ErrorTextProperty, value);
-            }
+            get => (string)GetValue(ErrorTextProperty);
+            set => SetValue(ErrorTextProperty, value);
         }
     }
 }
