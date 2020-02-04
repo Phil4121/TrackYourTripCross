@@ -89,7 +89,7 @@ namespace TrackYourTrip.Core.ViewModels
 
         public abstract bool IsNew { get; }
 
-        private bool _isValid;
+        private bool _isValid = true;
         public bool IsValid
         {
             get => _isValid;

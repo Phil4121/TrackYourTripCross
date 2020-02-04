@@ -6,8 +6,7 @@
     <StackLayout Orientation="Vertical">
         <Image x:Name="ButtonIcon" HorizontalOptions="Center" Source="{Binding Icon}" Aspect="AspectFit" />
         <Label x:Name="ButtonLabel" HorizontalOptions="Center"
-               Text="{Binding Label}"
-               TextColor="#3A444D" />
+               Text="{Binding Label}" />
         <StackLayout.GestureRecognizers>
             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
         </StackLayout.GestureRecognizers>

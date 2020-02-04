@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converter="clr-namespace:TrackYourTrip.Core.Converters"
+             mc:Ignorable="d"
+             x:Class="TrackYourTrip.Core.CustomControls.CustomEntryWithErrorLabel">
+    <ContentView.Resources>
+        <converter:IsValidToIsVisibleConverter x:Key="cnvIsValidToIsVisibleConverter" />
+        <converter:BooleanToHeightRequestConverter x:Key="cnvBooleanToHeight" />
+    </ContentView.Resources>
+    <StackLayout Orientation="Vertical">
+        <Entry x:Name="MainEntry" Text="{Binding UserInput, Mode=TwoWay}"  />
+        <Label x:Name="ErrorLabel" Text="{Binding ErrorText, Mode=TwoWay}"
+               IsVisible="{Binding IsValid, Converter={StaticResource cnvIsValidToIsVisibleConverter}}"
+               HeightRequest="{Binding IsValid, Converter={StaticResource cnvBooleanToHeight}}"
+               Style="{StaticResource ErrorLabel}"  />
+    </StackLayout>
+</ContentView>

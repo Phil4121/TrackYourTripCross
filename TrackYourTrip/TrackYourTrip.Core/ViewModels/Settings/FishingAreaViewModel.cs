@@ -1,9 +1,11 @@
 ﻿using Acr.UserDialogs;
+using FluentValidation.Results;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TrackYourTrip.Core.CustomValidators;
@@ -74,6 +76,13 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         {
             get => _fishingArea;
             set => SetProperty(ref _fishingArea, value);
+        }
+
+        private string _fishingAreaErrorText;
+        public string FishingAreaErrorText
+        {
+            get => _fishingAreaErrorText;
+            set => SetProperty(ref _fishingAreaErrorText, value);
         }
 
         public CameraUpdate MapCenter
@@ -173,6 +182,9 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             FluentValidation.Results.ValidationResult result = validator.Validate(FishingArea);
             FishingArea.IsValid = result.IsValid;
             ValidationResult = result;
+
+            if (!result.IsValid)
+                SetValidationFailures(result.Errors);
         }
 
         public override async Task SaveAsync()
@@ -316,6 +328,19 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             FishingArea = await DataStore.GetItemAsync(FishingArea.Id);
 
             await RaisePropertyChanged(() => FishingArea);
+        }
+
+        private void SetValidationFailures(IList<ValidationFailure> vf)
+        {
+            foreach (ValidationFailure f in vf)
+            {
+                switch (f.PropertyName.ToLower())
+                {
+                    case "fishingarea":
+                        FishingAreaErrorText = f.ErrorMessage;
+                        break;
+                }
+            }
         }
 
         #endregion

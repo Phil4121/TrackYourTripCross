@@ -1,8 +1,10 @@
 
 
 using Android.App;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
+using Android.Views;
 using System;
 using TrackYourTrip.Core.Helpers;
 using TrackYourTrip.Droid.Database;

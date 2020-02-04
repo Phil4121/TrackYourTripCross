@@ -4,24 +4,62 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="TrackYourTrip.Core.FormsApp"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Core;assembly=MvvmCross.Forms"
+    xmlns:custom="clr-namespace:TrackYourTrip.Core.CustomControls"
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms">
 	<mvx:MvxFormsApplication.Resources>
 		<ResourceDictionary>
             <Color x:Key="Primary">#2196F3</Color>
-            <Color x:Key="PrimaryDark">#1976D2</Color>
-            <Color x:Key="Accent">#96d1ff</Color>
-            <Color x:Key="LightBackgroundColor">#FAFAFA</Color>
-            <Color x:Key="DarkBackgroundColor">#C0C0C0</Color>
-            <Color x:Key="MediumGrayTextColor">#4d4d4d</Color>
+            <Color x:Key="DarkBackgroundColor">#333333</Color>
             <Color x:Key="LightTextColor">#ffffff</Color>
-            <Style TargetType="views:MvxNavigationPage">
-                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
-                <Setter Property="BarTextColor" Value="White" />
+            <Color x:Key="ErrorTextColor">#ff1a1a</Color>
+            <Color x:Key="ButtonTextColor">#33adff</Color>
+
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundImageSource" Value="Background.png" />
+                <Setter Property="BackgroundColor" Value="{StaticResource DarkBackgroundColor}" />
+                <Setter Property="Opacity" Value="0.9" />
             </Style>
+
+            <Style TargetType="NavigationPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{StaticResource DarkBackgroundColor}" />
+                <Setter Property="BarBackgroundColor" Value="{StaticResource DarkBackgroundColor}" />
+                <Setter Property="BarTextColor" Value="{StaticResource LightTextColor}" />
+            </Style>
+
+            <Style x:Key="RootStackLayout" TargetType="StackLayout">
+                <Setter Property="Padding" Value="20" />
+            </Style>
+
             <Style TargetType="Button">
-                <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource ButtonTextColor}" />
+            </Style>
+
+            <Style x:Key="DeleteButton" TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource ErrorTextColor}" />
+            </Style>
+
+            <Style TargetType="Label" ApplyToDerivedTypes="True">
                 <Setter Property="TextColor" Value="{StaticResource LightTextColor}" />
             </Style>
-		</ResourceDictionary>
+
+            <Style x:Key="ErrorLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="TextColor" Value="{StaticResource ErrorTextColor}" />
+            </Style>
+
+            <Style TargetType="Picker" ApplyToDerivedTypes="True">
+                <Setter Property="TextColor" Value="{StaticResource LightTextColor}" />
+            </Style>
+
+            <Style TargetType="Entry" ApplyToDerivedTypes="True">
+                <Setter Property="TextColor" Value="{StaticResource LightTextColor}" />
+            </Style>
+
+            <Style TargetType="ActivityIndicator" ApplyToDerivedTypes="True">
+                <Setter Property="Color" Value="{StaticResource LightTextColor}" />
+            </Style>
+
+        </ResourceDictionary>
 	</mvx:MvxFormsApplication.Resources>
 </mvx:MvxFormsApplication>

@@ -20,11 +20,8 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <!--  row background colors  -->
-                <BoxView Grid.Row="0" Color="#F1F2F2" />
-
                 <!--  inner grid for button layouts  -->
-                <Grid Grid.Row="0" ColumnSpacing="30" HorizontalOptions="CenterAndExpand" RowSpacing="30" VerticalOptions="CenterAndExpand">
+                <Grid Grid.Row="0" ColumnSpacing="30" HorizontalOptions="CenterAndExpand" RowSpacing="30" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />

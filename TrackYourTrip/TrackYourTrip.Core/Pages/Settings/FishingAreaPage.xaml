@@ -19,7 +19,6 @@
         <ToolbarItem Text="{Binding SaveCommandTitle}" Order="Primary" Command="{mvxBind:MvxBind SaveCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
-        <StyleSheet Source="/Styles/TrackYourTrip.css" />
         <converter:IsValidToIsVisibleConverter x:Key="cnvIsValidToIsVisibleConverter"></converter:IsValidToIsVisibleConverter>
         <converter:NegateBooleanConverter x:Key="cnvNegateBooleanConverter"></converter:NegateBooleanConverter>
         <ResourceDictionary>
@@ -37,7 +36,7 @@
 
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout StyleClass="defaultStackLayout">
+        <StackLayout Style="{StaticResource RootStackLayout}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -47,20 +46,16 @@
                     <ColumnDefinition Width="auto" />
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Text="Bezeichnung: " Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" />
+                <Label Text="Bezeichnung: " Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
 
-                <custom:CustomEntry x:Name="FishingAreaName"
-                                    BorderErrorColor="Red"
-                                    Text="{Binding FishingArea.FishingArea}"
+                <custom:CustomEntryWithErrorLabel x:Name="FishingAreaName"
+                                    UserInput="{Binding FishingArea.FishingArea}"
+                                    IsValid="{Binding IsValid}"
+                                    ErrorText="{Binding FishingAreaErrorText}"
                                     Grid.Row="0"
-                                    Grid.Column="1">
-                    <custom:CustomEntry.Behaviors>
-                        <customBehavior:EmptyEntryValidatorBehavior />
-                    </custom:CustomEntry.Behaviors>
-                </custom:CustomEntry>
+                                    Grid.Column="1" />
 
                 <Label Text="Gewässertyp: " Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" />
-
 
                 <custom:CustomPicker 
                     ItemsSource="{Binding Waters}"
@@ -106,21 +101,14 @@
                     <Button Text="{Binding SpotTitle}"
                                 Grid.Column="0" Grid.Row="0"
                                 Command="{Binding SpotsClickedCommand}"
-                                HorizontalOptions="CenterAndExpand"
-                                StyleClass="defaultButton" />
+                                HorizontalOptions="CenterAndExpand" />
 
                     <Button Text="{Binding DeleteCommandTitle}" 
                             Command="{mvxBind:MvxBind DeleteCommand}"
                             Grid.Column="0" Grid.Row="2"
-                            StyleClass="defaultDeleteButton"
+                            Style="{StaticResource DeleteButton}"
                             HorizontalOptions="CenterAndExpand"/>
                 </Grid>
-
-                <Label 
-                   Text="{Binding Errors}" 
-                   IsVisible="{Binding IsValid, Converter={StaticResource cnvIsValidToIsVisibleConverter}}"
-                   StyleClass="defaultErrorLabel"
-                   HorizontalOptions="CenterAndExpand"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
