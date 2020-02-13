@@ -31,7 +31,17 @@ namespace TrackYourTrip.Core.CustomControls
             BindableProperty.Create("SelectedValue", typeof(Object), typeof(CustomPicker),
                 null, BindingMode.TwoWay, propertyChanged: OnSelectedValueChanged);
 
-        public String DisplayMemberPath { get; set; }
+        public static readonly BindableProperty SelectedValuePathProperty =
+            BindableProperty.Create(nameof(SelectedValuePath), typeof(String), typeof(CustomPicker), string.Empty);
+
+        public static readonly BindableProperty DisplayMemberPathProperty =
+            BindableProperty.Create(nameof(DisplayMemberPath), typeof(String), typeof(CustomPicker), string.Empty);
+
+        public String DisplayMemberPath
+        {
+            get => (String)GetValue(DisplayMemberPathProperty);
+            set => SetValue(DisplayMemberPathProperty, value);
+        }
 
         public new IEnumerable ItemsSource
         {
@@ -62,7 +72,11 @@ namespace TrackYourTrip.Core.CustomControls
             }
         }
 
-        public String SelectedValuePath { get; set; }
+        public String SelectedValuePath
+        {
+            get => (String)GetValue(SelectedValuePathProperty);
+            set => SetValue(SelectedValuePathProperty, value);
+        }
 
         public CustomPicker()
         {

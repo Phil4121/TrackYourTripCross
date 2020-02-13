@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"   
+             xmlns:other="clr-namespace:TrackYourTrip.Core.ViewModels.Other" 
+             xmlns:converter="clr-namespace:TrackYourTrip.Core.Converters"
+             mc:Ignorable="d"
+             x:Class="TrackYourTrip.Core.CustomControls.CustomMapWithErrorLabel">
+    <ContentView.Resources>
+        <converter:IsValidToIsVisibleConverter x:Key="cnvIsValidToIsVisibleConverter" />
+        <converter:BooleanToHeightRequestConverter x:Key="cnvBooleanToHeight" />
+        <ResourceDictionary>
+            <other:MapItemTemplateSelector x:Key="MapItemTemplateSelector">
+                <other:MapItemTemplateSelector.DataTemplate>
+                    <DataTemplate>
+                        <maps:Pin Position="{Binding Position}"
+                                  Label=""
+                                  IsDraggable="False"
+                                  Type="Place"/>
+                    </DataTemplate>
+                </other:MapItemTemplateSelector.DataTemplate>
+            </other:MapItemTemplateSelector>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <maps:Map x:Name="map"
+                      InitialCameraUpdate="{Binding CameraCenterView}"
+                      ItemsSource="{Binding ItemsSource}"
+                      ItemTemplateSelector="{StaticResource MapItemTemplateSelector}"
+                      MapType="Hybrid"
+                      VerticalOptions="FillAndExpand" 
+                      MapClicked="map_MapClicked">
+        </maps:Map>
+        <Label x:Name="ErrorLabel" 
+               Text="{Binding ErrorText, Mode=TwoWay}"
+               IsVisible="{Binding IsValid, Converter={StaticResource cnvIsValidToIsVisibleConverter}}"
+               HeightRequest="{Binding IsValid, Converter={StaticResource cnvBooleanToHeight}}"
+               Style="{StaticResource ErrorLabel}"  />
+    </StackLayout>
+</ContentView>

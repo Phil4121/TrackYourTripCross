@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TrackYourTrip.Core.CustomControls;
 using TrackYourTrip.Core.CustomValidators;
 using TrackYourTrip.Core.Helpers;
 using TrackYourTrip.Core.Interfaces;
@@ -30,8 +31,8 @@ namespace TrackYourTrip.Core.ViewModels.Settings
                 (param) => RefreshPinsTask = MvxNotifyTask.Create(() => RefreshPinAsync(param), onException: ex => LogException(ex))
                 );
 
-            WaterChangedCommand = new MvxCommand(
-                () => RefreshWaterTask = MvxNotifyTask.Create(() => RefreshWaterAsync(), onException: ex => LogException(ex))
+            WaterChangedCommand = new MvxCommand<object>(
+                (value) => RefreshWaterTask = MvxNotifyTask.Create(() => RefreshWaterAsync(value), onException: ex => LogException(ex))
                 );
 
             SpotsClickedCommand = new MvxCommand(
@@ -78,13 +79,6 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             set => SetProperty(ref _fishingArea, value);
         }
 
-        private string _fishingAreaErrorText;
-        public string FishingAreaErrorText
-        {
-            get => _fishingAreaErrorText;
-            set => SetProperty(ref _fishingAreaErrorText, value);
-        }
-
         public CameraUpdate MapCenter
         {
             get
@@ -123,6 +117,28 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         }
 
         public string SpotTitle => Resources.AppResources.SpotsPageTitle;
+
+
+        private string _fishingAreaErrorText;
+        public string FishingAreaErrorText
+        {
+            get => _fishingAreaErrorText;
+            set => SetProperty(ref _fishingAreaErrorText, value);
+        }
+
+        private string _waterTypeErrorText;
+        public string WaterTypeErrorText
+        {
+            get => _waterTypeErrorText;
+            set => SetProperty(ref _waterTypeErrorText, value);
+        }
+
+        private string _areaLocationErrorText;
+        public string AreaLocationErrorText
+        {
+            get => _areaLocationErrorText;
+            set => SetProperty(ref _areaLocationErrorText, value);
+        }
 
         #endregion
 
@@ -296,13 +312,12 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             }
         }
 
-        async Task RefreshWaterAsync()
+        async Task RefreshWaterAsync(object value)
         {
-            if (FishingArea == null)
-            {
+            if (FishingArea == null || value == null) 
                 return;
-            }
 
+            FishingArea.ID_WaterModel = Guid.Parse(value.ToString());
             FishingArea.WaterModel = Waters.Where(w => w.Id == FishingArea.ID_WaterModel).FirstOrDefault();
 
             await RaisePropertyChanged(() => FishingArea);
@@ -338,6 +353,14 @@ namespace TrackYourTrip.Core.ViewModels.Settings
                 {
                     case "fishingarea":
                         FishingAreaErrorText = f.ErrorMessage;
+                        break;
+
+                    case "id_watermodel":
+                        WaterTypeErrorText = f.ErrorMessage;
+                        break;
+
+                    case "arealocation":
+                        AreaLocationErrorText = f.ErrorMessage;
                         break;
                 }
             }
