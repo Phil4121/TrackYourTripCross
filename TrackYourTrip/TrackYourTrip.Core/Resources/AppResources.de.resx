@@ -132,6 +132,9 @@
   <data name="FishingAreaPageTitle" xml:space="preserve">
     <value>Revier</value>
   </data>
+  <data name="FishingAreaSetText" xml:space="preserve">
+    <value>Bitte markieren sie ihre Angelrevier indem sie auf die Karte klicken.</value>
+  </data>
   <data name="FishingAreasPageTitle" xml:space="preserve">
     <value>Revierübersicht</value>
   </data>

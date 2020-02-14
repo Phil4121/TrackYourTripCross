@@ -1,9 +1,11 @@
 ﻿using Acr.UserDialogs;
+using FluentValidation.Results;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TrackYourTrip.Core.CustomValidators;
@@ -138,6 +140,26 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             }
         }
 
+        private string _spotNameErrorText;
+        public string SpotNameErrorText
+        {
+            get => _spotNameErrorText;
+            set => SetProperty(ref _spotNameErrorText, value);
+        }
+
+        private string _spotTypeErrorText;
+        public string SpotTypeErrorText
+        {
+            get => _spotTypeErrorText;
+            set => SetProperty(ref _spotTypeErrorText, value);
+        }
+
+        private string _spotLocationErrorText;
+        public string SpotLocationErrorText
+        {
+            get => _spotLocationErrorText;
+            set => SetProperty(ref _spotLocationErrorText, value);
+        }
 
         #endregion
 
@@ -193,6 +215,9 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             FluentValidation.Results.ValidationResult result = validator.Validate(Spot);
             Spot.IsValid = result.IsValid;
             ValidationResult = result;
+
+            if (!result.IsValid)
+                SetValidationFailures(result.Errors);
         }
 
         public override async Task SaveAsync()
@@ -290,6 +315,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
                 });
 
                 RaisePropertyChanged(() => SpotMarker);
+                RaisePropertyChanged(() => MapCenter);
             }
             catch (Exception ex)
             {
@@ -310,6 +336,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
             await RaisePropertyChanged(() => Spot);
             await RaisePropertyChanged(() => SpotMarker);
+            await RaisePropertyChanged(() => MapCenter);
             await RaisePropertyChanged(() => HasSelectedSpotType);
         }
 
@@ -332,6 +359,27 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             Spot = await DataStore.GetItemAsync(Spot.Id);
 
             await RaisePropertyChanged(() => Spot);
+        }
+
+        private void SetValidationFailures(IList<ValidationFailure> vf)
+        {
+            foreach (ValidationFailure f in vf)
+            {
+                switch (f.PropertyName.ToLower())
+                {
+                    case "spot":
+                        SpotNameErrorText = f.ErrorMessage;
+                        break;
+
+                    case "id_spottype":
+                        SpotTypeErrorText = f.ErrorMessage;
+                        break;
+
+                    case "spotmarker":
+                        SpotLocationErrorText = f.ErrorMessage;
+                        break;
+                }
+            }
         }
 
         #endregion

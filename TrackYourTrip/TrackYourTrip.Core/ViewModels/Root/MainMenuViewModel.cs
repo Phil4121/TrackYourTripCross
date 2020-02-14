@@ -50,6 +50,7 @@ namespace TrackYourTrip.Core.ViewModels.Root
         #endregion
 
         #region Methods
+
         public override void Validate()
         {
             throw new NotImplementedException();

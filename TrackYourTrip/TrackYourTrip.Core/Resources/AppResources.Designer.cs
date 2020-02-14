@@ -106,6 +106,15 @@ namespace TrackYourTrip.Core.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please mark your fishing area by clicking on the map. ähnelt.
+        /// </summary>
+        internal static string FishingAreaSetText {
+            get {
+                return ResourceManager.GetString("FishingAreaSetText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Fishing areas ähnelt.
         /// </summary>
         internal static string FishingAreasPageTitle {

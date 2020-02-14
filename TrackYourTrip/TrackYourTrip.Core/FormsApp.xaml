@@ -43,9 +43,14 @@
                 <Setter Property="TextColor" Value="{StaticResource LightTextColor}" />
             </Style>
 
+            <Style x:Key="SpacedLabel" TargetType="Label">
+                <Setter Property="Margin" Value="0,15,0,15" />
+            </Style>
+
             <Style x:Key="ErrorLabel" TargetType="Label">
                 <Setter Property="FontSize" Value="Small" />
                 <Setter Property="TextColor" Value="{StaticResource ErrorTextColor}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
 
             <Style TargetType="Picker" ApplyToDerivedTypes="True">
@@ -56,6 +61,12 @@
                 <Setter Property="TextColor" Value="{StaticResource LightTextColor}" />
             </Style>
 
+            <Style x:Key="IndicatorStackLayout" TargetType="StackLayout">
+                <Setter Property="Padding" Value="12" />
+                <Setter Property="AbsoluteLayout.LayoutFlags" Value="PositionProportional" />
+                <Setter Property="AbsoluteLayout.LayoutBounds" Value="0.5,0.5,-1,-1" />
+            </Style>
+            
             <Style TargetType="ActivityIndicator" ApplyToDerivedTypes="True">
                 <Setter Property="Color" Value="{StaticResource LightTextColor}" />
             </Style>

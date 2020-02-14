@@ -132,6 +132,9 @@
   <data name="FishingAreaPageTitle" xml:space="preserve">
     <value>Fishing area</value>
   </data>
+  <data name="FishingAreaSetText" xml:space="preserve">
+    <value>Please mark your fishing area by clicking on the map.</value>
+  </data>
   <data name="FishingAreasPageTitle" xml:space="preserve">
     <value>Fishing areas</value>
   </data>

@@ -118,6 +118,14 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
         public string SpotTitle => Resources.AppResources.SpotsPageTitle;
 
+        public string InstructionText
+        {
+            get
+            {
+                return Resources.AppResources.FishingAreaSetText;
+            }
+        }
+
 
         private string _fishingAreaErrorText;
         public string FishingAreaErrorText

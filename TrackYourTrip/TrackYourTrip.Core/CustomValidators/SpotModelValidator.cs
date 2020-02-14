@@ -9,6 +9,7 @@ namespace TrackYourTrip.Core.CustomValidators
         {
             RuleFor(s => s.Spot).NotEmpty().WithMessage("Bezeichnung darf nicht leer sein!");
             RuleFor(s => s.ID_SpotType).NotEmpty().WithMessage("Spottype darf nicht leer sein!");
+            RuleFor(s => s.SpotMarker).Must(l => l.Count > 0).WithMessage("Spot muss markiert werden 123!");
         }
     }
 }

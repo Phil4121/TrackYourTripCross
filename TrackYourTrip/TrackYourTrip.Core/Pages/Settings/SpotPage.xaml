@@ -50,53 +50,45 @@
 
                 <custom:CustomEntryWithErrorLabel x:Name="SpotName"
                                     UserInput="{Binding Spot.Spot}"
+                                    ErrorText="{Binding SpotNameErrorText}"
                                     Grid.Row="0"
                                     Grid.Column="1" />
 
 
-                <Label Text="Spottyp: " Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" />
+                <Label Text="Spottyp: " Grid.Row="1" Grid.Column="0" />
 
 
-                <custom:CustomPicker 
+                <custom:CustomPickerWithErrorLabel  
                     ItemsSource="{Binding SpotTypes}"
                     SelectedValuePath="Id"                    
                     DisplayMemberPath="SpotType" 
                     SelectedValue="{Binding Spot.ID_SpotType, Mode=TwoWay}"
+                    ErrorText="{Binding SpotTypeErrorText}"
                     Grid.Row="1" Grid.Column="1">
-                    <custom:CustomPicker.Behaviors>
+                    <custom:CustomPickerWithErrorLabel.Behaviors>
                         <b:EventToCommandBehavior 
-                                      EventName="SelectedIndexChanged"
+                                      EventName="OnSelectedPickerValueChanged"
+                                      EventArgsParameterPath="SelectedValue"
                                       Command="{Binding SpotTypeChangedCommand}" />
-                    </custom:CustomPicker.Behaviors>
-                </custom:CustomPicker>
+                    </custom:CustomPickerWithErrorLabel.Behaviors>
+                </custom:CustomPickerWithErrorLabel>
             </Grid>
 
-            <Label Text="{Binding InstructionText}" />
+            <Label Text="{Binding InstructionText}" Style="{Binding SpacedLabel}" />
 
-            <maps:Map x:Name="map"
-                      InitialCameraUpdate="{Binding MapCenter, Mode=TwoWay}"
-                      ItemsSource="{Binding SpotMarker, Mode=TwoWay}"
-                      ItemTemplateSelector="{StaticResource MapItemTemplateSelector}"
-                      MapType="Hybrid"
+            <custom:CustomMapWithErrorLabel x:Name="map"
+                      CameraCenterView="{Binding MapCenter}"
+                      ItemsSource="{Binding SpotMarker}"
                       VerticalOptions="FillAndExpand"
-                      IsEnabled="{Binding HasSelectedSpotType, Mode=TwoWay}">
-                <maps:Map.Behaviors>
+                      IsEnabled="{Binding HasSelectedSpotType, Mode=TwoWay}"
+                      ErrorText="{Binding SpotLocationErrorText}">
+                <custom:CustomMapWithErrorLabel.Behaviors>
                     <b:EventToCommandBehavior 
-                                      EventName="MapClicked"
-                                      EventArgsParameterPath="Point"
+                                      EventName="OnMapClicked"
+                                      EventArgsParameterPath="ClickedPosition"
                                       Command="{Binding MapClickedCommand}" />
-                </maps:Map.Behaviors>
-            </maps:Map>
-
-
-            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" >
-
-                <Label 
-                   Text="{Binding Errors}" 
-                   IsVisible="{Binding IsValid, Converter={StaticResource cnvIsValidToIsVisibleConverter}}"
-                   Style="{StaticResource ErrorLabel}"
-                   HorizontalOptions="CenterAndExpand"/>
-            </StackLayout>
+                </custom:CustomMapWithErrorLabel.Behaviors>
+            </custom:CustomMapWithErrorLabel>
         </StackLayout>
     </ContentPage.Content>
 </mvx:MvxContentPage>
