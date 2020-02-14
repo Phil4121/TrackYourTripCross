@@ -25,7 +25,7 @@
                     <Grid Grid.Row="0" ColumnSpacing="30" HorizontalOptions="CenterAndExpand" RowSpacing="30" 
                           VerticalOptions="CenterAndExpand" BackgroundColor="Transparent">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
+                            <RowDefinition Height="110" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />

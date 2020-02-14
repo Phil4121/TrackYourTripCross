@@ -38,7 +38,7 @@
                                     Grid.Row="0"
                                     Grid.Column="1" />
 
-                <Label Text="Gewässertyp: " Grid.Row="1" Grid.Column="0" />
+                <Label Text="Gewässertyp: " Grid.Row="1" Grid.Column="0" VerticalOptions="Center" />
 
                 <custom:CustomPickerWithErrorLabel 
                     ItemsSource="{Binding Waters}"
