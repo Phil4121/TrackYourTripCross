@@ -4,6 +4,7 @@ using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
 using System.Threading.Tasks;
+using TrackYourTrip.Core.Helpers;
 using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Models;
 using TrackYourTrip.Core.ViewModels.Root;
@@ -84,10 +85,10 @@ namespace TrackYourTrip.Core.ViewModels.Root
             switch (selectedMenu.ToLower())
             {
                 case "setting":
-                    return "SettingsPage";
+                    return PageHelper.SETTINGS_PAGE;
 
                 case "startnewtrip":
-                    return "StartNewTripPage";
+                    return PageHelper.START_NEW_TRIP_PAGE;
 
                 default:
                     throw new Exception("SelectedMenu string not found!");

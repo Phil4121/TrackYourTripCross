@@ -69,7 +69,7 @@ namespace TrackYourTrip.Core.ViewModels.Root
 
             return base.Initialize();
         }
-
+        
         public override void Validate()
         {
             throw new NotImplementedException();

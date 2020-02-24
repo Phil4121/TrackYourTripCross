@@ -1,8 +1,8 @@
 ﻿using MvvmCross.Forms.Presenters.Attributes;
 using MvvmCross.Forms.Views;
-using TrackYourTrip.Core.ViewModels.Settings;
+using TrackYourTrip.Core.ViewModels.Overviews;
 
-namespace TrackYourTrip.Core.Pages.Settings
+namespace TrackYourTrip.Core.Pages.Overviews
 {
     [MvxContentPagePresentation(WrapInNavigationPage = true)]
     public partial class FishingAreasPage : MvxContentPage<FishingAreasViewModel>

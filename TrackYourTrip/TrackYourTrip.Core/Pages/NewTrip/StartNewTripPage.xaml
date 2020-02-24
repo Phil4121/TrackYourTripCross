@@ -1,15 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<mvx:MvxContentPage
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:custom="clr-namespace:TrackYourTrip.Core.CustomControls"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              mc:Ignorable="d"
-             x:Class="TrackYourTrip.Core.Pages.NewTrip.StartNewTripPage">
+             x:Class="TrackYourTrip.Core.Pages.NewTrip.StartNewTripPage"
+             Title="{Binding Title}">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <ScrollView>
+                <StackLayout Style="{StaticResource RootStackLayout}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Revier: " Grid.Row="0" Grid.Column="0" VerticalOptions="Start" />
+
+                        <custom:CustomSelectorWithErrorLabel x:Name="FishingAreaName"
+                                                     DisplayText="{Binding Trip.FishingArea.FishingArea}"
+                                                     VerticalOptions="FillAndExpand"
+                                                     Grid.Row="0" Grid.Column="1">
+                            <custom:CustomSelectorWithErrorLabel.Behaviors>
+                                <b:EventToCommandBehavior 
+                                      EventName="OnSelectorClicked"
+                                      Command="{Binding FishingAreaSelectedCommand}"/>
+                            </custom:CustomSelectorWithErrorLabel.Behaviors>
+                        </custom:CustomSelectorWithErrorLabel>
+
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout IsVisible="{Binding IsBusy}" Style="{StaticResource IndicatorStackLayout}">
+                <ActivityIndicator IsRunning="{Binding IsBusy}" />
+            </StackLayout>
+        </AbsoluteLayout>
     </ContentPage.Content>
-</ContentPage>
+</mvx:MvxContentPage>

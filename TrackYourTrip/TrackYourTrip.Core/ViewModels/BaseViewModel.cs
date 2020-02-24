@@ -7,6 +7,7 @@ using MvvmCross.ViewModels;
 using System;
 using System.Threading.Tasks;
 using TrackYourTrip.Core.Interfaces;
+using TrackYourTrip.Core.Models;
 
 namespace TrackYourTrip.Core.ViewModels
 {

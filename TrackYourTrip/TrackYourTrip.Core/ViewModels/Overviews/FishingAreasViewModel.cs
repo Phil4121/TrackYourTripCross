@@ -9,12 +9,15 @@ using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Models;
 using TrackYourTrip.Core.Services;
 using TrackYourTrip.Core.ViewModelResults;
+using TrackYourTrip.Core.ViewModels;
+using TrackYourTrip.Core.ViewModels.Overviews;
+using TrackYourTrip.Core.ViewModels.Root;
 using TrackYourTrip.Core.ViewModels.Settings;
 
 [assembly: MvxNavigation(typeof(FishingAreasViewModel), @"FishingAreasPage")]
-namespace TrackYourTrip.Core.ViewModels.Settings
+namespace TrackYourTrip.Core.ViewModels.Overviews
 {
-    public class FishingAreasViewModel : BaseViewModel<FishingAreaModel>
+    public class FishingAreasViewModel : BaseOverviewModel<OverviewArgs, FishingAreaModel>
     {
         public FishingAreasViewModel(IMvxNavigationService navigationService, IMvxLogProvider mvxLogProvider)
             : base(Resources.AppResources.FishingAreasPageTitle, mvxLogProvider, navigationService)
@@ -22,8 +25,15 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             FishingAreaSelectedCommand = new MvxCommand<FishingAreaModel>(
                 (param) => NavigationTask = MvxNotifyTask.Create(NavigateToFishingAreaAsync(param), onException: ex => LogException(ex))
                 );
+
+            SearchFishingAreasCommand = new MvxCommand<string>((param) => {
+                    SearchString = param; 
+                    RaisePropertyChanged(nameof(FishingAreas));
+                }
+            );
         }
 
+        
         #region Properties
 
         private IDataServiceFactory<FishingAreaModel> _dataStore;
@@ -48,11 +58,15 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         {
             get
             {
-
                 if (_fishingAreas == null)
                 {
                     return new MvxObservableCollection<FishingAreaModel>();
                 }
+
+                if (!string.IsNullOrEmpty(SearchString))
+                    return new MvxObservableCollection<FishingAreaModel>(_fishingAreas.Where(fa => fa.FishingArea.ToLower()
+                                                                    .Contains(SearchString.ToLower()))
+                                                                    .OrderBy(fa => fa.FishingArea));
 
                 return new MvxObservableCollection<FishingAreaModel>(_fishingAreas.OrderBy(fa => fa.FishingArea));
             }
@@ -67,11 +81,15 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             private set => SetProperty(ref _selectedFishingArea, value);
         }
 
+        private string SearchString { get; set; }
+
         #endregion
 
         #region Commands
 
         public IMvxCommand<FishingAreaModel> FishingAreaSelectedCommand { get; private set; }
+
+        public IMvxCommand<string> SearchFishingAreasCommand { get; private set; }
 
         #endregion
 
@@ -113,16 +131,24 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             {
                 IsBusy = true;
 
-                OperationResult<FishingAreaModel> result = await NavigationService.Navigate<FishingAreaViewModel, FishingAreaModel, OperationResult<FishingAreaModel>>(fishingArea);
 
-                if (result != null)
+                if (!NavigateBack)
                 {
-                    if (result.IsCanceld)
-                    {
-                        return;
-                    }
+                    OperationResult<IModel> result = await NavigationService.Navigate<FishingAreaViewModel, FishingAreaModel, OperationResult<IModel>>(fishingArea);
 
-                    LoadAreasTask = MvxNotifyTask.Create(LoadAreasAsync, onException: ex => LogException(ex));
+                    if (result != null)
+                    {
+                        if (result.IsCanceld)
+                        {
+                            return;
+                        }
+
+                        LoadAreasTask = MvxNotifyTask.Create(LoadAreasAsync, onException: ex => LogException(ex));
+                    }
+                }
+                else
+                {
+                    await NavigationService.Close(this, fishingArea);
                 }
 
             }

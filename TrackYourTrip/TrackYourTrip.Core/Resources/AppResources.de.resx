@@ -156,6 +156,9 @@
   <data name="SaveCommandTitle" xml:space="preserve">
     <value>Fertig</value>
   </data>
+  <data name="SearchText" xml:space="preserve">
+    <value>Suchen</value>
+  </data>
   <data name="SettingsPageTitle" xml:space="preserve">
     <value>Einstellungen</value>
   </data>

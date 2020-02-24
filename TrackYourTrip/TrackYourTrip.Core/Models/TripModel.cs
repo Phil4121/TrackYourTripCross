@@ -27,5 +27,8 @@ namespace TrackYourTrip.Core.Models
 
         [ForeignKey(typeof(FishingAreaModel)), NotNull]
         public Guid ID_FishingArea { get; set; }
+
+        [OneToOne]
+        public FishingAreaModel FishingArea { get; set; }
     }
 }

@@ -6,8 +6,7 @@
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
              xmlns:mvxBind="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
              xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
-             xmlns:custom="clr-namespace:TrackYourTrip.Core.CustomControls"
-             xmlns:converter="clr-namespace:TrackYourTrip.Core.Converters"                    
+             xmlns:custom="clr-namespace:TrackYourTrip.Core.CustomControls"                  
              mc:Ignorable="d"
              x:Class="TrackYourTrip.Core.Pages.Settings.FishingAreaPage"
              NavigationPage.HasBackButton="{Binding IsNew}"
@@ -15,10 +14,6 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="{Binding SaveCommandTitle}" Order="Primary" Command="{mvxBind:MvxBind SaveCommand}" />
     </ContentPage.ToolbarItems>
-    <ContentPage.Resources>
-        <converter:IsValidToIsVisibleConverter x:Key="cnvIsValidToIsVisibleConverter"></converter:IsValidToIsVisibleConverter>
-        <converter:NegateBooleanConverter x:Key="cnvNegateBooleanConverter"></converter:NegateBooleanConverter>
-    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Style="{StaticResource RootStackLayout}">
             <Grid>

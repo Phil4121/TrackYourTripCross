@@ -21,7 +21,7 @@ using Xamarin.Forms.GoogleMaps;
 [assembly: MvxNavigation(typeof(FishingAreaViewModel), @"FishingAreaPage")]
 namespace TrackYourTrip.Core.ViewModels.Settings
 {
-    public class FishingAreaViewModel : BaseViewModel<FishingAreaModel, OperationResult<FishingAreaModel>>
+    public class FishingAreaViewModel : BaseViewModel<FishingAreaModel, OperationResult<IModel>>
     {
         public FishingAreaViewModel(IMvxNavigationService navigationService, IMvxLogProvider mvxLogProvider, IUserDialogs userDialog, ILocalizeService localizeService)
             : base(Resources.AppResources.FishingAreaPageTitle, mvxLogProvider, navigationService, userDialog, localizeService)
@@ -223,7 +223,7 @@ namespace TrackYourTrip.Core.ViewModels.Settings
                 {
                     FishingArea = await DataStore.SaveItemAsync(FishingArea);
 
-                    await NavigationService.Close(this, new OperationResult<FishingAreaModel>(FishingArea, isSaved: true));
+                    await NavigationService.Close(this, new OperationResult<IModel>(FishingArea, isSaved: true));
                 }
             }
             catch (Exception ex)
@@ -256,13 +256,13 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
                     if (result)
                     {
-                        await NavigationService.Close(this, new OperationResult<FishingAreaModel>(FishingArea, isDeleted: result));
+                        await NavigationService.Close(this, new OperationResult<IModel>(FishingArea, isDeleted: result));
                     }
 
                     return;
                 }
 
-                await NavigationService.Close(this, new OperationResult<FishingAreaModel>(FishingArea, isCanceld: true));
+                await NavigationService.Close(this, new OperationResult<IModel>(FishingArea, isCanceld: true));
             }
             catch (Exception ex)
             {

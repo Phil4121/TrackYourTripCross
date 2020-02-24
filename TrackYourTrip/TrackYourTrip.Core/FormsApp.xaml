@@ -4,8 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="TrackYourTrip.Core.FormsApp"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Core;assembly=MvvmCross.Forms"
-    xmlns:custom="clr-namespace:TrackYourTrip.Core.CustomControls"
-    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms">
+    xmlns:resources="clr-namespace:TrackYourTrip.Core.Resources">
 	<mvx:MvxFormsApplication.Resources>
 		<ResourceDictionary>
             <Color x:Key="Primary">#2196F3</Color>
@@ -28,6 +27,15 @@
 
             <Style x:Key="RootStackLayout" TargetType="StackLayout">
                 <Setter Property="Padding" Value="20" />
+            </Style>
+
+            <Style TargetType="SearchBar">
+                <Setter Property="IsSpellCheckEnabled" Value="False" />
+                <Setter Property="Keyboard" Value="Text" />
+                <Setter Property="TextColor" Value="{StaticResource LightTextColor}" />
+                <Setter Property="CancelButtonColor" Value="{StaticResource LightTextColor}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource LightTextColor}" />
+                <Setter Property="Placeholder" Value="{x:Static resources:AppResources.SearchText }" />
             </Style>
 
             <Style TargetType="Button">

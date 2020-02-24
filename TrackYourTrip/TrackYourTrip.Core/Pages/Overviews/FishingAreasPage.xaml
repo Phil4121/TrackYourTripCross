@@ -7,18 +7,32 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"    
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
              xmlns:mvxBind="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
-             xmlns:viewModels="clr-namespace:TrackYourTrip.Core.ViewModels.Settings"
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             xmlns:viewModels="clr-namespace:TrackYourTrip.Core.ViewModels.Overviews"
+             xmlns:custom="clr-namespace:TrackYourTrip.Core.CustomControls"
+             xmlns:converter="clr-namespace:TrackYourTrip.Core.Converters" 
              mc:Ignorable="d"
-             x:Class="TrackYourTrip.Core.Pages.Settings.FishingAreasPage"
+             x:Class="TrackYourTrip.Core.Pages.Overviews.FishingAreasPage"
              Title="{mvxBind:MvxBind Title}">
-
+    <ContentPage.Resources>
+        <converter:NegateBooleanConverter x:Key="cnvNegateBooleanConverter" />
+    </ContentPage.Resources>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="{Binding AddCommandTitle}" Command="{mvxBind:MvxBind AddCommand}" />
+        <custom:CustomToolbarItem Text="{Binding AddCommandTitle}" Command="{mvxBind:MvxBind AddCommand}" IsVisible="{Binding NavigateBack, Converter={StaticResource cnvNegateBooleanConverter}}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <ScrollView>
                 <StackLayout  AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                    <SearchBar x:Name="SearchBar" SearchCommand="{Binding SearchFishingAreasCommand}" 
+                               SearchCommandParameter="{Binding SearchString, Source={x:Reference SearchBar}}">
+                        <SearchBar.Behaviors>
+                            <b:EventToCommandBehavior 
+                                      EventName="TextChanged"
+                                      EventArgsParameterPath="NewTextValue"
+                                      Command="{Binding SearchFishingAreasCommand}"/>
+                        </SearchBar.Behaviors>
+                    </SearchBar>
                     <mvx:MvxListView x:Name="FishingAreasListView"
                                         ItemsSource="{Binding FishingAreas}"
                                         VerticalOptions="FillAndExpand"
@@ -34,7 +48,11 @@
                                                 <Label Text="{Binding FishingArea}" FontSize="18" />
                                                 <Label Text="{Binding WaterModel.Water}" FontSize="13" />
                                             </StackLayout>
-                                            <Label Text=">" FontSize="16" HorizontalOptions="End" VerticalOptions="Center" />
+                                            <StackLayout HorizontalOptions="End" WidthRequest="40">
+                                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                                    <Image x:Name="SelectionImage" Source="NxtArrow.png" Aspect="AspectFit" Margin="15" />
+                                                </Grid>
+                                            </StackLayout>
                                         </StackLayout>
                                     </ViewCell.View>
                                 </ViewCell>

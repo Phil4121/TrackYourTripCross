@@ -1,11 +1,11 @@
 ﻿
-using Xamarin.Forms;
+using MvvmCross.Forms.Views;
 using Xamarin.Forms.Xaml;
 
 namespace TrackYourTrip.Core.Pages.NewTrip
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StartNewTripPage : ContentPage
+    public partial class StartNewTripPage : MvxContentPage
     {
         public StartNewTripPage()
         {

@@ -187,6 +187,15 @@ namespace TrackYourTrip.Core.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Search ähnelt.
+        /// </summary>
+        internal static string SearchText {
+            get {
+                return ResourceManager.GetString("SearchText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Settings ähnelt.
         /// </summary>
         internal static string SettingsPageTitle {

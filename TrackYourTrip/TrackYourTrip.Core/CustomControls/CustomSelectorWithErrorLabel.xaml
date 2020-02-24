@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:converter="clr-namespace:TrackYourTrip.Core.Converters"
+             x:Class="TrackYourTrip.Core.CustomControls.CustomSelectorWithErrorLabel">
+    <ContentView.Resources>
+        <converter:IsValidToIsVisibleConverter x:Key="cnvIsValidToIsVisibleConverter" />
+        <converter:BooleanToHeightRequestConverter x:Key="cnvBooleanToHeight" />
+    </ContentView.Resources>
+    <ContentView.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand">
+
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="30" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0">
+                        <Label x:Name="DisplayLabel" Text="{Binding DisplayText}" />
+                        <BoxView HeightRequest="0.5" Color="Black"  />
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="FillAndExpand" WidthRequest="40" Grid.Row="0" Grid.Column="1">
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <Image x:Name="SelectionImage" Source="NxtArrow.png" Aspect="AspectFit" Margin="5" />
+                        </Grid>
+                    </StackLayout>
+                </Grid>
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SelectionButton_Clicked"  />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+
+            <Label x:Name="ErrorLabel" 
+                   Text="{Binding ErrorText, Mode=TwoWay}"
+                   IsVisible="{Binding IsValid, Converter={StaticResource cnvIsValidToIsVisibleConverter}}"
+                   HeightRequest="{Binding IsValid, Converter={StaticResource cnvBooleanToHeight}}"
+                   Style="{StaticResource ErrorLabel}"
+                   HorizontalOptions="Center" 
+                   VerticalOptions="EndAndExpand" Grid.Row="1" Grid.Column="0" />
+
+        </Grid>
+        
+
+        
+  </ContentView.Content>
+</ContentView>

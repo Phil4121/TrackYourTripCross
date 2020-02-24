@@ -79,7 +79,7 @@
         <Compile Update="Pages\SecondView.xaml.cs">
           <DependentUpon>SecondView.xaml</DependentUpon>
         </Compile>
-        <Compile Update="Pages\Settings\FishingAreasPage.xaml.cs">
+        <Compile Update="Pages\Overviews\FishingAreasPage.xaml.cs">
           <DependentUpon>FishingAreasPage.xaml</DependentUpon>
         </Compile>
         <Compile Update="Resources\AppResources.Designer.cs">
@@ -99,6 +99,9 @@
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
         <EmbeddedResource Update="CustomControls\CustomPickerWithErrorLabel.xaml">
+          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+        </EmbeddedResource>
+        <EmbeddedResource Update="CustomControls\CustomSelectorWithErrorLabel.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
         <EmbeddedResource Update="Pages\NewTrip\StartNewTripPage.xaml">
