@@ -9,18 +9,26 @@ using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Models;
 using TrackYourTrip.Core.Services;
 using TrackYourTrip.Core.ViewModelResults;
+using TrackYourTrip.Core.ViewModels.Overviews;
 using TrackYourTrip.Core.ViewModels.Settings;
 
 [assembly: MvxNavigation(typeof(SpotsViewModel), @"SpotsPage")]
-namespace TrackYourTrip.Core.ViewModels.Settings
+namespace TrackYourTrip.Core.ViewModels.Overviews
 {
-    public class SpotsViewModel : BaseViewModel<FishingAreaModel, OperationResult<FishingAreaModel>>
+    public class SpotsViewModel : BaseOverviewModel<OverviewArgs, FishingAreaModel, SpotsViewModel>
     {
         public SpotsViewModel(IMvxNavigationService navigationService, IMvxLogProvider mvxLogProvider)
             : base(Resources.AppResources.SpotsPageTitle, mvxLogProvider, navigationService)
         {
             SpotSelectedCommand = new MvxCommand<SpotModel>(
                 (param) => NavigationTask = MvxNotifyTask.Create(NavigateToSpot(param), onException: ex => LogException(ex))
+            );
+
+            SearchSpotsCommand = new MvxCommand<string>((param) =>
+                {
+                    SearchString = param;
+                    RaisePropertyChanged(nameof(Spots));
+                }
             );
         }
 
@@ -50,7 +58,18 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             private set => SetProperty(ref _rootFishingArea, value);
         }
 
-        public MvxObservableCollection<SpotModel> Spots => new MvxObservableCollection<SpotModel>(RootFishingArea.Spots.OrderBy(s => s.Spot));
+        public MvxObservableCollection<SpotModel> Spots
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(SearchString))
+                    return new MvxObservableCollection<SpotModel>(RootFishingArea.Spots.Where(s => s.Spot.ToLower()
+                                                                    .Contains(SearchString.ToLower()))
+                                                                    .OrderBy(s => s.Spot));
+
+                return new MvxObservableCollection<SpotModel>(RootFishingArea.Spots.OrderBy(s => s.Spot));
+            }
+        }
 
 
         private SpotModel _selectedSpot;
@@ -59,6 +78,8 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             get => _selectedSpot;
             private set => SetProperty(ref _selectedSpot, value);
         }
+
+        private string SearchString { get; set; }
 
         #endregion
 
@@ -74,13 +95,15 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
         public IMvxCommand<SpotModel> SpotSelectedCommand { get; private set; }
 
+        public IMvxCommand<string> SearchSpotsCommand { get; private set; }
+
         #endregion
 
         #region Methodes
 
-        public override void Prepare(FishingAreaModel parameter)
+        public override void Prepare(OverviewArgs parameter)
         {
-            RootFishingArea = parameter;
+            RootFishingArea = (FishingAreaModel) parameter.Object;
         }
 
         public override void Validate()

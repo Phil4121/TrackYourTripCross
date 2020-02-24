@@ -15,6 +15,7 @@ using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Models;
 using TrackYourTrip.Core.Services;
 using TrackYourTrip.Core.ViewModelResults;
+using TrackYourTrip.Core.ViewModels.Overviews;
 using TrackYourTrip.Core.ViewModels.Settings;
 using Xamarin.Forms.GoogleMaps;
 
@@ -286,12 +287,12 @@ namespace TrackYourTrip.Core.ViewModels.Settings
                 {
                     FishingArea = await DataStore.SaveItemAsync(FishingArea);
 
-                    await NavigationService.Navigate<SpotsViewModel, FishingAreaModel, OperationResult<FishingAreaModel>>(FishingArea);
+                    await NavigationService.Navigate<SpotsViewModel, OverviewArgs, FishingAreaModel>(new OverviewArgs(true, FishingArea));
                 }
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally
             {

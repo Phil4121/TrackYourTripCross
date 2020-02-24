@@ -8,9 +8,9 @@
              xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"    
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
              xmlns:mvxBind="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
-             xmlns:viewModels="clr-namespace:TrackYourTrip.Core.ViewModels.Settings"
+             xmlns:viewModels="clr-namespace:TrackYourTrip.Core.ViewModels.Overviews"
              mc:Ignorable="d"
-             x:Class="TrackYourTrip.Core.Pages.Settings.SpotsPage"
+             x:Class="TrackYourTrip.Core.Pages.Overviews.SpotsPage"
              Title="{mvxBind:MvxBind Title}">
     <ContentPage.ToolbarItems>
             <ToolbarItem Text="{Binding AddCommandTitle}" Command="{mvxBind:MvxBind AddCommand}" />
@@ -19,6 +19,15 @@
             <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <ScrollView>
                 <StackLayout  AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                    <SearchBar x:Name="SearchBar" SearchCommand="{Binding SearchSpotsCommand}" 
+                               SearchCommandParameter="{Binding SearchString, Source={x:Reference SearchBar}}">
+                        <SearchBar.Behaviors>
+                            <b:EventToCommandBehavior 
+                                      EventName="TextChanged"
+                                      EventArgsParameterPath="NewTextValue"
+                                      Command="{Binding SearchSpotsCommand}"/>
+                        </SearchBar.Behaviors>
+                    </SearchBar>
                     <mvx:MvxListView x:Name="SpotsListView"
                                         ItemsSource="{Binding Spots}"
                                         VerticalOptions="FillAndExpand"
@@ -33,7 +42,11 @@
                                             <StackLayout HorizontalOptions="StartAndExpand">
                                                 <Label Text="{Binding Spot}" FontSize="18" />
                                             </StackLayout>
-                                            <Label Text=">" FontSize="16" HorizontalOptions="End" VerticalOptions="Center" />
+                                            <StackLayout HorizontalOptions="End" WidthRequest="40">
+                                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                                    <Image x:Name="SelectionImage" Source="NxtArrow.png" Aspect="AspectFit" Margin="15" />
+                                                </Grid>
+                                            </StackLayout>
                                         </StackLayout>
                                     </ViewCell.View>
                                 </ViewCell>

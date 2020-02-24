@@ -44,13 +44,36 @@ namespace TrackYourTrip.Core.ViewModels
         }
     }
 
-    public class OverviewArgs
+    public abstract class BaseOverviewModel<TNavParameter, TViewModel, TRoutingModel> : BaseOverviewModel<TNavParameter, TViewModel>, IMvxViewModel<TNavParameter, TRoutingModel>
+    where TViewModel : class
+    where TNavParameter : OverviewArgs
+    where TRoutingModel : class
+    {
+        public BaseOverviewModel(string pageTitle, IMvxLogProvider mvxLogProvider, IMvxNavigationService navigationService)
+            : base(pageTitle, mvxLogProvider, navigationService)
+        {
+
+
+        }
+
+    }
+
+        public class OverviewArgs
     {
         public bool NavigateBack { get; set; }
+
+        public object Object { get; set; }
 
         public OverviewArgs(bool navigateBack)
         {
             this.NavigateBack = navigateBack;
+        }
+
+        public OverviewArgs(bool navigateBack, object obj)
+        {
+            this.NavigateBack = navigateBack;
+            this.Object = obj;
+
         }
     }
 }

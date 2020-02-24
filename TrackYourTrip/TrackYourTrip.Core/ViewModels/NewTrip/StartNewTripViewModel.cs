@@ -70,7 +70,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             {
                 IsBusy = true;
 
-                var result = await NavigationService.Navigate<OverviewArgs, FishingAreaModel>(PageHelper.FISHING_AREA_PAGE, new OverviewArgs(true));
+                var result = await NavigationService.Navigate<OverviewArgs, FishingAreaModel>(PageHelper.FISHING_AREAS_PAGE, new OverviewArgs(true));
 
                     if (result != null)
                     {
