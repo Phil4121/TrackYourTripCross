@@ -11,6 +11,7 @@ using TrackYourTrip.Core.Models;
 using TrackYourTrip.Core.ViewModelResults;
 using TrackYourTrip.Core.ViewModels.NewTrip;
 using TrackYourTrip.Core.ViewModels.Overviews;
+using Xamarin.Forms.GoogleMaps;
 
 [assembly: MvxNavigation(typeof(StartNewTripViewModel), @"StartNewTripPage")]
 namespace TrackYourTrip.Core.ViewModels.NewTrip
@@ -28,7 +29,6 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         #region Properties
 
         private TripModel _trip = new TripModel();
-
         public TripModel Trip
         {
             get => _trip;
@@ -42,6 +42,46 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         }
 
         public override bool IsNew => throw new NotImplementedException();
+
+        public CameraUpdate MapCenter
+        {
+            get
+            {
+                if (Trip != null &&
+                    Trip.FishingArea != null &&
+                    Trip.FishingArea.Lat != 0 &&
+                    Trip.FishingArea.Lng != 0)
+                {
+                    return CameraUpdateFactory.NewPositionZoom(new Position(Trip.FishingArea.Lat, Trip.FishingArea.Lng), 15d);
+                }
+
+                Xamarin.Essentials.Location loc = LocationHelper.GetCurrentLocation();
+                return CameraUpdateFactory.NewPositionZoom(new Position(loc.Latitude, loc.Longitude), 15d);
+            }
+        }
+
+        public MvxObservableCollection<Pin> Pins
+        {
+            get
+            {
+                if (Trip == null ||
+                    Trip.FishingArea == null ||
+                    Trip.FishingArea.Lat == 0 ||
+                    Trip.FishingArea.Lng == 0)
+                {
+                    return new MvxObservableCollection<Pin>();
+                }
+
+                return new MvxObservableCollection<Pin>()
+                {
+                    new Pin
+                    {
+                        Label = !string.IsNullOrEmpty(Trip.FishingArea.FishingArea) ? Trip.FishingArea.FishingArea : Trip.FishingArea.Id.ToString(),
+                        Position = new Position(Trip.FishingArea.Lat, Trip.FishingArea.Lng)
+                    }
+                };
+            }
+        }
 
         #endregion
 
@@ -72,12 +112,14 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
                 var result = await NavigationService.Navigate<OverviewArgs, FishingAreaModel>(PageHelper.FISHING_AREAS_PAGE, new OverviewArgs(true));
 
-                    if (result != null)
-                    {
-                        Trip.FishingArea = result;
-                        Trip.ID_FishingArea = result.Id;
+                if (result != null)
+                {
+                    Trip.FishingArea = result;
+                    Trip.ID_FishingArea = result.Id;
 
-                        await RaisePropertyChanged(() => Trip);
+                    await RaisePropertyChanged(() => MapCenter);
+                    await RaisePropertyChanged(() => Pins);
+                    await RaisePropertyChanged(() => Trip);
                 }
             }
             catch (Exception)

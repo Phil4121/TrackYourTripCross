@@ -12,33 +12,37 @@
              Title="{Binding Title}">
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <ScrollView>
-                <StackLayout Style="{StaticResource RootStackLayout}">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="30" />
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto" />
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Label Text="Revier: " Grid.Row="0" Grid.Column="0" VerticalOptions="Start" />
+            <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Revier: " Grid.Row="0" Grid.Column="0" VerticalOptions="Start" />
 
-                        <custom:CustomSelectorWithErrorLabel x:Name="FishingAreaName"
+                    <custom:CustomSelectorWithErrorLabel x:Name="FishingAreaName"
                                                      DisplayText="{Binding Trip.FishingArea.FishingArea}"
                                                      VerticalOptions="FillAndExpand"
                                                      Grid.Row="0" Grid.Column="1">
-                            <custom:CustomSelectorWithErrorLabel.Behaviors>
-                                <b:EventToCommandBehavior 
+                        <custom:CustomSelectorWithErrorLabel.Behaviors>
+                            <b:EventToCommandBehavior 
                                       EventName="OnSelectorClicked"
                                       Command="{Binding FishingAreaSelectedCommand}"/>
-                            </custom:CustomSelectorWithErrorLabel.Behaviors>
-                        </custom:CustomSelectorWithErrorLabel>
+                        </custom:CustomSelectorWithErrorLabel.Behaviors>
+                    </custom:CustomSelectorWithErrorLabel>
+                </Grid>
 
-                    </Grid>
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" HeightRequest="300" WidthRequest="300">
+                    <custom:CustomMapWithErrorLabel HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand"
+                                                    CameraCenterView="{Binding MapCenter}"
+                                                    ItemsSource="{Binding Pins}" />
                 </StackLayout>
-            </ScrollView>
+
+            </StackLayout>
             <StackLayout IsVisible="{Binding IsBusy}" Style="{StaticResource IndicatorStackLayout}">
                 <ActivityIndicator IsRunning="{Binding IsBusy}" />
             </StackLayout>

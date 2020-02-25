@@ -54,6 +54,9 @@ namespace TrackYourTrip.Core.CustomControls
                 CustomMapWithErrorLabel control = (CustomMapWithErrorLabel)b;
                 control.map.InitialCameraUpdate = (CameraUpdate)n;
 
+                if (control.map.InitialCameraUpdate != null) {
+                    control.map.MoveCamera((CameraUpdate)n);
+                }
             });
 
 
