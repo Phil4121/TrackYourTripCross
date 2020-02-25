@@ -10,13 +10,14 @@ namespace TrackYourTrip.Core.Services
 {
     public class AppSettings : IAppSettings
     {
-        public const string SuperNumberKey = "SuperNumberKey";
-        public const int SuperNumberDefaultValue = 1;
+        private string _darkSkySerial = "XXXX";
+        private string _darkSkySerialDefault = string.Empty;
 
-        public int SuperNumber
+        public string DarkSkySerial
         {
-            get => Preferences.Get(SuperNumberKey, SuperNumberDefaultValue);
-            set => Preferences.Set(SuperNumberKey, value);
+            get => Preferences.Get(_darkSkySerial, _darkSkySerialDefault);
+            set => Preferences.Set(_darkSkySerial, value);
         }
+
     }
 }

@@ -9,6 +9,7 @@
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="Acr.UserDialogs" Version="7.0.35" />
+        <PackageReference Include="DarkSkyCore" Version="6.0.2" />
         <PackageReference Include="FluentValidation" Version="8.6.0" />
         <PackageReference Include="Fody" Version="6.0.5" developmentDependency="true">
           <PrivateAssets>all</PrivateAssets>
@@ -170,5 +171,8 @@
       <None Update="TrackYourTrip.db">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Services\Wheater\DarkSky\" />
     </ItemGroup>
 </Project>
