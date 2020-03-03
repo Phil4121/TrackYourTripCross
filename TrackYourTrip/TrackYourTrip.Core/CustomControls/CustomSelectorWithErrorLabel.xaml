@@ -14,7 +14,7 @@
 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="7*" />
+                <RowDefinition Height="20" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -55,7 +55,7 @@
                    HeightRequest="{Binding IsValid, Converter={StaticResource cnvBooleanToHeight}}"
                    Style="{StaticResource ErrorLabel}"
                    HorizontalOptions="Center" 
-                   VerticalOptions="EndAndExpand" Grid.Row="1" Grid.Column="0" />
+                   VerticalOptions="StartAndExpand" Grid.Row="1" Grid.Column="0" />
 
         </Grid>
         

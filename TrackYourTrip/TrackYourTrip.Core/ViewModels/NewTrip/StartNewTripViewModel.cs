@@ -1,11 +1,15 @@
 ﻿using Acr.UserDialogs;
 using FFImageLoading.Forms;
+using FluentValidation.Results;
+using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using TrackYourTrip.Core.CustomValidators;
 using TrackYourTrip.Core.Helpers;
 using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Models;
@@ -26,7 +30,9 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         {
             FishingAreaSelectedCommand = new MvxCommand(
                 () => NavigationTask = MvxNotifyTask.Create(NavigateToFishingAreasSelectionAsync(), onException: ex => LogException(ex))
-            );            
+            );
+
+            PreSetData();
         }
 
         #region Properties
@@ -47,10 +53,27 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                             Enum.Parse(typeof(StatusHelper.StatusPicEnum), value)));
         }
 
+        private string _fishingAreaErrorText;
+        public string FishingAreaErrorText
+        {
+            get => _fishingAreaErrorText;
+            set => SetProperty(ref _fishingAreaErrorText, value);
+        }
+
+        private IDataServiceFactory<TripModel> _dataStore;
+
         public override IDataServiceFactory<TripModel> DataStore
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get
+            {
+                if (_dataStore == null)
+                {
+                    _dataStore = DataServiceFactory.GetTripFactory();
+                }
+
+                return _dataStore;
+            }
+            set => _dataStore = value;
         }
 
         public override bool IsNew => throw new NotImplementedException();
@@ -115,7 +138,38 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         public override void Validate()
         {
-            throw new NotImplementedException();
+            StartNewTripValidator validator = new StartNewTripValidator();
+            FluentValidation.Results.ValidationResult result = validator.Validate(Trip);
+            Trip.IsValid = result.IsValid;
+            ValidationResult = result;
+
+            if (!result.IsValid)
+                SetValidationFailures(result.Errors);
+        }
+
+        public override async Task SaveAsync()
+        {
+            try
+            {
+                IsBusy = true;
+
+                await base.SaveAsync();
+
+                if (IsValid)
+                {
+                    Trip = await DataStore.SaveItemAsync(Trip);
+
+                    //await NavigationService.Close(this, new OperationResult<IModel>(FishingArea, isSaved: true));
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         async Task NavigateToFishingAreasSelectionAsync()
@@ -152,10 +206,12 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         {
             try
             {
+                var settings = Mvx.IoCProvider.Resolve<IAppSettings>();
+
                 WheaterStatusPicture = StatusHelper.StatusPicEnum.STATUS_WAITING.ToString();
 
                 WheaterDataTask = MvxNotifyTask.Create(async () => {
-                    var result = await WheaterServiceFactory.GetWheaterServiceFactory().ServiceIsReachable(new GlobalSettings().DefaultThreadWaitTime);
+                    var result = await WheaterServiceFactory.GetWheaterServiceFactory().ServiceIsReachable(settings.DefaultThreadWaitTime);
 
                     if(result)
                         WheaterStatusPicture = StatusHelper.StatusPicEnum.STATUS_OK.ToString();
@@ -168,6 +224,24 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             {
                 throw ex;
             }
+        }
+
+        private void SetValidationFailures(IList<ValidationFailure> vf)
+        {
+            foreach (ValidationFailure f in vf)
+            {
+                switch (f.PropertyName.ToLower())
+                {
+                    case "fishingarea":
+                        FishingAreaErrorText = f.ErrorMessage;
+                        break;
+                }
+            }
+        }
+
+        private void PreSetData()
+        {
+            Trip.TripDateTime = DateTime.Now;
         }
 
         #endregion

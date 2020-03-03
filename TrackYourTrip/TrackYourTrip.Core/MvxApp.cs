@@ -23,7 +23,7 @@ namespace TrackYourTrip.Core
                 .AsTypes()
                 .RegisterAsLazySingleton();
 
-            Mvx.IoCProvider.RegisterType<IAppSettings, AppSettings>();
+            Mvx.IoCProvider.RegisterType<IAppSettings, GlobalSettings>();
             Mvx.IoCProvider.RegisterType<IMvxJsonConverter, MvxJsonConverter>();
             Mvx.IoCProvider.RegisterSingleton<IUserDialogs>(() => UserDialogs.Instance);
 

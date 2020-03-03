@@ -30,5 +30,7 @@ namespace TrackYourTrip.Core.Models
 
         [OneToOne]
         public FishingAreaModel FishingArea { get; set; }
+
+        public DateTime TripDateTime { get; set; }
     }
 }

@@ -8,5 +8,7 @@ namespace TrackYourTrip.Core.Interfaces
     public interface IAppSettings
     {
         string DarkSkySerial { get; }
+
+        int DefaultThreadWaitTime { get; }
     }
 }

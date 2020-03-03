@@ -1,5 +1,6 @@
 ﻿using DarkSky.Models;
 using DarkSky.Services;
+using MvvmCross;
 using System;
 using System.Globalization;
 using System.Threading;
@@ -24,7 +25,9 @@ namespace TrackYourTrip.Core.Services.Wheater.DarkSky
 
         public DarkSkyWheaterService()
         {
-            Serial = new GlobalSettings().DarkSkySerial;
+            var settings = Mvx.IoCProvider.Resolve<IAppSettings>();
+
+            Serial = settings.DarkSkySerial;
             WheaterService = new DarkSkyService(Serial);
         }
 
