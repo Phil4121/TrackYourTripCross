@@ -7,6 +7,7 @@
              xmlns:custom="clr-namespace:TrackYourTrip.Core.CustomControls"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
              xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              mc:Ignorable="d"
              x:Class="TrackYourTrip.Core.Pages.NewTrip.StartNewTripPage"
              Title="{Binding Title}">
@@ -40,6 +41,27 @@
                     <custom:CustomMapWithErrorLabel HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand"
                                                     CameraCenterView="{Binding MapCenter}"
                                                     ItemsSource="{Binding Pins}" />
+                </StackLayout>
+                <StackLayout Style="{StaticResource SpacedStackLayout}">
+                    <Grid HorizontalOptions="Center" VerticalOptions="CenterAndExpand" WidthRequest="200">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Wetterdaten: " Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
+
+                        <ffimageloading:CachedImage HorizontalOptions="End"  VerticalOptions="Center"
+			                DownsampleToViewSize="true"
+			                Source="{Binding WheaterStatusPicture}"
+                            WidthRequest="25" HeightRequest="25"
+                            Grid.Row="0" Grid.Column="1" />
+                        
+                    </Grid>
                 </StackLayout>
 
             </StackLayout>

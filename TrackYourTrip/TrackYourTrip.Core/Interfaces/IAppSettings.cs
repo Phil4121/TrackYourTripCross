@@ -7,6 +7,6 @@ namespace TrackYourTrip.Core.Interfaces
 {
     public interface IAppSettings
     {
-        string DarkSkySerial { get; set; }
+        string DarkSkySerial { get; }
     }
 }

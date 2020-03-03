@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using FFImageLoading.Forms;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
@@ -8,6 +9,8 @@ using System.Threading.Tasks;
 using TrackYourTrip.Core.Helpers;
 using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Models;
+using TrackYourTrip.Core.Services;
+using TrackYourTrip.Core.Services.Wheater;
 using TrackYourTrip.Core.ViewModelResults;
 using TrackYourTrip.Core.ViewModels.NewTrip;
 using TrackYourTrip.Core.ViewModels.Overviews;
@@ -23,7 +26,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         {
             FishingAreaSelectedCommand = new MvxCommand(
                 () => NavigationTask = MvxNotifyTask.Create(NavigateToFishingAreasSelectionAsync(), onException: ex => LogException(ex))
-            );
+            );            
         }
 
         #region Properties
@@ -33,6 +36,15 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         {
             get => _trip;
             set => SetProperty(ref _trip, value);
+        }
+
+        private string _wheaterStatusPicture = StatusHelper.GetPicForStatus(StatusHelper.StatusPicEnum.STATUS_UNDEFINED);
+
+        public string WheaterStatusPicture {
+            get => _wheaterStatusPicture;
+            set => SetProperty(ref _wheaterStatusPicture, StatusHelper.GetPicForStatus(
+                        (StatusHelper.StatusPicEnum)
+                            Enum.Parse(typeof(StatusHelper.StatusPicEnum), value)));
         }
 
         public override IDataServiceFactory<TripModel> DataStore
@@ -95,6 +107,8 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         public MvxNotifyTask NavigationTask { get; private set; }
 
+        public MvxNotifyTask WheaterDataTask { get; private set; }
+
         #endregion
 
         #region Methodes
@@ -117,6 +131,8 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                     Trip.FishingArea = result;
                     Trip.ID_FishingArea = result.Id;
 
+                    SetWheaterStatusPicture();
+
                     await RaisePropertyChanged(() => MapCenter);
                     await RaisePropertyChanged(() => Pins);
                     await RaisePropertyChanged(() => Trip);
@@ -129,6 +145,28 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             finally
             {
                 IsBusy = false;
+            }
+        }
+
+        private void SetWheaterStatusPicture()
+        {
+            try
+            {
+                WheaterStatusPicture = StatusHelper.StatusPicEnum.STATUS_WAITING.ToString();
+
+                WheaterDataTask = MvxNotifyTask.Create(async () => {
+                    var result = await WheaterServiceFactory.GetWheaterServiceFactory().ServiceIsReachable(new GlobalSettings().DefaultThreadWaitTime);
+
+                    if(result)
+                        WheaterStatusPicture = StatusHelper.StatusPicEnum.STATUS_OK.ToString();
+                    else
+                        WheaterStatusPicture = StatusHelper.StatusPicEnum.STATUS_ERROR.ToString();
+
+                }, onException: ex => LogException(ex));
+
+            }catch(Exception ex)
+            {
+                throw ex;
             }
         }
 
