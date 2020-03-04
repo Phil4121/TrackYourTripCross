@@ -149,6 +149,8 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         public override async Task SaveAsync()
         {
+            var settings = Mvx.IoCProvider.Resolve<IAppSettings>();
+
             try
             {
                 IsBusy = true;
@@ -159,11 +161,14 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                 {
                     Trip = await DataStore.SaveItemAsync(Trip);
 
-                    //await NavigationService.Close(this, new OperationResult<IModel>(FishingArea, isSaved: true));
+                    settings.TripIdInProcess = Trip.Id.ToString();
+
+                    await NavigationService.Navigate<NewTripOverviewViewModel, TripModel, OperationResult<IModel>>(Trip);
                 }
             }
             catch (Exception ex)
             {
+                settings.TripIdInProcess = Guid.Empty.ToString();
                 throw ex;
             }
             finally

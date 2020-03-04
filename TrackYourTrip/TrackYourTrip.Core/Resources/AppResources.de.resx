@@ -150,6 +150,9 @@
   <data name="MainPageTitle" xml:space="preserve">
     <value>Hallo Xamarin!</value>
   </data>
+  <data name="NewTripOverviewPageTitle" xml:space="preserve">
+    <value>Tagesübersicht</value>
+  </data>
   <data name="NewTripPageTitle" xml:space="preserve">
     <value>Neuer Angeltag</value>
   </data>

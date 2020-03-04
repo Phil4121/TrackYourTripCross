@@ -77,6 +77,9 @@
         <Compile Update="Pages\MainView.xaml.cs">
           <DependentUpon>MainView.xaml</DependentUpon>
         </Compile>
+        <Compile Update="Pages\NewTrip\NewTripOverviewPage.xaml.cs">
+          <DependentUpon>NewTripOverviewPage.xaml</DependentUpon>
+        </Compile>
         <Compile Update="Pages\SecondView.xaml.cs">
           <DependentUpon>SecondView.xaml</DependentUpon>
         </Compile>

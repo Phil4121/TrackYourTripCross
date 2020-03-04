@@ -169,6 +169,15 @@ namespace TrackYourTrip.Core.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Trip overview ähnelt.
+        /// </summary>
+        internal static string NewTripOverviewPageTitle {
+            get {
+                return ResourceManager.GetString("NewTripOverviewPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die New Trip ähnelt.
         /// </summary>
         internal static string NewTripPageTitle {
