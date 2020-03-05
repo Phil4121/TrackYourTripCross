@@ -103,7 +103,7 @@ CREATE TABLE SpotMarkers (
 CREATE TABLE Trips (
 	ID				TEXT		PRIMARY KEY,
 	ID_FishingArea	TEXT,
-	TripDateTime	DATE
+	TripDateTime	DATETIME		
 );
 
 INSERT INTO WaterModels (ID, Water) VALUES ('2a3eeecf-472c-4b0f-9df0-73386cb3b3f7', 'River');

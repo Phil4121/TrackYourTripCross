@@ -130,11 +130,28 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         public MvxNotifyTask NavigationTask { get; private set; }
 
+        public MvxNotifyTask ActiveTripNavigationTask { get; private set; }
+
         public MvxNotifyTask WheaterDataTask { get; private set; }
 
         #endregion
 
         #region Methodes
+
+        public async override void ViewAppearing()
+        {
+            base.ViewAppearing();
+
+            if (ActiveTripExists())
+            {
+                bool resumeActiveTrip = await UserDialog.ConfirmAsync(Resources.AppResources.ActiveTripPromptText, 
+                                        Resources.AppResources.ActiveTripTitle, 
+                                        Resources.AppResources.ActiveTripContinue, 
+                                        Resources.AppResources.ActiveTripClose);
+
+                ResumeWhenTripIsActive(resumeActiveTrip);
+            }
+        }
 
         public override void Validate()
         {
@@ -159,6 +176,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
                 if (IsValid)
                 {
+                    Trip.Id = Guid.NewGuid();
                     Trip = await DataStore.SaveItemAsync(Trip);
 
                     settings.TripIdInProcess = Trip.Id.ToString();
@@ -247,6 +265,78 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         private void PreSetData()
         {
             Trip.TripDateTime = DateTime.Now;
+        }
+
+        private void ResumeWhenTripIsActive(bool resumeWithActiveTrip)
+        {
+            if (resumeWithActiveTrip)
+                ResumeActiveTrip();
+            else
+                CancelCurrentTrip();
+        }
+
+        private void ResumeActiveTrip()
+        {
+            try
+            {
+                IsBusy = true;
+
+                ActiveTripNavigationTask = MvxNotifyTask.Create(NavigateToActiveTrip(), ex => LogException(ex));
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        private async Task NavigateToActiveTrip()
+        {
+            try
+            {
+                IsBusy = true;
+
+                var activeTrip = await DataStore.GetItemAsync(Guid.Parse(TripHelper.GetTripIdInProcess()));
+
+                Trip = activeTrip;
+
+                await NavigationService.Navigate<NewTripOverviewViewModel, TripModel, OperationResult<IModel>>(activeTrip);
+            }
+            catch (Exception ex)
+            {
+                TripHelper.ResetTripInProcess();
+
+                throw;
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        private void CancelCurrentTrip()
+        {
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+
+            }
+        }
+
+        private bool ActiveTripExists()
+        {
+            return (TripHelper.TripInProcess() && 
+                Trip.Id != Guid.Parse(TripHelper.GetTripIdInProcess()));
         }
 
         #endregion

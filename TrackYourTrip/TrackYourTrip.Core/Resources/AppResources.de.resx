@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ActiveTripClose" xml:space="preserve">
+    <value>Beenden und neu</value>
+  </data>
+  <data name="ActiveTripContinue" xml:space="preserve">
+    <value>Fortsetzen</value>
+  </data>
+  <data name="ActiveTripPromptText" xml:space="preserve">
+    <value>Es ist ein aktiver Angeltag im vorhanden. Möchten sie diesen fortesetzen? Andernfalls wird er beendet und gelöscht.</value>
+  </data>
+  <data name="ActiveTripTitle" xml:space="preserve">
+    <value>Aktiver Angeltag</value>
+  </data>
   <data name="AddCommandTitle" xml:space="preserve">
     <value>Hinzufügen</value>
   </data>

@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ActiveTripClose" xml:space="preserve">
+    <value>Close and new trip</value>
+  </data>
+  <data name="ActiveTripContinue" xml:space="preserve">
+    <value>Continue trip</value>
+  </data>
+  <data name="ActiveTripPromptText" xml:space="preserve">
+    <value>There is an active Trip stored in background. Would you like to continue this trip? Otherwise it will be closed and deleted.</value>
+  </data>
+  <data name="ActiveTripTitle" xml:space="preserve">
+    <value>Active trip</value>
+  </data>
   <data name="AddCommandTitle" xml:space="preserve">
     <value>Add</value>
   </data>

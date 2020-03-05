@@ -16,6 +16,5 @@ namespace TrackYourTrip.Core.Services
             get => Preferences.Get(nameof(TripIdInProcess), Guid.Empty.ToString());
             set => Preferences.Set(nameof(TripIdInProcess), value);
         }
-
     }
 }

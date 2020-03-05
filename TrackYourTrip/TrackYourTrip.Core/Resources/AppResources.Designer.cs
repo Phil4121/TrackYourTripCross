@@ -61,6 +61,42 @@ namespace TrackYourTrip.Core.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Close and new trip ähnelt.
+        /// </summary>
+        internal static string ActiveTripClose {
+            get {
+                return ResourceManager.GetString("ActiveTripClose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Continue trip ähnelt.
+        /// </summary>
+        internal static string ActiveTripContinue {
+            get {
+                return ResourceManager.GetString("ActiveTripContinue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die There is an active Trip stored in background. Would you like to continue this trip? Otherwise it will be closed and deleted. ähnelt.
+        /// </summary>
+        internal static string ActiveTripPromptText {
+            get {
+                return ResourceManager.GetString("ActiveTripPromptText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Active trip ähnelt.
+        /// </summary>
+        internal static string ActiveTripTitle {
+            get {
+                return ResourceManager.GetString("ActiveTripTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Add ähnelt.
         /// </summary>
         internal static string AddCommandTitle {
