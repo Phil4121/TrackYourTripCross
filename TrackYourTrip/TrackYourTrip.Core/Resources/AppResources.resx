@@ -171,6 +171,9 @@
   <data name="NewTripPageTitle" xml:space="preserve">
     <value>New Trip</value>
   </data>
+  <data name="NewTripStart" xml:space="preserve">
+    <value>Start!</value>
+  </data>
   <data name="SaveCommandTitle" xml:space="preserve">
     <value>Finish</value>
   </data>

@@ -60,6 +60,8 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             set => SetProperty(ref _fishingAreaErrorText, value);
         }
 
+        public new string SaveCommandTitle => Resources.AppResources.NewTripStart;
+
         private IDataServiceFactory<TripModel> _dataStore;
 
         public override IDataServiceFactory<TripModel> DataStore
@@ -130,7 +132,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         public MvxNotifyTask NavigationTask { get; private set; }
 
-        public MvxNotifyTask ActiveTripNavigationTask { get; private set; }
+        public MvxNotifyTask ActiveTripTask { get; private set; }
 
         public MvxNotifyTask WheaterDataTask { get; private set; }
 
@@ -225,7 +227,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             }
         }
 
-        private void SetWheaterStatusPicture()
+        void SetWheaterStatusPicture()
         {
             try
             {
@@ -249,7 +251,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             }
         }
 
-        private void SetValidationFailures(IList<ValidationFailure> vf)
+        void SetValidationFailures(IList<ValidationFailure> vf)
         {
             foreach (ValidationFailure f in vf)
             {
@@ -262,38 +264,20 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             }
         }
 
-        private void PreSetData()
+        void PreSetData()
         {
             Trip.TripDateTime = DateTime.Now;
         }
 
-        private void ResumeWhenTripIsActive(bool resumeWithActiveTrip)
+        void ResumeWhenTripIsActive(bool resumeWithActiveTrip)
         {
             if (resumeWithActiveTrip)
-                ResumeActiveTrip();
+                ActiveTripTask = MvxNotifyTask.Create(NavigateToActiveTrip(), ex => LogException(ex));
             else
-                CancelCurrentTrip();
+                ActiveTripTask = MvxNotifyTask.Create(DeleteActiveTrip(), ex => LogException(ex));
         }
 
-        private void ResumeActiveTrip()
-        {
-            try
-            {
-                IsBusy = true;
-
-                ActiveTripNavigationTask = MvxNotifyTask.Create(NavigateToActiveTrip(), ex => LogException(ex));
-            }
-            catch(Exception ex)
-            {
-                throw;
-            }
-            finally
-            {
-                IsBusy = false;
-            }
-        }
-
-        private async Task NavigateToActiveTrip()
+        async Task NavigateToActiveTrip()
         {
             try
             {
@@ -317,23 +301,27 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             }
         }
 
-        private void CancelCurrentTrip()
+        async Task DeleteActiveTrip()
         {
             try
             {
+                IsBusy = true;
 
+                var activeTrip = await DataStore.GetItemAsync(Guid.Parse(TripHelper.GetTripIdInProcess()));
+                await DataStore.DeleteItemAsync(activeTrip);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }
             finally
             {
-
+                TripHelper.ResetTripInProcess();
+                IsBusy = false;
             }
         }
 
-        private bool ActiveTripExists()
+        bool ActiveTripExists()
         {
             return (TripHelper.TripInProcess() && 
                 Trip.Id != Guid.Parse(TripHelper.GetTripIdInProcess()));

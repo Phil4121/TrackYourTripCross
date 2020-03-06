@@ -223,6 +223,15 @@ namespace TrackYourTrip.Core.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Start! ähnelt.
+        /// </summary>
+        internal static string NewTripStart {
+            get {
+                return ResourceManager.GetString("NewTripStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Finish ähnelt.
         /// </summary>
         internal static string SaveCommandTitle {
