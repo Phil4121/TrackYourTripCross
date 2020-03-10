@@ -214,6 +214,15 @@ namespace TrackYourTrip.Core.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Presettings ähnelt.
+        /// </summary>
+        internal static string NewTripOverviewPreSettingsPageTitle {
+            get {
+                return ResourceManager.GetString("NewTripOverviewPreSettingsPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die New Trip ähnelt.
         /// </summary>
         internal static string NewTripPageTitle {

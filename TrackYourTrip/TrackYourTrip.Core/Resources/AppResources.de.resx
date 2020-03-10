@@ -165,6 +165,9 @@
   <data name="NewTripOverviewPageTitle" xml:space="preserve">
     <value>Tagesübersicht</value>
   </data>
+  <data name="NewTripOverviewPreSettingsPageTitle" xml:space="preserve">
+    <value>Voreinstellungen</value>
+  </data>
   <data name="NewTripPageTitle" xml:space="preserve">
     <value>Neuer Angeltag</value>
   </data>

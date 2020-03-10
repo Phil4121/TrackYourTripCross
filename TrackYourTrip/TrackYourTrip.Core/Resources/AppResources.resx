@@ -168,6 +168,9 @@
   <data name="NewTripOverviewPageTitle" xml:space="preserve">
     <value>Trip overview</value>
   </data>
+  <data name="NewTripOverviewPreSettingsPageTitle" xml:space="preserve">
+    <value>Presettings</value>
+  </data>
   <data name="NewTripPageTitle" xml:space="preserve">
     <value>New Trip</value>
   </data>

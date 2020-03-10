@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mvx:MvxContentPage
+             xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:converter="clr-namespace:TrackYourTrip.Core.Converters"    
+             mc:Ignorable="d"
+             x:Class="TrackYourTrip.Core.Pages.NewTrip.NewTripOverviewPreSettingsPage"
+             Title="{Binding Title}">
+    <ContentPage.Resources>
+        <converter:StringToDoubleConverter x:Key="cnvStringToDoubleConverter" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Label Text="Wassertemperatur" Grid.Row="0" Grid.Column="0" />
+                    <Entry Text="{Binding PreSettings.WaterTemperature, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}" Grid.Row="0" Grid.Column="1" />
+
+                </Grid>
+            </StackLayout>
+            <StackLayout IsVisible="{Binding IsBusy}" Style="{StaticResource IndicatorStackLayout}">
+                <ActivityIndicator IsRunning="{Binding IsBusy}" />
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</mvx:MvxContentPage>

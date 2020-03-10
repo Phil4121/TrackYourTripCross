@@ -22,8 +22,21 @@ namespace TrackYourTrip.Core.Services
         {
             get
             {
-                var settingString = Preferences.Get(nameof(PreDefinedSpotSettings), string.Empty);
-                return new JSONHelper<PreDefinedSpotSettings>().Deserialize(settingString);
+                try
+                {
+                    var settingString = Preferences.Get(nameof(PreDefinedSpotSettings), string.Empty);
+
+                    if (!string.IsNullOrEmpty(settingString))
+                    {
+                        return new JSONHelper<PreDefinedSpotSettings>().Deserialize(settingString);
+                    }
+
+                    return new PreDefinedSpotSettings();
+
+                }catch(Exception ex)
+                {
+                    throw ex;
+                }
             }
 
             set

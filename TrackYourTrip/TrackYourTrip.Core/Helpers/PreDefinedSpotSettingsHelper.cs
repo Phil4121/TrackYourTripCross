@@ -6,6 +6,6 @@ namespace TrackYourTrip.Core.Helpers
 {
     public class PreDefinedSpotSettings
     {
-        public int WaterTemperature { get; set; }
+        public double WaterTemperature { get; set; }
     }
 }

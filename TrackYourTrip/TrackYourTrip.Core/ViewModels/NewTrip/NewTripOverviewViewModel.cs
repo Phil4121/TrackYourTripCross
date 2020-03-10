@@ -74,22 +74,12 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         private Task ShowInitialViewModels()
         {
-            var tasks = new List<Task>();
-
-            try
+            var tasks = new List<Task>
             {
-                IsBusy = true;
+                NavigationService.Navigate<NewTripOverviewBasicViewModel, TripModel, OperationResult<IModel>>(Trip),
+                NavigationService.Navigate<NewTripOverviewPreSettingsViewModel>()
+            };
 
-                tasks.Add(NavigationService.Navigate<NewTripOverviewBasicViewModel, TripModel, OperationResult<IModel>>(Trip));
-
-            }catch(Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                IsBusy = false;
-            }
 
             return Task.WhenAll(tasks);
         }

@@ -24,5 +24,10 @@ namespace TrackYourTrip.Core.Helpers
         {
             settings.TripIdInProcess = Guid.Empty.ToString();
         }
+
+        public static void ResetPreSettings()
+        {
+            settings.PreDefinedSpotSettings = new PreDefinedSpotSettings();
+        }
     }
 }

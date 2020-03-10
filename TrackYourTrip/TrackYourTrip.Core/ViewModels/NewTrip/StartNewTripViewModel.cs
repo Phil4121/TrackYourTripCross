@@ -312,6 +312,8 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             finally
             {
                 TripHelper.ResetTripInProcess();
+                TripHelper.ResetPreSettings();
+
                 IsBusy = false;
             }
         }
