@@ -1,31 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<mvx:MvxContentPage
+<mvx:MvxTabbedPage
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:custom="clr-namespace:TrackYourTrip.Core.CustomControls"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-             xmlns:mvxBind="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
-             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              mc:Ignorable="d"
-             x:Class="TrackYourTrip.Core.Pages.NewTrip.NewTripOverviewPage"
-             Title="{Binding Title}">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="{Binding SaveCommandTitle}" Order="Primary" Command="{mvxBind:MvxBind SaveCommand}" />
-    </ContentPage.ToolbarItems>
-    <ContentPage.Content>
-        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+             x:Class="TrackYourTrip.Core.Pages.NewTrip.NewTripOverviewPage">
 
-
-
-
-            </StackLayout>
-            <StackLayout IsVisible="{Binding IsBusy}" Style="{StaticResource IndicatorStackLayout}">
-                <ActivityIndicator IsRunning="{Binding IsBusy}" />
-            </StackLayout>
-        </AbsoluteLayout>
-    </ContentPage.Content>
-</mvx:MvxContentPage>
+</mvx:MvxTabbedPage>

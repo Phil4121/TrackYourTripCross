@@ -183,6 +183,9 @@
   <data name="SettingsPageTitle" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="SpotCheckinButtonText" xml:space="preserve">
+    <value>Checkin to spot</value>
+  </data>
   <data name="SpotPageTitle" xml:space="preserve">
     <value>Spot</value>
   </data>

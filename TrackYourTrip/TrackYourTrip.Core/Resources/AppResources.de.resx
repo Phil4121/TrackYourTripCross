@@ -180,6 +180,9 @@
   <data name="SettingsPageTitle" xml:space="preserve">
     <value>Einstellungen</value>
   </data>
+  <data name="SpotCheckinButtonText" xml:space="preserve">
+    <value>Neuer Spot</value>
+  </data>
   <data name="SpotPageTitle" xml:space="preserve">
     <value>Angelplatz</value>
   </data>

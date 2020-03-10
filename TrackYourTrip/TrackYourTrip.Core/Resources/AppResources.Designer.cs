@@ -259,6 +259,15 @@ namespace TrackYourTrip.Core.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Checkin to spot ähnelt.
+        /// </summary>
+        internal static string SpotCheckinButtonText {
+            get {
+                return ResourceManager.GetString("SpotCheckinButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Spot ähnelt.
         /// </summary>
         internal static string SpotPageTitle {

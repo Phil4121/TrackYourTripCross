@@ -264,17 +264,12 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             }
         }
 
-        void PreSetData()
-        {
-            Trip.TripDateTime = DateTime.Now;
-        }
-
         void ResumeWhenTripIsActive(bool resumeWithActiveTrip)
         {
             if (resumeWithActiveTrip)
                 ActiveTripTask = MvxNotifyTask.Create(NavigateToActiveTrip(), ex => LogException(ex));
             else
-                ActiveTripTask = MvxNotifyTask.Create(DeleteActiveTrip(), ex => LogException(ex));
+                ActiveTripTask = MvxNotifyTask.Create(DeleteActiveTripAsync(), ex => LogException(ex));
         }
 
         async Task NavigateToActiveTrip()
@@ -301,7 +296,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             }
         }
 
-        async Task DeleteActiveTrip()
+        async Task DeleteActiveTripAsync()
         {
             try
             {
@@ -325,6 +320,11 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         {
             return (TripHelper.TripInProcess() && 
                 Trip.Id != Guid.Parse(TripHelper.GetTripIdInProcess()));
+        }
+
+        void PreSetData()
+        {
+            Trip.TripDateTime = DateTime.Now;
         }
 
         #endregion

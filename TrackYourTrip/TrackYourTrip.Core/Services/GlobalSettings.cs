@@ -1,4 +1,5 @@
 ﻿using System;
+using TrackYourTrip.Core.Helpers;
 using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Models;
 using Xamarin.Essentials;
@@ -15,6 +16,20 @@ namespace TrackYourTrip.Core.Services
         {
             get => Preferences.Get(nameof(TripIdInProcess), Guid.Empty.ToString());
             set => Preferences.Set(nameof(TripIdInProcess), value);
+        }
+
+        public PreDefinedSpotSettings PreDefinedSpotSettings
+        {
+            get
+            {
+                var settingString = Preferences.Get(nameof(PreDefinedSpotSettings), string.Empty);
+                return new JSONHelper<PreDefinedSpotSettings>().Deserialize(settingString);
+            }
+
+            set
+            {
+                Preferences.Set(nameof(PreDefinedSpotSettings), new JSONHelper<PreDefinedSpotSettings>().Serialize(value));
+            }
         }
     }
 }
