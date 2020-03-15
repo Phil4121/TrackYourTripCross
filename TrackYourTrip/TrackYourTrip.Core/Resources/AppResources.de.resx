@@ -150,6 +150,9 @@
   <data name="FishingAreasPageTitle" xml:space="preserve">
     <value>Revierübersicht</value>
   </data>
+  <data name="GenerallSettingPageTitle" xml:space="preserve">
+    <value>Allgemeine Einstellungen</value>
+  </data>
   <data name="MainMenuPageTitle" xml:space="preserve">
     <value>Hauptmenü</value>
   </data>

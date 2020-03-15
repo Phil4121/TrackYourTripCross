@@ -13,7 +13,7 @@ namespace TrackYourTrip.Droid.Database
             DatabaseHelper dbHelper = new DatabaseHelper();
 
 #if DEBUG
-            fileHelper.CopyFile(Application.Context.Assets.Open(dbHelper.GetDbFilename), dbFilePath, false);
+            fileHelper.CopyFile(Application.Context.Assets.Open(dbHelper.GetDbFilename), dbFilePath, true);
 #else
             fileHelper.CopyFile(Application.Context.Assets.Open(dbHelper.GetDbFilename), dbFilePath, true);
 #endif

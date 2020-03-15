@@ -11,21 +11,26 @@
              Title="{Binding Title}">
     <ContentPage.Resources>
         <converter:StringToDoubleConverter x:Key="cnvStringToDoubleConverter" />
+        <converter:IntToTemperatureUnitConverter x:Key="cnvIntToTemperatureUnitConverter" />
     </ContentPage.Resources>
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="80" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition />
                     </Grid.RowDefinitions>
 
-                    <Label Text="Wassertemperatur" Grid.Row="0" Grid.Column="0" />
-                    <Entry Text="{Binding PreSettings.WaterTemperature, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}" Grid.Row="0" Grid.Column="1" />
+                    <Label Text="Wassertemperatur:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
+                    
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="1">
+                        <Entry Text="{Binding PreSettings.WaterTemperature, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}" WidthRequest="50"  />
+                        <Label Text="{Binding PreSettings.WaterTemperatureUnit, Mode=OneTime, Converter={StaticResource cnvIntToTemperatureUnitConverter}}" VerticalOptions="Center" WidthRequest="30" />
+                    </StackLayout>
 
                 </Grid>
             </StackLayout>

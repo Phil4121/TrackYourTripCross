@@ -27,9 +27,13 @@
 
         public const string SETTINGS_TABLE = "Settings";
 
+        public const string GENERALL_SETTING_TABLE = "GenerallSettings";
+
         #endregion
 
         public const string SPOTTYPE_SPOT_ID = "1fb8243b-a672-496b-955a-5930cb706250";
         public const string SPOTTYPE_STRETCH_ID = "6b103efc-75c9-45ea-8fad-1b871cbbd391";
+
+        public const string DEFAULT_TEMPERATURE_UNIT = "DefaultTemperatureUnit";
     }
 }

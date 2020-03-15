@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace TrackYourTrip.Core.Helpers
+{
+    public static class EnumHelper
+    {
+        public enum TemperatureUnitEnum
+        {
+            C = 1,
+            F = 0
+        }
+
+        public static T ParseEnum<T>(string value)
+        {
+            return (T)Enum.Parse(typeof(T), value, true);
+        }
+    }
+}

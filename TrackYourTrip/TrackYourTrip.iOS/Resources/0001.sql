@@ -72,6 +72,13 @@ CREATE TABLE Settings (
 	SortOrder			INTEGER		NOT NULL
 );
 
+CREATE TABLE GenerallSettings (
+	ID					TEXT		PRIMARY KEY,
+	SettingKey			TEXT		NOT NULL,
+	SettingValue		TEXT		NOT NULL,
+	SortOrder			INTEGER		NOT NULL
+);
+
 CREATE TABLE FishingAreas (
 	ID					TEXT		PRIMARY KEY,
 	FishingArea			TEXT		NOT NULL,
@@ -116,7 +123,10 @@ INSERT INTO SpotTypes (ID, SpotType) VALUES ('6b103efc-75c9-45ea-8fad-1b871cbbd3
 
 INSERT INTO Fishes (ID, FishName, SortOrder) VALUES ('8cd19c21-bf09-43ea-b799-dbcf30183e08','Zander', 1);
 
-INSERT INTO Settings (ID, Setting, LandingPage, SortOrder) VALUES ('21d269b9-62ee-4104-8d32-cf92534aaba3','Reviere', 'FishingAreasPage', 1);
+INSERT INTO Settings (ID, Setting, LandingPage, SortOrder) VALUES ('21d269b9-62ee-4104-8d32-cf92534ccba3','Allgemeine Einstellungen', 'GenerallSettingPage', 1);
+INSERT INTO Settings (ID, Setting, LandingPage, SortOrder) VALUES ('21d269b9-62ee-4104-8d32-cf92534aaba3','Reviere', 'FishingAreasPage', 2);
+
+INSERT INTO GenerallSettings (ID, SettingKey, SettingValue, SortOrder) VALUES ('21d269b9-62ee-4104-8d32-cf98534ccba3','DefaultTemperatureUnit', '1', 1);
 
 -- *************************************************
 -- ****************** MOCKED DATA ******************

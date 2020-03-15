@@ -73,6 +73,11 @@
                 <Setter Property="TextColor" Value="{StaticResource LightTextColor}" />
             </Style>
 
+            <Style TargetType="Switch" ApplyToDerivedTypes="True">
+                <Setter Property="OnColor" Value="{StaticResource DarkBackgroundColor}" />
+                <Setter Property="ThumbColor" Value="{StaticResource LightTextColor}" />
+            </Style>
+
             <Style x:Key="IndicatorStackLayout" TargetType="StackLayout">
                 <Setter Property="Padding" Value="12" />
                 <Setter Property="AbsoluteLayout.LayoutFlags" Value="PositionProportional" />

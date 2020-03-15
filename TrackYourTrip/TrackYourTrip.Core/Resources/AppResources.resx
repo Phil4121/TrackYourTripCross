@@ -150,6 +150,9 @@
   <data name="FishingAreasPageTitle" xml:space="preserve">
     <value>Fishing areas</value>
   </data>
+  <data name="GenerallSettingPageTitle" xml:space="preserve">
+    <value>Generall settings</value>
+  </data>
   <data name="GoToSecondPageText" xml:space="preserve">
     <value>To Second Page</value>
   </data>

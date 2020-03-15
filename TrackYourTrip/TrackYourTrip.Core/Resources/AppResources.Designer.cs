@@ -160,6 +160,15 @@ namespace TrackYourTrip.Core.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Generall settings ähnelt.
+        /// </summary>
+        internal static string GenerallSettingPageTitle {
+            get {
+                return ResourceManager.GetString("GenerallSettingPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die To Second Page ähnelt.
         /// </summary>
         internal static string GoToSecondPageText {

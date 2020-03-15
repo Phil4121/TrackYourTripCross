@@ -303,7 +303,9 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                 IsBusy = true;
 
                 var activeTrip = await DataStore.GetItemAsync(Guid.Parse(TripHelper.GetTripIdInProcess()));
-                await DataStore.DeleteItemAsync(activeTrip);
+
+                if(activeTrip != null)
+                    await DataStore.DeleteItemAsync(activeTrip);
             }
             catch (Exception ex)
             {

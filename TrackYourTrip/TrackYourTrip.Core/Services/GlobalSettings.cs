@@ -31,7 +31,7 @@ namespace TrackYourTrip.Core.Services
                         return new JSONHelper<PreDefinedSpotSettings>().Deserialize(settingString);
                     }
 
-                    return new PreDefinedSpotSettings();
+                    return null;
 
                 }catch(Exception ex)
                 {
@@ -42,6 +42,27 @@ namespace TrackYourTrip.Core.Services
             set
             {
                 Preferences.Set(nameof(PreDefinedSpotSettings), new JSONHelper<PreDefinedSpotSettings>().Serialize(value));
+            }
+        }
+
+        public GenerallSettingModel GenerallSettings
+        {
+            get
+            {
+                try
+                {
+                    var settingString = Preferences.Get(nameof(GenerallSettings), string.Empty);
+
+                    if (string.IsNullOrEmpty(settingString))
+                        throw new Exception("Could not find GenerallSettings!");
+
+
+                    return new JSONHelper<GenerallSettingModel>().Deserialize(settingString);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
         }
     }

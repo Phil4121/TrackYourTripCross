@@ -30,6 +30,11 @@ namespace TrackYourTrip.Core.Services
             return new SimpleDataService<SettingModel>(Connection, TableConsts.SETTINGS_TABLE);
         }
 
+        public static SimpleDataService<GenerallSettingModel> GetGenerallSettingFactory()
+        {
+            return new SimpleDataService<GenerallSettingModel>(Connection, TableConsts.GENERALL_SETTING_TABLE);
+        }
+
         public static SimpleDataService<FishingAreaModel> GetFishingAreaFactory()
         {
             return new SimpleDataService<FishingAreaModel>(Connection, TableConsts.FISHINGAREA_TABLE);
