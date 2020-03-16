@@ -59,6 +59,12 @@
                 <Setter Property="Margin" Value="0,15,0,15" />
             </Style>
 
+            <Style x:Key="SplitterLabel" TargetType="Label">
+                <Setter Property="Margin" Value="0,15,0,15" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="HeightRequest" Value="30" />
+            </Style>
+
             <Style x:Key="ErrorLabel" TargetType="Label">
                 <Setter Property="FontSize" Value="Small" />
                 <Setter Property="TextColor" Value="{StaticResource ErrorTextColor}" />

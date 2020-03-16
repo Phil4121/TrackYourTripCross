@@ -12,6 +12,12 @@ namespace TrackYourTrip.Core.Helpers
             F = 0
         }
 
+        public enum LengthUnitEnum
+        {
+            M = 1, // m/cm
+            I = 0 // inch/foot
+        }
+
         public static T ParseEnum<T>(string value)
         {
             return (T)Enum.Parse(typeof(T), value, true);

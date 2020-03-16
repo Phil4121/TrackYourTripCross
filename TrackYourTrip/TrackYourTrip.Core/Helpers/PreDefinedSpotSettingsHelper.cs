@@ -9,5 +9,8 @@ namespace TrackYourTrip.Core.Helpers
     {
         public double WaterTemperature { get; set; }
         public int WaterTemperatureUnit { get; set; }
+
+        public double WaterLevel { get; set; }
+        public int WaterLevelUnit { get; set; }
     }
 }

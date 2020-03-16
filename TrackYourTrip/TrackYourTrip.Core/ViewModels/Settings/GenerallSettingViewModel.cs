@@ -64,6 +64,20 @@ namespace TrackYourTrip.Core.ViewModels.Settings
             }
         }
 
+        private bool _isMetric;
+        public bool IsMetric
+        {
+            get => _isMetric;
+            set
+            {
+                SetProperty(ref _isMetric, value);
+
+                GenerallSettings.Where(set => set.SettingKey == TableConsts.DEFAULT_LENGTH_UNIT)
+                    .First()
+                    .SettingValue = BooleanHelper.ConvertBooltoString(IsMetric);
+            }
+        }
+
         #endregion
 
         #region Commands
@@ -107,6 +121,9 @@ namespace TrackYourTrip.Core.ViewModels.Settings
 
             var tempUnit = GenerallSettings.Where(gs => gs.SettingKey == TableConsts.DEFAULT_TEMPERATURE_UNIT).FirstOrDefault().SettingValue;
             IsCelsius = Int32.Parse(tempUnit) == (int)TemperatureUnitEnum.C;
+
+            tempUnit = GenerallSettings.Where(gs => gs.SettingKey == TableConsts.DEFAULT_LENGTH_UNIT).FirstOrDefault().SettingValue;
+            IsMetric = Int32.Parse(tempUnit) == (int)LengthUnitEnum.M;
 
             RaisePropertyChanged(nameof(IsCelsius));
         }

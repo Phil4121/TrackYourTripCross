@@ -13,24 +13,33 @@
         <ToolbarItem Text="{Binding SaveCommandTitle}" Order="Primary" Command="{mvxBind:MvxBind SaveCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout Style="{StaticResource RootStackLayout}">
-            <Grid>
+        <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="StartAndExpand">
+            <Label Text="Maßeinheiten" Style="{StaticResource SplitterLabel}" VerticalOptions="StartAndExpand" />
+            <Grid VerticalOptions="Start">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />                    
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="80" />
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Text="Temperatureinheit: " Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
+                <Label Text="Temperatur: " Grid.Row="0" Grid.Column="0" />
+                <Label Text="°F" Grid.Row="0" Grid.Column="1" HorizontalOptions="End" />
+                <Switch IsToggled="{Binding IsCelsius}" Grid.Row="0" Grid.Column="2" />
+                <Label Text="°C" Grid.Row="0" Grid.Column="3" />
 
-                <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalOptions="End">
-                    <Label Text="°F" VerticalOptions="Center" />
-                    <Switch IsToggled="{Binding IsCelsius}" />
-                    <Label Text="°C" VerticalOptions="Center" />
-                </StackLayout>
+
+                <Label Text="Länge: " Grid.Row="1" Grid.Column="0" />
+                <Label Text="feet / inches" Grid.Row="1" Grid.Column="1" HorizontalOptions="End" />
+                <Switch IsToggled="{Binding IsMetric}" Grid.Row="1" Grid.Column="2" />
+                <Label Text="m / cm" Grid.Row="1" Grid.Column="3" />
+
 
             </Grid>
         </StackLayout>

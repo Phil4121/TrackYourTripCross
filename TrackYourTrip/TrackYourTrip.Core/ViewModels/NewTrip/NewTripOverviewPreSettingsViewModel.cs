@@ -70,6 +70,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             var settings = await DataServiceFactory.GetGenerallSettingFactory().GetItemsAsync();
 
             preSettings.WaterTemperatureUnit = int.Parse(settings.Where(s => s.SettingKey == TableConsts.DEFAULT_TEMPERATURE_UNIT).First().SettingValue);
+            preSettings.WaterLevelUnit = int.Parse(settings.Where(s => s.SettingKey == TableConsts.DEFAULT_LENGTH_UNIT).First().SettingValue);
 
             return preSettings;
         }

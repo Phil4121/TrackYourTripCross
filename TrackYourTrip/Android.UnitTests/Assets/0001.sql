@@ -127,6 +127,7 @@ INSERT INTO Settings (ID, Setting, LandingPage, SortOrder) VALUES ('21d269b9-62e
 INSERT INTO Settings (ID, Setting, LandingPage, SortOrder) VALUES ('21d269b9-62ee-4104-8d32-cf92534aaba3','Reviere', 'FishingAreasPage', 2);
 
 INSERT INTO GenerallSettings (ID, SettingKey, SettingValue, SortOrder) VALUES ('21d269b9-62ee-4104-8d32-cf98534ccba3','DefaultTemperatureUnit', '1', 1);
+INSERT INTO GenerallSettings (ID, SettingKey, SettingValue, SortOrder) VALUES ('21d269b9-62ee-4104-8f42-cf98534ccba3','DefaultLengthUnit', '1', 2);
 
 -- *************************************************
 -- ****************** MOCKED DATA ******************

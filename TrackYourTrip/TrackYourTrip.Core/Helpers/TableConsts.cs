@@ -35,5 +35,6 @@
         public const string SPOTTYPE_STRETCH_ID = "6b103efc-75c9-45ea-8fad-1b871cbbd391";
 
         public const string DEFAULT_TEMPERATURE_UNIT = "DefaultTemperatureUnit";
+        public const string DEFAULT_LENGTH_UNIT = "DefaultLengthUnit";
     }
 }
