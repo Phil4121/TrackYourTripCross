@@ -6,6 +6,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:converter="clr-namespace:TrackYourTrip.Core.Converters"    
+             xmlns:custom="clr-namespace:TrackYourTrip.Core.CustomControls"
              mc:Ignorable="d"
              x:Class="TrackYourTrip.Core.Pages.NewTrip.NewTripOverviewPreSettingsPage"
              Title="{Binding Title}">
@@ -20,7 +21,7 @@
                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="150" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -29,19 +30,25 @@
 
                     <Label Text="Wassertemperatur:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
                     
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="1">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="0" Grid.Column="1">
                         <Entry Text="{Binding PreSettings.WaterTemperature, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}" WidthRequest="50"  />
-                        <Label Text="{Binding PreSettings.WaterTemperatureUnit, Mode=OneTime, Converter={StaticResource cnvIntToTemperatureUnitConverter}}" VerticalOptions="Center" WidthRequest="30" />
+                        <Label Text="{Binding PreSettings.WaterTemperatureUnit, Converter={StaticResource cnvIntToTemperatureUnitConverter}}" VerticalOptions="Center" WidthRequest="30" />
                     </StackLayout>
 
                     <Label Text="Wasserstand:" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" />
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="1">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="1" Grid.Column="1">
                         <Entry Text="{Binding PreSettings.WaterLevel, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}" WidthRequest="50"  />
-                        <Label Text="{Binding PreSettings.WaterLevelUnit, Mode=OneTime, Converter={StaticResource cnvIntToLengthUnitConverter}, ConverterParameter='m'}" VerticalOptions="Center" WidthRequest="30" />
+                        <Label Text="{Binding PreSettings.WaterLevelUnit, Converter={StaticResource cnvIntToLengthUnitConverter}, ConverterParameter='m'}" VerticalOptions="Center" WidthRequest="30" />
                     </StackLayout>
 
                     <Label Text="Wassertrübung:" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" />
-
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="2" Grid.Column="1">
+                        <custom:CustomPicker ItemsSource="{Binding Turbidities}" 
+                                             DisplayMemberPath="Turbidity" 
+                                             SelectedValuePath="Id" 
+                                             SelectedValue="{Binding SelectedTurbidity.Id}"
+                                             WidthRequest="150"/>
+                    </StackLayout>
 
                 </Grid>
             </StackLayout>

@@ -33,8 +33,10 @@ namespace TrackYourTrip.Core.Services
 
                     return null;
 
+
                 }catch(Exception ex)
                 {
+                    Preferences.Clear();
                     throw ex;
                 }
             }

@@ -121,6 +121,11 @@ INSERT INTO WaterModels (ID, Water) VALUES ('d95694ef-1d6c-4ab4-9f9b-587fac74298
 INSERT INTO SpotTypes (ID, SpotType) VALUES ('1fb8243b-a672-496b-955a-5930cb706250', 'Spot');
 INSERT INTO SpotTypes (ID, SpotType) VALUES ('6b103efc-75c9-45ea-8fad-1b871cbbd391', 'Stretch');
 
+INSERT INTO Turbities (ID, Turbidity, SortOrder) VALUES ('e114fd49-ef4a-4126-8d90-effe1d1bc3d5','klar', 1);
+INSERT INTO Turbities (ID, Turbidity, SortOrder) VALUES ('c7c1a293-432a-4b96-98ad-5a1ad22bc3e8','leicht eingetrübt', 2);
+INSERT INTO Turbities (ID, Turbidity, SortOrder) VALUES ('9f7282a1-4f6a-41ff-b055-32af324b1b1a','trüb', 3);
+INSERT INTO Turbities (ID, Turbidity, SortOrder) VALUES ('359bc3c8-47b1-42b3-8f92-071d2fa09587','stark eingetrübt', 4);
+
 INSERT INTO Fishes (ID, FishName, SortOrder) VALUES ('8cd19c21-bf09-43ea-b799-dbcf30183e08','Zander', 1);
 
 INSERT INTO Settings (ID, Setting, LandingPage, SortOrder) VALUES ('21d269b9-62ee-4104-8d32-cf92534ccba3','Allgemeine Einstellungen', 'GenerallSettingPage', 1);

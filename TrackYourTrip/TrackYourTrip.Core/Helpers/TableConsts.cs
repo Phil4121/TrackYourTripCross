@@ -10,7 +10,7 @@
         public const string BAITCOLOR_TABLE = "BaitColors";
         public const string BAITTYPE_TABLE = "BaitTypes";
         public const string CURRENT_TABLE = "Currents";
-        //public const string TURBIDITY_TABLE = "Turbidities";
+        public const string TURBIDITY_TABLE = "Turbities";
         public const string WATERCOLOR_TABLE = "WaterColors";
         //public const string PHASEOFMOON_TABLE = "PhasesOfMoon";
         public const string WINDDIRECTION_TABLE = "WindDirections";

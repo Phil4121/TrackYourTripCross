@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TrackYourTrip.Core.Models;
 using TrackYourTrip.Core.Services;
 
 namespace TrackYourTrip.Core.Helpers
@@ -12,5 +13,13 @@ namespace TrackYourTrip.Core.Helpers
 
         public double WaterLevel { get; set; }
         public int WaterLevelUnit { get; set; }
+
+        public Guid ID_Turbidity { get; set; }
+        public TurbidityModel Turbidity { get; set; }
+
+        public PreDefinedSpotSettings()
+        {
+            ID_Turbidity = Guid.NewGuid();
+        }
     }
 }
