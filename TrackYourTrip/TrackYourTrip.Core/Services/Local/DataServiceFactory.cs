@@ -55,6 +55,11 @@ namespace TrackYourTrip.Core.Services
             return new SimpleDataService<TurbidityModel>(Connection, TableConsts.TURBIDITY_TABLE);
         }
 
+        public static SimpleDataService<WaterColorModel> GetWaterColorFactory()
+        {
+            return new SimpleDataService<WaterColorModel>(Connection, TableConsts.WATERCOLOR_TABLE);
+        }
+
         public static SimpleDataService<SpotTypeModel> GetSpotTypeFactory()
         {
             return new SimpleDataService<SpotTypeModel>(Connection, TableConsts.SPOTTYPE_TABLE);

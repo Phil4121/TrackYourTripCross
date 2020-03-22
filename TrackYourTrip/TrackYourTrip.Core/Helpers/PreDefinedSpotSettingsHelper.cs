@@ -15,11 +15,13 @@ namespace TrackYourTrip.Core.Helpers
         public int WaterLevelUnit { get; set; }
 
         public Guid ID_Turbidity { get; set; }
-        public TurbidityModel Turbidity { get; set; }
+
+        public Guid ID_WaterColor { get; set; }
 
         public PreDefinedSpotSettings()
         {
             ID_Turbidity = Guid.NewGuid();
+            ID_WaterColor = Guid.NewGuid();
         }
     }
 }
