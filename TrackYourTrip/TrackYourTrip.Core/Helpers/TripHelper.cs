@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using TrackYourTrip.Core.Interfaces;
+using Xamarin.Essentials;
 
 namespace TrackYourTrip.Core.Helpers
 {
@@ -28,6 +29,7 @@ namespace TrackYourTrip.Core.Helpers
         public static void ResetPreSettings()
         {
             settings.PreDefinedSpotSettings = new PreDefinedSpotSettings();
+            Preferences.Clear();
         }
     }
 }

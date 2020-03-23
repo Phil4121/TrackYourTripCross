@@ -38,9 +38,10 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                 if (_preSettings == null)
                 {
                     var tsk = MvxNotifyTask.Create(
-                        async () => {
+                        async () =>
+                        {
                             _preSettings = await SetPreSettingsAsync();
-                            },
+                        },
                         onException: ex => LogException(ex));
                 }
 
@@ -60,6 +61,9 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             }
             set
             {
+                if (PreSettings == null)
+                    return;
+
                 PreSettings.ID_WaterColor = value;
 
                 RaisePropertyChanged(nameof(SelectedWaterColorId));
@@ -67,14 +71,14 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         }
 
         private MvxObservableCollection<WaterColorModel> _waterColors;
-
         public MvxObservableCollection<WaterColorModel> WaterColors
         {
             get => _waterColors;
             set => SetProperty(ref _waterColors, value);
         }
 
-        public Guid SelectedTurbidityId {
+        public Guid SelectedTurbidityId
+        {
             get
             {
                 if (PreSettings == null)
@@ -82,7 +86,11 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
                 return PreSettings.ID_Turbidity;
             }
-            set {
+            set
+            {
+                if (PreSettings == null)
+                    return;
+
                 PreSettings.ID_Turbidity = value;
 
                 RaisePropertyChanged(nameof(SelectedTurbidityId));
@@ -90,11 +98,37 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         }
 
         private MvxObservableCollection<TurbidityModel> _turbidities;
-
         public MvxObservableCollection<TurbidityModel> Turbidities
         {
             get => _turbidities;
             set => SetProperty(ref _turbidities, value);
+        }
+
+        public Guid SelectedCurrentId
+        {
+            get
+            {
+                if (PreSettings == null)
+                    return Guid.NewGuid();
+
+                return PreSettings.ID_Current;
+            }
+            set
+            {
+                if (PreSettings == null)
+                    return;
+
+                PreSettings.ID_Current = value;
+
+                RaisePropertyChanged(nameof(SelectedCurrentId));
+            }
+        }
+
+        private MvxObservableCollection<CurrentModel> _currents;
+        public MvxObservableCollection<CurrentModel> Currents
+        {
+            get => _currents;
+            set => SetProperty(ref _currents, value);
         }
 
         #endregion
@@ -146,6 +180,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
             preSettings.ID_Turbidity = SelectedTurbidityId;
             preSettings.ID_WaterColor = SelectedWaterColorId;
+            preSettings.ID_Current = SelectedCurrentId;
 
             return preSettings;
         }
@@ -165,14 +200,19 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         {
             Turbidities = new MvxObservableCollection<TurbidityModel>(
                 await DataServiceFactory.GetTurbidityFactory().GetItemsAsync()
-            );
+                );
 
             WaterColors = new MvxObservableCollection<WaterColorModel>(
-                    await DataServiceFactory.GetWaterColorFactory().GetItemsAsync()
+                await DataServiceFactory.GetWaterColorFactory().GetItemsAsync()
+                );
+
+            Currents = new MvxObservableCollection<CurrentModel>(
+                await DataServiceFactory.GetCurrentFactory().GetItemsAsync()
                 );
 
             await RaisePropertyChanged(() => Turbidities);
             await RaisePropertyChanged(() => WaterColors);
+            await RaisePropertyChanged(() => Currents);
         }
 
         void LogException(Exception ex)

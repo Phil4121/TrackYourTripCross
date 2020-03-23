@@ -287,6 +287,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             catch (Exception ex)
             {
                 TripHelper.ResetTripInProcess();
+                TripHelper.ResetPreSettings();
 
                 throw;
             }

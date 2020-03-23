@@ -130,6 +130,12 @@ INSERT INTO WaterColors (ID, WaterColor, SortOrder) VALUES ('e114fd49-ef4a-4126-
 INSERT INTO WaterColors (ID, WaterColor, SortOrder) VALUES ('c7c1a293-432a-4b96-98ad-5a1ad22bc3e9','braun', 2);
 INSERT INTO WaterColors (ID, WaterColor, SortOrder) VALUES ('9f7282a1-4f6a-41ff-b055-32af324b1b2a','grau', 3);
 
+INSERT INTO Currents (ID, [Current], SortOrder) VALUES ('e114fd49-ef4a-4126-8d90-effe2d1bc3d6','keine', 1);
+INSERT INTO Currents (ID, [Current], SortOrder) VALUES ('c7c1a293-432a-4b96-98ad-5a1ad12bc3e9','wenig', 2);
+INSERT INTO Currents (ID, [Current], SortOrder) VALUES ('9f7282a1-4f6a-41ff-b055-32af344b1b2a','normal', 3);
+INSERT INTO Currents (ID, [Current], SortOrder) VALUES ('9f7282a1-4f4a-41ff-b055-32af344b1b2a','stark', 4);
+INSERT INTO Currents (ID, [Current], SortOrder) VALUES ('9f7282a1-4f6a-41ff-b065-32af344b1b2a','sehr stark', 5);
+
 INSERT INTO Fishes (ID, FishName, SortOrder) VALUES ('8cd19c21-bf09-43ea-b799-dbcf30183e08','Zander', 1);
 
 INSERT INTO Settings (ID, Setting, LandingPage, SortOrder) VALUES ('21d269b9-62ee-4104-8d32-cf92534ccba3','Allgemeine Einstellungen', 'GenerallSettingPage', 1);

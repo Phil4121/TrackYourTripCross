@@ -60,6 +60,11 @@ namespace TrackYourTrip.Core.Services
             return new SimpleDataService<WaterColorModel>(Connection, TableConsts.WATERCOLOR_TABLE);
         }
 
+        public static SimpleDataService<CurrentModel> GetCurrentFactory()
+        {
+            return new SimpleDataService<CurrentModel>(Connection, TableConsts.CURRENT_TABLE);
+        }
+
         public static SimpleDataService<SpotTypeModel> GetSpotTypeFactory()
         {
             return new SimpleDataService<SpotTypeModel>(Connection, TableConsts.SPOTTYPE_TABLE);

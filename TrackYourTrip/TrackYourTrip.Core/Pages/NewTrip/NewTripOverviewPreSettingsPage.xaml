@@ -28,6 +28,7 @@
                         <RowDefinition />
                         <RowDefinition />
                         <RowDefinition />
+                        <RowDefinition />
                     </Grid.RowDefinitions>
 
                     <Label Text="Wassertemperatur:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
@@ -59,6 +60,15 @@
                                              SelectedValuePath="Id" 
                                              SelectedValue="{Binding SelectedTurbidityId, Mode=TwoWay}"
                                              WidthRequest="150"/>
+                    </StackLayout>
+
+                    <Label Text="Strömung:" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="4" Grid.Column="1">
+                        <custom:CustomPickerWithErrorLabel ItemsSource="{Binding Currents}" 
+                                             DisplayMemberPath="Current" 
+                                             SelectedValuePath="Id" 
+                                             SelectedValue="{Binding SelectedCurrentId, Mode=TwoWay}"
+                                             WidthRequest="100"/>
                     </StackLayout>
                 </Grid>
             </StackLayout>
