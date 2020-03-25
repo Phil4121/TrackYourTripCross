@@ -136,6 +136,13 @@ INSERT INTO Currents (ID, [Current], SortOrder) VALUES ('9f7282a1-4f6a-41ff-b055
 INSERT INTO Currents (ID, [Current], SortOrder) VALUES ('9f7282a1-4f4a-41ff-b055-32af344b1b2a','stark', 4);
 INSERT INTO Currents (ID, [Current], SortOrder) VALUES ('9f7282a1-4f6a-41ff-b065-32af344b1b2a','sehr stark', 5);
 
+INSERT INTO BaitColors (ID, BaitColor, SortOrder) VALUES ('e114fd49-ef4a-4126-8d90-effe1d2bc3d6','hell', 1);
+INSERT INTO BaitColors (ID, BaitColor, SortOrder) VALUES ('c7c1a293-432a-4b96-98ad-5a1ad22bc4e9','natürlich', 2);
+INSERT INTO BaitColors (ID, BaitColor, SortOrder) VALUES ('9f7282a1-4f6a-41ff-b055-33af324b1b2a','dunkel', 3);
+INSERT INTO BaitColors (ID, BaitColor, SortOrder) VALUES ('9f7282a1-4f6a-41ff-b055-33af424b1b2a','neon', 4);
+
+INSERT INTO BaitTypes (ID, BaitType, SortOrder) VALUES ('e114fd48-ef4a-4126-8d90-effe1d2bc3d6','Gummiköder', 1);
+
 INSERT INTO Fishes (ID, FishName, SortOrder) VALUES ('8cd19c21-bf09-43ea-b799-dbcf30183e08','Zander', 1);
 
 INSERT INTO Settings (ID, Setting, LandingPage, SortOrder) VALUES ('21d269b9-62ee-4104-8d32-cf92534ccba3','Allgemeine Einstellungen', 'GenerallSettingPage', 1);

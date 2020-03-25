@@ -18,11 +18,18 @@ namespace TrackYourTrip.Core.Helpers
         public Guid ID_WaterColor { get; set; }
         public Guid ID_Current { get; set; }
 
+        
+        public Guid ID_BaitColor { get; set; }
+
+        public Guid ID_BaitType { get; set; }
+
         public PreDefinedSpotSettings()
         {
             ID_Turbidity = Guid.NewGuid();
             ID_WaterColor = Guid.NewGuid();
             ID_Current = Guid.NewGuid();
+            ID_BaitColor = Guid.NewGuid();
+            ID_BaitType = Guid.NewGuid();
         }
     }
 }

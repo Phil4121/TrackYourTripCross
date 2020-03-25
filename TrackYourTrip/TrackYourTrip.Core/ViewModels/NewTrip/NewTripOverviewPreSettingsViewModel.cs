@@ -131,6 +131,60 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             set => SetProperty(ref _currents, value);
         }
 
+        public Guid SelectedBaitColorId
+        {
+            get
+            {
+                if (PreSettings == null)
+                    return Guid.NewGuid();
+
+                return PreSettings.ID_BaitColor;
+            }
+            set
+            {
+                if (PreSettings == null)
+                    return;
+
+                PreSettings.ID_BaitColor = value;
+
+                RaisePropertyChanged(nameof(SelectedBaitColorId));
+            }
+        }
+
+        private MvxObservableCollection<BaitColorModel> _baitColor;
+        public MvxObservableCollection<BaitColorModel> BaitColor
+        {
+            get => _baitColor;
+            set => SetProperty(ref _baitColor, value);
+        }
+
+        public Guid SelectedBaitTypeId
+        {
+            get
+            {
+                if (PreSettings == null)
+                    return Guid.NewGuid();
+
+                return PreSettings.ID_BaitType;
+            }
+            set
+            {
+                if (PreSettings == null)
+                    return;
+
+                PreSettings.ID_BaitType = value;
+
+                RaisePropertyChanged(nameof(SelectedBaitTypeId));
+            }
+        }
+
+        private MvxObservableCollection<BaitTypeModel> _baitType;
+        public MvxObservableCollection<BaitTypeModel> BaitType
+        {
+            get => _baitType;
+            set => SetProperty(ref _baitType, value);
+        }
+
         #endregion
 
         #region Tasks
@@ -202,17 +256,31 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                 await DataServiceFactory.GetTurbidityFactory().GetItemsAsync()
                 );
 
+            await RaisePropertyChanged(() => Turbidities);
+
             WaterColors = new MvxObservableCollection<WaterColorModel>(
                 await DataServiceFactory.GetWaterColorFactory().GetItemsAsync()
                 );
+
+            await RaisePropertyChanged(() => WaterColors);
 
             Currents = new MvxObservableCollection<CurrentModel>(
                 await DataServiceFactory.GetCurrentFactory().GetItemsAsync()
                 );
 
-            await RaisePropertyChanged(() => Turbidities);
-            await RaisePropertyChanged(() => WaterColors);
             await RaisePropertyChanged(() => Currents);
+
+            BaitColor = new MvxObservableCollection<BaitColorModel>(
+                await DataServiceFactory.GetBaitColorFactory().GetItemsAsync()
+                );
+
+            await RaisePropertyChanged(() => BaitColor);
+
+            BaitType = new MvxObservableCollection<BaitTypeModel>(
+                await DataServiceFactory.GetBaitTypeFactory().GetItemsAsync()
+                );
+
+            await RaisePropertyChanged(() => BaitType);
         }
 
         void LogException(Exception ex)

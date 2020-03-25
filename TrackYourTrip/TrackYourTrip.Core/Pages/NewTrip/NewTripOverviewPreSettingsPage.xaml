@@ -17,61 +17,95 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="150" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
+            <ScrollView>
+                <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                    <Label Text="Wasser" Style="{StaticResource SplitterLabel}" />
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="150" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
 
-                    <Label Text="Wassertemperatur:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
-                    
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="0" Grid.Column="1">
-                        <Entry Text="{Binding PreSettings.WaterTemperature, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}" WidthRequest="50"  />
-                        <Label Text="{Binding PreSettings.WaterTemperatureUnit, Converter={StaticResource cnvIntToTemperatureUnitConverter}}" VerticalOptions="Center" WidthRequest="30" />
-                    </StackLayout>
+                        <Label Text="Wassertemperatur:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
 
-                    <Label Text="Wasserstand:" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" />
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="1" Grid.Column="1">
-                        <Entry Text="{Binding PreSettings.WaterLevel, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}" WidthRequest="50"  />
-                        <Label Text="{Binding PreSettings.WaterLevelUnit, Converter={StaticResource cnvIntToLengthUnitConverter}, ConverterParameter='m'}" VerticalOptions="Center" WidthRequest="30" />
-                    </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="0" Grid.Column="1">
+                            <Entry Text="{Binding PreSettings.WaterTemperature, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}" WidthRequest="50"  />
+                            <Label Text="{Binding PreSettings.WaterTemperatureUnit, Converter={StaticResource cnvIntToTemperatureUnitConverter}}" VerticalOptions="Center" WidthRequest="30" />
+                        </StackLayout>
 
-                    <Label Text="Wasserfarbe:" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" />
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="2" Grid.Column="1">
-                        <custom:CustomPickerWithErrorLabel ItemsSource="{Binding WaterColors}" 
+                        <Label Text="Wasserstand:" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="1" Grid.Column="1">
+                            <Entry Text="{Binding PreSettings.WaterLevel, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}" WidthRequest="50"  />
+                            <Label Text="{Binding PreSettings.WaterLevelUnit, Converter={StaticResource cnvIntToLengthUnitConverter}, ConverterParameter='m'}" VerticalOptions="Center" WidthRequest="30" />
+                        </StackLayout>
+
+                        <Label Text="Wasserfarbe:" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="2" Grid.Column="1">
+                            <custom:CustomPickerWithErrorLabel ItemsSource="{Binding WaterColors}" 
                                              DisplayMemberPath="WaterColor" 
                                              SelectedValuePath="Id" 
                                              SelectedValue="{Binding SelectedWaterColorId, Mode=TwoWay}"
                                              WidthRequest="100"/>
-                    </StackLayout>
+                        </StackLayout>
 
-                    <Label Text="Wassertrübung:" Grid.Row="3" Grid.Column="0" VerticalOptions="Center" />
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="3" Grid.Column="1">
-                        <custom:CustomPickerWithErrorLabel ItemsSource="{Binding Turbidities}" 
+                        <Label Text="Wassertrübung:" Grid.Row="3" Grid.Column="0" VerticalOptions="Center" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="3" Grid.Column="1">
+                            <custom:CustomPickerWithErrorLabel ItemsSource="{Binding Turbidities}" 
                                              DisplayMemberPath="Turbidity" 
                                              SelectedValuePath="Id" 
                                              SelectedValue="{Binding SelectedTurbidityId, Mode=TwoWay}"
                                              WidthRequest="150"/>
-                    </StackLayout>
+                        </StackLayout>
 
-                    <Label Text="Strömung:" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" />
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="4" Grid.Column="1">
-                        <custom:CustomPickerWithErrorLabel ItemsSource="{Binding Currents}" 
+                        <Label Text="Strömung:" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="4" Grid.Column="1">
+                            <custom:CustomPickerWithErrorLabel ItemsSource="{Binding Currents}" 
                                              DisplayMemberPath="Current" 
                                              SelectedValuePath="Id" 
                                              SelectedValue="{Binding SelectedCurrentId, Mode=TwoWay}"
                                              WidthRequest="100"/>
-                    </StackLayout>
-                </Grid>
-            </StackLayout>
+                        </StackLayout>
+                    </Grid>
+
+                    <Label Text="Köder" Style="{StaticResource SplitterLabel}" />
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="150" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <Label Text="Köderfarbe:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="0" Grid.Column="1">
+                            <custom:CustomPickerWithErrorLabel ItemsSource="{Binding BaitColor}" 
+                                             DisplayMemberPath="BaitColor" 
+                                             SelectedValuePath="Id" 
+                                             SelectedValue="{Binding SelectedBaitColorId, Mode=TwoWay}"
+                                             WidthRequest="100"/>
+                        </StackLayout>
+
+                        <Label Text="Ködertyp:" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="1" Grid.Column="1">
+                            <custom:CustomPickerWithErrorLabel ItemsSource="{Binding BaitType}" 
+                                             DisplayMemberPath="BaitType" 
+                                             SelectedValuePath="Id" 
+                                             SelectedValue="{Binding SelectedBaitTypeId, Mode=TwoWay}"
+                                             WidthRequest="120"/>
+                        </StackLayout>
+
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
             <StackLayout IsVisible="{Binding IsBusy}" Style="{StaticResource IndicatorStackLayout}">
                 <ActivityIndicator IsRunning="{Binding IsBusy}" />
             </StackLayout>

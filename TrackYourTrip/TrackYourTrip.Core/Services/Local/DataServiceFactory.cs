@@ -65,6 +65,16 @@ namespace TrackYourTrip.Core.Services
             return new SimpleDataService<CurrentModel>(Connection, TableConsts.CURRENT_TABLE);
         }
 
+        public static SimpleDataService<BaitColorModel> GetBaitColorFactory()
+        {
+            return new SimpleDataService<BaitColorModel>(Connection, TableConsts.BAITCOLOR_TABLE);
+        }
+
+        public static SimpleDataService<BaitTypeModel> GetBaitTypeFactory()
+        {
+            return new SimpleDataService<BaitTypeModel>(Connection, TableConsts.BAITTYPE_TABLE);
+        }
+
         public static SimpleDataService<SpotTypeModel> GetSpotTypeFactory()
         {
             return new SimpleDataService<SpotTypeModel>(Connection, TableConsts.SPOTTYPE_TABLE);
