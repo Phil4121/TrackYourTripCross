@@ -168,6 +168,15 @@
   <data name="MainPageTitle" xml:space="preserve">
     <value>Hello Xamarin!</value>
   </data>
+  <data name="NewFishedSpotBasicPageTitle" xml:space="preserve">
+    <value>Spot</value>
+  </data>
+  <data name="NewFishedSpotWaterPageTitle" xml:space="preserve">
+    <value>Water-Settings</value>
+  </data>
+  <data name="NewFishedSpotWeatherPageTitle" xml:space="preserve">
+    <value>Wheater-Settings</value>
+  </data>
   <data name="NewTripOverviewPageTitle" xml:space="preserve">
     <value>Trip overview</value>
   </data>

@@ -111,7 +111,25 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         async Task CheckInToNewSpotAsync()
         {
-            int i = 0;
+            try
+            {
+                IsBusy = true;
+
+                var fishedSpot = new FishedSpotModel()
+                {
+                    ID_Trip = Trip.Id
+                };          
+
+                await NavigationService.Navigate<NewFishedSpotOverviewViewModel, FishedSpotModel, OperationResult<IModel>>(fishedSpot);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         #endregion

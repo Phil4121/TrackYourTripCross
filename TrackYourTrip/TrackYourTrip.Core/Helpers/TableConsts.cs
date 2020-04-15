@@ -20,6 +20,7 @@
         public const string TRIP_TABLE = "Trips";
 
         public const string FISHINGAREA_TABLE = "FishingAreas";
+        public const string FISHEDSPOT_TABLE = "FishedSpots";
 
         public const string SPOT_TABLE = "Spots";
         public const string SPOTTYPE_TABLE = "SpotTypes";

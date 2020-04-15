@@ -12,22 +12,8 @@
              xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              mc:Ignorable="d"
-             x:Class="TrackYourTrip.Core.Pages.NewTrip.NewTripOverviewBasicPage"
+             x:Class="TrackYourTrip.Core.Pages.NewTrip.NewFishedSpotWaterPage"
              Title="{Binding Title}">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <other:MapItemTemplateSelector x:Key="MapItemTemplateSelector">
-                <other:MapItemTemplateSelector.DataTemplate>
-                    <DataTemplate>
-                        <maps:Pin Position="{Binding Position}"
-                                  Label=""
-                                  IsDraggable="False"
-                                  Type="Place"/>
-                    </DataTemplate>
-                </other:MapItemTemplateSelector.DataTemplate>
-            </other:MapItemTemplateSelector>
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="{Binding SaveCommandTitle}" Order="Primary" Command="{mvxBind:MvxBind SaveCommand}" />
     </ContentPage.ToolbarItems>
@@ -36,36 +22,16 @@
             <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="20" />
-                        <RowDefinition Height="20" />
-                        <RowDefinition Height="15" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="80" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <Label Text="Beginn:" Grid.Row="0" Grid.Column="0" />
-                    <Label Text="{Binding Trip.TripDateTime}" Grid.Row="0" Grid.Column="1" />
 
-                    <maps:Map x:Name="map"
-                          InitialCameraUpdate="{Binding MapCenter}"
-                          ItemsSource="{Binding Pins}"
-                          ItemTemplateSelector="{StaticResource MapItemTemplateSelector}"
-                          MapType="Hybrid"
-                          VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand"
-                          HeightRequest="300" WidthRequest="300"
-                          Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
-                    </maps:Map>
 
                 </Grid>
-
-                <StackLayout Style="{StaticResource SpacedStackLayout}">
-                    <Button Text="{Binding CheckInButtonText}"
-                            Command="{Binding CheckInToSpotCommand}"
-                            HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
-                </StackLayout>
             </StackLayout>
             <StackLayout IsVisible="{Binding IsBusy}" Style="{StaticResource IndicatorStackLayout}">
                 <ActivityIndicator IsRunning="{Binding IsBusy}" />

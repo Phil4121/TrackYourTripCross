@@ -59,6 +59,11 @@
                 <Setter Property="Margin" Value="0,15,0,15" />
             </Style>
 
+            <Style x:Key="HeadlineLabel" TargetType="Label">
+                <Setter Property="Margin" Value="0,15,0,15" />
+                <Setter Property="FontSize"  Value="Large" />
+            </Style>
+
             <Style x:Key="SplitterLabel" TargetType="Label">
                 <Setter Property="Margin" Value="0,15,0,15" />
                 <Setter Property="FontSize" Value="Large" />

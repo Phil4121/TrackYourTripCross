@@ -214,6 +214,33 @@ namespace TrackYourTrip.Core.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Spot ähnelt.
+        /// </summary>
+        internal static string NewFishedSpotBasicPageTitle {
+            get {
+                return ResourceManager.GetString("NewFishedSpotBasicPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Water-Settings ähnelt.
+        /// </summary>
+        internal static string NewFishedSpotWaterPageTitle {
+            get {
+                return ResourceManager.GetString("NewFishedSpotWaterPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Wheater-Settings ähnelt.
+        /// </summary>
+        internal static string NewFishedSpotWeatherPageTitle {
+            get {
+                return ResourceManager.GetString("NewFishedSpotWeatherPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Trip overview ähnelt.
         /// </summary>
         internal static string NewTripOverviewPageTitle {

@@ -77,6 +77,18 @@
         <Compile Update="Pages\MainView.xaml.cs">
           <DependentUpon>MainView.xaml</DependentUpon>
         </Compile>
+        <Compile Update="Pages\NewTrip\NewFishedSpotWeatherPage.xaml.cs">
+          <DependentUpon>NewFishedSpotWeatherPage.xaml</DependentUpon>
+        </Compile>
+        <Compile Update="Pages\NewTrip\NewFishedSpotWaterPage.xaml.cs">
+          <DependentUpon>NewFishedSpotWaterPage.xaml</DependentUpon>
+        </Compile>
+        <Compile Update="Pages\NewTrip\NewFishedSpotOverviewPage.xaml.cs">
+          <DependentUpon>NewFishedSpotOverviewPage.xaml</DependentUpon>
+        </Compile>
+        <Compile Update="Pages\NewTrip\NewFishedSpotBasicPage.xaml.cs">
+          <DependentUpon>NewFishedSpotBasicPage.xaml</DependentUpon>
+        </Compile>
         <Compile Update="Pages\NewTrip\NewTripOverviewPage.xaml.cs">
           <DependentUpon>NewTripOverviewPage.xaml</DependentUpon>
         </Compile>

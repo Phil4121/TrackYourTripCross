@@ -45,6 +45,11 @@ namespace TrackYourTrip.Core.Services
             return new SimpleDataService<SpotModel>(Connection, TableConsts.SPOT_TABLE);
         }
 
+        public static SimpleDataService<FishedSpotModel> GetFishedSpotFactory()
+        {
+            return new SimpleDataService<FishedSpotModel>(Connection, TableConsts.FISHEDSPOT_TABLE);
+        }
+
         public static SimpleDataService<WaterModel> GetWaterFactory()
         {
             return new SimpleDataService<WaterModel>(Connection, TableConsts.WATERMODEL_TABLE);
