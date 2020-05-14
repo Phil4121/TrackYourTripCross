@@ -18,6 +18,11 @@ namespace TrackYourTrip.Core.Helpers
             I = 0 // inch/foot
         }
 
+        public enum TaskTypeEnum
+        {
+            WheaterTask = 1
+        }
+
         public static T ParseEnum<T>(string value)
         {
             return (T)Enum.Parse(typeof(T), value, true);

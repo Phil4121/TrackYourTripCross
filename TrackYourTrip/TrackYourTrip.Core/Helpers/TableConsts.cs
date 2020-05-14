@@ -30,6 +30,8 @@
 
         public const string GENERALL_SETTING_TABLE = "GenerallSettings";
 
+        public const string BACKGROUND_TASK_TABLE = "BackgroundTasks";
+
         #endregion
 
         public const string SPOTTYPE_SPOT_ID = "1fb8243b-a672-496b-955a-5930cb706250";

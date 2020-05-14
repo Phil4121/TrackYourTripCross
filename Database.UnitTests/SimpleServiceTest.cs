@@ -26,13 +26,13 @@ namespace Database.UnitTests
         [Fact]
         public void TestSimpleDataServiceGetItemsFromWaterModels()
         {
-            SimpleDataService<TestWaterModel> simpleService = new SimpleDataService<TestWaterModel>(_connection, "WaterModels");
+            SimpleDataService<WaterModel> simpleService = new SimpleDataService<WaterModel>(_connection, "WaterModels");
 
-            IEnumerable<TestWaterModel> result = simpleService.GetItemsAsync().Result;
+            IEnumerable<WaterModel> result = simpleService.GetItemsAsync().Result;
 
             Assert.NotNull(result);
 
-            List<TestWaterModel> waterModels = (List<TestWaterModel>)result;
+            List<WaterModel> waterModels = (List<WaterModel>)result;
 
             Assert.True(waterModels.Count > 0);
         }
@@ -43,9 +43,9 @@ namespace Database.UnitTests
             Guid idNotExists = Guid.NewGuid();
             Guid idExists = Guid.Parse("2a3eeecf-472c-4b0f-9df0-73386cb3b3f7");
 
-            SimpleDataService<TestWaterModel> simpleService = new SimpleDataService<TestWaterModel>(_connection, "WaterModels");
+            SimpleDataService<WaterModel> simpleService = new SimpleDataService<WaterModel>(_connection, "WaterModels");
 
-            TestWaterModel result = simpleService.GetItemAsync(idNotExists).Result;
+            WaterModel result = simpleService.GetItemAsync(idNotExists).Result;
 
             Assert.Null(result);
 
@@ -53,13 +53,7 @@ namespace Database.UnitTests
 
             Assert.NotNull(result);
 
-            Assert.True(result.ID == 10);
-        }
-
-        class TestWaterModel
-        {
-            public int ID { get; set; }
-            public string Name { get; set; }
+            Assert.True(result.Id == idExists);
         }
     }
 

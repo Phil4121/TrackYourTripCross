@@ -10,6 +10,9 @@ namespace TrackYourTrip.Core.Interfaces
     {
         Task<T> SaveItemAsync(T item, CancellationToken cancellationToken = default);
         Task<bool> DeleteItemAsync(T item);
+
+        Task<bool> DeleteItemsAsync();
+
         Task<T> GetItemAsync(Guid id);
         Task<IEnumerable<T>> GetItemsAsync();
     }

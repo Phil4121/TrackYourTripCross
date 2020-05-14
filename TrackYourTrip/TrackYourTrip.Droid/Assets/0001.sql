@@ -79,6 +79,14 @@ CREATE TABLE GenerallSettings (
 	SortOrder			INTEGER		NOT NULL
 );
 
+CREATE TABLE BackgroundTasks (
+	ID					TEXT		PRIMARY KEY,
+	ID_ElementReference	TEXT		NOT NULL,
+	ID_TaskType			INTEGER		NOT NULL,
+	CreationDateTime	TEXT		NOT NULL,
+	TaskData			TEXT		NOT NULL
+);
+
 CREATE TABLE FishingAreas (
 	ID					TEXT		PRIMARY KEY,
 	FishingArea			TEXT		NOT NULL,

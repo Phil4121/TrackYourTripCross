@@ -99,5 +99,24 @@ namespace TrackYourTrip.Core.Services
 
             return deleteItemTask;
         }
+
+        public Task<bool> DeleteItemsAsync()
+        {
+            Task<bool> deleteItemTask = default;
+            deleteItemTask = Task.Run(() =>
+            {
+                try
+                {
+                    Con.DeleteAll<T>();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            });
+
+            return deleteItemTask;
+        }
     }
 }

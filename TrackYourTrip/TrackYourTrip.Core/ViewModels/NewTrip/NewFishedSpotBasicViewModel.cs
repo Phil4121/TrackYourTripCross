@@ -74,6 +74,8 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         public MvxNotifyTask NavigationTask { get; private set; }
 
+        public MvxNotifyTask PushToBackgroundQueue { get; private set; }
+
         #endregion
 
         #region Methodes
