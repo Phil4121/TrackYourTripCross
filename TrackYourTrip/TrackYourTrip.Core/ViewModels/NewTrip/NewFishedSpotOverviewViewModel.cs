@@ -43,7 +43,13 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             set => throw new NotImplementedException();
         }
 
-        public override bool IsNew => throw new NotImplementedException();
+        public override bool IsNew
+        {
+            get
+            {
+                return FishedSpotModel.IsNew;
+            }
+        }
 
         #endregion
 
@@ -52,7 +58,6 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         public override void Prepare(FishedSpotModel parameter)
         {
             FishedSpotModel = parameter;
-
             base.Prepare(parameter);
         }
 

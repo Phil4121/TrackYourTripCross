@@ -124,6 +124,7 @@ CREATE TABLE Trips (
 CREATE TABLE FishedSpots (
 	ID				TEXT		PRIMARY KEY,
 	ID_Trip			TEXT,
+	ID_Spot			TEXT,
 	StartDateTime	DATETIME,
 	EndDateTime		DATETIME
 );

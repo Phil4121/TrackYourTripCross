@@ -27,6 +27,13 @@ namespace TrackYourTrip.Core.ViewModels
             set => SetProperty(ref _navigateBack, value);
         }
 
+        string _navigateTo = string.Empty;
+        public string NavigateTo
+        {
+            get => _navigateTo;
+            set => SetProperty(ref _navigateTo, value);
+        }
+
         public abstract override IDataServiceFactory<TViewModel> DataStore { get; set; }
 
         public override bool IsNew => throw new NotImplementedException();
@@ -64,16 +71,18 @@ namespace TrackYourTrip.Core.ViewModels
 
         public object Object { get; set; }
 
+        public string NavigateTo { get; set; }
+
         public OverviewArgs(bool navigateBack)
         {
             this.NavigateBack = navigateBack;
         }
 
-        public OverviewArgs(bool navigateBack, object obj)
+        public OverviewArgs(bool navigateBack, object obj, string navigateTo = "")
         {
             this.NavigateBack = navigateBack;
             this.Object = obj;
-
+            this.NavigateTo = navigateTo;
         }
     }
 }

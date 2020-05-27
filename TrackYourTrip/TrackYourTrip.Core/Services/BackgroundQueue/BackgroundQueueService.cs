@@ -18,6 +18,11 @@ namespace TrackYourTrip.Core.Services.BackgroundQueue
 
         private SimpleDataService<BackgroundTaskModel> Service { get; set; }
 
+        public async Task<bool> PushWheaterRequestToBackgroundQueue(Guid SpotId, double Lat, double Lng)
+        {
+            return await PushWheaterRequestToBackgroundQueue(DataServiceFactory.Connection, SpotId, Lat, Lng);
+        }
+
         public async Task<bool> PushWheaterRequestToBackgroundQueue(SQLiteConnection connection, Guid SpotId, double Lat, double Lng)
         {
             this.Connection = connection;
@@ -58,6 +63,8 @@ namespace TrackYourTrip.Core.Services.BackgroundQueue
         {
             try
             {
+                Connection = connection;
+
                 Service = new SimpleDataService<BackgroundTaskModel>(Connection, TableConsts.BACKGROUND_TASK_TABLE);
                 return await Service.DeleteItemAsync(model);
 

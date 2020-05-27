@@ -30,6 +30,8 @@ namespace TrackYourTrip.Core.Models
         [ForeignKey(typeof(TripModel)), NotNull]
         public Guid ID_Trip { get; set; }
 
+        public Guid ID_Spot { get; set; }
+
         public DateTime StartDateTime { get; set; }
 
         public DateTime EndDateTime { get; set; }
@@ -37,5 +39,8 @@ namespace TrackYourTrip.Core.Models
 
         [Ignore]
         public TripModel Trip { get; set; }
+
+        [Ignore]
+        public SpotModel Spot { get; set; }
     }
 }

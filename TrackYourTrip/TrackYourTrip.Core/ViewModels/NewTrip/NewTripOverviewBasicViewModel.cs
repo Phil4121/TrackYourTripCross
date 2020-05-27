@@ -13,6 +13,7 @@ using TrackYourTrip.Core.Models;
 using TrackYourTrip.Core.Services;
 using TrackYourTrip.Core.ViewModelResults;
 using TrackYourTrip.Core.ViewModels.NewTrip;
+using TrackYourTrip.Core.ViewModels.Overviews;
 using Xamarin.Forms.GoogleMaps;
 
 [assembly: MvxNavigation(typeof(NewTripOverviewBasicViewModel), @"NewTripOverviewBasicPage")]
@@ -117,10 +118,13 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
                 var fishedSpot = new FishedSpotModel()
                 {
-                    ID_Trip = Trip.Id
-                };          
+                    ID_Trip = Trip.Id,
+                    Trip = Trip
+                };
 
-                await NavigationService.Navigate<NewFishedSpotOverviewViewModel, FishedSpotModel, OperationResult<IModel>>(fishedSpot);
+                var fishingArea = await DataServiceFactory.GetFishingAreaFactory().GetItemAsync(Trip.FishingArea.Id);
+
+                await NavigationService.Navigate<SpotsViewModel, OverviewArgs, SpotsViewModel>(new OverviewArgs(false, fishingArea, PageHelper.NEWFISHEDSPOTOVERVIEW_PAGE));
             }
             catch (Exception ex)
             {

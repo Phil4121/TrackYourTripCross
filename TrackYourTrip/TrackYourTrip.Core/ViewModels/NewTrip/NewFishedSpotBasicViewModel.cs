@@ -14,11 +14,12 @@ using TrackYourTrip.Core.Services;
 using TrackYourTrip.Core.ViewModelResults;
 using TrackYourTrip.Core.ViewModels.NewTrip;
 using Xamarin.Forms.GoogleMaps;
+using TrackYourTrip.Core.Services.BackgroundQueue;
 
 [assembly: MvxNavigation(typeof(NewFishedSpotBasicViewModel), @"NewFishedSpotBasicPage")]
 namespace TrackYourTrip.Core.ViewModels.NewTrip
 {
-    public class NewFishedSpotBasicViewModel : BaseViewModel<FishedSpotModel, OperationResult<IModel>>
+    public class NewFishedSpotBasicViewModel : BaseViewModel<FishedSpotModel, OperationResult<IModel>>, ISharedFishedSpotViewModel
     {
         public NewFishedSpotBasicViewModel(IMvxNavigationService navigationService, IMvxLogProvider mvxLogProvider, IUserDialogs userDialog, ILocalizeService localizeService)
             : base(Resources.AppResources.NewFishedSpotBasicPageTitle, mvxLogProvider, navigationService, userDialog, localizeService)
@@ -84,12 +85,20 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         {
             base.Prepare(parameter);
 
-            FishedSpot = parameter;
+            this.FishedSpot = parameter;
+
+            PushToBackgroundQueue = MvxNotifyTask.Create(PushWheaterRequestToBackgroundQueue(), ex => LogException(ex));
         }
 
         public override void Validate()
         {
             throw new NotImplementedException();
+        }
+
+        async Task PushWheaterRequestToBackgroundQueue()
+        {
+            BackgroundQueueService bqs = new BackgroundQueueService();
+            //bqs.PushWheaterRequestToBackgroundQueue(FishedSpot.Id,FishedSpot.)
         }
 
         #endregion

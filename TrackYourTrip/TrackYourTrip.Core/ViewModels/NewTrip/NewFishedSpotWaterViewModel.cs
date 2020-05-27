@@ -18,7 +18,7 @@ using Xamarin.Forms.GoogleMaps;
 [assembly: MvxNavigation(typeof(NewFishedSpotWaterViewModel), @"NewFishedSpotWaterPage")]
 namespace TrackYourTrip.Core.ViewModels.NewTrip
 {
-    public class NewFishedSpotWaterViewModel : BaseViewModel<FishedSpotModel, OperationResult<IModel>>
+    public class NewFishedSpotWaterViewModel : BaseViewModel<FishedSpotModel, OperationResult<IModel>>, ISharedFishedSpotViewModel
     {
         public NewFishedSpotWaterViewModel(IMvxNavigationService navigationService, IMvxLogProvider mvxLogProvider, IUserDialogs userDialog, ILocalizeService localizeService)
             : base(Resources.AppResources.NewFishedSpotWaterPageTitle, mvxLogProvider, navigationService, userDialog, localizeService)

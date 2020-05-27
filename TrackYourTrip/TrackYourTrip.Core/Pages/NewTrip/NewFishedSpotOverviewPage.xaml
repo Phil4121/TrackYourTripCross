@@ -5,7 +5,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:behavior="clr-namespace:TrackYourTrip.Core.Behaviors"
              mc:Ignorable="d"
              x:Class="TrackYourTrip.Core.Pages.NewTrip.NewFishedSpotOverviewPage">
-
+    <TabbedPage.Behaviors>
+        <behavior:SharedFishedSpotTabBehavior/>
+    </TabbedPage.Behaviors>
 </mvx:MvxTabbedPage>

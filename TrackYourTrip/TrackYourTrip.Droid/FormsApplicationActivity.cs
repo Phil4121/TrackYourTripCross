@@ -1,8 +1,13 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using MvvmCross.Forms.Platforms.Android.Views;
+using TrackYourTrip.Core.Services.BackgroundQueue;
+using TrackYourTrip.Core.Services.BackgroundQueue.Messages;
+using TrackYourTrip.Droid.Services.BackgroundService;
+using Xamarin.Forms;
 
 namespace TrackYourTrip.Droid
 {
@@ -17,6 +22,19 @@ namespace TrackYourTrip.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
 
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
+
+            MessagingCenter.Subscribe<StartBackgroundWorkingServiceMessage>(this, "StartBackgroundWorkingServiceMessage", message => {
+                var intent = new Intent(this, typeof(BackgroundTaskService));
+                StartService(intent);
+            });
+
+            MessagingCenter.Subscribe<StopBackgroundWorkingServiceMessage>(this, "StopBackgroundWorkingServiceMessage", message => {
+                var intent = new Intent(this, typeof(BackgroundTaskService));
+                StopService(intent);
+            });
+
+            var message = new StartBackgroundWorkingServiceMessage();
+            MessagingCenter.Send(message, "StartBackgroundWorkingServiceMessage");
 
             XF.Material.Droid.Material.Init(this, bundle);
 

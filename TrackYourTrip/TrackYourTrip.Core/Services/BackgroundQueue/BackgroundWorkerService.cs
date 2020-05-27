@@ -36,14 +36,12 @@ namespace TrackYourTrip.Core.Services.BackgroundQueue
 
         public static async Task RunBackgroundWorkerService(SQLiteConnection connection, CancellationToken token)
         {
+            if (IsRunning)
+                return;
+
             await Task.Run(async () =>
             {
                 _isRunning = true;
-
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    MessagingCenter.Send(new StartBackgroundWorkingServiceMessage(), "StartBackgroundWorkingServiceMessage");
-                });
 
                 var cnt = await Service.GetQueueElementCount(connection);
 
@@ -60,13 +58,8 @@ namespace TrackYourTrip.Core.Services.BackgroundQueue
                         } , "ElementFinishedMessage");
                     });
 
-                    cnt = await Service.GetQueueElementCount(connection);
+                    cnt = cnt - 1;
                 }
-
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    MessagingCenter.Send(new StopBackgroundWorkingServiceMessage(), "StopBackgroundWorkingServiceMessage");
-                });
 
                 _isRunning = false;
 

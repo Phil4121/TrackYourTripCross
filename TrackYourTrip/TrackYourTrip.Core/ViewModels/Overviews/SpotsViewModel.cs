@@ -5,10 +5,12 @@ using MvvmCross.ViewModels;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using TrackYourTrip.Core.Helpers;
 using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Models;
 using TrackYourTrip.Core.Services;
 using TrackYourTrip.Core.ViewModelResults;
+using TrackYourTrip.Core.ViewModels.NewTrip;
 using TrackYourTrip.Core.ViewModels.Overviews;
 using TrackYourTrip.Core.ViewModels.Settings;
 
@@ -103,7 +105,10 @@ namespace TrackYourTrip.Core.ViewModels.Overviews
 
         public override void Prepare(OverviewArgs parameter)
         {
-            RootFishingArea = (FishingAreaModel) parameter.Object;
+            this.NavigateBack = parameter.NavigateBack;
+            this.NavigateTo = parameter.NavigateTo;
+
+            RootFishingArea = (FishingAreaModel)parameter.Object;
         }
 
         public override void Validate()
@@ -140,18 +145,51 @@ namespace TrackYourTrip.Core.ViewModels.Overviews
             {
                 IsBusy = true;
 
-                OperationResult<SpotModel> result = await NavigationService.Navigate<SpotViewModel, SpotModel, OperationResult<SpotModel>>(spot);
-
-                if (result != null)
+                if (!NavigateBack)
                 {
-                    if (result.IsCanceld)
+                    if (NavigateTo == string.Empty)
                     {
-                        return;
+                        OperationResult<SpotModel> result = await NavigationService.Navigate<SpotViewModel, SpotModel, OperationResult<SpotModel>>(spot);
+
+                        if (result != null)
+                        {
+                            if (result.IsCanceld)
+                            {
+                                return;
+                            }
+
+                            RefreshSpotsTask = MvxNotifyTask.Create(RefreshSpots, onException: ex => LogException(ex));
+                            return;
+                        }
                     }
 
-                    RefreshSpotsTask = MvxNotifyTask.Create(RefreshSpots, onException: ex => LogException(ex));
-                }
 
+                    switch(NavigateTo)
+                    {
+                        case PageHelper.NEWFISHEDSPOTOVERVIEW_PAGE:
+                            await NavigationService.Navigate<NewFishedSpotOverviewViewModel, FishedSpotModel, OperationResult<IModel>>(
+                                new FishedSpotModel()
+                                    {
+                                        Id = Guid.NewGuid(),
+                                        ID_Spot = spot.Id,
+                                        ID_Trip = Guid.Parse(TripHelper.GetTripIdInProcess()),
+                                        StartDateTime = DateTime.Now,
+                                        Spot = spot,
+                                        IsNew = true
+                                    }
+                                );
+                            return;
+
+                        default:
+                            throw new Exception("Navigation destination not known!");
+
+                    }
+
+                }
+                else
+                {
+                    await NavigationService.Close(this);
+                }
             }
             catch (Exception ex)
             {
