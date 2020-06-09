@@ -14,7 +14,14 @@ namespace TrackYourTrip.Core.Helpers
 
         public T Deserialize(string json)
         {
-            return JsonConvert.DeserializeObject<T>(json);
+            try
+            {
+                return JsonConvert.DeserializeObject<T>(json);
+
+            }catch (Exception ex)
+            {
+                throw;
+            }
         }
     }
 }

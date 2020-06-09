@@ -5,27 +5,17 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using TrackYourTrip.Core.Helpers;
+using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Models;
 using TrackYourTrip.Core.Services.BackgroundQueue.Messages;
+using TrackYourTrip.Core.Services.Weather;
 using Xamarin.Forms;
 
 namespace TrackYourTrip.Core.Services.BackgroundQueue
 {
     public static class BackgroundWorkerService
     {
-        static BackgroundQueueService _service;
-
-        static BackgroundQueueService Service
-        {
-            get
-            {
-                if (_service == null)
-                    _service = new BackgroundQueueService();
-
-                return _service;
-            }
-        }
-
         static bool _isRunning;
         public static bool IsRunning { get; }
 
@@ -42,21 +32,22 @@ namespace TrackYourTrip.Core.Services.BackgroundQueue
             await Task.Run(async () =>
             {
                 _isRunning = true;
+                
 
-                var cnt = await Service.GetQueueElementCount(connection);
+                var cnt = await BackgroundQueueService.GetQueueElementCount(connection);
+                BackgroundTaskModel element = null;
 
                 while (cnt > 0)
                 {
                     token.ThrowIfCancellationRequested();
 
-                    var prozessedElement = await ProzessElement(await Service.PopFromBackgroundQueue(), token);
+                    element = await BackgroundQueueService.PopFromBackgroundQueue();
 
-                    Device.BeginInvokeOnMainThread(() =>
-                    {
-                        MessagingCenter.Send(new ElementFinishedMessage() { 
-                            BackgroundTask = prozessedElement 
-                        } , "ElementFinishedMessage");
-                    });
+                    if(!element.ProcessedSuccessfully)
+                        await ProzessElement(element, token);
+
+                    if (element.ProcessedSuccessfully)
+                        await BackgroundQueueService.RemoveElementFromQueue(element);
 
                     cnt = cnt - 1;
                 }
@@ -68,10 +59,57 @@ namespace TrackYourTrip.Core.Services.BackgroundQueue
 
         static Task<BackgroundTaskModel> ProzessElement(BackgroundTaskModel model, CancellationToken token)
         {
-            return Task.Run(async () =>
+            return Task.Run(() =>
             {
+                switch (model.ID_TaskType)
+                {
+                    case (int) EnumHelper.TaskTypeEnum.WheaterTask:
+                        ProzessWheaterRequest(ref model);
+                        break;
+
+                    default:
+                        throw new Exception("TaskType not valid!");
+                }
+
+                if (model.ProcessedSuccessfully)
+                {
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        MessagingCenter.Send(new ElementFinishedMessage()
+                        {
+                            BackgroundTask = model
+                        }, MessageHelper.ELEMENT_FINISHED_MESSAGE);
+                    });
+                }
+
                 return model;
             }, token);
+        }
+
+        static void ProzessWheaterRequest(ref BackgroundTaskModel model)
+        {
+            try
+            {
+                IWeatherService ws = WeatherServiceFactory.GetWeatherServiceFactory();
+
+                var response = ws.GetWeatherData(
+                    new JSONHelper<WeatherTaskRequestModel>().Deserialize(
+                        model.TaskData)
+                    );
+
+                if(response != null)
+                {
+                    model.TaskResponse = new JSONHelper<WeatherTaskResponseModel>().Serialize(response.Result);
+                    model.ProcessedSuccessfully = true;
+                    return;
+                }
+
+                model.ProcessedSuccessfully = false;
+
+            }catch(Exception ex)
+            {
+                throw;
+            }
         }
     }
 }

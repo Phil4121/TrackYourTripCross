@@ -75,7 +75,6 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         public MvxNotifyTask NavigationTask { get; private set; }
 
-        public MvxNotifyTask PushToBackgroundQueue { get; private set; }
 
         #endregion
 
@@ -84,21 +83,12 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         public override void Prepare(FishedSpotModel parameter)
         {
             base.Prepare(parameter);
-
             this.FishedSpot = parameter;
-
-            PushToBackgroundQueue = MvxNotifyTask.Create(PushWheaterRequestToBackgroundQueue(), ex => LogException(ex));
         }
 
         public override void Validate()
         {
             throw new NotImplementedException();
-        }
-
-        async Task PushWheaterRequestToBackgroundQueue()
-        {
-            BackgroundQueueService bqs = new BackgroundQueueService();
-            //bqs.PushWheaterRequestToBackgroundQueue(FishedSpot.Id,FishedSpot.)
         }
 
         #endregion

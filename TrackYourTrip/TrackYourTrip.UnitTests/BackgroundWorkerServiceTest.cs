@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using TrackYourTrip.Core.Helpers;
 using TrackYourTrip.Core.Services.BackgroundQueue;
 using TrackYourTrip.Core.Services.BackgroundQueue.Messages;
 using Xamarin.Forms;
@@ -44,29 +45,27 @@ namespace TrackYourTrip.UnitTests
             DatabaseMigrator.Migrate(_connection, _migrationSkriptFolderPath);
 
 
-            MessagingCenter.Subscribe<StartBackgroundWorkingServiceMessage>(this, "StartBackgroundWorkingServiceMessage", message =>
+            MessagingCenter.Subscribe<StartBackgroundWorkingServiceMessage>(this, MessageHelper.START_BACKGROUND_WORKING_SERVICE_MESSAGE, message =>
             {
                 var msg = new DiagnosticMessage("Start Background Working Service");
                 output.WriteLine("{0}", msg.Message);
 
             });
 
-            MessagingCenter.Subscribe<StopBackgroundWorkingServiceMessage>(this, "StopBackgroundWorkingServiceMessage", message =>
+            MessagingCenter.Subscribe<StopBackgroundWorkingServiceMessage>(this, MessageHelper.STOP_BACKGROUND_WORKING_SERVICE_MESSAGE, message =>
             {
                 var msg = new DiagnosticMessage("Stop Background Working Service");
                 output.WriteLine("{0}", msg.Message);
             });
 
-            MessagingCenter.Subscribe<ElementFinishedMessage>(this, "ElementFinishedMessage", message =>
+            MessagingCenter.Subscribe<ElementFinishedMessage>(this, MessageHelper.ELEMENT_FINISHED_MESSAGE, message =>
             {
                 var msg = new DiagnosticMessage("Element processed");
                 output.WriteLine("{0}", msg.Message);
 
             });
 
-            BackgroundQueueService service = new BackgroundQueueService();
-
-            var deleteAll = service.EmptyQueue(_connection).Result;
+            var deleteAll = BackgroundQueueService.EmptyQueue(_connection).Result;
 
             Assert.True(deleteAll);
 
@@ -74,13 +73,13 @@ namespace TrackYourTrip.UnitTests
             var testLat = 48.45;
             var testLng = 13.9167;
 
-            bool result = service.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
+            bool result = BackgroundQueueService.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
 
             Assert.True(result);
 
             await BackgroundWorkerService.RunBackgroundWorkerService(_connection, new CancellationToken(false));
 
-            int cnt = service.GetQueueElementCount(_connection).Result;
+            int cnt = BackgroundQueueService.GetQueueElementCount(_connection).Result;
 
             Assert.Equal(0, cnt);
         }

@@ -14,7 +14,7 @@ using TrackYourTrip.Core.Helpers;
 using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Models;
 using TrackYourTrip.Core.Services;
-using TrackYourTrip.Core.Services.Wheater;
+using TrackYourTrip.Core.Services.Weather;
 using TrackYourTrip.Core.ViewModelResults;
 using TrackYourTrip.Core.ViewModels.NewTrip;
 using TrackYourTrip.Core.ViewModels.Overviews;
@@ -210,7 +210,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                     Trip.FishingArea = result;
                     Trip.ID_FishingArea = result.Id;
 
-                    SetWheaterStatusPicture();
+                    SetWeatherStatusPicture();
 
                     await RaisePropertyChanged(() => MapCenter);
                     await RaisePropertyChanged(() => Pins);
@@ -227,7 +227,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             }
         }
 
-        void SetWheaterStatusPicture()
+        void SetWeatherStatusPicture()
         {
             try
             {
@@ -236,7 +236,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                 WheaterStatusPicture = StatusHelper.StatusPicEnum.STATUS_WAITING.ToString();
 
                 WheaterDataTask = MvxNotifyTask.Create(async () => {
-                    var result = await WheaterServiceFactory.GetWheaterServiceFactory().ServiceIsReachable(settings.DefaultThreadWaitTime);
+                    var result = await WeatherServiceFactory.GetWeatherServiceFactory().ServiceIsReachable(settings.DefaultThreadWaitTime);
 
                     if(result)
                         WheaterStatusPicture = StatusHelper.StatusPicEnum.STATUS_OK.ToString();

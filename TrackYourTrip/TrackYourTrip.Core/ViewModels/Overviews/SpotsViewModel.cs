@@ -60,6 +60,13 @@ namespace TrackYourTrip.Core.ViewModels.Overviews
             private set => SetProperty(ref _rootFishingArea, value);
         }
 
+        private Object _forwardedObject;
+        public Object ForwardedObject
+        {
+            get => _forwardedObject;
+            private set => SetProperty(ref _forwardedObject, value);
+        }
+
         public MvxObservableCollection<SpotModel> Spots
         {
             get
@@ -108,7 +115,8 @@ namespace TrackYourTrip.Core.ViewModels.Overviews
             this.NavigateBack = parameter.NavigateBack;
             this.NavigateTo = parameter.NavigateTo;
 
-            RootFishingArea = (FishingAreaModel)parameter.Object;
+            RootFishingArea = (FishingAreaModel)parameter.FishingArea;
+            ForwardedObject = parameter.ForwardedObject;
         }
 
         public override void Validate()
@@ -167,17 +175,12 @@ namespace TrackYourTrip.Core.ViewModels.Overviews
                     switch(NavigateTo)
                     {
                         case PageHelper.NEWFISHEDSPOTOVERVIEW_PAGE:
-                            await NavigationService.Navigate<NewFishedSpotOverviewViewModel, FishedSpotModel, OperationResult<IModel>>(
-                                new FishedSpotModel()
-                                    {
-                                        Id = Guid.NewGuid(),
-                                        ID_Spot = spot.Id,
-                                        ID_Trip = Guid.Parse(TripHelper.GetTripIdInProcess()),
-                                        StartDateTime = DateTime.Now,
-                                        Spot = spot,
-                                        IsNew = true
-                                    }
-                                );
+
+                            FishedSpotModel model = (FishedSpotModel)ForwardedObject;
+                            model.ID_Spot = SelectedSpot.Id;
+                            model.Spot = SelectedSpot;
+
+                            await NavigationService.Navigate<NewFishedSpotOverviewViewModel, FishedSpotModel, OperationResult<IModel>>(model);
                             return;
 
                         default:

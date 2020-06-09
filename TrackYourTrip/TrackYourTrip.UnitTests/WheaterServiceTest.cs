@@ -2,15 +2,16 @@
 using System.Text;
 using System.Collections.Generic;
 using Xunit;
-using TrackYourTrip.Core.Services.Wheater.DarkSky;
+using TrackYourTrip.Core.Services.Weather.DarkSky;
 using System.Globalization;
 using TrackYourTrip.Core.Interfaces;
+using TrackYourTrip.Core.Services.Weather;
 
 namespace TrackYourTrip.UnitTests
 {
     public class WheaterServiceTest
     {
-        public IWheaterService service = new DarkSkyWheaterService();
+        public IWeatherService service = new DarkSkyWeatherService();
 
         public WheaterServiceTest()
         {
@@ -20,7 +21,7 @@ namespace TrackYourTrip.UnitTests
         [Fact]
         public void TestServiceCall()
         {
-            bool isReachable = service.ServiceIsReachable(3000).Result;
+            bool isReachable = service.ServiceIsReachable(10000).Result;
             Assert.True(isReachable,"Service is not reachable");
         }
     }

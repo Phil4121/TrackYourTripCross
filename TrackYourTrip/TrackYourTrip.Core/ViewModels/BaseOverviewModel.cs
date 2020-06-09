@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using TrackYourTrip.Core.Interfaces;
+using TrackYourTrip.Core.Models;
 
 namespace TrackYourTrip.Core.ViewModels
 {
@@ -69,7 +70,9 @@ namespace TrackYourTrip.Core.ViewModels
     {
         public bool NavigateBack { get; set; }
 
-        public object Object { get; set; }
+        public FishingAreaModel FishingArea { get; set; }
+
+        public object ForwardedObject { get; set; }
 
         public string NavigateTo { get; set; }
 
@@ -78,10 +81,11 @@ namespace TrackYourTrip.Core.ViewModels
             this.NavigateBack = navigateBack;
         }
 
-        public OverviewArgs(bool navigateBack, object obj, string navigateTo = "")
+        public OverviewArgs(bool navigateBack, FishingAreaModel fishingArea, object forwardedObject = null, string navigateTo = "")
         {
             this.NavigateBack = navigateBack;
-            this.Object = obj;
+            this.FishingArea = fishingArea;
+            this.ForwardedObject = forwardedObject;
             this.NavigateTo = navigateTo;
         }
     }

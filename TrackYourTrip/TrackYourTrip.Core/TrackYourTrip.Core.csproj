@@ -197,9 +197,6 @@
       </None>
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Services\Wheater\DarkSky\" />
-    </ItemGroup>
-    <ItemGroup>
       <ProjectReference Include="..\..\DatabaseMigration\Database.csproj" />
     </ItemGroup>
 </Project>

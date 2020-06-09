@@ -116,15 +116,19 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             {
                 IsBusy = true;
 
-                var fishedSpot = new FishedSpotModel()
-                {
-                    ID_Trip = Trip.Id,
-                    Trip = Trip
-                };
-
                 var fishingArea = await DataServiceFactory.GetFishingAreaFactory().GetItemAsync(Trip.FishingArea.Id);
 
-                await NavigationService.Navigate<SpotsViewModel, OverviewArgs, SpotsViewModel>(new OverviewArgs(false, fishingArea, PageHelper.NEWFISHEDSPOTOVERVIEW_PAGE));
+                var fishedSpot = new FishedSpotModel(true)
+                {
+                    IsNew = true,
+                    StartDateTime = DateTime.Now,
+                    ID_Trip = Trip.Id,
+                    ID_FishingArea = fishingArea.Id,
+                    Trip = Trip,
+                    FishingArea = fishingArea,
+                };       
+
+                await NavigationService.Navigate<SpotsViewModel, OverviewArgs, SpotsViewModel>(new OverviewArgs(false, fishingArea, fishedSpot, PageHelper.NEWFISHEDSPOTOVERVIEW_PAGE));
             }
             catch (Exception ex)
             {

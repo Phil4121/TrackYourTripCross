@@ -11,26 +11,30 @@ namespace TrackYourTrip.Core.Models
     {
         public FishedSpotModel()
         {
-            Initialize();
+
         }
 
         public FishedSpotModel(bool isNew = false)
         {
-            Initialize();
             Id = Guid.NewGuid();
             IsNew = isNew;
-        }
 
-        private void Initialize()
-        {
-            
+            if (isNew)
+            {
+                ID_FishedSpotWeather = Guid.NewGuid();
+                Weather = new FishedSpotWeatherModel();
+            }
         }
 
 
         [ForeignKey(typeof(TripModel)), NotNull]
         public Guid ID_Trip { get; set; }
 
+        public Guid ID_FishingArea { get; set; }
+
         public Guid ID_Spot { get; set; }
+
+        public Guid ID_FishedSpotWeather { get; set; }
 
         public DateTime StartDateTime { get; set; }
 
@@ -42,5 +46,11 @@ namespace TrackYourTrip.Core.Models
 
         [Ignore]
         public SpotModel Spot { get; set; }
+
+        [Ignore]
+        public FishingAreaModel FishingArea { get; set; }
+
+        [Ignore]
+        public FishedSpotWeatherModel Weather { get; set; }
     }
 }

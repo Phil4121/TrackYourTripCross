@@ -4,6 +4,7 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using MvvmCross.Forms.Platforms.Android.Views;
+using TrackYourTrip.Core.Helpers;
 using TrackYourTrip.Core.Services.BackgroundQueue;
 using TrackYourTrip.Core.Services.BackgroundQueue.Messages;
 using TrackYourTrip.Droid.Services.BackgroundService;
@@ -23,18 +24,18 @@ namespace TrackYourTrip.Droid
 
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
 
-            MessagingCenter.Subscribe<StartBackgroundWorkingServiceMessage>(this, "StartBackgroundWorkingServiceMessage", message => {
+            MessagingCenter.Subscribe<StartBackgroundWorkingServiceMessage>(this, MessageHelper.START_BACKGROUND_WORKING_SERVICE_MESSAGE, message => {
                 var intent = new Intent(this, typeof(BackgroundTaskService));
                 StartService(intent);
             });
 
-            MessagingCenter.Subscribe<StopBackgroundWorkingServiceMessage>(this, "StopBackgroundWorkingServiceMessage", message => {
+            MessagingCenter.Subscribe<StopBackgroundWorkingServiceMessage>(this, MessageHelper.STOP_BACKGROUND_WORKING_SERVICE_MESSAGE, message => {
                 var intent = new Intent(this, typeof(BackgroundTaskService));
                 StopService(intent);
             });
 
             var message = new StartBackgroundWorkingServiceMessage();
-            MessagingCenter.Send(message, "StartBackgroundWorkingServiceMessage");
+            MessagingCenter.Send(message, MessageHelper.START_BACKGROUND_WORKING_SERVICE_MESSAGE);
 
             XF.Material.Droid.Material.Init(this, bundle);
 

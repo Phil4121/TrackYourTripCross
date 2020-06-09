@@ -84,7 +84,8 @@ CREATE TABLE BackgroundTasks (
 	ID_ElementReference	TEXT		NOT NULL,
 	ID_TaskType			INTEGER		NOT NULL,
 	CreationDateTime	TEXT		NOT NULL,
-	TaskData			TEXT		NOT NULL
+	TaskData			TEXT		NOT NULL,
+	TaskResponse		TEXT
 );
 
 CREATE TABLE FishingAreas (
@@ -124,9 +125,16 @@ CREATE TABLE Trips (
 CREATE TABLE FishedSpots (
 	ID				TEXT		PRIMARY KEY,
 	ID_Trip			TEXT,
+	ID_FishingArea	TEXT,
 	ID_Spot			TEXT,
+	ID_FishedSpotWeather TEXT,
 	StartDateTime	DATETIME,
 	EndDateTime		DATETIME
+);
+
+CREATE TABLE FishedSpotsWheater (
+	ID				TEXT		PRIMARY KEY,
+	Temperature		FLOAT
 );
 
 INSERT INTO WaterModels (ID, Water) VALUES ('2a3eeecf-472c-4b0f-9df0-73386cb3b3f7', 'River');

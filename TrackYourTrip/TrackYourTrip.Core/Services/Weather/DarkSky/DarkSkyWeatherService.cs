@@ -1,15 +1,17 @@
 ﻿using DarkSky.Models;
 using DarkSky.Services;
+using FluentValidation.Validators;
 using MvvmCross;
 using System;
 using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
 using TrackYourTrip.Core.Interfaces;
+using TrackYourTrip.Core.Models;
 
-namespace TrackYourTrip.Core.Services.Wheater.DarkSky
+namespace TrackYourTrip.Core.Services.Weather.DarkSky
 {
-    public class DarkSkyWheaterService : IWheaterService
+    public class DarkSkyWeatherService : IWeatherService
     {
         private const string GERMAN_DEFAULT_UNITS = "si";
         private const string ENGLISH_DEFAULT_UNITS = "us";
@@ -21,14 +23,14 @@ namespace TrackYourTrip.Core.Services.Wheater.DarkSky
 
         string Serial { get; set; }
 
-        DarkSkyService WheaterService { get; set; }
+        DarkSkyService WeatherService { get; set; }
 
-        public DarkSkyWheaterService()
+        public DarkSkyWeatherService()
         {
             var settings = Mvx.IoCProvider.Resolve<IAppSettings>();
 
             Serial = settings.DarkSkySerial;
-            WheaterService = new DarkSkyService(Serial);
+            WeatherService = new DarkSkyService(Serial);
         }
 
         public async Task<bool> ServiceIsReachable(int maxTimeoutInMilliseconds)
@@ -39,7 +41,20 @@ namespace TrackYourTrip.Core.Services.Wheater.DarkSky
 
                 CancellationTokenSource cts = new CancellationTokenSource();
 
-                Task<bool> task = new Task<bool>(() => QueryService(TEST_LAT, TEST_LNG).Result.IsSuccessStatus);
+                var request = new WeatherTaskRequestModel()
+                {
+                    Lat = TEST_LAT,
+                    Lng = TEST_LNG,
+                    CultureInfo = CultureInfo.CurrentCulture,
+                    RequestDateTime = DateTime.Now
+                };
+
+                Task<bool> task = new Task<bool>(() => GetWeatherData(new WeatherTaskRequestModel()
+                {
+                    Lat = TEST_LAT,
+                    Lng = TEST_LNG,
+                    CultureInfo = CultureInfo.CurrentCulture
+                }).Result.Success);
 
                 task.Start();
 
@@ -56,32 +71,27 @@ namespace TrackYourTrip.Core.Services.Wheater.DarkSky
             }
         }
 
-
-
-        private async Task<DarkSkyResponse> QueryService(double lat, double lng, OptionalParameters parameters = null)
-        {
-            return await WheaterService.GetForecast(lat, lng, parameters);
-        }
-
-
-        public async Task GetWheaterData(double lat, double lng, CultureInfo cultureInfo)
+        public async Task<WeatherTaskResponseModel> GetWeatherData(WeatherTaskRequestModel request)
         {
             try
             {
-                var param = BuildOptionalParameters(cultureInfo);
+                var response = new WeatherTaskResponseModel();
 
-                var forecast = WheaterService.GetForecast(lat, lng, param).Result;
+                var param = BuildOptionalParameters(request.CultureInfo);
+
+                var forecast = await WeatherService.GetForecast(request.Lat, request.Lng, param);
 
                 if (forecast?.IsSuccessStatus == true)
                 {
-                    Console.WriteLine(forecast.Response.Currently.Summary);
+                    response.Success = (bool)forecast?.IsSuccessStatus;
+                    response.Temperature = (double) forecast.Response.Currently.Temperature;
                 }
                 else
                 {
                     Console.WriteLine("No current weather data");
                 }
-                Console.WriteLine(forecast.AttributionLine);
-                Console.WriteLine(forecast.DataSource);
+
+                return response;
 
             }catch(Exception ex)
             {

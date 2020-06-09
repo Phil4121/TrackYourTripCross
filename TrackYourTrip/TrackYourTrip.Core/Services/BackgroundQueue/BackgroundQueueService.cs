@@ -3,6 +3,7 @@ using MvvmCross.Binding.Extensions;
 using SQLite;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -12,34 +13,35 @@ using TrackYourTrip.Core.Models;
 
 namespace TrackYourTrip.Core.Services.BackgroundQueue
 {
-    public class BackgroundQueueService
+    public static class BackgroundQueueService
     {
-        private SQLiteConnection Connection { get; set; }
+        private static SQLiteConnection Connection { get; set; }
 
-        private SimpleDataService<BackgroundTaskModel> Service { get; set; }
+        private static SimpleDataService<BackgroundTaskModel> Service { get; set; }
 
-        public async Task<bool> PushWheaterRequestToBackgroundQueue(Guid SpotId, double Lat, double Lng)
+        public static async Task<bool> PushWheaterRequestToBackgroundQueue(Guid RefId, double Lat, double Lng)
         {
-            return await PushWheaterRequestToBackgroundQueue(DataServiceFactory.Connection, SpotId, Lat, Lng);
+            return await PushWheaterRequestToBackgroundQueue(DataServiceFactory.Connection, RefId, Lat, Lng);
         }
 
-        public async Task<bool> PushWheaterRequestToBackgroundQueue(SQLiteConnection connection, Guid SpotId, double Lat, double Lng)
+        public static async Task<bool> PushWheaterRequestToBackgroundQueue(SQLiteConnection connection, Guid RefId, double Lat, double Lng)
         {
-            this.Connection = connection;
+            Connection = connection;
 
             try
             {
                 var queueElement = new BackgroundTaskModel(true)
                 {
                     ID_TaskType = (int)EnumHelper.TaskTypeEnum.WheaterTask,
-                    ID_ElementReference = SpotId,
+                    ID_ElementReference = RefId,
                     CreationDateTime = DateTime.Now,
-                    TaskData = new JSONHelper<WheaterTaskModel>().Serialize(
-                        new WheaterTaskModel()
+                    TaskData = new JSONHelper<WeatherTaskRequestModel>().Serialize(
+                        new WeatherTaskRequestModel()
                         {
+                            CultureInfo = CultureInfo.CurrentCulture,
                             RequestDateTime = DateTime.Now,
-                            RequestLat = Lat,
-                            RequestLng = Lng
+                            Lat = Lat,
+                            Lng = Lng
                         })
                 };
 
@@ -52,14 +54,19 @@ namespace TrackYourTrip.Core.Services.BackgroundQueue
             }
         }
 
-        public async Task<BackgroundTaskModel> PopWheaterRequestFromBackgroundQueue(SQLiteConnection connection, bool getLatest = true)
+        public static async Task<BackgroundTaskModel> PopWheaterRequestFromBackgroundQueue(SQLiteConnection connection, bool getLatest = true)
         {
-            this.Connection = connection;
+            Connection = connection;
 
             return await PopFromBackgroundQueue((int)EnumHelper.TaskTypeEnum.WheaterTask, getLatest);
         }
 
-        public async Task<bool> RemoveElementFromQueue(SQLiteConnection connection, BackgroundTaskModel model)
+        public static async Task<bool> RemoveElementFromQueue(BackgroundTaskModel model)
+        {
+            return await RemoveElementFromQueue(Connection, model);
+        }
+
+            public static async Task<bool> RemoveElementFromQueue(SQLiteConnection connection, BackgroundTaskModel model)
         {
             try
             {
@@ -75,9 +82,9 @@ namespace TrackYourTrip.Core.Services.BackgroundQueue
             }
         }
 
-        public async Task<int> GetQueueElementCount(SQLiteConnection connection)
+        public static async Task<int> GetQueueElementCount(SQLiteConnection connection)
         {
-            this.Connection = connection;
+            Connection = connection;
 
             Service = new SimpleDataService<BackgroundTaskModel>(Connection, TableConsts.BACKGROUND_TASK_TABLE);
             var queue = await Service.GetItemsAsync();
@@ -85,26 +92,25 @@ namespace TrackYourTrip.Core.Services.BackgroundQueue
             return queue.Count();
         }
 
-        public async Task<bool> EmptyQueue(SQLiteConnection connection)
+        public static async Task<bool> EmptyQueue(SQLiteConnection connection)
         {
-            this.Connection = connection;
+            Connection = connection;
 
             Service = new SimpleDataService<BackgroundTaskModel>(Connection, TableConsts.BACKGROUND_TASK_TABLE);
             return await Service.DeleteItemsAsync();
         }
 
-        public Task<BackgroundTaskModel> PopFromBackgroundQueue(bool getLatest = true)
+        public static Task<BackgroundTaskModel> PopFromBackgroundQueue(bool getLatest = true)
         {
             return PopFromBackgroundQueue(-1, getLatest);
         }
 
-        async Task<BackgroundTaskModel> PushToBackgroundQueue(BackgroundTaskModel model)
+        async static Task<BackgroundTaskModel> PushToBackgroundQueue(BackgroundTaskModel model)
         {
             try
             {
                 Service = new SimpleDataService<BackgroundTaskModel>(Connection, TableConsts.BACKGROUND_TASK_TABLE);
                 return await Service.SaveItemAsync(model);
-
             }
             catch (Exception ex)
             {
@@ -112,7 +118,7 @@ namespace TrackYourTrip.Core.Services.BackgroundQueue
             }
         }
 
-        async Task<BackgroundTaskModel> PopFromBackgroundQueue(int TaskTypeId, bool getLatest = true)
+        async static Task<BackgroundTaskModel> PopFromBackgroundQueue(int TaskTypeId, bool getLatest = true)
         {
             Service = new SimpleDataService<BackgroundTaskModel>(Connection, TableConsts.BACKGROUND_TASK_TABLE);
             var backgroundQueue = await Service.GetItemsAsync();

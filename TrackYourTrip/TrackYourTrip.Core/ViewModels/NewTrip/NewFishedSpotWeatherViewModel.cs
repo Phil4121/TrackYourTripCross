@@ -14,6 +14,10 @@ using TrackYourTrip.Core.Services;
 using TrackYourTrip.Core.ViewModelResults;
 using TrackYourTrip.Core.ViewModels.NewTrip;
 using Xamarin.Forms.GoogleMaps;
+using TrackYourTrip.Core.Services.BackgroundQueue;
+using Xamarin.Forms;
+using TrackYourTrip.Core.Services.BackgroundQueue.Messages;
+using System.Threading;
 
 [assembly: MvxNavigation(typeof(NewFishedSpotWeatherViewModel), @"NewFishedSpotWeatherPage")]
 namespace TrackYourTrip.Core.ViewModels.NewTrip
@@ -23,7 +27,14 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         public NewFishedSpotWeatherViewModel(IMvxNavigationService navigationService, IMvxLogProvider mvxLogProvider, IUserDialogs userDialog, ILocalizeService localizeService)
             : base(Resources.AppResources.NewFishedSpotWeatherPageTitle, mvxLogProvider, navigationService, userDialog, localizeService)
         {
+            MessagingCenter.Subscribe<ElementFinishedMessage>(this, MessageHelper.ELEMENT_FINISHED_MESSAGE, message =>
+            {
+                if (message.BackgroundTask.ID_TaskType != (int)EnumHelper.TaskTypeEnum.WheaterTask ||
+                    message.BackgroundTask.ID_ElementReference != FishedSpot.Id)
+                    return;
 
+                SetWheaterDataFields(new JSONHelper<WeatherTaskResponseModel>().Deserialize(message.BackgroundTask.TaskResponse));
+            });
         }
 
         #region Properties
@@ -52,27 +63,13 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         public override bool IsNew => throw new NotImplementedException();
 
-        public int BiteCount
-        {
-            get
-            {
-                return 0;
-            }
-        }
-
-        public int FishCount
-        {
-            get
-            {
-                return 0;
-            }
-        }
-
         #endregion
 
         #region Tasks
 
         public MvxNotifyTask NavigationTask { get; private set; }
+
+        public MvxNotifyTask PushToBackgroundQueue { get; private set; }
 
         #endregion
 
@@ -83,11 +80,28 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             base.Prepare(parameter);
 
             FishedSpot = parameter;
+
+            PushToBackgroundQueue = MvxNotifyTask.Create(PushWheaterRequestToBackgroundQueue(), ex => LogException(ex));
         }
 
         public override void Validate()
         {
             throw new NotImplementedException();
+        }
+
+        async Task PushWheaterRequestToBackgroundQueue()
+        {
+            await BackgroundQueueService.PushWheaterRequestToBackgroundQueue(FishedSpot.Id, FishedSpot.Spot.SpotMarker[0].Lat, FishedSpot.Spot.SpotMarker[0].Lng);
+
+            var message = new StartBackgroundWorkingServiceMessage();
+            MessagingCenter.Send(message, MessageHelper.START_BACKGROUND_WORKING_SERVICE_MESSAGE);
+        }
+
+        void SetWheaterDataFields(WeatherTaskResponseModel model)
+        {
+            FishedSpot.Weather.Temperature = model.Temperature;
+
+            RaisePropertyChanged(() => FishedSpot);
         }
 
         #endregion

@@ -30,13 +30,11 @@ namespace TrackYourTrip.UnitTests
 
             DatabaseMigrator.Migrate(_connection, _migrationSkriptFolderPath);
 
-            BackgroundQueueService service = new BackgroundQueueService();
-
             var testSpotGuid = Guid.NewGuid();
             var testLat = 48.45;
             var testLng = 13.9167;
 
-            bool result = service.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
+            bool result = BackgroundQueueService.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
 
             Assert.True(result);
         }
@@ -49,13 +47,11 @@ namespace TrackYourTrip.UnitTests
 
             DatabaseMigrator.Migrate(_connection, _migrationSkriptFolderPath);
 
-            BackgroundQueueService service = new BackgroundQueueService();
-
             var testSpotGuid = Guid.NewGuid();
             var testLat = 48.45;
             var testLng = 13.9167;
 
-            bool result = service.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
+            bool result = BackgroundQueueService.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
 
             Assert.True(result);
 
@@ -63,16 +59,16 @@ namespace TrackYourTrip.UnitTests
             var testLat2 = 48.45;
             var testLng2 = 13.9167;
 
-            bool result2 = service.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid2, testLat2, testLng2).Result;
+            bool result2 = BackgroundQueueService.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid2, testLat2, testLng2).Result;
 
             Assert.True(result);
 
 
-            var model = service.PopWheaterRequestFromBackgroundQueue(_connection).Result;
+            var model = BackgroundQueueService.PopWheaterRequestFromBackgroundQueue(_connection).Result;
 
             Assert.Equal(model.ID_ElementReference.ToString(), testSpotGuid2.ToString());
 
-            var model2 = service.PopWheaterRequestFromBackgroundQueue(_connection, false).Result;
+            var model2 = BackgroundQueueService.PopWheaterRequestFromBackgroundQueue(_connection, false).Result;
 
             Assert.Equal(model2.ID_ElementReference.ToString(), testSpotGuid.ToString());
         }
@@ -85,9 +81,7 @@ namespace TrackYourTrip.UnitTests
 
             DatabaseMigrator.Migrate(_connection, _migrationSkriptFolderPath);
 
-            BackgroundQueueService service = new BackgroundQueueService();
-
-            var deleteAll = service.EmptyQueue(_connection).Result;
+            var deleteAll = BackgroundQueueService.EmptyQueue(_connection).Result;
 
             Assert.True(deleteAll);
 
@@ -95,17 +89,17 @@ namespace TrackYourTrip.UnitTests
             var testLat = 48.45;
             var testLng = 13.9167;
 
-            bool result = service.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
+            bool result = BackgroundQueueService.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
 
             Assert.True(result);
 
-            var model = service.PopWheaterRequestFromBackgroundQueue(_connection).Result;
+            var model = BackgroundQueueService.PopWheaterRequestFromBackgroundQueue(_connection).Result;
 
-            result = service.RemoveElementFromQueue(_connection, model).Result;
+            result = BackgroundQueueService.RemoveElementFromQueue(_connection, model).Result;
 
             Assert.True(result);
 
-            model = service.PopWheaterRequestFromBackgroundQueue(_connection).Result;
+            model = BackgroundQueueService.PopWheaterRequestFromBackgroundQueue(_connection).Result;
 
             Assert.Null(model);
         }
@@ -117,27 +111,25 @@ namespace TrackYourTrip.UnitTests
 
             DatabaseMigrator.Migrate(_connection, _migrationSkriptFolderPath);
 
-            BackgroundQueueService service = new BackgroundQueueService();
-
             var testSpotGuid = Guid.NewGuid();
             var testLat = 48.45;
             var testLng = 13.9167;
 
-            bool result = service.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
+            bool result = BackgroundQueueService.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
 
             Assert.True(result);
 
-            int cnt = service.GetQueueElementCount(_connection).Result;
+            int cnt = BackgroundQueueService.GetQueueElementCount(_connection).Result;
 
             Assert.Equal(1, cnt);
 
-            var model = service.PopWheaterRequestFromBackgroundQueue(_connection).Result;
+            var model = BackgroundQueueService.PopWheaterRequestFromBackgroundQueue(_connection).Result;
 
-            result = service.RemoveElementFromQueue(_connection, model).Result;
+            result = BackgroundQueueService.RemoveElementFromQueue(_connection, model).Result;
 
             Assert.True(result);
 
-            cnt = service.GetQueueElementCount(_connection).Result;
+            cnt = BackgroundQueueService.GetQueueElementCount(_connection).Result;
 
             Assert.Equal(0, cnt);
         }

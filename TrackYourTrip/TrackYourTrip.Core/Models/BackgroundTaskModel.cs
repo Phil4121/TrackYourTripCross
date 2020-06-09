@@ -25,5 +25,10 @@ namespace TrackYourTrip.Core.Models
         public DateTime CreationDateTime { get; set; }
 
         public string TaskData { get; set; }
+
+        public string TaskResponse { get; set; }
+
+        [Ignore]
+        public bool ProcessedSuccessfully { get; set; }
     }
 }
