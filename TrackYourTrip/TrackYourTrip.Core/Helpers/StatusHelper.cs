@@ -16,26 +16,19 @@ namespace TrackYourTrip.Core.Helpers
 
         public static string GetPicForStatus(StatusPicEnum status)
         {
-            try
+            switch (status)
             {
-                switch (status)
-                {
-                    case StatusPicEnum.STATUS_OK:
-                        return "Success.png";
+                case StatusPicEnum.STATUS_OK:
+                    return "Success.png";
 
-                    case StatusPicEnum.STATUS_ERROR:
-                        return "Error.png";
+                case StatusPicEnum.STATUS_ERROR:
+                    return "Error.png";
 
-                    case StatusPicEnum.STATUS_WAITING:
-                        return "Waiting.png";
+                case StatusPicEnum.STATUS_WAITING:
+                    return "Waiting.png";
 
-                    default:
-                        return "Unknown.png";
-                }
-            }
-            catch (Exception)
-            {
-                throw new NotImplementedException("Status not implemented");
+                default:
+                    return "Unknown.png";
             }
         }
     }

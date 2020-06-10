@@ -18,6 +18,7 @@ using TrackYourTrip.Core.Services.BackgroundQueue;
 using Xamarin.Forms;
 using TrackYourTrip.Core.Services.BackgroundQueue.Messages;
 using System.Threading;
+using MvvmCross;
 
 [assembly: MvxNavigation(typeof(NewFishedSpotWeatherViewModel), @"NewFishedSpotWeatherPage")]
 namespace TrackYourTrip.Core.ViewModels.NewTrip
@@ -46,6 +47,25 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             set => SetProperty(ref _fishedSpot, value);
         }
 
+        private string _wheaterStatusPicture = StatusHelper.GetPicForStatus(StatusHelper.StatusPicEnum.STATUS_UNDEFINED);
+
+        public string WheaterStatusPicture
+        {
+            get => _wheaterStatusPicture;
+            set => SetProperty(ref _wheaterStatusPicture, StatusHelper.GetPicForStatus(
+                        (StatusHelper.StatusPicEnum)
+                            Enum.Parse(typeof(StatusHelper.StatusPicEnum), value)));
+        }
+
+        bool _showWeatherStatusPicture = false;
+
+        public bool ShowWeatherStatusPicture
+        {
+            get => _showWeatherStatusPicture;
+            set => SetProperty(ref _showWeatherStatusPicture, value);
+        }
+
+
         private IDataServiceFactory<FishedSpotModel> _dataStore;
         public override IDataServiceFactory<FishedSpotModel> DataStore
         {
@@ -61,7 +81,10 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             set => _dataStore = value;
         }
 
-        public override bool IsNew => throw new NotImplementedException();
+        public override bool IsNew
+        {
+            get => FishedSpot.IsNew;
+        }
 
         #endregion
 
@@ -81,12 +104,25 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
             FishedSpot = parameter;
 
-            PushToBackgroundQueue = MvxNotifyTask.Create(PushWheaterRequestToBackgroundQueue(), ex => LogException(ex));
+            if (IsNew)
+            {
+                ShowWeatherStatusPicture = true;
+                WheaterStatusPicture = StatusHelper.StatusPicEnum.STATUS_WAITING.ToString();
+                PushToBackgroundQueue = MvxNotifyTask.Create(PushWheaterRequestToBackgroundQueue(), ex => LogException(ex));
+            }
         }
 
         public override void Validate()
         {
             throw new NotImplementedException();
+        }
+
+        void SetWeatherStatusPicture(bool receivedWeatherData)
+        {
+            if (receivedWeatherData)
+                WheaterStatusPicture = StatusHelper.StatusPicEnum.STATUS_OK.ToString();
+            else
+                WheaterStatusPicture = StatusHelper.StatusPicEnum.STATUS_ERROR.ToString();
         }
 
         async Task PushWheaterRequestToBackgroundQueue()
@@ -99,9 +135,14 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         void SetWheaterDataFields(WeatherTaskResponseModel model)
         {
-            FishedSpot.Weather.Temperature = model.Temperature;
+            SetWeatherStatusPicture(model.Success);
 
-            RaisePropertyChanged(() => FishedSpot);
+            if (model.Success)
+            {
+                FishedSpot.Weather.Temperature = model.Temperature;
+
+                RaisePropertyChanged(() => FishedSpot);
+            }
         }
 
         #endregion
