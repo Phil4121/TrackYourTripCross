@@ -65,6 +65,14 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             set => SetProperty(ref _showWeatherStatusPicture, value);
         }
 
+        int _temperatureUnit = -1;
+
+        public int TemperatureUnit
+        {
+            get => _temperatureUnit;
+            set => SetProperty(ref _temperatureUnit, value);
+        }
+
 
         private IDataServiceFactory<FishedSpotModel> _dataStore;
         public override IDataServiceFactory<FishedSpotModel> DataStore
@@ -140,8 +148,10 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             if (model.Success)
             {
                 FishedSpot.Weather.Temperature = model.Temperature;
+                TemperatureUnit = model.TemperatureUnit;
 
                 RaisePropertyChanged(() => FishedSpot);
+                RaisePropertyChanged(() => TemperatureUnit);
             }
         }
 

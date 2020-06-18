@@ -6,6 +6,7 @@ using System;
 using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
+using TrackYourTrip.Core.Helpers;
 using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Models;
 
@@ -13,9 +14,22 @@ namespace TrackYourTrip.Core.Services.Weather.DarkSky
 {
     public class DarkSkyWeatherService : IWeatherService
     {
+        /*SI Units: 
+        summary: Any summaries containing temperature or snow accumulation units will have their values in degrees Celsius or in centimeters(respectively).
+        nearestStormDistance: Kilometers.
+        precipIntensity: Millimeters per hour.
+        precipIntensityMax: Millimeters per hour.
+        precipAccumulation: Centimeters.
+        temperature: Degrees Celsius.
+        temperatureMin: Degrees Celsius.
+        temperatureMax: Degrees Celsius.
+        apparentTemperature: Degrees Celsius.
+        dewPoint: Degrees Celsius.
+        windSpeed: Meters per second.
+        pressure: Hectopascals.
+        visibility: Kilometers. */
+
         private const string GERMAN_DEFAULT_UNITS = "si";
-        private const string ENGLISH_DEFAULT_UNITS = "us";
-        private const string SELECT_BY_COUNTRY = "auto";
 
         // for testing - Position of Altenfelden, Upper Austria
         private const double TEST_LAT = 48.4868;
@@ -65,7 +79,7 @@ namespace TrackYourTrip.Core.Services.Weather.DarkSky
 
                 return isReachable;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -84,7 +98,8 @@ namespace TrackYourTrip.Core.Services.Weather.DarkSky
                 if (forecast?.IsSuccessStatus == true)
                 {
                     response.Success = (bool)forecast?.IsSuccessStatus;
-                    response.Temperature = (double) forecast.Response.Currently.Temperature;
+                    response.Temperature = SetTemperature((double)forecast.Response.Currently.Temperature);
+                    response.TemperatureUnit = GetTemperatureUnit();
                 }
                 else
                 {
@@ -93,7 +108,8 @@ namespace TrackYourTrip.Core.Services.Weather.DarkSky
 
                 return response;
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -105,17 +121,18 @@ namespace TrackYourTrip.Core.Services.Weather.DarkSky
         {
             var param = new OptionalParameters();
 
-            switch (culture.Name){
-                case "de-DE":
-                    param.MeasurementUnits = GERMAN_DEFAULT_UNITS;
-                    break;
-
-                default:
-                    param.MeasurementUnits = SELECT_BY_COUNTRY;
-                    break;
-            }
+            // always use "SI" -> transform later if necessary
+            param.MeasurementUnits = GERMAN_DEFAULT_UNITS;
 
             return param;
+        }
+
+        private double SetTemperature(double wsTemperature) {
+            return UnitHelper.GetConvertedTemperature(wsTemperature);
+        }
+
+        private int GetTemperatureUnit(){
+            return GenerallSettingsHelper.GetDefaultTemperatureUnit();
         }
     }
 }

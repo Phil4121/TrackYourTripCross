@@ -95,14 +95,36 @@ namespace TrackYourTrip.Core.ViewModels.Settings
         public override async Task SaveAsync()
         {
 
+            try
+            {
+                IsBusy = true;
 
-            base.SaveAsync();
+                await base.SaveAsync();
+
+                if (IsValid)
+                {
+                    foreach (GenerallSettingModel sm in GenerallSettings)
+                    {
+                        await DataStore.SaveItemAsync(sm);
+                    }
+
+                    await NavigationService.Close(this);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                IsBusy = false;
+            }
 
         }
 
         public override void Validate()
         {
-            throw new NotImplementedException();
+            
         }
 
         async Task LoadGenerallSettingsAsync()

@@ -38,14 +38,14 @@ namespace TrackYourTrip.Core.CustomControls
         }
 
         public static readonly BindableProperty ErrorTextProperty =
-            BindableProperty.Create(nameof(ErrorText), typeof(string), typeof(CustomEntryWithErrorLabel), string.Empty, BindingMode.TwoWay, propertyChanged:(b,o,n) =>
-            {
-                if (Equals(n, null) && Equals(o, null))
-                    return;
+            BindableProperty.Create(nameof(ErrorText), typeof(string), typeof(CustomEntryWithErrorLabel), string.Empty, BindingMode.TwoWay, propertyChanged: (b, o, n) =>
+             {
+                 if (Equals(n, null) && Equals(o, null))
+                     return;
 
-                b.SetValue(IsValidProperty, string.IsNullOrEmpty((string)n));
+                 b.SetValue(IsValidProperty, string.IsNullOrEmpty((string)n));
 
-            });
+             });
 
         public string ErrorText
         {
@@ -54,13 +54,13 @@ namespace TrackYourTrip.Core.CustomControls
         }
 
         public static readonly BindableProperty UserInputProperty =
-            BindableProperty.Create(nameof(UserInput), typeof(string), typeof(CustomEntryWithErrorLabel), string.Empty, BindingMode.TwoWay, propertyChanged:(b,o,n) =>
-            {
-                if (Equals(n, null) && Equals(o, null))
-                    return;
+            BindableProperty.Create(nameof(UserInput), typeof(string), typeof(CustomEntryWithErrorLabel), string.Empty, BindingMode.TwoWay, propertyChanged: (b, o, n) =>
+             {
+                 if (Equals(n, null) && Equals(o, null))
+                     return;
 
-                ResetErrorStatus(b);
-            });
+                 ResetErrorStatus(b);
+             });
 
         public string UserInput
         {
@@ -78,8 +78,17 @@ namespace TrackYourTrip.Core.CustomControls
         }
 
 
+        public static readonly BindableProperty AdditionalTextIsVisibleProperty =
+            BindableProperty.Create(nameof(AdditionalTextIsVisible), typeof(bool), typeof(CustomEntryWithErrorLabel), false, BindingMode.OneWayToSource);
+
+        public bool AdditionalTextIsVisible
+        {
+            get => (bool)GetValue(AdditionalTextIsVisibleProperty);
+            set => SetValue(AdditionalTextIsVisibleProperty, value);
+        }
+
         public static readonly BindableProperty StatusPictureProperty =
-            BindableProperty.Create(nameof(StatusPicture), typeof(string), typeof(CustomEntryWithErrorLabel), 
+            BindableProperty.Create(nameof(StatusPicture), typeof(string), typeof(CustomEntryWithErrorLabel),
                 StatusHelper.GetPicForStatus(StatusHelper.StatusPicEnum.STATUS_UNDEFINED), BindingMode.OneWayToSource);
 
         public string StatusPicture
@@ -91,6 +100,15 @@ namespace TrackYourTrip.Core.CustomControls
                             Enum.Parse(typeof(StatusHelper.StatusPicEnum), value)));
         }
 
+        public static readonly BindableProperty AdditionalTextProperty =
+            BindableProperty.Create(nameof(AdditionalText), typeof(string), typeof(CustomEntryWithErrorLabel), "XX", BindingMode.OneWayToSource);
+
+        public string AdditionalText
+        {
+            get => (string)GetValue(AdditionalTextProperty);
+            set => SetValue(AdditionalTextProperty, value);
+        }
+
         #endregion
 
         public CustomEntryWithErrorLabel()
@@ -98,6 +116,7 @@ namespace TrackYourTrip.Core.CustomControls
             InitializeComponent();
 
             MainEntry.BindingContext = this;
+            AdditionalTextLabel.BindingContext = this;
             ErrorLabel.BindingContext = this;
             StatusImage.BindingContext = this;
         }
