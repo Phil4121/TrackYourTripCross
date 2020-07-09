@@ -10,6 +10,6 @@ namespace TrackYourTrip.Core.Interfaces
     {
         Task<bool> ServiceIsReachable(int maxTimeoutInMilliseconds);
 
-        Task<WeatherTaskResponseModel> GetWeatherData(WeatherTaskRequestModel request);
+        Task<WeatherTaskResponseModel> GetWeatherData(WeatherTaskRequestModel request, bool testIsReachable = false);
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using TrackYourTrip.Core.Helpers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -26,7 +26,6 @@ namespace TrackYourTrip.Core.CustomControls
                 SetValue(IsValidProperty, value);
             }
         }
-
 
         public static readonly BindableProperty ErrorTextProperty =
             BindableProperty.Create(nameof(ErrorText), typeof(string), typeof(CustomPickerWithErrorLabel), string.Empty, BindingMode.TwoWay, propertyChanged: (b, o, n) =>
@@ -132,6 +131,29 @@ namespace TrackYourTrip.Core.CustomControls
             set => SetValue(DisplayMemberPathProperty, value);
         }
 
+        public static readonly BindableProperty StatusPictureProperty =
+            BindableProperty.Create(nameof(StatusPicture), typeof(string), typeof(CustomPickerWithErrorLabel),
+            StatusHelper.GetPicForStatus(StatusHelper.StatusPicEnum.STATUS_UNDEFINED), BindingMode.OneWayToSource);
+
+        public string StatusPicture
+        {
+            get => (string)GetValue(StatusPictureProperty);
+            set =>
+                SetValue(StatusPictureProperty, StatusHelper.GetPicForStatus(
+                        (StatusHelper.StatusPicEnum)
+                            Enum.Parse(typeof(StatusHelper.StatusPicEnum), value)));
+        }
+
+        public static readonly BindableProperty StatusPictureIsVisibleProperty =
+            BindableProperty.Create(nameof(StatusPictureIsVisible), typeof(bool), typeof(CustomPickerWithErrorLabel), false, BindingMode.OneWayToSource);
+
+        public bool StatusPictureIsVisible
+        {
+            get => (bool)GetValue(StatusPictureIsVisibleProperty);
+            set => SetValue(StatusPictureIsVisibleProperty, value);
+        }
+
+
         #endregion
 
         #region Events
@@ -148,6 +170,7 @@ namespace TrackYourTrip.Core.CustomControls
 
             MainPicker.BindingContext = this;
             ErrorLabel.BindingContext = this;
+            StatusImage.BindingContext = this;
 
             MainPicker.SelectedIndexChanged += MainPicker_SelectedIndexChanged;
         }

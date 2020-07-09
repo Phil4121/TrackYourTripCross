@@ -133,8 +133,10 @@ CREATE TABLE FishedSpots (
 );
 
 CREATE TABLE FishedSpotsWheater (
-	ID				TEXT		PRIMARY KEY,
-	Temperature		FLOAT
+	ID					TEXT		PRIMARY KEY,
+	IsOverwritten		BIT,
+	Temperature			FLOAT,
+	WeatherSituation	INT
 );
 
 INSERT INTO WaterModels (ID, Water) VALUES ('2a3eeecf-472c-4b0f-9df0-73386cb3b3f7', 'River');

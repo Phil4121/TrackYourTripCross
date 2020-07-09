@@ -47,6 +47,9 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             set => SetProperty(ref _fishedSpot, value);
         }
 
+
+
+
         private string _wheaterStatusPicture = StatusHelper.GetPicForStatus(StatusHelper.StatusPicEnum.STATUS_UNDEFINED);
 
         public string WheaterStatusPicture
@@ -73,6 +76,22 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             set => SetProperty(ref _temperatureUnit, value);
         }
 
+        IEnumerable<KeyValueModel> _weatherConditions = null;
+
+        public IEnumerable<KeyValueModel> WeatherConditions
+        {
+            get
+            {
+                if(_weatherConditions == null)
+                {
+                    var conditions = new WeatherConditions(LocalizeService);
+                    _weatherConditions = conditions.GetWeatherConditions();
+                }
+
+                return _weatherConditions;
+            }
+        }
+
 
         private IDataServiceFactory<FishedSpotModel> _dataStore;
         public override IDataServiceFactory<FishedSpotModel> DataStore
@@ -92,6 +111,19 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         public override bool IsNew
         {
             get => FishedSpot.IsNew;
+        }
+
+        public bool IsOverwritten
+        {
+            get => FishedSpot.Weather.IsOverwritten;
+            set
+            {
+                FishedSpot.Weather.IsOverwritten = value;
+                ShowWeatherStatusPicture = !value;
+
+                RaisePropertyChanged(() => IsOverwritten);
+                RaisePropertyChanged(() => ShowWeatherStatusPicture);
+            }
         }
 
         #endregion
@@ -116,6 +148,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             {
                 ShowWeatherStatusPicture = true;
                 WheaterStatusPicture = StatusHelper.StatusPicEnum.STATUS_WAITING.ToString();
+
                 PushToBackgroundQueue = MvxNotifyTask.Create(PushWheaterRequestToBackgroundQueue(), ex => LogException(ex));
             }
         }
@@ -147,7 +180,10 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
             if (model.Success)
             {
-                FishedSpot.Weather.Temperature = model.Temperature;
+                FishedSpot.Weather.Temperature = model.CurrentTemperature;
+
+                FishedSpot.Weather.WeatherSituation = model.WeatherSituation;
+
                 TemperatureUnit = model.TemperatureUnit;
 
                 RaisePropertyChanged(() => FishedSpot);

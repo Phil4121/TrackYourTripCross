@@ -2,6 +2,7 @@
 using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using TrackYourTrip.Core.Helpers;
 
@@ -23,6 +24,11 @@ namespace TrackYourTrip.Core.Models
         [ForeignKey(typeof(TripModel)), NotNull]
         public Guid ID_FishedSpot { get; set; }
 
+        public bool IsOverwritten { get; set; }
+
         public double Temperature { get; set; }
+
+        public int WeatherSituation { get; set; }
+
     }
 }

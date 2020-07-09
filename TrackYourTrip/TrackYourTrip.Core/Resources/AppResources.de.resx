@@ -210,4 +210,34 @@
   <data name="SpotTypeSetText" xml:space="preserve">
     <value>Bitte markieren sie den Angelplatz indem sie auf die Karte klicken.</value>
   </data>
+  <data name="WeatherClearDay" xml:space="preserve">
+    <value>klarer Tag</value>
+  </data>
+  <data name="WeatherClearNight" xml:space="preserve">
+    <value>klare Nacht</value>
+  </data>
+  <data name="WeatherCloudy" xml:space="preserve">
+    <value>Bewölkt</value>
+  </data>
+  <data name="WeatherFog" xml:space="preserve">
+    <value>Neblig</value>
+  </data>
+  <data name="WeatherPartlyCloudyDay" xml:space="preserve">
+    <value>bewölkter Tag</value>
+  </data>
+  <data name="WeatherPartlyCloudyNight" xml:space="preserve">
+    <value>bewölkte Nacht</value>
+  </data>
+  <data name="WeatherRain" xml:space="preserve">
+    <value>Regen</value>
+  </data>
+  <data name="WeatherSleet" xml:space="preserve">
+    <value>Schneeregen</value>
+  </data>
+  <data name="WeatherSnow" xml:space="preserve">
+    <value>Schnee</value>
+  </data>
+  <data name="WeatherWind" xml:space="preserve">
+    <value>Windig</value>
+  </data>
 </root>

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using TrackYourTrip.Core.Helpers;
 using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Models;
+using static TrackYourTrip.Core.Services.WeatherConditions;
 
 namespace TrackYourTrip.Core.Services.Weather.DarkSky
 {
@@ -68,7 +69,7 @@ namespace TrackYourTrip.Core.Services.Weather.DarkSky
                     Lat = TEST_LAT,
                     Lng = TEST_LNG,
                     CultureInfo = CultureInfo.CurrentCulture
-                }).Result.Success);
+                }, true).Result.Success);
 
                 task.Start();
 
@@ -85,7 +86,7 @@ namespace TrackYourTrip.Core.Services.Weather.DarkSky
             }
         }
 
-        public async Task<WeatherTaskResponseModel> GetWeatherData(WeatherTaskRequestModel request)
+        public async Task<WeatherTaskResponseModel> GetWeatherData(WeatherTaskRequestModel request, bool testIsReachable = false)
         {
             try
             {
@@ -98,7 +99,12 @@ namespace TrackYourTrip.Core.Services.Weather.DarkSky
                 if (forecast?.IsSuccessStatus == true)
                 {
                     response.Success = (bool)forecast?.IsSuccessStatus;
-                    response.Temperature = SetTemperature((double)forecast.Response.Currently.Temperature);
+
+                    if (testIsReachable)
+                        return response;
+
+                    response.WeatherSituation = ParseWeatherCondition(forecast.Response.Currently.Icon.ToString());
+                    response.CurrentTemperature = SetTemperature((double)forecast.Response.Currently.Temperature);
                     response.TemperatureUnit = GetTemperatureUnit();
                 }
                 else
@@ -114,8 +120,6 @@ namespace TrackYourTrip.Core.Services.Weather.DarkSky
                 throw ex;
             }
         }
-
-
 
         private OptionalParameters BuildOptionalParameters(CultureInfo culture)
         {
@@ -134,5 +138,16 @@ namespace TrackYourTrip.Core.Services.Weather.DarkSky
         private int GetTemperatureUnit(){
             return GenerallSettingsHelper.GetDefaultTemperatureUnit();
         }
+
+        private int ParseWeatherCondition(string weatherCondition)
+        {
+            var condition =  (int) PossibleWeatherConditionEnum.WeatherClearDay;
+
+            if (condition < 1)
+                return 99;
+
+            return condition;
+        }
+
     }
 }

@@ -347,5 +347,95 @@ namespace TrackYourTrip.Core.Resources {
                 return ResourceManager.GetString("SpotTypeSetText", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Clear Day ähnelt.
+        /// </summary>
+        internal static string WeatherClearDay {
+            get {
+                return ResourceManager.GetString("WeatherClearDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Clear Night ähnelt.
+        /// </summary>
+        internal static string WeatherClearNight {
+            get {
+                return ResourceManager.GetString("WeatherClearNight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Cloudy ähnelt.
+        /// </summary>
+        internal static string WeatherCloudy {
+            get {
+                return ResourceManager.GetString("WeatherCloudy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Fog ähnelt.
+        /// </summary>
+        internal static string WeatherFog {
+            get {
+                return ResourceManager.GetString("WeatherFog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Partly Cloudy ähnelt.
+        /// </summary>
+        internal static string WeatherPartlyCloudyDay {
+            get {
+                return ResourceManager.GetString("WeatherPartlyCloudyDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Cloudy Night ähnelt.
+        /// </summary>
+        internal static string WeatherPartlyCloudyNight {
+            get {
+                return ResourceManager.GetString("WeatherPartlyCloudyNight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Rain ähnelt.
+        /// </summary>
+        internal static string WeatherRain {
+            get {
+                return ResourceManager.GetString("WeatherRain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Sleet ähnelt.
+        /// </summary>
+        internal static string WeatherSleet {
+            get {
+                return ResourceManager.GetString("WeatherSleet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Snow ähnelt.
+        /// </summary>
+        internal static string WeatherSnow {
+            get {
+                return ResourceManager.GetString("WeatherSnow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Wind ähnelt.
+        /// </summary>
+        internal static string WeatherWind {
+            get {
+                return ResourceManager.GetString("WeatherWind", resourceCulture);
+            }
+        }
     }
 }

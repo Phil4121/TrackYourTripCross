@@ -213,4 +213,34 @@
   <data name="SpotTypeSetText" xml:space="preserve">
     <value>Please mark your spot by clicking on to the map.</value>
   </data>
+  <data name="WeatherClearDay" xml:space="preserve">
+    <value>Clear Day</value>
+  </data>
+  <data name="WeatherClearNight" xml:space="preserve">
+    <value>Clear Night</value>
+  </data>
+  <data name="WeatherCloudy" xml:space="preserve">
+    <value>Cloudy</value>
+  </data>
+  <data name="WeatherFog" xml:space="preserve">
+    <value>Fog</value>
+  </data>
+  <data name="WeatherPartlyCloudyDay" xml:space="preserve">
+    <value>Partly Cloudy</value>
+  </data>
+  <data name="WeatherPartlyCloudyNight" xml:space="preserve">
+    <value>Cloudy Night</value>
+  </data>
+  <data name="WeatherRain" xml:space="preserve">
+    <value>Rain</value>
+  </data>
+  <data name="WeatherSleet" xml:space="preserve">
+    <value>Sleet</value>
+  </data>
+  <data name="WeatherSnow" xml:space="preserve">
+    <value>Snow</value>
+  </data>
+  <data name="WeatherWind" xml:space="preserve">
+    <value>Wind</value>
+  </data>
 </root>

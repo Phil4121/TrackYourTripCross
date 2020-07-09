@@ -19,6 +19,8 @@ namespace TrackYourTrip.Core.CustomControls
 
         Boolean _disableNestedCalls;
 
+        public bool IsNestedCall { get => _disableNestedCalls; }
+
         public static new readonly BindableProperty ItemsSourceProperty =
             BindableProperty.Create("ItemsSource", typeof(IEnumerable), typeof(CustomPicker),
                 null, propertyChanged: OnItemsSourceChanged);
