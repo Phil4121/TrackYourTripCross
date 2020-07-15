@@ -189,6 +189,18 @@
   <data name="NewTripStart" xml:space="preserve">
     <value>Start!</value>
   </data>
+  <data name="RemoveWeatherTaskFromBackgroundQueuePromptNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="RemoveWeatherTaskFromBackgroundQueuePromptText" xml:space="preserve">
+    <value>Are you sure to overwrite the requested weather data?</value>
+  </data>
+  <data name="RemoveWeatherTaskFromBackgroundQueuePromptYes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="RemoveWeatherTaskFromBackgroundQueueTitle" xml:space="preserve">
+    <value>Overwrite data</value>
+  </data>
   <data name="SaveCommandTitle" xml:space="preserve">
     <value>Finish</value>
   </data>

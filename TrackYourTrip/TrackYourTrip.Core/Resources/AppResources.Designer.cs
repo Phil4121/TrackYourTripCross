@@ -277,6 +277,42 @@ namespace TrackYourTrip.Core.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die No ähnelt.
+        /// </summary>
+        internal static string RemoveWeatherTaskFromBackgroundQueuePromptNo {
+            get {
+                return ResourceManager.GetString("RemoveWeatherTaskFromBackgroundQueuePromptNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Are you sure to overwrite the requested weather data? ähnelt.
+        /// </summary>
+        internal static string RemoveWeatherTaskFromBackgroundQueuePromptText {
+            get {
+                return ResourceManager.GetString("RemoveWeatherTaskFromBackgroundQueuePromptText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Yes ähnelt.
+        /// </summary>
+        internal static string RemoveWeatherTaskFromBackgroundQueuePromptYes {
+            get {
+                return ResourceManager.GetString("RemoveWeatherTaskFromBackgroundQueuePromptYes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Overwrite data ähnelt.
+        /// </summary>
+        internal static string RemoveWeatherTaskFromBackgroundQueueTitle {
+            get {
+                return ResourceManager.GetString("RemoveWeatherTaskFromBackgroundQueueTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Finish ähnelt.
         /// </summary>
         internal static string SaveCommandTitle {

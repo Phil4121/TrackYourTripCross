@@ -19,12 +19,12 @@ namespace TrackYourTrip.Core.Services.BackgroundQueue
 
         private static SimpleDataService<BackgroundTaskModel> Service { get; set; }
 
-        public static async Task<bool> PushWheaterRequestToBackgroundQueue(Guid RefId, double Lat, double Lng)
+        public static async Task<Guid> PushWheaterRequestToBackgroundQueue(Guid RefId, double Lat, double Lng)
         {
             return await PushWheaterRequestToBackgroundQueue(DataServiceFactory.Connection, RefId, Lat, Lng);
         }
 
-        public static async Task<bool> PushWheaterRequestToBackgroundQueue(SQLiteConnection connection, Guid RefId, double Lat, double Lng)
+        public static async Task<Guid> PushWheaterRequestToBackgroundQueue(SQLiteConnection connection, Guid RefId, double Lat, double Lng)
         {
             Connection = connection;
 
@@ -45,7 +45,10 @@ namespace TrackYourTrip.Core.Services.BackgroundQueue
                         })
                 };
 
-                return await PushToBackgroundQueue(queueElement) != null;
+                if (await PushToBackgroundQueue(queueElement) != null)
+                    return queueElement.Id;
+                else
+                    return Guid.Empty;
 
             }
             catch (Exception ex)
@@ -80,6 +83,16 @@ namespace TrackYourTrip.Core.Services.BackgroundQueue
             {
                 throw;
             }
+        }
+
+        public static async Task<bool> RemoveElementFromQueue(Guid id)
+        {
+            var model = await GetElementById(id);
+
+            if (model != null)
+                return await RemoveElementFromQueue(model);
+
+            return true;
         }
 
         public static async Task<int> GetQueueElementCount(SQLiteConnection connection)
@@ -143,6 +156,12 @@ namespace TrackYourTrip.Core.Services.BackgroundQueue
                 await RemoveElementFromQueue(Connection, popedElement);
 
             return popedElement;
+        }
+
+        async static Task<BackgroundTaskModel> GetElementById(Guid id)
+        {
+            Service = new SimpleDataService<BackgroundTaskModel>(Connection, TableConsts.BACKGROUND_TASK_TABLE);
+            return await Service.GetItemAsync(id);
         }
     }
 }

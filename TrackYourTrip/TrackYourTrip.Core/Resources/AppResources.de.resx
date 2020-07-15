@@ -186,6 +186,18 @@
   <data name="NewTripStart" xml:space="preserve">
     <value>Start!</value>
   </data>
+  <data name="RemoveWeatherTaskFromBackgroundQueuePromptNo" xml:space="preserve">
+    <value>Nein</value>
+  </data>
+  <data name="RemoveWeatherTaskFromBackgroundQueuePromptText" xml:space="preserve">
+    <value>Möchten sie die Daten selbst verwalten?</value>
+  </data>
+  <data name="RemoveWeatherTaskFromBackgroundQueuePromptTitle" xml:space="preserve">
+    <value>Daten überschreiben</value>
+  </data>
+  <data name="RemoveWeatherTaskFromBackgroundQueuePromptYes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
   <data name="SaveCommandTitle" xml:space="preserve">
     <value>Fertig</value>
   </data>

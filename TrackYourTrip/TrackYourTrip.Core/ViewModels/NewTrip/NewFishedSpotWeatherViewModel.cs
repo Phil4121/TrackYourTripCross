@@ -19,6 +19,7 @@ using Xamarin.Forms;
 using TrackYourTrip.Core.Services.BackgroundQueue.Messages;
 using System.Threading;
 using MvvmCross;
+using Prism.Navigation;
 
 [assembly: MvxNavigation(typeof(NewFishedSpotWeatherViewModel), @"NewFishedSpotWeatherPage")]
 namespace TrackYourTrip.Core.ViewModels.NewTrip
@@ -28,6 +29,10 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         public NewFishedSpotWeatherViewModel(IMvxNavigationService navigationService, IMvxLogProvider mvxLogProvider, IUserDialogs userDialog, ILocalizeService localizeService)
             : base(Resources.AppResources.NewFishedSpotWeatherPageTitle, mvxLogProvider, navigationService, userDialog, localizeService)
         {
+            OverwriteChangedCommand = new MvxCommand(
+                () => NavigationTask = MvxNotifyTask.Create(ConfirmRemoveWeatherFromBackgroundQueue(), onException: ex => LogException(ex))
+            );
+
             MessagingCenter.Subscribe<ElementFinishedMessage>(this, MessageHelper.ELEMENT_FINISHED_MESSAGE, message =>
             {
                 if (message.BackgroundTask.ID_TaskType != (int)EnumHelper.TaskTypeEnum.WheaterTask ||
@@ -40,6 +45,14 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         #region Properties
 
+        Guid _backgroundQueueId = Guid.Empty;
+        Guid BackgroundQueueId
+        {
+            get => _backgroundQueueId;
+            set => SetProperty(ref _backgroundQueueId, value);
+        }
+
+
         private FishedSpotModel _fishedSpot = new FishedSpotModel();
         public FishedSpotModel FishedSpot
         {
@@ -48,10 +61,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         }
 
 
-
-
         private string _wheaterStatusPicture = StatusHelper.GetPicForStatus(StatusHelper.StatusPicEnum.STATUS_UNDEFINED);
-
         public string WheaterStatusPicture
         {
             get => _wheaterStatusPicture;
@@ -60,29 +70,29 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                             Enum.Parse(typeof(StatusHelper.StatusPicEnum), value)));
         }
 
-        bool _showWeatherStatusPicture = false;
 
+        bool _showWeatherStatusPicture = false;
         public bool ShowWeatherStatusPicture
         {
             get => _showWeatherStatusPicture;
             set => SetProperty(ref _showWeatherStatusPicture, value);
         }
 
-        int _temperatureUnit = -1;
 
+        int _temperatureUnit = -1;
         public int TemperatureUnit
         {
             get => _temperatureUnit;
             set => SetProperty(ref _temperatureUnit, value);
         }
 
-        IEnumerable<KeyValueModel> _weatherConditions = null;
 
+        IEnumerable<KeyValueModel> _weatherConditions = null;
         public IEnumerable<KeyValueModel> WeatherConditions
         {
             get
             {
-                if(_weatherConditions == null)
+                if (_weatherConditions == null)
                 {
                     var conditions = new WeatherConditions(LocalizeService);
                     _weatherConditions = conditions.GetWeatherConditions();
@@ -108,10 +118,12 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             set => _dataStore = value;
         }
 
+
         public override bool IsNew
         {
             get => FishedSpot.IsNew;
         }
+
 
         public bool IsOverwritten
         {
@@ -132,7 +144,15 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         public MvxNotifyTask NavigationTask { get; private set; }
 
-        public MvxNotifyTask PushToBackgroundQueue { get; private set; }
+        public MvxNotifyTask PushToBackgroundQueueTask { get; private set; }
+
+        public MvxNotifyTask RemoveWeatherRequestFromBackgroundQueueTask { get; private set; }
+
+        #endregion
+
+        #region Commands
+
+        public IMvxCommand OverwriteChangedCommand { get; private set; }
 
         #endregion
 
@@ -144,12 +164,11 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
             FishedSpot = parameter;
 
-            if (IsNew)
+            if (IsNew && !IsOverwritten)
             {
                 ShowWeatherStatusPicture = true;
                 WheaterStatusPicture = StatusHelper.StatusPicEnum.STATUS_WAITING.ToString();
-
-                PushToBackgroundQueue = MvxNotifyTask.Create(PushWheaterRequestToBackgroundQueue(), ex => LogException(ex));
+                PushToBackgroundQueueTask = MvxNotifyTask.Create(PushWheaterRequestToBackgroundQueue(), ex => LogException(ex));
             }
         }
 
@@ -168,7 +187,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         async Task PushWheaterRequestToBackgroundQueue()
         {
-            await BackgroundQueueService.PushWheaterRequestToBackgroundQueue(FishedSpot.Id, FishedSpot.Spot.SpotMarker[0].Lat, FishedSpot.Spot.SpotMarker[0].Lng);
+            BackgroundQueueId = await BackgroundQueueService.PushWheaterRequestToBackgroundQueue(FishedSpot.Id, FishedSpot.Spot.SpotMarker[0].Lat, FishedSpot.Spot.SpotMarker[0].Lng);
 
             var message = new StartBackgroundWorkingServiceMessage();
             MessagingCenter.Send(message, MessageHelper.START_BACKGROUND_WORKING_SERVICE_MESSAGE);
@@ -180,7 +199,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
             if (model.Success)
             {
-                FishedSpot.Weather.Temperature = model.CurrentTemperature;
+                FishedSpot.Weather.CurrentTemperature = model.CurrentTemperature;
 
                 FishedSpot.Weather.WeatherSituation = model.WeatherSituation;
 
@@ -189,6 +208,28 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                 RaisePropertyChanged(() => FishedSpot);
                 RaisePropertyChanged(() => TemperatureUnit);
             }
+        }
+
+        async Task ConfirmRemoveWeatherFromBackgroundQueue()
+        {
+            if (IsOverwritten)
+            {
+                bool overwrite = await UserDialog.ConfirmAsync(Resources.AppResources.RemoveWeatherTaskFromBackgroundQueuePromptText,
+                    Resources.AppResources.RemoveWeatherTaskFromBackgroundQueueTitle,
+                    Resources.AppResources.RemoveWeatherTaskFromBackgroundQueuePromptYes,
+                    Resources.AppResources.RemoveWeatherTaskFromBackgroundQueuePromptNo);
+
+                if (overwrite)
+                    RemoveWeatherRequestFromBackgroundQueueTask = MvxNotifyTask.Create(RemoveWeatherRequestFromQueue(), ex => LogException(ex));
+                else
+                    IsOverwritten = false;
+            }
+        }
+
+        async Task RemoveWeatherRequestFromQueue()
+        {
+            if (BackgroundQueueId != Guid.Empty)
+                await BackgroundQueueService.RemoveElementFromQueue(BackgroundQueueId);
         }
 
         #endregion
