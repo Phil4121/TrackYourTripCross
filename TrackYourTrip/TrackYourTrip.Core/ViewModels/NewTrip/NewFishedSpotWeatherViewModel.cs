@@ -204,6 +204,22 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                 FishedSpot.Weather.WeatherSituation = model.WeatherSituation;
 
                 TemperatureUnit = model.TemperatureUnit;
+                FishedSpot.Weather.TemperatureUnit = TemperatureUnit;
+
+                FishedSpot.Weather.DailyTemperatureHigh = model.DailyTemperatureHigh;
+                FishedSpot.Weather.DailyTemperatureHighTime = model.DailyTemperatureHighTime;
+                FishedSpot.Weather.DailyTemperatureLow = model.DailyTemperatureLow;
+                FishedSpot.Weather.DailyTemperatureLowTime = model.DailyTemperatureLowTime;
+                FishedSpot.Weather.MoonPhase = model.MoonPhase;
+                FishedSpot.Weather.Humidity = model.Humidity;
+                FishedSpot.Weather.AirPressureInHPA = model.AirPressureInHPA;
+                FishedSpot.Weather.SunRiseTime = model.SunRiseTime;
+                FishedSpot.Weather.SunSetTime = model.SunSetTime;
+                FishedSpot.Weather.UVIndex = model.UVIndex;
+                FishedSpot.Weather.VisibilityInKM = model.VisibilityInKM;
+                FishedSpot.Weather.WindBearing = model.WindBearing;
+                FishedSpot.Weather.WindSpeedInMS = model.WindSpeedInMS;
+                FishedSpot.Weather.CloudCover = model.CloudCover;
 
                 RaisePropertyChanged(() => FishedSpot);
                 RaisePropertyChanged(() => TemperatureUnit);

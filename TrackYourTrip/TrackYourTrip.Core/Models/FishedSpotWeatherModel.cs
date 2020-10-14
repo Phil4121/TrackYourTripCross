@@ -40,9 +40,9 @@ namespace TrackYourTrip.Core.Models
 
         public int TemperatureUnit { get; set; }
 
-        public int MoonPhase { get; set; }
+        public double MoonPhase { get; set; }
 
-        public float Humidity { get; set; }
+        public double Humidity { get; set; }
 
         public double AirPressureInHPA { get; set; }
 
@@ -52,14 +52,12 @@ namespace TrackYourTrip.Core.Models
 
         public int UVIndex { get; set; }
 
-        public int VisibilityInKM { get; set; }
+        public double VisibilityInKM { get; set; }
 
         public int WindBearing { get; set; }
 
         public double WindSpeedInMS { get; set; }
 
-        public float CloudCover { get; set; }
-
-
+        public double CloudCover { get; set; }
     }
 }

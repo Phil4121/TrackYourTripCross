@@ -24,12 +24,12 @@ namespace TrackYourTrip.Droid
 
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
 
-            MessagingCenter.Subscribe<StartBackgroundWorkingServiceMessage>(this, MessageHelper.START_BACKGROUND_WORKING_SERVICE_MESSAGE, message => {
+            MessagingCenter.Subscribe<StartBackgroundWorkingServiceMessage>(this, MessageHelper.START_BACKGROUND_WORKING_SERVICE_MESSAGE, msg => {
                 var intent = new Intent(this, typeof(BackgroundTaskService));
                 StartService(intent);
             });
 
-            MessagingCenter.Subscribe<StopBackgroundWorkingServiceMessage>(this, MessageHelper.STOP_BACKGROUND_WORKING_SERVICE_MESSAGE, message => {
+            MessagingCenter.Subscribe<StopBackgroundWorkingServiceMessage>(this, MessageHelper.STOP_BACKGROUND_WORKING_SERVICE_MESSAGE, msg => {
                 var intent = new Intent(this, typeof(BackgroundTaskService));
                 StopService(intent);
             });

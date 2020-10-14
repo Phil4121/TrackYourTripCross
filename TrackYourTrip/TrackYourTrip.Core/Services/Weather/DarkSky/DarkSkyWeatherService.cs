@@ -106,6 +106,20 @@ namespace TrackYourTrip.Core.Services.Weather.DarkSky
                     response.WeatherSituation = ParseWeatherCondition(forecast.Response.Currently.Icon.ToString());
                     response.CurrentTemperature = SetTemperature((double)forecast.Response.Currently.Temperature);
                     response.TemperatureUnit = GetTemperatureUnit();
+                    response.DailyTemperatureHigh = SetTemperature(forecast.Response.Daily.Data[0].TemperatureHigh.GetValueOrDefault());
+                    response.DailyTemperatureHighTime = SetDateTime(forecast.Response.Daily.Data[0].TemperatureHighDateTime.GetValueOrDefault());
+                    response.DailyTemperatureLow = SetTemperature((forecast.Response.Daily.Data[0].TemperatureLow.GetValueOrDefault()));
+                    response.DailyTemperatureLowTime = SetDateTime(forecast.Response.Daily.Data[0].TemperatureLowDateTime.GetValueOrDefault());
+                    response.MoonPhase = forecast.Response.Daily.Data[0].MoonPhase.GetValueOrDefault();
+                    response.Humidity = forecast.Response.Currently.Humidity.GetValueOrDefault();
+                    response.AirPressureInHPA = forecast.Response.Currently.Pressure.GetValueOrDefault();
+                    response.SunRiseTime = SetDateTime(forecast.Response.Daily.Data[0].SunriseDateTime);
+                    response.SunSetTime = SetDateTime(forecast.Response.Daily.Data[0].SunsetDateTime);
+                    response.UVIndex = forecast.Response.Currently.UvIndex.GetValueOrDefault();
+                    response.VisibilityInKM = forecast.Response.Currently.Visibility.GetValueOrDefault();
+                    response.WindBearing = forecast.Response.Currently.WindBearing.GetValueOrDefault();
+                    response.WindSpeedInMS = forecast.Response.Currently.WindSpeed.GetValueOrDefault();
+                    response.CloudCover = forecast.Response.Currently.CloudCover.GetValueOrDefault();
                 }
                 else
                 {
@@ -133,6 +147,14 @@ namespace TrackYourTrip.Core.Services.Weather.DarkSky
 
         private double SetTemperature(double wsTemperature) {
             return UnitHelper.GetConvertedTemperature(wsTemperature);
+        }
+
+        private DateTime SetDateTime(DateTimeOffset? dateTimeOffset)
+        {
+            if (dateTimeOffset.Value == null)
+                return new DateTime();
+
+            return dateTimeOffset.Value.DateTime;
         }
 
         private int GetTemperatureUnit(){

@@ -7,11 +7,8 @@
              xmlns:custom="clr-namespace:TrackYourTrip.Core.CustomControls"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:mvxBind="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
-             xmlns:converter="clr-namespace:TrackYourTrip.Core.Converters"   
-             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"   
-             xmlns:other="clr-namespace:TrackYourTrip.Core.ViewModels.Other"     
+             xmlns:converter="clr-namespace:TrackYourTrip.Core.Converters"      
              xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              mc:Ignorable="d"
              x:Class="TrackYourTrip.Core.Pages.NewTrip.NewFishedSpotWeatherPage"
              Title="{Binding Title}">
@@ -22,50 +19,72 @@
         <converter:StringToDoubleConverter x:Key="cnvStringToDoubleConverter" />
         <converter:IntToTemperatureUnitConverter x:Key="cnvIntToTemperatureUnitConverter" />
         <converter:NegateBooleanConverter x:Key="cnvNegateBooleanConverter" />
+        <converter:StringToTimeConverter x:Key="cnvStringToTimeConverter" />
     </ContentPage.Resources>
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="45" />
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <StackLayout Style="{StaticResource RootStackLayout}" 
+                             VerticalOptions="StartAndExpand" 
+                             HorizontalOptions="FillAndExpand"
+                             Orientation="Vertical">
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="45" />
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
 
-                    <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                        <Label Text="Werte überschreiben:" IsVisible="{Binding IsOverwritten, Converter={StaticResource cnvNegateBooleanConverter}}" />
-                        <Switch IsToggled="{Binding IsOverwritten, Mode=TwoWay}"
-                                IsVisible="{Binding IsOverwritten, Converter={StaticResource cnvNegateBooleanConverter}}">
-                            <Switch.Behaviors>
-                                <b:EventToCommandBehavior 
+                        <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                            <Label Text="Werte überschreiben:" IsVisible="{Binding IsOverwritten, Converter={StaticResource cnvNegateBooleanConverter}}" VerticalOptions="CenterAndExpand" />
+                            <Switch IsToggled="{Binding IsOverwritten, Mode=TwoWay}"
+                                IsVisible="{Binding IsOverwritten, Converter={StaticResource cnvNegateBooleanConverter}}"
+                                    VerticalOptions="CenterAndExpand">
+                                <Switch.Behaviors>
+                                    <b:EventToCommandBehavior 
                                       EventName="Toggled"
                                       Command="{Binding OverwriteChangedCommand}"/>
-                            </Switch.Behaviors>
-                        </Switch>
-                    </StackLayout>
+                                </Switch.Behaviors>
+                            </Switch>
+                        </StackLayout>
 
-                    <Label Text="Wetterlage :" Grid.Row="1" Grid.Column="0" VerticalOptions="CenterAndExpand" />
+                        <Label Text="Wetterlage :" Grid.Row="1" Grid.Column="0" VerticalOptions="CenterAndExpand" />
 
-                    <custom:CustomPickerWithErrorLabel x:Name="WeatherConditions" 
+                        <custom:CustomPickerWithErrorLabel x:Name="WeatherConditions" 
                                                        ItemsSource="{Binding WeatherConditions}"
                                                        DisplayMemberPath="Value"
                                                        SelectedValuePath="Key"
                                                        SelectedValue="{Binding FishedSpot.Weather.WeatherSituation, Mode=TwoWay}"
                                                        HorizontalOptions="StartAndExpand"
+                                                       VerticalOptions="CenterAndExpand"
                                                        StatusPictureIsVisible="{Binding ShowWeatherStatusPicture, Mode=TwoWay}"
                                                        StatusPicture="{Binding WheaterStatusPicture, Mode=TwoWay}"
                                                        IsEnabled="{Binding IsOverwritten}"
                                                        WidthRequest="160"
                                                        Grid.Row="1" Grid.Column="1" />
 
-                    <Label Text="Temperatur: " Grid.Row="2" Grid.Column="0" VerticalOptions="CenterAndExpand" />
 
-                    <custom:CustomEntryWithErrorLabel x:Name="SpotName"
+                        <Label Text="Temperatur: " Grid.Row="2" Grid.Column="0" VerticalOptions="CenterAndExpand" />
+
+                        <custom:CustomEntryWithErrorLabel x:Name="CurrentTemperatureLabel"
                                     UserInput="{Binding FishedSpot.Weather.CurrentTemperature, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}"
                                     AllowNull="True"
                                     StatusPictureIsVisible="{Binding ShowWeatherStatusPicture, Mode=TwoWay}"
@@ -79,8 +98,229 @@
                                     Grid.Row="2"
                                     Grid.Column="1" />
 
-                </Grid>
-            </StackLayout>
+
+                        <Label Text="Tageshöchsttemperatur: " Grid.Row="3" Grid.Column="0" VerticalOptions="CenterAndExpand" />
+
+                        <custom:CustomEntryWithErrorLabel x:Name="DailyTemperatureHighLabel"
+                                    UserInput="{Binding FishedSpot.Weather.DailyTemperatureHigh, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}"
+                                    AllowNull="True"
+                                    StatusPictureIsVisible="{Binding ShowWeatherStatusPicture, Mode=TwoWay}"
+                                    StatusPicture="{Binding WheaterStatusPicture, Mode=TwoWay}"
+                                    AdditionalTextIsVisible="True"
+                                    AdditionalText="{Binding TemperatureUnit, Converter={StaticResource cnvIntToTemperatureUnitConverter}, Mode=TwoWay}" 
+                                    IsEnabled="{Binding IsOverwritten}"
+                                    ErrorText=""
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Grid.Row="3"
+                                    Grid.Column="1" />
+
+                        <Label Text="Tageshöchsttemperatur (Uhrzeit): " Grid.Row="4" Grid.Column="0" VerticalOptions="CenterAndExpand" />
+
+                        <custom:CustomEntryWithErrorLabel x:Name="DailyTemperatureHighTimeLabel"
+                                    UserInput="{Binding FishedSpot.Weather.DailyTemperatureHighTime, Mode=TwoWay, Converter={StaticResource cnvStringToTimeConverter}}"
+                                    AllowNull="True"
+                                    StatusPictureIsVisible="{Binding ShowWeatherStatusPicture, Mode=TwoWay}"
+                                    StatusPicture="{Binding WheaterStatusPicture, Mode=TwoWay}"  
+                                    IsEnabled="{Binding IsOverwritten}"
+                                    ErrorText=""
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Grid.Row="4"
+                                    Grid.Column="1" />
+
+
+                        <Label Text="Tagestiefsttemperatur: " Grid.Row="5" Grid.Column="0" VerticalOptions="CenterAndExpand" />
+
+                        <custom:CustomEntryWithErrorLabel x:Name="DailyTemperatureLowLabel"
+                                    UserInput="{Binding FishedSpot.Weather.DailyTemperatureLow, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}"
+                                    AllowNull="True"
+                                    StatusPictureIsVisible="{Binding ShowWeatherStatusPicture, Mode=TwoWay}"
+                                    StatusPicture="{Binding WheaterStatusPicture, Mode=TwoWay}"
+                                    AdditionalTextIsVisible="True"
+                                    AdditionalText="{Binding TemperatureUnit, Converter={StaticResource cnvIntToTemperatureUnitConverter}, Mode=TwoWay}" 
+                                    IsEnabled="{Binding IsOverwritten}"
+                                    ErrorText=""
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Grid.Row="5"
+                                    Grid.Column="1" />
+
+
+                        <Label Text="Tagestiefsttemperatur (Uhrzeit): " Grid.Row="6" Grid.Column="0" VerticalOptions="CenterAndExpand" />
+
+                        <custom:CustomEntryWithErrorLabel x:Name="DailyTemperatureLowTimeLabel"
+                                    UserInput="{Binding FishedSpot.Weather.DailyTemperatureLowTime, Mode=TwoWay, Converter={StaticResource cnvStringToTimeConverter}}"
+                                    AllowNull="True"
+                                    StatusPictureIsVisible="{Binding ShowWeatherStatusPicture, Mode=TwoWay}"
+                                    StatusPicture="{Binding WheaterStatusPicture, Mode=TwoWay}" 
+                                    IsEnabled="{Binding IsOverwritten}"
+                                    ErrorText=""
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Grid.Row="6"
+                                    Grid.Column="1" />
+
+                        <Label Text="Mondphase: " Grid.Row="7" Grid.Column="0" VerticalOptions="CenterAndExpand" />
+
+                        <custom:CustomEntryWithErrorLabel x:Name="MoonPhaseLabel"
+                                    UserInput="{Binding FishedSpot.Weather.MoonPhase, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}"
+                                    AllowNull="True"
+                                    StatusPictureIsVisible="{Binding ShowWeatherStatusPicture, Mode=TwoWay}"
+                                    StatusPicture="{Binding WheaterStatusPicture, Mode=TwoWay}" 
+                                    IsEnabled="{Binding IsOverwritten}"
+                                    ErrorText=""
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Grid.Row="7"
+                                    Grid.Column="1" />
+
+
+                        <Label Text="Luftfeuchtigkeit: " Grid.Row="8" Grid.Column="0" VerticalOptions="CenterAndExpand" />
+
+                        <custom:CustomEntryWithErrorLabel x:Name="HumidityLabel"
+                                    UserInput="{Binding FishedSpot.Weather.Humidity, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}"
+                                    AllowNull="True"
+                                    StatusPictureIsVisible="{Binding ShowWeatherStatusPicture, Mode=TwoWay}"
+                                    StatusPicture="{Binding WheaterStatusPicture, Mode=TwoWay}" 
+                                     AdditionalTextIsVisible="True"
+                                    AdditionalText="%" 
+                                    IsEnabled="{Binding IsOverwritten}"
+                                    ErrorText=""
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Grid.Row="8"
+                                    Grid.Column="1" />
+
+
+                        <Label Text="Luftdruck: " Grid.Row="9" Grid.Column="0" VerticalOptions="CenterAndExpand" />
+
+                        <custom:CustomEntryWithErrorLabel x:Name="AirPressureLabel"
+                                    UserInput="{Binding FishedSpot.Weather.AirPressureInHPA, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0}'}"
+                                    AllowNull="True"
+                                    StatusPictureIsVisible="{Binding ShowWeatherStatusPicture, Mode=TwoWay}"
+                                    StatusPicture="{Binding WheaterStatusPicture, Mode=TwoWay}" 
+                                    AdditionalTextIsVisible="True"
+                                    AdditionalText="hPa" 
+                                    IsEnabled="{Binding IsOverwritten}"
+                                    ErrorText=""
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Grid.Row="9"
+                                    Grid.Column="1" />
+
+
+                        <Label Text="Sonnenaufgang: " Grid.Row="10" Grid.Column="0" VerticalOptions="CenterAndExpand" />
+
+                        <custom:CustomEntryWithErrorLabel x:Name="SunRiseTimeLabel"
+                                    UserInput="{Binding FishedSpot.Weather.SunRiseTime, Mode=TwoWay, Converter={StaticResource cnvStringToTimeConverter}}"
+                                    AllowNull="True"
+                                    StatusPictureIsVisible="{Binding ShowWeatherStatusPicture, Mode=TwoWay}"
+                                    StatusPicture="{Binding WheaterStatusPicture, Mode=TwoWay}" 
+                                    IsEnabled="{Binding IsOverwritten}"
+                                    ErrorText=""
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Grid.Row="10"
+                                    Grid.Column="1" />
+
+
+                        <Label Text="Sonnenuntergang: " Grid.Row="11" Grid.Column="0" VerticalOptions="CenterAndExpand" />
+
+                        <custom:CustomEntryWithErrorLabel x:Name="SunSetTimeLabel"
+                                    UserInput="{Binding FishedSpot.Weather.SunSetTime, Mode=TwoWay, Converter={StaticResource cnvStringToTimeConverter}}"
+                                    AllowNull="True"
+                                    StatusPictureIsVisible="{Binding ShowWeatherStatusPicture, Mode=TwoWay}"
+                                    StatusPicture="{Binding WheaterStatusPicture, Mode=TwoWay}" 
+                                    IsEnabled="{Binding IsOverwritten}"
+                                    ErrorText=""
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Grid.Row="11"
+                                    Grid.Column="1" />
+
+
+                        <Label Text="UV Index: " Grid.Row="12" Grid.Column="0" VerticalOptions="CenterAndExpand" />
+
+                        <custom:CustomEntryWithErrorLabel x:Name="UVIndexLabel"
+                                    UserInput="{Binding FishedSpot.Weather.UVIndex, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}"
+                                    AllowNull="True"
+                                    StatusPictureIsVisible="{Binding ShowWeatherStatusPicture, Mode=TwoWay}"
+                                    StatusPicture="{Binding WheaterStatusPicture, Mode=TwoWay}" 
+                                    IsEnabled="{Binding IsOverwritten}"
+                                    ErrorText=""
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Grid.Row="12"
+                                    Grid.Column="1" />
+
+
+                        <Label Text="Fernsicht: " Grid.Row="13" Grid.Column="0" VerticalOptions="CenterAndExpand" />
+
+                        <custom:CustomEntryWithErrorLabel x:Name="VisibilityLabel"
+                                    UserInput="{Binding FishedSpot.Weather.VisibilityInKM, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}"
+                                    AllowNull="True"
+                                    StatusPictureIsVisible="{Binding ShowWeatherStatusPicture, Mode=TwoWay}"
+                                    StatusPicture="{Binding WheaterStatusPicture, Mode=TwoWay}" 
+                                    IsEnabled="{Binding IsOverwritten}"
+                                    ErrorText=""
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Grid.Row="13"
+                                    Grid.Column="1" />
+
+
+                        <Label Text="Windrichtung: " Grid.Row="14" Grid.Column="0" VerticalOptions="CenterAndExpand" />
+
+                        <custom:CustomEntryWithErrorLabel x:Name="WindBearingLabel"
+                                    UserInput="{Binding FishedSpot.Weather.WindBearing, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}"
+                                    AllowNull="True"
+                                    StatusPictureIsVisible="{Binding ShowWeatherStatusPicture, Mode=TwoWay}"
+                                    StatusPicture="{Binding WheaterStatusPicture, Mode=TwoWay}" 
+                                    IsEnabled="{Binding IsOverwritten}"
+                                    ErrorText=""
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Grid.Row="14"
+                                    Grid.Column="1" />
+
+
+                        <Label Text="Windgeschwindigkeit: " Grid.Row="15" Grid.Column="0" VerticalOptions="CenterAndExpand" />
+
+                        <custom:CustomEntryWithErrorLabel x:Name="WindSpeedLabel"
+                                    UserInput="{Binding FishedSpot.Weather.WindSpeedInMS, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}"
+                                    AllowNull="True"
+                                    StatusPictureIsVisible="{Binding ShowWeatherStatusPicture, Mode=TwoWay}"
+                                    StatusPicture="{Binding WheaterStatusPicture, Mode=TwoWay}" 
+                                    AdditionalTextIsVisible="True"
+                                    AdditionalText="m/s"                                                       
+                                    IsEnabled="{Binding IsOverwritten}"
+                                    ErrorText=""
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Grid.Row="15"
+                                    Grid.Column="1" />
+
+
+                        <Label Text="Bewölkungsgrad: " Grid.Row="16" Grid.Column="0" VerticalOptions="CenterAndExpand" />
+
+                        <custom:CustomEntryWithErrorLabel x:Name="CloudCoverLabel"
+                                    UserInput="{Binding FishedSpot.Weather.CloudCover, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}"
+                                    AllowNull="True"
+                                    StatusPictureIsVisible="{Binding ShowWeatherStatusPicture, Mode=TwoWay}"
+                                    StatusPicture="{Binding WheaterStatusPicture, Mode=TwoWay}" 
+                                    AdditionalTextIsVisible="True"
+                                    AdditionalText="%"                                                       
+                                    IsEnabled="{Binding IsOverwritten}"
+                                    ErrorText=""
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Grid.Row="16"
+                                    Grid.Column="1" />
+
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
             <StackLayout IsVisible="{Binding IsBusy}" Style="{StaticResource IndicatorStackLayout}">
                 <ActivityIndicator IsRunning="{Binding IsBusy}" />
             </StackLayout>

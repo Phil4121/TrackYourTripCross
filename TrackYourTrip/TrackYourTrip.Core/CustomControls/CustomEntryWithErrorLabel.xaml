@@ -11,9 +11,9 @@
         <converter:IsValidToIsVisibleConverter x:Key="cnvIsValidToIsVisibleConverter" />
         <converter:BooleanToHeightRequestConverter x:Key="cnvBooleanToHeight" />
     </ContentView.Resources>
-    <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" WidthRequest="110">
-        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" WidthRequest="110">
-            <Entry x:Name="MainEntry" Text="{Binding UserInput, Mode=TwoWay}" WidthRequest="50" HorizontalOptions="Start" />
+    <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" WidthRequest="115">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" WidthRequest="115">
+            <Entry x:Name="MainEntry" Text="{Binding UserInput, Mode=TwoWay}" WidthRequest="55" HorizontalOptions="Start" />
             <Label x:Name="AdditionalTextLabel" 
                    Text="{Binding AdditionalText, Mode=TwoWay}"
                    WidthRequest="40"

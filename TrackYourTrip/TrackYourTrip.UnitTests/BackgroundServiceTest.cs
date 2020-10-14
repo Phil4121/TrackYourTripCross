@@ -34,9 +34,9 @@ namespace TrackYourTrip.UnitTests
             var testLat = 48.45;
             var testLng = 13.9167;
 
-            bool result = BackgroundQueueService.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
+            var result = BackgroundQueueService.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
 
-            Assert.True(result);
+            Assert.True(result != Guid.Empty);
         }
 
         [Fact]
@@ -51,17 +51,17 @@ namespace TrackYourTrip.UnitTests
             var testLat = 48.45;
             var testLng = 13.9167;
 
-            bool result = BackgroundQueueService.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
+            var result = BackgroundQueueService.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
 
-            Assert.True(result);
+            Assert.True(result != Guid.Empty);
 
             var testSpotGuid2 = Guid.NewGuid();
             var testLat2 = 48.45;
             var testLng2 = 13.9167;
 
-            bool result2 = BackgroundQueueService.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid2, testLat2, testLng2).Result;
+            var result2 = BackgroundQueueService.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid2, testLat2, testLng2).Result;
 
-            Assert.True(result);
+            Assert.True(result != Guid.Empty);
 
 
             var model = BackgroundQueueService.PopWheaterRequestFromBackgroundQueue(_connection).Result;
@@ -89,15 +89,15 @@ namespace TrackYourTrip.UnitTests
             var testLat = 48.45;
             var testLng = 13.9167;
 
-            bool result = BackgroundQueueService.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
+            var result = BackgroundQueueService.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
 
-            Assert.True(result);
+            Assert.True(result != Guid.Empty);
 
             var model = BackgroundQueueService.PopWheaterRequestFromBackgroundQueue(_connection).Result;
 
-            result = BackgroundQueueService.RemoveElementFromQueue(_connection, model).Result;
+            bool res = BackgroundQueueService.RemoveElementFromQueue(_connection, model).Result;
 
-            Assert.True(result);
+            Assert.True(res);
 
             model = BackgroundQueueService.PopWheaterRequestFromBackgroundQueue(_connection).Result;
 
@@ -115,9 +115,9 @@ namespace TrackYourTrip.UnitTests
             var testLat = 48.45;
             var testLng = 13.9167;
 
-            bool result = BackgroundQueueService.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
+            var result = BackgroundQueueService.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
 
-            Assert.True(result);
+            Assert.True(result != Guid.Empty);
 
             int cnt = BackgroundQueueService.GetQueueElementCount(_connection).Result;
 
@@ -125,9 +125,9 @@ namespace TrackYourTrip.UnitTests
 
             var model = BackgroundQueueService.PopWheaterRequestFromBackgroundQueue(_connection).Result;
 
-            result = BackgroundQueueService.RemoveElementFromQueue(_connection, model).Result;
+            bool res = BackgroundQueueService.RemoveElementFromQueue(_connection, model).Result;
 
-            Assert.True(result);
+            Assert.True(res);
 
             cnt = BackgroundQueueService.GetQueueElementCount(_connection).Result;
 

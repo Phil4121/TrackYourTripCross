@@ -73,9 +73,9 @@ namespace TrackYourTrip.UnitTests
             var testLat = 48.45;
             var testLng = 13.9167;
 
-            bool result = BackgroundQueueService.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
+             var result = BackgroundQueueService.PushWheaterRequestToBackgroundQueue(_connection, testSpotGuid, testLat, testLng).Result;
 
-            Assert.True(result);
+            Assert.True(result != Guid.Empty);
 
             await BackgroundWorkerService.RunBackgroundWorkerService(_connection, new CancellationToken(false));
 
