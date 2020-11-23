@@ -125,8 +125,10 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                     ID_Trip = Trip.Id,
                     ID_FishingArea = fishingArea.Id,
                     Trip = Trip,
-                    FishingArea = fishingArea,
-                };       
+                    FishingArea = fishingArea
+                };
+
+                fishedSpot.Water = CopyPreSettingsToWaterModel(fishedSpot);
 
                 await NavigationService.Navigate<SpotsViewModel, OverviewArgs, SpotsViewModel>(new OverviewArgs(false, fishingArea, fishedSpot, PageHelper.NEWFISHEDSPOTOVERVIEW_PAGE));
             }
@@ -137,6 +139,28 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             finally
             {
                 IsBusy = false;
+            }
+
+            FishedSpotWaterModel CopyPreSettingsToWaterModel(FishedSpotModel spot)
+            {
+                var water = new FishedSpotWaterModel();
+                var gs = new GlobalSettings();
+
+                water.ID_FishedSpot = spot.Id;
+                water.IsNew = true;
+
+                if (gs.PreDefinedSpotSettings != null) { 
+                    water.WaterLevel = gs.PreDefinedSpotSettings.WaterLevel;
+                    water.WaterTemperature = gs.PreDefinedSpotSettings.WaterTemperature;
+                    water.ID_Current = gs.PreDefinedSpotSettings.ID_Current;
+                    water.ID_Turbidity = gs.PreDefinedSpotSettings.ID_Turbidity;
+                    water.ID_WaterColor = gs.PreDefinedSpotSettings.ID_WaterColor;
+                }
+
+                water.WaterLevelUnit = GenerallSettingsHelper.GetDefaultLengthUnit();
+                water.WaterTemperatureUnit = GenerallSettingsHelper.GetDefaultTemperatureUnit();
+
+                return water;
             }
         }
 

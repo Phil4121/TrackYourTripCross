@@ -37,17 +37,41 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             {
                 if (_preSettings == null)
                 {
-                    var tsk = MvxNotifyTask.Create(
-                        async () =>
-                        {
-                            _preSettings = await SetPreSettingsAsync();
-                        },
-                        onException: ex => LogException(ex));
+                    _preSettings = InitPreSettingsAsync();
                 }
 
                 return _preSettings;
             }
-            set => SetProperty(ref _preSettings, value);
+            set
+            {
+                SetProperty(ref _preSettings, value);
+            }
+        }
+
+        public double WaterTemperature
+        {
+            get => PreSettings.WaterTemperature;
+            set
+            {
+                PreSettings.WaterTemperature = value;
+
+                UpdateGlobalSettings();
+
+                RaisePropertyChanged(nameof(WaterTemperature));
+            }
+        }
+
+        public double WaterLevel
+        {
+            get => PreSettings.WaterLevel;
+            set
+            {
+                PreSettings.WaterLevel = value;
+
+                UpdateGlobalSettings();
+
+                RaisePropertyChanged(nameof(WaterLevel));
+            }
         }
 
         public Guid SelectedWaterColorId
@@ -65,6 +89,8 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                     return;
 
                 PreSettings.ID_WaterColor = value;
+
+                UpdateGlobalSettings();
 
                 RaisePropertyChanged(nameof(SelectedWaterColorId));
             }
@@ -93,6 +119,8 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
                 PreSettings.ID_Turbidity = value;
 
+                UpdateGlobalSettings();
+
                 RaisePropertyChanged(nameof(SelectedTurbidityId));
             }
         }
@@ -119,6 +147,8 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                     return;
 
                 PreSettings.ID_Current = value;
+
+                UpdateGlobalSettings();
 
                 RaisePropertyChanged(nameof(SelectedCurrentId));
             }
@@ -147,6 +177,8 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
                 PreSettings.ID_BaitColor = value;
 
+                UpdateGlobalSettings();
+
                 RaisePropertyChanged(nameof(SelectedBaitColorId));
             }
         }
@@ -174,6 +206,8 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
                 PreSettings.ID_BaitType = value;
 
+                UpdateGlobalSettings();
+
                 RaisePropertyChanged(nameof(SelectedBaitTypeId));
             }
         }
@@ -200,13 +234,6 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             return base.Initialize();
         }
 
-        public override void ViewDisappearing()
-        {
-            base.ViewDisappearing();
-
-            _globalSettings.PreDefinedSpotSettings = PreSettings;
-        }
-
         public override void ViewAppearing()
         {
             base.ViewAppearing();
@@ -222,32 +249,26 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                 MvxNotifyTask.Create(
                         async () =>
                         {
-                            PreSettings = await InitPreSettingsAsync();
+                            PreSettings = InitPreSettingsAsync();
                             await RaisePropertyChanged(nameof(PreSettings));
                         }, onException: ex => LogException(ex));
             }
         }
 
-        async Task<PreDefinedSpotSettings> SetPreSettingsAsync()
+        PreDefinedSpotSettings InitPreSettingsAsync()
         {
-            var preSettings = await InitPreSettingsAsync();
-
-            preSettings.ID_Turbidity = SelectedTurbidityId;
-            preSettings.ID_WaterColor = SelectedWaterColorId;
-            preSettings.ID_Current = SelectedCurrentId;
+            var preSettings = new PreDefinedSpotSettings
+            {
+                WaterTemperatureUnit = GenerallSettingsHelper.GetDefaultTemperatureUnit(),
+                WaterLevelUnit = GenerallSettingsHelper.GetDefaultLengthUnit()
+            };
 
             return preSettings;
         }
 
-        async Task<PreDefinedSpotSettings> InitPreSettingsAsync()
+        void UpdateGlobalSettings()
         {
-            var preSettings = new PreDefinedSpotSettings();
-            var settings = await DataServiceFactory.GetGenerallSettingFactory().GetItemsAsync();
-
-            preSettings.WaterTemperatureUnit = GenerallSettingsHelper.GetDefaultTemperatureUnit();
-            preSettings.WaterLevelUnit = GenerallSettingsHelper.GetDefaultLengthUnit();
-
-            return preSettings;
+            _globalSettings.PreDefinedSpotSettings = PreSettings;
         }
 
         async Task PreFillFieldsAsync()

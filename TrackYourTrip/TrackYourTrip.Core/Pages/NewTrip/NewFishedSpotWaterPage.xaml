@@ -13,26 +13,77 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              mc:Ignorable="d"
              x:Class="TrackYourTrip.Core.Pages.NewTrip.NewFishedSpotWaterPage"
+             xmlns:converter="clr-namespace:TrackYourTrip.Core.Converters"    
              Title="{Binding Title}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="{Binding SaveCommandTitle}" Order="Primary" Command="{mvxBind:MvxBind SaveCommand}" />
     </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <converter:StringToDoubleConverter x:Key="cnvStringToDoubleConverter" />
+        <converter:IntToTemperatureUnitConverter x:Key="cnvIntToTemperatureUnitConverter" />
+        <converter:NegateBooleanConverter x:Key="cnvNegateBooleanConverter" />
+        <converter:StringToTimeConverter x:Key="cnvStringToTimeConverter" />
+        <converter:IntToLengthUnitConverter x:Key="cnvIntToLengthUnitConverter" />
+    </ContentPage.Resources>
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="80" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
+            <ScrollView>
+                <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="150" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
 
+                        <Label Text="Wassertemperatur:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
 
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="0" Grid.Column="1">
+                            <Entry Text="{Binding FishedSpot.Water.WaterTemperature, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}" WidthRequest="50"  />
+                            <Label Text="{Binding FishedSpot.Water.WaterTemperatureUnit, Converter={StaticResource cnvIntToTemperatureUnitConverter}}" VerticalOptions="Center" WidthRequest="30" />
+                        </StackLayout>
 
-                </Grid>
-            </StackLayout>
+                        <Label Text="Wasserstand:" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="1" Grid.Column="1">
+                            <Entry Text="{Binding FishedSpot.Water.WaterLevel, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}" WidthRequest="50"  />
+                            <Label Text="{Binding FishedSpot.Water.WaterLevelUnit, Converter={StaticResource cnvIntToLengthUnitConverter}, ConverterParameter='m'}" VerticalOptions="Center" WidthRequest="30" />
+                        </StackLayout>
+
+                        <Label Text="Wasserfarbe:" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="2" Grid.Column="1">
+                            <custom:CustomPickerWithErrorLabel ItemsSource="{Binding WaterColors}" 
+                                             DisplayMemberPath="WaterColor" 
+                                             SelectedValuePath="Id" 
+                                             SelectedValue="{Binding FishedSpot.Water.ID_WaterColor, Mode=TwoWay}"
+                                             WidthRequest="100"/>
+                        </StackLayout>
+
+                        <Label Text="Wassertrübung:" Grid.Row="3" Grid.Column="0" VerticalOptions="Center" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="3" Grid.Column="1">
+                            <custom:CustomPickerWithErrorLabel ItemsSource="{Binding Turbidities}" 
+                                             DisplayMemberPath="Turbidity" 
+                                             SelectedValuePath="Id" 
+                                             SelectedValue="{Binding FishedSpot.Water.ID_Turbidity, Mode=TwoWay}"
+                                             WidthRequest="150"/>
+                        </StackLayout>
+
+                        <Label Text="Strömung:" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="4" Grid.Column="1">
+                            <custom:CustomPickerWithErrorLabel ItemsSource="{Binding Currents}" 
+                                             DisplayMemberPath="Current" 
+                                             SelectedValuePath="Id" 
+                                             SelectedValue="{Binding FishedSpot.Water.ID_Current, Mode=TwoWay}"
+                                             WidthRequest="100"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
             <StackLayout IsVisible="{Binding IsBusy}" Style="{StaticResource IndicatorStackLayout}">
                 <ActivityIndicator IsRunning="{Binding IsBusy}" />
             </StackLayout>

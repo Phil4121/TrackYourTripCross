@@ -36,13 +36,13 @@
                         <Label Text="Wassertemperatur:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="0" Grid.Column="1">
-                            <Entry Text="{Binding PreSettings.WaterTemperature, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}" WidthRequest="50"  />
+                            <Entry Text="{Binding WaterTemperature, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}" WidthRequest="50"  />
                             <Label Text="{Binding PreSettings.WaterTemperatureUnit, Converter={StaticResource cnvIntToTemperatureUnitConverter}}" VerticalOptions="Center" WidthRequest="30" />
                         </StackLayout>
 
                         <Label Text="Wasserstand:" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" />
                         <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="1" Grid.Column="1">
-                            <Entry Text="{Binding PreSettings.WaterLevel, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}" WidthRequest="50"  />
+                            <Entry Text="{Binding WaterLevel, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}" WidthRequest="50"  />
                             <Label Text="{Binding PreSettings.WaterLevelUnit, Converter={StaticResource cnvIntToLengthUnitConverter}, ConverterParameter='m'}" VerticalOptions="Center" WidthRequest="30" />
                         </StackLayout>
 

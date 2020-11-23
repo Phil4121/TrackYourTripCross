@@ -124,7 +124,6 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             get => FishedSpot.IsNew;
         }
 
-
         public bool IsOverwritten
         {
             get => FishedSpot.Weather.IsOverwritten;

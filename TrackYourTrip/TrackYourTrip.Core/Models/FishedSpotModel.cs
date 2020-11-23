@@ -23,6 +23,7 @@ namespace TrackYourTrip.Core.Models
             {
                 ID_FishedSpotWeather = Guid.NewGuid();
                 Weather = new FishedSpotWeatherModel();
+                Water = new FishedSpotWaterModel();
             }
         }
 
@@ -52,5 +53,8 @@ namespace TrackYourTrip.Core.Models
 
         [Ignore]
         public FishedSpotWeatherModel Weather { get; set; }
+
+        [Ignore]
+        public FishedSpotWaterModel Water { get; set; }
     }
 }

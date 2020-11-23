@@ -22,6 +22,7 @@
         public const string FISHINGAREA_TABLE = "FishingAreas";
         public const string FISHEDSPOT_TABLE = "FishedSpots";
         public const string FISHEDSPOTWEATHER_TABLE = "FishedSpotsWheater";
+        public const string FISHEDSPOTWATER_TABLE = "FishedSpotsWater";
 
         public const string SPOT_TABLE = "Spots";
         public const string SPOTTYPE_TABLE = "SpotTypes";
