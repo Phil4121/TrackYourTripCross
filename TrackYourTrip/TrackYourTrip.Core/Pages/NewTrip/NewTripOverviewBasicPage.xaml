@@ -66,6 +66,10 @@
                             Command="{Binding CheckInToSpotCommand}"
                             HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
                 </StackLayout>
+
+                <StackLayout>
+                    
+                </StackLayout>
             </StackLayout>
             <StackLayout IsVisible="{Binding IsBusy}" Style="{StaticResource IndicatorStackLayout}">
                 <ActivityIndicator IsRunning="{Binding IsBusy}" />

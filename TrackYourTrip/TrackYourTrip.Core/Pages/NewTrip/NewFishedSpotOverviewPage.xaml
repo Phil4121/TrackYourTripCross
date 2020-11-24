@@ -5,9 +5,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:mvxBind="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
              xmlns:behavior="clr-namespace:TrackYourTrip.Core.Behaviors"
              mc:Ignorable="d"
              x:Class="TrackYourTrip.Core.Pages.NewTrip.NewFishedSpotOverviewPage">
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="{Binding SaveCommandTitle}" Order="Primary" Command="{mvxBind:MvxBind SaveCommand}" />
+    </TabbedPage.ToolbarItems>
     <TabbedPage.Behaviors>
         <behavior:SharedFishedSpotTabBehavior/>
     </TabbedPage.Behaviors>

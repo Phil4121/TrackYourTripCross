@@ -12,9 +12,6 @@
              mc:Ignorable="d"
              x:Class="TrackYourTrip.Core.Pages.NewTrip.NewFishedSpotWeatherPage"
              Title="{Binding Title}">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="{Binding SaveCommandTitle}" Order="Primary" Command="{mvxBind:MvxBind SaveCommand}" />
-    </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <converter:StringToDoubleConverter x:Key="cnvStringToDoubleConverter" />
         <converter:IntToTemperatureUnitConverter x:Key="cnvIntToTemperatureUnitConverter" />

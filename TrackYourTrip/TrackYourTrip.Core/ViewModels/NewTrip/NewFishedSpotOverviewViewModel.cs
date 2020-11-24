@@ -37,10 +37,20 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             set => SetProperty(ref _fishedSpot, value);
         }
 
+        private IDataServiceFactory<FishedSpotModel> _dataStore;
+
         public override IDataServiceFactory<FishedSpotModel> DataStore
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get
+            {
+                if (_dataStore == null)
+                {
+                    _dataStore = DataServiceFactory.GetFishedSpotFactory();
+                }
+
+                return _dataStore;
+            }
+            set => _dataStore = value;
         }
 
         public override bool IsNew
@@ -63,7 +73,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         public override void Validate()
         {
-            throw new NotImplementedException();
+            FishedSpotModel.IsValid = true;
         }
 
         public override void ViewAppearing()
@@ -74,6 +84,33 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             {
                 ShowInitialViewModels();
                 _firstTime = false;
+            }
+        }
+
+        public override async Task SaveAsync()
+        {
+
+            try
+            {
+                IsBusy = true;
+
+                await base.SaveAsync();
+
+                if (IsValid)
+                {
+                    await DataStore.SaveItemAsync(FishedSpotModel);
+
+                    await NavigationService.Navigate<NewTripOverviewViewModel, TripModel, OperationResult<IModel>>(FishedSpotModel.Trip);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                IsBusy = false;
             }
         }
 

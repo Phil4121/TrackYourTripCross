@@ -14,9 +14,6 @@
              mc:Ignorable="d"
              x:Class="TrackYourTrip.Core.Pages.NewTrip.NewFishedSpotBasicPage"
              Title="{Binding Title}">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="{Binding SaveCommandTitle}" Order="Primary" Command="{mvxBind:MvxBind SaveCommand}" />
-    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
