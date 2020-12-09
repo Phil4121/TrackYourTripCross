@@ -26,6 +26,7 @@ namespace SmartHome.Droid
           : base(handle, transer)
         {
             CopyCompleted = false;
+
         }
 
         public override void OnCreate()

@@ -171,6 +171,12 @@
   <data name="NewFishedSpotBasicPageTitle" xml:space="preserve">
     <value>Spot</value>
   </data>
+  <data name="NewFishedSpotBitePageTitle" xml:space="preserve">
+    <value>Add Bite</value>
+  </data>
+  <data name="NewFishedSpotCatchPageTitle" xml:space="preserve">
+    <value>Add Catch</value>
+  </data>
   <data name="NewFishedSpotWaterPageTitle" xml:space="preserve">
     <value>Water-Settings</value>
   </data>

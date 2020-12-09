@@ -24,6 +24,8 @@ namespace TrackYourTrip.Core.Models
                 ID_FishedSpotWeather = Guid.NewGuid();
                 Weather = new FishedSpotWeatherModel();
                 Water = new FishedSpotWaterModel();
+                Bites = new List<FishedSpotBiteModel>();
+                Catches = new List<FishedSpotCatchModel>();
             }
         }
 
@@ -33,6 +35,7 @@ namespace TrackYourTrip.Core.Models
 
         public Guid ID_FishingArea { get; set; }
 
+        [ForeignKey(typeof(SpotModel)), NotNull]
         public Guid ID_Spot { get; set; }
 
         public Guid ID_FishedSpotWeather { get; set; }
@@ -41,20 +44,50 @@ namespace TrackYourTrip.Core.Models
 
         public DateTime EndDateTime { get; set; }
 
+        [Ignore]
+        public int BiteCount
+        {
+            get
+            {
+                if (Bites == null)
+                    return 0;
+
+                return Bites.Count;
+            }
+        }
+
+        [Ignore]
+        public int CatchCount
+        {
+            get
+            {
+                if (Catches == null)
+                    return 0;
+
+                return Catches.Count;
+            }
+        }
+
 
         [Ignore]
         public TripModel Trip { get; set; }
 
-        [Ignore]
+        [OneToOne(CascadeOperations = CascadeOperation.CascadeRead)]
         public SpotModel Spot { get; set; }
 
         [Ignore]
         public FishingAreaModel FishingArea { get; set; }
 
-        [Ignore]
+        [OneToOne(CascadeOperations = CascadeOperation.CascadeRead)]
         public FishedSpotWeatherModel Weather { get; set; }
 
-        [Ignore]
+        [OneToOne(CascadeOperations = CascadeOperation.CascadeRead)]
         public FishedSpotWaterModel Water { get; set; }
+
+        [OneToMany(CascadeOperations = CascadeOperation.CascadeRead)]
+        public List<FishedSpotBiteModel> Bites { get; set; }
+
+        [OneToMany(CascadeOperations = CascadeOperation.CascadeRead)]
+        public List<FishedSpotCatchModel> Catches { get; set; }
     }
 }

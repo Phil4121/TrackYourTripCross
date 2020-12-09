@@ -33,23 +33,24 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="20" />
-                        <RowDefinition Height="20" />
-                        <RowDefinition Height="15" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="15" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
 
-                    <Label Text="Beginn:" Grid.Row="0" Grid.Column="0" />
-                    <Label Text="{Binding Trip.TripDateTime}" Grid.Row="0" Grid.Column="1" />
+                        <Label Text="Beginn:" Grid.Row="0" Grid.Column="0" />
+                        <Label Text="{Binding Trip.TripDateTime}" Grid.Row="0" Grid.Column="1" />
 
-                    <maps:Map x:Name="map"
+                        <maps:Map x:Name="map"
                           InitialCameraUpdate="{Binding MapCenter}"
                           ItemsSource="{Binding Pins}"
                           ItemTemplateSelector="{StaticResource MapItemTemplateSelector}"
@@ -57,20 +58,47 @@
                           VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand"
                           HeightRequest="300" WidthRequest="300"
                           Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
-                    </maps:Map>
+                        </maps:Map>
 
-                </Grid>
+                    </Grid>
 
-                <StackLayout Style="{StaticResource SpacedStackLayout}">
-                    <Button Text="{Binding CheckInButtonText}"
+                    <StackLayout Style="{StaticResource SpacedStackLayout}">
+                        <Button Text="{Binding CheckInButtonText}"
                             Command="{Binding CheckInToSpotCommand}"
                             HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
-                </StackLayout>
+                    </StackLayout>
 
-                <StackLayout>
-                    
+                    <Label Text="Bereits beangelt:" Grid.Row="0" Grid.Column="0" />
+                    <StackLayout>
+                        <ListView ItemsSource="{Binding Trip.FishedSpots}"  
+                              SelectionMode="None" 
+                              CachingStrategy="RecycleElement" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <SwipeView HorizontalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="50" BackgroundColor="Transparent">
+                                            <SwipeView.Content>
+                                                <StackLayout Padding="10" Orientation="Horizontal">
+                                                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                                                        <Label Text="{Binding Spot.Spot}" FontSize="18" TextColor="White" />
+                                                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                                            <Label Text="(" />
+                                                            <Label Text="{Binding BiteCount}" />
+                                                            <Label Text="/" />
+                                                            <Label Text="{Binding CatchCount}" />
+                                                            <Label Text=")" />
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </SwipeView.Content>
+                                        </SwipeView>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
                 </StackLayout>
-            </StackLayout>
+            </ScrollView>
             <StackLayout IsVisible="{Binding IsBusy}" Style="{StaticResource IndicatorStackLayout}">
                 <ActivityIndicator IsRunning="{Binding IsBusy}" />
             </StackLayout>

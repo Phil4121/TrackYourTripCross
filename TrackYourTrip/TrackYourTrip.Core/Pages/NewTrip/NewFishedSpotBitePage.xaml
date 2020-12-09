@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:custom="clr-namespace:TrackYourTrip.Core.CustomControls"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:mvxBind="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"   
+             xmlns:other="clr-namespace:TrackYourTrip.Core.ViewModels.Other"     
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             mc:Ignorable="d"
+             x:Class="TrackYourTrip.Core.Pages.NewTrip.NewFishedSpotBitePage"
+             Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{Binding SaveCommandTitle}" Order="Primary" Command="{mvxBind:MvxBind SaveCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Uhrzeit:" Grid.Row="0" Grid.Column="0" />
+                    <Label Text="{Binding FishedSpotBite.BiteDateTime}" Grid.Row="0" Grid.Column="1" />
+
+                    <Label Text="Distanz:" Grid.Row="1" Grid.Column="0" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="1" Grid.Column="1">
+                        <custom:CustomPickerWithErrorLabel ItemsSource="{Binding BiteDistances}" 
+                                             DisplayMemberPath="BiteDistance" 
+                                             SelectedValuePath="Id" 
+                                             SelectedValue="{Binding SelectedBiteDistance, Mode=TwoWay}"
+                                             WidthRequest="100"/>
+                    </StackLayout>
+
+                    <Label Text="Ködertyp:" Grid.Row="2" Grid.Column="0" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="2" Grid.Column="1">
+                        <custom:CustomPickerWithErrorLabel ItemsSource="{Binding BaitTypes}" 
+                                             DisplayMemberPath="BaitType" 
+                                             SelectedValuePath="Id" 
+                                             SelectedValue="{Binding SelectedBaitType, Mode=TwoWay}"
+                                             WidthRequest="100"/>
+                    </StackLayout>
+
+                    <Label Text="Köderfarbe:" Grid.Row="3" Grid.Column="0" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="3" Grid.Column="1">
+                        <custom:CustomPickerWithErrorLabel ItemsSource="{Binding BaitColors}" 
+                                             DisplayMemberPath="BaitColor" 
+                                             SelectedValuePath="Id" 
+                                             SelectedValue="{Binding SelectedBaitColor, Mode=TwoWay}"
+                                             WidthRequest="100"/>
+                    </StackLayout>
+
+                    <Label Text="vermutete Fischart:" Grid.Row="4" Grid.Column="0" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="4" Grid.Column="1">
+                        <custom:CustomPickerWithErrorLabel ItemsSource="{Binding Fishes}" 
+                                             DisplayMemberPath="FishName" 
+                                             SelectedValuePath="Id" 
+                                             SelectedValue="{Binding SelectedFishId, Mode=TwoWay}"
+                                             WidthRequest="100"/>
+                    </StackLayout>
+
+                </Grid>
+            </StackLayout>
+            <StackLayout IsVisible="{Binding IsBusy}" Style="{StaticResource IndicatorStackLayout}">
+                <ActivityIndicator IsRunning="{Binding IsBusy}" />
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</mvx:MvxContentPage>

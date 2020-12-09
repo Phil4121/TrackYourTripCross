@@ -168,6 +168,12 @@
   <data name="NewFishedSpotBasicPageTitle" xml:space="preserve">
     <value>Angelplatz</value>
   </data>
+  <data name="NewFishedSpotBitePageTitle" xml:space="preserve">
+    <value>Biss hinzufügen</value>
+  </data>
+  <data name="NewFishedSpotCatchPageTitle" xml:space="preserve">
+    <value>Fang hinzufügen</value>
+  </data>
   <data name="NewFishedSpotWaterPageTitle" xml:space="preserve">
     <value>Wasser-Einstellungen</value>
   </data>

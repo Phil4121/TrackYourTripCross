@@ -9,6 +9,7 @@ namespace TrackYourTrip.Core
         public FormsApp()
         {
             InitializeComponent();
+
             XF.Material.Forms.Material.Init(this);
         }
     }

@@ -31,10 +31,19 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         private bool _firstTime = true;
 
         private FishedSpotModel _fishedSpot = new FishedSpotModel();
-        public FishedSpotModel FishedSpotModel
+        public FishedSpotModel FishedSpot
         {
             get => _fishedSpot;
-            set => SetProperty(ref _fishedSpot, value);
+            set {
+
+                if (value.Weather == null)
+                    value.Weather = new FishedSpotWeatherModel();
+
+                if (value.Water == null)
+                    value.Water = new FishedSpotWaterModel();
+
+                    SetProperty(ref _fishedSpot, value);
+                }
         }
 
         private IDataServiceFactory<FishedSpotModel> _dataStore;
@@ -57,7 +66,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         {
             get
             {
-                return FishedSpotModel.IsNew;
+                return FishedSpot.IsNew;
             }
         }
 
@@ -67,13 +76,13 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         public override void Prepare(FishedSpotModel parameter)
         {
-            FishedSpotModel = parameter;
+            FishedSpot = parameter;
             base.Prepare(parameter);
         }
 
         public override void Validate()
         {
-            FishedSpotModel.IsValid = true;
+            FishedSpot.IsValid = true;
         }
 
         public override void ViewAppearing()
@@ -98,9 +107,11 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
                 if (IsValid)
                 {
-                    await DataStore.SaveItemAsync(FishedSpotModel);
+                    await DataStore.SaveItemAsync(FishedSpot);
 
-                    await NavigationService.Navigate<NewTripOverviewViewModel, TripModel, OperationResult<IModel>>(FishedSpotModel.Trip);
+                    var trip = await DataServiceFactory.GetTripFactory().GetItemAsync(FishedSpot.ID_Trip);
+
+                    await NavigationService.Navigate<NewTripOverviewViewModel, TripModel, OperationResult<IModel>>(trip);
                 }
 
             }
@@ -118,9 +129,9 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         {
             var tasks = new List<Task>
             {
-                NavigationService.Navigate<NewFishedSpotBasicViewModel, FishedSpotModel, OperationResult<IModel>>(FishedSpotModel),
-                NavigationService.Navigate<NewFishedSpotWaterViewModel, FishedSpotModel, OperationResult<IModel>>(FishedSpotModel),
-                NavigationService.Navigate<NewFishedSpotWeatherViewModel, FishedSpotModel, OperationResult<IModel>>(FishedSpotModel)
+                NavigationService.Navigate<NewFishedSpotBasicViewModel, FishedSpotModel, OperationResult<IModel>>(FishedSpot),
+                NavigationService.Navigate<NewFishedSpotWaterViewModel, FishedSpotModel, OperationResult<IModel>>(FishedSpot),
+                NavigationService.Navigate<NewFishedSpotWeatherViewModel, FishedSpotModel, OperationResult<IModel>>(FishedSpot)
             };
 
 

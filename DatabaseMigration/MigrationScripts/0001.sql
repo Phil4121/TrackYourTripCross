@@ -65,6 +65,12 @@ CREATE TABLE WheaterSituations (
 	SortOrder			INTEGER		NOT NULL
 );
 
+CREATE TABLE BiteDistances (
+	ID				TEXT		PRIMARY KEY,
+	BiteDistance	TEXT		NOT NULL,
+	SortOrder		INTEGER		NOT NULL
+);
+
 CREATE TABLE Settings (
 	ID					TEXT		PRIMARY KEY,
 	Setting				TEXT		NOT NULL,
@@ -134,6 +140,7 @@ CREATE TABLE FishedSpots (
 
 CREATE TABLE FishedSpotsWheater (
 	ID					TEXT		PRIMARY KEY,
+	ID_FishedSpot		TEXT,
 	IsOverwritten		BIT,
 	Temperature			FLOAT,
 	WeatherSituation	INT
@@ -141,8 +148,34 @@ CREATE TABLE FishedSpotsWheater (
 
 CREATE TABLE FishedSpotsWater (
 	ID					TEXT		PRIMARY KEY,
+	ID_FishedSpot		TEXT,
 	IsOverwritten		BIT,
 	Temperature			FLOAT
+);
+
+CREATE TABLE FishedSpotBite(
+	ID					TEXT		PRIMARY KEY,
+	ID_FishedSpot		TEXT,
+	ID_Trip				TEXT,
+	ID_FishingArea		TEXT,
+	ID_Spot				TEXT,
+	BiteDateTime		DATETIME,
+	ID_BiteDistance		TEXT,
+	ID_BaitType			TEXT,
+	ID_BaitColor		TEXT,
+	ID_FishAssumed		TEXT
+);
+
+CREATE TABLE FishedSpotCatch(
+	ID					TEXT		PRIMARY KEY,
+	ID_FishedSpot		TEXT,
+	ID_Trip				TEXT,
+	ID_FishingArea		TEXT,
+	ID_Spot				TEXT,
+	CatchDateTime		DATETIME,
+	ID_BiteDistance		TEXT,
+	ID_BaitType			TEXT,
+	ID_BaitColor		TEXT
 );
 
 INSERT INTO WaterModels (ID, Water) VALUES ('2a3eeecf-472c-4b0f-9df0-73386cb3b3f7', 'River');
@@ -174,6 +207,11 @@ INSERT INTO BaitColors (ID, BaitColor, SortOrder) VALUES ('9f7282a1-4f6a-41ff-b0
 INSERT INTO BaitColors (ID, BaitColor, SortOrder) VALUES ('9f7282a1-4f6a-41ff-b055-33af424b1b2a','neon', 4);
 
 INSERT INTO BaitTypes (ID, BaitType, SortOrder) VALUES ('e114fd48-ef4a-4126-8d90-effe1d2bc3d6','Gummiköder', 1);
+
+INSERT INTO BiteDistances (ID, BiteDistance, SortOrder) VALUES ('43b12234-730a-4118-800f-17bf612638d8','Uferbereich', 1);
+INSERT INTO BiteDistances (ID, BiteDistance, SortOrder) VALUES ('d18cf445-c43e-431f-9c19-e5bff3e37b01','nah', 2);
+INSERT INTO BiteDistances (ID, BiteDistance, SortOrder) VALUES ('78fc1801-60e4-4b3a-b5ee-7d93900d1f3b','mittel', 3);
+INSERT INTO BiteDistances (ID, BiteDistance, SortOrder) VALUES ('19861bdb-6f7a-4cbe-b173-8a45e428c0d7','weit', 4);
 
 INSERT INTO Fishes (ID, FishName, SortOrder) VALUES ('8cd19c21-bf09-43ea-b799-dbcf30183e08','Zander', 1);
 

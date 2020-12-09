@@ -21,7 +21,7 @@ namespace TrackYourTrip.Core.Models
             IsNew = isNew;
         }
 
-        [ForeignKey(typeof(TripModel)), NotNull]
+        [ForeignKey(typeof(FishedSpotModel)), NotNull]
         public Guid ID_FishedSpot { get; set; }
 
         public bool IsOverwritten { get; set; }

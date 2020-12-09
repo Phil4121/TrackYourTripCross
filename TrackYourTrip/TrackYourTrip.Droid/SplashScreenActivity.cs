@@ -20,7 +20,7 @@ namespace TrackYourTrip.Droid
         , Theme = "@style/Theme.Splash"
         , NoHistory = true
         , ScreenOrientation = ScreenOrientation.Portrait)]
-    public class SplashScreenActivity : MvxFormsSplashScreenAppCompatActivity<Setup, Core.MvxApp, Core.FormsApp>
+    public class SplashScreenActivity : MvxFormsSplashScreenActivity<Setup, Core.MvxApp, Core.FormsApp>
     {
         public SplashScreenActivity()
             : base(Resource.Layout.SplashScreen)

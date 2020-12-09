@@ -23,10 +23,13 @@
         public const string FISHEDSPOT_TABLE = "FishedSpots";
         public const string FISHEDSPOTWEATHER_TABLE = "FishedSpotsWheater";
         public const string FISHEDSPOTWATER_TABLE = "FishedSpotsWater";
+        public const string FISHEDSPOTBITE_TABLE = "FishedSpotBite";
+        public const string FISHEDSPOTCATCH_TABLE = "FishedSpotCatch";
 
         public const string SPOT_TABLE = "Spots";
         public const string SPOTTYPE_TABLE = "SpotTypes";
         public const string SPOTMARKER_TABLE = "SpotMarkers";
+        public const string BITEDISTANCE_TABLE = "BiteDistances";
 
         public const string SETTINGS_TABLE = "Settings";
 

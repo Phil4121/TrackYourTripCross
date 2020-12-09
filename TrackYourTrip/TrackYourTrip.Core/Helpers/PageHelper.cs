@@ -11,5 +11,6 @@ namespace TrackYourTrip.Core.Helpers
         public const string START_NEW_TRIP_PAGE = "StartNewTripPage";
         public const string SETTINGS_PAGE = "SettingsPage";
         public const string NEWFISHEDSPOTOVERVIEW_PAGE = "NewFishedSpotOverviewPage";
+        public const string NEWFISHEDSPOTEBITE_PAGE = "NewFishedSpotBitePage";
     }
 }

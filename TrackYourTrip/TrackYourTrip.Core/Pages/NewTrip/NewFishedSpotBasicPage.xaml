@@ -4,42 +4,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:custom="clr-namespace:TrackYourTrip.Core.CustomControls"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:mvxBind="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
-             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"   
-             xmlns:other="clr-namespace:TrackYourTrip.Core.ViewModels.Other"     
-             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              mc:Ignorable="d"
              x:Class="TrackYourTrip.Core.Pages.NewTrip.NewFishedSpotBasicPage"
              Title="{Binding Title}">
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="80" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
+                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
 
-                    <StackLayout Orientation="Vertical" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="0">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Start">
                         <Label Text="Bisse:" HorizontalOptions="Center" />
-                        <Label Text="{Binding BiteCount}" Style="{StaticResource HeadlineLabel}" HorizontalOptions="Center" />
-                        <Button Text="BISS!" HorizontalOptions="Center" />
+                        <Label Text="{Binding FishedSpot.BiteCount}" Style="{StaticResource HeadlineLabel}" HorizontalOptions="Center" />
+                        <Button Text="BISS !" Command="{Binding BiteCommand}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
                     </StackLayout>
 
-                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="End">
                         <Label Text="Fische:" HorizontalOptions="Center" />
-                        <Label Text="{Binding FishCount}" Style="{StaticResource HeadlineLabel}" HorizontalOptions="Center" />
-                        <Button Text="FISCH!" HorizontalOptions="Center" />
+                        <Label Text="{Binding FishedSpot.CatchCount}" Style="{StaticResource HeadlineLabel}" HorizontalOptions="Center" />
+                        <Button Text="FISCH !" Command="{Binding CatchCommand}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
                     </StackLayout>
 
-                </Grid>
+                </StackLayout>
             </StackLayout>
+
             <StackLayout IsVisible="{Binding IsBusy}" Style="{StaticResource IndicatorStackLayout}">
                 <ActivityIndicator IsRunning="{Binding IsBusy}" />
             </StackLayout>

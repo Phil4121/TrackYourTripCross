@@ -223,6 +223,24 @@ namespace TrackYourTrip.Core.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Add Bite ähnelt.
+        /// </summary>
+        internal static string NewFishedSpotBitePageTitle {
+            get {
+                return ResourceManager.GetString("NewFishedSpotBitePageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Add Catch ähnelt.
+        /// </summary>
+        internal static string NewFishedSpotCatchPageTitle {
+            get {
+                return ResourceManager.GetString("NewFishedSpotCatchPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Water-Settings ähnelt.
         /// </summary>
         internal static string NewFishedSpotWaterPageTitle {

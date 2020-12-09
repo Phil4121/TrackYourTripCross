@@ -25,6 +25,12 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             : base(Resources.AppResources.NewFishedSpotBasicPageTitle, mvxLogProvider, navigationService, userDialog, localizeService)
         {
 
+            BiteCommand = new MvxCommand(
+                () => NavigationTask = MvxNotifyTask.Create(NavigateToBite(), onException: ex => LogException(ex)));
+
+            CatchCommand = new MvxCommand(
+                () => NavigationTask = MvxNotifyTask.Create(NavigateToCatch(), onException: ex => LogException(ex)));
+
         }
 
         #region Properties
@@ -53,21 +59,13 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         public override bool IsNew => throw new NotImplementedException();
 
-        public int BiteCount
-        {
-            get
-            {
-                return 0;
-            }
-        }
+        #endregion
 
-        public int FishCount
-        {
-            get
-            {
-                return 0;
-            }
-        }
+        #region Commands
+
+        public IMvxCommand BiteCommand { get; private set; }
+
+        public IMvxCommand CatchCommand { get; private set; }
 
         #endregion
 
@@ -89,6 +87,63 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
         public override void Validate()
         {
             throw new NotImplementedException();
+        }
+
+        async Task NavigateToBite()
+        {
+          try
+            {
+                IsBusy = true;
+
+                GlobalSettings _globalSettings = new GlobalSettings();
+
+                var bite = new FishedSpotBiteModel()
+                {
+                    Id = Guid.NewGuid(),
+                    ID_FishedSpot = FishedSpot.Id,
+                    ID_FishingArea = FishedSpot.ID_FishingArea,
+                    ID_Trip = FishedSpot.ID_Trip,
+                    BiteDateTime = DateTime.Now,
+                    ID_BaitType = _globalSettings.PreDefinedSpotSettings != null ? _globalSettings.PreDefinedSpotSettings.ID_BaitType : Guid.Empty,
+                    ID_BaitColor = _globalSettings.PreDefinedSpotSettings != null ? _globalSettings.PreDefinedSpotSettings.ID_BaitColor : Guid.Empty
+                };
+
+                await NavigationService.Navigate<NewFishedSpotBiteViewModel, FishedSpotBiteModel, OperationResult<IModel>>(bite);
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        async Task NavigateToCatch()
+        {
+            /*  try
+              {
+                  IsBusy = true;
+
+                  var activeTrip = await DataStore.GetItemAsync(Guid.Parse(TripHelper.GetTripIdInProcess()));
+
+                  Trip = activeTrip;
+
+                  await NavigationService.Navigate<NewTripOverviewViewModel, TripModel, OperationResult<IModel>>(activeTrip);
+              }
+              catch (Exception ex)
+              {
+                  TripHelper.ResetTripInProcess();
+                  TripHelper.ResetPreSettings();
+
+                  throw;
+              }
+              finally
+              {
+                  IsBusy = false;
+              } */
         }
 
         #endregion

@@ -6,6 +6,7 @@ using MvvmCross.Plugin.Json;
 using MvvmCross.ViewModels;
 using TrackYourTrip.Core.Interfaces;
 using TrackYourTrip.Core.Services;
+using Xamarin.Forms;
 
 namespace TrackYourTrip.Core
 {
@@ -22,6 +23,8 @@ namespace TrackYourTrip.Core
                 EndingWith("Repository")
                 .AsTypes()
                 .RegisterAsLazySingleton();
+
+            Device.SetFlags(new string[] { "SwipeView_Experimental" });
 
             Mvx.IoCProvider.RegisterType<IAppSettings, GlobalSettings>();
             Mvx.IoCProvider.RegisterType<IMvxJsonConverter, MvxJsonConverter>();

@@ -130,6 +130,8 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
                 fishedSpot.Water = CopyPreSettingsToWaterModel(fishedSpot);
 
+                await DataServiceFactory.GetFishedSpotFactory().SaveItemAsync(fishedSpot);
+
                 await NavigationService.Navigate<SpotsViewModel, OverviewArgs, SpotsViewModel>(new OverviewArgs(false, fishingArea, fishedSpot, PageHelper.NEWFISHEDSPOTOVERVIEW_PAGE));
             }
             catch (Exception ex)

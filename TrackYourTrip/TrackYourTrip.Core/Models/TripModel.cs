@@ -1,6 +1,7 @@
 ﻿using SQLite;
 using SQLiteNetExtensions.Attributes;
 using System;
+using System.Collections.Generic;
 using TrackYourTrip.Core.Helpers;
 
 namespace TrackYourTrip.Core.Models
@@ -32,5 +33,8 @@ namespace TrackYourTrip.Core.Models
         public FishingAreaModel FishingArea { get; set; }
 
         public DateTime TripDateTime { get; set; }
+
+        [OneToMany("ID_Trip", CascadeOperations = CascadeOperation.CascadeRead)]
+        public List<FishedSpotModel> FishedSpots { get; set; }
     }
 }

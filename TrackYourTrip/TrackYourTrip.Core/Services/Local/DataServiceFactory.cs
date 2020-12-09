@@ -89,5 +89,20 @@ namespace TrackYourTrip.Core.Services
         {
             return new SimpleDataService<TripModel>(Connection, TableConsts.TRIP_TABLE);
         }
+
+        public static SimpleDataService<FishedSpotBiteModel> GetFishedSpotBiteFactory()
+        {
+            return new SimpleDataService<FishedSpotBiteModel>(Connection, TableConsts.FISHEDSPOTBITE_TABLE);
+        }
+
+        public static SimpleDataService<FishModel> GetFishFactory()
+        {
+            return new SimpleDataService<FishModel>(Connection, TableConsts.FISH_TABLE);
+        }
+
+        public static SimpleDataService<BiteDistanceModel> GetBiteDistanceFactory()
+        {
+            return new SimpleDataService<BiteDistanceModel>(Connection, TableConsts.BITEDISTANCE_TABLE);
+        }
     }
 }
