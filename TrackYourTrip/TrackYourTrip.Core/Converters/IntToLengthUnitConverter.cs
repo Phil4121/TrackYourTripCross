@@ -20,8 +20,9 @@ namespace TrackYourTrip.Core.Converters
             if (unit < 0)
                 return string.Empty;
 
-            if (parameter.ToString().ToLower() == "m" ||
-                parameter.ToString().ToLower() == "i")
+            if (parameter != null && 
+                (parameter.ToString().ToLower() == "m" ||
+                parameter.ToString().ToLower() == "i"))
             {
                 switch (unit)
                 {
@@ -49,7 +50,32 @@ namespace TrackYourTrip.Core.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            if (parameter != null &&
+                (parameter.ToString().ToLower() == "m" ||
+                parameter.ToString().ToLower() == "i"))
+            {
+                switch (value)
+                {
+                    case 'm':
+                        return 1;
+
+                    case "inch":
+                        return 0;
+                }
+            }
+            else
+            {
+                switch (value)
+                {
+                    case "cm":
+                        return 1;
+
+                    case "foot":
+                        return 0;
+                }
+            }
+
+            return -1;
         }
     }
 }

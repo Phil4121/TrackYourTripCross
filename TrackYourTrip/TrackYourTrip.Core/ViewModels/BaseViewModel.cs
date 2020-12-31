@@ -181,7 +181,7 @@ namespace TrackYourTrip.Core.ViewModels
         #endregion
     }
 
-    public abstract class BaseViewModel<TParameter, TResult> : BaseViewModel<TParameter>, IMvxViewModel<TParameter, TResult>
+    public abstract class BaseViewModel<TParameter, TResult> : BaseViewModel<TParameter>, IMvxViewModel<TParameter, TResult>, IMvxNotifyPropertyChanged
         where TParameter : class
         where TResult : class
 

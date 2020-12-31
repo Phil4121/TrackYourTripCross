@@ -123,27 +123,35 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         async Task NavigateToCatch()
         {
-            /*  try
-              {
-                  IsBusy = true;
+            try
+            {
+                IsBusy = true;
 
-                  var activeTrip = await DataStore.GetItemAsync(Guid.Parse(TripHelper.GetTripIdInProcess()));
+                GlobalSettings _globalSettings = new GlobalSettings();
 
-                  Trip = activeTrip;
+                var catchFished = new FishedSpotCatchModel()
+                {
+                    Id = Guid.NewGuid(),
+                    ID_FishedSpot = FishedSpot.Id,
+                    ID_FishingArea = FishedSpot.ID_FishingArea,
+                    ID_Trip = FishedSpot.ID_Trip,
+                    CatchDateTime = DateTime.Now,
+                    ID_BaitType = _globalSettings.PreDefinedSpotSettings != null ? _globalSettings.PreDefinedSpotSettings.ID_BaitType : Guid.Empty,
+                    ID_BaitColor = _globalSettings.PreDefinedSpotSettings != null ? _globalSettings.PreDefinedSpotSettings.ID_BaitColor : Guid.Empty,
+                    LengthUnit = GenerallSettingsHelper.GetDefaultLengthUnit()
+                };
 
-                  await NavigationService.Navigate<NewTripOverviewViewModel, TripModel, OperationResult<IModel>>(activeTrip);
-              }
-              catch (Exception ex)
-              {
-                  TripHelper.ResetTripInProcess();
-                  TripHelper.ResetPreSettings();
+                await NavigationService.Navigate<NewFishedSpotCatchViewModel, FishedSpotCatchModel, OperationResult<IModel>>(catchFished);
 
-                  throw;
-              }
-              finally
-              {
-                  IsBusy = false;
-              } */
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         #endregion

@@ -11,17 +11,88 @@
              xmlns:other="clr-namespace:TrackYourTrip.Core.ViewModels.Other"     
              xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:converter="clr-namespace:TrackYourTrip.Core.Converters"  
              mc:Ignorable="d"
              x:Class="TrackYourTrip.Core.Pages.NewTrip.NewFishedSpotCatchPage"
              Title="{Binding Title}">
+    <ContentPage.Resources>
+        <converter:IntToLengthUnitConverter x:Key="cnvIntToLengthUnitConverter" />
+        <converter:StringToDoubleConverter x:Key="cnvStringToDoubleConverter" />
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{Binding SaveCommandTitle}" Order="Primary" Command="{mvxBind:MvxBind SaveCommand}" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
 
+                    <Label Text="Uhrzeit:" Grid.Row="0" Grid.Column="0" />
+                    <Label Text="{Binding FishedSpotCatch.CatchDateTime}" Grid.Row="0" Grid.Column="1" />
 
+                    <Label Text="Distanz:" Grid.Row="1" Grid.Column="0" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="1" Grid.Column="1">
+                        <custom:CustomPickerWithErrorLabel ItemsSource="{Binding BiteDistances}" 
+                                             DisplayMemberPath="BiteDistance" 
+                                             SelectedValuePath="Id" 
+                                             SelectedValue="{Binding SelectedBiteDistance, Mode=TwoWay}"
+                                             WidthRequest="100"/>
+                    </StackLayout>
+
+                    <Label Text="Ködertyp:" Grid.Row="2" Grid.Column="0" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="2" Grid.Column="1">
+                        <custom:CustomPickerWithErrorLabel ItemsSource="{Binding BaitTypes}" 
+                                             DisplayMemberPath="BaitType" 
+                                             SelectedValuePath="Id" 
+                                             SelectedValue="{Binding SelectedBaitType, Mode=TwoWay}"
+                                             WidthRequest="100"/>
+                    </StackLayout>
+
+                    <Label Text="Köderfarbe:" Grid.Row="3" Grid.Column="0" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="3" Grid.Column="1">
+                        <custom:CustomPickerWithErrorLabel ItemsSource="{Binding BaitColors}" 
+                                             DisplayMemberPath="BaitColor" 
+                                             SelectedValuePath="Id" 
+                                             SelectedValue="{Binding SelectedBaitColor, Mode=TwoWay}"
+                                             WidthRequest="100"/>
+                    </StackLayout>
+
+                    <Label Text="Fischart:" Grid.Row="4" Grid.Column="0" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="4" Grid.Column="1">
+                        <custom:CustomPickerWithErrorLabel ItemsSource="{Binding Fishes}" 
+                                             DisplayMemberPath="FishName" 
+                                             SelectedValuePath="Id" 
+                                             SelectedValue="{Binding SelectedFishId, Mode=TwoWay}"
+                                             WidthRequest="100"/>
+                    </StackLayout>
+
+                    <Label Text="Länge:" Grid.Row="5" Grid.Column="0" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Grid.Row="5" Grid.Column="1">
+                            <custom:CustomEntryWithErrorLabel x:Name="LengthLabel"
+                                    UserInput="{Binding FishedSpotCatch.FishLength, Mode=TwoWay, Converter={StaticResource cnvStringToDoubleConverter}, StringFormat='{0:0.0}'}"
+                                    AllowNull="False"
+                                    AdditionalTextIsVisible="True"
+                                    AdditionalText="{Binding FishedSpotCatch.LengthUnit, Converter={StaticResource cnvIntToLengthUnitConverter}, Mode=TwoWay}"
+                                    ErrorText=""
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand" />
+                        </StackLayout>
                 </Grid>
             </StackLayout>
+
             <StackLayout IsVisible="{Binding IsBusy}" Style="{StaticResource IndicatorStackLayout}">
                 <ActivityIndicator IsRunning="{Binding IsBusy}" />
             </StackLayout>

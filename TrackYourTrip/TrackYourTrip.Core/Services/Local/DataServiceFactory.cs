@@ -95,6 +95,11 @@ namespace TrackYourTrip.Core.Services
             return new SimpleDataService<FishedSpotBiteModel>(Connection, TableConsts.FISHEDSPOTBITE_TABLE);
         }
 
+        public static SimpleDataService<FishedSpotCatchModel> GetFishedSpotCatchFactory()
+        {
+            return new SimpleDataService<FishedSpotCatchModel>(Connection, TableConsts.FISHEDSPOTCATCH_TABLE);
+        }
+
         public static SimpleDataService<FishModel> GetFishFactory()
         {
             return new SimpleDataService<FishModel>(Connection, TableConsts.FISH_TABLE);

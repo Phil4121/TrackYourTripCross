@@ -29,6 +29,13 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             get => Resources.AppResources.NewTripOverviewPreSettingsPageTitle;
         }
 
+        bool _isBusy = false;
+        public bool IsBusy
+        {
+            get => _isBusy;
+            set => SetProperty(ref _isBusy, value);
+        }
+
         private PreDefinedSpotSettings _preSettings;
 
         public PreDefinedSpotSettings PreSettings
@@ -60,7 +67,6 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                 RaisePropertyChanged(nameof(WaterTemperature));
             }
         }
-
         public double WaterLevel
         {
             get => PreSettings.WaterLevel;

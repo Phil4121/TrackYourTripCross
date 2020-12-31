@@ -57,29 +57,53 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         public string CheckInButtonText => Resources.AppResources.SpotCheckinButtonText;
 
+        private CameraUpdate _mapCenter = null;
+
         public CameraUpdate MapCenter
         {
             get
             {
+                if (_mapCenter != null)
+                    return _mapCenter;
+
+
                 if (Trip != null &&
                     Trip.FishingArea != null &&
                     Trip.FishingArea.Lat != 0 &&
                     Trip.FishingArea.Lng != 0)
                 {
-                    return CameraUpdateFactory.NewPositionZoom(new Position(Trip.FishingArea.Lat, Trip.FishingArea.Lng), 15d);
+                    _mapCenter = CameraUpdateFactory.NewPositionZoom(new Position(Trip.FishingArea.Lat, Trip.FishingArea.Lng), 15d);
+                    return _mapCenter;
+                }
+                else
+                {
+                    if (_mapCenter != null)
+                        return _mapCenter;
                 }
 
                 Xamarin.Essentials.Location loc = LocationHelper.GetCurrentLocation();
-                return CameraUpdateFactory.NewPositionZoom(new Position(loc.Latitude, loc.Longitude), 15d);
+                _mapCenter = CameraUpdateFactory.NewPositionZoom(new Position(loc.Latitude, loc.Longitude), 15d);
+
+                return _mapCenter;
             }
+
+            set => SetProperty(ref _mapCenter, value);
         }
+
+        private MvxObservableCollection<Pin> _pins = null;
 
         public MvxObservableCollection<Pin> Pins
         {
             get
             {
+                if (_pins != null && 
+                    _pins.Count > 0)
+                    return _pins;
+
                 return new MvxObservableCollection<Pin>();
             }
+
+            set => SetProperty(ref _pins, value);
         }
 
         #endregion

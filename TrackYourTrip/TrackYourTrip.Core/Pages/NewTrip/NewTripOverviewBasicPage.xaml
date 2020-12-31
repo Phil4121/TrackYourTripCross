@@ -4,71 +4,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:custom="clr-namespace:TrackYourTrip.Core.CustomControls"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:mvxBind="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
              xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"   
+                 xmlns:custom="clr-namespace:TrackYourTrip.Core.CustomControls"
              xmlns:other="clr-namespace:TrackYourTrip.Core.ViewModels.Other"     
-             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              mc:Ignorable="d"
              x:Class="TrackYourTrip.Core.Pages.NewTrip.NewTripOverviewBasicPage"
              Title="{Binding Title}">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <other:MapItemTemplateSelector x:Key="MapItemTemplateSelector">
-                <other:MapItemTemplateSelector.DataTemplate>
-                    <DataTemplate>
-                        <maps:Pin Position="{Binding Position}"
-                                  Label=""
-                                  IsDraggable="False"
-                                  Type="Place"/>
-                    </DataTemplate>
-                </other:MapItemTemplateSelector.DataTemplate>
-            </other:MapItemTemplateSelector>
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="{Binding SaveCommandTitle}" Order="Primary" Command="{mvxBind:MvxBind SaveCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
-                <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="20" />
-                            <RowDefinition Height="20" />
-                            <RowDefinition Height="15" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
+            <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
 
-                        <Label Text="Beginn:" Grid.Row="0" Grid.Column="0" />
-                        <Label Text="{Binding Trip.TripDateTime}" Grid.Row="0" Grid.Column="1" />
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
 
-                        <maps:Map x:Name="map"
-                          InitialCameraUpdate="{Binding MapCenter}"
-                          ItemsSource="{Binding Pins}"
-                          ItemTemplateSelector="{StaticResource MapItemTemplateSelector}"
-                          MapType="Hybrid"
-                          VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand"
-                          HeightRequest="300" WidthRequest="300"
-                          Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
-                        </maps:Map>
+                    <Label Text="Beginn:" Grid.Row="0" Grid.Column="0" />
+                    <Label Text="{Binding Trip.TripDateTime}" Grid.Row="0" Grid.Column="1" />
 
-                    </Grid>
+                </Grid>
 
-                    <StackLayout Style="{StaticResource SpacedStackLayout}">
+                <StackLayout HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" HeightRequest="300" Margin="0,0,40,0">
+                    <StackLayout HorizontalOptions="FillAndExpand">
                         <Button Text="{Binding CheckInButtonText}"
                             Command="{Binding CheckInToSpotCommand}"
                             HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
                     </StackLayout>
 
-                    <Label Text="Bereits beangelt:" Grid.Row="0" Grid.Column="0" />
+                    <custom:CustomMapWithErrorLabel HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand"
+                                                    CameraCenterView="{Binding MapCenter}"
+                                                    ItemsSource="{Binding Pins}" />
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource SpacedStackLayout}">
+                <Label Text="Bereits beangelt:" Grid.Row="0" Grid.Column="0" />
                     <StackLayout>
                         <ListView ItemsSource="{Binding Trip.FishedSpots}"  
                               SelectionMode="None" 
@@ -98,8 +77,8 @@
                         </ListView>
                     </StackLayout>
                 </StackLayout>
-            </ScrollView>
-            <StackLayout IsVisible="{Binding IsBusy}" Style="{StaticResource IndicatorStackLayout}">
+                </StackLayout>
+                <StackLayout IsVisible="{Binding IsBusy}" Style="{StaticResource IndicatorStackLayout}">
                 <ActivityIndicator IsRunning="{Binding IsBusy}" />
             </StackLayout>
         </AbsoluteLayout>

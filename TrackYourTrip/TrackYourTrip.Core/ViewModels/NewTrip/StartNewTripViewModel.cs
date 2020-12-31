@@ -80,6 +80,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         public override bool IsNew => throw new NotImplementedException();
 
+        private CameraUpdate _mapCenter = null;
         public CameraUpdate MapCenter
         {
             get
@@ -89,35 +90,53 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                     Trip.FishingArea.Lat != 0 &&
                     Trip.FishingArea.Lng != 0)
                 {
-                    return CameraUpdateFactory.NewPositionZoom(new Position(Trip.FishingArea.Lat, Trip.FishingArea.Lng), 15d);
+                    _mapCenter = CameraUpdateFactory.NewPositionZoom(new Position(Trip.FishingArea.Lat, Trip.FishingArea.Lng), 15d);
+                    return _mapCenter;
+                }
+                else
+                {
+                    if (_mapCenter != null)
+                        return _mapCenter;
                 }
 
                 Xamarin.Essentials.Location loc = LocationHelper.GetCurrentLocation();
-                return CameraUpdateFactory.NewPositionZoom(new Position(loc.Latitude, loc.Longitude), 15d);
+                _mapCenter = CameraUpdateFactory.NewPositionZoom(new Position(loc.Latitude, loc.Longitude), 15d);
+
+                return _mapCenter;
             }
         }
 
+        private MvxObservableCollection<Pin> _pins = null;
         public MvxObservableCollection<Pin> Pins
         {
             get
             {
+                if (_pins != null &&
+                    _pins.Count > 0)
+                    return _pins;
+
+                _pins = new MvxObservableCollection<Pin>();
+
                 if (Trip == null ||
                     Trip.FishingArea == null ||
                     Trip.FishingArea.Lat == 0 ||
                     Trip.FishingArea.Lng == 0)
                 {
-                    return new MvxObservableCollection<Pin>();
+                    return _pins;
                 }
 
-                return new MvxObservableCollection<Pin>()
-                {
+                _pins.Add(
                     new Pin
                     {
                         Label = !string.IsNullOrEmpty(Trip.FishingArea.FishingArea) ? Trip.FishingArea.FishingArea : Trip.FishingArea.Id.ToString(),
                         Position = new Position(Trip.FishingArea.Lat, Trip.FishingArea.Lng)
-                    }
-                };
+                    });
+
+
+                return _pins;
             }
+
+            set => SetProperty(ref _pins, value);
         }
 
         #endregion
@@ -277,6 +296,8 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             try
             {
                 IsBusy = true;
+
+                // exception while Debug is regardless! It's because DB is reseted every time!
 
                 var activeTrip = await DataStore.GetItemAsync(Guid.Parse(TripHelper.GetTripIdInProcess()));
 
