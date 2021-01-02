@@ -15,7 +15,9 @@ using TrackYourTrip.Core.ViewModelResults;
 using TrackYourTrip.Core.ViewModels.NewTrip;
 using Xamarin.Forms.GoogleMaps;
 using TrackYourTrip.Core.Services.BackgroundQueue;
- 
+using TrackYourTrip.Core.CustomValidators;
+using FluentValidation.Results;
+
 [assembly: MvxNavigation(typeof(NewFishedSpotCatchViewModel), @"NewFishedSpotCatchPage")]
 namespace TrackYourTrip.Core.ViewModels.NewTrip
 {
@@ -113,7 +115,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             set => SetProperty(ref _baitTypes, value);
         }
 
-        public Guid SelectedColorId
+        public Guid SelectedBaitColorId
         {
             get
             {
@@ -127,7 +129,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                 if (FishedSpotCatch != null)
                     FishedSpotCatch.ID_BaitColor = value;
 
-                RaisePropertyChanged(nameof(SelectedColorId));
+                RaisePropertyChanged(nameof(SelectedBaitColorId));
             }
         }
 
@@ -163,6 +165,59 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             set => SetProperty(ref _fishes, value);
         }
 
+        public int FishLength
+        {
+            get
+            {
+                if (FishedSpotCatch != null)
+                    return FishedSpotCatch.FishLength;
+
+                return 0;
+            }
+            set
+            {
+                if (FishedSpotCatch != null)
+                    FishedSpotCatch.FishLength = value;
+
+                RaisePropertyChanged(nameof(FishLength));
+            }
+        }
+
+        private string _baitTypeErrorText;
+        public string BaitTypeErrorText
+        {
+            get => _baitTypeErrorText;
+            set => SetProperty(ref _baitTypeErrorText, value);
+        }
+
+        private string _baitColorErrorText;
+        public string BaitColorErrorText
+        {
+            get => _baitColorErrorText;
+            set => SetProperty(ref _baitColorErrorText, value);
+        }
+
+        private string _biteDistanceErrorText;
+        public string BiteDistanceErrorText
+        {
+            get => _biteDistanceErrorText;
+            set => SetProperty(ref _biteDistanceErrorText, value);
+        }
+
+        private string _assumedFishErrorText;
+        public string AssumedFishErrorText
+        {
+            get => _assumedFishErrorText;
+            set => SetProperty(ref _assumedFishErrorText, value);
+        }
+
+        private string _fishLengthErrorText;
+        public string FishLengthErrorText
+        {
+            get => _fishLengthErrorText;
+            set => SetProperty(ref _fishLengthErrorText, value);
+        }
+
         #region Methodes
 
         public override Task Initialize()
@@ -180,7 +235,13 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
         public override void Validate()
         {
-            FishedSpotCatch.IsValid = true;
+            var validator = new FishedSpotCatchModelValidator();
+            FluentValidation.Results.ValidationResult result = validator.Validate(FishedSpotCatch);
+            FishedSpotCatch.IsValid = result.IsValid;
+            ValidationResult = result;
+
+            if (!result.IsValid)
+                SetValidationFailures(result.Errors);
         }
 
         async Task PreFillFieldsAsync()
@@ -234,6 +295,31 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             finally
             {
                 IsBusy = false;
+            }
+        }
+
+        void SetValidationFailures(IList<ValidationFailure> vf)
+        {
+            foreach (ValidationFailure f in vf)
+            {
+                switch (f.PropertyName.ToLower())
+                {
+                    case "id_baittype":
+                        BaitTypeErrorText = f.ErrorMessage;
+                        break;
+                    case "id_baitcolor":
+                        BaitColorErrorText = f.ErrorMessage;
+                        break;
+                    case "id_bitedistance":
+                        BiteDistanceErrorText = f.ErrorMessage;
+                        break;
+                    case "id_fish":
+                        AssumedFishErrorText = f.ErrorMessage;
+                        break;
+                    case "fishlength":
+                        FishLengthErrorText = f.ErrorMessage;
+                        break;
+                }
             }
         }
 

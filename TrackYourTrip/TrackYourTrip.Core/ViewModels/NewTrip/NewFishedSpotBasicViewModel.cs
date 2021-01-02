@@ -108,6 +108,8 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                     ID_BaitColor = _globalSettings.PreDefinedSpotSettings != null ? _globalSettings.PreDefinedSpotSettings.ID_BaitColor : Guid.Empty
                 };
 
+                FishedSpot = await DataServiceFactory.GetFishedSpotFactory().SaveItemAsync(FishedSpot);
+
                 await NavigationService.Navigate<NewFishedSpotBiteViewModel, FishedSpotBiteModel, OperationResult<IModel>>(bite);
 
             }
@@ -140,6 +142,8 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                     ID_BaitColor = _globalSettings.PreDefinedSpotSettings != null ? _globalSettings.PreDefinedSpotSettings.ID_BaitColor : Guid.Empty,
                     LengthUnit = GenerallSettingsHelper.GetDefaultLengthUnit()
                 };
+
+                FishedSpot = await DataServiceFactory.GetFishedSpotFactory().SaveItemAsync(FishedSpot);
 
                 await NavigationService.Navigate<NewFishedSpotCatchViewModel, FishedSpotCatchModel, OperationResult<IModel>>(catchFished);
 

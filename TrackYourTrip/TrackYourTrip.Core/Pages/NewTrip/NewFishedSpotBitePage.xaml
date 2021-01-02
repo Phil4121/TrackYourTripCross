@@ -41,7 +41,8 @@
                         <custom:CustomPickerWithErrorLabel ItemsSource="{Binding BiteDistances}" 
                                              DisplayMemberPath="BiteDistance" 
                                              SelectedValuePath="Id" 
-                                             SelectedValue="{Binding SelectedBiteDistance, Mode=TwoWay}"
+                                             SelectedValue="{Binding SelectedBiteDistanceId, Mode=TwoWay}"
+                                             ErrorText="{Binding BiteDistanceErrorText}"
                                              WidthRequest="100"/>
                     </StackLayout>
 
@@ -50,7 +51,8 @@
                         <custom:CustomPickerWithErrorLabel ItemsSource="{Binding BaitTypes}" 
                                              DisplayMemberPath="BaitType" 
                                              SelectedValuePath="Id" 
-                                             SelectedValue="{Binding SelectedBaitType, Mode=TwoWay}"
+                                             SelectedValue="{Binding SelectedBaitTypeId, Mode=TwoWay}"
+                                             ErrorText="{Binding BaitTypeErrorText}"
                                              WidthRequest="100"/>
                     </StackLayout>
 
@@ -59,7 +61,8 @@
                         <custom:CustomPickerWithErrorLabel ItemsSource="{Binding BaitColors}" 
                                              DisplayMemberPath="BaitColor" 
                                              SelectedValuePath="Id" 
-                                             SelectedValue="{Binding SelectedBaitColor, Mode=TwoWay}"
+                                             SelectedValue="{Binding SelectedBaitColorId, Mode=TwoWay}"
+                                             ErrorText="{Binding BaitColorErrorText}"
                                              WidthRequest="100"/>
                     </StackLayout>
 

@@ -72,7 +72,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                     Trip.FishingArea.Lat != 0 &&
                     Trip.FishingArea.Lng != 0)
                 {
-                    _mapCenter = CameraUpdateFactory.NewPositionZoom(new Position(Trip.FishingArea.Lat, Trip.FishingArea.Lng), 15d);
+                    _mapCenter = CameraUpdateFactory.NewPositionZoom(new Position(Trip.FishingArea.Lat, Trip.FishingArea.Lng), 12d);
                     return _mapCenter;
                 }
                 else
@@ -82,7 +82,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                 }
 
                 Xamarin.Essentials.Location loc = LocationHelper.GetCurrentLocation();
-                _mapCenter = CameraUpdateFactory.NewPositionZoom(new Position(loc.Latitude, loc.Longitude), 15d);
+                _mapCenter = CameraUpdateFactory.NewPositionZoom(new Position(loc.Latitude, loc.Longitude), 12d);
 
                 return _mapCenter;
             }
@@ -90,19 +90,11 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             set => SetProperty(ref _mapCenter, value);
         }
 
-        private MvxObservableCollection<Pin> _pins = null;
+        private MvxObservableCollection<Pin> _pins = new MvxObservableCollection<Pin>();
 
         public MvxObservableCollection<Pin> Pins
         {
-            get
-            {
-                if (_pins != null && 
-                    _pins.Count > 0)
-                    return _pins;
-
-                return new MvxObservableCollection<Pin>();
-            }
-
+            get => _pins;
             set => SetProperty(ref _pins, value);
         }
 
@@ -127,6 +119,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             base.Prepare(parameter);
 
             Trip = parameter;
+            RefreshPins();
         }
 
         public override void Validate()
@@ -144,7 +137,6 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
                 var fishedSpot = new FishedSpotModel(true)
                 {
-                    IsNew = true,
                     StartDateTime = DateTime.Now,
                     ID_Trip = Trip.Id,
                     ID_FishingArea = fishingArea.Id,
@@ -153,8 +145,6 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                 };
 
                 fishedSpot.Water = CopyPreSettingsToWaterModel(fishedSpot);
-
-                await DataServiceFactory.GetFishedSpotFactory().SaveItemAsync(fishedSpot);
 
                 await NavigationService.Navigate<SpotsViewModel, OverviewArgs, SpotsViewModel>(new OverviewArgs(false, fishingArea, fishedSpot, PageHelper.NEWFISHEDSPOTOVERVIEW_PAGE));
             }
@@ -187,6 +177,26 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                 water.WaterTemperatureUnit = GenerallSettingsHelper.GetDefaultTemperatureUnit();
 
                 return water;
+            }
+        }
+
+        private void RefreshPins()
+        {
+            if (Trip.FishedSpots == null || Trip.FishedSpots.Count == 0)
+                return;
+
+            foreach(FishedSpotModel fs in Trip.FishedSpots)
+            {
+                foreach(SpotMarkerModel spm in fs.Spot.SpotMarker)
+                {
+                    _pins.Add(
+                            new Pin
+                            {
+                                Label = fs.Spot.Spot,
+                                Position = new Position(spm.Lat, spm.Lng)
+                            }
+                        );
+                }
             }
         }
 

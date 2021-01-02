@@ -129,13 +129,13 @@ CREATE TABLE Trips (
 );
 
 CREATE TABLE FishedSpots (
-	ID				TEXT		PRIMARY KEY,
-	ID_Trip			TEXT,
-	ID_FishingArea	TEXT,
-	ID_Spot			TEXT,
-	ID_FishedSpotWeather TEXT,
-	StartDateTime	DATETIME,
-	EndDateTime		DATETIME
+	ID						TEXT		PRIMARY KEY,
+	ID_Trip					TEXT,
+	ID_FishingArea			TEXT,
+	ID_Spot					TEXT,
+	ID_FishedSpotWeather	TEXT,
+	StartDateTime			DATETIME,
+	EndDateTime				DATETIME
 );
 
 CREATE TABLE FishedSpotsWheater (
