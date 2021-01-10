@@ -103,6 +103,8 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             {
                 IsBusy = true;
 
+                FishedSpot.EndDateTime = DateTime.Now;
+
                 await base.SaveAsync();
 
                 if (IsValid)

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:TrackYourTrip.Core.Converters"   
+             x:Class="TrackYourTrip.Core.CustomControls.CustomTimeDisplayControl">
+    <ContentView.Resources>
+        <converter:TimeToStringConverter x:Key="cnvTimeToStringConverter" />
+    </ContentView.Resources>
+    <ContentView.Content>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" WidthRequest="120">
+            <Label Text="{Binding From, Converter={StaticResource cnvTimeToStringConverter}}"  x:Name="FromLabel" />
+            <Label Text="-" x:Name="Seperator" IsVisible="{Binding IsMultiline}" />
+            <Label Text="{Binding To, Converter={StaticResource cnvTimeToStringConverter}}" IsVisible="{Binding IsMultiline}"  x:Name="ToLabel" />
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>
