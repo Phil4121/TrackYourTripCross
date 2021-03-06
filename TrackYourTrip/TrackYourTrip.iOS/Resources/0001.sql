@@ -139,18 +139,40 @@ CREATE TABLE FishedSpots (
 );
 
 CREATE TABLE FishedSpotsWheater (
-	ID					TEXT		PRIMARY KEY,
-	ID_FishedSpot		TEXT,
-	IsOverwritten		BIT,
-	Temperature			FLOAT,
-	WeatherSituation	INT
+	ID							TEXT		PRIMARY KEY,
+	ID_FishedSpot				TEXT,
+	IsOverwritten				BIT,
+	Temperature					FLOAT,
+	WeatherSituation			INT,
+	CurrentTemperature			FLOAT,
+	DailyTemperatureHigh		FLOAT,
+	DailyTemperatureHighTime	FLOAT,
+	DailyTemperatureLow			FLOAT,
+	DailyTemperatureLowTime		FLOAT,
+	TemperatureUnit				INT,
+	MoonPhase					FLOAT,
+	Humidity					FLOAT,
+	AirPressureInHPA			FLOAT,
+	SunRiseTime					DATETIME,
+	SunSetTime					DATETIME,
+	UVIndex						INT,
+	VisibilityInKM				FLOAT,
+	WindBearing					INT,
+	WindSpeedInMS				FLOAT,
+	CloudCover					FLOAT
 );
 
 CREATE TABLE FishedSpotsWater (
-	ID					TEXT		PRIMARY KEY,
-	ID_FishedSpot		TEXT,
-	IsOverwritten		BIT,
-	Temperature			FLOAT
+	ID							TEXT		PRIMARY KEY,
+	ID_FishedSpot				TEXT,
+	IsOverwritten				BIT,
+	WaterTemperature			FLOAT,
+	WaterTemperatureUnit		INT,
+	WaterLevel					FLOAT,
+	WaterLevelUnit				INT,
+	ID_WaterColor				INT,
+	ID_Turbidity				INT,
+	ID_Current					INT
 );
 
 CREATE TABLE FishedSpotBite(

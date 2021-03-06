@@ -29,19 +29,20 @@
 
                     </Grid>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
-                    <StackLayout Orientation="Vertical" HorizontalOptions="Start">
-                        <Label Text="Bisse:" HorizontalOptions="Center" />
-                        <Label Text="{Binding FishedSpot.BiteCount}" Style="{StaticResource HeadlineLabel}" HorizontalOptions="Center" />
-                        <Button Text="BISS !" Command="{Binding BiteCommand}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
-                    </StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" Style="{StaticResource SpacedStackLayout}">
+                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Bisse:" HorizontalOptions="Center" />
+                            <Label Text="{Binding FishedSpot.BiteCount}" Style="{StaticResource HeadlineLabel}" HorizontalOptions="Center" />
+                            <Button Text="BISS !" Command="{Binding BiteCommand}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                        </StackLayout>
 
-                    <StackLayout Orientation="Vertical" HorizontalOptions="End">
-                        <Label Text="Fische:" HorizontalOptions="Center" />
-                        <Label Text="{Binding FishedSpot.CatchCount}" Style="{StaticResource HeadlineLabel}" HorizontalOptions="Center" />
-                        <Button Text="FISCH !" Command="{Binding CatchCommand}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Fische:" HorizontalOptions="Center" />
+                            <Label Text="{Binding FishedSpot.CatchCount}" Style="{StaticResource HeadlineLabel}" HorizontalOptions="Center" />
+                            <Button Text="FISCH !" Command="{Binding CatchCommand}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                        </StackLayout>
                     </StackLayout>
-
                 </StackLayout>
             </StackLayout>
 

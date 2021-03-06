@@ -78,16 +78,16 @@ namespace TrackYourTrip.Core.Models
         [Ignore]
         public FishingAreaModel FishingArea { get; set; }
 
-        [OneToOne(CascadeOperations = CascadeOperation.CascadeRead)]
+        [OneToOne(CascadeOperations = CascadeOperation.All)]
         public FishedSpotWeatherModel Weather { get; set; }
 
-        [OneToOne(CascadeOperations = CascadeOperation.CascadeRead)]
+        [OneToOne(CascadeOperations = CascadeOperation.All)]
         public FishedSpotWaterModel Water { get; set; }
 
-        [OneToMany(CascadeOperations = CascadeOperation.CascadeRead)]
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<FishedSpotBiteModel> Bites { get; set; }
 
-        [OneToMany(CascadeOperations = CascadeOperation.CascadeRead)]
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<FishedSpotCatchModel> Catches { get; set; }
     }
 }

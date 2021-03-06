@@ -16,9 +16,8 @@
         <ToolbarItem Text="{Binding SaveCommandTitle}" Order="Primary" Command="{mvxBind:MvxBind SaveCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <AbsoluteLayout HorizontalOptions="FillAndExpand" 
-                        VerticalOptions="FillAndExpand">
-            <StackLayout Style="{StaticResource RootStackLayout}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+        <AbsoluteLayout>
+            <StackLayout Style="{StaticResource RootStackLayout}" HorizontalOptions="FillAndExpand">
 
                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
                     <Grid.RowDefinitions>
@@ -47,52 +46,37 @@
                                                     ItemsSource="{Binding Pins}" />
                 </StackLayout>
 
-                <StackLayout Style="{StaticResource SpacedStackLayout}" VerticalOptions="EndAndExpand">
-                    <Label Text="Bereits beangelt:" Grid.Row="0" Grid.Column="0" Style="{StaticResource Key=HeadlineLabel}" />
-                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition  />
-                            </Grid.ColumnDefinitions>
-                            <ScrollView Grid.Row="0" Grid.Column="0" Orientation="Vertical" VerticalScrollBarVisibility="Always">
-                        <ListView ItemsSource="{Binding Trip.FishedSpots}"  
+                <Label Text="Bereits beangelt:" Style="{StaticResource Key=HeadlineLabel}" />
+
+                <custom:CustomNestedScrollView ItemsSource="{Binding FishedSpots}"  
                               SelectionMode="None" 
-                              CachingStrategy="RecycleElement"
-                              HorizontalOptions="FillAndExpand"
-                              VerticalOptions="FillAndExpand"
-                              VerticalScrollBarVisibility="Always"
-                                  HeightRequest="200">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ViewCell>
-                                        <SwipeView HeightRequest="30" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
-                                            <SwipeView.Content>
-                                                <StackLayout Padding="10" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                                    <custom:CustomTimeDisplayControl From="{Binding StartDateTime}" To="{Binding EndDateTime}" VerticalOptions="CenterAndExpand" />
-                                                        <Label Text="{Binding Spot.Spot}" FontSize="18" TextColor="White" />
-                                                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-                                                        <Label Text="(" />
-                                                        <Label Text="{Binding BiteCount}" />
-                                                        <Label Text="/" />
-                                                        <Label Text="{Binding CatchCount}" />
-                                                        <Label Text=")" />
-                                                    </StackLayout>
-                                                </StackLayout>
-                                            </SwipeView.Content>
-                                        </SwipeView>
-                                    </ViewCell>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                            </ScrollView>
-                        </Grid>
-                    </StackLayout>
-                </StackLayout>
-                </StackLayout>
-                <StackLayout IsVisible="{Binding IsBusy}" Style="{StaticResource IndicatorStackLayout}">
+                              HeightRequest="100"
+                              RowHeight="30">
+                    <custom:CustomNestedScrollView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <SwipeView HeightRequest="30" HorizontalOptions="StartAndExpand"  BackgroundColor="Transparent">
+                                    <SwipeView.Content>
+                                        <StackLayout Padding="2" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                            <custom:CustomTimeDisplayControl From="{Binding StartDateTime}" To="{Binding EndDateTime}" VerticalOptions="CenterAndExpand" />
+                                            <Label Text="{Binding Spot.Spot}" FontSize="18" TextColor="White" VerticalOptions="CenterAndExpand" />
+                                            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                                <Label Text="(" />
+                                                <Label Text="{Binding BiteCount}" />
+                                                <Label Text="/" />
+                                                <Label Text="{Binding CatchCount}" />
+                                                <Label Text=")" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </SwipeView.Content>
+                                </SwipeView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </custom:CustomNestedScrollView.ItemTemplate>
+                </custom:CustomNestedScrollView>
+            </StackLayout>
+
+            <StackLayout IsVisible="{Binding IsBusy}" Style="{StaticResource IndicatorStackLayout}">
                 <ActivityIndicator IsRunning="{Binding IsBusy}" />
             </StackLayout>
         </AbsoluteLayout>

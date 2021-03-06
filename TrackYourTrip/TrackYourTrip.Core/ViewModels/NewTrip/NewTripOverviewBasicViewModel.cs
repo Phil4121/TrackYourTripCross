@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
@@ -14,6 +15,7 @@ using TrackYourTrip.Core.Services;
 using TrackYourTrip.Core.ViewModelResults;
 using TrackYourTrip.Core.ViewModels.NewTrip;
 using TrackYourTrip.Core.ViewModels.Overviews;
+using TrackYourTrip.Core.ViewModels.Root;
 using Xamarin.Forms.GoogleMaps;
 
 [assembly: MvxNavigation(typeof(NewTripOverviewBasicViewModel), @"NewTripOverviewBasicPage")]
@@ -98,6 +100,14 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
             set => SetProperty(ref _pins, value);
         }
 
+        private MvxObservableCollection<FishedSpotModel> _fishedSpots = new MvxObservableCollection<FishedSpotModel>();
+
+        public MvxObservableCollection<FishedSpotModel> FishedSpots
+        {
+            get => _fishedSpots;
+            set => SetProperty(ref _fishedSpots, value);
+        }
+
         #endregion
 
         #region Commands
@@ -120,11 +130,42 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
             Trip = parameter;
             RefreshPins();
+            RefreshSpots();
         }
 
         public override void Validate()
         {
-            throw new NotImplementedException();
+            Trip.IsValid = true;
+        }
+
+        public async override Task SaveAsync()
+        {
+            try
+            {
+                IsBusy = true;
+
+                await base.SaveAsync();
+
+                if (IsValid)
+                {
+                    await DataStore.SaveItemAsync(Trip);
+
+                    var settings = Mvx.IoCProvider.Resolve<IAppSettings>();
+                    settings.TripIdInProcess = Guid.Empty.ToString();
+
+                    await NavigationService.Navigate<MainMenuViewModel>();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+
         }
 
         async Task CheckInToNewSpotAsync()
@@ -145,6 +186,8 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                 };
 
                 fishedSpot.Water = CopyPreSettingsToWaterModel(fishedSpot);
+
+                fishedSpot = await DataServiceFactory.GetFishedSpotFactory().SaveItemAsync(fishedSpot);
 
                 await NavigationService.Navigate<SpotsViewModel, OverviewArgs, SpotsViewModel>(new OverviewArgs(false, fishingArea, fishedSpot, PageHelper.NEWFISHEDSPOTOVERVIEW_PAGE));
             }
@@ -198,6 +241,21 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
                         );
                 }
             }
+
+
+        }
+
+        private void RefreshSpots()
+        {
+            if (Trip.FishedSpots == null || Trip.FishedSpots.Count == 0)
+                return;
+
+            foreach (FishedSpotModel fs in Trip.FishedSpots)
+            {
+                _fishedSpots.Add(fs);  
+            }
+
+            RaisePropertyChanged(nameof(FishedSpots));
         }
 
         #endregion
