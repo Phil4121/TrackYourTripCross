@@ -202,7 +202,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
             FishedSpotWaterModel CopyPreSettingsToWaterModel(FishedSpotModel spot)
             {
-                var water = new FishedSpotWaterModel();
+                var water = new FishedSpotWaterModel(true);
                 var gs = new GlobalSettings();
 
                 water.ID_FishedSpot = spot.Id;

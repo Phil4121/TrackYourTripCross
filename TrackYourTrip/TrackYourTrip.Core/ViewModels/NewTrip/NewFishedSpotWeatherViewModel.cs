@@ -163,7 +163,7 @@ namespace TrackYourTrip.Core.ViewModels.NewTrip
 
             FishedSpot = parameter;
 
-            if (IsNew && !IsOverwritten)
+            if (!IsOverwritten)
             {
                 ShowWeatherStatusPicture = true;
                 WheaterStatusPicture = StatusHelper.StatusPicEnum.STATUS_WAITING.ToString();

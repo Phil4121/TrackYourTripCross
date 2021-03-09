@@ -22,8 +22,8 @@ namespace TrackYourTrip.Core.Models
             if (isNew)
             {
                 ID_FishedSpotWeather = Guid.NewGuid();
-                Weather = new FishedSpotWeatherModel();
-                Water = new FishedSpotWaterModel();
+                Weather = new FishedSpotWeatherModel(isNew);
+                Water = new FishedSpotWaterModel(isNew);
                 Bites = new List<FishedSpotBiteModel>();
                 Catches = new List<FishedSpotCatchModel>();
             }

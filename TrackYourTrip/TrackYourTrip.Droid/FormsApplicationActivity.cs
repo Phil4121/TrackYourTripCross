@@ -4,11 +4,14 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using MvvmCross.Forms.Platforms.Android.Views;
+using System;
 using TrackYourTrip.Core.Helpers;
+using TrackYourTrip.Core.Models;
 using TrackYourTrip.Core.Services.BackgroundQueue;
 using TrackYourTrip.Core.Services.BackgroundQueue.Messages;
 using TrackYourTrip.Droid.Services.BackgroundService;
 using Xamarin.Forms;
+using static TrackYourTrip.Core.Helpers.EnumHelper;
 
 namespace TrackYourTrip.Droid
 {
@@ -32,6 +35,17 @@ namespace TrackYourTrip.Droid
             MessagingCenter.Subscribe<StopBackgroundWorkingServiceMessage>(this, MessageHelper.STOP_BACKGROUND_WORKING_SERVICE_MESSAGE, msg => {
                 var intent = new Intent(this, typeof(BackgroundTaskService));
                 StopService(intent);
+            });
+
+            MessagingCenter.Subscribe<ElementFinishedMessage>(this, MessageHelper.ELEMENT_FINISHED_MESSAGE, msg => {                 
+                ActivityHelper.AddActivityToList(new ActivityModel()
+                    {
+                        TaskType = EnumHelper.ParseEnum<TaskTypeEnum>(msg.BackgroundTask.ID_TaskType.ToString()),
+                        AdditionalText = msg.BackgroundTask.TaskResponse,
+                        Description = msg.BackgroundTask.TaskData,
+                        Id = Guid.NewGuid(),
+                        ExecutionDateTime = DateTime.Now
+                    });
             });
 
             var message = new StartBackgroundWorkingServiceMessage();
