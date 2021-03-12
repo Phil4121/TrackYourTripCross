@@ -97,6 +97,15 @@ namespace TrackYourTrip.Core.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Activity Log ähnelt.
+        /// </summary>
+        internal static string ActivityLogPageTitle {
+            get {
+                return ResourceManager.GetString("ActivityLogPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Add ähnelt.
         /// </summary>
         internal static string AddCommandTitle {

@@ -74,6 +74,9 @@
         <Compile Update="CustomControls\CustomMenuButton.xaml.cs">
           <DependentUpon>CustomMenuButton.xaml</DependentUpon>
         </Compile>
+        <Compile Update="Pages\ActivityLog\ActivityLogPage.xaml.cs">
+          <DependentUpon>ActivityLogPage.xaml</DependentUpon>
+        </Compile>
         <Compile Update="Pages\MainView.xaml.cs">
           <DependentUpon>MainView.xaml</DependentUpon>
         </Compile>

@@ -36,6 +36,8 @@ namespace TrackYourTrip.Core.ViewModels.Root
 
         public string NewTripString => Resources.AppResources.NewTripPageTitle;
 
+        public string ActivityLogString => Resources.AppResources.ActivityLogPageTitle;
+
         #endregion
 
         #region Tasks
@@ -89,6 +91,10 @@ namespace TrackYourTrip.Core.ViewModels.Root
 
                 case "startnewtrip":
                     return PageHelper.START_NEW_TRIP_PAGE;
+
+                case "activitylog":
+                    return PageHelper.ACTIVITY_LOG_PAGE;
+                
 
                 default:
                     throw new Exception("SelectedMenu string not found!");

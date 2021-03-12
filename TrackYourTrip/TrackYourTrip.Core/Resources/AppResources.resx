@@ -129,6 +129,9 @@
   <data name="ActiveTripTitle" xml:space="preserve">
     <value>Active trip</value>
   </data>
+  <data name="ActivityLogPageTitle" xml:space="preserve">
+    <value>Activity Log</value>
+  </data>
   <data name="AddCommandTitle" xml:space="preserve">
     <value>Add</value>
   </data>

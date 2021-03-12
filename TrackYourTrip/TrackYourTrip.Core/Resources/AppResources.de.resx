@@ -129,6 +129,9 @@
   <data name="ActiveTripTitle" xml:space="preserve">
     <value>Aktiver Angeltag</value>
   </data>
+  <data name="ActivityLogPageTitle" xml:space="preserve">
+    <value>Aktivitätenprotokoll</value>
+  </data>
   <data name="AddCommandTitle" xml:space="preserve">
     <value>Hinzufügen</value>
   </data>

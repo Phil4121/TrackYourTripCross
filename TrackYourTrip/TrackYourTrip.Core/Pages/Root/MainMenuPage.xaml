@@ -22,9 +22,10 @@
                     </Grid.RowDefinitions>
 
                     <!--  inner grid for button layouts  -->
-                    <Grid Grid.Row="0" ColumnSpacing="30" HorizontalOptions="CenterAndExpand" RowSpacing="30" 
+                    <Grid Grid.Row="0" ColumnSpacing="30" HorizontalOptions="CenterAndExpand" RowSpacing="50" 
                           VerticalOptions="CenterAndExpand" BackgroundColor="Transparent">
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="110" />
                             <RowDefinition Height="110" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
@@ -47,6 +48,15 @@
                                 <b:EventToCommandBehavior 
                                       EventName="ButtonClicked"
                                       Command="{Binding SettingTappedCommand}" CommandParameter="Setting" />
+                            </ccontrols:CustomMenuButton.Behaviors>
+                        </ccontrols:CustomMenuButton>
+
+                        <ccontrols:CustomMenuButton Grid.Row="1" Grid.Column="0" HeightRequest="70" WidthRequest="70" Margin="20,0,0,0"
+                                                Icon="ActivityLog.png" ButtonText="{Binding ActivityLogString}" HorizontalOptions="Start" VerticalOptions="Start">
+                            <ccontrols:CustomMenuButton.Behaviors>
+                                <b:EventToCommandBehavior 
+                                      EventName="ButtonClicked"
+                                      Command="{Binding SettingTappedCommand}" CommandParameter="ActivityLog" />
                             </ccontrols:CustomMenuButton.Behaviors>
                         </ccontrols:CustomMenuButton>
                     </Grid>

@@ -519,6 +519,7 @@
     <AndroidResource Include="Resources\drawable\Error.png" />
     <AndroidResource Include="Resources\drawable\Success.png" />
     <AndroidResource Include="Resources\drawable\Waiting.png" />
+    <AndroidResource Include="Resources\drawable\ActivityLog.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
